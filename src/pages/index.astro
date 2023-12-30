@@ -8,8 +8,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   import { Cartesian3, createOsmBuildingsAsync, Ion, Math as CesiumMath, Terrain, Viewer } from 'cesium';
 
-  Ion.defaultAccessToken =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2MThhMWUwZC1lMzZlLTQ3YTItOGY4ZS01YzU5ZjNhNjU2YjAiLCJpZCI6MTg1NTcyLCJpYXQiOjE3MDMwOTMzNzR9.TrjZHSdeuJQ0tqDlaWHLgCyrBsJndZ63pAHwciRaKvc';
+  Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
