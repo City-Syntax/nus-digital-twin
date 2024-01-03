@@ -13,7 +13,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 <script>
   window.CESIUM_BASE_URL = '/cesium';
 
-  import { Cartesian3, createOsmBuildingsAsync, Ion, Math as CesiumMath, Terrain, Viewer } from 'cesium';
+  import {
+    Cartesian3,
+    createOsmBuildingsAsync,
+    Ion,
+    Math as CesiumMath,
+    Terrain,
+    Viewer,
+    Cesium3DTileStyle,
+  } from 'cesium';
 
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
@@ -31,8 +39,19 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   // Add Cesium OSM Buildings, a global 3D buildings layer.
-  const buildingTileset = await createOsmBuildingsAsync();
-  viewer.scene.primitives.add(buildingTileset);
+  const buildingsTileset = await createOsmBuildingsAsync();
+  viewer.scene.primitives.add(buildingsTileset);
+
+  buildingsTileset.style = new Cesium3DTileStyle({
+    show: {
+      conditions: [
+        ["${feature['cesium#longitude']} > 103.78171", false],
+        ["${feature['cesium#longitude']} < 103.77022", false],
+        ["${feature['cesium#latitude']} < 1.29088", false],
+        ["${feature['cesium#latitude']} > 1.30824", false],
+      ],
+    },
+  });
 </script>
 
 <Layout title="This is a Cesium Demo.">
