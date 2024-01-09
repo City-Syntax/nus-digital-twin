@@ -21,15 +21,109 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
+  :root {
+    --base-content-100: #f5f5f5;
+    --base-content-200: #a9a9a9;
+    --base-bg: rgba(33, 33, 33, 0.74);
+    --primary-100: #60a5fa;
+    --primary-200: #1d4ed8;
+  }
+
   body,
   html {
     margin: 0;
     padding: 0;
     font-family: system-ui, sans-serif;
-    background: #13151a;
   }
 
   * {
     box-sizing: border-box;
+  }
+
+  h1 {
+    color: var(--base-content-100);
+    margin: 0;
+    font-size: 1.75rem;
+  }
+
+  .nav {
+    background-color: var(--base-bg);
+    color: var(--base-content-100);
+    backdrop-filter: saturate(150%) blur(4px);
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    z-index: 1;
+    width: 338px;
+    height: 90vh;
+    min-height: 600px;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav > div:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .nav > div:last-child {
+    margin-top: auto;
+  }
+
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-group > div:first-child {
+    color: var(--base-content-200);
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .nav-group > button {
+    position: relative;
+    font-size: 1rem;
+    padding: 8px 0;
+    background-color: transparent;
+    border: none;
+    color: var(--base-content-100);
+    text-align: left;
+    cursor: pointer;
+    transition: color 250ms;
+  }
+
+  .nav-group > button:hover {
+    color: var(--primary-100);
+  }
+
+  .nav-group > button::before {
+    content: '';
+    background-color: var(--primary-100);
+    width: 4px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: -16px;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    transition: opacity 250ms;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-group > button:active::before {
+    opacity: 1;
   }
 </style>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import 'cesium/Build/Cesium/Widgets/widgets.css';
+import Sidenav from '../components/Sidenav';
 ---
 
 <style>
@@ -66,5 +67,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 </script>
 
 <Layout title="This is a Cesium Demo.">
+  <Sidenav />
   <div id="cesiumContainer"></div>
 </Layout>
