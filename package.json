@@ -15,11 +15,15 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
+    "@astrojs/react": "^3.0.9",
     "astro": "^4.0.8",
     "cesium": "^1.112.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@types/react": "^18.2.47",
     "@typescript-eslint/parser": "^6.16.0",
     "eslint": "^8.56.0",
     "eslint-plugin-astro": "^0.31.0",
