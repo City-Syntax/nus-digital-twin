@@ -2,7 +2,7 @@ import React from 'react';
 
 interface SidepanelProps {
   title: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Sidepanel = ({ title, children }: SidepanelProps) => {
