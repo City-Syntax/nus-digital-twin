@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.47",
+    "@types/react-dom": "^18.2.18",
     "@typescript-eslint/parser": "^6.16.0",
     "eslint": "^8.56.0",
     "eslint-plugin-astro": "^0.31.0",

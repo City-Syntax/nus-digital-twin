@@ -101,7 +101,8 @@ const { title } = Astro.props;
     transition: color 250ms;
   }
 
-  .nav-group > button:hover {
+  .nav-group > button:hover,
+  .nav-group > button.active {
     color: var(--primary-100);
   }
 
@@ -123,7 +124,7 @@ const { title } = Astro.props;
     justify-content: center;
   }
 
-  .nav-group > button:active::before {
+  .nav-group > button.active::before {
     opacity: 1;
   }
 </style>
