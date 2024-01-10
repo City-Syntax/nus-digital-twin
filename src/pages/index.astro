@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Sidenav from '../components/Sidenav';
+import Sidebar from '../components/Sidebar';
 import CesiumScene from '../components/CesiumScene.astro';
 ---
 
 <Layout title="This is a Cesium Demo.">
-  <Sidenav client:load />
+  <Sidebar client:load />
   <CesiumScene />
 </Layout>

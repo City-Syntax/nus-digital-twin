@@ -46,23 +46,36 @@ const { title } = Astro.props;
     font-size: 1.75rem;
   }
 
-  .nav {
-    background-color: var(--base-bg);
-    color: var(--base-content-100);
-    backdrop-filter: saturate(150%) blur(4px);
+  .sidebar {
     position: absolute;
+    z-index: 1;
     left: 24px;
     top: 0;
     bottom: 0;
     margin: auto 0;
-    z-index: 1;
-    width: 338px;
     height: 90vh;
     min-height: 600px;
+    display: flex;
+  }
+
+  .nav,
+  .sidepanel {
+    background-color: var(--base-bg);
+    color: var(--base-content-100);
+    backdrop-filter: saturate(150%) blur(4px);
     border-radius: 16px;
     padding: 16px;
     display: flex;
     flex-direction: column;
+  }
+
+  .nav {
+    width: 328px;
+    margin-right: 8px;
+  }
+
+  .sidepanel {
+    width: 408px;
   }
 
   .nav > div:not(:last-child) {
