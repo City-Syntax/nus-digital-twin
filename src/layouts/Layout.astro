@@ -2,7 +2,8 @@
 interface Props {
   title: string;
 }
-
+import '@fontsource-variable/inter';
+import '@fontsource/ibm-plex-sans/600.css';
 const { title } = Astro.props;
 ---
 
@@ -33,20 +34,28 @@ const { title } = Astro.props;
   html {
     margin: 0;
     padding: 0;
-    font-family: system-ui, sans-serif;
   }
 
   * {
     box-sizing: border-box;
+    font-family: 'Inter Variable', system-ui, sans-serif;
   }
 
   h1,
   h2,
   h3,
-  h4,
+  h4 {
+    color: var(--base-content-100);
+    margin: 0;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans';
+  }
+
   p {
     color: var(--base-content-100);
     margin: 0;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans';
   }
 
   h1 {
