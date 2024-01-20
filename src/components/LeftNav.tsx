@@ -10,6 +10,9 @@ const LeftNav = ({ activePage, handleClick }: LeftNavProps) => {
   return (
     <>
       <nav className={`${Styles['nav-content']} ${Styles['left-nav']} ${Styles['nav']}`}>
+        <div className={Styles['nav-header']}>
+          <input className={Styles['searchbar']} type="search" placeholder="Search buildings" />
+        </div>
         <div className={Styles['nav-body']}>
           <div className={Styles['nav-group']}>
             <div>About</div>

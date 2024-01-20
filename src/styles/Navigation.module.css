@@ -39,6 +39,22 @@
   padding-right: 0;
 }
 
+.nav-content.left-nav > .nav-header {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.searchbar {
+  width: 100%;
+  outline: none;
+  padding: 12px;
+  background: none;
+  color: inherit;
+  border: 1px solid grey;
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+
 .left-panel {
   width: 408px;
 }
