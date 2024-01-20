@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface SideNavProps {
+interface LeftNavProps {
   activePage: string;
   handleClick: (page: string) => void;
 }
 
-const Sidenav = ({ activePage, handleClick }: SideNavProps) => {
+const LeftNav = ({ activePage, handleClick }: LeftNavProps) => {
   return (
     <nav className="nav">
       <div className="nav-header">
@@ -49,7 +49,7 @@ const Sidenav = ({ activePage, handleClick }: SideNavProps) => {
   );
 };
 
-export default Sidenav;
+export default LeftNav;
 
 interface NavLinkProps {
   activePage: string;

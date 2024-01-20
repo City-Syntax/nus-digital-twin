@@ -1,13 +1,13 @@
 import React from 'react';
 
-interface SidepanelProps {
+interface LeftPanelProps {
   title: string;
   children?: React.ReactNode;
 }
 
-const Sidepanel = ({ title, children }: SidepanelProps) => {
+const LeftPanel = ({ title, children }: LeftPanelProps) => {
   return (
-    <div className="sidepanel">
+    <div className="leftpanel">
       <div>
         <h2>{title}</h2>
       </div>
@@ -18,121 +18,121 @@ const Sidepanel = ({ title, children }: SidepanelProps) => {
 
 const AboutNUSCampus = () => {
   return (
-    <Sidepanel title="About NUS Campus">
+    <LeftPanel title="About NUS Campus">
       <div>Hello World!</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const StreetCenterlines = () => {
   return (
-    <Sidepanel title="Layers: Street Centerlines">
+    <LeftPanel title="Layers: Street Centerlines">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const BuildingFootprints = () => {
   return (
-    <Sidepanel title="Layers: Building Footprints">
+    <LeftPanel title="Layers: Building Footprints">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const GreenSpaces = () => {
   return (
-    <Sidepanel title="Layers: Green Spaces">
+    <LeftPanel title="Layers: Green Spaces">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const WaterBodies = () => {
   return (
-    <Sidepanel title="Layers: Water Bodies">
+    <LeftPanel title="Layers: Water Bodies">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const OSMBuildings = () => {
   return (
-    <Sidepanel title="Layers: OSM Buildings">
+    <LeftPanel title="Layers: OSM Buildings">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const RhinoModels = () => {
   return (
-    <Sidepanel title="Layers: Rhino Models">
+    <LeftPanel title="Layers: Rhino Models">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const BIMModels = () => {
   return (
-    <Sidepanel title="Layers: BIM Models">
+    <LeftPanel title="Layers: BIM Models">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const Buildings = () => {
   return (
-    <Sidepanel title="Controls: Buildings">
+    <LeftPanel title="Controls: Buildings">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const Energy = () => {
   return (
-    <Sidepanel title="Controls: Energy">
+    <LeftPanel title="Controls: Energy">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const ThermalComfort = () => {
   return (
-    <Sidepanel title="Controls: Thermal Comfort">
+    <LeftPanel title="Controls: Thermal Comfort">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const Wind = () => {
   return (
-    <Sidepanel title="Controls: Wind">
+    <LeftPanel title="Controls: Wind">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const Solar = () => {
   return (
-    <Sidepanel title="Controls: Solar">
+    <LeftPanel title="Controls: Solar">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const Help = () => {
   return (
-    <Sidepanel title="Help">
+    <LeftPanel title="Help">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 
 const Settings = () => {
   return (
-    <Sidepanel title="Settings">
+    <LeftPanel title="Settings">
       <div>This feature is under construction.</div>
-    </Sidepanel>
+    </LeftPanel>
   );
 };
 

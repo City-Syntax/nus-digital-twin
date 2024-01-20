@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
-import Sidepanel from './Sidepanel';
-import Sidenav from './Sidenav';
+import LeftPanel from './LeftPanel';
+import LeftNav from './LeftNav';
 
 const Sidebar = () => {
   const [activePage, setActivePage] = useState('');
   const handleClick = (page: string) => setActivePage(page);
 
   return (
-    <div className="sidebar">
-      <Sidenav activePage={activePage} handleClick={handleClick}></Sidenav>
-      {activePage === 'about-nus-campus' && <Sidepanel.AboutNUSCampus></Sidepanel.AboutNUSCampus>}
-      {activePage === 'street-centerlines' && <Sidepanel.StreetCenterlines></Sidepanel.StreetCenterlines>}
-      {activePage === 'building-footprints' && <Sidepanel.BuildingFootprints></Sidepanel.BuildingFootprints>}
-      {activePage === 'green-spaces' && <Sidepanel.GreenSpaces></Sidepanel.GreenSpaces>}
-      {activePage === 'water-bodies' && <Sidepanel.WaterBodies></Sidepanel.WaterBodies>}
-      {activePage === 'osm-buildings' && <Sidepanel.OSMBuildings></Sidepanel.OSMBuildings>}
-      {activePage === 'rhino-models' && <Sidepanel.RhinoModels></Sidepanel.RhinoModels>}
-      {activePage === 'bim-models' && <Sidepanel.BIMModels></Sidepanel.BIMModels>}
-      {activePage === 'buildings' && <Sidepanel.Buildings></Sidepanel.Buildings>}
-      {activePage === 'energy' && <Sidepanel.Energy></Sidepanel.Energy>}
-      {activePage === 'thermal-comfort' && <Sidepanel.ThermalComfort></Sidepanel.ThermalComfort>}
-      {activePage === 'wind' && <Sidepanel.Wind></Sidepanel.Wind>}
-      {activePage === 'solar' && <Sidepanel.Solar></Sidepanel.Solar>}
-      {activePage === 'help' && <Sidepanel.Help></Sidepanel.Help>}
-      {activePage === 'settings' && <Sidepanel.Settings></Sidepanel.Settings>}
+    <div className="leftbar">
+      <LeftNav activePage={activePage} handleClick={handleClick}></LeftNav>
+      {activePage === 'about-nus-campus' && <LeftPanel.AboutNUSCampus></LeftPanel.AboutNUSCampus>}
+      {activePage === 'street-centerlines' && <LeftPanel.StreetCenterlines></LeftPanel.StreetCenterlines>}
+      {activePage === 'building-footprints' && <LeftPanel.BuildingFootprints></LeftPanel.BuildingFootprints>}
+      {activePage === 'green-spaces' && <LeftPanel.GreenSpaces></LeftPanel.GreenSpaces>}
+      {activePage === 'water-bodies' && <LeftPanel.WaterBodies></LeftPanel.WaterBodies>}
+      {activePage === 'osm-buildings' && <LeftPanel.OSMBuildings></LeftPanel.OSMBuildings>}
+      {activePage === 'rhino-models' && <LeftPanel.RhinoModels></LeftPanel.RhinoModels>}
+      {activePage === 'bim-models' && <LeftPanel.BIMModels></LeftPanel.BIMModels>}
+      {activePage === 'buildings' && <LeftPanel.Buildings></LeftPanel.Buildings>}
+      {activePage === 'energy' && <LeftPanel.Energy></LeftPanel.Energy>}
+      {activePage === 'thermal-comfort' && <LeftPanel.ThermalComfort></LeftPanel.ThermalComfort>}
+      {activePage === 'wind' && <LeftPanel.Wind></LeftPanel.Wind>}
+      {activePage === 'solar' && <LeftPanel.Solar></LeftPanel.Solar>}
+      {activePage === 'help' && <LeftPanel.Help></LeftPanel.Help>}
+      {activePage === 'settings' && <LeftPanel.Settings></LeftPanel.Settings>}
     </div>
   );
 };
