@@ -27,6 +27,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
     terrain: Terrain.fromWorldTerrain(),
+    animation: false,
   });
   viewer.sceneModePicker.destroy();
   viewer.baseLayerPicker.destroy();
