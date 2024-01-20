@@ -8,7 +8,7 @@ interface LeftPanelProps {
 
 const LeftPanel = ({ title, children }: LeftPanelProps) => {
   return (
-    <div className={Styles.leftpanel}>
+    <div className={`${Styles['left-panel']} ${Styles['nav-content']}`}>
       <div>
         <h2>{title}</h2>
       </div>

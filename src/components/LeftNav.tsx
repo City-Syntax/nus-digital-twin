@@ -9,7 +9,7 @@ interface LeftNavProps {
 const LeftNav = ({ activePage, handleClick }: LeftNavProps) => {
   return (
     <>
-      <nav className={Styles['nav']}>
+      <nav className={`${Styles['nav-content']} ${Styles['left-nav']} ${Styles['nav']}`}>
         <div className={Styles['nav-body']}>
           <div className={Styles['nav-group']}>
             <div>About</div>

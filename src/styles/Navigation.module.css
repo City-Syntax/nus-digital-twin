@@ -1,17 +1,23 @@
-.leftbar {
+.nav-container {
   position: absolute;
   z-index: 1;
-  left: 24px;
   top: 0;
   bottom: 0;
   margin: auto 0;
-  height: 80vh;
-  max-height: 1000px;
   display: flex;
 }
 
-.nav,
-.leftpanel {
+.nav-container > * + * {
+  margin-left: 8px;
+}
+
+.nav-container.left-container {
+  left: 24px;
+  height: 80vh;
+  max-height: 1000px;
+}
+
+.nav-content {
   background-color: var(--base-bg);
   color: var(--base-content-100);
   backdrop-filter: saturate(150%) blur(4px);
@@ -22,19 +28,17 @@
   flex-direction: column;
 }
 
-.nav {
-  width: 328px;
-  margin-right: 8px;
+.nav-content > * + *,
+.nav-body > * + * {
+  margin-top: 20px;
 }
 
-.leftpanel {
+.nav-content.left-nav {
+  width: 258px;
+}
+
+.left-panel {
   width: 408px;
-}
-
-.nav > *:not(:last-child),
-.leftpanel > *:not(:last-child),
-.nav-body > *:not(:last-child) {
-  margin-bottom: 20px;
 }
 
 .nav-body {

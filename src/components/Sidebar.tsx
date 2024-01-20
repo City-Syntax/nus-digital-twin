@@ -8,7 +8,7 @@ const Sidebar = () => {
   const handleClick = (page: string) => setActivePage(page);
 
   return (
-    <div className={Styles.leftbar}>
+    <div className={`${Styles['left-container']} ${Styles['nav-container']}`}>
       <LeftNav activePage={activePage} handleClick={handleClick}></LeftNav>
       {activePage === 'about-nus-campus' && <LeftPanel.AboutNUSCampus></LeftPanel.AboutNUSCampus>}
       {activePage === 'street-centerlines' && <LeftPanel.StreetCenterlines></LeftPanel.StreetCenterlines>}
