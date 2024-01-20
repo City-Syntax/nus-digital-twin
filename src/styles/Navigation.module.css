@@ -1,0 +1,100 @@
+.nav-container {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  display: flex;
+}
+
+.nav-container > * + * {
+  margin-left: 8px;
+}
+
+.nav-container.left-container {
+  left: 24px;
+  height: 80vh;
+  max-height: 1000px;
+}
+
+.nav-content {
+  background-color: var(--base-bg);
+  color: var(--base-content-100);
+  backdrop-filter: saturate(150%) blur(4px);
+  -webkit-backdrop-filter: saturate(150%) blur(4px);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-content > * + *,
+.nav-body > * + * {
+  margin-top: 20px;
+}
+
+.nav-content.left-nav {
+  width: 258px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.left-panel {
+  width: 408px;
+}
+
+.nav-body {
+  overflow-y: scroll;
+}
+
+.nav-footer {
+  margin-top: auto;
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-group > div:first-child {
+  margin-left: 16px;
+  color: var(--base-content-200);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.nav-group > button {
+  position: relative;
+  font-size: 1rem;
+  padding: 8px 16px;
+  background-color: transparent;
+  border: none;
+  color: var(--base-content-100);
+  text-align: left;
+  cursor: pointer;
+  transition: color 250ms;
+}
+
+.nav-group > button:hover,
+.nav-group > button.active {
+  color: var(--primary-100);
+}
+
+.nav-group > button::before {
+  content: '';
+  background-color: var(--primary-100);
+  width: 4px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: 0 20px 20px 0;
+  transition: opacity 250ms;
+  opacity: 0;
+}
+
+.nav-group > button.active::before {
+  opacity: 1;
+}

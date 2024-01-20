@@ -2,7 +2,8 @@
 interface Props {
   title: string;
 }
-
+import '@fontsource-variable/inter';
+import '@fontsource/ibm-plex-sans/600.css';
 const { title } = Astro.props;
 ---
 
@@ -33,20 +34,28 @@ const { title } = Astro.props;
   html {
     margin: 0;
     padding: 0;
-    font-family: system-ui, sans-serif;
   }
 
   * {
     box-sizing: border-box;
+    font-family: 'Inter Variable', system-ui, sans-serif;
   }
 
   h1,
   h2,
   h3,
-  h4,
+  h4 {
+    color: var(--base-content-100);
+    margin: 0;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans';
+  }
+
   p {
     color: var(--base-content-100);
     margin: 0;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans';
   }
 
   h1 {
@@ -55,102 +64,5 @@ const { title } = Astro.props;
 
   h2 {
     font-size: 1.5rem;
-  }
-
-  .sidebar {
-    position: absolute;
-    z-index: 1;
-    left: 24px;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    height: 90vh;
-    display: flex;
-  }
-
-  .nav,
-  .sidepanel {
-    background-color: var(--base-bg);
-    color: var(--base-content-100);
-    backdrop-filter: saturate(150%) blur(4px);
-    border-radius: 16px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav {
-    width: 328px;
-    margin-right: 8px;
-  }
-
-  .sidepanel {
-    width: 408px;
-  }
-
-  .nav > *:not(:last-child),
-  .sidepanel > *:not(:last-child),
-  .nav-body > *:not(:last-child) {
-    margin-bottom: 20px;
-  }
-
-  .nav-header {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .nav-body {
-    overflow-y: scroll;
-  }
-
-  .nav-footer {
-    margin-top: auto;
-  }
-
-  .nav-group {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav-group > div:first-child {
-    color: var(--base-content-200);
-    font-weight: 600;
-    font-size: 0.875rem;
-  }
-
-  .nav-group > button {
-    position: relative;
-    font-size: 1rem;
-    padding: 8px 0;
-    background-color: transparent;
-    border: none;
-    color: var(--base-content-100);
-    text-align: left;
-    cursor: pointer;
-    transition: color 250ms;
-  }
-
-  .nav-group > button:hover,
-  .nav-group > button.active {
-    color: var(--primary-100);
-  }
-
-  .nav-group > button::before {
-    content: '';
-    background-color: var(--primary-100);
-    width: 4px;
-    height: 20px;
-    position: absolute;
-    top: 50%;
-    bottom: 0;
-    left: -16px;
-    transform: translateY(-50%);
-    border-radius: 20px;
-    transition: opacity 250ms;
-    opacity: 0;
-  }
-
-  .nav-group > button.active::before {
-    opacity: 1;
   }
 </style>
