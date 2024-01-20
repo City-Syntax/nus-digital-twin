@@ -35,6 +35,8 @@
 
 .nav-content.left-nav {
   width: 258px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .left-panel {
@@ -55,6 +57,7 @@
 }
 
 .nav-group > div:first-child {
+  margin-left: 16px;
   color: var(--base-content-200);
   font-weight: 600;
   font-size: 0.875rem;
@@ -63,7 +66,7 @@
 .nav-group > button {
   position: relative;
   font-size: 1rem;
-  padding: 8px 0;
+  padding: 8px 16px;
   background-color: transparent;
   border: none;
   color: var(--base-content-100);
@@ -85,9 +88,9 @@
   position: absolute;
   top: 50%;
   bottom: 0;
-  left: -16px;
+  left: 0;
   transform: translateY(-50%);
-  border-radius: 20px;
+  border-radius: 0 20px 20px 0;
   transition: opacity 250ms;
   opacity: 0;
 }
