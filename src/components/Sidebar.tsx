@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import LeftPanel from './LeftPanel';
 import LeftNav from './LeftNav';
+import Styles from '../styles/Navigation.module.css';
 
 const Sidebar = () => {
   const [activePage, setActivePage] = useState('');
   const handleClick = (page: string) => setActivePage(page);
 
   return (
-    <div className="leftbar">
+    <div className={Styles.leftbar}>
       <LeftNav activePage={activePage} handleClick={handleClick}></LeftNav>
       {activePage === 'about-nus-campus' && <LeftPanel.AboutNUSCampus></LeftPanel.AboutNUSCampus>}
       {activePage === 'street-centerlines' && <LeftPanel.StreetCenterlines></LeftPanel.StreetCenterlines>}

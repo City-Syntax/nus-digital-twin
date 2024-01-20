@@ -1,4 +1,5 @@
 import React from 'react';
+import Styles from '../styles/Navigation.module.css';
 
 interface LeftPanelProps {
   title: string;
@@ -7,7 +8,7 @@ interface LeftPanelProps {
 
 const LeftPanel = ({ title, children }: LeftPanelProps) => {
   return (
-    <div className="leftpanel">
+    <div className={Styles.leftpanel}>
       <div>
         <h2>{title}</h2>
       </div>
