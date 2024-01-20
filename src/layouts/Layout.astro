@@ -2,6 +2,7 @@
 interface Props {
   title: string;
 }
+import '../styles/Global.css';
 import '@fontsource-variable/inter';
 import '@fontsource/ibm-plex-sans/600.css';
 const { title } = Astro.props;
@@ -42,48 +43,3 @@ const isProd = import.meta.env.PROD;
     <slot />
   </body>
 </html>
-<style is:global>
-  :root {
-    --base-content-100: #f5f5f5;
-    --base-content-200: #a9a9a9;
-    --base-bg: rgba(33, 33, 33, 0.74);
-    --primary-100: #60a5fa;
-    --primary-200: #1d4ed8;
-  }
-
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-  }
-
-  * {
-    box-sizing: border-box;
-    font-family: 'Inter Variable', system-ui, sans-serif;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    color: var(--base-content-100);
-    margin: 0;
-    font-weight: 600;
-    font-family: 'IBM Plex Sans';
-  }
-
-  p {
-    color: var(--base-content-100);
-    margin: 0;
-    font-weight: 600;
-    font-family: 'IBM Plex Sans';
-  }
-
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-</style>

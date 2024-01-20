@@ -22,8 +22,8 @@
   color: var(--base-content-100);
   backdrop-filter: saturate(150%) blur(4px);
   -webkit-backdrop-filter: saturate(150%) blur(4px);
-  border-radius: 16px;
-  padding: 16px;
+  border-radius: var(--rounded-base);
+  padding: var(--padding-base);
   display: flex;
   flex-direction: column;
 }
@@ -34,14 +34,14 @@
 }
 
 .nav-content.left-nav {
-  width: 258px;
+  width: 218px;
   padding-left: 0;
   padding-right: 0;
 }
 
 .nav-content.left-nav > .nav-header {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: var(--padding-base);
+  padding-right: var(--padding-base);
 }
 
 .searchbar {
@@ -52,7 +52,7 @@
   color: inherit;
   border: 1px solid grey;
   border-radius: 8px;
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
 }
 
 .left-panel {
@@ -64,6 +64,7 @@
 }
 
 .nav-footer {
+  padding-top: 16px;
   margin-top: auto;
 }
 
@@ -73,16 +74,16 @@
 }
 
 .nav-group > div:first-child {
-  margin-left: 16px;
+  padding-left: var(--padding-base);
   color: var(--base-content-200);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
 }
 
 .nav-group > button {
   position: relative;
-  font-size: 1rem;
-  padding: 8px 16px;
+  font-size: var(--text-base);
+  padding: 8px var(--padding-base);
   background-color: transparent;
   border: none;
   color: var(--base-content-100);
