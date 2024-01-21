@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LeftPanel from './LeftPanel';
+import Panel from './Panel';
 import LeftNav from './LeftNav';
 import Styles from '../styles/Navigation.module.css';
 
@@ -11,29 +11,25 @@ const Sidebar = () => {
   return (
     <div className={`${Styles['left-container']} ${Styles['nav-container']}`}>
       <LeftNav activePage={activePage} handleClick={handleClick}></LeftNav>
-      {activePage === 'about-nus-campus' && (
-        <LeftPanel.AboutNUSCampus handleClick={handleClose}></LeftPanel.AboutNUSCampus>
-      )}
+      {activePage === 'about-nus-campus' && <Panel.AboutNUSCampus handleClick={handleClose}></Panel.AboutNUSCampus>}
       {activePage === 'street-centerlines' && (
-        <LeftPanel.StreetCenterlines handleClick={handleClose}></LeftPanel.StreetCenterlines>
+        <Panel.StreetCenterlines handleClick={handleClose}></Panel.StreetCenterlines>
       )}
       {activePage === 'building-footprints' && (
-        <LeftPanel.BuildingFootprints handleClick={handleClose}></LeftPanel.BuildingFootprints>
+        <Panel.BuildingFootprints handleClick={handleClose}></Panel.BuildingFootprints>
       )}
-      {activePage === 'green-spaces' && <LeftPanel.GreenSpaces handleClick={handleClose}></LeftPanel.GreenSpaces>}
-      {activePage === 'water-bodies' && <LeftPanel.WaterBodies handleClick={handleClose}></LeftPanel.WaterBodies>}
-      {activePage === 'osm-buildings' && <LeftPanel.OSMBuildings handleClick={handleClose}></LeftPanel.OSMBuildings>}
-      {activePage === 'rhino-models' && <LeftPanel.RhinoModels handleClick={handleClose}></LeftPanel.RhinoModels>}
-      {activePage === 'bim-models' && <LeftPanel.BIMModels handleClick={handleClose}></LeftPanel.BIMModels>}
-      {activePage === 'buildings' && <LeftPanel.Buildings handleClick={handleClose}></LeftPanel.Buildings>}
-      {activePage === 'energy' && <LeftPanel.Energy handleClick={handleClose}></LeftPanel.Energy>}
-      {activePage === 'thermal-comfort' && (
-        <LeftPanel.ThermalComfort handleClick={handleClose}></LeftPanel.ThermalComfort>
-      )}
-      {activePage === 'wind' && <LeftPanel.Wind handleClick={handleClose}></LeftPanel.Wind>}
-      {activePage === 'solar' && <LeftPanel.Solar handleClick={handleClose}></LeftPanel.Solar>}
-      {activePage === 'help' && <LeftPanel.Help handleClick={handleClose}></LeftPanel.Help>}
-      {activePage === 'settings' && <LeftPanel.Settings handleClick={handleClose}></LeftPanel.Settings>}
+      {activePage === 'green-spaces' && <Panel.GreenSpaces handleClick={handleClose}></Panel.GreenSpaces>}
+      {activePage === 'water-bodies' && <Panel.WaterBodies handleClick={handleClose}></Panel.WaterBodies>}
+      {activePage === 'osm-buildings' && <Panel.OSMBuildings handleClick={handleClose}></Panel.OSMBuildings>}
+      {activePage === 'rhino-models' && <Panel.RhinoModels handleClick={handleClose}></Panel.RhinoModels>}
+      {activePage === 'bim-models' && <Panel.BIMModels handleClick={handleClose}></Panel.BIMModels>}
+      {activePage === 'buildings' && <Panel.Buildings handleClick={handleClose}></Panel.Buildings>}
+      {activePage === 'energy' && <Panel.Energy handleClick={handleClose}></Panel.Energy>}
+      {activePage === 'thermal-comfort' && <Panel.ThermalComfort handleClick={handleClose}></Panel.ThermalComfort>}
+      {activePage === 'wind' && <Panel.Wind handleClick={handleClose}></Panel.Wind>}
+      {activePage === 'solar' && <Panel.Solar handleClick={handleClose}></Panel.Solar>}
+      {activePage === 'help' && <Panel.Help handleClick={handleClose}></Panel.Help>}
+      {activePage === 'settings' && <Panel.Settings handleClick={handleClose}></Panel.Settings>}
     </div>
   );
 };

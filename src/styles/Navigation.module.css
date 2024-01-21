@@ -55,17 +55,17 @@
   font-size: var(--text-sm);
 }
 
-.left-panel {
+.panel {
   width: 408px;
 }
 
-.left-panel > div:first-child {
+.panel > div:first-child {
   display: flex;
   justify-content: space-between;
   align-items: start;
 }
 
-.left-panel > div:first-child > button {
+.panel > div:first-child > button {
   height: 32px;
   width: 32px;
   padding: 8px;
