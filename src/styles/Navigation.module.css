@@ -18,7 +18,7 @@
 }
 
 .nav-content {
-  background-color: var(--base-bg);
+  background-color: var(--base-bg-200);
   color: var(--base-content-100);
   backdrop-filter: saturate(150%) blur(4px);
   -webkit-backdrop-filter: saturate(150%) blur(4px);
@@ -57,6 +57,25 @@
 
 .left-panel {
   width: 408px;
+}
+
+.left-panel > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.left-panel > div:first-child > button {
+  height: 32px;
+  width: 32px;
+  padding: 8px;
+  border: none;
+  border-radius: 100%;
+  background-color: var(--base-bg-100);
+  color: var(--base-content-100);
+  backdrop-filter: saturate(120%) blur(4px);
+  -webkit-backdrop-filter: saturate(120%) blur(4px);
+  cursor: pointer;
 }
 
 .nav-body {
