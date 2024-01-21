@@ -1,6 +1,6 @@
 import React from 'react';
 import Styles from '../styles/Navigation.module.css';
-import Icons from './Icons';
+import NavLink from './NavLink';
 
 interface LeftNavProps {
   activePage: string;
@@ -53,37 +53,3 @@ const LeftNav = ({ activePage, handleClick }: LeftNavProps) => {
 };
 
 export default LeftNav;
-
-interface NavLinkProps {
-  activePage: string;
-  label: string;
-  handleClick: (page: string) => void;
-}
-
-const NavLink = ({ activePage, label, handleClick }: NavLinkProps) => {
-  const pageName = label.toLowerCase().split(' ').join('-');
-  return (
-    <button
-      className={activePage === pageName ? Styles.active : ''}
-      type="button"
-      onClick={() => handleClick(pageName)}
-    >
-      {pageName === 'about-nus-campus' && <Icons.About></Icons.About>}
-      {pageName === 'street-centerlines' && <Icons.StreetCenterlines></Icons.StreetCenterlines>}
-      {pageName === 'building-footprints' && <Icons.BuildingFootprints></Icons.BuildingFootprints>}
-      {pageName === 'green-spaces' && <Icons.GreenSpaces></Icons.GreenSpaces>}
-      {pageName === 'water-bodies' && <Icons.WaterBodies></Icons.WaterBodies>}
-      {pageName === 'osm-buildings' && <Icons.OSMBuildings></Icons.OSMBuildings>}
-      {pageName === 'rhino-models' && <Icons.RhinoModels></Icons.RhinoModels>}
-      {pageName === 'bim-models' && <Icons.BIMModels></Icons.BIMModels>}
-      {pageName === 'buildings' && <Icons.Buildings></Icons.Buildings>}
-      {pageName === 'energy' && <Icons.Energy></Icons.Energy>}
-      {pageName === 'thermal-comfort' && <Icons.ThermalComfort></Icons.ThermalComfort>}
-      {pageName === 'wind' && <Icons.Wind></Icons.Wind>}
-      {pageName === 'solar' && <Icons.Solar></Icons.Solar>}
-      {pageName === 'help' && <Icons.Help></Icons.Help>}
-      {pageName === 'settings' && <Icons.Settings></Icons.Settings>}
-      {label}
-    </button>
-  );
-};
