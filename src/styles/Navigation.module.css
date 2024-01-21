@@ -101,7 +101,7 @@
 
 .nav-group > button {
   position: relative;
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   padding: 8px var(--padding-base);
   background-color: transparent;
   border: none;
@@ -109,6 +109,14 @@
   text-align: left;
   cursor: pointer;
   transition: color 250ms;
+  align-items: center;
+  display: flex;
+}
+
+.nav-group > button > svg {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
 }
 
 .nav-group > button:hover,
