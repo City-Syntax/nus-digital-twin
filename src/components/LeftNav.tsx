@@ -32,14 +32,6 @@ const LeftNav = ({ activePage, handleClick }: LeftNavProps) => {
             <NavLink activePage={activePage} label="Rhino Models" handleClick={handleClick}></NavLink>
             <NavLink activePage={activePage} label="BIM Models" handleClick={handleClick}></NavLink>
           </div>
-          <div className={Styles['nav-group']}>
-            <div>Controls</div>
-            <NavLink activePage={activePage} label="Buildings" handleClick={handleClick}></NavLink>
-            <NavLink activePage={activePage} label="Energy" handleClick={handleClick}></NavLink>
-            <NavLink activePage={activePage} label="Thermal Comfort" handleClick={handleClick}></NavLink>
-            <NavLink activePage={activePage} label="Wind" handleClick={handleClick}></NavLink>
-            <NavLink activePage={activePage} label="Solar" handleClick={handleClick}></NavLink>
-          </div>
         </div>
         <div className={Styles['nav-footer']}>
           <div className={Styles['nav-group']}>

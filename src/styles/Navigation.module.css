@@ -13,8 +13,14 @@
 
 .nav-container.left-container {
   left: 24px;
-  height: 80vh;
+  height: 70vh;
   max-height: 1000px;
+}
+
+.nav-container.right-container {
+  right: 24px;
+  height: 36vh;
+  max-height: 600px;
 }
 
 .nav-content {
@@ -35,6 +41,12 @@
 
 .nav-content.left-nav {
   width: 218px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nav-content.right-nav {
+  width: 188px;
   padding-left: 0;
   padding-right: 0;
 }
