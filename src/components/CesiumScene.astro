@@ -20,12 +20,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     Terrain,
     Viewer,
     Cesium3DTileStyle,
+    IonImageryProvider,
+    ImageryLayer,
   } from 'cesium';
 
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
+    // TODO: Serve Sentinel-2 base layer to save on bandwidth
+    baseLayer: ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}),
     terrain: Terrain.fromWorldTerrain(),
     animation: false,
   });
