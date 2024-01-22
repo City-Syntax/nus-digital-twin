@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from '../styles/Navigation.module.css';
+import Styles from '../styles/Navigation.module.scss';
 import Icons from './Icons';
 
 interface NavLinkProps {

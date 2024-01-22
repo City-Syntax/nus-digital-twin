@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from '../styles/Navigation.module.css';
+import Styles from '../styles/Navigation.module.scss';
 import NavLink from './NavLink';
 
 interface LeftNavProps {
@@ -10,7 +10,7 @@ interface LeftNavProps {
 const LeftNav = ({ activePage, handleClick }: LeftNavProps) => {
   return (
     <>
-      <nav className={`${Styles['nav-content']} ${Styles['left-nav']} ${Styles['nav']}`}>
+      <nav className={Styles['left-nav']}>
         <div className={Styles['nav-header']}>
           <input className={Styles['searchbar']} type="search" placeholder="Search buildings" />
         </div>

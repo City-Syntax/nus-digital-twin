@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Panel from './Panel';
 import LeftNav from './LeftNav';
 import RightNav from './RightNav';
-import Styles from '../styles/Navigation.module.css';
+import Styles from '../styles/Navigation.module.scss';
 
 const Sidebar = () => {
   const [activePage, setActivePage] = useState('');
@@ -11,7 +11,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className={`${Styles['left-container']} ${Styles['nav-container']}`}>
+      <div className={Styles['left-container']}>
         <LeftNav activePage={activePage} handleClick={handleClick}></LeftNav>
         {activePage === 'about-nus-campus' && <Panel.AboutNUSCampus handleClick={handleClose}></Panel.AboutNUSCampus>}
         {activePage === 'street-centerlines' && (
@@ -28,7 +28,7 @@ const Sidebar = () => {
         {activePage === 'help' && <Panel.Help handleClick={handleClose}></Panel.Help>}
         {activePage === 'settings' && <Panel.Settings handleClick={handleClose}></Panel.Settings>}
       </div>
-      <div className={`${Styles['right-container']} ${Styles['nav-container']}`}>
+      <div className={Styles['right-container']}>
         {activePage === 'buildings' && <Panel.Buildings handleClick={handleClose}></Panel.Buildings>}
         {activePage === 'energy' && <Panel.Energy handleClick={handleClose}></Panel.Energy>}
         {activePage === 'thermal-comfort' && <Panel.ThermalComfort handleClick={handleClose}></Panel.ThermalComfort>}

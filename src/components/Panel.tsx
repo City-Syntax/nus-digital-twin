@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from '../styles/Navigation.module.css';
+import Styles from '../styles/Navigation.module.scss';
 import Icons from './Icons';
 
 interface PanelProps {
@@ -14,7 +14,7 @@ interface PanelChildProps {
 
 const Panel = ({ title, handleClick, children }: PanelProps) => {
   return (
-    <div className={`${Styles['panel']} ${Styles['nav-content']}`}>
+    <div className={Styles['panel']}>
       <div>
         <h2>{title}</h2>
         <button type="button" onClick={handleClick}>

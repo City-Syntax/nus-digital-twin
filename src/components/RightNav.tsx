@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from '../styles/Navigation.module.css';
+import Styles from '../styles/Navigation.module.scss';
 import NavLink from './NavLink';
 
 interface RightNavProps {
@@ -10,7 +10,7 @@ interface RightNavProps {
 const RightNav = ({ activePage, handleClick }: RightNavProps) => {
   return (
     <>
-      <nav className={`${Styles['nav-content']} ${Styles['right-nav']} ${Styles['nav']}`}>
+      <nav className={Styles['right-nav']}>
         <div className={Styles['nav-body']}>
           <div className={Styles['nav-group']}>
             <div>Controls</div>
