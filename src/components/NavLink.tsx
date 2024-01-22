@@ -9,8 +9,8 @@ interface NavLinkProps {
 }
 
 const NavLink = ({ activePage, label, handleClick }: NavLinkProps) => {
-  const pageName = label.toLowerCase().split(' ').join('-');
-  const key = label.replace(/\s/g, '') as keyof typeof Icons;
+  const pageName = label.replace(/\s/g, '');
+  const key = pageName as keyof typeof Icons;
   return (
     <button
       className={activePage === pageName ? Styles.active : ''}
