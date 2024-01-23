@@ -2,27 +2,20 @@ import React from 'react';
 import Styles from '../styles/Navigation.module.scss';
 import NavLink from './NavLink';
 
-interface RightNavProps {
-  activePage: string;
-  handleClick: (page: string) => void;
-}
-
-const RightNav = ({ activePage, handleClick }: RightNavProps) => {
+const RightNav = () => {
   return (
-    <>
-      <nav className={Styles['right-nav']}>
-        <div className={Styles['nav-body']}>
-          <div className={Styles['nav-group']}>
-            <div>Controls</div>
-            <NavLink activePage={activePage} label="Buildings" handleClick={handleClick}></NavLink>
-            <NavLink activePage={activePage} label="Energy" handleClick={handleClick}></NavLink>
-            <NavLink activePage={activePage} label="Thermal Comfort" handleClick={handleClick}></NavLink>
-            <NavLink activePage={activePage} label="Wind" handleClick={handleClick}></NavLink>
-            <NavLink activePage={activePage} label="Solar" handleClick={handleClick}></NavLink>
-          </div>
+    <nav className={Styles['right-nav']}>
+      <div className={Styles['nav-body']}>
+        <div className={Styles['nav-group']}>
+          <div>Controls</div>
+          <NavLink.Right label="Buildings"></NavLink.Right>
+          <NavLink.Right label="Energy"></NavLink.Right>
+          <NavLink.Right label="Thermal Comfort"></NavLink.Right>
+          <NavLink.Right label="Wind"></NavLink.Right>
+          <NavLink.Right label="Solar"></NavLink.Right>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 };
 

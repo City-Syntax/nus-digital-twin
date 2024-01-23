@@ -1,23 +1,19 @@
 import React from 'react';
 import Styles from '../styles/Navigation.module.scss';
 import Icons from './Icons';
+import { activePage } from '../navStore';
 
 interface PanelProps {
   title: string;
-  handleClick: () => void;
   children?: React.ReactNode;
 }
 
-interface PanelChildProps {
-  handleClick: () => void;
-}
-
-const Panel = ({ title, handleClick, children }: PanelProps) => {
+const Panel = ({ title, children }: PanelProps) => {
   return (
     <div className={Styles['panel']}>
       <div>
         <h2>{title}</h2>
-        <button type="button" onClick={handleClick}>
+        <button type="button" onClick={() => activePage.set('')}>
           <Icons.Close></Icons.Close>
         </button>
       </div>
@@ -26,121 +22,121 @@ const Panel = ({ title, handleClick, children }: PanelProps) => {
   );
 };
 
-const AboutNUSCampus = ({ handleClick }: PanelChildProps) => {
+const AboutNUSCampus = () => {
   return (
-    <Panel title="About NUS Campus" handleClick={handleClick}>
+    <Panel title="About NUS Campus">
       <div>Hello World!</div>
     </Panel>
   );
 };
 
-const StreetCenterlines = ({ handleClick }: PanelChildProps) => {
+const StreetCenterlines = () => {
   return (
-    <Panel title="Layers: Street Centerlines" handleClick={handleClick}>
+    <Panel title="Layers: Street Centerlines">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const BuildingFootprints = ({ handleClick }: PanelChildProps) => {
+const BuildingFootprints = () => {
   return (
-    <Panel title="Layers: Building Footprints" handleClick={handleClick}>
+    <Panel title="Layers: Building Footprints">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const GreenSpaces = ({ handleClick }: PanelChildProps) => {
+const GreenSpaces = () => {
   return (
-    <Panel title="Layers: Green Spaces" handleClick={handleClick}>
+    <Panel title="Layers: Green Spaces">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const WaterBodies = ({ handleClick }: PanelChildProps) => {
+const WaterBodies = () => {
   return (
-    <Panel title="Layers: Water Bodies" handleClick={handleClick}>
+    <Panel title="Layers: Water Bodies">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const OSMBuildings = ({ handleClick }: PanelChildProps) => {
+const OSMBuildings = () => {
   return (
-    <Panel title="Layers: OSM Buildings" handleClick={handleClick}>
+    <Panel title="Layers: OSM Buildings">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const RhinoModels = ({ handleClick }: PanelChildProps) => {
+const RhinoModels = () => {
   return (
-    <Panel title="Layers: Rhino Models" handleClick={handleClick}>
+    <Panel title="Layers: Rhino Models">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const BIMModels = ({ handleClick }: PanelChildProps) => {
+const BIMModels = () => {
   return (
-    <Panel title="Layers: BIM Models" handleClick={handleClick}>
+    <Panel title="Layers: BIM Models">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const Buildings = ({ handleClick }: PanelChildProps) => {
+const Buildings = () => {
   return (
-    <Panel title="Controls: Buildings" handleClick={handleClick}>
+    <Panel title="Controls: Buildings">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const Energy = ({ handleClick }: PanelChildProps) => {
+const Energy = () => {
   return (
-    <Panel title="Controls: Energy" handleClick={handleClick}>
+    <Panel title="Controls: Energy">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const ThermalComfort = ({ handleClick }: PanelChildProps) => {
+const ThermalComfort = () => {
   return (
-    <Panel title="Controls: Thermal Comfort" handleClick={handleClick}>
+    <Panel title="Controls: Thermal Comfort">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const Wind = ({ handleClick }: PanelChildProps) => {
+const Wind = () => {
   return (
-    <Panel title="Controls: Wind" handleClick={handleClick}>
+    <Panel title="Controls: Wind">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const Solar = ({ handleClick }: PanelChildProps) => {
+const Solar = () => {
   return (
-    <Panel title="Controls: Solar" handleClick={handleClick}>
+    <Panel title="Controls: Solar">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const Help = ({ handleClick }: PanelChildProps) => {
+const Help = () => {
   return (
-    <Panel title="Help" handleClick={handleClick}>
+    <Panel title="Help">
       <div>This feature is under construction.</div>
     </Panel>
   );
 };
 
-const Settings = ({ handleClick }: PanelChildProps) => {
+const Settings = () => {
   return (
-    <Panel title="Settings" handleClick={handleClick}>
+    <Panel title="Settings">
       <div>This feature is under construction.</div>
     </Panel>
   );

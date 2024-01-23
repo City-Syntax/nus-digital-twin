@@ -1,32 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Panel from './Panel';
 import LeftNav from './LeftNav';
 import RightNav from './RightNav';
 import Styles from '../styles/Navigation.module.scss';
+import { useStore } from '@nanostores/react';
+import { activePage, isLeftPanel } from '../navStore';
 
 const Sidebar = () => {
-  const [activePage, setActivePage] = useState('');
-  const [isLeftPanel, setIsLeftPanel] = useState<Boolean>();
-  const handleLeftNav = (page: string) => {
-    setIsLeftPanel(true);
-    setActivePage(page);
-  };
-  const handleRightNav = (page: string) => {
-    setIsLeftPanel(false);
-    setActivePage(page);
-  };
-  const handleClose = () => setActivePage('');
-  const key = activePage as keyof typeof Panel;
+  const $activePage = useStore(activePage);
+  const $isLeftPanel = useStore(isLeftPanel);
+  const key = $activePage as keyof typeof Panel;
 
   return (
     <>
       <div className={Styles['left-container']}>
-        <LeftNav activePage={activePage} handleClick={handleLeftNav}></LeftNav>
-        {key && isLeftPanel && Panel[key]({ handleClick: handleClose })}
+        <LeftNav></LeftNav>
+        {key && $isLeftPanel && Panel[key]()}
       </div>
       <div className={Styles['right-container']}>
-        {key && !isLeftPanel && Panel[key]({ handleClick: handleClose })}
-        <RightNav activePage={activePage} handleClick={handleRightNav}></RightNav>
+        {key && !$isLeftPanel && Panel[key]()}
+        <RightNav></RightNav>
       </div>
     </>
   );
