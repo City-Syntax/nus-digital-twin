@@ -64,6 +64,7 @@
     align-items: start;
 
     > button {
+      flex-shrink: 0;
       height: 32px;
       width: 32px;
       padding: 8px;

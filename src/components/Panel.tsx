@@ -1,7 +1,8 @@
 import React from 'react';
 import Styles from '../styles/Navigation.module.scss';
 import Icons from './Icons';
-import { activePage } from '../navStore';
+import { activePage, buildingProperties } from '../navStore';
+import { useStore } from '@nanostores/react';
 
 interface PanelProps {
   title: string;
@@ -9,10 +10,11 @@ interface PanelProps {
 }
 
 const Panel = ({ title, children }: PanelProps) => {
+  const $buildingProperties = useStore(buildingProperties);
   return (
     <div className={Styles['panel']}>
       <div>
-        <h2>{title}</h2>
+        <h2>{activePage.get() === 'BuildingInfo' ? $buildingProperties.name : title}</h2>
         <button type="button" onClick={() => activePage.set('')}>
           <Icons.Close></Icons.Close>
         </button>
@@ -142,6 +144,14 @@ const Settings = () => {
   );
 };
 
+const BuildingInfo = () => {
+  return (
+    <Panel title="BuildingInfo">
+      <div>This is a building.</div>
+    </Panel>
+  );
+};
+
 export default {
   AboutNUSCampus,
   StreetCenterlines,
@@ -158,4 +168,5 @@ export default {
   Solar,
   Help,
   Settings,
+  BuildingInfo,
 };
