@@ -75,6 +75,11 @@
       backdrop-filter: saturate(120%) blur(4px);
       -webkit-backdrop-filter: saturate(120%) blur(4px);
       cursor: pointer;
+      transition: background-color 150ms;
+
+      &:hover {
+        background-color: var(--base-content-300);
+      }
     }
   }
 }
@@ -147,7 +152,7 @@
     color: var(--base-content-100);
     text-align: left;
     cursor: pointer;
-    transition: color 250ms;
+    transition: color 200ms;
     align-items: center;
     display: flex;
 
@@ -167,7 +172,7 @@
       left: 0;
       transform: translateY(-50%);
       border-radius: 0 20px 20px 0;
-      transition: opacity 250ms;
+      transition: opacity 200ms;
       opacity: 0;
     }
 
