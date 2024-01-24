@@ -12,7 +12,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 <script>
   window.CESIUM_BASE_URL = '/cesium';
 
-  import { activePage, isLeftPanel, buildingProperties } from '../navStore';
+  import { activePage, isLeftPanel, buildingProperties, searchQuery } from '../navStore';
 
   import {
     Cartesian3,
@@ -82,7 +82,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (defined(pickedFeature)) {
       activePage.set('BuildingInfo');
       isLeftPanel.set(true);
-      buildingProperties.setKey('name', pickedFeature.getProperty('name') || 'Unknown Building Name');
+      const featureName = pickedFeature.getProperty('name') || '';
+      buildingProperties.setKey('name', featureName || 'Unknown Building Name');
+      searchQuery.set(featureName);
     }
   }, ScreenSpaceEventType.LEFT_CLICK);
 </script>

@@ -80,14 +80,38 @@
 }
 
 .searchbar {
-  width: 100%;
-  outline: none;
-  padding: 12px;
-  background: none;
-  color: inherit;
-  border: 1px solid grey;
-  border-radius: 8px;
-  font-size: var(--text-sm);
+  position: relative;
+
+  > input {
+    width: 100%;
+    outline: none;
+    padding: 12px 40px 12px 12px;
+    background: none;
+    color: inherit;
+    border: 1px solid var(--base-content-200);
+    border-radius: 8px;
+    font-size: var(--text-sm);
+    transition: background-color 150ms;
+
+    &::placeholder {
+      color: var(--base-content-200);
+      opacity: 1;
+    }
+
+    &:focus, &:hover {
+      background-color: var(--base-content-400);
+    }
+  }
+
+  > svg {
+    height: 20px;
+    position: absolute;
+    margin-right: 12px;
+    right: 0px;
+    top: 50%;
+    bottom: 0;
+    transform: translateY(-50%);
+  }
 }
 
 .nav-header {

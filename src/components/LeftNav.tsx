@@ -1,12 +1,25 @@
 import React from 'react';
 import Styles from '../styles/Navigation.module.scss';
 import NavLink from './NavLink';
+import { useStore } from '@nanostores/react';
+import { searchQuery } from '../navStore';
+import Icons from './Icons';
 
 const LeftNav = () => {
+  const $searchQuery = useStore(searchQuery);
   return (
     <nav className={Styles['left-nav']}>
       <div className={Styles['nav-header']}>
-        <input className={Styles['searchbar']} type="search" placeholder="Search buildings" />
+        <div className={Styles['searchbar']}>
+          <input
+            className={Styles['searchbar']}
+            type="text"
+            placeholder="Search buildings"
+            onChange={(e) => searchQuery.set(e.target.value)}
+            value={$searchQuery}
+          />
+          <Icons.Search></Icons.Search>
+        </div>
       </div>
       <div className={Styles['nav-body']}>
         <div className={Styles['nav-group']}>
