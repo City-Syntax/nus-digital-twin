@@ -67,6 +67,7 @@
       flex-shrink: 0;
       height: 32px;
       width: 32px;
+      margin-left: 8px;
       padding: 8px;
       border: none;
       border-radius: 100%;
@@ -97,6 +98,7 @@
     border-radius: 8px;
     font-size: var(--text-sm);
     transition: background-color 150ms;
+    text-overflow: ellipsis;
 
     &::placeholder {
       color: var(--base-content-200);
