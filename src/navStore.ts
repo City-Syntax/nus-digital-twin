@@ -9,3 +9,9 @@ interface BuildingPropertiesProps {
 }
 
 export const buildingProperties = map<BuildingPropertiesProps>({ name: '' });
+
+interface BuildingDataLayersProps {
+  osm: boolean;
+}
+
+export const buildingDataLayers = map<BuildingDataLayersProps>({ osm: true });
