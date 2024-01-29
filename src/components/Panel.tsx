@@ -1,7 +1,7 @@
 import React from 'react';
 import Styles from '../styles/Navigation.module.scss';
 import Icons from './Icons';
-import { activePage, buildingProperties } from '../navStore';
+import { activePage, buildingProperties, searchQuery } from '../navStore';
 import { useStore } from '@nanostores/react';
 
 interface PanelProps {
@@ -15,7 +15,13 @@ const Panel = ({ title, children }: PanelProps) => {
     <div className={Styles['panel']}>
       <div>
         <h2>{activePage.get() === 'BuildingInfo' ? $buildingProperties.name : title}</h2>
-        <button type="button" onClick={() => activePage.set('')}>
+        <button
+          type="button"
+          onClick={() => {
+            activePage.set('');
+            searchQuery.set('');
+          }}
+        >
           <Icons.Close></Icons.Close>
         </button>
       </div>
