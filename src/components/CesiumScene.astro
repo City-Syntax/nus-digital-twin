@@ -10,6 +10,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 </style>
 
 <script>
+  import buildingsData from '../content/buildings/buildings.json';
+
   window.CESIUM_BASE_URL = '/cesium';
 
   import { activeMenu, buildingProperties, searchQuery, buildingDataLayer } from '../store';
@@ -82,7 +84,14 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (defined(pickedFeature)) {
       activeMenu.set('BuildingInfo');
       const featureName = pickedFeature.getProperty('name') || '';
-      buildingProperties.setKey('name', featureName || 'Unknown Building Name');
+      const featureData = buildingsData.filter((d) => d.name === featureName);
+
+      if (featureData.length > 0) {
+        buildingProperties.set(featureData[0]);
+      } else {
+        buildingProperties.set({ name: featureName });
+      }
+
       searchQuery.set(featureName);
     }
   }, ScreenSpaceEventType.LEFT_CLICK);

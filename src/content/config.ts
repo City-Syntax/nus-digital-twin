@@ -1,7 +1,8 @@
 import { defineCollection, z } from 'astro:content';
 
 const buildingSchema = z.object({
-  name: z.string(),
+  name: z.string().optional(),
+  address: z.string().optional(),
 });
 
 const buildingsCollection = defineCollection({
