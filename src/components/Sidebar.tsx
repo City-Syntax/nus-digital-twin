@@ -12,7 +12,7 @@ const Sidebar = () => {
   const key = $activePage as keyof typeof Panel;
 
   return (
-    <>
+    <div id="nav">
       <div className={Styles['left-container']}>
         <LeftNav></LeftNav>
         {key && $isLeftPanel && Panel[key]()}
@@ -21,7 +21,7 @@ const Sidebar = () => {
         {key && !$isLeftPanel && Panel[key]()}
         <RightNav></RightNav>
       </div>
-    </>
+    </div>
   );
 };
 

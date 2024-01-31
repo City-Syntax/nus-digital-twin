@@ -9,3 +9,5 @@ interface BuildingPropertiesProps {
 }
 
 export const buildingProperties = map<BuildingPropertiesProps>({ name: '' });
+
+export const buildingDataLayer = atom('osm');

@@ -12,7 +12,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 <script>
   window.CESIUM_BASE_URL = '/cesium';
 
-  import { activePage, isLeftPanel, buildingProperties, searchQuery } from '../navStore';
+  import { activePage, isLeftPanel, buildingProperties, searchQuery, buildingDataLayer } from '../navStore';
 
   import {
     Cartesian3,
@@ -58,10 +58,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   viewer.camera.flyTo(nusView);
 
   // Add Cesium OSM Buildings, a global 3D buildings layer.
-  const buildingsTileset = await createOsmBuildingsAsync();
-  viewer.scene.primitives.add(buildingsTileset);
+  const osmBuildingsTileset = await createOsmBuildingsAsync();
+  viewer.scene.primitives.add(osmBuildingsTileset);
 
-  buildingsTileset.style = new Cesium3DTileStyle({
+  osmBuildingsTileset.style = new Cesium3DTileStyle({
     show: {
       conditions: [
         ["${feature['cesium#longitude']} > 103.78171", false],
@@ -87,6 +87,19 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       searchQuery.set(featureName);
     }
   }, ScreenSpaceEventType.LEFT_CLICK);
+
+  const nav = document.getElementById('nav');
+  nav?.addEventListener('click', () => {
+    // Timeout is necessary to allow for the state to update first
+    setTimeout(() => {
+      const showOsmBuildings = buildingDataLayer.get() === 'osm';
+      if (showOsmBuildings) {
+        osmBuildingsTileset.show = true;
+      } else {
+        osmBuildingsTileset.show = false;
+      }
+    });
+  });
 </script>
 
 <div id="cesiumContainer"></div>

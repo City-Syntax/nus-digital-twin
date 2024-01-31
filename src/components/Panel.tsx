@@ -3,6 +3,7 @@ import Styles from '../styles/Navigation.module.scss';
 import Icons from './Icons';
 import { activePage, buildingProperties, searchQuery } from '../navStore';
 import { useStore } from '@nanostores/react';
+import ButtonGroup from './ButtonGroup';
 
 interface PanelProps {
   title: string;
@@ -73,7 +74,10 @@ const WaterBodies = () => {
 const OSMBuildings = () => {
   return (
     <Panel title="Layers: OSM Buildings">
-      <div>This feature is under construction.</div>
+      <div>Displays OSM Buildings, a building layer provided by OpenStreetMaps.</div>
+      <div>
+        <ButtonGroup></ButtonGroup>
+      </div>
     </Panel>
   );
 };
