@@ -4,7 +4,7 @@ import { useStore } from '@nanostores/react';
 import { searchQuery } from '../../store';
 import Icons from '../Icons';
 
-const LeftNav = () => {
+const MenuLeft = () => {
   const $searchQuery = useStore(searchQuery);
   return (
     <nav className="menubar-left">
@@ -48,4 +48,4 @@ const LeftNav = () => {
   );
 };
 
-export default LeftNav;
+export default MenuLeft;

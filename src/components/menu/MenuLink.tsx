@@ -1,6 +1,6 @@
 import React from 'react';
 import Icons from '../Icons';
-import { activeMenu } from '../../store';
+import { activeMenu, searchQuery } from '../../store';
 import { useStore } from '@nanostores/react';
 
 interface MenuLinkProps {
@@ -17,6 +17,7 @@ const MenuLink = ({ label }: MenuLinkProps) => {
       type="button"
       onClick={() => {
         activeMenu.set(pageName);
+        searchQuery.set('');
       }}
     >
       {Icons[key]()}
