@@ -1,31 +1,3 @@
-@mixin nav-container {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-  display: flex;
-
-  > * + * {
-    margin-left: 8px;
-  }
-}
-
-@mixin nav-content {
-  background-color: var(--base-bg-200);
-  color: var(--base-content-100);
-  backdrop-filter: saturate(150%) blur(4px);
-  -webkit-backdrop-filter: saturate(150%) blur(4px);
-  border-radius: var(--rounded-base);
-  padding: var(--padding-base);
-  display: flex;
-  flex-direction: column;
-
-  > * + * {
-    margin-top: 20px;
-  }
-}
-
 .searchbar {
   position: relative;
 
