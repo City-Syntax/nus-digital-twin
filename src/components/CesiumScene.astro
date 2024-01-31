@@ -12,7 +12,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 <script>
   window.CESIUM_BASE_URL = '/cesium';
 
-  import { activePage, isLeftPanel, buildingProperties, searchQuery, buildingDataLayers } from '../navStore';
+  import { activePage, isLeftPanel, buildingProperties, searchQuery, buildingDataLayer } from '../navStore';
 
   import {
     Cartesian3,
@@ -92,7 +92,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   nav?.addEventListener('click', () => {
     // Timeout is necessary to allow for the state to update first
     setTimeout(() => {
-      const showOsmBuildings = buildingDataLayers.get()['osm'];
+      const showOsmBuildings = buildingDataLayer.get() === 'osm';
       if (showOsmBuildings) {
         buildingsTileset.show = true;
       } else {
