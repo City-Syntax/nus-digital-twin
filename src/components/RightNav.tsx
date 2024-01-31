@@ -5,8 +5,8 @@ const RightNav = () => {
   return (
     <nav className="menubar-right">
       <div className="menubar-body">
-        <div className="menu-item">
-          <div>Controls</div>
+        <div className="menu-list">
+          <div className="menu-list-title">Controls</div>
           <NavLink.Right label="Buildings"></NavLink.Right>
           <NavLink.Right label="Energy"></NavLink.Right>
           <NavLink.Right label="Thermal Comfort"></NavLink.Right>

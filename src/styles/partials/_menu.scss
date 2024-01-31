@@ -91,11 +91,11 @@
   }
 }
 
-.menu-item {
+.menu-list {
   display: flex;
   flex-direction: column;
 
-  > div:first-child {
+  > .menu-list-title {
     padding-left: var(--padding-base);
     padding-right: var(--padding-base);
     color: rgba(var(--base-300));

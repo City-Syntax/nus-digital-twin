@@ -20,26 +20,26 @@ const LeftNav = () => {
         </div>
       </div>
       <div className="menubar-body">
-        <div className="menu-item">
-          <div>About</div>
+        <div className="menu-list">
+          <div className="menu-list-title">About</div>
           <NavLink.Left label="About NUS Campus"></NavLink.Left>
         </div>
-        <div className="menu-item">
-          <div>GIS Layers</div>
+        <div className="menu-list">
+          <div className="menu-list-title">GIS Layers</div>
           <NavLink.Left label="Street Centerlines"></NavLink.Left>
           <NavLink.Left label="Building Footprints"></NavLink.Left>
           <NavLink.Left label="Green Spaces"></NavLink.Left>
           <NavLink.Left label="Water Bodies"></NavLink.Left>
         </div>
-        <div className="menu-item">
-          <div>Building Data Layers</div>
+        <div className="menu-list">
+          <div className="menu-list-title">Building Data Layers</div>
           <NavLink.Left label="OSM Buildings"></NavLink.Left>
           <NavLink.Left label="Rhino Models"></NavLink.Left>
           <NavLink.Left label="BIM Models"></NavLink.Left>
         </div>
       </div>
       <div className="menubar-footer">
-        <div className="menu-item">
+        <div className="menu-list">
           <NavLink.Left label="Help"></NavLink.Left>
           <NavLink.Left label="Settings"></NavLink.Left>
         </div>
