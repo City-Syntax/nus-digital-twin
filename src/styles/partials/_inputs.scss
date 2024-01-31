@@ -1,0 +1,41 @@
+@mixin input {
+  outline: none;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: var(--text-sm);
+  border-radius: var(--rounded-xs);
+  padding: var(--padding-sm);
+
+  &::placeholder {
+    color: rgba(var(--base-300));
+    opacity: 1;
+  }
+}
+
+.search {
+  position: relative;
+
+  > input {
+    @include input;
+    width: 100%;
+    padding-right: 40px;
+    border: 1px solid rgba(var(--base-300));
+    transition: background-color 150ms;
+    text-overflow: ellipsis;
+
+    &:focus, &:hover {
+      background-color: rgba(var(--base-100));
+    }
+  }
+
+  > svg {
+    height: 20px;
+    margin-right: 12px;
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}

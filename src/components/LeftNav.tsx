@@ -10,9 +10,8 @@ const LeftNav = () => {
   return (
     <nav className="menubar-left">
       <div className="menubar-header">
-        <div className={Styles['searchbar']}>
+        <div className="search">
           <input
-            className={Styles['searchbar']}
             type="text"
             placeholder="Search buildings"
             onChange={(e) => searchQuery.set(e.target.value)}
