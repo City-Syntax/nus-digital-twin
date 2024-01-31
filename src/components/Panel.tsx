@@ -17,7 +17,7 @@ const Panel = ({ title, children }: PanelProps) => {
         <h2>{activePage.get() === 'BuildingInfo' ? $buildingProperties.name : title}</h2>
         <button
           type="button"
-          className="btn-secondary btn-rounded"
+          className="btn-secondary btn-rounded btn-square"
           onClick={() => {
             activePage.set('');
             searchQuery.set('');

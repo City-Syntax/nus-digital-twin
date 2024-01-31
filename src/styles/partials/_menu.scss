@@ -32,7 +32,7 @@
   flex-direction: column;
   padding-top: var(--padding-base);
   padding-bottom: var(--padding-base);
-  line-height: var(--lh-base);
+  line-height: 1.5rem;
 
   > * + * {
     margin-top: 20px;
@@ -72,12 +72,17 @@
   padding-left: var(--padding-base);
   padding-right: var(--padding-base);
   width: 408px;
+  line-height: 1.5rem;
 }
 
 .menubar-content-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  h2 {
+    line-height: 1.75rem;
+  }
 
   > button {
     flex-shrink: 0;
@@ -92,24 +97,22 @@
 
   > div:first-child {
     padding-left: var(--padding-base);
-    padding-left: var(--padding-base);
+    padding-right: var(--padding-base);
     color: rgba(var(--base-300));
     font-size: var(--text-sm);
     font-weight: 600;
   }
 
   > button {
-    position: relative;
+    @include btn;
+
     font-size: var(--text-sm);
-    padding: 8px var(--padding-base);
-    background-color: transparent;
-    border: none;
-    color: rgba(var(--base-content));
-    text-align: left;
-    cursor: pointer;
+    padding-left: var(--padding-base);
+    padding-right: var(--padding-base);
+    position: relative;
     transition: color 200ms;
-    align-items: center;
     display: flex;
+    align-items: center;
 
     &:hover,
     &.active {
@@ -118,15 +121,15 @@
 
     &::before {
       content: '';
-      background-color: var(--primary-300);
-      width: 4px;
-      height: 20px;
       position: absolute;
       top: 50%;
       bottom: 0;
       left: 0;
       transform: translateY(-50%);
-      border-radius: 0 20px 20px 0;
+      width: 4px;
+      height: 20px;
+      background-color: var(--primary-300);
+      border-radius: 0 var(--rounded-lg) var(--rounded-lg) 0;
       transition: opacity 200ms;
       opacity: 0;
     }
