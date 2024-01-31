@@ -1,7 +1,6 @@
 import { atom, map } from 'nanostores';
 
-export const activePage = atom('');
-export const isLeftPanel = atom(false);
+export const activeMenu = atom('');
 export const searchQuery = atom('');
 
 interface BuildingPropertiesProps {

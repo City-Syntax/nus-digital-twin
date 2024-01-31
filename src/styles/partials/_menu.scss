@@ -1,0 +1,147 @@
+@mixin menu-container {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  display: flex;
+
+  > * + * {
+    margin-left: 8px;
+  }
+}
+
+.menu-left {
+  @include menu-container;
+  left: 24px;
+  height: 70vh;
+  max-height: 1000px;
+}
+
+.menu-right {
+  @include menu-container;
+  right: 24px;
+  height: 36vh;
+  max-height: 600px;
+}
+
+@mixin menu-base {
+  @include bg-base;
+  border-radius: var(--rounded-base);
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--padding-base);
+  padding-bottom: var(--padding-base);
+  line-height: 1.5rem;
+
+  > * + * {
+    margin-top: 20px;
+  }
+}
+
+.menubar-left {
+  @include menu-base;
+  width: 218px;
+}
+
+.menubar-right {
+  @include menu-base;
+  width: 188px;
+}
+
+.menubar-header {
+  padding-left: var(--padding-base);
+  padding-right: var(--padding-base);
+}
+
+.menubar-body {
+  overflow-y: auto;
+
+  > * + * {
+    margin-top: 20px;
+  }
+}
+
+.menubar-footer {
+  padding-top: var(--padding-base);
+  margin-top: auto;
+}
+
+.menubar-content {
+  @include menu-base;
+  padding-left: var(--padding-base);
+  padding-right: var(--padding-base);
+  width: 408px;
+  line-height: 1.5rem;
+}
+
+.menubar-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    line-height: 1.75rem;
+  }
+
+  > button {
+    flex-shrink: 0;
+    margin-left: 8px;
+    align-self: self-start;
+  }
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+
+  > .menu-list-title {
+    padding-left: var(--padding-base);
+    padding-right: var(--padding-base);
+    color: rgba(var(--base-300));
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  > button {
+    @include btn;
+
+    font-size: var(--text-sm);
+    padding-left: var(--padding-base);
+    padding-right: var(--padding-base);
+    position: relative;
+    transition: color 200ms;
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &.active {
+      color: var(--primary-300);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      left: 0;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 20px;
+      background-color: var(--primary-300);
+      border-radius: 0 var(--rounded-lg) var(--rounded-lg) 0;
+      transition: opacity 200ms;
+      opacity: 0;
+    }
+
+    &.active::before {
+      opacity: 1;
+    }
+
+    > svg {
+      height: 20px;
+      width: 20px;
+      margin-right: 8px;
+    }
+  }
+}

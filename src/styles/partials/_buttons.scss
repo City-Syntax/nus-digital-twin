@@ -1,0 +1,66 @@
+@mixin btn {
+  border: none;
+  color: rgba(var(--base-content));
+  cursor: pointer;
+  padding: var(--padding-xs);
+  background: none;
+}
+
+.btn {
+  @include btn;
+}
+
+.btn-square {
+  @include btn;
+  height: 32px;
+  width: 32px;
+}
+
+.btn-rounded {
+  @include btn;
+  border-radius: 100%;
+}
+
+.btn-secondary {
+  @include btn;
+  backdrop-filter: saturate(120%) blur(4px);
+  -webkit-backdrop-filter: saturate(120%) blur(4px);
+  background-color: rgba(var(--base-200), 0.5);
+  transition: background-color 150ms;
+
+  &:hover {
+    background-color: rgba(var(--base-200), 1);
+  }
+}
+
+.btn-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background: rgba(var(--base-200), 0.5);
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+
+  input[type='radio'] {
+    display: none;
+  }
+
+  label {
+    width: 100%;
+    padding: 9px 0;
+    border-radius: 8px;
+    transition: background-color 150ms;
+    cursor: pointer;
+  }
+
+  input[type='radio']:hover + label {
+    background-color: rgba(var(--base-200));
+  }
+
+  input[type='radio']:checked + label {
+    background-color: var(--primary-200);
+  }
+}
