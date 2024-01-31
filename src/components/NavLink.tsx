@@ -1,6 +1,6 @@
 import React from 'react';
 import Icons from './Icons';
-import { activeMenu, isLeftPanel } from '../store';
+import { activeMenu } from '../store';
 import { useStore } from '@nanostores/react';
 
 interface NavLinkProps {
@@ -21,7 +21,6 @@ const NavLink = ({ label, isLeftLink = false }: NavLinkProps) => {
       className={$activeMenu === pageName ? 'active' : ''}
       type="button"
       onClick={() => {
-        isLeftPanel.set(isLeftLink);
         activeMenu.set(pageName);
       }}
     >
@@ -32,7 +31,7 @@ const NavLink = ({ label, isLeftLink = false }: NavLinkProps) => {
 };
 
 const Left = ({ label }: NavLinkChildProps) => {
-  return <NavLink label={label} isLeftLink></NavLink>;
+  return <NavLink label={label}></NavLink>;
 };
 
 const Right = ({ label }: NavLinkChildProps) => {

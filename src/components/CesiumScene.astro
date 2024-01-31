@@ -12,7 +12,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 <script>
   window.CESIUM_BASE_URL = '/cesium';
 
-  import { activeMenu, isLeftPanel, buildingProperties, searchQuery, buildingDataLayer } from '../store';
+  import { activeMenu, buildingProperties, searchQuery, buildingDataLayer } from '../store';
 
   import {
     Cartesian3,
@@ -81,7 +81,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     if (defined(pickedFeature)) {
       activeMenu.set('BuildingInfo');
-      isLeftPanel.set(true);
       const featureName = pickedFeature.getProperty('name') || '';
       buildingProperties.setKey('name', featureName || 'Unknown Building Name');
       searchQuery.set(featureName);
