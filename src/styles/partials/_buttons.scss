@@ -1,6 +1,6 @@
 @mixin btn {
   border: none;
-  color: var(--base-content);
+  color: rgba(var(--base-content));
   cursor: pointer;
   transition: background-color 150ms;
   padding: var(--padding-xs);
@@ -34,7 +34,7 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  background: var(--base-bg-100);
+  background: rgba(var(--base-200), 0.5);
   border-radius: 8px;
   padding: 4px;
   gap: 4px;
@@ -52,7 +52,7 @@
   }
 
   input[type='radio']:hover + label {
-    background-color: var(--base-content-300);
+    background-color: rgba(var(--base-200));
   }
 
   input[type='radio']:checked + label {

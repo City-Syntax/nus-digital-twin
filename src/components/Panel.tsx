@@ -1,5 +1,4 @@
 import React from 'react';
-import Styles from '../styles/Navigation.module.scss';
 import Icons from './Icons';
 import { activePage, buildingProperties, searchQuery } from '../navStore';
 import { useStore } from '@nanostores/react';

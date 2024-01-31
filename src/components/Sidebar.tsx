@@ -2,7 +2,6 @@ import React from 'react';
 import Panel from './Panel';
 import LeftNav from './LeftNav';
 import RightNav from './RightNav';
-import Styles from '../styles/Navigation.module.scss';
 import { useStore } from '@nanostores/react';
 import { activePage, isLeftPanel } from '../navStore';
 

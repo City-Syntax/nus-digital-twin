@@ -1,5 +1,4 @@
 import React from 'react';
-import Styles from '../styles/Navigation.module.scss';
 import Icons from './Icons';
 import { activePage, isLeftPanel } from '../navStore';
 import { useStore } from '@nanostores/react';
@@ -19,7 +18,7 @@ const NavLink = ({ label, isLeftLink = false }: NavLinkProps) => {
   const $activePage = useStore(activePage);
   return (
     <button
-      className={$activePage === pageName ? Styles.active : ''}
+      className={$activePage === pageName ? 'active' : ''}
       type="button"
       onClick={() => {
         isLeftPanel.set(isLeftLink);

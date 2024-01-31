@@ -85,3 +85,60 @@
     align-self: self-start;
   }
 }
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+
+  > div:first-child {
+    padding-left: var(--padding-base);
+    padding-left: var(--padding-base);
+    color: rgba(var(--base-300));
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  > button {
+    position: relative;
+    font-size: var(--text-sm);
+    padding: 8px var(--padding-base);
+    background-color: transparent;
+    border: none;
+    color: rgba(var(--base-content));
+    text-align: left;
+    cursor: pointer;
+    transition: color 200ms;
+    align-items: center;
+    display: flex;
+
+    &:hover,
+    &.active {
+      color: var(--primary-300);
+    }
+
+    &::before {
+      content: '';
+      background-color: var(--primary-300);
+      width: 4px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      left: 0;
+      transform: translateY(-50%);
+      border-radius: 0 20px 20px 0;
+      transition: opacity 200ms;
+      opacity: 0;
+    }
+
+    &.active::before {
+      opacity: 1;
+    }
+
+    > svg {
+      height: 20px;
+      width: 20px;
+      margin-right: 8px;
+    }
+  }
+}
