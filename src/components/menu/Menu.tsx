@@ -1,32 +1,32 @@
 import React from 'react';
-import LeftNav from './LeftNav';
-import RightNav from './RightNav';
+import MenuLeft from './MenuLeft';
+import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
-import { activeMenu } from '../store';
-import AboutNUSCampus from './menu/AboutNUSCampus';
-import StreetCenterlines from './menu/StreetCenterlines';
-import BuildingFootprints from './menu/BuildingFootprints';
-import GreenSpaces from './menu/GreenSpaces';
-import WaterBodies from './menu/WaterBodies';
-import OSMBuildings from './menu/OSMBuildings';
-import RhinoModels from './menu/RhinoModels';
-import BIMModels from './menu/BIMModels';
-import Help from './menu/Help';
-import Settings from './menu/Settings';
-import Buildings from './menu/Buildings';
-import BuildingInfo from './menu/BuildingInfo';
-import Energy from './menu/Energy';
-import ThermalComfort from './menu/ThermalComfort';
-import Solar from './menu/Solar';
-import Wind from './menu/Wind';
+import { activeMenu } from '../../store';
+import AboutNUSCampus from './AboutNUSCampus';
+import StreetCenterlines from './StreetCenterlines';
+import BuildingFootprints from './BuildingFootprints';
+import GreenSpaces from './GreenSpaces';
+import WaterBodies from './WaterBodies';
+import OSMBuildings from './OSMBuildings';
+import RhinoModels from './RhinoModels';
+import BIMModels from './BIMModels';
+import Help from './Help';
+import Settings from './Settings';
+import Buildings from './Buildings';
+import BuildingInfo from './BuildingInfo';
+import Energy from './Energy';
+import ThermalComfort from './ThermalComfort';
+import Solar from './Solar';
+import Wind from './Wind';
 
-const Sidebar = () => {
+const Menu = () => {
   const $activeMenu = useStore(activeMenu);
 
   return (
     <div id="nav">
       <div className="menu-left">
-        <LeftNav></LeftNav>
+        <MenuLeft></MenuLeft>
         {$activeMenu === 'AboutNUSCampus' && <AboutNUSCampus></AboutNUSCampus>}
         {$activeMenu === 'StreetCenterlines' && <StreetCenterlines></StreetCenterlines>}
         {$activeMenu === 'BuildingFootprints' && <BuildingFootprints></BuildingFootprints>}
@@ -45,10 +45,10 @@ const Sidebar = () => {
         {$activeMenu === 'ThermalComfort' && <ThermalComfort></ThermalComfort>}
         {$activeMenu === 'Wind' && <Wind></Wind>}
         {$activeMenu === 'Solar' && <Solar></Solar>}
-        <RightNav></RightNav>
+        <MenuRight></MenuRight>
       </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default Menu;

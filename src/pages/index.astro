@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Sidebar from '../components/Sidebar';
+import Menu from '../components/menu/Menu';
 import CesiumScene from '../components/CesiumScene.astro';
 ---
 
 <Layout title="NUS Digital Twin">
-  <Sidebar client:load />
+  <Menu client:load />
   <CesiumScene />
 </Layout>

@@ -1,8 +1,8 @@
 import React from 'react';
-import NavLink from './NavLink';
+import MenuLink from './MenuLink';
 import { useStore } from '@nanostores/react';
-import { searchQuery } from '../store';
-import Icons from './Icons';
+import { searchQuery } from '../../store';
+import Icons from '../Icons';
 
 const LeftNav = () => {
   const $searchQuery = useStore(searchQuery);
@@ -22,26 +22,26 @@ const LeftNav = () => {
       <div className="menubar-body">
         <div className="menu-list">
           <div className="menu-list-title">About</div>
-          <NavLink label="About NUS Campus"></NavLink>
+          <MenuLink label="About NUS Campus"></MenuLink>
         </div>
         <div className="menu-list">
           <div className="menu-list-title">GIS Layers</div>
-          <NavLink label="Street Centerlines"></NavLink>
-          <NavLink label="Building Footprints"></NavLink>
-          <NavLink label="Green Spaces"></NavLink>
-          <NavLink label="Water Bodies"></NavLink>
+          <MenuLink label="Street Centerlines"></MenuLink>
+          <MenuLink label="Building Footprints"></MenuLink>
+          <MenuLink label="Green Spaces"></MenuLink>
+          <MenuLink label="Water Bodies"></MenuLink>
         </div>
         <div className="menu-list">
           <div className="menu-list-title">Building Data Layers</div>
-          <NavLink label="OSM Buildings"></NavLink>
-          <NavLink label="Rhino Models"></NavLink>
-          <NavLink label="BIM Models"></NavLink>
+          <MenuLink label="OSM Buildings"></MenuLink>
+          <MenuLink label="Rhino Models"></MenuLink>
+          <MenuLink label="BIM Models"></MenuLink>
         </div>
       </div>
       <div className="menubar-footer">
         <div className="menu-list">
-          <NavLink label="Help"></NavLink>
-          <NavLink label="Settings"></NavLink>
+          <MenuLink label="Help"></MenuLink>
+          <MenuLink label="Settings"></MenuLink>
         </div>
       </div>
     </nav>

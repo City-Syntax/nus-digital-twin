@@ -1,7 +1,7 @@
 import React from 'react';
-import NavLink from './NavLink';
+import NavLink from './MenuLink';
 
-const RightNav = () => {
+const MenuRight = () => {
   return (
     <nav className="menubar-right">
       <div className="menubar-body">
@@ -18,4 +18,4 @@ const RightNav = () => {
   );
 };
 
-export default RightNav;
+export default MenuRight;

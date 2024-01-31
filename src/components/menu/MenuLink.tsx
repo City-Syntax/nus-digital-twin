@@ -1,6 +1,6 @@
 import React from 'react';
-import Icons from './Icons';
-import { activeMenu } from '../store';
+import Icons from '../Icons';
+import { activeMenu } from '../../store';
 import { useStore } from '@nanostores/react';
 
 interface NavLinkProps {
