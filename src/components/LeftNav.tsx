@@ -1,7 +1,7 @@
 import React from 'react';
 import NavLink from './NavLink';
 import { useStore } from '@nanostores/react';
-import { searchQuery } from '../navStore';
+import { searchQuery } from '../store';
 import Icons from './Icons';
 
 const LeftNav = () => {

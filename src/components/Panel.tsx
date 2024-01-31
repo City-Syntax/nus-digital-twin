@@ -1,6 +1,6 @@
 import React from 'react';
 import Icons from './Icons';
-import { activePage, buildingProperties, searchQuery } from '../navStore';
+import { activeMenu, buildingProperties, searchQuery } from '../store';
 import { useStore } from '@nanostores/react';
 import ButtonGroup from './ButtonGroup';
 
@@ -14,12 +14,12 @@ const Panel = ({ title, children }: PanelProps) => {
   return (
     <div className="menubar-content">
       <div className="menubar-content-header">
-        <h2>{activePage.get() === 'BuildingInfo' ? $buildingProperties.name : title}</h2>
+        <h2>{activeMenu.get() === 'BuildingInfo' ? $buildingProperties.name : title}</h2>
         <button
           type="button"
           className="btn-secondary btn-rounded btn-square"
           onClick={() => {
-            activePage.set('');
+            activeMenu.set('');
             searchQuery.set('');
           }}
         >

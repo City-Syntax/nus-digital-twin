@@ -3,12 +3,12 @@ import Panel from './Panel';
 import LeftNav from './LeftNav';
 import RightNav from './RightNav';
 import { useStore } from '@nanostores/react';
-import { activePage, isLeftPanel } from '../navStore';
+import { activeMenu, isLeftPanel } from '../store';
 
 const Sidebar = () => {
-  const $activePage = useStore(activePage);
+  const $activeMenu = useStore(activeMenu);
   const $isLeftPanel = useStore(isLeftPanel);
-  const key = $activePage as keyof typeof Panel;
+  const key = $activeMenu as keyof typeof Panel;
 
   return (
     <div id="nav">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { buildingDataLayer } from '../navStore';
+import { buildingDataLayer } from '../store';
 import { useStore } from '@nanostores/react';
 
 const ButtonGroup = () => {

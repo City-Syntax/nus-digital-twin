@@ -1,6 +1,6 @@
 import { atom, map } from 'nanostores';
 
-export const activePage = atom('');
+export const activeMenu = atom('');
 export const isLeftPanel = atom(false);
 export const searchQuery = atom('');
 
