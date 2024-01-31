@@ -53,4 +53,17 @@
   @include menu-base;
   padding-left: var(--padding-base);
   padding-right: var(--padding-base);
+  width: 408px;
+}
+
+.menubar-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > button {
+    flex-shrink: 0;
+    margin-left: 8px;
+    align-self: self-start;
+  }
 }

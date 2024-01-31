@@ -13,11 +13,12 @@ interface PanelProps {
 const Panel = ({ title, children }: PanelProps) => {
   const $buildingProperties = useStore(buildingProperties);
   return (
-    <div className={Styles['panel']}>
-      <div>
+    <div className="menubar-content">
+      <div className="menubar-content-header">
         <h2>{activePage.get() === 'BuildingInfo' ? $buildingProperties.name : title}</h2>
         <button
           type="button"
+          className="btn-secondary btn-rounded"
           onClick={() => {
             activePage.set('');
             searchQuery.set('');

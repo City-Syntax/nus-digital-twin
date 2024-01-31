@@ -1,3 +1,33 @@
+@mixin btn {
+  border: none;
+  color: var(--base-content);
+  cursor: pointer;
+  transition: background-color 150ms;
+  padding: var(--padding-xs);
+  height: 32px;
+  width: 32px;
+}
+
+.btn {
+  @include btn;
+}
+
+.btn-rounded {
+  @include btn;
+  border-radius: 100%;
+}
+
+.btn-secondary {
+  @include btn;
+  backdrop-filter: saturate(120%) blur(4px);
+  -webkit-backdrop-filter: saturate(120%) blur(4px);
+  background-color: rgba(var(--base-200), 0.5);
+
+  &:hover {
+    background-color: rgba(var(--base-200), 1);
+  }
+}
+
 .btn-group {
   width: 100%;
   display: flex;

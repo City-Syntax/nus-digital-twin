@@ -26,37 +26,6 @@
   }
 }
 
-.panel {
-  @include nav-content;
-  width: 408px;
-
-  > div:first-child {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-
-    > button {
-      flex-shrink: 0;
-      height: 32px;
-      width: 32px;
-      margin-left: 8px;
-      padding: 8px;
-      border: none;
-      border-radius: 100%;
-      background-color: var(--base-bg-100);
-      color: var(--base-content-100);
-      backdrop-filter: saturate(120%) blur(4px);
-      -webkit-backdrop-filter: saturate(120%) blur(4px);
-      cursor: pointer;
-      transition: background-color 150ms;
-
-      &:hover {
-        background-color: var(--base-content-300);
-      }
-    }
-  }
-}
-
 .searchbar {
   position: relative;
 
