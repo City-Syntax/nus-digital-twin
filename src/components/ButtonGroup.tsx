@@ -1,12 +1,11 @@
 import React from 'react';
-import Styles from '../styles/Navigation.module.scss';
 import { buildingDataLayer } from '../navStore';
 import { useStore } from '@nanostores/react';
 
 const ButtonGroup = () => {
   const $buildingDataLayer = useStore(buildingDataLayer);
   return (
-    <div className={Styles['btn-group']}>
+    <div className="btn-group">
       <input
         type="radio"
         id="osm-on"

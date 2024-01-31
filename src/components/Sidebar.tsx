@@ -13,11 +13,11 @@ const Sidebar = () => {
 
   return (
     <div id="nav">
-      <div className={Styles['left-container']}>
+      <div className="menu-left">
         <LeftNav></LeftNav>
         {key && $isLeftPanel && Panel[key]()}
       </div>
-      <div className={Styles['right-container']}>
+      <div className="menu-right">
         {key && !$isLeftPanel && Panel[key]()}
         <RightNav></RightNav>
       </div>

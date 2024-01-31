@@ -4,7 +4,7 @@ import NavLink from './NavLink';
 
 const RightNav = () => {
   return (
-    <nav className={Styles['right-nav']}>
+    <nav className="menubar-right">
       <div className={Styles['nav-body']}>
         <div className={Styles['nav-group']}>
           <div>Controls</div>

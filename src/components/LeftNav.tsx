@@ -8,7 +8,7 @@ import Icons from './Icons';
 const LeftNav = () => {
   const $searchQuery = useStore(searchQuery);
   return (
-    <nav className={Styles['left-nav']}>
+    <nav className="menubar-left">
       <div className={Styles['nav-header']}>
         <div className={Styles['searchbar']}>
           <input

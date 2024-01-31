@@ -1,0 +1,80 @@
+:root {
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.5rem;
+  --text-xl: 1.75rem;
+
+  --lh-base: 1.5rem;
+
+  --padding-xs: 8px;
+  --padding-sm: 12px;
+  --padding-base: 16px;
+  --padding-lg: 20px;
+  --padding-xl: 24px;
+
+  --rounded-xs: 8px;
+  --rounded-sm: 12px;
+  --rounded-base: 16px;
+  --rounded-lg: 20px;
+  --rounded-xl: 24px;
+
+  --base-100: 33, 33, 33;
+  --base-200: #545454;
+  --base-300: #a9a9a9;
+  --base-content: #f5f5f5;
+
+  --primary-100: #18338b;
+  --primary-200: #1d4ed8;
+  --primary-300: #60a5fa;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  color: var(--base-content);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter Variable', system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--base-content-100);
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+h1 {
+  font-size: var(--text-xl);
+}
+
+h2 {
+  font-size: var(--text-lg);
+}
+
+h3 {
+  font-size: var(--text-base);
+}
+
+p {
+  color: var(--base-content-100);
+  margin: 0;
+  padding: 0;
+}
+
+@mixin bg-base {
+  color: var(--base-content);
+  background-color: rgba(var(--base-100), 0.74);
+  backdrop-filter: saturate(150%) blur(4px);
+  -webkit-backdrop-filter: saturate(150%) blur(4px);
+}

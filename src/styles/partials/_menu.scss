@@ -1,0 +1,56 @@
+@mixin menu-container {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  display: flex;
+
+  > * + * {
+    margin-left: 8px;
+  }
+}
+
+.menu-left {
+  @include menu-container;
+  left: 24px;
+  height: 70vh;
+  max-height: 1000px;
+}
+
+.menu-right {
+  @include menu-container;
+  right: 24px;
+  height: 36vh;
+  max-height: 600px;
+}
+
+@mixin menu-base {
+  @include bg-base;
+  border-radius: var(--rounded-base);
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--padding-base);
+  padding-bottom: var(--padding-base);
+  line-height: var(--lh-base);
+
+  > * + * {
+    margin-top: 20px;
+  }
+}
+
+.menubar-left {
+  @include menu-base;
+  width: 218px;
+}
+
+.menubar-right {
+  @include menu-base;
+  width: 188px;
+}
+
+.menubar-content {
+  @include menu-base;
+  padding-left: var(--padding-base);
+  padding-right: var(--padding-base);
+}
