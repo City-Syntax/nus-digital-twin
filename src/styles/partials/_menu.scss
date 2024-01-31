@@ -49,6 +49,24 @@
   width: 188px;
 }
 
+.menubar-header {
+  padding-left: var(--padding-base);
+  padding-right: var(--padding-base);
+}
+
+.menubar-body {
+  overflow-y: auto;
+
+  > * + * {
+    margin-top: 20px;
+  }
+}
+
+.menubar-footer {
+  padding-top: var(--padding-base);
+  margin-top: auto;
+}
+
 .menubar-content {
   @include menu-base;
   padding-left: var(--padding-base);

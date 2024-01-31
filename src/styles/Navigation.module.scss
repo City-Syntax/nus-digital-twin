@@ -34,19 +34,6 @@
   }
 }
 
-.nav-header {
-  padding-left: var(--padding-base);
-  padding-right: var(--padding-base);
-}
-
-.nav-body {
-  overflow-y: scroll;
-
-  > * + * {
-    margin-top: 20px;
-  }
-}
-
 .nav-group {
   display: flex;
   flex-direction: column;
@@ -101,10 +88,5 @@
       margin-right: 8px;
     }
   }
-}
-
-.nav-footer {
-  padding-top: 16px;
-  margin-top: auto;
 }
 

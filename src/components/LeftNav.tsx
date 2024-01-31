@@ -9,7 +9,7 @@ const LeftNav = () => {
   const $searchQuery = useStore(searchQuery);
   return (
     <nav className="menubar-left">
-      <div className={Styles['nav-header']}>
+      <div className="menubar-header">
         <div className={Styles['searchbar']}>
           <input
             className={Styles['searchbar']}
@@ -21,7 +21,7 @@ const LeftNav = () => {
           <Icons.Search></Icons.Search>
         </div>
       </div>
-      <div className={Styles['nav-body']}>
+      <div className="menubar-body">
         <div className={Styles['nav-group']}>
           <div>About</div>
           <NavLink.Left label="About NUS Campus"></NavLink.Left>
@@ -40,7 +40,7 @@ const LeftNav = () => {
           <NavLink.Left label="BIM Models"></NavLink.Left>
         </div>
       </div>
-      <div className={Styles['nav-footer']}>
+      <div className="menubar-footer">
         <div className={Styles['nav-group']}>
           <NavLink.Left label="Help"></NavLink.Left>
           <NavLink.Left label="Settings"></NavLink.Left>
