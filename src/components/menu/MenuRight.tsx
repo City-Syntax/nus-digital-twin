@@ -1,5 +1,5 @@
 import React from 'react';
-import NavLink from './MenuLink';
+import MenuLink from './MenuLink';
 
 const MenuRight = () => {
   return (
@@ -7,11 +7,11 @@ const MenuRight = () => {
       <div className="menubar-body">
         <div className="menu-list">
           <div className="menu-list-title">Controls</div>
-          <NavLink label="Buildings"></NavLink>
-          <NavLink label="Energy"></NavLink>
-          <NavLink label="Thermal Comfort"></NavLink>
-          <NavLink label="Wind"></NavLink>
-          <NavLink label="Solar"></NavLink>
+          <MenuLink label="Buildings"></MenuLink>
+          <MenuLink label="Energy"></MenuLink>
+          <MenuLink label="Thermal Comfort"></MenuLink>
+          <MenuLink label="Wind"></MenuLink>
+          <MenuLink label="Solar"></MenuLink>
         </div>
       </div>
     </nav>

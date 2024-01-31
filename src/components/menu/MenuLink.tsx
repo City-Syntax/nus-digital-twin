@@ -3,16 +3,11 @@ import Icons from '../Icons';
 import { activeMenu } from '../../store';
 import { useStore } from '@nanostores/react';
 
-interface NavLinkProps {
-  label: string;
-  isLeftLink?: boolean;
-}
-
-interface NavLinkChildProps {
+interface MenuLinkProps {
   label: string;
 }
 
-const NavLink = ({ label, isLeftLink = false }: NavLinkProps) => {
+const MenuLink = ({ label }: MenuLinkProps) => {
   const pageName = label.replace(/\s/g, '');
   const key = pageName as keyof typeof Icons;
   const $activeMenu = useStore(activeMenu);
@@ -30,4 +25,4 @@ const NavLink = ({ label, isLeftLink = false }: NavLinkProps) => {
   );
 };
 
-export default NavLink;
+export default MenuLink;
