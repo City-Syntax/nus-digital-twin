@@ -87,8 +87,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   }, ScreenSpaceEventType.LEFT_CLICK);
 
-  const nav = document.getElementById('nav');
-  nav?.addEventListener('click', () => {
+  const menu = document.getElementById('menu');
+  menu?.addEventListener('click', () => {
     // Timeout is necessary to allow for the state to update first
     setTimeout(() => {
       const showOsmBuildings = buildingDataLayer.get() === 'osm';
