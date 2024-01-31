@@ -30,12 +30,4 @@ const NavLink = ({ label, isLeftLink = false }: NavLinkProps) => {
   );
 };
 
-const Left = ({ label }: NavLinkChildProps) => {
-  return <NavLink label={label}></NavLink>;
-};
-
-const Right = ({ label }: NavLinkChildProps) => {
-  return <NavLink label={label}></NavLink>;
-};
-
-export default { Left, Right };
+export default NavLink;

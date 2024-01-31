@@ -7,11 +7,11 @@ const RightNav = () => {
       <div className="menubar-body">
         <div className="menu-list">
           <div className="menu-list-title">Controls</div>
-          <NavLink.Right label="Buildings"></NavLink.Right>
-          <NavLink.Right label="Energy"></NavLink.Right>
-          <NavLink.Right label="Thermal Comfort"></NavLink.Right>
-          <NavLink.Right label="Wind"></NavLink.Right>
-          <NavLink.Right label="Solar"></NavLink.Right>
+          <NavLink label="Buildings"></NavLink>
+          <NavLink label="Energy"></NavLink>
+          <NavLink label="Thermal Comfort"></NavLink>
+          <NavLink label="Wind"></NavLink>
+          <NavLink label="Solar"></NavLink>
         </div>
       </div>
     </nav>
