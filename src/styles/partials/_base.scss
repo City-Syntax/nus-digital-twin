@@ -2,8 +2,10 @@
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
-  --text-lg: 1.5rem;
-  --text-xl: 1.75rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.75rem;
 
   --lh-base: 1.5rem;
 
@@ -54,15 +56,15 @@ h6 {
 }
 
 h1 {
-  font-size: var(--text-xl);
+  font-size: var(--text-3xl);
 }
 
 h2 {
-  font-size: var(--text-lg);
+  font-size: var(--text-2xl);
 }
 
 h3 {
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
 }
 
 p {

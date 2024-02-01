@@ -1,0 +1,15 @@
+[
+  {
+    "name": "COM3",
+    "address": "11 Research Link",
+    "postal": "119391",
+    "floorToFloorHeight": "4m",
+    "perimeterZoneDepth": "6m",
+    "fenestrationType": "Curtain wall",
+    "fenestrationShading": "Exterion overhangs",
+    "northWindowToWallRatio": "40%",
+    "southWindowToWallRatio": "40%",
+    "eastWindowToWallRatio": "60%",
+    "westWindowToWallRatio": "60%"
+  }
+]
