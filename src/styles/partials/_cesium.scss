@@ -1,0 +1,28 @@
+div.cesium-viewer-timelineContainer {
+  width: 100%;
+  top: 0;
+}
+
+div.cesium-timeline-bar {
+  background: none;
+  @include bg-base;
+}
+
+div.cesium-viewer-toolbar {
+  top: 32px;
+}
+
+div.cesium-viewer-bottom {
+  top: 32px;
+  bottom: unset!important;
+}
+
+.cesium-viewer div.cesium-widget-credits {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+div.cesium-timeline-main {
+  border: none;
+}
