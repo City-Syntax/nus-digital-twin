@@ -14,15 +14,15 @@
 .menu-left {
   @include menu-container;
   left: 24px;
-  height: 70vh;
-  max-height: 1000px;
+  height: 74vh;
+  max-height: 668px;
 }
 
 .menu-right {
   @include menu-container;
   right: 24px;
   height: 36vh;
-  max-height: 600px;
+  max-height: 288px;
 }
 
 .menu-bottom {
