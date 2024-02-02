@@ -17,8 +17,14 @@ const MenuBottom = () => {
         <MenuLink isVertical label="Controls"></MenuLink>
       </div>
       <div className="menu-list">
-        <MenuLink isVertical label="Menu"></MenuLink>
+        <MenuLink isVertical label="Help"></MenuLink>
       </div>
+      <div className="menu-list">
+        <MenuLink isVertical label="Settings"></MenuLink>
+      </div>
+      {/* <div className="menu-list">
+        <MenuLink isVertical label="Menu"></MenuLink>
+      </div> */}
     </nav>
   );
 };
