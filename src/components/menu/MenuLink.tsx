@@ -5,15 +5,17 @@ import { useStore } from '@nanostores/react';
 
 interface MenuLinkProps {
   label: string;
+  isVertical?: boolean;
+  iconName?: string;
 }
 
-const MenuLink = ({ label }: MenuLinkProps) => {
+const MenuLink = ({ label, isVertical = false, iconName }: MenuLinkProps) => {
   const pageName = label.replace(/\s/g, '');
-  const key = pageName as keyof typeof Icons;
+  const key = (iconName ? iconName : pageName) as keyof typeof Icons;
   const $activeMenu = useStore(activeMenu);
   return (
     <button
-      className={$activeMenu === pageName ? 'active' : ''}
+      className={`${$activeMenu === pageName ? 'active' : ''} ${isVertical ? 'vertical' : ''}`}
       type="button"
       onClick={() => {
         activeMenu.set(pageName);
@@ -21,7 +23,7 @@ const MenuLink = ({ label }: MenuLinkProps) => {
       }}
     >
       {Icons[key]()}
-      {label}
+      <span>{label}</span>
     </button>
   );
 };

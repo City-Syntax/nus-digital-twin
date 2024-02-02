@@ -25,6 +25,12 @@
   max-height: 600px;
 }
 
+.menu-bottom {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
 @mixin menu-base {
   @include bg-base;
   border-radius: var(--rounded-base);
@@ -49,6 +55,16 @@
   width: 188px;
 }
 
+.menubar-bottom {
+  @include bg-base;
+  width: 100vw;
+  padding-left: var(--padding-lg);
+  padding-right: var(--padding-lg);
+  border-radius: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
 .menubar-header {
   padding-left: var(--padding-base);
   padding-right: var(--padding-base);
@@ -71,8 +87,9 @@
   @include menu-base;
   padding-left: var(--padding-base);
   padding-right: var(--padding-base);
-  width: 408px;
+  width: 368px;
 }
+
 
 .menubar-content-header {
   display: flex;
@@ -153,6 +170,34 @@
       height: 20px;
       width: 20px;
       margin-right: 8px;
+    }
+
+
+    &.vertical {
+      flex-direction: column;
+      gap: 4px;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: calc(var(--padding-xs) + 2px);
+      padding-bottom: var(--padding-xs);
+    }
+
+    &.vertical::before {
+      top: unset;
+      left: unset;
+      top: 2px;
+      height: 4px;
+      width: 32px;
+      border-radius: 0 0 var(--rounded-lg) var(--rounded-lg);
+    } 
+
+    &.vertical > svg  {
+      margin-right: 0; 
+    }
+
+    &.vertical > span {
+      font-size: var(--text-xs);
+      font-weight: 600;
     }
   }
 }
