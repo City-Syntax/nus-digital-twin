@@ -4,6 +4,7 @@
   cursor: pointer;
   padding: var(--padding-xs);
   background: none;
+  font-size: var(--text-base)
 }
 
 .btn {
@@ -48,19 +49,19 @@
     display: none;
   }
 
-  label {
+  button {
+    @include btn;
     width: 100%;
-    padding: 9px 0;
+    padding: 10px 0;
     border-radius: 8px;
     transition: background-color 150ms;
-    cursor: pointer;
   }
 
-  input[type='radio']:hover + label {
+  button:hover {
     background-color: rgba(var(--base-200));
   }
 
-  input[type='radio']:checked + label {
+  button.active {
     background-color: var(--primary-200);
   }
 }

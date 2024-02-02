@@ -10,22 +10,12 @@ const OSMBuildings = () => {
       <div>Displays OSM Buildings, a building layer provided by OpenStreetMaps.</div>
       <div>
         <div className="btn-group">
-          <input
-            type="radio"
-            id="osm-on"
-            name="osm"
-            onClick={() => buildingDataLayer.set('osm')}
-            defaultChecked={$buildingDataLayer === 'osm'}
-          />
-          <label htmlFor="osm-on">On</label>
-          <input
-            type="radio"
-            id="osm-off"
-            name="osm"
-            onClick={() => buildingDataLayer.set('')}
-            defaultChecked={$buildingDataLayer !== 'osm'}
-          />
-          <label htmlFor="osm-off">Off</label>
+          <button onClick={() => buildingDataLayer.set('osm')} className={$buildingDataLayer === 'osm' ? 'active' : ''}>
+            On
+          </button>
+          <button onClick={() => buildingDataLayer.set('')} className={$buildingDataLayer !== 'osm' ? 'active' : ''}>
+            Off
+          </button>
         </div>
       </div>
     </MenuContent>
