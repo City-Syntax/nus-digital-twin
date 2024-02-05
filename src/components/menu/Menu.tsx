@@ -20,6 +20,7 @@ import ThermalComfort from './ThermalComfort';
 import Solar from './Solar';
 import Wind from './Wind';
 import MenuBottom from './MenuBottom';
+import Search from './Search';
 
 const Menu = () => {
   const $activeMenu = useStore(activeMenu);
@@ -65,6 +66,7 @@ const Menu = () => {
         {$activeMenu === 'Solar' && <Solar></Solar>}
         {$activeMenu === 'Help' && <Help></Help>}
         {$activeMenu === 'Settings' && <Settings></Settings>}
+        {$activeMenu === 'Search' && <Search></Search>}
         <MenuBottom></MenuBottom>
       </div>
     </div>
