@@ -21,6 +21,7 @@ import Solar from './Solar';
 import Wind from './Wind';
 import MenuBottom from './MenuBottom';
 import Search from './Search';
+import Controls from './Controls';
 
 const Menu = () => {
   const $activeMenu = useStore(activeMenu);
@@ -67,6 +68,7 @@ const Menu = () => {
         {$activeMenu === 'Help' && <Help></Help>}
         {$activeMenu === 'Settings' && <Settings></Settings>}
         {$activeMenu === 'Search' && <Search></Search>}
+        {$activeMenu === 'Controls' && <Controls></Controls>}
         <MenuBottom></MenuBottom>
       </div>
     </div>
