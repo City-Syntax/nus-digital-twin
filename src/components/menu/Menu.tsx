@@ -49,6 +49,20 @@ const Menu = () => {
         <MenuRight></MenuRight>
       </div>
       <div className="menu-bottom hide-md">
+        {($activeMenu === 'AboutNUSCampus' || $activeMenu === 'About') && <AboutNUSCampus></AboutNUSCampus>}
+        {$activeMenu === 'BuildingInfo' && <BuildingInfo></BuildingInfo>}
+        {$activeMenu === 'StreetCenterlines' && <StreetCenterlines></StreetCenterlines>}
+        {$activeMenu === 'BuildingFootprints' && <BuildingFootprints></BuildingFootprints>}
+        {$activeMenu === 'GreenSpaces' && <GreenSpaces></GreenSpaces>}
+        {$activeMenu === 'WaterBodies' && <WaterBodies></WaterBodies>}
+        {$activeMenu === 'OSMBuildings' && <OSMBuildings></OSMBuildings>}
+        {$activeMenu === 'RhinoModels' && <RhinoModels></RhinoModels>}
+        {$activeMenu === 'BIMModels' && <BIMModels></BIMModels>}
+        {$activeMenu === 'Buildings' && <Buildings></Buildings>}
+        {$activeMenu === 'Energy' && <Energy></Energy>}
+        {$activeMenu === 'ThermalComfort' && <ThermalComfort></ThermalComfort>}
+        {$activeMenu === 'Wind' && <Wind></Wind>}
+        {$activeMenu === 'Solar' && <Solar></Solar>}
         {$activeMenu === 'Help' && <Help></Help>}
         {$activeMenu === 'Settings' && <Settings></Settings>}
         <MenuBottom></MenuBottom>
