@@ -7,7 +7,7 @@
   display: flex;
 
   > * + * {
-    margin-left: 4px;
+    margin-left: 2px;
   }
 }
 
@@ -26,12 +26,19 @@
 }
 
 .menu-bottom {
-  width: 100vw;
+  max-width: 500px;
   position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
   bottom: 8px;
   padding-left: var(--padding-xs);
   padding-right: var(--padding-xs);
   z-index: 1;
+
+  > * + * {
+    margin-top: 2px;
+  }
 }
 
 @mixin menu-base {
@@ -60,9 +67,7 @@
 
 .menubar-bottom {
   @include bg-base;
-  max-width: 500px;
   border-radius: var(--rounded-base);
-  margin: 0 auto;
   padding-left: var(--padding-lg);
   padding-right: var(--padding-lg);
   display: flex;
@@ -92,6 +97,10 @@
   padding-left: var(--padding-base);
   padding-right: var(--padding-base);
   width: 388px;
+
+  @media screen and (max-width: $md) {
+    width: 100%;    
+  }
 }
 
 .menubar-content-header {

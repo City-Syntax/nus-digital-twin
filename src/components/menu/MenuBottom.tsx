@@ -16,15 +16,15 @@ const MenuBottom = () => {
       <div className="menu-list">
         <MenuLink isVertical label="Controls"></MenuLink>
       </div>
-      <div className="menu-list">
+      <div className="menu-list show-sm">
         <MenuLink isVertical label="Help"></MenuLink>
       </div>
-      <div className="menu-list">
+      <div className="menu-list show-sm">
         <MenuLink isVertical label="Settings"></MenuLink>
       </div>
-      {/* <div className="menu-list">
+      <div className="menu-list hide-sm">
         <MenuLink isVertical label="Menu"></MenuLink>
-      </div> */}
+      </div>
     </nav>
   );
 };

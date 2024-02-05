@@ -26,7 +26,7 @@ const Menu = () => {
 
   return (
     <div id="menu">
-      <div className="menu-left">
+      <div className="menu-left show-md">
         <MenuLeft></MenuLeft>
         {$activeMenu === 'AboutNUSCampus' && <AboutNUSCampus></AboutNUSCampus>}
         {$activeMenu === 'StreetCenterlines' && <StreetCenterlines></StreetCenterlines>}
@@ -40,7 +40,7 @@ const Menu = () => {
         {$activeMenu === 'Settings' && <Settings></Settings>}
         {$activeMenu === 'BuildingInfo' && <BuildingInfo></BuildingInfo>}
       </div>
-      <div className="menu-right">
+      <div className="menu-right show-md">
         {$activeMenu === 'Buildings' && <Buildings></Buildings>}
         {$activeMenu === 'Energy' && <Energy></Energy>}
         {$activeMenu === 'ThermalComfort' && <ThermalComfort></ThermalComfort>}
@@ -48,7 +48,9 @@ const Menu = () => {
         {$activeMenu === 'Solar' && <Solar></Solar>}
         <MenuRight></MenuRight>
       </div>
-      <div className="menu-bottom">
+      <div className="menu-bottom hide-md">
+        {$activeMenu === 'Help' && <Help></Help>}
+        {$activeMenu === 'Settings' && <Settings></Settings>}
         <MenuBottom></MenuBottom>
       </div>
     </div>
