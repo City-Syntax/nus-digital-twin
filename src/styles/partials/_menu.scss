@@ -88,7 +88,6 @@
 }
 
 .menubar-footer {
-  padding-top: var(--padding-base);
   margin-top: auto;
 }
 
@@ -214,7 +213,8 @@
   }
 
   @media screen and (max-width: $md) {
-    > button {
+    > button,
+    > .menu-list-title {
       padding-left: 0;
       padding-right: 0;
     }

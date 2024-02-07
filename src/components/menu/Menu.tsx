@@ -22,6 +22,7 @@ import Wind from './Wind';
 import MenuBottom from './MenuBottom';
 import Search from './Search';
 import Controls from './Controls';
+import Layers from './Layers';
 
 const Menu = () => {
   const $activeMenu = useStore(activeMenu);
@@ -69,6 +70,7 @@ const Menu = () => {
         {$activeMenu === 'Settings' && <Settings></Settings>}
         {$activeMenu === 'Search' && <Search></Search>}
         {$activeMenu === 'Controls' && <Controls></Controls>}
+        {$activeMenu === 'Layers' && <Layers></Layers>}
         <MenuBottom></MenuBottom>
       </div>
     </div>
