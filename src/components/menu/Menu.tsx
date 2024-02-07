@@ -23,6 +23,7 @@ import MenuBottom from './MenuBottom';
 import Search from './Search';
 import Controls from './Controls';
 import Layers from './Layers';
+import MoreMenu from './MoreMenu';
 
 const Menu = () => {
   const $activeMenu = useStore(activeMenu);
@@ -71,6 +72,7 @@ const Menu = () => {
         {$activeMenu === 'Search' && <Search></Search>}
         {$activeMenu === 'Controls' && <Controls></Controls>}
         {$activeMenu === 'Layers' && <Layers></Layers>}
+        {$activeMenu === 'Menu' && <MoreMenu></MoreMenu>}
         <MenuBottom></MenuBottom>
       </div>
     </div>
