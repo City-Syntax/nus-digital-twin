@@ -28,7 +28,8 @@
     transition: background-color 150ms;
     text-overflow: ellipsis;
 
-    &:focus, &:hover {
+    &:focus,
+    &:hover {
       background-color: rgba(var(--base-100));
     }
   }
