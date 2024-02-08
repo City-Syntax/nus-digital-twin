@@ -29,11 +29,11 @@
 
 @mixin btn-primary {
   @include btn;
-  background-color: var(--primary-200);
+  background-color: rgba(var(--primary-200));
   transition: background-color 150ms;
 
   &:hover {
-    background-color: var(--primary-100);
+    background-color: rgba(var(--primary-100));
   }
 }
 
@@ -127,6 +127,6 @@
   }
 
   button.active {
-    background-color: var(--primary-200);
+    background-color: rgba(var(--primary-200));
   }
 }

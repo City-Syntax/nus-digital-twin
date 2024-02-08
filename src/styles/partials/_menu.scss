@@ -172,7 +172,7 @@
 
     &:hover,
     &.active {
-      color: var(--primary-300);
+      color: rgba(var(--primary-300));
     }
 
     &::before {
@@ -184,7 +184,7 @@
       transform: translateY(-50%);
       width: 4px;
       height: 20px;
-      background-color: var(--primary-300);
+      background-color: rgba(var(--primary-300));
       border-radius: 0 var(--rounded-lg) var(--rounded-lg) 0;
       transition: opacity 200ms;
       opacity: 0;
