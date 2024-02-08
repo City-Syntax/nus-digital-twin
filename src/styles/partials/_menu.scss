@@ -1,3 +1,7 @@
+$container-gap: 2px;
+$container-x-offset: 24px;
+$container-y-offset: 8px;
+
 @mixin menu-container {
   position: absolute;
   z-index: 1;
@@ -11,7 +15,7 @@
   margin: auto 0;
 
   > * + * {
-    margin-left: 2px;
+    margin-left: $container-gap;
   }
 }
 
@@ -21,24 +25,24 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  bottom: 8px;
+  bottom: $container-y-offset;
   flex-direction: column;
 
   > * + * {
-    margin-top: 2px;
+    margin-top: $container-gap;
   }
 }
 
 .menu-left {
   @include menu-x-container;
-  left: 24px;
+  left: $container-x-offset;
   height: 74vh;
   max-height: 668px;
 }
 
 .menu-right {
   @include menu-x-container;
-  right: 24px;
+  right: $container-x-offset;
   height: 36vh;
   max-height: 288px;
 }
