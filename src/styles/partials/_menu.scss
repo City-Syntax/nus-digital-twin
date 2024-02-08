@@ -1,6 +1,9 @@
-$container-gap: 2px;
-$container-x-offset: 24px;
-$container-y-offset: 8px;
+:root {
+  --content-gap: 20px;
+  --container-gap: 2px;
+  --container-y-offset: 8px;
+  --container-x-offset: 24px;
+}
 
 @mixin menu-container {
   position: absolute;
@@ -15,7 +18,7 @@ $container-y-offset: 8px;
   margin: auto 0;
 
   > * + * {
-    margin-left: $container-gap;
+    margin-left: var(--container-gap);
   }
 }
 
@@ -25,24 +28,24 @@ $container-y-offset: 8px;
   margin: 0 auto;
   left: 0;
   right: 0;
-  bottom: $container-y-offset;
+  bottom: var(--container-y-offset);
   flex-direction: column;
 
   > * + * {
-    margin-top: $container-gap;
+    margin-top: var(--container-gap);
   }
 }
 
 .menu-left {
   @include menu-x-container;
-  left: $container-x-offset;
+  left: var(--container-x-offset);
   height: 74vh;
   max-height: 668px;
 }
 
 .menu-right {
   @include menu-x-container;
-  right: $container-x-offset;
+  right: var(--container-x-offset);
   height: 36vh;
   max-height: 288px;
 }
@@ -64,7 +67,7 @@ $container-y-offset: 8px;
   line-height: 1.5rem;
 
   > * + * {
-    margin-top: 20px;
+    margin-top: var(--content-gap);
   }
 }
 
@@ -96,7 +99,7 @@ $container-y-offset: 8px;
   overflow-y: auto;
 
   > * + * {
-    margin-top: 20px;
+    margin-top: var(--content-gap);
   }
 }
 
@@ -140,7 +143,7 @@ $container-y-offset: 8px;
   }
 
   > * + * {
-    margin-top: 20px;
+    margin-top: var(--content-gap);
   }
 }
 
