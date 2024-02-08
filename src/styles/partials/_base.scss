@@ -7,10 +7,8 @@ $md: 878px;
   --text-base: 1rem;
   --text-lg: 1.125rem;
   --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.75rem;
-
-  --lh-base: 1.5rem;
+  --text-2xl: 1.375rem;
+  --text-3xl: 1.5rem;
 
   --padding-xs: 8px;
   --padding-sm: 12px;
@@ -39,6 +37,7 @@ html {
   margin: 0;
   padding: 0;
   color: rgba(var(--base-content));
+  font-size: var(--text-base);
 }
 
 * {
