@@ -1,3 +1,9 @@
+/* ==========================================================================
+   BASE
+   Contains the variables, breakpoints and styles for some elements.
+   Colors are specified in RGB values.
+   ========================================================================== */
+
 $sm: 448px;
 $md: 878px;
 
@@ -22,6 +28,12 @@ $md: 878px;
   --rounded-lg: 20px;
   --rounded-xl: 24px;
 
+  --btn-xs: 1.75rem;
+  --btn-sm: 2rem;
+  --btn-md: 2.25rem;
+  --btn-lg: 2.5rem;
+  --btn-xl: 2.75rem;
+
   --base-100: 33, 33, 33;
   --base-200: 84, 84, 84;
   --base-300: 169, 169, 169;
@@ -30,6 +42,11 @@ $md: 878px;
   --primary-100: #18338b;
   --primary-200: #1d4ed8;
   --primary-300: #60a5fa;
+
+  --content-gap: 16px;
+  --container-gap: 2px;
+  --container-y-offset: 8px;
+  --container-x-offset: 24px;
 }
 
 body,

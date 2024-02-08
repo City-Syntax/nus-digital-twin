@@ -1,0 +1,17 @@
+/* ==========================================================================
+   TOOLBAR
+   ========================================================================== */
+
+#home-button {
+  @include btn;
+  @include bg-base;
+  @include btn-xl-square;
+  position: absolute;
+  bottom: 8px;
+  right: var(--container-x-offset);
+  transition: background-color 150ms;
+
+  &:hover {
+    background-color: rgba(var(--base-100), 1);
+  }
+}

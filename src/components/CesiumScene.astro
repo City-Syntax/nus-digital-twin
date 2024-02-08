@@ -39,23 +39,18 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     terrain: Terrain.fromWorldTerrain(),
     animation: false,
   });
+  viewer.homeButton.destroy();
   viewer.sceneModePicker.destroy();
   viewer.baseLayerPicker.destroy();
   viewer.fullscreenButton.destroy();
 
-  var nusView = {
+  let nusView = {
     destination: Cartesian3.fromDegrees(103.77678, 1.28342, 800),
     orientation: {
       heading: CesiumMath.toRadians(0.0),
       pitch: CesiumMath.toRadians(-30.0),
     },
   };
-
-  // Set the home button view
-  viewer.homeButton.viewModel.command.beforeExecute.addEventListener(function (commandInfo) {
-    viewer.scene.camera.flyTo(nusView);
-    commandInfo.cancel = true;
-  });
 
   // Initial view
   viewer.camera.flyTo(nusView);
@@ -109,6 +104,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
     });
   });
+
+  const homeButton = document.getElementById('home-button');
+  if (homeButton) {
+    homeButton.onclick = () => viewer.camera.flyTo(nusView);
+  }
 </script>
 
 <div id="cesiumContainer"></div>

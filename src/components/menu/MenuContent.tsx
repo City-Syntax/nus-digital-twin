@@ -14,7 +14,6 @@ const MenuContent = ({ title, children }: MenuContentProps) => {
         <h2>{title}</h2>
         <button
           type="button"
-          className="btn-secondary btn-rounded btn-square"
           onClick={() => {
             activeMenu.set('');
             searchQuery.set('');
