@@ -1,44 +1,53 @@
 @mixin menu-container {
   position: absolute;
   z-index: 1;
+  display: flex;
+}
+
+@mixin menu-x-container {
+  @include menu-container;
   top: 0;
   bottom: 0;
   margin: auto 0;
-  display: flex;
 
   > * + * {
     margin-left: 2px;
   }
 }
 
-.menu-left {
+
+@mixin menu-y-container {
   @include menu-container;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  flex-direction: column;
+
+  > * + * {
+    margin-top: 2px;
+  }
+}
+
+.menu-left {
+  @include menu-x-container;
   left: 24px;
   height: 74vh;
   max-height: 668px;
 }
 
 .menu-right {
-  @include menu-container;
+  @include menu-x-container;
   right: 24px;
   height: 36vh;
   max-height: 288px;
 }
 
 .menu-bottom {
+  @include menu-y-container;
   max-width: 500px;
-  position: absolute;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  bottom: 8px;
   padding-left: var(--padding-xs);
   padding-right: var(--padding-xs);
-  z-index: 1;
-
-  > * + * {
-    margin-top: 2px;
-  }
 }
 
 @mixin menu-base {
