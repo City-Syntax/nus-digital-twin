@@ -1,3 +1,9 @@
+/* ==========================================================================
+   CESIUM
+   Contains the styles for Cesium default elements such as the
+   timeline and toolbar.
+   ========================================================================== */
+
 div.cesium-viewer-timelineContainer {
   width: 100%;
   top: 0;
@@ -14,7 +20,7 @@ div.cesium-viewer-toolbar {
 
 div.cesium-viewer-bottom {
   top: 32px;
-  bottom: unset!important;
+  bottom: unset !important;
 }
 
 .cesium-viewer div.cesium-widget-credits {

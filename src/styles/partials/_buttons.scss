@@ -1,28 +1,43 @@
+/* ==========================================================================
+   BUTTONS
+   Include a base style and an optional sizing for the button.
+
+   Base styles: btn, btn-primary or btn-secondary
+   Sizing (optional): btn-xs, btn-xs-square,
+                      btn-sm, btn-sm-square,
+                      btn-lg, btn-lg-square,
+                      btn-xl, btn-xl-square
+   ========================================================================== */
+
 @mixin btn {
-  border: none;
-  color: rgba(var(--base-content));
-  cursor: pointer;
-  padding: var(--padding-xs);
   background: none;
-  font-size: var(--text-base)
+  border: none;
+  border-radius: var(--rounded-sm);
+  color: rgba(var(--base-content));
+  font-size: var(--text-base);
+  cursor: pointer;
+  height: var(--btn-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > svg {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
 }
 
-.btn {
+@mixin btn-primary {
   @include btn;
+  background-color: rgba(var(--primary-200));
+  transition: background-color 150ms;
+
+  &:hover {
+    background-color: rgba(var(--primary-100));
+  }
 }
 
-.btn-square {
-  @include btn;
-  height: 32px;
-  width: 32px;
-}
-
-.btn-rounded {
-  @include btn;
-  border-radius: 100%;
-}
-
-.btn-secondary {
+@mixin btn-secondary {
   @include btn;
   backdrop-filter: saturate(120%) blur(4px);
   -webkit-backdrop-filter: saturate(120%) blur(4px);
@@ -32,6 +47,56 @@
   &:hover {
     background-color: rgba(var(--base-200), 1);
   }
+}
+
+@mixin btn-xs {
+  height: var(--btn-xs);
+
+  > svg {
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
+@mixin btn-xs-square {
+  @include btn-xs;
+  width: var(--btn-xs);
+}
+
+@mixin btn-sm {
+  height: var(--btn-sm);
+
+  > svg {
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
+@mixin btn-lg {
+  height: var(--btn-lg);
+}
+
+@mixin btn-xl {
+  height: var(--btn-xl);
+}
+
+@mixin btn-sm-square {
+  @include btn-sm;
+  width: var(--btn-sm);
+}
+
+@mixin btn-square {
+  width: var(--btn-md);
+}
+
+@mixin btn-lg-square {
+  @include btn-lg;
+  width: var(--btn-lg);
+}
+
+@mixin btn-xl-square {
+  @include btn-xl;
+  width: var(--btn-xl);
 }
 
 .btn-group {
@@ -62,6 +127,6 @@
   }
 
   button.active {
-    background-color: var(--primary-200);
+    background-color: rgba(var(--primary-200));
   }
 }

@@ -1,52 +1,90 @@
+/* ==========================================================================
+   MENU
+   ========================================================================== */
+
 @mixin menu-container {
   position: absolute;
   z-index: 1;
+  display: flex;
+}
+
+@mixin menu-x-container {
+  @include menu-container;
   top: 0;
   bottom: 0;
   margin: auto 0;
-  display: flex;
 
   > * + * {
-    margin-left: 4px;
+    margin-left: var(--container-gap);
+  }
+}
+
+@mixin menu-y-container {
+  @include menu-container;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: var(--container-y-offset);
+  flex-direction: column;
+
+  > * + * {
+    margin-top: var(--container-gap);
   }
 }
 
 .menu-left {
-  @include menu-container;
-  left: 24px;
-  height: 70vh;
-  max-height: 1000px;
+  @include menu-x-container;
+  left: var(--container-x-offset);
+  height: 74vh;
+  max-height: 668px;
 }
 
 .menu-right {
-  @include menu-container;
-  right: 24px;
+  @include menu-x-container;
+  right: var(--container-x-offset);
   height: 36vh;
-  max-height: 600px;
+  max-height: 288px;
+}
+
+.menu-bottom {
+  @include menu-y-container;
+  max-width: 500px;
+  padding-left: var(--padding-xs);
+  padding-right: var(--padding-xs);
 }
 
 @mixin menu-base {
   @include bg-base;
   border-radius: var(--rounded-base);
   display: flex;
+}
+
+@mixin menu-x-base {
+  @include menu-base;
   flex-direction: column;
   padding-top: var(--padding-base);
   padding-bottom: var(--padding-base);
-  line-height: 1.5rem;
 
   > * + * {
-    margin-top: 20px;
+    margin-top: var(--content-gap);
   }
 }
 
 .menubar-left {
-  @include menu-base;
+  @include menu-x-base;
   width: 218px;
 }
 
 .menubar-right {
-  @include menu-base;
+  @include menu-x-base;
   width: 188px;
+}
+
+.menubar-bottom {
+  @include menu-base;
+  padding-left: var(--padding-lg);
+  padding-right: var(--padding-lg);
+  justify-content: space-between;
 }
 
 .menubar-header {
@@ -58,20 +96,25 @@
   overflow-y: auto;
 
   > * + * {
-    margin-top: 20px;
+    margin-top: var(--content-gap);
   }
 }
 
 .menubar-footer {
-  padding-top: var(--padding-base);
   margin-top: auto;
 }
 
 .menubar-content {
-  @include menu-base;
+  @include menu-x-base;
   padding-left: var(--padding-base);
   padding-right: var(--padding-base);
-  width: 408px;
+  width: 388px;
+  line-height: 1.5rem;
+
+  @media screen and (max-width: $md) {
+    width: 100%;
+    max-height: 60vh;
+  }
 }
 
 .menubar-content-header {
@@ -84,6 +127,9 @@
   }
 
   > button {
+    @include btn-secondary;
+    @include btn-sm-square;
+    border-radius: 100%;
     flex-shrink: 0;
     margin-left: 8px;
     align-self: self-start;
@@ -98,7 +144,7 @@
   }
 
   > * + * {
-    margin-top: 20px;
+    margin-top: var(--content-gap);
   }
 }
 
@@ -122,12 +168,11 @@
     padding-right: var(--padding-base);
     position: relative;
     transition: color 200ms;
-    display: flex;
-    align-items: center;
+    justify-content: flex-start;
 
     &:hover,
     &.active {
-      color: var(--primary-300);
+      color: rgba(var(--primary-300));
     }
 
     &::before {
@@ -139,7 +184,7 @@
       transform: translateY(-50%);
       width: 4px;
       height: 20px;
-      background-color: var(--primary-300);
+      background-color: rgba(var(--primary-300));
       border-radius: 0 var(--rounded-lg) var(--rounded-lg) 0;
       transition: opacity 200ms;
       opacity: 0;
@@ -150,9 +195,43 @@
     }
 
     > svg {
-      height: 20px;
-      width: 20px;
       margin-right: 8px;
+    }
+
+    &.vertical {
+      flex-direction: column;
+      gap: 4px;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: calc(var(--padding-xs) + 2px);
+      padding-bottom: var(--padding-xs);
+      height: auto;
+    }
+
+    &.vertical::before {
+      top: unset;
+      left: unset;
+      bottom: -2px;
+      height: 4px;
+      width: 32px;
+      border-radius: var(--rounded-lg) var(--rounded-lg) 0 0;
+    }
+
+    &.vertical > svg {
+      margin-right: 0;
+    }
+
+    &.vertical > span {
+      font-size: var(--text-xs);
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: $md) {
+    > button,
+    > .menu-list-title {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
