@@ -11,6 +11,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
 <script>
   import buildingsData from '../content/buildings/buildings.json';
+  import { fade } from 'astro:transitions';
 
   window.CESIUM_BASE_URL = '/cesium';
 
@@ -28,6 +29,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ImageryLayer,
     ScreenSpaceEventType,
     defined,
+    NavigationHelpButton,
   } from 'cesium';
 
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
@@ -37,12 +39,14 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     // TODO: Serve Sentinel-2 base layer to save on bandwidth
     baseLayer: ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}),
     terrain: Terrain.fromWorldTerrain(),
-    animation: false,
+    navigationHelpButton: false,
+    homeButton: false,
+    fullscreenButton: false,
+    baseLayerPicker: false,
+    sceneModePicker: false,
+    animation: false, // Disables the Cesium animation clock
+    geocoder: false, // Disables the Cesium search button
   });
-  viewer.homeButton.destroy();
-  viewer.sceneModePicker.destroy();
-  viewer.baseLayerPicker.destroy();
-  viewer.fullscreenButton.destroy();
 
   let nusView = {
     destination: Cartesian3.fromDegrees(103.77678, 1.28342, 800),

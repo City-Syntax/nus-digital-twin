@@ -2,16 +2,42 @@
    TOOLBAR
    ========================================================================== */
 
-#home-button {
-  @include btn;
-  @include bg-base;
-  @include btn-xl-square;
+.toolbar {
   position: absolute;
-  bottom: 8px;
+  margin: 0 auto;
+  left: var(--container-x-offset);
   right: var(--container-x-offset);
-  transition: background-color 150ms;
+  bottom: 8px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
 
-  &:hover {
-    background-color: rgba(var(--base-100), 1);
+  > button {
+    @include btn;
+    @include bg-base;
+    @include btn-xl-square;
+    transition: background-color 150ms;
+
+    &:hover {
+      background-color: rgba(var(--base-100), 1);
+    }
+  }
+}
+@media screen and (max-width: 796px) {
+  .toolbar {
+    align-items: flex-end;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 656px) {
+  .toolbar {
+    max-width: 500px;
+    flex-direction: row;
+    padding-left: var(--padding-xs);
+    padding-right: var(--padding-xs);
+    left: 0;
+    right: 0;
+    bottom: 72px;
   }
 }
