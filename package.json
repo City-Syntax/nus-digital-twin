@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "yarn cesium:staticfiles && astro dev",
     "start": "astro dev",
-    "build": "astro check && yarn cesium:staticfiles && astro build",
+    "build": "rm -rf dist && astro check && yarn cesium:staticfiles && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro src",
@@ -15,11 +15,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
-    "@astrojs/react": "^3.0.9",
+    "@astrojs/react": "^3.0.10",
     "@fontsource-variable/inter": "^5.0.16",
     "@fontsource/ibm-plex-sans": "^5.0.18",
     "@nanostores/react": "^0.7.1",
-    "astro": "^4.2.1",
+    "astro": "^4.3.5",
     "cesium": "^1.112.0",
     "nanostores": "^0.9.5",
     "react": "^18.2.0",
