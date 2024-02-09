@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "yarn cesium:staticfiles && astro dev",
     "start": "astro dev",
-    "build": "astro check && yarn cesium:staticfiles && astro build",
+    "build": "rm -rf dist && astro check && yarn cesium:staticfiles && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro src",
