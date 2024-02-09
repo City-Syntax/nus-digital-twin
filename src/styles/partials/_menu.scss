@@ -171,6 +171,7 @@
     justify-content: flex-start;
 
     &:hover,
+    &:active,
     &.active {
       color: rgba(var(--primary-300));
     }

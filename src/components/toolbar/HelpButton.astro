@@ -2,6 +2,14 @@
 import Icons from '../Icons';
 ---
 
-<button id="help-button">
+<button id="help-button" title="Help" type="button">
   <Icons.Help />
 </button>
+<script>
+  import tippy from 'tippy.js';
+
+  tippy('#help-button', {
+    content: 'Help',
+    arrow: false,
+  });
+</script>
