@@ -55,7 +55,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   };
 
   // Initial view
-  viewer.camera.flyTo(nusView);
+  viewer.camera.setView(nusView);
 
   // Add Cesium OSM Buildings, a global 3D buildings layer.
   const osmBuildingsTileset = await createOsmBuildingsAsync();
