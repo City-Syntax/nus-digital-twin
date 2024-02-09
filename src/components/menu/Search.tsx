@@ -14,6 +14,7 @@ const Search = () => {
           placeholder="Search buildings"
           onChange={(e) => searchQuery.set(e.target.value)}
           value={$searchQuery}
+          name="search"
         />
         <Icons.Search></Icons.Search>
       </div>
