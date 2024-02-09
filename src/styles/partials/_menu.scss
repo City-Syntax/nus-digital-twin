@@ -228,6 +228,10 @@
   }
 
   @media screen and (max-width: $md) {
+    > button:not(:first-child) {
+      @include btn-lg;
+    }
+
     > button,
     > .menu-list-title {
       padding-left: 0;
