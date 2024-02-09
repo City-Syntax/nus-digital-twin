@@ -5,3 +5,11 @@ import Icons from '../Icons';
 <button id="help-button">
   <Icons.Help />
 </button>
+<script>
+  import tippy from 'tippy.js';
+
+  tippy('#help-button', {
+    content: 'Help',
+    arrow: false,
+  });
+</script>

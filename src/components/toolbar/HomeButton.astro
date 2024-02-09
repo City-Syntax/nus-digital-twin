@@ -5,3 +5,11 @@ import Icons from '../Icons';
 <button id="home-button">
   <Icons.Home />
 </button>
+<script>
+  import tippy from 'tippy.js';
+
+  tippy('#home-button', {
+    content: 'Reset view',
+    arrow: false,
+  });
+</script>
