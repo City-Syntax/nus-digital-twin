@@ -28,9 +28,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ImageryLayer,
     ScreenSpaceEventType,
     defined,
+    MapboxStyleImageryProvider,
   } from 'cesium';
+  const isProd = import.meta.env.PROD;
 
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
+
+  const mapbox = new MapboxStyleImageryProvider({
+    styleId: 'dark-v11',
+    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
+  });
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
@@ -45,6 +52,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     animation: false, // Disables the Cesium animation clock
     geocoder: false, // Disables the Cesium search button
   });
+
+  // Serve Mapbox in production
+  if (isProd) {
+    viewer.imageryLayers.removeAll();
+    viewer.imageryLayers.addImageryProvider(mapbox);
+  }
 
   let nusView = {
     destination: Cartesian3.fromDegrees(103.77678, 1.28342, 800),
