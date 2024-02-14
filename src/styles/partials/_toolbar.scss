@@ -73,11 +73,21 @@
       font-weight: 600;
       text-align: center;
       width: 60px;
+      transition: color 150ms;
 
       img {
         width: 60px;
         height: 60px;
         border-radius: var(--rounded-sm);
+        transition: border 150ms;
+      }
+
+      &.active {
+        color: rgba(var(--primary-300));
+
+        img {
+          border: 2px solid rgba(var(--primary-300));
+        }
       }
     }
   }
