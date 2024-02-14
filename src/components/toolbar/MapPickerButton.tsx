@@ -9,11 +9,11 @@ const MapPickerButton = () => {
   return (
     <div className="map-picker-container" onMouseLeave={() => setShowPicker(false)}>
       <div className={`map-picker ${showPicker ? '' : 'hidden'}`}>
-        <button className="map-picker-item" id="mapbox-dark-btn">
+        <button className="map-picker-item" id="mapbox-dark-btn" type="button">
           <img src={mapboxDark.src} alt="Mapbox Dark" />
           Mapbox Dark
         </button>
-        <button className="map-picker-item" id="mapbox-satellite-btn">
+        <button className="map-picker-item" id="mapbox-satellite-btn" type="button">
           <img src={mapboxSatellite.src} alt="Mapbox Satellite" />
           Mapbox Satellite
         </button>
