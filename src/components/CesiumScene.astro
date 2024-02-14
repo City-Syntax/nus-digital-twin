@@ -34,7 +34,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
-  const mapbox = new MapboxStyleImageryProvider({
+  const mapboxSatellite = new MapboxStyleImageryProvider({
+    styleId: 'satellite-v9',
+    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
+  });
+
+  const mapboxDark = new MapboxStyleImageryProvider({
     styleId: 'dark-v11',
     accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
   });
@@ -56,7 +61,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   // Serve Mapbox in production
   if (isProd) {
     viewer.imageryLayers.removeAll();
-    viewer.imageryLayers.addImageryProvider(mapbox);
+    viewer.imageryLayers.addImageryProvider(mapboxDark);
+    viewer.imageryLayers.addImageryProvider(mapboxSatellite);
   }
 
   let nusView = {
