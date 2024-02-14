@@ -7,16 +7,16 @@ const MapPickerButton = () => {
   return (
     <div className="map-picker-container">
       <div className="map-picker">
-        <div className="map-picker-item">
+        <button className="map-picker-item">
           <img src={mapboxDark.src} alt="" />
-          <span>Mapbox Dark</span>
-        </div>
-        <div className="map-picker-item">
+          Mapbox Dark
+        </button>
+        <button className="map-picker-item">
           <img src={mapboxSatellite.src} alt="" />
-          <span>Mapbox Satellite</span>
-        </div>
+          Mapbox Satellite
+        </button>
       </div>
-      <button id="map-picker-button" type="button">
+      <button className="toolbar-btn" id="map-picker-button" type="button">
         <Icons.Picker></Icons.Picker>
         <span className="sr-only">Map Picker</span>
       </button>

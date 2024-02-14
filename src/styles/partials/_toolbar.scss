@@ -12,7 +12,7 @@
   justify-content: flex-end;
   gap: 6px;
 
-  button {
+  .toolbar-btn {
     @include btn;
     @include bg-base;
     @include btn-xl-square;
@@ -24,7 +24,7 @@
   }
 }
 
-@media screen and (max-width: 796px) {
+@media screen and (max-width: $md) {
   .toolbar {
     align-items: flex-end;
     flex-direction: column;
@@ -57,6 +57,10 @@
     gap: 16px;
 
     > .map-picker-item {
+      border: none;
+      background: none;
+      color: inherit;
+      cursor: pointer;
       display: flex;
       flex-direction: column;
       justify-content: center;
