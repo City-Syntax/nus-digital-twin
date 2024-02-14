@@ -30,7 +30,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     defined,
     MapboxStyleImageryProvider,
   } from 'cesium';
-  const isProd = import.meta.env.PROD;
+
+  const isDev = import.meta.env.DEV;
 
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
@@ -46,8 +47,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
-    // TODO: Serve Sentinel-2 base layer to save on bandwidth
-    baseLayer: ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}),
     terrain: Terrain.fromWorldTerrain(),
     navigationHelpButton: false,
     homeButton: false,
@@ -58,11 +57,14 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     geocoder: false, // Disables the Cesium search button
   });
 
-  // Serve Mapbox in production
-  if (isProd) {
-    viewer.imageryLayers.removeAll();
-    viewer.imageryLayers.addImageryProvider(mapboxDark);
-    viewer.imageryLayers.addImageryProvider(mapboxSatellite);
+  let mapLayers = ['satellite', 'dark'];
+  viewer.imageryLayers.removeAll();
+  viewer.imageryLayers.addImageryProvider(mapboxSatellite);
+  viewer.imageryLayers.addImageryProvider(mapboxDark);
+
+  if (isDev) {
+    viewer.imageryLayers.add(ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}));
+    mapLayers.push('sentinel');
   }
 
   let nusView = {
@@ -127,9 +129,19 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   const homeButton = document.getElementById('home-button');
-  if (homeButton) {
-    homeButton.onclick = () => viewer.camera.flyTo(nusView);
-  }
+  homeButton!.onclick = () => viewer.camera.flyTo(nusView);
+
+  const mapboxDarkBtn = document.getElementById('mapbox-dark-btn');
+  mapboxDarkBtn!.onclick = () => {
+    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayers.indexOf('dark')));
+    mapLayers = [...mapLayers.filter((layer) => layer !== 'dark'), 'dark'];
+  };
+
+  const mapboxSatelliteBtn = document.getElementById('mapbox-satellite-btn');
+  mapboxSatelliteBtn!.onclick = () => {
+    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayers.indexOf('satellite')));
+    mapLayers = [...mapLayers.filter((layer) => layer !== 'satellite'), 'satellite'];
+  };
 </script>
 
 <div id="cesiumContainer"></div>
