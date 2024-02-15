@@ -130,8 +130,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     });
   });
 
-  const homeButton = document.getElementById('home-button');
-  homeButton!.onclick = () => viewer.camera.flyTo(nusView);
+  const homeBtn = document.getElementById('home-btn');
+  homeBtn!.onclick = () => viewer.camera.flyTo(nusView);
 
   const mapPickerBtn = document.getElementById('map-picker-btn');
   mapPickerBtn?.addEventListener('click', () => {
