@@ -85,6 +85,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   viewer.scene.primitives.add(osmBuildingsTileset);
 
   osmBuildingsTileset.style = new Cesium3DTileStyle({
+    color: {
+      conditions: [[true, "color('yellow')"]],
+    },
     show: {
       conditions: [
         ["${feature['cesium#longitude']} > 103.78171", false],
