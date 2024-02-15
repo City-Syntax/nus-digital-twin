@@ -131,31 +131,36 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const homeButton = document.getElementById('home-button');
   homeButton!.onclick = () => viewer.camera.flyTo(nusView);
 
-  const mapboxDarkBtn = document.getElementById('mapbox-dark-btn');
-  const mapboxSatelliteBtn = document.getElementById('mapbox-satellite-btn');
-  const displayedLayer = mapLayers[mapLayers.length - 1];
+  const mapPickerBtn = document.getElementById('map-picker-btn');
+  mapPickerBtn?.addEventListener('click', () => {
+    setTimeout(() => {
+      const mapboxDarkBtn = document.getElementById('mapbox-dark-btn');
+      const mapboxSatelliteBtn = document.getElementById('mapbox-satellite-btn');
+      const displayedLayer = mapLayers[mapLayers.length - 1];
 
-  if (displayedLayer === 'dark') {
-    mapboxDarkBtn!.classList.add('active');
-  }
+      if (displayedLayer === 'dark') {
+        mapboxDarkBtn!.classList.add('active');
+      }
 
-  if (displayedLayer === 'satellite') {
-    mapboxSatelliteBtn!.classList.add('active');
-  }
+      if (displayedLayer === 'satellite') {
+        mapboxSatelliteBtn!.classList.add('active');
+      }
 
-  mapboxDarkBtn!.onclick = () => {
-    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayers.indexOf('dark')));
-    mapboxDarkBtn!.classList.add('active');
-    mapboxSatelliteBtn!.classList.remove('active');
-    mapLayers = [...mapLayers.filter((layer) => layer !== 'dark'), 'dark'];
-  };
+      mapboxDarkBtn!.onclick = () => {
+        viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayers.indexOf('dark')));
+        mapboxDarkBtn!.classList.add('active');
+        mapboxSatelliteBtn!.classList.remove('active');
+        mapLayers = [...mapLayers.filter((layer) => layer !== 'dark'), 'dark'];
+      };
 
-  mapboxSatelliteBtn!.onclick = () => {
-    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayers.indexOf('satellite')));
-    mapboxSatelliteBtn!.classList.add('active');
-    mapboxDarkBtn!.classList.remove('active');
-    mapLayers = [...mapLayers.filter((layer) => layer !== 'satellite'), 'satellite'];
-  };
+      mapboxSatelliteBtn!.onclick = () => {
+        viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayers.indexOf('satellite')));
+        mapboxSatelliteBtn!.classList.add('active');
+        mapboxDarkBtn!.classList.remove('active');
+        mapLayers = [...mapLayers.filter((layer) => layer !== 'satellite'), 'satellite'];
+      };
+    });
+  });
 </script>
 
 <div id="cesiumContainer"></div>

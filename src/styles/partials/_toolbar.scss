@@ -45,19 +45,13 @@
 }
 
 .map-picker-container {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  align-items: end;
-
   > .map-picker {
     @include bg-base;
     padding: var(--padding-base);
     border-radius: var(--rounded-base);
     display: flex;
     gap: 16px;
-    margin-left: 64px;
-    margin-top: 64px;
+    margin-bottom: 4px;
 
     > .map-picker-item {
       border: none;
