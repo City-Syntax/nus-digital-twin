@@ -3,8 +3,6 @@ import mapboxDark from '../../assets/mapbox-dark.png';
 import mapboxSatellite from '../../assets/mapbox-satellite.png';
 import Icons from '../Icons';
 
-// https://stackoverflow.com/questions/32553158/detect-click-outside-react-component
-
 const MapPickerButton = () => {
   const [showPicker, setShowPicker] = useState(false);
 
