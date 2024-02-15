@@ -3,8 +3,11 @@ import mapboxDark from '../../assets/mapbox-dark.png';
 import mapboxSatellite from '../../assets/mapbox-satellite.png';
 import Icons from '../Icons';
 import * as Popover from '@radix-ui/react-popover';
+import { mapLayer } from '../../store';
+import { useStore } from '@nanostores/react';
 
 const MapPickerButton = () => {
+  const $mapLayer = useStore(mapLayer);
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
@@ -15,17 +18,23 @@ const MapPickerButton = () => {
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content align="end">
-          <div className="map-picker-container">
-            <div className="map-picker">
-              <button className="map-picker-item" id="mapbox-dark-btn" type="button">
-                <img src={mapboxDark.src} alt="Mapbox Dark" />
-                Mapbox Dark
-              </button>
-              <button className="map-picker-item" id="mapbox-satellite-btn" type="button">
-                <img src={mapboxSatellite.src} alt="Mapbox Satellite" />
-                Mapbox Satellite
-              </button>
-            </div>
+          <div id="map-picker">
+            <button
+              className={`map-picker-item ${$mapLayer === 'dark' ? 'active' : ''}`}
+              type="button"
+              onClick={() => mapLayer.set('dark')}
+            >
+              <img src={mapboxDark.src} alt="Mapbox Dark" />
+              Mapbox Dark
+            </button>
+            <button
+              className={`map-picker-item ${$mapLayer === 'satellite' ? 'active' : ''}`}
+              type="button"
+              onClick={() => mapLayer.set('satellite')}
+            >
+              <img src={mapboxSatellite.src} alt="Mapbox Satellite" />
+              Mapbox Satellite
+            </button>
           </div>
         </Popover.Content>
       </Popover.Portal>

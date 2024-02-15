@@ -14,7 +14,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   window.CESIUM_BASE_URL = '/cesium';
 
-  import { activeMenu, buildingProperties, searchQuery, buildingDataLayer } from '../store';
+  import { activeMenu, buildingProperties, searchQuery, buildingDataLayer, mapLayer } from '../store';
 
   import {
     Cartesian3,
@@ -57,15 +57,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     geocoder: false, // Disables the Cesium search button
   });
 
-  let mapLayers = ['satellite', 'dark'];
+  let mapLayerOrder = ['satellite', 'dark'];
   viewer.imageryLayers.removeAll();
   viewer.imageryLayers.addImageryProvider(mapboxSatellite);
   viewer.imageryLayers.addImageryProvider(mapboxDark);
 
   if (isDev) {
     viewer.imageryLayers.add(ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}));
-    mapLayers.push('sentinel');
+    mapLayerOrder.push('sentinel');
   }
+
+  // mapLayer.set(mapLayerOrder[mapLayerOrder.length - 1])
 
   let nusView = {
     destination: Cartesian3.fromDegrees(103.77678, 1.28342, 800),
@@ -134,31 +136,14 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const mapPickerBtn = document.getElementById('map-picker-btn');
   mapPickerBtn?.addEventListener('click', () => {
     setTimeout(() => {
-      const mapboxDarkBtn = document.getElementById('mapbox-dark-btn');
-      const mapboxSatelliteBtn = document.getElementById('mapbox-satellite-btn');
-      const displayedLayer = mapLayers[mapLayers.length - 1];
-
-      if (displayedLayer === 'dark') {
-        mapboxDarkBtn!.classList.add('active');
-      }
-
-      if (displayedLayer === 'satellite') {
-        mapboxSatelliteBtn!.classList.add('active');
-      }
-
-      mapboxDarkBtn!.onclick = () => {
-        viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayers.indexOf('dark')));
-        mapboxDarkBtn!.classList.add('active');
-        mapboxSatelliteBtn!.classList.remove('active');
-        mapLayers = [...mapLayers.filter((layer) => layer !== 'dark'), 'dark'];
-      };
-
-      mapboxSatelliteBtn!.onclick = () => {
-        viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayers.indexOf('satellite')));
-        mapboxSatelliteBtn!.classList.add('active');
-        mapboxDarkBtn!.classList.remove('active');
-        mapLayers = [...mapLayers.filter((layer) => layer !== 'satellite'), 'satellite'];
-      };
+      const mapPicker = document.getElementById('map-picker');
+      mapPicker?.addEventListener('click', () => {
+        setTimeout(() => {
+          const layer = mapLayer.get();
+          viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(layer)));
+          mapLayerOrder = [...mapLayerOrder.filter((l) => l !== layer), layer];
+        });
+      });
     });
   });
 </script>

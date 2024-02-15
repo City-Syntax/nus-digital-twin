@@ -7,3 +7,4 @@ export const searchQuery = atom('');
 export const buildingProperties = map<BuildingPropertiesProps>({});
 
 export const buildingDataLayer = atom('osm');
+export const mapLayer = atom('');
