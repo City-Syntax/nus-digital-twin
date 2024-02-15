@@ -14,7 +14,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   window.CESIUM_BASE_URL = '/cesium';
 
-  import { activeMenu, buildingProperties, searchQuery, buildingDataLayer } from '../store';
+  import { activeMenu, buildingProperties, searchQuery, buildingDataLayer, mapLayer } from '../store';
 
   import {
     Cartesian3,
@@ -30,19 +30,23 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     defined,
     MapboxStyleImageryProvider,
   } from 'cesium';
-  const isProd = import.meta.env.PROD;
+
+  const isDev = import.meta.env.DEV;
 
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
-  const mapbox = new MapboxStyleImageryProvider({
+  const mapboxSatellite = new MapboxStyleImageryProvider({
+    styleId: 'satellite-v9',
+    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
+  });
+
+  const mapboxDark = new MapboxStyleImageryProvider({
     styleId: 'dark-v11',
     accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
   });
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
-    // TODO: Serve Sentinel-2 base layer to save on bandwidth
-    baseLayer: ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}),
     terrain: Terrain.fromWorldTerrain(),
     navigationHelpButton: false,
     homeButton: false,
@@ -53,11 +57,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     geocoder: false, // Disables the Cesium search button
   });
 
-  // Serve Mapbox in production
-  if (isProd) {
-    viewer.imageryLayers.removeAll();
-    viewer.imageryLayers.addImageryProvider(mapbox);
+  let mapLayerOrder = ['satellite', 'dark'];
+  viewer.imageryLayers.removeAll();
+  viewer.imageryLayers.addImageryProvider(mapboxSatellite);
+  viewer.imageryLayers.addImageryProvider(mapboxDark);
+
+  if (isDev) {
+    viewer.imageryLayers.add(ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}));
+    mapLayerOrder.push('sentinel');
   }
+
+  mapLayer.set(mapLayerOrder[mapLayerOrder.length - 1]);
 
   let nusView = {
     destination: Cartesian3.fromDegrees(103.77678, 1.28342, 800),
@@ -120,10 +130,22 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     });
   });
 
-  const homeButton = document.getElementById('home-button');
-  if (homeButton) {
-    homeButton.onclick = () => viewer.camera.flyTo(nusView);
-  }
+  const homeBtn = document.getElementById('home-btn');
+  homeBtn!.onclick = () => viewer.camera.flyTo(nusView);
+
+  const mapPickerBtn = document.getElementById('map-picker-btn');
+  mapPickerBtn?.addEventListener('click', () => {
+    setTimeout(() => {
+      const mapPicker = document.getElementById('map-picker');
+      mapPicker?.addEventListener('click', () => {
+        setTimeout(() => {
+          const layer = mapLayer.get();
+          viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(layer)));
+          mapLayerOrder = [...mapLayerOrder.filter((l) => l !== layer), layer];
+        });
+      });
+    });
+  });
 </script>
 
 <div id="cesiumContainer"></div>

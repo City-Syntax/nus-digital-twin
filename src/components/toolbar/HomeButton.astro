@@ -2,15 +2,7 @@
 import Icons from '../Icons';
 ---
 
-<button id="home-button" type="button">
+<button class="toolbar-btn" id="home-btn" type="button">
   <Icons.Home />
   <span class="sr-only">Reset view</span>
 </button>
-<script>
-  import tippy from 'tippy.js';
-
-  tippy('#home-button', {
-    content: 'Reset view',
-    arrow: false,
-  });
-</script>

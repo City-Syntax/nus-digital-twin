@@ -380,6 +380,69 @@ const Home = () => {
   );
 };
 
+const Picker = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.855 -0.855 24 24" stroke="currentColor">
+      <g>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M15.125357142857142 7.164642857142857v-4.776428571428571c0 -0.8671876735714286 -0.7249504071428572 -1.592142857142857 -1.592142857142857 -1.592142857142857h-11.145c-0.8671876735714286 0 -1.592142857142857 0.7249551835714285 -1.592142857142857 1.592142857142857v11.145c0 0.8671924499999999 0.7249551835714285 1.592142857142857 1.592142857142857 1.592142857142857h4.776428571428571"
+          strokeWidth="2"
+        ></path>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M21.49392857142857 19.901785714285715c0 0.8793405 -0.7128023571428571 1.592142857142857 -1.592142857142857 1.592142857142857"
+          strokeWidth="2"
+        ></path>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M7.164642857142857 8.756785714285714c0 -0.8793086571428571 0.7128342 -1.592142857142857 1.592142857142857 -1.592142857142857"
+          strokeWidth="2"
+        ></path>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M19.901785714285715 7.164642857142857c0.8793405 0 1.592142857142857 0.7128342 1.592142857142857 1.592142857142857"
+          strokeWidth="2"
+        ></path>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M7.164642857142857 19.901785714285715c0 0.8793405 0.7128342 1.592142857142857 1.592142857142857 1.592142857142857"
+          strokeWidth="2"
+        ></path>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M21.49392857142857 12.737142857142857v3.184285714285714"
+          strokeWidth="2"
+        ></path>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M7.164642857142857 15.92142857142857V12.737142857142857"
+          strokeWidth="2"
+        ></path>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12.737142857142857 7.164642857142857h3.184285714285714"
+          strokeWidth="2"
+        ></path>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12.737142857142857 21.49392857142857h3.184285714285714"
+          strokeWidth="2"
+        ></path>
+      </g>
+    </svg>
+  );
+};
+
 export default {
   Close,
   Search,
@@ -402,4 +465,5 @@ export default {
   Controls,
   Menu,
   Home,
+  Picker,
 };
