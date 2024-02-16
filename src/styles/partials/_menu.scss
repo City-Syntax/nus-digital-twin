@@ -240,3 +240,11 @@
     }
   }
 }
+
+.menu-btn-secondary {
+  @include btn-secondary;
+  @include btn-sm;
+  width: 100%;
+  font-size: var(--text-sm);
+  border-radius: var(--rounded-xs);
+}

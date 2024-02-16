@@ -84,19 +84,34 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const osmBuildingsTileset = await createOsmBuildingsAsync();
   viewer.scene.primitives.add(osmBuildingsTileset);
 
-  osmBuildingsTileset.style = new Cesium3DTileStyle({
-    color: {
-      conditions: [[true, "color('yellow')"]],
-    },
-    show: {
-      conditions: [
-        ["${feature['cesium#longitude']} > 103.78171", false],
-        ["${feature['cesium#longitude']} < 103.77022", false],
-        ["${feature['cesium#latitude']} < 1.29088", false],
-        ["${feature['cesium#latitude']} > 1.30824", false],
-      ],
-    },
-  });
+  function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
+    console.log(selectedLatitude);
+    console.log(selectedLongitude);
+    osmBuildingsTileset.style = new Cesium3DTileStyle({
+      defines: {
+        distance: `distance(vec2(\${feature['cesium#longitude']}, \${feature['cesium#latitude']}), vec2(${selectedLongitude},${selectedLatitude}))`,
+      },
+      color: {
+        conditions: [
+          ['${distance} > 0.010', "color('#a3c4f3')"],
+          ['${distance} > 0.008', "color('#8eecf5')"],
+          ['${distance} > 0.003', "color('#f1c0e8')"],
+          ['${distance} > 0.0001', "color('#fbf8cc')"],
+          ['true', "color('#efe5dc')"],
+        ],
+      },
+      show: {
+        conditions: [
+          ["${feature['cesium#longitude']} > 103.78171", false],
+          ["${feature['cesium#longitude']} < 103.77022", false],
+          ["${feature['cesium#latitude']} < 1.29088", false],
+          ["${feature['cesium#latitude']} > 1.30824", false],
+        ],
+      },
+    });
+  }
+
+  colorByDistance(1.29563, 103.77515);
 
   const handler = viewer.screenSpaceEventHandler;
   handler.setInputAction(function (movement: any) {
@@ -107,6 +122,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     if (defined(pickedFeature)) {
       activeMenu.set('BuildingInfo');
+      colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
       const featureName = pickedFeature.getProperty('name') || '';
       const featureData = buildingsData.filter((d) => d.name === featureName);
 
