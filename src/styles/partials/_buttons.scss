@@ -39,7 +39,6 @@
 
 @mixin btn-secondary {
   @include btn;
-  -webkit-backdrop-filter: saturate(120%) blur(4px);
   backdrop-filter: saturate(120%) blur(4px);
   background-color: rgba(var(--base-200), 0.5);
   transition: background-color 150ms;
