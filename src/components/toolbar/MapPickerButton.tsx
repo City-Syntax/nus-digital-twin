@@ -1,6 +1,7 @@
 import React from 'react';
 import mapboxDark from '../../assets/mapbox-dark.png';
 import mapboxSatellite from '../../assets/mapbox-satellite.png';
+import mapboxStreet from '../../assets/mapbox-street.png';
 import Icons from '../Icons';
 import * as Popover from '@radix-ui/react-popover';
 import { mapLayer } from '../../store';
@@ -19,6 +20,14 @@ const MapPickerButton = () => {
       <Popover.Portal>
         <Popover.Content align="end">
           <div id="map-picker">
+            <button
+              className={`map-picker-item ${$mapLayer === 'street' ? 'active' : ''}`}
+              type="button"
+              onClick={() => mapLayer.set('street')}
+            >
+              <img src={mapboxStreet.src} alt="Mapbox Street" />
+              Mapbox Street
+            </button>
             <button
               className={`map-picker-item ${$mapLayer === 'dark' ? 'active' : ''}`}
               type="button"

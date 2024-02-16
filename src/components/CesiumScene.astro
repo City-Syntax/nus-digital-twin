@@ -45,6 +45,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
   });
 
+  const mapboxStreet = new MapboxStyleImageryProvider({
+    styleId: 'streets-v12',
+    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
+  });
+
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
     terrain: Terrain.fromWorldTerrain(),
@@ -57,10 +62,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     geocoder: false, // Disables the Cesium search button
   });
 
-  let mapLayerOrder = ['satellite', 'dark'];
+  let mapLayerOrder = ['satellite', 'dark', 'street'];
   viewer.imageryLayers.removeAll();
   viewer.imageryLayers.addImageryProvider(mapboxSatellite);
   viewer.imageryLayers.addImageryProvider(mapboxDark);
+  viewer.imageryLayers.addImageryProvider(mapboxStreet);
 
   if (isDev) {
     viewer.imageryLayers.add(ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}));
@@ -85,19 +91,43 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   viewer.scene.primitives.add(osmBuildingsTileset);
 
   function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
-    console.log(selectedLatitude);
-    console.log(selectedLongitude);
     osmBuildingsTileset.style = new Cesium3DTileStyle({
       defines: {
         distance: `distance(vec2(\${feature['cesium#longitude']}, \${feature['cesium#latitude']}), vec2(${selectedLongitude},${selectedLatitude}))`,
       },
       color: {
         conditions: [
-          ['${distance} > 0.010', "color('#a3c4f3')"],
-          ['${distance} > 0.008', "color('#8eecf5')"],
-          ['${distance} > 0.003', "color('#f1c0e8')"],
-          ['${distance} > 0.0001', "color('#fbf8cc')"],
-          ['true', "color('#efe5dc')"],
+          ['${distance} > 0.0155', "color('#08498a')"],
+          ['${distance} > 0.015', "color('#085395')"],
+          ['${distance} > 0.0145', "color('#085da0')"],
+          ['${distance} > 0.014', "color('#0867ab')"],
+          ['${distance} > 0.0135', "color('#0f6faf')"],
+          ['${distance} > 0.013', "color('#1878b4')"],
+          ['${distance} > 0.0125', "color('#2081b8')"],
+          ['${distance} > 0.012', "color('#298abd')"],
+          ['${distance} > 0.0115', "color('#3192c1')"],
+          ['${distance} > 0.011', "color('#3a9cc7')"],
+          ['${distance} > 0.0105', "color('#42a6cc')"],
+          ['${distance} > 0.01', "color('#4bb0d1')"],
+          ['${distance} > 0.0095', "color('#54b6d1')"],
+          ['${distance} > 0.009', "color('#5fbdcd')"],
+          ['${distance} > 0.0085', "color('#6bc3c9')"],
+          ['${distance} > 0.008', "color('#76c9c6')"],
+          ['${distance} > 0.0075', "color('#80cec2')"],
+          ['${distance} > 0.007', "color('#8bd2bf')"],
+          ['${distance} > 0.0065', "color('#97d6bb')"],
+          ['${distance} > 0.006', "color('#a2dbb7')"],
+          ['${distance} > 0.0055', "color('#abdeb6')"],
+          ['${distance} > 0.005', "color('#b4e2ba')"],
+          ['${distance} > 0.0045', "color('#bde5be')"],
+          ['${distance} > 0.004', "color('#c6e9c2')"],
+          ['${distance} > 0.0035', "color('#cdebc6')"],
+          ['${distance} > 0.003', "color('#d2edcc')"],
+          ['${distance} > 0.0025', "color('#d7efd1')"],
+          ['${distance} > 0.002', "color('#dcf1d7')"],
+          ['${distance} > 0.0015', "color('#e1f3dc')"],
+          ['${distance} > 0.001', "color('#e6f6e1')"],
+          ['${distance} > 0.0005', "color('#ecf8e6')"],
         ],
       },
       show: {
