@@ -9,8 +9,8 @@
   right: var(--container-x-offset);
   bottom: 8px;
   display: flex;
-  justify-content: end;
-  align-items: end;
+  justify-content: flex-end;
+  align-items: flex-end;
   gap: 6px;
 
   .toolbar-btn {
