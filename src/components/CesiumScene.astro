@@ -14,7 +14,14 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   window.CESIUM_BASE_URL = '/cesium';
 
-  import { activeMenu, buildingProperties, searchQuery, buildingDataLayer, mapLayer } from '../store';
+  import {
+    activeMenu,
+    buildingProperties,
+    searchQuery,
+    buildingDataLayer,
+    mapLayer,
+    buildingColorSetting,
+  } from '../store';
 
   import {
     Cartesian3,
@@ -141,7 +148,18 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     });
   }
 
-  colorByDistance(1.29563, 103.77515);
+  function colorByOff() {
+    osmBuildingsTileset.style = new Cesium3DTileStyle({
+      show: {
+        conditions: [
+          ["${feature['cesium#longitude']} > 103.78171", false],
+          ["${feature['cesium#longitude']} < 103.77022", false],
+          ["${feature['cesium#latitude']} < 1.29088", false],
+          ["${feature['cesium#latitude']} > 1.30824", false],
+        ],
+      },
+    });
+  }
 
   const handler = viewer.screenSpaceEventHandler;
   handler.setInputAction(function (movement: any) {
@@ -166,6 +184,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   }, ScreenSpaceEventType.LEFT_CLICK);
 
+  colorByOff();
   const menu = document.getElementById('menu');
   menu?.addEventListener('click', () => {
     // Timeout is necessary to allow for the state to update first
@@ -175,6 +194,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
         osmBuildingsTileset.show = true;
       } else {
         osmBuildingsTileset.show = false;
+      }
+
+      if (buildingColorSetting.get() === 'distance') {
+        colorByDistance(1.29563, 103.77515);
+      } else {
+        colorByOff();
       }
     });
   });
