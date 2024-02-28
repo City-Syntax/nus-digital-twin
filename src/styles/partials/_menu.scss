@@ -246,9 +246,3 @@
     }
   }
 }
-
-.menu-btn-secondary {
-  @include btn-secondary;
-  width: 100%;
-  border-radius: var(--rounded-xs);
-}

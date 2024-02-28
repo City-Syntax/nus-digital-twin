@@ -21,6 +21,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     buildingDataLayer,
     mapLayer,
     buildingColorSetting,
+    isSelectColorByDistance,
   } from '../store';
 
   import {
@@ -169,8 +170,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     if (defined(pickedFeature)) {
+      if (isSelectColorByDistance.get()) {
+        colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
+        isSelectColorByDistance.set(false);
+        return;
+      }
+
       activeMenu.set('BuildingInfo');
-      colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
       const featureName = pickedFeature.getProperty('name') || '';
       const featureData = buildingsData.filter((d) => d.name === featureName);
 
