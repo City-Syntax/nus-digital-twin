@@ -37,6 +37,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ScreenSpaceEventType,
     defined,
     MapboxStyleImageryProvider,
+    JulianDate,
   } from 'cesium';
 
   const isDev = import.meta.env.DEV;
@@ -69,6 +70,21 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     animation: false, // Disables the Cesium animation clock
     geocoder: false, // Disables the Cesium search button
   });
+
+  viewer.timeline.makeLabel = function (timelineDate: any) {
+    const date = JulianDate.toDate(timelineDate);
+
+    const dateFormatter = new Intl.DateTimeFormat('en-SG', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: false,
+    });
+
+    return dateFormatter.format(date);
+  };
 
   let mapLayerOrder = ['satellite', 'dark', 'street'];
   viewer.imageryLayers.removeAll();
