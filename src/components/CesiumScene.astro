@@ -71,6 +71,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     geocoder: false, // Disables the Cesium search button
   });
 
+  // @ts-ignore: https://community.cesium.com/t/change-timeline-from-utc-to-local-time/11203/7
   viewer.timeline.makeLabel = function (timelineDate: any) {
     const date = JulianDate.toDate(timelineDate);
 
