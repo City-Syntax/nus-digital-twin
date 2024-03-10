@@ -22,6 +22,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     mapLayer,
     buildingColorSetting,
     isSelectColorByDistance,
+    colorByDistancePosition,
   } from '../store';
 
   import {
@@ -116,6 +117,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   viewer.scene.primitives.add(osmBuildingsTileset);
 
   function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
+    colorByDistancePosition.set({
+      latitude: selectedLatitude,
+      longitude: selectedLongitude,
+    });
+
     osmBuildingsTileset.style = new Cesium3DTileStyle({
       defines: {
         distance: `distance(vec2(\${feature['cesium#longitude']}, \${feature['cesium#latitude']}), vec2(${selectedLongitude},${selectedLatitude}))`,
@@ -220,7 +226,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
 
       if (buildingColorSetting.get() === 'distance') {
-        colorByDistance(1.29563, 103.77515);
+        const { latitude, longitude } = colorByDistancePosition.get();
+        colorByDistance(latitude, longitude);
       } else {
         colorByOff();
       }
