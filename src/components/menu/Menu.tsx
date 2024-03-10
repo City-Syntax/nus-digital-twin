@@ -24,6 +24,7 @@ import Search from './Search';
 import Controls from './Controls';
 import Layers from './Layers';
 import MoreMenu from './MoreMenu';
+import Distance from './Distance';
 
 const Menu = () => {
   const $activeMenu = useStore(activeMenu);
@@ -50,6 +51,7 @@ const Menu = () => {
         {$activeMenu === 'ThermalComfort' && <ThermalComfort></ThermalComfort>}
         {$activeMenu === 'Wind' && <Wind></Wind>}
         {$activeMenu === 'Solar' && <Solar></Solar>}
+        {$activeMenu === 'Distance' && <Distance></Distance>}
         <MenuRight></MenuRight>
       </div>
       <div className="menu-bottom hide-md">
@@ -67,6 +69,7 @@ const Menu = () => {
         {$activeMenu === 'ThermalComfort' && <ThermalComfort></ThermalComfort>}
         {$activeMenu === 'Wind' && <Wind></Wind>}
         {$activeMenu === 'Solar' && <Solar></Solar>}
+        {$activeMenu === 'Distance' && <Distance></Distance>}
         {$activeMenu === 'Help' && <Help></Help>}
         {$activeMenu === 'Settings' && <Settings></Settings>}
         {$activeMenu === 'Search' && <Search></Search>}
