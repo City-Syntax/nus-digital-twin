@@ -11,6 +11,7 @@ const Distance = () => {
       <div className="menubar-content-body">
         <div>
           <h3>Color by distance</h3>
+          <div className="hint">Colors buildings based on the proximity to the selected building.</div>
           <div className="btn-group">
             <button
               className={`${$buildingColorSetting === 'distance' ? 'active' : ''}`}
@@ -34,7 +35,7 @@ const Distance = () => {
                 className={`${$isSelectColorByDistance ? 'active' : ''}`}
                 onClick={() => isSelectColorByDistance.set(!$isSelectColorByDistance)}
               >
-                Select{$isSelectColorByDistance && 'ing'} central location
+                Select{$isSelectColorByDistance && 'ing'} central building
               </button>
             </div>
           </div>
