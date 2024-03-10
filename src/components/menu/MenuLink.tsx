@@ -1,6 +1,6 @@
 import React from 'react';
 import Icons from '../Icons';
-import { activeMenu, searchQuery } from '../../store';
+import { activeMenu, isSelectColorByDistance, searchQuery } from '../../store';
 import { useStore } from '@nanostores/react';
 
 interface MenuLinkProps {
@@ -20,6 +20,7 @@ const MenuLink = ({ label, isVertical = false, iconName }: MenuLinkProps) => {
       onClick={() => {
         activeMenu.set(pageName);
         searchQuery.set('');
+        isSelectColorByDistance.set(false);
       }}
     >
       {Icons[key]()}
