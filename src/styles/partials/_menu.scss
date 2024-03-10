@@ -109,7 +109,6 @@
   padding-left: var(--padding-base);
   padding-right: var(--padding-base);
   width: 388px;
-  line-height: 1.5rem;
 
   @media screen and (max-width: $md) {
     width: 100%;
@@ -143,10 +142,10 @@
     margin-bottom: 4px;
   }
 
-  div:has(h3):has(p) {
-    h3 {
-      margin-bottom: 1px;
-    }
+  .hint {
+    color: rgba(var(--base-300));
+    font-size: var(--text-sm);
+    padding-bottom: 4px;
   }
 
   > * + * {

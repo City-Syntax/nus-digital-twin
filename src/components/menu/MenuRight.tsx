@@ -12,6 +12,7 @@ const MenuRight = () => {
           <MenuLink label="Thermal Comfort"></MenuLink>
           <MenuLink label="Wind"></MenuLink>
           <MenuLink label="Solar"></MenuLink>
+          <MenuLink label="Distance"></MenuLink>
         </div>
       </div>
     </nav>
