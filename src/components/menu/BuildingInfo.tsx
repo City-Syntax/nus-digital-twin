@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MenuContent from './MenuContent';
 import { buildingProperties } from '../../store';
 import { useStore } from '@nanostores/react';
 import * as Select from '@radix-ui/react-select';
 
 const BuildingInfo = () => {
+  const [category, setCategory] = useState('general');
   const $buildingProperties = useStore(buildingProperties);
+  buildingProperties.listen(() => setCategory('general'));
   const titleMappings = {
     address: 'Address',
     postal: 'Postal Code',
@@ -22,7 +24,7 @@ const BuildingInfo = () => {
   return (
     <MenuContent title={$buildingProperties.name || 'Unknown Building Name'}>
       <div className="menubar-content-body">
-        <Select.Root defaultValue="general">
+        <Select.Root value={category} onValueChange={(value) => setCategory(value)}>
           <Select.Trigger className="select-trigger">
             <Select.Value />
           </Select.Trigger>
