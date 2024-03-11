@@ -48,3 +48,37 @@
     transform: translateY(-50%);
   }
 }
+
+.select-trigger {
+  @include btn;
+  font-size: var(--text-sm);
+  background: transparent;
+  color: inherit;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid rgba(var(--base-300));
+  border-radius: var(--rounded-xs);
+  padding: 0 var(--padding-sm);
+}
+
+.select-content {
+  border-radius: var(--rounded-xs);
+  overflow: hidden;
+  backdrop-filter: saturate(120%) blur(6px);
+  background-color: rgba(var(--base-100), 0.7);
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-size: var(--text-sm);
+}
+
+.select-item {
+  padding: var(--padding-xs);
+  outline: none;
+  transition: 150ms background-color;
+}
+
+.select-item[data-highlighted] {
+  background-color: rgba(var(--base-200), 0.8);
+}
