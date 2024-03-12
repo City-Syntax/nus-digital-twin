@@ -1,26 +1,15 @@
 import React, { useState } from 'react';
-import MenuContent from './MenuContent';
-import { buildingProperties } from '../../store';
+import MenuContent from '../MenuContent';
+import { buildingProperties } from '../../../store';
 import { useStore } from '@nanostores/react';
 import * as Select from '@radix-ui/react-select';
-import Icons from '../Icons';
+import Icons from '../../Icons';
+import { titleMappings } from './buildingInfoUtils';
 
 const BuildingInfo = () => {
   const [category, setCategory] = useState('general');
   const $buildingProperties = useStore(buildingProperties);
   buildingProperties.listen(() => setCategory('general'));
-  const titleMappings = {
-    address: 'Address',
-    postal: 'Postal Code',
-    floorToFloorHeight: 'Floor to Floor Height',
-    perimeterZoneDepth: 'Perimeter Zone Depth',
-    fenestrationType: 'Fenestration Type',
-    fenestrationShading: 'Fenestration Shading',
-    northWindowToWallRatio: 'North Window to Wall Ratio',
-    southWindowToWallRatio: 'South Window to Wall Ratio',
-    eastWindowToWallRatio: 'East Window to Wall Ratio',
-    westWindowToWallRatio: 'West Window to Wall Ratio',
-  };
 
   return (
     <MenuContent title={$buildingProperties.name || 'Unknown Building Name'}>
