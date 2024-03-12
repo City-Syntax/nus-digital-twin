@@ -10,3 +10,11 @@ export const titleMappings = {
   eastWindowToWallRatio: 'East Window to Wall Ratio',
   westWindowToWallRatio: 'West Window to Wall Ratio',
 };
+
+export const infoCategories = [
+  { id: 'general', label: 'General' },
+  { id: 'partitions', label: 'Structural, Enclosure and Internal Partitions' },
+  { id: 'fenestration', label: 'Fenestration' },
+  { id: 'hvac', label: 'Heating, Ventilation and Air-conditioning' },
+  { id: 'density-and-power', label: 'Density and Power' },
+];
