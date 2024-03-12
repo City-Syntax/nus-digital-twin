@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import MenuContent from '../MenuContent';
 import { buildingProperties } from '../../../store';
 import { useStore } from '@nanostores/react';
-import * as Select from '@radix-ui/react-select';
-import Icons from '../../Icons';
 import { titleMappings } from './buildingInfoUtils';
+import CategorySelect from './CategorySelect';
 
 const BuildingInfo = () => {
   const [category, setCategory] = useState('general');
@@ -14,33 +13,7 @@ const BuildingInfo = () => {
   return (
     <MenuContent title={$buildingProperties.name || 'Unknown Building Name'}>
       <div className="menubar-content-body">
-        <Select.Root value={category} onValueChange={(value) => setCategory(value)}>
-          <Select.Trigger className="select-trigger">
-            <Select.Value />
-            <Icons.ChevronDown></Icons.ChevronDown>
-          </Select.Trigger>
-          <Select.Portal>
-            <Select.Content className="select-content">
-              <Select.Viewport>
-                <Select.Item className="select-item" value="general">
-                  <Select.ItemText>General</Select.ItemText>
-                </Select.Item>
-                <Select.Item className="select-item" value="partitions">
-                  <Select.ItemText>Structural, Enclosure and Internal Partitions</Select.ItemText>
-                </Select.Item>
-                <Select.Item className="select-item" value="fenestration">
-                  <Select.ItemText>Fenestration</Select.ItemText>
-                </Select.Item>
-                <Select.Item className="select-item" value="hvac">
-                  <Select.ItemText>Heating, Ventilation and Air-conditioning</Select.ItemText>
-                </Select.Item>
-                <Select.Item className="select-item" value="density-and-power">
-                  <Select.ItemText>Density and Power</Select.ItemText>
-                </Select.Item>
-              </Select.Viewport>
-            </Select.Content>
-          </Select.Portal>
-        </Select.Root>
+        <CategorySelect value={category} onValueChange={(value: string) => setCategory(value)}></CategorySelect>
         {Object.keys($buildingProperties).length <= 1 && <p>No information about this building yet.</p>}
         {Object.entries($buildingProperties).map((data) => {
           if (data[0] === 'name') {
