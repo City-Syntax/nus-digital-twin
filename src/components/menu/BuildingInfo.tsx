@@ -3,6 +3,7 @@ import MenuContent from './MenuContent';
 import { buildingProperties } from '../../store';
 import { useStore } from '@nanostores/react';
 import * as Select from '@radix-ui/react-select';
+import Icons from '../Icons';
 
 const BuildingInfo = () => {
   const [category, setCategory] = useState('general');
@@ -27,6 +28,7 @@ const BuildingInfo = () => {
         <Select.Root value={category} onValueChange={(value) => setCategory(value)}>
           <Select.Trigger className="select-trigger">
             <Select.Value />
+            <Icons.ChevronDown></Icons.ChevronDown>
           </Select.Trigger>
           <Select.Portal>
             <Select.Content className="select-content">
