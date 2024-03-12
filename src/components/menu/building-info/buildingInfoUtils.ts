@@ -1,4 +1,8 @@
-export const titleMappings = {
+import type { BuildingPropertiesProps } from '../../../content/config';
+
+export type Categories = 'general' | 'partitions' | 'fenestration' | 'hvac' | 'density-and-power';
+
+export const titleMappings: BuildingPropertiesProps = {
   address: 'Address',
   postal: 'Postal Code',
   floorToFloorHeight: 'Floor to Floor Height',
@@ -11,10 +15,18 @@ export const titleMappings = {
   westWindowToWallRatio: 'West Window to Wall Ratio',
 };
 
-export const infoCategories = [
+export const infoCategories: { id: Categories; label: string }[] = [
   { id: 'general', label: 'General' },
   { id: 'partitions', label: 'Structural, Enclosure and Internal Partitions' },
   { id: 'fenestration', label: 'Fenestration' },
   { id: 'hvac', label: 'Heating, Ventilation and Air-conditioning' },
   { id: 'density-and-power', label: 'Density and Power' },
 ];
+
+export const sectionsToDisplay: { [key in Categories]: Array<keyof BuildingPropertiesProps> } = {
+  general: ['address', 'postal'],
+  partitions: [],
+  fenestration: ['fenestrationType', 'fenestrationShading'],
+  hvac: [],
+  'density-and-power': [],
+};

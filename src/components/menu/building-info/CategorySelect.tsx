@@ -1,11 +1,11 @@
 import React from 'react';
 import * as Select from '@radix-ui/react-select';
 import Icons from '../../Icons';
-import { infoCategories } from './buildingInfoUtils';
+import { infoCategories, type Categories } from './buildingInfoUtils';
 
 interface CategorySelectProps {
   value: string;
-  onValueChange: (val: string) => void;
+  onValueChange: (val: Categories) => void;
 }
 
 const CategorySelect = ({ value, onValueChange }: CategorySelectProps) => {
