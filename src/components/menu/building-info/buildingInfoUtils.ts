@@ -25,6 +25,12 @@ export const titleMappings: BuildingPropertiesProps = {
   thermostatSetPoint: 'Thermostate Set-point',
   coreOutsideAirFlowrate: 'Core Outside Air Flowrate',
   perimeterOutsideAirFlowrate: 'Perimeter Outsie Air Flowrate',
+  coreOccupantDensity: 'Core Occupant Density',
+  perimeterOccupantDensity: 'Perimeter Occupant Density',
+  coreEquipmentPower: 'Core Equipment Power',
+  perimeterEquipmentPower: 'Perimeter Equipment Power',
+  coreLightingPower: 'Core Lighting Power',
+  perimeterLightingPower: 'Perimeter Lighting Power',
 };
 
 export const infoCategories: { id: Categories; label: string }[] = [
@@ -59,5 +65,12 @@ export const sectionsToDisplay: { [key in Categories]: Array<keyof BuildingPrope
     'daylightResponse',
   ],
   hvac: ['thermostatSetPoint', 'coreOutsideAirFlowrate', 'perimeterOutsideAirFlowrate'],
-  'density-and-power': [],
+  'density-and-power': [
+    'coreOccupantDensity',
+    'perimeterOccupantDensity',
+    'coreEquipmentPower',
+    'perimeterEquipmentPower',
+    'coreLightingPower',
+    'perimeterLightingPower',
+  ],
 };

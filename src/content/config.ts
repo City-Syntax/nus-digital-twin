@@ -24,6 +24,12 @@ const buildingSchema = z.object({
   thermostatSetPoint: z.string().optional(),
   coreOutsideAirFlowrate: z.string().optional(),
   perimeterOutsideAirFlowrate: z.string().optional(),
+  coreOccupantDensity: z.string().optional(),
+  perimeterOccupantDensity: z.string().optional(),
+  coreEquipmentPower: z.string().optional(),
+  perimeterEquipmentPower: z.string().optional(),
+  coreLightingPower: z.string().optional(),
+  perimeterLightingPower: z.string().optional(),
 });
 
 const buildingsCollection = defineCollection({
