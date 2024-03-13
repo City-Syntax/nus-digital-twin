@@ -21,6 +21,9 @@ const buildingSchema = z.object({
   windowLeakage: z.string().optional(),
   naturalVentilation: z.string().optional(),
   daylightResponse: z.string().optional(),
+  thermostatSetPoint: z.string().optional(),
+  coreOutsideAirFlowrate: z.string().optional(),
+  perimeterOutsideAirFlowrate: z.string().optional(),
 });
 
 const buildingsCollection = defineCollection({

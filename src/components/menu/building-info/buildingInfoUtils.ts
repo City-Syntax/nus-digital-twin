@@ -22,6 +22,9 @@ export const titleMappings: BuildingPropertiesProps = {
   windowLeakage: 'Window Leakage',
   naturalVentilation: 'Natural Ventilation',
   daylightResponse: 'Daylight Response',
+  thermostatSetPoint: 'Thermostate Set-point',
+  coreOutsideAirFlowrate: 'Core Outside Air Flowrate',
+  perimeterOutsideAirFlowrate: 'Perimeter Outsie Air Flowrate',
 };
 
 export const infoCategories: { id: Categories; label: string }[] = [
@@ -55,6 +58,6 @@ export const sectionsToDisplay: { [key in Categories]: Array<keyof BuildingPrope
     'naturalVentilation',
     'daylightResponse',
   ],
-  hvac: [],
+  hvac: ['thermostatSetPoint', 'coreOutsideAirFlowrate', 'perimeterOutsideAirFlowrate'],
   'density-and-power': [],
 };
