@@ -16,19 +16,17 @@ const BuildingInfo = () => {
 
   return (
     <MenuContent title={$buildingProperties.name || 'Unknown Building Name'}>
-      <div className="menubar-content-body">
-        <CategorySelect value={category} onValueChange={(value: Categories) => setCategory(value)}></CategorySelect>
-        {selectedProperties.length <= 1 && <p>No information under '{categoryMappings[category]}' yet.</p>}
-        {selectedProperties.map((data) => {
-          const title = data[0] as keyof BuildingPropertiesProps;
-          return (
-            <div key={data[0]}>
-              <h3>{titleMappings[title] || data[0]}</h3>
-              <p>{data[1]}</p>
-            </div>
-          );
-        })}
-      </div>
+      <CategorySelect value={category} onValueChange={(value: Categories) => setCategory(value)}></CategorySelect>
+      {selectedProperties.length <= 1 && <p>No information under '{categoryMappings[category]}' yet.</p>}
+      {selectedProperties.map((data) => {
+        const title = data[0] as keyof BuildingPropertiesProps;
+        return (
+          <div key={data[0]}>
+            <h3>{titleMappings[title] || data[0]}</h3>
+            <p>{data[1]}</p>
+          </div>
+        );
+      })}
     </MenuContent>
   );
 };

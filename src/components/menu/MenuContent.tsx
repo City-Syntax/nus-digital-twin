@@ -23,7 +23,7 @@ const MenuContent = ({ title, children }: MenuContentProps) => {
           <Icons.Close></Icons.Close>
         </button>
       </div>
-      <>{children}</>
+      <div className="menubar-content-body">{children}</div>
     </div>
   );
 };
