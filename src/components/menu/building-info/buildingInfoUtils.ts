@@ -7,6 +7,10 @@ export const titleMappings: BuildingPropertiesProps = {
   postal: 'Postal Code',
   floorToFloorHeight: 'Floor to Floor Height',
   perimeterZoneDepth: 'Perimeter Zone Depth',
+  wallConstruction: 'Wall Construction',
+  roofConstruction: 'Roof Construction',
+  externalWallType: 'External Wall Type',
+  internalWalls: 'Internal Walls / Partitions',
   fenestrationType: 'Fenestration Type',
   fenestrationShading: 'Fenestration Shading',
   northWindowToWallRatio: 'North Window to Wall Ratio',
@@ -25,7 +29,14 @@ export const infoCategories: { id: Categories; label: string }[] = [
 
 export const sectionsToDisplay: { [key in Categories]: Array<keyof BuildingPropertiesProps> } = {
   general: ['address', 'postal'],
-  partitions: [],
+  partitions: [
+    'floorToFloorHeight',
+    'perimeterZoneDepth',
+    'wallConstruction',
+    'roofConstruction',
+    'externalWallType',
+    'internalWalls',
+  ],
   fenestration: ['fenestrationType', 'fenestrationShading'],
   hvac: [],
   'density-and-power': [],
