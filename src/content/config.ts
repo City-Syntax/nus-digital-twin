@@ -16,6 +16,11 @@ const buildingSchema = z.object({
   southWindowToWallRatio: z.string().optional(),
   eastWindowToWallRatio: z.string().optional(),
   westWindowToWallRatio: z.string().optional(),
+  windowFrameConductance: z.string().optional(),
+  glazingType: z.string().optional(),
+  windowLeakage: z.string().optional(),
+  naturalVentilation: z.string().optional(),
+  daylightResponse: z.string().optional(),
 });
 
 const buildingsCollection = defineCollection({

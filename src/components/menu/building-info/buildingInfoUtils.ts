@@ -17,6 +17,11 @@ export const titleMappings: BuildingPropertiesProps = {
   southWindowToWallRatio: 'South Window to Wall Ratio',
   eastWindowToWallRatio: 'East Window to Wall Ratio',
   westWindowToWallRatio: 'West Window to Wall Ratio',
+  windowFrameConductance: 'Window Frame Conductance',
+  glazingType: 'Glazing Type',
+  windowLeakage: 'Window Leakage',
+  naturalVentilation: 'Natural Ventilation',
+  daylightResponse: 'Daylight Response',
 };
 
 export const infoCategories: { id: Categories; label: string }[] = [
@@ -37,7 +42,19 @@ export const sectionsToDisplay: { [key in Categories]: Array<keyof BuildingPrope
     'externalWallType',
     'internalWalls',
   ],
-  fenestration: ['fenestrationType', 'fenestrationShading'],
+  fenestration: [
+    'fenestrationType',
+    'fenestrationShading',
+    'northWindowToWallRatio',
+    'southWindowToWallRatio',
+    'eastWindowToWallRatio',
+    'westWindowToWallRatio',
+    'windowFrameConductance',
+    'glazingType',
+    'windowLeakage',
+    'naturalVentilation',
+    'daylightResponse',
+  ],
   hvac: [],
   'density-and-power': [],
 };
