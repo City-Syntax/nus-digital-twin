@@ -14,7 +14,7 @@ import BIMModels from './BIMModels';
 import Help from './Help';
 import Settings from './Settings';
 import Buildings from './Buildings';
-import BuildingInfo from './BuildingInfo';
+import BuildingInfo from './building-info/BuildingInfo';
 import Energy from './Energy';
 import ThermalComfort from './ThermalComfort';
 import Solar from './Solar';

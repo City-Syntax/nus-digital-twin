@@ -20,6 +20,7 @@
     "@fontsource/ibm-plex-sans": "^5.0.18",
     "@nanostores/react": "^0.7.1",
     "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-select": "^2.0.0",
     "astro": "^4.4.11",
     "cesium": "^1.115.0",
     "nanostores": "^0.9.5",

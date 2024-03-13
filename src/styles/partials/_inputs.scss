@@ -24,13 +24,13 @@
     @include input;
     width: 100%;
     padding-right: 40px;
-    border: 1px solid rgba(var(--base-300));
-    transition: background-color 150ms;
+    transition: box-shadow 100ms;
     text-overflow: ellipsis;
+    box-shadow: inset 0 0 0 1px rgba(var(--base-300));
 
     &:focus,
     &:hover {
-      background-color: rgba(var(--base-100));
+      box-shadow: inset 0 0 0 2px rgba(var(--primary-300));
     }
 
     @media screen and (max-width: $md) {
@@ -47,4 +47,52 @@
     right: 0;
     transform: translateY(-50%);
   }
+}
+
+.select-trigger {
+  @include btn;
+  font-size: var(--text-sm);
+  background: transparent;
+  color: inherit;
+  outline: none;
+  display: inline-flex;
+  justify-content: space-between;
+  height: auto;
+  box-shadow: inset 0 0 0 1px rgba(var(--base-300));
+  border-radius: var(--rounded-xs);
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-xs) var(--padding-sm);
+  transition: box-shadow 100ms;
+
+  &:focus,
+  &:hover {
+    box-shadow: inset 0 0 0 2px rgba(var(--primary-300));
+  }
+
+  > svg {
+    margin-left: 6px;
+  }
+
+  @media screen and (max-width: $xs) {
+    width: 100%;
+  }
+}
+
+.select-content {
+  border-radius: var(--rounded-xs);
+  overflow: hidden;
+  backdrop-filter: saturate(120%) blur(6px);
+  background-color: rgba(var(--base-100), 0.7);
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-size: var(--text-sm);
+}
+
+.select-item {
+  padding: var(--padding-xs);
+  outline: none;
+  transition: 150ms background-color;
+}
+
+.select-item[data-highlighted] {
+  background-color: rgba(var(--base-200), 0.8);
 }
