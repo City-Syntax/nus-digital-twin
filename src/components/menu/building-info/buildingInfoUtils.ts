@@ -47,15 +47,15 @@ export const titleMappings: BuildingPropertiesProps = {
   economizerCycle: 'Economizer Cycle',
 };
 
-export const infoCategories: { id: Categories; label: string }[] = [
-  { id: 'general', label: 'General' },
-  { id: 'partitions', label: 'Structural, Enclosure and Internal Partitions' },
-  { id: 'fenestration', label: 'Fenestration' },
-  { id: 'hvac', label: 'Heating, Ventilation and Air-conditioning' },
-  { id: 'density-and-power', label: 'Density and Power' },
-  { id: 'schedules', label: 'Schedules' },
-  { id: 'others', label: 'Others' },
-];
+export const categoryMappings: { [key in Categories]: string } = {
+  general: 'General',
+  partitions: 'Structural, Enclosure and Internal Partitions',
+  fenestration: 'Fenestration',
+  hvac: 'Heating, Ventilation and Air-conditioning',
+  'density-and-power': 'Density and Power',
+  schedules: 'Schedules',
+  others: 'Others',
+};
 
 export const sectionsToDisplay: { [key in Categories]: Array<keyof BuildingPropertiesProps> } = {
   general: ['address', 'postal'],

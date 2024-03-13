@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MenuContent from '../MenuContent';
 import { buildingProperties } from '../../../store';
 import { useStore } from '@nanostores/react';
-import { sectionsToDisplay, titleMappings, type Categories } from './buildingInfoUtils';
+import { sectionsToDisplay, titleMappings, type Categories, categoryMappings } from './buildingInfoUtils';
 import CategorySelect from './CategorySelect';
 import type { BuildingPropertiesProps } from '../../../content/config';
 
@@ -18,7 +18,7 @@ const BuildingInfo = () => {
     <MenuContent title={$buildingProperties.name || 'Unknown Building Name'}>
       <div className="menubar-content-body">
         <CategorySelect value={category} onValueChange={(value: Categories) => setCategory(value)}></CategorySelect>
-        {selectedProperties.length <= 1 && <p>No information in this category yet.</p>}
+        {selectedProperties.length <= 1 && <p>No information under '{categoryMappings[category]}' yet.</p>}
         {selectedProperties.map((data) => {
           const title = data[0] as keyof BuildingPropertiesProps;
           return (

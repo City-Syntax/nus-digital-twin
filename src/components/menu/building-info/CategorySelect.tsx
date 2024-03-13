@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Select from '@radix-ui/react-select';
 import Icons from '../../Icons';
-import { infoCategories, type Categories } from './buildingInfoUtils';
+import { categoryMappings, type Categories } from './buildingInfoUtils';
 
 interface CategorySelectProps {
   value: string;
@@ -18,10 +18,11 @@ const CategorySelect = ({ value, onValueChange }: CategorySelectProps) => {
       <Select.Portal>
         <Select.Content className="select-content" position="popper">
           <Select.Viewport>
-            {infoCategories.map((c) => {
+            {Object.entries(categoryMappings).map((val) => {
+              const [id, label] = val;
               return (
-                <Select.Item className="select-item" value={c.id} key={c.id}>
-                  <Select.ItemText>{c.label}</Select.ItemText>
+                <Select.Item className="select-item" value={id} key={id}>
+                  <Select.ItemText>{label}</Select.ItemText>
                 </Select.Item>
               );
             })}
