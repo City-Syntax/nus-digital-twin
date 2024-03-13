@@ -1,6 +1,13 @@
 import type { BuildingPropertiesProps } from '../../../content/config';
 
-export type Categories = 'general' | 'partitions' | 'fenestration' | 'hvac' | 'density-and-power' | 'schedules';
+export type Categories =
+  | 'general'
+  | 'partitions'
+  | 'fenestration'
+  | 'hvac'
+  | 'density-and-power'
+  | 'schedules'
+  | 'others';
 
 export const titleMappings: BuildingPropertiesProps = {
   address: 'Address',
@@ -36,6 +43,8 @@ export const titleMappings: BuildingPropertiesProps = {
   lightingUsage: 'Lighting Usage',
   coreOutsideAirSchedule: 'Core Outside Air Schedule',
   perimeterOutsideAirSchedule: 'Perimeter Outside Air Schedule',
+  exhaustAirRecovery: 'Exhaust Air Recovery',
+  economizerCycle: 'Economizer Cycle',
 };
 
 export const infoCategories: { id: Categories; label: string }[] = [
@@ -45,6 +54,7 @@ export const infoCategories: { id: Categories; label: string }[] = [
   { id: 'hvac', label: 'Heating, Ventilation and Air-conditioning' },
   { id: 'density-and-power', label: 'Density and Power' },
   { id: 'schedules', label: 'Schedules' },
+  { id: 'others', label: 'Others' },
 ];
 
 export const sectionsToDisplay: { [key in Categories]: Array<keyof BuildingPropertiesProps> } = {
@@ -86,4 +96,5 @@ export const sectionsToDisplay: { [key in Categories]: Array<keyof BuildingPrope
     'coreOutsideAirSchedule',
     'perimeterOutsideAirSchedule',
   ],
+  others: ['exhaustAirRecovery', 'economizerCycle'],
 };

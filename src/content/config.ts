@@ -35,6 +35,8 @@ const buildingSchema = z.object({
   lightingUsage: z.string().optional(),
   coreOutsideAirSchedule: z.string().optional(),
   perimeterOutsideAirSchedule: z.string().optional(),
+  exhaustAirRecovery: z.string().optional(),
+  economizerCycle: z.string().optional(),
 });
 
 const buildingsCollection = defineCollection({
