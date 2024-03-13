@@ -16,7 +16,7 @@ const CategorySelect = ({ value, onValueChange }: CategorySelectProps) => {
         <Icons.ChevronDown></Icons.ChevronDown>
       </Select.Trigger>
       <Select.Portal>
-        <Select.Content className="select-content">
+        <Select.Content className="select-content" position="popper">
           <Select.Viewport>
             {infoCategories.map((c) => {
               return (
