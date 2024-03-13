@@ -30,6 +30,11 @@ const buildingSchema = z.object({
   perimeterEquipmentPower: z.string().optional(),
   coreLightingPower: z.string().optional(),
   perimeterLightingPower: z.string().optional(),
+  occupancySchedule: z.string().optional(),
+  equipmentUsage: z.string().optional(),
+  lightingUsage: z.string().optional(),
+  coreOutsideAirSchedule: z.string().optional(),
+  perimeterOutsideAirSchedule: z.string().optional(),
 });
 
 const buildingsCollection = defineCollection({

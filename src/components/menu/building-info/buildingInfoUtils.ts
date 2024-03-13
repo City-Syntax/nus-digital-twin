@@ -1,6 +1,6 @@
 import type { BuildingPropertiesProps } from '../../../content/config';
 
-export type Categories = 'general' | 'partitions' | 'fenestration' | 'hvac' | 'density-and-power';
+export type Categories = 'general' | 'partitions' | 'fenestration' | 'hvac' | 'density-and-power' | 'schedules';
 
 export const titleMappings: BuildingPropertiesProps = {
   address: 'Address',
@@ -31,6 +31,11 @@ export const titleMappings: BuildingPropertiesProps = {
   perimeterEquipmentPower: 'Perimeter Equipment Power',
   coreLightingPower: 'Core Lighting Power',
   perimeterLightingPower: 'Perimeter Lighting Power',
+  occupancySchedule: 'Occupancy Schedule',
+  equipmentUsage: 'Equipment Usage',
+  lightingUsage: 'Lighting Usage',
+  coreOutsideAirSchedule: 'Core Outside Air Schedule',
+  perimeterOutsideAirSchedule: 'Perimeter Outside Air Schedule',
 };
 
 export const infoCategories: { id: Categories; label: string }[] = [
@@ -39,6 +44,7 @@ export const infoCategories: { id: Categories; label: string }[] = [
   { id: 'fenestration', label: 'Fenestration' },
   { id: 'hvac', label: 'Heating, Ventilation and Air-conditioning' },
   { id: 'density-and-power', label: 'Density and Power' },
+  { id: 'schedules', label: 'Schedules' },
 ];
 
 export const sectionsToDisplay: { [key in Categories]: Array<keyof BuildingPropertiesProps> } = {
@@ -72,5 +78,12 @@ export const sectionsToDisplay: { [key in Categories]: Array<keyof BuildingPrope
     'perimeterEquipmentPower',
     'coreLightingPower',
     'perimeterLightingPower',
+  ],
+  schedules: [
+    'occupancySchedule',
+    'equipmentUsage',
+    'lightingUsage',
+    'coreOutsideAirSchedule',
+    'perimeterOutsideAirSchedule',
   ],
 };
