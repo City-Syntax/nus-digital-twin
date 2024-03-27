@@ -40,6 +40,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     MapboxStyleImageryProvider,
     JulianDate,
     Cesium3DTileset,
+    defaultValue,
   } from 'cesium';
 
   const isDev = import.meta.env.DEV;
@@ -117,8 +118,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const osmBuildingsTileset = await createOsmBuildingsAsync();
   viewer.scene.primitives.add(osmBuildingsTileset);
 
-  const sde4 = await Cesium3DTileset.fromIonAssetId(2464285);
-  const ync = await Cesium3DTileset.fromIonAssetId(2463878);
+  const sde4Id = 2464285;
+  const yncId = 2463878;
+  const sde4 = await Cesium3DTileset.fromIonAssetId(sde4Id);
+  const ync = await Cesium3DTileset.fromIonAssetId(yncId);
   const bimModels = [sde4, ync];
   for (let i = 0; i < bimModels.length; i++) {
     viewer.scene.primitives.add(bimModels[i]);
@@ -214,6 +217,22 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     if (defined(pickedFeature)) {
+      // TODO: Improve handling of BIM picker
+      if (bimModels.includes(pickedFeature.primitive)) {
+        const resource = pickedFeature.primitive.resource;
+
+        activeMenu.set('BuildingInfo');
+        if (resource.url.includes(yncId)) {
+          buildingProperties.set({ name: 'Yale-NUS College' });
+        }
+
+        if (resource.url.includes(sde4Id)) {
+          buildingProperties.set({ name: 'SDE4' });
+        }
+
+        return;
+      }
+
       if (isSelectColorByDistance.get()) {
         colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
         isSelectColorByDistance.set(false);
