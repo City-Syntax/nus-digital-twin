@@ -7,7 +7,11 @@ const BIMModels = () => {
   const $buildingDataLayer = useStore(buildingDataLayer);
   return (
     <MenuContent title="Layers: BIM Models">
-      <div>Displays Building Information Models (BIM), a highly detailed digital building model.</div>
+      <div>
+        Displays Building Information Models (BIM), a highly detailed digital building model.
+        <br />
+        Selecting BIM will disable any existing coloring effects applied.
+      </div>
       <div>
         <div className="btn-group">
           <button onClick={() => buildingDataLayer.set('bim')} className={$buildingDataLayer === 'bim' ? 'active' : ''}>

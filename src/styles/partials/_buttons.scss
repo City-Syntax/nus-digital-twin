@@ -129,3 +129,10 @@
     background-color: rgba(var(--primary-200));
   }
 }
+
+.btn-group:has(button[disabled]) {
+  button {
+    background: transparent;
+    color: rgba(var(--base-300));
+  }
+}
