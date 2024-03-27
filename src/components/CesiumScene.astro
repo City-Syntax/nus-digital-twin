@@ -39,6 +39,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     defined,
     MapboxStyleImageryProvider,
     JulianDate,
+    Cesium3DTileset,
   } from 'cesium';
 
   const isDev = import.meta.env.DEV;
@@ -115,6 +116,26 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   // Add Cesium OSM Buildings, a global 3D buildings layer.
   const osmBuildingsTileset = await createOsmBuildingsAsync();
   viewer.scene.primitives.add(osmBuildingsTileset);
+
+  const sde4 = await Cesium3DTileset.fromIonAssetId(2464285);
+  const ync = await Cesium3DTileset.fromIonAssetId(2463878);
+  const bimModels = [sde4, ync];
+  for (let i = 0; i < bimModels.length; i++) {
+    viewer.scene.primitives.add(bimModels[i]);
+    bimModels[i].show = false;
+  }
+
+  function showAllBIM() {
+    for (let i = 0; i < bimModels.length; i++) {
+      bimModels[i].show = true;
+    }
+  }
+
+  function hideAllBIM() {
+    for (let i = 0; i < bimModels.length; i++) {
+      bimModels[i].show = false;
+    }
+  }
 
   function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
     colorByDistancePosition.set({
@@ -219,10 +240,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     // Timeout is necessary to allow for the state to update first
     setTimeout(() => {
       const showOsmBuildings = buildingDataLayer.get() === 'osm';
+      const showBIM = buildingDataLayer.get() === 'bim';
       if (showOsmBuildings) {
         osmBuildingsTileset.show = true;
       } else {
         osmBuildingsTileset.show = false;
+      }
+
+      if (showBIM) {
+        showAllBIM();
+      } else {
+        hideAllBIM();
       }
 
       if (buildingColorSetting.get() === 'distance') {
