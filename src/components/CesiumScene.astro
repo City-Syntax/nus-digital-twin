@@ -33,16 +33,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     Terrain,
     Viewer,
     Cesium3DTileStyle,
-    IonImageryProvider,
-    ImageryLayer,
     ScreenSpaceEventType,
     defined,
     MapboxStyleImageryProvider,
     JulianDate,
     Cesium3DTileset,
   } from 'cesium';
-
-  const isDev = import.meta.env.DEV;
 
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
@@ -91,14 +87,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   let mapLayerOrder = ['satellite', 'dark', 'street'];
   viewer.imageryLayers.removeAll();
-  viewer.imageryLayers.addImageryProvider(mapboxSatellite);
-  viewer.imageryLayers.addImageryProvider(mapboxDark);
   viewer.imageryLayers.addImageryProvider(mapboxStreet);
 
-  if (isDev) {
-    viewer.imageryLayers.add(ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}));
-    mapLayerOrder.push('sentinel');
-  }
+  // Delay the loading of other map layers
+  setTimeout(() => {
+    viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
+    viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
+  }, 50);
 
   mapLayer.set(mapLayerOrder[mapLayerOrder.length - 1]);
 
