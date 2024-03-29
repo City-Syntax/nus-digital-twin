@@ -90,10 +90,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   viewer.imageryLayers.addImageryProvider(mapboxStreet);
 
   // Delay the loading of other map layers
-  setTimeout(() => {
-    viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
-    viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
-  }, 50);
+  // setTimeout(() => {
+  //   viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
+  //   viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
+  // }, 50);
 
   mapLayer.set(mapLayerOrder[mapLayerOrder.length - 1]);
 
