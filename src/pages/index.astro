@@ -9,4 +9,23 @@ import Toolbar from '../components/toolbar/Toolbar.astro';
   <Menu client:load />
   <CesiumScene />
   <Toolbar />
+  <div id="construction">This application is under construction.</div>
 </Layout>
+<style>
+  #construction {
+    position: absolute;
+    color: #ffd60a;
+    font-size: var(--text-sm);
+    top: 38px;
+    right: 8px;
+    text-shadow: 1px 2px 3px rgba(33, 33, 33, 0.75);
+  }
+
+  @media screen and (max-width: 662px) {
+    #construction {
+      top: 68px;
+      left: 8px;
+      right: unset;
+    }
+  }
+</style>
