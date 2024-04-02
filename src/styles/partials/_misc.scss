@@ -7,7 +7,9 @@
   color: #fadf63;
   font-size: var(--text-sm);
   top: 38px;
-  right: 8px;
+  right: 0;
+  margin-right: 8px;
+  margin-left: 8px;
   transition: background-color 150ms;
 
   &:hover {
