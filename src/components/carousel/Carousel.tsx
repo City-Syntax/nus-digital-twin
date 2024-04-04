@@ -28,12 +28,14 @@ const Carousel = () => {
           <div className="carousel-item">Slide 3</div>
         </div>
       </div>
-      <button onClick={() => emblaApi?.scrollPrev()} disabled={prevBtnDisabled}>
-        Previous
-      </button>
-      <button onClick={() => emblaApi?.scrollNext()} disabled={nextBtnDisabled}>
-        Next
-      </button>
+      <div className="carousel-actions">
+        <button onClick={() => emblaApi?.scrollPrev()} disabled={prevBtnDisabled}>
+          Previous
+        </button>
+        <button onClick={() => emblaApi?.scrollNext()} disabled={nextBtnDisabled}>
+          Next
+        </button>
+      </div>
     </div>
   );
 };

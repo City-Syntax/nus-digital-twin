@@ -1,3 +1,7 @@
+.carousel {
+  position: relative;
+}
+
 .carousel-content {
   overflow: hidden;
 }
@@ -9,4 +13,15 @@
 .carousel-item {
   flex: 0 0 100%;
   min-width: 0;
+  height: 200px;
+}
+
+.carousel-actions {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
