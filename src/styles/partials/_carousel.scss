@@ -35,7 +35,7 @@
   @include btn;
   @include btn-sm-square;
   backdrop-filter: saturate(120%) blur(1px);
-  background-color: rgba(var(--base-200), 0.6);
+  background-color: rgba(var(--base-100), 0.6);
   border-radius: 100%;
   flex-shrink: 0;
   transition: background-color 150ms;
