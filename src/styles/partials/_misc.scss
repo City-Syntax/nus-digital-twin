@@ -1,0 +1,24 @@
+#construction {
+  @include bg-base;
+  padding: var(--padding-xs) var(--padding-sm);
+  text-decoration: none;
+  border-radius: var(--rounded-xs);
+  position: absolute;
+  color: #fadf63;
+  font-size: var(--text-sm);
+  top: 38px;
+  right: 0;
+  margin-right: 8px;
+  margin-left: 8px;
+  transition: background-color 150ms;
+
+  &:hover {
+    background-color: rgba(var(--base-100), 1);
+  }
+}
+
+@media screen and (max-width: 944px) {
+  #construction {
+    top: 68px;
+  }
+}
