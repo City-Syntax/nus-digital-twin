@@ -32,10 +32,21 @@
 }
 
 .carousel button {
-  @include btn-secondary;
+  @include btn;
   @include btn-sm-square;
+  backdrop-filter: saturate(120%) blur(1px);
+  background-color: rgba(var(--base-200), 0.6);
   border-radius: 100%;
   flex-shrink: 0;
+  transition: background-color 150ms;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: rgba(var(--base-100), 0.7);
+  }
 }
 
 .carousel-dots {
