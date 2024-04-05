@@ -6,12 +6,28 @@ const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   const onSelect = useCallback((emblaApi: any) => {
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
     setNextBtnDisabled(!emblaApi.canScrollNext());
   }, []);
+
+  const onSelectDotBtn = useCallback((emblaApi: any) => {
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, []);
+
+  const onDotButtonClick = useCallback(
+    (index: number) => {
+      if (!emblaApi) {
+        return;
+      }
+
+      emblaApi.scrollTo(index);
+    },
+    [emblaApi],
+  );
 
   const onInit = useCallback((emblaApi: any) => {
     setScrollSnaps(emblaApi.scrollSnapList());
@@ -24,10 +40,13 @@ const Carousel = () => {
 
     onInit(emblaApi);
     onSelect(emblaApi);
+    onSelectDotBtn(emblaApi);
     emblaApi.on('reInit', onInit);
     emblaApi.on('reInit', onSelect);
     emblaApi.on('select', onSelect);
-  }, [emblaApi, onSelect]);
+    emblaApi.on('reInit', onSelectDotBtn);
+    emblaApi.on('select', onSelectDotBtn);
+  }, [emblaApi, onSelect, onSelectDotBtn]);
 
   return (
     <>
@@ -51,7 +70,11 @@ const Carousel = () => {
       </div>
       <div className="carousel-dots">
         {scrollSnaps.map((_, index) => (
-          <button></button>
+          <button
+            key={index}
+            className={selectedIndex === index ? 'active' : ''}
+            onClick={() => onDotButtonClick(index)}
+          ></button>
         ))}
       </div>
     </>
