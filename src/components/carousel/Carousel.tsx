@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Icons from '../Icons';
 
@@ -6,10 +6,12 @@ const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
-  const onSelect = (emblaApi: any) => {
+
+  const onSelect = useCallback((emblaApi: any) => {
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
     setNextBtnDisabled(!emblaApi.canScrollNext());
-  };
+  }, []);
+
   useEffect(() => {
     if (!emblaApi) {
       return;
