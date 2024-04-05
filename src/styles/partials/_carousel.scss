@@ -25,3 +25,10 @@
   left: 0;
   transform: translateY(-50%);
 }
+
+.carousel button {
+  @include btn-secondary;
+  @include btn-sm-square;
+  border-radius: 100%;
+  flex-shrink: 0;
+}

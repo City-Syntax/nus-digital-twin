@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import Icons from '../Icons';
 
 const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
@@ -30,10 +31,10 @@ const Carousel = () => {
       </div>
       <div className="carousel-actions">
         <button onClick={() => emblaApi?.scrollPrev()} disabled={prevBtnDisabled}>
-          Previous
+          <Icons.ChevronLeft></Icons.ChevronLeft>
         </button>
         <button onClick={() => emblaApi?.scrollNext()} disabled={nextBtnDisabled}>
-          Next
+          <Icons.ChevronRight></Icons.ChevronRight>
         </button>
       </div>
     </div>
