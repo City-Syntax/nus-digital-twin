@@ -32,3 +32,21 @@
   border-radius: 100%;
   flex-shrink: 0;
 }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+
+  > button {
+    @include btn;
+    background-color: rgba(var(--base-300), 0.3);
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 100%;
+
+    &.active {
+      background-color: rgba(var(--primary-200));
+    }
+  }
+}
