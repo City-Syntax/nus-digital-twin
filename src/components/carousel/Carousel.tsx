@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Icons from '../Icons';
+import nus from '../../assets/about-nus/nus.jpeg';
 
 const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
@@ -53,10 +54,15 @@ const Carousel = () => {
       <div className="carousel">
         <div className="carousel-content" ref={emblaRef}>
           <div className="carousel-content-container">
-            <div className="carousel-item">Slide 1</div>
-            <div className="carousel-item">Slide 2</div>
-            <div className="carousel-item">Slide 3</div>
-            <div className="carousel-item">Slide 4</div>
+            <div className="carousel-item">
+              <img src={nus.src} alt="" />
+            </div>
+            <div className="carousel-item">
+              <img src={nus.src} alt="" />
+            </div>
+            <div className="carousel-item">
+              <img src={nus.src} alt="" />
+            </div>
           </div>
         </div>
         <div className="carousel-actions">
