@@ -10,6 +10,7 @@
     "northWindowToWallRatio": "40%",
     "southWindowToWallRatio": "40%",
     "eastWindowToWallRatio": "60%",
-    "westWindowToWallRatio": "60%"
+    "westWindowToWallRatio": "60%",
+    "imageSrc": "./about-nus/nus.jpeg"
   }
 ]

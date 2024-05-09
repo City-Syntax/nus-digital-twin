@@ -41,7 +41,15 @@ const buildingSchema = z.object({
 
 const buildingsCollection = defineCollection({
   type: 'data',
-  schema: z.array(buildingSchema),
+  schema: ({ image }) =>
+    z.array(
+      z.union([
+        buildingSchema,
+        z.object({
+          imageSrc: image(),
+        }),
+      ]),
+    ),
 });
 
 export const collections = {
