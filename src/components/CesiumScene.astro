@@ -38,6 +38,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     MapboxStyleImageryProvider,
     JulianDate,
     Cesium3DTileset,
+    ClippingPlaneCollection,
+    ClippingPlane,
+    Transforms,
   } from 'cesium';
 
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
@@ -97,13 +100,28 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   mapLayer.set(mapLayerOrder[mapLayerOrder.length - 1]);
 
+  const position = Cartesian3.fromDegrees(103.77678, 1.28342, 800);
+
   let nusView = {
-    destination: Cartesian3.fromDegrees(103.77678, 1.28342, 800),
+    destination: position,
     orientation: {
       heading: CesiumMath.toRadians(0.0),
       pitch: CesiumMath.toRadians(-30.0),
     },
   };
+
+  // Clip the map
+  const distance = 20000;
+  viewer.scene.globe.clippingPlanes = new ClippingPlaneCollection({
+    modelMatrix: Transforms.eastNorthUpToFixedFrame(position),
+    planes: [
+      new ClippingPlane(new Cartesian3(1.0, 0.0, 0.0), distance),
+      new ClippingPlane(new Cartesian3(-1.0, 0.0, 0.0), distance),
+      new ClippingPlane(new Cartesian3(0.0, 1.0, 0.0), distance),
+      new ClippingPlane(new Cartesian3(0.0, -1.0, 0.0), distance),
+    ],
+    unionClippingRegions: true,
+  });
 
   // Initial view
   viewer.camera.setView(nusView);
