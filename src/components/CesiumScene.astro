@@ -42,6 +42,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ClippingPlane,
     Transforms,
     ScreenSpaceCameraController,
+    Color,
   } from 'cesium';
 
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
@@ -134,6 +135,28 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   // Add Cesium OSM Buildings, a global 3D buildings layer.
   const osmBuildingsTileset = await createOsmBuildingsAsync();
   viewer.scene.primitives.add(osmBuildingsTileset);
+
+  // Clip osm buildings that are rendered
+  osmBuildingsTileset.clippingPlanes = new ClippingPlaneCollection({
+    modelMatrix: Transforms.eastNorthUpToFixedFrame(position),
+    planes: [
+      new ClippingPlane(new Cartesian3(1.0, 0.0, 0.0), 800),
+      new ClippingPlane(new Cartesian3(-1.0, 0.0, 0.0), 600),
+      new ClippingPlane(new Cartesian3(0.0, 1.0, 0.0), -600),
+      new ClippingPlane(new Cartesian3(0.0, -1.0, 0.0), 2800),
+    ],
+    unionClippingRegions: true,
+  });
+  osmBuildingsTileset.style = new Cesium3DTileStyle({
+    show: {
+      conditions: [
+        ["${feature['cesium#longitude']} > 103.78171", false],
+        ["${feature['cesium#longitude']} < 103.77022", false],
+        ["${feature['cesium#latitude']} < 1.29088", false],
+        ["${feature['cesium#latitude']} > 1.30824", false],
+      ],
+    },
+  });
 
   const sde4Id = 2464285;
   const yncId = 2463878;
@@ -270,7 +293,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   }, ScreenSpaceEventType.LEFT_CLICK);
 
-  colorByOff();
   const menu = document.getElementById('menu');
   menu?.addEventListener('click', () => {
     // Timeout is necessary to allow for the state to update first
