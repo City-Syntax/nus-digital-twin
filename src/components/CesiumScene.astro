@@ -41,6 +41,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ClippingPlaneCollection,
     ClippingPlane,
     Transforms,
+    ScreenSpaceCameraController,
   } from 'cesium';
 
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
@@ -122,6 +123,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ],
     unionClippingRegions: true,
   });
+
+  // Limit amount to zoom in and out to
+  viewer.scene.screenSpaceCameraController.minimumZoomDistance = 100.0;
+  viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
 
   // Initial view
   viewer.camera.setView(nusView);
