@@ -3,6 +3,7 @@ export const OSM_SHOW_CONDITIONS = [
   ["${feature['cesium#longitude']} < 103.77022", false],
   ["${feature['cesium#latitude']} < 1.29088", false],
   ["${feature['cesium#latitude']} > 1.30824", false],
+  ["${feature['name']} === undefined", false],
 ];
 
 export const OSM_DISTANCE_COLORS = [
