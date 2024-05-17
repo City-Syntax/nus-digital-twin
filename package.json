@@ -14,14 +14,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.4",
-    "@astrojs/react": "^3.0.10",
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/react": "^3.3.4",
     "@fontsource-variable/inter": "^5.0.16",
     "@fontsource/ibm-plex-sans": "^5.0.18",
     "@nanostores/react": "^0.7.1",
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-select": "^2.0.0",
-    "astro": "^4.4.11",
+    "astro": "^4.8.5",
     "cesium": "^1.115.0",
     "nanostores": "^0.9.5",
     "react": "^18.2.0",
