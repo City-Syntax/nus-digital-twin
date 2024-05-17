@@ -150,6 +150,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   osmBuildingsTileset.style = new Cesium3DTileStyle({
     show: { conditions: OSM_SHOW_CONDITIONS },
   });
+  osmBuildingsTileset.maximumScreenSpaceError = 8;
 
   const sde4Id = 2464285;
   const yncId = 2463878;
