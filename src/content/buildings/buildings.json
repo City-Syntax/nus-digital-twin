@@ -30,6 +30,24 @@
     "postal": "138533"
   },
   {
+    "elementId": "732229050",
+    "name": "Yale-NUS College Library",
+    "address": "20 College Ave East",
+    "postal": "138529"
+  },
+  {
+    "elementId": "124542228",
+    "name": "Cinnamon College",
+    "address": "22 College Ave East",
+    "postal": "138593"
+  },
+  {
+    "elementId": "124549211",
+    "name": "Cinnamon South Learn Lobe",
+    "address": "22 College Ave East",
+    "postal": "138593"
+  },
+  {
     "elementId": "420847275",
     "name": "Create",
     "address": "1 Create Wy",
