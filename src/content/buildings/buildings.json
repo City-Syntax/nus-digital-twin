@@ -475,5 +475,71 @@
     "name": "S17",
     "address": "Science Drive 2",
     "postal": "117543"
+  },
+  {
+    "elementId": "141912739",
+    "name": "MD1 - Tahir Foundation Building",
+    "address": "12 Science Drive 2",
+    "postal": "117549"
+  },
+  {
+    "elementId": "141912951",
+    "name": "MD2",
+    "address": "12 Science Drive 2",
+    "postal": "117549"
+  },
+  {
+    "elementId": "141912946",
+    "name": "MD3",
+    "address": "16 Medical Drive",
+    "postal": "117600"
+  },
+  {
+    "elementId": "141910523",
+    "name": "MD4",
+    "address": "5 Science Drive 2",
+    "postal": "117545"
+  },
+  {
+    "elementId": "141910559",
+    "name": "MD4A",
+    "address": "5 Science Drive 2",
+    "postal": "117545"
+  },
+  {
+    "elementId": "141910561",
+    "name": "MD5",
+    "address": "16 Medical Drive",
+    "postal": "117600"
+  },
+  {
+    "elementId": "141912974",
+    "name": "MD6",
+    "address": "15 Medical Drive",
+    "postal": "117599"
+  },
+  {
+    "elementId": "141910273",
+    "name": "MD7",
+    "address": "8 Medical Drive",
+    "postal": "117596"
+  },
+  {
+    "elementId": "141908093",
+    "name": "MD9",
+    "address": "2 Medical Drive",
+    "postal": "117593"
+  },
+  {
+    "elementId": "141908489",
+    "name": "MD10",
+    "address": "4 Medical Drive",
+    "postal": "117594"
+  },
+  {
+    "elementId": "141910336",
+    "name": "MD11",
+    "address": "10 Medical Drive",
+    "postal": "117597"
   }
 ]
