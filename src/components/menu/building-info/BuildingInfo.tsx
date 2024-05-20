@@ -17,7 +17,7 @@ const BuildingInfo = () => {
   return (
     <MenuContent title={$buildingProperties.name || 'Unknown Building Name'}>
       <CategorySelect value={category} onValueChange={(value: Categories) => setCategory(value)}></CategorySelect>
-      {selectedProperties.length <= 1 && <p>No information under '{CATEGORY_MAPPINGS[category]}' yet.</p>}
+      {selectedProperties.length < 1 && <p>No information under '{CATEGORY_MAPPINGS[category]}' yet.</p>}
       {selectedProperties.map((data) => {
         const title = data[0] as keyof BuildingPropertiesProps;
         return (
