@@ -709,5 +709,41 @@
     "name": "Ventus",
     "address": "8 Kent Ridge Drive",
     "postal": "119246"
+  },
+  {
+    "elementId": "858981035",
+    "name": "Kent Ridge Guild House",
+    "address": "9 Kent Ridge Drive",
+    "postal": "119241"
+  },
+  {
+    "elementId": "54619694",
+    "name": "Kent Ridge Guild House Extension",
+    "address": "9 Kent Ridge Drive",
+    "postal": "119241"
+  },
+  {
+    "elementId": "125774787",
+    "name": "Stephen Riady Centre",
+    "address": "2 College Avenue West",
+    "postal": "138607"
+  },
+  {
+    "elementId": "124549217",
+    "name": "Education Resource Centre",
+    "address": "8 College Avenue West",
+    "postal": "138608"
+  },
+  {
+    "elementId": "140087160",
+    "name": "BIZ 1 - Mochtar Riady Building",
+    "address": "15 Kent Ridge Drive",
+    "postal": "119245"
+  },
+  {
+    "elementId": "54619697",
+    "name": "BIZ 2",
+    "address": "1 Business Link",
+    "postal": "117592"
   }
 ]
