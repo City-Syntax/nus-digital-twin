@@ -1,5 +1,29 @@
 [
   {
+    "elementId": "732229053",
+    "name": "Cendana College",
+    "address": "28 College Avenue West",
+    "postal": "138533"
+  },
+  {
+    "elementId": "420847275",
+    "name": "Create",
+    "address": "1 Create Wy",
+    "postal": "138602"
+  },
+  {
+    "elementId": "125842215",
+    "name": "Create Tower",
+    "address": "1 Create Wy",
+    "postal": "138602"
+  },
+  {
+    "elementId": "15314907",
+    "name": "Town Plaza",
+    "address": "2 College Ave West",
+    "postal": "138607"
+  },
+  {
     "elementId": "142090371",
     "name": "MPSH 1 - 4",
     "address": "Sports Drive 1",
