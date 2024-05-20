@@ -745,5 +745,52 @@
     "name": "BIZ 2",
     "address": "1 Business Link",
     "postal": "117592"
+  },
+  {
+    "elementId": "351136506",
+    "name": "Office of Safety, Health and Environment",
+    "address": "8 Kent Ridge Drive",
+    "postal": "119246"
+  },
+  {
+    "elementId": "54619731",
+    "name": "Runme Shaw CFA Studios",
+    "address": "17 Kent Ridge Crescent",
+    "postal": "119277"
+  },
+  {
+    "elementId": "142080252",
+    "name": "Shaw Foundation Alumni House",
+    "address": "11 Kent Ridge Drive",
+    "postal": "119244"
+  },
+  {
+    "elementId": "140087193",
+    "name": "The Deck",
+    "address": "Computing Drive"
+  },
+  {
+    "elementId": "730959512",
+    "name": "Techno Edge",
+    "address": "2 Engineering Drive 4",
+    "postal": "117584"
+  },
+  {
+    "elementId": "141913023",
+    "name": "Centre for Life Sciences",
+    "address": "28 Medical Drive",
+    "postal": "117456"
+  },
+  {
+    "elementId": "124543527",
+    "name": "College of Alice & Peter Tan",
+    "address": "8 College Avenue East",
+    "postal": "138615"
+  },
+  {
+    "elementId": "140084916",
+    "name": "Centre for English Language Communication",
+    "address": "10 Architecture Drive",
+    "postal": "117511"
   }
 ]
