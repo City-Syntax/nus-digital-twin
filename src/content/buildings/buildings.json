@@ -2,19 +2,19 @@
   {
     "elementId": "140078777",
     "name": "SDE1",
-    "address": "4 Architecture Dr",
+    "address": "4 Architecture Drive",
     "postal": "117566"
   },
   {
     "elementId": "140078560",
     "name": "SDE2",
-    "address": "2 Architecture Dr",
+    "address": "2 Architecture Drive",
     "postal": "117565"
   },
   {
     "elementId": "140079084",
     "name": "SDE3",
-    "address": "4 Architecture Dr",
+    "address": "4 Architecture Drive",
     "postal": "117566"
   },
   {
@@ -75,13 +75,13 @@
     "elementId": "139959760",
     "name": "E6",
     "address": "5 Engineering Drive 1",
-    "postal": "117608" 
+    "postal": "117608"
   },
   {
     "elementId": "1060426986",
     "name": "E7",
-    "address": "15 Kent Ridge Cres",
-    "postal": "119276" 
+    "address": "15 Kent Ridge Crescent",
+    "postal": "119276"
   },
   {
     "elementId": "139959807",
@@ -106,6 +106,189 @@
     "name": "EW1A",
     "address": "1 Engineering Drive 2",
     "postal": "117576"
+  },
+  {
+    "elementId": "54583488",
+    "name": "Information Technology",
+    "address": "2 Engineering Drive 4",
+    "postal": "117584"
+  },
+  {
+    "elementId": "54583490",
+    "name": "Central Library",
+    "address": "12 Kent Ridge Crescent",
+    "postal": "119275"
+  },
+  {
+    "elementId": "140087398",
+    "name": "Central Library Annexe",
+    "address": "12 Kent Ridge Crescent",
+    "postal": "119275"
+  },
+  {
+    "elementId": "139974326",
+    "name": "LT 1",
+    "address": "5 Engineering Drive 2",
+    "postal": "117579"
+  },
+  {
+    "elementId": "139974364",
+    "name": "LT 2",
+    "address": "9 Engineering Drive 2",
+    "postal": "117575"
+  },
+  {
+    "elementId": "140087835",
+    "name": "LT 3",
+    "address": "Kent Ridge Cres"
+  },
+  {
+    "elementId": "140087837",
+    "name": "LT 4",
+    "address": "10 Kent Ridge Crescent",
+    "postal": "119260"
+  },
+  {
+    "elementId": "139960627",
+    "name": "LT 6",
+    "address": "10 Kent Ridge Crescent",
+    "postal": "119260"
+  },
+  {
+    "elementId": "139972031",
+    "name": "LT 7",
+    "address": "9 Engineering Drive 1",
+    "postal": "117575"
+  },
+  {
+    "elementId": "142080063",
+    "name": "LT 8",
+    "address": "7 Arts Link",
+    "postal": "117571"
+  },
+  {
+    "elementId": "142078782",
+    "name": "LT 9",
+    "address": "11 Arts Link",
+    "postal": "117573"
+  },
+  {
+    "elementId": "142078783",
+    "name": "LT 10",
+    "address": "11 Computing Drive",
+    "postal": "117416"
+  },
+  {
+    "elementId": "142076923",
+    "name": "LT 11",
+    "address": "10 Kent Ridge Drive",
+    "postal": "119242"
+  },
+  {
+    "elementId": "142077784",
+    "name": "LT 12",
+    "address": "Kent Ridge Drive",
+    "postal": "119246"
+  },
+  {
+    "elementId": "142077734",
+    "name": "LT 13",
+    "address": "Kent Ridge Drive",
+    "postal": "119246"
+  },
+  {
+    "elementId": "142079319",
+    "name": "LT 14",
+    "address": "11 Computing Drive",
+    "postal": "117416"
+  },
+  {
+    "elementId": "142079318",
+    "name": "LT 15",
+    "address": "11 Computing Drive",
+    "postal": "117416"
+  },
+  {
+    "elementId": "142082467",
+    "name": "LT 16",
+    "address": "13 Computing Drive",
+    "postal": "117417"
+  },
+  {
+    "elementId": "142082470",
+    "name": "LT 17",
+    "address": "13 Computing Drive",
+    "postal": "117417"
+  },
+  {
+    "elementId": "142083506",
+    "name": "LT 18",
+    "address": "1 Business Link",
+    "postal": "117592"
+  },
+  {
+    "elementId": "142083509",
+    "name": "LT 19",
+    "address": "Computing Drive",
+    "postal": "119077"
+  },
+  {
+    "elementId": "141905825",
+    "name": "LT 20",
+    "address": "8 Science Drive 2",
+    "postal": "117547"
+  },
+  {
+    "elementId": "141906024",
+    "name": "LT 21",
+    "address": "8 Science Drive 2",
+    "postal": "117547"
+  },
+  {
+    "elementId": "141910214",
+    "name": "LT 26",
+    "address": "Science Drive 2",
+    "postal": "117547"
+  },
+  {
+    "elementId": "141907258",
+    "name": "Lim Seng Tjoe Lecture Theatre (LT 27)",
+    "address": "27 Science Drive 1",
+    "postal": "117541"
+  },
+  {
+    "elementId": "141907104",
+    "name": "LT 28",
+    "address": "Lower Kent Ridge Road"
+  },
+  {
+    "elementId": "141907010",
+    "name": "LT 29",
+    "address": "Lower Kent Ridge Road"
+  },
+  {
+    "elementId": "142075681",
+    "name": "LT 31",
+    "address": "6 Science Drive 2",
+    "postal": "117546"
+  },
+  {
+    "elementId": "141905556",
+    "name": "Lee Wee Kheng Building (S1A/LT 32)",
+    "address": "3 Science Drive 2",
+    "postal": "117543"
+  },
+  {
+    "elementId": "142074913",
+    "name": "LT 33",
+    "address": "10 Lower Kent Ridge Road",
+    "postal": "119076"
+  },
+  {
+    "elementId": "142074910",
+    "name": "LT 34",
+    "address": "21 Lower Kent Ridge Road",
+    "postal": "119077"
   },
   {
     "name": "COM3",
