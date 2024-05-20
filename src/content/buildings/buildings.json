@@ -1,5 +1,113 @@
 [
   {
+    "elementId": "140078777",
+    "name": "SDE1",
+    "address": "4 Architecture Dr",
+    "postal": "117566"
+  },
+  {
+    "elementId": "140078560",
+    "name": "SDE2",
+    "address": "2 Architecture Dr",
+    "postal": "117565"
+  },
+  {
+    "elementId": "140079084",
+    "name": "SDE3",
+    "address": "4 Architecture Dr",
+    "postal": "117566"
+  },
+  {
+    "elementId": "139976357",
+    "name": "E1",
+    "address": "9 Engineering Drive 1",
+    "postal": "117575"
+  },
+  {
+    "elementId": "139976284",
+    "name": "E1A",
+    "address": "9 Engineering Drive 1",
+    "postal": "117575"
+  },
+  {
+    "elementId": "139974570",
+    "name": "E2",
+    "address": "9 Engineering Drive 1",
+    "postal": "117575"
+  },
+  {
+    "elementId": "628777635",
+    "name": "E2A",
+    "address": "6 Engineering Drive 4",
+    "postal": "117361"
+  },
+  {
+    "elementId": "139971771",
+    "name": "E3",
+    "address": "1 Engineering Drive 2",
+    "postal": "117576"
+  },
+  {
+    "elementId": "139974054",
+    "name": "E3A",
+    "address": "9 Engineering Drive 1",
+    "postal": "117575"
+  },
+  {
+    "elementId": "139970613",
+    "name": "E4",
+    "address": "9 Engineering Drive 1",
+    "postal": "117575"
+  },
+  {
+    "elementId": "139960333",
+    "name": "E4A",
+    "address": "9 Engineering Drive 1",
+    "postal": "117575"
+  },
+  {
+    "elementId": "54583929",
+    "name": "E5",
+    "address": "9 Engineering Drive 1",
+    "postal": "117575"
+  },
+  {
+    "elementId": "139959760",
+    "name": "E6",
+    "address": "5 Engineering Drive 1",
+    "postal": "117608" 
+  },
+  {
+    "elementId": "1060426986",
+    "name": "E7",
+    "address": "15 Kent Ridge Cres",
+    "postal": "119276" 
+  },
+  {
+    "elementId": "139959807",
+    "name": "E8",
+    "address": "1 Engineering Drive 3",
+    "postal": "117580"
+  },
+  {
+    "elementId": "139978993",
+    "name": "EA",
+    "address": "9 Engineering Drive 1",
+    "postal": "117575"
+  },
+  {
+    "elementId": "54619717",
+    "name": "EW1",
+    "address": "9 Engineering Drive 1",
+    "postal": "117575"
+  },
+  {
+    "elementId": "624224897",
+    "name": "EW1A",
+    "address": "1 Engineering Drive 2",
+    "postal": "117576"
+  },
+  {
     "name": "COM3",
     "address": "11 Research Link",
     "postal": "119391",
