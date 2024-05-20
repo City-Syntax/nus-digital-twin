@@ -673,5 +673,41 @@
     "name": "University Sports Centre",
     "address": "2 Sports Drive 1",
     "postal": "117561"
+  },
+  {
+    "elementId": "111973157",
+    "name": "Yong Siew Toh Conservatory of Music",
+    "address": "3 Conservatory Drive",
+    "postal": "117376"
+  },
+  {
+    "elementId": "54583491",
+    "name": "Yusof Ishak House",
+    "address": "31 Lower Kent Ridge Road",
+    "postal": "119078"
+  },
+  {
+    "elementId": "54619687",
+    "name": "i3",
+    "address": "21 Heng Mui Keng Ter",
+    "postal": "119613"
+  },
+  {
+    "elementId": "54619703",
+    "name": "Innovation 4.0",
+    "address": "3 Research Link",
+    "postal": "117602"
+  },
+  {
+    "elementId": "54619685",
+    "name": "Hon Sui Sen Memorial Library",
+    "address": "1 Hon Sui Sen Drive",
+    "postal": "117588"
+  },
+  {
+    "elementId": "503403831",
+    "name": "Ventus",
+    "address": "8 Kent Ridge Drive",
+    "postal": "119246"
   }
 ]
