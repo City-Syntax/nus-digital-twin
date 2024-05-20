@@ -339,16 +339,27 @@
     "postal": "119077"
   },
   {
+    "elementId": "54619721",
+    "name": "COM1",
+    "address": "13 Computing Drive",
+    "postal": "117417"
+  },
+  {
+    "elementId": "54619699",
+    "name": "COM2",
+    "address": "15 Computing Drive",
+    "postal": "117418"
+  },
+  {
+    "elementId": "15780831",
     "name": "COM3",
     "address": "11 Research Link",
-    "postal": "119391",
-    "floorToFloorHeight": "4m",
-    "perimeterZoneDepth": "6m",
-    "fenestrationType": "Curtain wall",
-    "fenestrationShading": "Exterion overhangs",
-    "northWindowToWallRatio": "40%",
-    "southWindowToWallRatio": "40%",
-    "eastWindowToWallRatio": "60%",
-    "westWindowToWallRatio": "60%"
+    "postal": "119391"
+  },
+  {
+    "elementId": "1084196072",
+    "name": "COM4",
+    "address": "3A Research Link",
+    "postal": "119392"
   }
 ]
