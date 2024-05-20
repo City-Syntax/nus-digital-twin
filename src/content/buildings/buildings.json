@@ -541,5 +541,35 @@
     "name": "MD11",
     "address": "10 Medical Drive",
     "postal": "117597"
+  },
+  {
+    "elementId": "455250294",
+    "name": "Sheares Block A",
+    "address": "20 Heng Mui Keng Ter",
+    "postal": "119618"
+  },
+  {
+    "elementId": "627395979",
+    "name": "Sheares Block B",
+    "address": "20 Heng Mui Keng Ter",
+    "postal": "119618"
+  },
+  {
+    "elementId": "455250299",
+    "name": "Sheares Block C",
+    "address": "20 Heng Mui Keng Ter",
+    "postal": "119618"
+  },
+  {
+    "elementId": "455250300",
+    "name": "Sheares Block D",
+    "address": "20 Heng Mui Keng Ter",
+    "postal": "119618"
+  },
+  {
+    "elementId": "639080232",
+    "name": "Sheares Block E",
+    "address": "20 Heng Mui Keng Ter",
+    "postal": "119618"
   }
 ]
