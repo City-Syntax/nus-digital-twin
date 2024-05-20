@@ -144,6 +144,12 @@
     "postal": "117575"
   },
   {
+    "elementId": "139957953",
+    "name": "E5A / T-Lab",
+    "address": "5A Engineering Drive 1",
+    "postal": "117411"
+  },
+  {
     "elementId": "139959760",
     "name": "E6",
     "address": "5 Engineering Drive 1",
@@ -788,9 +794,39 @@
     "postal": "138615"
   },
   {
+    "elementId": "124543528",
+    "name": "College of Alice & Peter Tan Multi-Purpose Hall",
+    "address": "8 College Avenue East",
+    "postal": "138615"
+  },
+  {
     "elementId": "140084916",
     "name": "Centre for English Language Communication",
     "address": "10 Architecture Drive",
     "postal": "117511"
+  },
+  {
+    "elementId": "141913116",
+    "name": "Medicine+Science Library",
+    "address": "11 Lower Kent Ridge Road",
+    "postal": "119083"
+  },
+  {
+    "elementId": "124543998",
+    "name": "RC4 Multi-Purpose Hall",
+    "address": "6 College Avenue East",
+    "postal": "138614"
+  },
+  {
+    "elementId": "124543999",
+    "name": "RC4 Tower",
+    "address": "6 College Avenue East",
+    "postal": "138614"
+  },
+  {
+    "elementId": "124543532",
+    "name": "Chua Thian Poh Hall",
+    "address": "16 College Ave East",
+    "postal": "138592"
   }
 ]
