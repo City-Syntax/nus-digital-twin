@@ -224,16 +224,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
 
       activeMenu.set('BuildingInfo');
-      const featureName = pickedFeature.getProperty('name') || '';
-      const featureData = buildingsData.filter((d) => d.name === featureName);
+      const featureId = pickedFeature.getProperty('elementId');
+      const featureData = buildingsData.filter((d) => d.elementId == featureId);
 
       if (featureData.length > 0) {
         buildingProperties.set(featureData[0]);
       } else {
-        buildingProperties.set({ name: featureName });
+        buildingProperties.set({ name: pickedFeature.getProperty('name') });
       }
 
-      searchQuery.set(featureName);
+      // TODO: Use buildingsData only in the future
+      searchQuery.set(buildingProperties.get()['name'] || '');
     }
   }, ScreenSpaceEventType.LEFT_CLICK);
 
