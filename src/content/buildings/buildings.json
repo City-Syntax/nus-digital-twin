@@ -637,5 +637,41 @@
     "name": "Kent Ridge Hall",
     "address": "10 Heng Mui Keng Ter",
     "postal": "119617"
+  },
+  {
+    "elementId": "546374635",
+    "name": "Technology Centre for Offshore and Marine, Singapore",
+    "address": "12 Prince George's Park",
+    "postal": "118411"
+  },
+  {
+    "elementId": "140087580",
+    "name": "University Hall (Lee Kong Chian Wing)",
+    "address": "21 Lower Kent Ridge Road",
+    "postal": "119077"
+  },
+  {
+    "elementId": "140087584",
+    "name": "University Hall (Tan Chin Tuan Wing)",
+    "address": "21 Lower Kent Ridge Road",
+    "postal": "119077"
+  },
+  {
+    "elementId": "54583930",
+    "name": "University Cultural Centre",
+    "address": "50 Kent Ridge Crescent",
+    "postal": "119279"
+  },
+  {
+    "elementId": "54583487",
+    "name": "University Health Centre",
+    "address": "20 Lower Kent Ridge Road",
+    "postal": "119080"
+  },
+  {
+    "elementId": "730956214",
+    "name": "University Sports Centre",
+    "address": "2 Sports Drive 1",
+    "postal": "117561"
   }
 ]
