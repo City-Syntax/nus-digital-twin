@@ -1,5 +1,53 @@
 [
   {
+    "elementId": "142077688",
+    "name": "AS1",
+    "address": "11 Arts Link",
+    "postal": "117573"
+  },
+  {
+    "elementId": "142077129",
+    "name": "AS2",
+    "address": "1 Arts Link",
+    "postal": "117568"
+  },
+  {
+    "elementId": "142077984",
+    "name": "AS3",
+    "address": "3 Arts Link",
+    "postal": "117570"
+  },
+  {
+    "elementId": "142078389",
+    "name": "AS4",
+    "address": "9 Arts Link",
+    "postal": "117572"
+  },
+  {
+    "elementId": "142080062",
+    "name": "AS5",
+    "address": "7 Arts Link",
+    "postal": "117570"
+  },
+  {
+    "elementId": "15347235",
+    "name": "AS6",
+    "address": "11 Computing Drive",
+    "postal": "117416"
+  },
+  {
+    "elementId": "142079835",
+    "name": "AS7 - Shaw Foundation Building",
+    "address": "5 Arts Link",
+    "postal": "117570"
+  },
+  {
+    "elementId": "54583485",
+    "name": "AS8",
+    "address": "10 Kent Ridge Crescent",
+    "postal": "119260"
+  },
+  {
     "elementId": "140078777",
     "name": "SDE1",
     "address": "4 Architecture Drive",
