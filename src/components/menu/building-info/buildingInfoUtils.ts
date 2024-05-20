@@ -9,7 +9,7 @@ export type Categories =
   | 'schedules'
   | 'others';
 
-export const titleMappings: BuildingPropertiesProps = {
+export const TITLE_MAPPINGS: BuildingPropertiesProps = {
   address: 'Address',
   postal: 'Postal Code',
   floorToFloorHeight: 'Floor to Floor Height',
@@ -47,7 +47,7 @@ export const titleMappings: BuildingPropertiesProps = {
   economizerCycle: 'Economizer Cycle',
 };
 
-export const categoryMappings: { [key in Categories]: string } = {
+export const CATEGORY_MAPPINGS: { [key in Categories]: string } = {
   general: 'General',
   partitions: 'Structural, Enclosure and Internal Partitions',
   fenestration: 'Fenestration',
@@ -57,7 +57,7 @@ export const categoryMappings: { [key in Categories]: string } = {
   others: 'Others',
 };
 
-export const sectionsToDisplay: { [key in Categories]: Array<keyof BuildingPropertiesProps> } = {
+export const SECTIONS_TO_DISPLAY: { [key in Categories]: Array<keyof BuildingPropertiesProps> } = {
   general: ['address', 'postal'],
   partitions: [
     'floorToFloorHeight',
