@@ -367,5 +367,113 @@
     "name": "COM4",
     "address": "3A Research Link",
     "postal": "119392"
+  },
+  {
+    "elementId": "141905781",
+    "name": "S1",
+    "address": "Science Drive 4",
+    "postal": "117543"
+  },
+  {
+    "elementId": "141905796",
+    "name": "S2",
+    "address": "8 Science Drive 2",
+    "postal": "117547"
+  },
+  {
+    "elementId": "141905799",
+    "name": "S3",
+    "address": "Science Drive 3",
+    "postal": "117542"
+  },
+  {
+    "elementId": "141905829",
+    "name": "S4",
+    "address": "Science Drive 3",
+    "postal": "117542"
+  },
+  {
+    "elementId": "141905922",
+    "name": "S4A",
+    "address": "Science Drive 4",
+    "postal": "117597"
+  },
+  {
+    "elementId": "141905956",
+    "name": "S5",
+    "address": "Science Drive 2",
+    "postal": "117546"
+  },
+  {
+    "elementId": "141913009",
+    "name": "S6",
+    "address": "Science Drive 2",
+    "postal": "117548"
+  },
+  {
+    "elementId": "141905434",
+    "name": "S7",
+    "address": "6 Science Drive 3",
+    "postal": "117554"
+  },
+  {
+    "elementId": "141905474",
+    "name": "S8",
+    "address": "Lower Kent Ridge Road",
+    "postal": "119076"
+  },
+  {
+    "elementId": "141906130",
+    "name": "S9 - Wet Science Building",
+    "address": "4 Science Drive 2",
+    "postal": "117544"
+  },
+  {
+    "elementId": "141906238",
+    "name": "S10",
+    "address": "Science Drive 4",
+    "postal": "117543"
+  },
+  {
+    "elementId": "141905252",
+    "name": "S11",
+    "address": "Science Drive 4",
+    "postal": "117543"
+  },
+  {
+    "elementId": "141905202",
+    "name": "S12",
+    "address": "Science Drive 2",
+    "postal": "117542"
+  },
+  {
+    "elementId": "141905403",
+    "name": "S13",
+    "address": "Science Drive 2",
+    "postal": "117543"
+  },
+  {
+    "elementId": "140087728",
+    "name": "S14",
+    "address": "Science Drive 3",
+    "postal": "117543"
+  },
+  {
+    "elementId": "141906507",
+    "name": "S15",
+    "address": "Science Drive 2",
+    "postal": "117543"
+  },
+  {
+    "elementId": "141906506",
+    "name": "S16",
+    "address": "Science Drive 2",
+    "postal": "117543"
+  },
+  {
+    "elementId": "142074912",
+    "name": "S17",
+    "address": "Science Drive 2",
+    "postal": "117543"
   }
 ]
