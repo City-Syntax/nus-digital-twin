@@ -1,6 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 
 const buildingSchema = z.object({
+  elementId: z.string().optional(),
   name: z.string().optional(),
   address: z.string().optional(),
   postal: z.string().optional(),

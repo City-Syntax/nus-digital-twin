@@ -140,8 +140,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   osmBuildingsTileset.clippingPlanes = new ClippingPlaneCollection({
     modelMatrix: Transforms.eastNorthUpToFixedFrame(position),
     planes: [
-      new ClippingPlane(new Cartesian3(1.0, 0.0, 0.0), 800),
-      new ClippingPlane(new Cartesian3(-1.0, 0.0, 0.0), 600),
+      new ClippingPlane(new Cartesian3(1.0, 0.0, 0.0), 850),
+      new ClippingPlane(new Cartesian3(-1.0, 0.0, 0.0), 700),
       new ClippingPlane(new Cartesian3(0.0, 1.0, 0.0), -600),
       new ClippingPlane(new Cartesian3(0.0, -1.0, 0.0), 2800),
     ],
@@ -224,16 +224,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
 
       activeMenu.set('BuildingInfo');
-      const featureName = pickedFeature.getProperty('name') || '';
-      const featureData = buildingsData.filter((d) => d.name === featureName);
+      const featureId = pickedFeature.getProperty('elementId');
+      const featureData = buildingsData.filter((d) => d.elementId == featureId);
 
       if (featureData.length > 0) {
         buildingProperties.set(featureData[0]);
       } else {
-        buildingProperties.set({ name: featureName });
+        buildingProperties.set({ name: pickedFeature.getProperty('name') });
       }
 
-      searchQuery.set(featureName);
+      // TODO: Use buildingsData only in the future
+      searchQuery.set(buildingProperties.get()['name'] || '');
     }
   }, ScreenSpaceEventType.LEFT_CLICK);
 
