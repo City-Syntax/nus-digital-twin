@@ -855,6 +855,18 @@
     "postal": "119224"
   },
   {
+    "elementId": "238933477",
+    "name": "KEVII Block E",
+    "address": "1A Kent Ridge Road",
+    "postal": "119224"
+  },
+  {
+    "elementId": "238933473",
+    "name": "KEVII Block F",
+    "address": "1A Kent Ridge Road",
+    "postal": "119224"
+  },
+  {
     "elementId": "238933482",
     "name": "KEVII Block F",
     "address": "1A Kent Ridge Road",
@@ -981,8 +993,14 @@
     "postal": "117543"
   },
   {
+    "elementId": "874067395",
+    "name": "Frontier",
+    "address": "12 Science Drive 2",
+    "postal": "117549"
+  },
+  {
     "elementId": "141910213",
-    "name": "Frontier Phase 2",
+    "name": "Frontier",
     "address": "12 Science Drive 2",
     "postal": "117549"
   },
