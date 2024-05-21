@@ -31,9 +31,87 @@
   },
   {
     "elementId": "732229050",
-    "name": "Yale-NUS College Library",
+    "name": "Yale-NUS College",
     "address": "20 College Ave East",
     "postal": "138529"
+  },
+  {
+    "elementId": "732229049",
+    "name": "Yale-NUS College Arts Centre",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229044",
+    "name": "Yale-NUS College Reception and Admissions",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229035",
+    "name": "Yale-NUS College",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229048",
+    "name": "Elm College",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229043",
+    "name": "Elm College",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229045",
+    "name": "Elm College",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229047",
+    "name": "Elm College",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229046",
+    "name": "Saga College",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229042",
+    "name": "Saga College",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229041",
+    "name": "Saga College",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229038",
+    "name": "Saga College",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229039",
+    "name": "Saga College",
+    "address": "16 College Ave West",
+    "postal": "138627"
+  },
+  {
+    "elementId": "732229040",
+    "name": "Saga College",
+    "address": "16 College Ave West",
+    "postal": "138627"
   },
   {
     "elementId": "124542228",
