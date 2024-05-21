@@ -1233,6 +1233,30 @@
     "postal": "119241"
   },
   {
+    "elementId": "142219217",
+    "name": "Eusoff Hall Block A",
+    "address": "10 Kent Ridge Drive",
+    "postal": "119242"
+  },
+  {
+    "elementId": "142219214",
+    "name": "Eusoff Hall Block B and C",
+    "address": "10 Kent Ridge Drive",
+    "postal": "119242"
+  },
+  {
+    "elementId": "142219212",
+    "name": "Eusoff Hall Block D",
+    "address": "10 Kent Ridge Drive",
+    "postal": "119242"
+  },
+  {
+    "elementId": "142219213",
+    "name": "Eusoff Hall Block E",
+    "address": "10 Kent Ridge Drive",
+    "postal": "119242"
+  },
+  {
     "elementId": "125774787",
     "name": "Stephen Riady Centre",
     "address": "2 College Avenue West",
