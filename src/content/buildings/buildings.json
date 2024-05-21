@@ -777,6 +777,12 @@
     "postal": "118402"
   },
   {
+    "elementId": "351136509",
+    "name": "Institute for Math and Science",
+    "address": "4 Prince George's Park",
+    "postal": "118403"
+  },
+  {
     "elementId": "351136507",
     "name": "IMS Auditorium",
     "address": "3 Prince George's Park",
@@ -913,6 +919,12 @@
     "name": "S17",
     "address": "Science Drive 2",
     "postal": "117543"
+  },
+  {
+    "elementId": "141910213",
+    "name": "Frontier Phase 2",
+    "address": "12 Science Drive 2",
+    "postal": "117549"
   },
   {
     "elementId": "141912739",
@@ -1105,6 +1117,18 @@
     "name": "Yusof Ishak House",
     "address": "31 Lower Kent Ridge Road",
     "postal": "119078"
+  },
+  {
+    "elementId": "298991082",
+    "name": "Centre for Protective Technology",
+    "address": "12 Kent Ridge Road",
+    "postal": "119222"
+  },
+  {
+    "elementId": "163560567",
+    "name": "Tropical Marine Science Institute",
+    "address": "18 Kent Ridge Road",
+    "postal": "119227"
   },
   {
     "elementId": "54619685",
