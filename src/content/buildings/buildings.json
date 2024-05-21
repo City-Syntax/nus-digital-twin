@@ -516,6 +516,12 @@
     "postal": "117584"
   },
   {
+    "elementId": "140087374",
+    "name": "Chinese Library",
+    "address": "12 Kent Ridge Crescent",
+    "postal": "119275"
+  },
+  {
     "elementId": "54583490",
     "name": "Central Library",
     "address": "12 Kent Ridge Crescent",
@@ -715,6 +721,90 @@
     "name": "COM4",
     "address": "3A Research Link",
     "postal": "119392"
+  },
+  {
+    "elementId": "54619730",
+    "name": "Singapore Synchrotron Light Source",
+    "address": "5 Research Link",
+    "postal": "117603"
+  },
+  {
+    "elementId": "54619687",
+    "name": "i3",
+    "address": "21 Heng Mui Keng Ter",
+    "postal": "119613"
+  },
+  {
+    "elementId": "54619703",
+    "name": "Innovation 4.0",
+    "address": "3 Research Link",
+    "postal": "117602"
+  },
+  {
+    "elementId": "84517831",
+    "name": "Temasek Life Sciences Laboratory",
+    "address": "1 Research Link",
+    "postal": "117604"
+  },
+  {
+    "elementId": "1158481785",
+    "name": "Greenhouse",
+    "address": "1 Research Link",
+    "postal": "117604"
+  },
+  {
+    "elementId": "142089841",
+    "name": "Greenhouse",
+    "address": "1 Research Link",
+    "postal": "117604"
+  },
+  {
+    "elementId": "84517830",
+    "name": "Greenhouse",
+    "address": "1 Research Link",
+    "postal": "117604"
+  },
+  {
+    "elementId": "12017240",
+    "name": "NUS Enterprise Incubator",
+    "address": "9 Prince George's Park",
+    "postal": "118408"
+  },
+  {
+    "elementId": "351136508",
+    "name": "Institute for Math and Science",
+    "address": "3 Prince George's Park",
+    "postal": "118402"
+  },
+  {
+    "elementId": "351136507",
+    "name": "IMS Auditorium",
+    "address": "3 Prince George's Park",
+    "postal": "118402"
+  },
+  {
+    "elementId": "173058823",
+    "name": "Director Administration Conference Room",
+    "address": "17 Prince George's Park",
+    "postal": "118416"
+  },
+  {
+    "elementId": "1136599404",
+    "name": "OCS Command Centre",
+    "address": "18A Prince George's Park",
+    "postal": "118417"
+  },
+  {
+    "elementId": "173059405",
+    "name": "Investigation Division Multi-Purpose Room",
+    "address": "18 Prince George's Park",
+    "postal": "118417"
+  },
+  {
+    "elementId": "351136506",
+    "name": "Office of Safety, Health and Environment",
+    "address": "2 Prince George's Park",
+    "postal": "118401"
   },
   {
     "elementId": "141905781",
@@ -1015,18 +1105,6 @@
     "name": "Yusof Ishak House",
     "address": "31 Lower Kent Ridge Road",
     "postal": "119078"
-  },
-  {
-    "elementId": "54619687",
-    "name": "i3",
-    "address": "21 Heng Mui Keng Ter",
-    "postal": "119613"
-  },
-  {
-    "elementId": "54619703",
-    "name": "Innovation 4.0",
-    "address": "3 Research Link",
-    "postal": "117602"
   },
   {
     "elementId": "54619685",
