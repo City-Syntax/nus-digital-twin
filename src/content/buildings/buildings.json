@@ -1356,5 +1356,155 @@
     "name": "Medicine+Science Library",
     "address": "11 Lower Kent Ridge Road",
     "postal": "119083"
+  },
+  {
+    "elementId": "238932786",
+    "name": "PGP Residence 1 Block 1",
+    "address": "21 Prince George's Park",
+    "postal": "118420"
+  },
+  {
+    "elementId": "238932783",
+    "name": "PGP Residence 1 Block 2",
+    "address": "21 Prince George's Park",
+    "postal": "118420"
+  },
+  {
+    "elementId": "238932785",
+    "name": "PGP Residence 1 Block 3",
+    "address": "21 Prince George's Park",
+    "postal": "118420"
+  },
+  {
+    "elementId": "238932792",
+    "name": "PGP Residence 1 Block 4",
+    "address": "21 Prince George's Park",
+    "postal": "118420"
+  },
+  {
+    "elementId": "238932778",
+    "name": "PGP Residence 2 Block 5",
+    "address": "27 Prince George's Park",
+    "postal": "118425"
+  },
+  {
+    "elementId": "238932780",
+    "name": "PGP Residence 2 Block 6",
+    "address": "27 Prince George's Park",
+    "postal": "118425"
+  },
+  {
+    "elementId": "238932775",
+    "name": "PGP Residence 2 Block 7",
+    "address": "27 Prince George's Park",
+    "postal": "118425"
+  },
+  {
+    "elementId": "1084099106",
+    "name": "PGP Residence 2 Block 8",
+    "address": "27 Prince George's Park",
+    "postal": "118425"
+  },
+  {
+    "elementId": "238932782",
+    "name": "PGP Residence 3 Block 9",
+    "address": "29 Prince George's Park",
+    "postal": "118426"
+  },
+  {
+    "elementId": "238932777",
+    "name": "PGP Residence 3 Block 10",
+    "address": "29 Prince George's Park",
+    "postal": "118426"
+  },
+  {
+    "elementId": "238932781",
+    "name": "PGP Residence 3 Block 11",
+    "address": "29 Prince George's Park",
+    "postal": "118426"
+  },
+  {
+    "elementId": "238932776",
+    "name": "PGP Residence 3 Block 12",
+    "address": "29 Prince George's Park",
+    "postal": "118426"
+  },
+  {
+    "elementId": "238932768",
+    "name": "PGR Graduate Student Block 13",
+    "address": "39 Prince George's Park",
+    "postal": "118431"
+  },
+  {
+    "elementId": "238932769",
+    "name": "PGR Graduate Student Block 14",
+    "address": "39 Prince George's Park",
+    "postal": "118431"
+  },
+  {
+    "elementId": "251677507",
+    "name": "PGP Foyer",
+    "address": "27 Prince George's Park",
+    "postal": "118425"
+  },
+  {
+    "elementId": "241503843",
+    "name": "PGP Amphitheatre",
+    "address": "39 Prince George's Park",
+    "postal": "118431"
+  },
+  {
+    "elementId": "238932766",
+    "name": "Helix House Block 15 - 17",
+    "address": "37 Prince George's Park",
+    "postal": "118430"
+  },
+  {
+    "elementId": "238932773",
+    "name": "Helix House Block 18 and 19",
+    "address": "37 Prince George's Park",
+    "postal": "118430"
+  },
+  {
+    "elementId": "238932772",
+    "name": "Pioneer House Block 20 and 21",
+    "address": "35 Prince George's Park",
+    "postal": "118429"
+  },
+  {
+    "elementId": "238932774",
+    "name": "Pioneer House Block 22 - 25",
+    "address": "35 Prince George's Park",
+    "postal": "118429"
+  },
+  {
+    "elementId": "238932795",
+    "name": "PGP Gym",
+    "address": "33 Prince George's Park",
+    "postal": "118428"
+  },
+  {
+    "elementId": "241523920",
+    "name": "PGP MPSH / Minimart",
+    "address": "31 Prince George's Park",
+    "postal": "118427"
+  },
+  {
+    "elementId": "238932790",
+    "name": "LightHouse Block 26",
+    "address": "24 Prince George's Park",
+    "postal": "118424"
+  },
+  {
+    "elementId": "238932793",
+    "name": "LightHouse Block 27 and 28",
+    "address": "24 Prince George's Park",
+    "postal": "118424"
+  },
+  {
+    "elementId": "238932794",
+    "name": "LightHouse Block 29 and 30",
+    "address": "24 Prince George's Park",
+    "postal": "118424"
   }
 ]
