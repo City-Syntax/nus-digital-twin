@@ -204,7 +204,7 @@
     "postal": "138600"
   },
   {
-    "elementId": "7765113",
+    "elementId": "7765114",
     "name": "UTown Residence South Tower",
     "address": "36 College Ave East",
     "postal": "138600"
@@ -228,6 +228,18 @@
     "postal": "138607"
   },
   {
+    "elementId": "54619794",
+    "name": "Lee Kong Chian Natural History Museum",
+    "address": "2 Conservatory Drive",
+    "postal": "117377"
+  },
+  {
+    "elementId": "643598737",
+    "name": "Singapore Wind Tunnel Facility",
+    "address": "5 Sports Drive 2",
+    "postal": "117508"
+  },
+  {
     "elementId": "142090371",
     "name": "MPSH 1 - 4",
     "address": "Sports Drive 1",
@@ -244,6 +256,48 @@
     "name": "MPSH 6",
     "address": "Sports Drive 1",
     "postal": "119077"
+  },
+  {
+    "elementId": "54619777",
+    "name": "NUS Staff Club",
+    "address": "30 Lower Kent Ridge Road",
+    "postal": "119075"
+  },
+  {
+    "elementId": "241265457",
+    "name": "Kuok Foundation House",
+    "address": "21 Kent Ridge Crescent",
+    "postal": "119280"
+  },
+  {
+    "elementId": "241265458",
+    "name": "Raffles Hall",
+    "address": "19 Kent Ridge Crescent",
+    "postal": "119278"
+  },
+  {
+    "elementId": "241265453",
+    "name": "Raffles Hall",
+    "address": "19 Kent Ridge Crescent",
+    "postal": "119278"
+  },
+  {
+    "elementId": "241265456",
+    "name": "Raffles Hall",
+    "address": "19 Kent Ridge Crescent",
+    "postal": "119278"
+  },
+  {
+    "elementId": "241265454",
+    "name": "Raffles Hall",
+    "address": "19 Kent Ridge Crescent",
+    "postal": "119278"
+  },
+  {
+    "elementId": "241265455",
+    "name": "Raffles Hall",
+    "address": "19 Kent Ridge Crescent",
+    "postal": "119278"
   },
   {
     "elementId": "142077688",
