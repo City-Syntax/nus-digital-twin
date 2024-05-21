@@ -114,6 +114,48 @@
     "postal": "138627"
   },
   {
+    "elementId": "124543531",
+    "name": "NUS College Office",
+    "address": "18 College Ave East",
+    "postal": "138593"
+  },
+  {
+    "elementId": "124543998",
+    "name": "RC4 Multi-Purpose Hall",
+    "address": "6 College Avenue East",
+    "postal": "138614"
+  },
+  {
+    "elementId": "124543999",
+    "name": "RC4 Tower",
+    "address": "6 College Avenue East",
+    "postal": "138614"
+  },
+  {
+    "elementId": "124543529",
+    "name": "Dining Hall",
+    "address": "8 College Avenue East",
+    "postal": "138615"
+  },
+  {
+    "elementId": "124543527",
+    "name": "College of Alice & Peter Tan",
+    "address": "8 College Avenue East",
+    "postal": "138615"
+  },
+  {
+    "elementId": "124543528",
+    "name": "College of Alice & Peter Tan Multi-Purpose Hall",
+    "address": "8 College Avenue East",
+    "postal": "138615"
+  },
+  {
+    "elementId": "124543532",
+    "name": "Chua Thian Poh Hall",
+    "address": "16 College Ave East",
+    "postal": "138592"
+  },
+  {
     "elementId": "124542228",
     "name": "Cinnamon College",
     "address": "22 College Ave East",
@@ -124,6 +166,48 @@
     "name": "Cinnamon South Learn Lobe",
     "address": "22 College Ave East",
     "postal": "138593"
+  },
+  {
+    "elementId": "124236990",
+    "name": "Dining Hall",
+    "address": "22 College Ave East",
+    "postal": "138593"
+  },
+  {
+    "elementId": "124230878",
+    "name": "Tembusu Tower",
+    "address": "28 College Ave East",
+    "postal": "138598"
+  },
+  {
+    "elementId": "124230875",
+    "name": "Tembusu Multi-Purpose Hall",
+    "address": "28 College Ave East",
+    "postal": "138598"
+  },
+  {
+    "elementId": "124411297",
+    "name": "Tembusu West Learn Lobe",
+    "address": "28 College Ave East",
+    "postal": "138598"
+  },
+  {
+    "elementId": "124550688",
+    "name": "Ngee Ann Kongsi Auditorium",
+    "address": "8 College Ave West",
+    "postal": "138608"
+  },
+  {
+    "elementId": "7765113",
+    "name": "UTown Residence North Tower",
+    "address": "36 College Ave East",
+    "postal": "138600"
+  },
+  {
+    "elementId": "7765113",
+    "name": "UTown Residence South Tower",
+    "address": "36 College Ave East",
+    "postal": "138600"
   },
   {
     "elementId": "420847275",
@@ -932,18 +1016,6 @@
     "postal": "117456"
   },
   {
-    "elementId": "124543527",
-    "name": "College of Alice & Peter Tan",
-    "address": "8 College Avenue East",
-    "postal": "138615"
-  },
-  {
-    "elementId": "124543528",
-    "name": "College of Alice & Peter Tan Multi-Purpose Hall",
-    "address": "8 College Avenue East",
-    "postal": "138615"
-  },
-  {
     "elementId": "140084916",
     "name": "Centre for English Language Communication",
     "address": "10 Architecture Drive",
@@ -954,23 +1026,5 @@
     "name": "Medicine+Science Library",
     "address": "11 Lower Kent Ridge Road",
     "postal": "119083"
-  },
-  {
-    "elementId": "124543998",
-    "name": "RC4 Multi-Purpose Hall",
-    "address": "6 College Avenue East",
-    "postal": "138614"
-  },
-  {
-    "elementId": "124543999",
-    "name": "RC4 Tower",
-    "address": "6 College Avenue East",
-    "postal": "138614"
-  },
-  {
-    "elementId": "124543532",
-    "name": "Chua Thian Poh Hall",
-    "address": "16 College Ave East",
-    "postal": "138592"
   }
 ]
