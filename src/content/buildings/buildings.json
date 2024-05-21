@@ -306,6 +306,12 @@
     "postal": "119081"
   },
   {
+    "elementId": "54619731",
+    "name": "Runme Shaw CFA Studios",
+    "address": "17 Kent Ridge Crescent",
+    "postal": "119277"
+  },
+  {
     "elementId": "241265457",
     "name": "Kuok Foundation House",
     "address": "21 Kent Ridge Crescent",
@@ -721,6 +727,11 @@
     "name": "COM4",
     "address": "3A Research Link",
     "postal": "119392"
+  },
+  {
+    "elementId": "140087193",
+    "name": "The Deck",
+    "address": "Computing Drive"
   },
   {
     "elementId": "54619730",
@@ -1317,27 +1328,10 @@
     "postal": "117592"
   },
   {
-    "elementId": "351136506",
-    "name": "Office of Safety, Health and Environment",
-    "address": "8 Kent Ridge Drive",
-    "postal": "119246"
-  },
-  {
-    "elementId": "54619731",
-    "name": "Runme Shaw CFA Studios",
-    "address": "17 Kent Ridge Crescent",
-    "postal": "119277"
-  },
-  {
     "elementId": "142080252",
     "name": "Shaw Foundation Alumni House",
     "address": "11 Kent Ridge Drive",
     "postal": "119244"
-  },
-  {
-    "elementId": "140087193",
-    "name": "The Deck",
-    "address": "Computing Drive"
   },
   {
     "elementId": "730959512",
