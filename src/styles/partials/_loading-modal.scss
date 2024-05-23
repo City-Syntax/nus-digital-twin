@@ -1,0 +1,17 @@
+#loading-modal {
+  height: 100dvh;
+  width: 100dvw;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 200ms;
+}
+
+#loading-modal.close {
+  opacity: 0;
+}
