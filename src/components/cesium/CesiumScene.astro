@@ -283,28 +283,22 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     });
   });
 
-  osmBuildingsTileset.loadProgress.addEventListener(function (numberOfPendingRequests, numberOfTilesProcessing) {
-    if (numberOfPendingRequests === 0 && numberOfTilesProcessing === 0) {
-      console.log('Stopped loading');
-      return;
-    }
-
-    console.log(`Loading: requests: ${numberOfPendingRequests}, processing: ${numberOfTilesProcessing}`);
-  });
-
-  viewer.scene.globe.tileLoadProgressEvent.addEventListener(function (queuedTileCount) {
-    console.log(queuedTileCount);
-    console.log(viewer.scene.globe.tilesLoaded);
-
+  function tileLoadProgressListener(queuedTiles: number) {
+    console.log(queuedTiles);
     if (viewer.scene.globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
       document.getElementById('loading-modal')?.classList.add('close');
       setTimeout(() => {
         document.getElementById('loading-modal')?.remove();
       }, 200);
-      // viewer.scene.globe.tileLoadProgressEvent.removeEventListener(loadEventListener)
+      viewer.scene.globe.tileLoadProgressEvent.removeEventListener(tileLoadProgressListener);
     }
-  });
+  }
+
+  viewer.scene.globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
 </script>
 
 <div id="cesiumContainer"></div>
-<div id="loading-modal">Loading...</div>
+<div id="loading-modal">
+  <h1>NUS Digital Twin</h1>
+  <div>Application is loading...</div>
+</div>

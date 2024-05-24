@@ -1,7 +1,7 @@
 #loading-modal {
   height: 100dvh;
   width: 100dvw;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 10;
   position: absolute;
   top: 0;
@@ -10,6 +10,8 @@
   justify-content: center;
   align-items: center;
   transition: opacity 200ms;
+  flex-direction: column;
+  gap: 8px;
 }
 
 #loading-modal.close {
