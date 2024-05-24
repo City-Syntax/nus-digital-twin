@@ -283,8 +283,23 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     });
   });
 
+  let totalTiles = 0;
+  let canStartCount = false;
   function tileLoadProgressListener(queuedTiles: number) {
-    console.log(queuedTiles);
+    console.time('tileCount');
+    const prevTotalTiles = totalTiles;
+    totalTiles = Math.max(totalTiles, queuedTiles);
+
+    if (prevTotalTiles == totalTiles) {
+      canStartCount = true;
+    }
+
+    if (canStartCount) {
+      console.timeEnd('tileCount');
+      document.querySelector('#load-amount')!.textContent =
+        `${Math.round(((totalTiles - queuedTiles) / totalTiles) * 100)}`;
+    }
+
     if (viewer.scene.globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
       document.getElementById('loading-modal')?.classList.add('close');
       setTimeout(() => {
@@ -300,5 +315,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 <div id="cesiumContainer"></div>
 <div id="loading-modal">
   <h1>NUS Digital Twin</h1>
-  <div>Application is loading...</div>
+  <div>
+    Application is loading...
+    <span id="load-amount">0</span>%
+  </div>
 </div>
