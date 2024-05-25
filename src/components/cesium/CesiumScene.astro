@@ -140,7 +140,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   // Add Cesium OSM Buildings, a global 3D buildings layer.
   const osmBuildingsTileset = await createOsmBuildingsAsync();
-  viewer.scene.primitives.add(osmBuildingsTileset);
 
   // Clip osm buildings that are rendered
   osmBuildingsTileset.clippingPlanes = new ClippingPlaneCollection({
@@ -156,7 +155,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   osmBuildingsTileset.style = new Cesium3DTileStyle({
     show: { conditions: OSM_SHOW_CONDITIONS },
   });
-  osmBuildingsTileset.maximumScreenSpaceError = 8;
+  osmBuildingsTileset.maximumScreenSpaceError = 0;
+  osmBuildingsTileset.trimLoadedTiles();
+
+  viewer.scene.primitives.add(osmBuildingsTileset);
 
   const sde4Id = 2464285;
   const yncId = 2463878;
