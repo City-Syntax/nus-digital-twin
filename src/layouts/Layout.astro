@@ -6,6 +6,9 @@ import 'tippy.js/dist/tippy.css';
 import '../styles/styles.scss';
 import '@fontsource-variable/inter';
 import '@fontsource/ibm-plex-sans/600.css';
+import mapboxDark from '../assets/mapbox-dark.png';
+import mapboxSatellite from '../assets/mapbox-satellite.png';
+import mapboxStreet from '../assets/mapbox-street.png';
 const { title } = Astro.props;
 const isProd = import.meta.env.PROD;
 ---
@@ -17,6 +20,9 @@ const isProd = import.meta.env.PROD;
     <meta name="description" content="A digital twin of the National University of Singapore campus." />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href={mapboxDark.src} as="image" />
+    <link rel="preload" href={mapboxStreet.src} as="image" />
+    <link rel="preload" href={mapboxSatellite.src} as="image" />
     <meta name="generator" content={Astro.generator} />
     {
       isProd && (
