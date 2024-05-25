@@ -6,11 +6,12 @@ import 'tippy.js/dist/tippy.css';
 import '../styles/styles.scss';
 import '@fontsource-variable/inter';
 import '@fontsource/ibm-plex-sans/600.css';
+import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import ibmPlexSansWoff2 from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-600-normal.woff2?url';
 import mapboxDark from '../assets/mapbox-dark.png';
 import mapboxSatellite from '../assets/mapbox-satellite.png';
 import mapboxStreet from '../assets/mapbox-street.png';
 const { title } = Astro.props;
-const isProd = import.meta.env.PROD;
 ---
 
 <!doctype html>
@@ -20,30 +21,12 @@ const isProd = import.meta.env.PROD;
     <meta name="description" content="A digital twin of the National University of Singapore campus." />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href={ibmPlexSansWoff2} crossorigin="anonymous" />
     <link rel="preload" href={mapboxDark.src} as="image" />
     <link rel="preload" href={mapboxStreet.src} as="image" />
     <link rel="preload" href={mapboxSatellite.src} as="image" />
     <meta name="generator" content={Astro.generator} />
-    {
-      isProd && (
-        <>
-          <link
-            rel="preload"
-            href="/_astro/inter-latin-wght-normal.BgVq2Tq4.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/_astro/ibm-plex-sans-latin-600-normal.BGOKnPO6.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin="anonymous"
-          />
-        </>
-      )
-    }
     <title>{title}</title>
   </head>
   <body>
