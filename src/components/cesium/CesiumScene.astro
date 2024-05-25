@@ -41,6 +41,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ClippingPlaneCollection,
     ClippingPlane,
     Transforms,
+    IonImageryProvider,
+    ImageryLayer,
   } from 'cesium';
 
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
@@ -72,7 +74,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     sceneModePicker: false,
     animation: false, // Disables the Cesium animation clock
     geocoder: false, // Disables the Cesium search button
-    baseLayer: false, // Disable Bing Map base layer
+    baseLayer: ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}),
   });
 
   // @ts-ignore: https://community.cesium.com/t/change-timeline-from-utc-to-local-time/11203/7
@@ -97,16 +99,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   addLoadPercentUntilOffset();
 
   let mapLayerOrder = ['satellite', 'dark', 'street'];
-  viewer.imageryLayers.removeAll();
-  viewer.imageryLayers.addImageryProvider(mapboxStreet);
 
-  // Delay the loading of other map layers
-  setTimeout(() => {
+  const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
+  if (showMapbox) {
+    viewer.imageryLayers.removeAll();
+    viewer.imageryLayers.addImageryProvider(mapboxStreet);
     viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
     viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
-  }, 500);
-
-  mapLayer.set(mapLayerOrder[mapLayerOrder.length - 1]);
+    mapLayer.set(mapLayerOrder[mapLayerOrder.length - 1]);
+  } else {
+    document.getElementById('loading-modal')?.remove();
+  }
 
   const position = Cartesian3.fromDegrees(103.77678, 1.28342, 800);
 
