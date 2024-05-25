@@ -90,6 +90,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     return dateFormatter.format(date);
   };
 
+  const loadPercentage = document.querySelector('#load-percentage');
+  // Simulate some of the loading percentage until map tiles are requested
+  const offsetPercent = 30;
+  addLoadPercentUntilOffset();
+
   let mapLayerOrder = ['satellite', 'dark', 'street'];
   viewer.imageryLayers.removeAll();
   viewer.imageryLayers.addImageryProvider(mapboxStreet);
@@ -285,8 +290,20 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   let totalTiles = 0;
   let canStartCount = false;
+
+  function addLoadPercentUntilOffset() {
+    const currPercent = Number(loadPercentage?.textContent) || 0;
+    if (currPercent >= offsetPercent) {
+      return;
+    }
+
+    setTimeout(() => {
+      loadPercentage!.textContent = `${currPercent + Math.floor(Math.random() * 3) + 1}`;
+      addLoadPercentUntilOffset();
+    }, 120);
+  }
+
   function tileLoadProgressListener(queuedTiles: number) {
-    console.time('tileCount');
     const prevTotalTiles = totalTiles;
     totalTiles = Math.max(totalTiles, queuedTiles);
 
@@ -295,9 +312,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     if (canStartCount) {
-      console.timeEnd('tileCount');
-      document.querySelector('#load-amount')!.textContent =
-        `${Math.round(((totalTiles - queuedTiles) / totalTiles) * 100)}`;
+      loadPercentage!.textContent = `${offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent))}`;
     }
 
     if (viewer.scene.globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
@@ -317,6 +332,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   <h1>NUS Digital Twin</h1>
   <div>
     Application is loading...
-    <span id="load-amount">0</span>%
+    <span id="load-percentage">0</span>%
   </div>
 </div>
