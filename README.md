@@ -10,3 +10,7 @@ This project is built with Astro and CesiumJS with Cesium Ion.
    - The Cesium Ion token can be obtained from [ion.cesium.com/tokens](https://ion.cesium.com/tokens)
    - The Mapbox access token can be obtained from [https://account.mapbox.com/access-tokens/](https://account.mapbox.com/access-tokens/)
 4. Run the application locally using `yarn dev`
+
+### Optional Environment Variables
+
+- `PUBLIC_SHOW_MAPBOX` is used to enable Mapbox tiles in development mode. By default, Mapbox tiles are disabled in development to save on bandwidth. The loading screen is also disabled when Mapbox tiles are disabled. The only valid value is `true`, all other values are ignored.
