@@ -292,15 +292,14 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   let canStartCount = false;
 
   function addLoadPercentUntilOffset() {
-    const currPercent = Number(loadPercentage?.textContent) || 0;
-    if (currPercent >= offsetPercent) {
-      return;
-    }
-
     setTimeout(() => {
+      const currPercent = Number(loadPercentage?.textContent) || 0;
+      if (currPercent >= offsetPercent) {
+        return;
+      }
       loadPercentage!.textContent = `${currPercent + Math.floor(Math.random() * 3) + 1}`;
       addLoadPercentUntilOffset();
-    }, 120);
+    }, 100);
   }
 
   function tileLoadProgressListener(queuedTiles: number) {
