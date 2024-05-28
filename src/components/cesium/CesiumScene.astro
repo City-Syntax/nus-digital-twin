@@ -7,6 +7,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     height: 100dvh;
     max-height: 100%;
   }
+
+  #toggle-osm {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 </style>
 
 <script>
@@ -143,6 +149,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   // Add Cesium OSM Buildings, a global 3D buildings layer.
   const osmBuildingsTileset = await createOsmBuildingsAsync();
+  document.getElementById('toggle-osm')!.onclick = function () {
+    osmBuildingsTileset.show = !osmBuildingsTileset.show;
+  };
   const DEFAULT_CACHE_BYTES = 536870912;
 
   // Clip osm buildings that are rendered
@@ -160,32 +169,30 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     show: { conditions: OSM_SHOW_CONDITIONS },
   });
   osmBuildingsTileset.maximumScreenSpaceError = 0;
-  osmBuildingsTileset.cacheBytes = DEFAULT_CACHE_BYTES * 8;
   osmBuildingsTileset.trimLoadedTiles();
 
   viewer.scene.primitives.add(osmBuildingsTileset);
 
-  const sde4Id = 2464285;
-  const yncId = 2463878;
-  const sde4 = await Cesium3DTileset.fromIonAssetId(sde4Id);
-  const ync = await Cesium3DTileset.fromIonAssetId(yncId);
-  const bimModels = [sde4, ync];
-  for (let i = 0; i < bimModels.length; i++) {
-    viewer.scene.primitives.add(bimModels[i]);
-    bimModels[i].show = false;
-  }
+  // const sde4Id = 2464285;
+  // const yncId = 2463878;
+  // const sde4 = await Cesium3DTileset.fromIonAssetId(sde4Id);
+  // const ync = await Cesium3DTileset.fromIonAssetId(yncId);
+  // const bimModels = [sde4, ync];
+  // for (let i = 0; i < bimModels.length; i++) {
+  //   viewer.scene.primitives.add(bimModels[i]);
+  // }
 
-  function showAllBIM() {
-    for (let i = 0; i < bimModels.length; i++) {
-      bimModels[i].show = true;
-    }
-  }
+  // function showAllBIM() {
+  //   for (let i = 0; i < bimModels.length; i++) {
+  //     bimModels[i].show = true;
+  //   }
+  // }
 
-  function hideAllBIM() {
-    for (let i = 0; i < bimModels.length; i++) {
-      bimModels[i].show = false;
-    }
-  }
+  // function hideAllBIM() {
+  //   for (let i = 0; i < bimModels.length; i++) {
+  //     bimModels[i].show = false;
+  //   }
+  // }
 
   function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
     colorByDistancePosition.set({
@@ -215,20 +222,20 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     if (defined(pickedFeature)) {
       // TODO: Improve handling of BIM picker
-      if (bimModels.includes(pickedFeature.primitive)) {
-        const resource = pickedFeature.primitive.resource;
+      // if (bimModels.includes(pickedFeature.primitive)) {
+      //   const resource = pickedFeature.primitive.resource;
 
-        activeMenu.set('BuildingInfo');
-        if (resource.url.includes(yncId)) {
-          buildingProperties.set({ name: 'Yale-NUS College' });
-        }
+      //   activeMenu.set('BuildingInfo');
+      //   if (resource.url.includes(yncId)) {
+      //     buildingProperties.set({ name: 'Yale-NUS College' });
+      //   }
 
-        if (resource.url.includes(sde4Id)) {
-          buildingProperties.set({ name: 'SDE4' });
-        }
+      //   if (resource.url.includes(sde4Id)) {
+      //     buildingProperties.set({ name: 'SDE4' });
+      //   }
 
-        return;
-      }
+      //   return;
+      // }
 
       if (isSelectColorByDistance.get()) {
         colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
@@ -259,15 +266,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       const showBIM = buildingDataLayer.get() === 'bim';
       if (showOsmBuildings) {
         osmBuildingsTileset.show = true;
+        osmBuildingsTileset.trimLoadedTiles();
       } else {
         osmBuildingsTileset.show = false;
       }
 
       if (showBIM) {
         colorByOff();
-        showAllBIM();
+        // showAllBIM();
       } else {
-        hideAllBIM();
+        // hideAllBIM();
       }
 
       if (buildingColorSetting.get() === 'distance') {
@@ -342,3 +350,4 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     <span id="load-percentage">0</span>%
   </div>
 </div>
+<button type="button" id="toggle-osm">Toggle</button>
