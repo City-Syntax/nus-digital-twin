@@ -176,7 +176,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     });
   }
 
-  function colorByOff() {
+  function colorByNone() {
     osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
   }
 
@@ -216,7 +216,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       const { latitude, longitude } = colorByDistancePosition.get();
       colorByDistance(latitude, longitude);
     } else {
-      colorByOff();
+      colorByNone();
     }
   });
 
