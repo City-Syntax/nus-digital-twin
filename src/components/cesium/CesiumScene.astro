@@ -73,7 +73,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   // Simulate loading percentage until map tiles are requested
   const loadPercentage = document.querySelector('#load-percentage');
   const offsetPercent = 40;
-  addLoadPercentUntilOffset();
+  (function addLoadPercentUntilOffset() {
+    setTimeout(() => {
+      const currPercent = Number(loadPercentage?.textContent) || 0;
+      if (currPercent >= offsetPercent) {
+        return;
+      }
+      loadPercentage!.textContent = `${currPercent + Math.floor(Math.random() * 3) + 1}`;
+      addLoadPercentUntilOffset();
+    }, 100);
+  })();
 
   const mapboxSatellite = new MapboxStyleImageryProvider({
     styleId: 'satellite-v9',
@@ -262,18 +271,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   let totalTiles = 0;
   let canStartCount = false;
-
-  function addLoadPercentUntilOffset() {
-    setTimeout(() => {
-      const currPercent = Number(loadPercentage?.textContent) || 0;
-      if (currPercent >= offsetPercent) {
-        return;
-      }
-      loadPercentage!.textContent = `${currPercent + Math.floor(Math.random() * 3) + 1}`;
-      addLoadPercentUntilOffset();
-    }, 100);
-  }
-
   function tileLoadProgressListener(queuedTiles: number) {
     const prevTotalTiles = totalTiles;
     totalTiles = Math.max(totalTiles, queuedTiles);
