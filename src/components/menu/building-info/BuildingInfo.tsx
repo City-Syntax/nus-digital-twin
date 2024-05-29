@@ -22,10 +22,11 @@ const BuildingInfo = () => {
       {propertiesToDisplay.length < 1 && <p>No information under '{CATEGORY_MAPPINGS[category]}' yet.</p>}
       {propertiesToDisplay.map((data) => {
         const title = data[0] as keyof BuildingPropertiesProps;
+        const content = data[1];
         return (
-          <div key={data[0]}>
-            <h3>{TITLE_MAPPINGS[title] || data[0]}</h3>
-            <p>{data[1]}</p>
+          <div key={title}>
+            <h3>{TITLE_MAPPINGS[title]}</h3>
+            <p>{content}</p>
           </div>
         );
       })}
