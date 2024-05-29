@@ -232,13 +232,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   });
 
-  mapLayer.subscribe((layer) => {
+  mapLayer.subscribe((newLayer) => {
     if (!showMapbox) {
       return;
     }
 
-    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(layer)));
-    mapLayerOrder = [...mapLayerOrder.filter((l) => l !== layer), layer];
+    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(newLayer)));
+    mapLayerOrder = [...mapLayerOrder.filter((l) => l !== newLayer), newLayer];
   });
 
   let totalTiles = 0;
