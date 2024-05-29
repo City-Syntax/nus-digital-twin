@@ -185,42 +185,40 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    if (defined(pickedFeature)) {
-      // TODO: Improve handling of BIM picker
-      if (bimModels.includes(pickedFeature.primitive)) {
-        const resource = pickedFeature.primitive.resource;
+    if (isSelectColorByDistance.get()) {
+      colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
+      isSelectColorByDistance.set(false);
+      return;
+    }
 
-        activeMenu.set('BuildingInfo');
-        if (resource.url.includes(yncId)) {
-          buildingProperties.set({ name: 'Yale-NUS College' });
-        }
-
-        if (resource.url.includes(sde4Id)) {
-          buildingProperties.set({ name: 'SDE4' });
-        }
-
-        return;
-      }
-
-      if (isSelectColorByDistance.get()) {
-        colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
-        isSelectColorByDistance.set(false);
-        return;
-      }
+    // TODO: Improve handling of BIM picker
+    if (bimModels.includes(pickedFeature.primitive)) {
+      const resource = pickedFeature.primitive.resource;
 
       activeMenu.set('BuildingInfo');
-      const featureId = pickedFeature.getProperty('elementId');
-      const featureData = buildingsData.filter((d) => d.elementId == featureId);
-
-      if (featureData.length > 0) {
-        buildingProperties.set(featureData[0]);
-      } else {
-        buildingProperties.set({ name: pickedFeature.getProperty('name') });
+      if (resource.url.includes(yncId)) {
+        buildingProperties.set({ name: 'Yale-NUS College' });
       }
 
-      // TODO: Use buildingsData only in the future
-      searchQuery.set(buildingProperties.get()['name'] || '');
+      if (resource.url.includes(sde4Id)) {
+        buildingProperties.set({ name: 'SDE4' });
+      }
+
+      return;
     }
+
+    activeMenu.set('BuildingInfo');
+    const featureId = pickedFeature.getProperty('elementId');
+    const featureData = buildingsData.filter((d) => d.elementId == featureId);
+
+    if (featureData.length > 0) {
+      buildingProperties.set(featureData[0]);
+    } else {
+      buildingProperties.set({ name: pickedFeature.getProperty('name') });
+    }
+
+    // TODO: Use buildingsData only in the future
+    searchQuery.set(buildingProperties.get()['name'] || '');
   }, ScreenSpaceEventType.LEFT_CLICK);
 
   const menu = document.getElementById('menu');
