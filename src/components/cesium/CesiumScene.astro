@@ -3,10 +3,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 ---
 
 <script>
-  import buildingsData from '../../content/buildings/buildings.json';
-
   window.CESIUM_BASE_URL = '/cesium';
+  Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
+  import buildingsData from '../../content/buildings/buildings.json';
   import {
     activeMenu,
     buildingProperties,
@@ -17,7 +17,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     isSelectColorByDistance,
     colorByDistancePosition,
   } from '../../store';
-
   import {
     Cartesian3,
     createOsmBuildingsAsync,
@@ -37,25 +36,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     IonImageryProvider,
     ImageryLayer,
   } from 'cesium';
-
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
-
-  Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
-
-  const mapboxSatellite = new MapboxStyleImageryProvider({
-    styleId: 'satellite-v9',
-    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
-  });
-
-  const mapboxDark = new MapboxStyleImageryProvider({
-    styleId: 'dark-v11',
-    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
-  });
-
-  const mapboxStreet = new MapboxStyleImageryProvider({
-    styleId: 'streets-v12',
-    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
-  });
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
@@ -73,7 +54,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   // @ts-ignore: https://community.cesium.com/t/change-timeline-from-utc-to-local-time/11203/7
   viewer.timeline.makeLabel = function (timelineDate: any) {
     const date = JulianDate.toDate(timelineDate);
-
     const dateFormatter = new Intl.DateTimeFormat('en-SG', {
       year: 'numeric',
       month: 'short',
@@ -86,13 +66,24 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     return dateFormatter.format(date);
   };
 
+  // Simulate loading percentage until map tiles are requested
   const loadPercentage = document.querySelector('#load-percentage');
-  // Simulate some of the loading percentage until map tiles are requested
   const offsetPercent = 40;
   addLoadPercentUntilOffset();
 
+  const mapboxSatellite = new MapboxStyleImageryProvider({
+    styleId: 'satellite-v9',
+    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
+  });
+  const mapboxDark = new MapboxStyleImageryProvider({
+    styleId: 'dark-v11',
+    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
+  });
+  const mapboxStreet = new MapboxStyleImageryProvider({
+    styleId: 'streets-v12',
+    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
+  });
   let mapLayerOrder = ['satellite', 'dark', 'street'];
-
   const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
   if (showMapbox) {
     viewer.imageryLayers.removeAll();
