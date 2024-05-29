@@ -118,6 +118,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     },
   };
   viewer.camera.setView(nusView);
+  document.getElementById('home-btn')!.onclick = () => viewer.camera.flyTo(nusView);
 
   const osmBuildingsTileset = await createOsmBuildingsAsync();
   osmBuildingsTileset.clippingPlanes = new ClippingPlaneCollection({
@@ -248,9 +249,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
     });
   });
-
-  const homeBtn = document.getElementById('home-btn');
-  homeBtn!.onclick = () => viewer.camera.flyTo(nusView);
 
   const mapPickerBtn = document.getElementById('map-picker-btn');
   mapPickerBtn?.addEventListener('click', () => {
