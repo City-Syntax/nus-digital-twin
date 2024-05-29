@@ -135,6 +135,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     show: { conditions: OSM_SHOW_CONDITIONS },
   });
   osmBuildingsTileset.maximumScreenSpaceError = 0;
+  osmBuildingsTileset.preloadWhenHidden = true;
   viewer.scene.primitives.add(osmBuildingsTileset);
 
   const sde4Id = 2464285;
@@ -145,6 +146,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   for (let i = 0; i < bimModels.length; i++) {
     viewer.scene.primitives.add(bimModels[i]);
     bimModels[i].show = false;
+    bimModels[i].preloadWhenHidden = true;
   }
 
   function showAllBIM() {
