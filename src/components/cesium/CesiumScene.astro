@@ -105,19 +105,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     },
   };
 
-  // Clip the map
-  const distance = 20000;
-  viewer.scene.globe.clippingPlanes = new ClippingPlaneCollection({
-    modelMatrix: Transforms.eastNorthUpToFixedFrame(position),
-    planes: [
-      new ClippingPlane(new Cartesian3(1.0, 0.0, 0.0), distance),
-      new ClippingPlane(new Cartesian3(-1.0, 0.0, 0.0), distance),
-      new ClippingPlane(new Cartesian3(0.0, 1.0, 0.0), distance),
-      new ClippingPlane(new Cartesian3(0.0, -1.0, 0.0), distance),
-    ],
-    unionClippingRegions: true,
-  });
-
   // Limit amount to zoom in and out to
   viewer.scene.screenSpaceCameraController.minimumZoomDistance = 100.0;
   viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
