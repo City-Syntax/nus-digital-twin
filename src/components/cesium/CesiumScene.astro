@@ -245,18 +245,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     });
   });
 
-  const mapPickerBtn = document.getElementById('map-picker-btn');
-  mapPickerBtn?.addEventListener('click', () => {
-    setTimeout(() => {
-      const mapPicker = document.getElementById('map-picker');
-      mapPicker?.addEventListener('click', () => {
-        setTimeout(() => {
-          const layer = mapLayer.get();
-          viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(layer)));
-          mapLayerOrder = [...mapLayerOrder.filter((l) => l !== layer), layer];
-        });
-      });
-    });
+  mapLayer.subscribe((layer) => {
+    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(layer)));
+    mapLayerOrder = [...mapLayerOrder.filter((l) => l !== layer), layer];
   });
 
   let totalTiles = 0;
