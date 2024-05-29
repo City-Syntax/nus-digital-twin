@@ -2,18 +2,11 @@
 import 'cesium/Build/Cesium/Widgets/widgets.css';
 ---
 
-<style>
-  #cesiumContainer {
-    height: 100dvh;
-    max-height: 100%;
-  }
-</style>
-
 <script>
-  import buildingsData from '../../content/buildings/buildings.json';
-
   window.CESIUM_BASE_URL = '/cesium';
+  Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
+  import buildingsData from '../../content/buildings/buildings.json';
   import {
     activeMenu,
     buildingProperties,
@@ -24,7 +17,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     isSelectColorByDistance,
     colorByDistancePosition,
   } from '../../store';
-
   import {
     Cartesian3,
     createOsmBuildingsAsync,
@@ -44,25 +36,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     IonImageryProvider,
     ImageryLayer,
   } from 'cesium';
-
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
-
-  Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
-
-  const mapboxSatellite = new MapboxStyleImageryProvider({
-    styleId: 'satellite-v9',
-    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
-  });
-
-  const mapboxDark = new MapboxStyleImageryProvider({
-    styleId: 'dark-v11',
-    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
-  });
-
-  const mapboxStreet = new MapboxStyleImageryProvider({
-    styleId: 'streets-v12',
-    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
-  });
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
@@ -80,7 +54,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   // @ts-ignore: https://community.cesium.com/t/change-timeline-from-utc-to-local-time/11203/7
   viewer.timeline.makeLabel = function (timelineDate: any) {
     const date = JulianDate.toDate(timelineDate);
-
     const dateFormatter = new Intl.DateTimeFormat('en-SG', {
       year: 'numeric',
       month: 'short',
@@ -93,13 +66,37 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     return dateFormatter.format(date);
   };
 
+  // Limit amount to zoom in and out to
+  viewer.scene.screenSpaceCameraController.minimumZoomDistance = 100.0;
+  viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
+
+  // Simulate loading percentage until map tiles are requested
   const loadPercentage = document.querySelector('#load-percentage');
-  // Simulate some of the loading percentage until map tiles are requested
   const offsetPercent = 40;
-  addLoadPercentUntilOffset();
+  (function addLoadPercentUntilOffset() {
+    setTimeout(() => {
+      const currPercent = Number(loadPercentage?.textContent) || 0;
+      if (currPercent >= offsetPercent) {
+        return;
+      }
+      loadPercentage!.textContent = `${currPercent + Math.floor(Math.random() * 3) + 1}`;
+      addLoadPercentUntilOffset();
+    }, 100);
+  })();
 
+  const mapboxSatellite = new MapboxStyleImageryProvider({
+    styleId: 'satellite-v9',
+    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
+  });
+  const mapboxDark = new MapboxStyleImageryProvider({
+    styleId: 'dark-v11',
+    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
+  });
+  const mapboxStreet = new MapboxStyleImageryProvider({
+    styleId: 'streets-v12',
+    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
+  });
   let mapLayerOrder = ['satellite', 'dark', 'street'];
-
   const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
   if (showMapbox) {
     viewer.imageryLayers.removeAll();
@@ -120,32 +117,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       pitch: CesiumMath.toRadians(-30.0),
     },
   };
-
-  // Clip the map
-  const distance = 20000;
-  viewer.scene.globe.clippingPlanes = new ClippingPlaneCollection({
-    modelMatrix: Transforms.eastNorthUpToFixedFrame(position),
-    planes: [
-      new ClippingPlane(new Cartesian3(1.0, 0.0, 0.0), distance),
-      new ClippingPlane(new Cartesian3(-1.0, 0.0, 0.0), distance),
-      new ClippingPlane(new Cartesian3(0.0, 1.0, 0.0), distance),
-      new ClippingPlane(new Cartesian3(0.0, -1.0, 0.0), distance),
-    ],
-    unionClippingRegions: true,
-  });
-
-  // Limit amount to zoom in and out to
-  viewer.scene.screenSpaceCameraController.minimumZoomDistance = 100.0;
-  viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
-
-  // Initial view
   viewer.camera.setView(nusView);
+  document.getElementById('home-btn')!.onclick = () => viewer.camera.flyTo(nusView);
 
-  // Add Cesium OSM Buildings, a global 3D buildings layer.
   const osmBuildingsTileset = await createOsmBuildingsAsync();
-  viewer.scene.primitives.add(osmBuildingsTileset);
-
-  // Clip osm buildings that are rendered
   osmBuildingsTileset.clippingPlanes = new ClippingPlaneCollection({
     modelMatrix: Transforms.eastNorthUpToFixedFrame(position),
     planes: [
@@ -159,7 +134,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   osmBuildingsTileset.style = new Cesium3DTileStyle({
     show: { conditions: OSM_SHOW_CONDITIONS },
   });
-  osmBuildingsTileset.maximumScreenSpaceError = 8;
+  osmBuildingsTileset.maximumScreenSpaceError = 0;
+  osmBuildingsTileset.preloadWhenHidden = true;
+  viewer.scene.primitives.add(osmBuildingsTileset);
 
   const sde4Id = 2464285;
   const yncId = 2463878;
@@ -169,6 +146,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   for (let i = 0; i < bimModels.length; i++) {
     viewer.scene.primitives.add(bimModels[i]);
     bimModels[i].show = false;
+    bimModels[i].preloadWhenHidden = true;
   }
 
   function showAllBIM() {
@@ -209,42 +187,34 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    if (defined(pickedFeature)) {
-      // TODO: Improve handling of BIM picker
-      if (bimModels.includes(pickedFeature.primitive)) {
-        const resource = pickedFeature.primitive.resource;
-
-        activeMenu.set('BuildingInfo');
-        if (resource.url.includes(yncId)) {
-          buildingProperties.set({ name: 'Yale-NUS College' });
-        }
-
-        if (resource.url.includes(sde4Id)) {
-          buildingProperties.set({ name: 'SDE4' });
-        }
-
-        return;
-      }
-
-      if (isSelectColorByDistance.get()) {
-        colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
-        isSelectColorByDistance.set(false);
-        return;
-      }
-
-      activeMenu.set('BuildingInfo');
-      const featureId = pickedFeature.getProperty('elementId');
-      const featureData = buildingsData.filter((d) => d.elementId == featureId);
-
-      if (featureData.length > 0) {
-        buildingProperties.set(featureData[0]);
-      } else {
-        buildingProperties.set({ name: pickedFeature.getProperty('name') });
-      }
-
-      // TODO: Use buildingsData only in the future
-      searchQuery.set(buildingProperties.get()['name'] || '');
+    if (isSelectColorByDistance.get()) {
+      colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
+      isSelectColorByDistance.set(false);
+      return;
     }
+
+    activeMenu.set('BuildingInfo');
+    // TODO: Improve handling of BIM picker
+    if (bimModels.includes(pickedFeature.primitive)) {
+      const resourceUrl = pickedFeature.primitive.resource.url;
+
+      if (resourceUrl.includes(yncId)) {
+        buildingProperties.set({ name: 'Yale-NUS College' });
+      }
+
+      if (resourceUrl.includes(sde4Id)) {
+        buildingProperties.set({ name: 'SDE4' });
+      }
+
+      return;
+    }
+
+    const featureId = pickedFeature.getProperty('elementId');
+    const featureData = buildingsData.filter((d) => d.elementId == featureId);
+    buildingProperties.set(featureData[0]);
+
+    // TODO: Use buildingsData only in the future
+    searchQuery.set(buildingProperties.get()['name'] || '');
   }, ScreenSpaceEventType.LEFT_CLICK);
 
   const menu = document.getElementById('menu');
@@ -275,9 +245,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     });
   });
 
-  const homeBtn = document.getElementById('home-btn');
-  homeBtn!.onclick = () => viewer.camera.flyTo(nusView);
-
   const mapPickerBtn = document.getElementById('map-picker-btn');
   mapPickerBtn?.addEventListener('click', () => {
     setTimeout(() => {
@@ -294,18 +261,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   let totalTiles = 0;
   let canStartCount = false;
-
-  function addLoadPercentUntilOffset() {
-    setTimeout(() => {
-      const currPercent = Number(loadPercentage?.textContent) || 0;
-      if (currPercent >= offsetPercent) {
-        return;
-      }
-      loadPercentage!.textContent = `${currPercent + Math.floor(Math.random() * 3) + 1}`;
-      addLoadPercentUntilOffset();
-    }, 100);
-  }
-
   function tileLoadProgressListener(queuedTiles: number) {
     const prevTotalTiles = totalTiles;
     totalTiles = Math.max(totalTiles, queuedTiles);

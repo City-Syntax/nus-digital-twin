@@ -4,6 +4,11 @@
    timeline and toolbar.
    ========================================================================== */
 
+#cesiumContainer {
+  height: 100dvh;
+  max-height: 100%;
+}
+
 div.cesium-viewer-timelineContainer {
   width: 100%;
   top: 0;
