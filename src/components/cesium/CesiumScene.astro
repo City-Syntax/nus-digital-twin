@@ -144,6 +144,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const bimModels = [sde4, ync];
   for (let i = 0; i < bimModels.length; i++) {
     viewer.scene.primitives.add(bimModels[i]);
+    bimModels[i].show = false;
   }
 
   function showAllBIM() {
