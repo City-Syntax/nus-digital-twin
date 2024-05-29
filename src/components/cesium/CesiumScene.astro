@@ -6,12 +6,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   window.CESIUM_BASE_URL = '/cesium';
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
-  import buildingsData from '../../content/buildings/buildings.json';
   import {
     activeMenu,
-    buildingProperties,
-    searchQuery,
     buildingDataLayer,
+    buildingId,
     mapLayer,
     buildingColorSetting,
     isSelectColorByDistance,
@@ -194,27 +192,21 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     activeMenu.set('BuildingInfo');
-    // TODO: Improve handling of BIM picker
     if (bimModels.includes(pickedFeature.primitive)) {
       const resourceUrl = pickedFeature.primitive.resource.url;
 
       if (resourceUrl.includes(yncId)) {
-        buildingProperties.set({ name: 'Yale-NUS College' });
+        buildingId.set('732229050');
       }
 
       if (resourceUrl.includes(sde4Id)) {
-        buildingProperties.set({ name: 'SDE4' });
+        buildingId.set('628774809');
       }
 
       return;
     }
 
-    const featureId = pickedFeature.getProperty('elementId');
-    const featureData = buildingsData.filter((d) => d.elementId == featureId);
-    buildingProperties.set(featureData[0]);
-
-    // TODO: Use buildingsData only in the future
-    searchQuery.set(buildingProperties.get()['name'] || '');
+    buildingId.set(pickedFeature.getProperty('elementId'));
   }, ScreenSpaceEventType.LEFT_CLICK);
 
   buildingColorSetting.subscribe((colorSetting) => {
@@ -241,6 +233,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   mapLayer.subscribe((layer) => {
+    if (!showMapbox) {
+      return;
+    }
+
     viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(layer)));
     mapLayerOrder = [...mapLayerOrder.filter((l) => l !== layer), layer];
   });
