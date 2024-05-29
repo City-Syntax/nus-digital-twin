@@ -30,7 +30,7 @@ const Menu = () => {
   const $activeMenu = useStore(activeMenu);
 
   return (
-    <div id="menu">
+    <div>
       <div className="menu-left show-md">
         <MenuLeft></MenuLeft>
         {$activeMenu === 'AboutNUSCampus' && <AboutNUSCampus></AboutNUSCampus>}
