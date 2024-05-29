@@ -6,12 +6,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   window.CESIUM_BASE_URL = '/cesium';
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
-  import buildingsData from '../../content/buildings/buildings.json';
   import {
     activeMenu,
-    buildingProperties,
-    searchQuery,
     buildingDataLayer,
+    buildingId,
     mapLayer,
     buildingColorSetting,
     isSelectColorByDistance,
@@ -194,69 +192,53 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     activeMenu.set('BuildingInfo');
-    // TODO: Improve handling of BIM picker
     if (bimModels.includes(pickedFeature.primitive)) {
       const resourceUrl = pickedFeature.primitive.resource.url;
 
       if (resourceUrl.includes(yncId)) {
-        buildingProperties.set({ name: 'Yale-NUS College' });
+        buildingId.set('732229050');
       }
 
       if (resourceUrl.includes(sde4Id)) {
-        buildingProperties.set({ name: 'SDE4' });
+        buildingId.set('628774809');
       }
 
       return;
     }
 
-    const featureId = pickedFeature.getProperty('elementId');
-    const featureData = buildingsData.filter((d) => d.elementId == featureId);
-    buildingProperties.set(featureData[0]);
-
-    // TODO: Use buildingsData only in the future
-    searchQuery.set(buildingProperties.get()['name'] || '');
+    buildingId.set(pickedFeature.getProperty('elementId'));
   }, ScreenSpaceEventType.LEFT_CLICK);
 
-  const menu = document.getElementById('menu');
-  menu?.addEventListener('click', () => {
-    // Timeout is necessary to allow for the state to update first
-    setTimeout(() => {
-      const showOsmBuildings = buildingDataLayer.get() === 'osm';
-      const showBIM = buildingDataLayer.get() === 'bim';
-      if (showOsmBuildings) {
-        osmBuildingsTileset.show = true;
-      } else {
-        osmBuildingsTileset.show = false;
-      }
-
-      if (showBIM) {
-        colorByOff();
-        showAllBIM();
-      } else {
-        hideAllBIM();
-      }
-
-      if (buildingColorSetting.get() === 'distance') {
-        const { latitude, longitude } = colorByDistancePosition.get();
-        colorByDistance(latitude, longitude);
-      } else {
-        colorByOff();
-      }
-    });
+  buildingColorSetting.subscribe((colorSetting) => {
+    if (colorSetting === 'distance') {
+      const { latitude, longitude } = colorByDistancePosition.get();
+      colorByDistance(latitude, longitude);
+    } else {
+      colorByOff();
+    }
   });
 
-  const mapPickerBtn = document.getElementById('map-picker-btn');
-  mapPickerBtn?.addEventListener('click', () => {
-    setTimeout(() => {
-      const mapPicker = document.getElementById('map-picker');
-      mapPicker?.addEventListener('click', () => {
-        setTimeout(() => {
-          const layer = mapLayer.get();
-          viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(layer)));
-          mapLayerOrder = [...mapLayerOrder.filter((l) => l !== layer), layer];
-        });
-      });
-    });
+  buildingDataLayer.subscribe((model) => {
+    if (model === 'osm') {
+      osmBuildingsTileset.show = true;
+    } else {
+      osmBuildingsTileset.show = false;
+    }
+
+    if (model === 'bim') {
+      showAllBIM();
+    } else {
+      hideAllBIM();
+    }
+  });
+
+  mapLayer.subscribe((layer) => {
+    if (!showMapbox) {
+      return;
+    }
+
+    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(layer)));
+    mapLayerOrder = [...mapLayerOrder.filter((l) => l !== layer), layer];
   });
 
   let totalTiles = 0;
