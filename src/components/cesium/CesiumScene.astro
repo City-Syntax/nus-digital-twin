@@ -66,6 +66,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     return dateFormatter.format(date);
   };
 
+  // Limit amount to zoom in and out to
+  viewer.scene.screenSpaceCameraController.minimumZoomDistance = 100.0;
+  viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
+
   // Simulate loading percentage until map tiles are requested
   const loadPercentage = document.querySelector('#load-percentage');
   const offsetPercent = 40;
@@ -104,17 +108,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       pitch: CesiumMath.toRadians(-30.0),
     },
   };
-
-  // Limit amount to zoom in and out to
-  viewer.scene.screenSpaceCameraController.minimumZoomDistance = 100.0;
-  viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
-
-  // Initial view
   viewer.camera.setView(nusView);
 
   // Add Cesium OSM Buildings, a global 3D buildings layer.
   const osmBuildingsTileset = await createOsmBuildingsAsync();
-  viewer.scene.primitives.add(osmBuildingsTileset);
 
   // Clip osm buildings that are rendered
   osmBuildingsTileset.clippingPlanes = new ClippingPlaneCollection({
@@ -130,7 +127,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   osmBuildingsTileset.style = new Cesium3DTileStyle({
     show: { conditions: OSM_SHOW_CONDITIONS },
   });
-  osmBuildingsTileset.maximumScreenSpaceError = 8;
+  osmBuildingsTileset.maximumScreenSpaceError = 0;
+  viewer.scene.primitives.add(osmBuildingsTileset);
 
   const sde4Id = 2464285;
   const yncId = 2463878;
@@ -139,7 +137,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const bimModels = [sde4, ync];
   for (let i = 0; i < bimModels.length; i++) {
     viewer.scene.primitives.add(bimModels[i]);
-    bimModels[i].show = false;
   }
 
   function showAllBIM() {
