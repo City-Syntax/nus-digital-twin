@@ -8,6 +8,9 @@ import buildingsData from '../../content/buildings/buildings.json';
 const MenuLeft = () => {
   const $searchQuery = useStore(searchQuery);
   buildingId.listen((newId) => {
+    if (newId === '') {
+      return;
+    }
     searchQuery.set(buildingsData.filter((d) => d.elementId == newId)[0].name);
   });
 

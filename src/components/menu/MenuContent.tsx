@@ -1,6 +1,6 @@
 import React from 'react';
 import Icons from '../Icons';
-import { activeMenu, isSelectColorByDistance, searchQuery } from '../../store';
+import { activeMenu, isSelectColorByDistance, searchQuery, buildingId } from '../../store';
 
 interface MenuContentProps {
   title: string;
@@ -17,6 +17,7 @@ const MenuContent = ({ title, children }: MenuContentProps) => {
           onClick={() => {
             activeMenu.set('');
             searchQuery.set('');
+            buildingId.set('');
             isSelectColorByDistance.set(false);
           }}
         >
