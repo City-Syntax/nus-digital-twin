@@ -242,16 +242,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   let totalTiles = 0;
-  let canStartCount = false;
   function tileLoadProgressListener(queuedTiles: number) {
     const prevTotalTiles = totalTiles;
     totalTiles = Math.max(totalTiles, queuedTiles);
 
     if (prevTotalTiles == totalTiles) {
-      canStartCount = true;
-    }
-
-    if (canStartCount) {
       loadPercentage!.textContent = `${offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent))}`;
     }
 
