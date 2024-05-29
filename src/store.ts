@@ -3,7 +3,7 @@ import { atom } from 'nanostores';
 export const activeMenu = atom('');
 export const searchQuery = atom('');
 
-export const mapLayer = atom('');
+export const activeMapLayer = atom('');
 
 export const buildingDataLayer = atom('osm');
 export const buildingColorSetting = atom('');

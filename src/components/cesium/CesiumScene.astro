@@ -10,7 +10,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     activeMenu,
     buildingDataLayer,
     buildingId,
-    mapLayer,
+    activeMapLayer,
     buildingColorSetting,
     isSelectColorByDistance,
     colorByDistancePosition,
@@ -94,6 +94,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     styleId: 'streets-v12',
     accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
   });
+
+  // The displayed map layer is the last layer
   let mapLayerOrder = ['satellite', 'dark', 'street'];
   const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
   if (showMapbox) {
@@ -101,7 +103,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     viewer.imageryLayers.addImageryProvider(mapboxStreet);
     viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
     viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
-    mapLayer.set(mapLayerOrder[mapLayerOrder.length - 1]);
+    activeMapLayer.set(mapLayerOrder[mapLayerOrder.length - 1]);
   } else {
     document.getElementById('loading-modal')?.remove();
   }
@@ -174,7 +176,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     });
   }
 
-  function colorByOff() {
+  function colorByNone() {
     osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
   }
 
@@ -214,7 +216,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       const { latitude, longitude } = colorByDistancePosition.get();
       colorByDistance(latitude, longitude);
     } else {
-      colorByOff();
+      colorByNone();
     }
   });
 
@@ -232,26 +234,21 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   });
 
-  mapLayer.subscribe((layer) => {
+  activeMapLayer.subscribe((selectedMapLayer) => {
     if (!showMapbox) {
       return;
     }
 
-    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(layer)));
-    mapLayerOrder = [...mapLayerOrder.filter((l) => l !== layer), layer];
+    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(selectedMapLayer)));
+    mapLayerOrder = [...mapLayerOrder.filter((l) => l !== selectedMapLayer), selectedMapLayer];
   });
 
   let totalTiles = 0;
-  let canStartCount = false;
   function tileLoadProgressListener(queuedTiles: number) {
     const prevTotalTiles = totalTiles;
     totalTiles = Math.max(totalTiles, queuedTiles);
 
     if (prevTotalTiles == totalTiles) {
-      canStartCount = true;
-    }
-
-    if (canStartCount) {
       loadPercentage!.textContent = `${offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent))}`;
     }
 

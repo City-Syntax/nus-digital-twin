@@ -4,11 +4,11 @@ import mapboxSatellite from '../../assets/mapbox-satellite.png';
 import mapboxStreet from '../../assets/mapbox-street.png';
 import Icons from '../Icons';
 import * as Popover from '@radix-ui/react-popover';
-import { mapLayer } from '../../store';
+import { activeMapLayer } from '../../store';
 import { useStore } from '@nanostores/react';
 
 const MapPickerButton = () => {
-  const $mapLayer = useStore(mapLayer);
+  const $activeMapLayer = useStore(activeMapLayer);
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
@@ -21,25 +21,25 @@ const MapPickerButton = () => {
         <Popover.Content align="end">
           <div id="map-picker">
             <button
-              className={`map-picker-item ${$mapLayer === 'street' ? 'active' : ''}`}
+              className={`map-picker-item ${$activeMapLayer === 'street' ? 'active' : ''}`}
               type="button"
-              onClick={() => mapLayer.set('street')}
+              onClick={() => activeMapLayer.set('street')}
             >
               <img src={mapboxStreet.src} alt="Mapbox Street" />
               Mapbox Street
             </button>
             <button
-              className={`map-picker-item ${$mapLayer === 'dark' ? 'active' : ''}`}
+              className={`map-picker-item ${$activeMapLayer === 'dark' ? 'active' : ''}`}
               type="button"
-              onClick={() => mapLayer.set('dark')}
+              onClick={() => activeMapLayer.set('dark')}
             >
               <img src={mapboxDark.src} alt="Mapbox Dark" />
               Mapbox Dark
             </button>
             <button
-              className={`map-picker-item ${$mapLayer === 'satellite' ? 'active' : ''}`}
+              className={`map-picker-item ${$activeMapLayer === 'satellite' ? 'active' : ''}`}
               type="button"
-              onClick={() => mapLayer.set('satellite')}
+              onClick={() => activeMapLayer.set('satellite')}
             >
               <img src={mapboxSatellite.src} alt="Mapbox Satellite" />
               Mapbox Satellite
