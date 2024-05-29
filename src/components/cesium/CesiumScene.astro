@@ -221,21 +221,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   menu?.addEventListener('click', () => {
     // Timeout is necessary to allow for the state to update first
     setTimeout(() => {
-      const showOsmBuildings = buildingDataLayer.get() === 'osm';
-      const showBIM = buildingDataLayer.get() === 'bim';
-      if (showOsmBuildings) {
-        osmBuildingsTileset.show = true;
-      } else {
-        osmBuildingsTileset.show = false;
-      }
-
-      if (showBIM) {
-        colorByOff();
-        showAllBIM();
-      } else {
-        hideAllBIM();
-      }
-
       if (buildingColorSetting.get() === 'distance') {
         const { latitude, longitude } = colorByDistancePosition.get();
         colorByDistance(latitude, longitude);
@@ -243,6 +228,20 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
         colorByOff();
       }
     });
+  });
+
+  buildingDataLayer.subscribe((model) => {
+    if (model === 'osm') {
+      osmBuildingsTileset.show = true;
+    } else {
+      osmBuildingsTileset.show = false;
+    }
+
+    if (model === 'bim') {
+      showAllBIM();
+    } else {
+      hideAllBIM();
+    }
   });
 
   mapLayer.subscribe((layer) => {

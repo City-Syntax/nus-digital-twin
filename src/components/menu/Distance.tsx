@@ -35,7 +35,7 @@ const Distance = () => {
           </>
         )}
       </div>
-      {$buildingColorSetting === 'distance' && (
+      {$buildingColorSetting === 'distance' && $buildingDataLayer === 'osm' && (
         <div>
           <h3>Options</h3>
           <div className="btn-group">
