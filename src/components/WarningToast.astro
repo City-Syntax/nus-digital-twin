@@ -1,0 +1,21 @@
+---
+import Icons from './Icons';
+---
+
+<script>
+  import { buildingDataLayer } from '../store';
+
+  buildingDataLayer.subscribe((val) => {
+    const toast = document.querySelector<HTMLElement>('.toast')!;
+
+    if (val === '') {
+      toast.classList.remove('hide');
+    } else {
+      toast.classList.add('hide');
+    }
+  });
+</script>
+<div class="toast hide">
+  <Icons.Warning />
+  <div>No building models selected.</div>
+</div>
