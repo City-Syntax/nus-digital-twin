@@ -33,6 +33,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     Transforms,
     IonImageryProvider,
     ImageryLayer,
+    Model,
+    HeadingPitchRoll,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
 
@@ -66,7 +68,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   // Limit amount to zoom in and out to
   viewer.scene.screenSpaceCameraController.minimumZoomDistance = 100.0;
-  viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
+  // viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
 
   // Simulate loading percentage until map tiles are requested
   const loadPercentage = document.querySelector('#load-percentage');
@@ -262,6 +264,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   viewer.scene.globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
+
+  const model = await Model.fromGltfAsync({
+    modelMatrix: Transforms.eastNorthUpToFixedFrame(Cartesian3.fromDegrees(103.77035, 1.29681, 0)),
+    url: '/SDE_Archi_Fine.gltf',
+  });
+  viewer.scene.primitives.add(model);
 </script>
 
 <div id="cesiumContainer"></div>
