@@ -264,9 +264,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   viewer.scene.globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
+  const heading = CesiumMath.toRadians(18);
+  const pitch = CesiumMath.toRadians(90);
+  const roll = CesiumMath.toRadians(-90);
+  const hpr = new HeadingPitchRoll(heading, pitch, roll);
+  const orientation = Transforms.headingPitchRollToFixedFrame(
+    Cartesian3.fromDegrees(103.76999, 1.29691, -89.4356561141),
+    hpr,
+  );
 
   const model = await Model.fromGltfAsync({
-    modelMatrix: Transforms.eastNorthUpToFixedFrame(Cartesian3.fromDegrees(103.77035, 1.29681, 0)),
+    modelMatrix: orientation,
     url: '/SDE_Archi_Fine.gltf',
   });
   viewer.scene.primitives.add(model);
