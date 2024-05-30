@@ -478,7 +478,7 @@ const ChevronDown = () => {
   );
 };
 
-const Alert = () => {
+const Warning = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -521,5 +521,5 @@ export default {
   Picker,
   Distance,
   ChevronDown,
-  Alert,
+  Warning,
 };
