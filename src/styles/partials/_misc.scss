@@ -1,15 +1,25 @@
-#construction {
-  @include bg-base;
-  padding: var(--padding-xs) var(--padding-sm);
-  text-decoration: none;
-  border-radius: var(--rounded-xs);
+#alert-box {
   position: absolute;
-  color: #fadf63;
-  font-size: var(--text-sm);
   top: 38px;
   right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
   margin-right: 8px;
   margin-left: 8px;
+  font-size: var(--text-sm);
+
+  > * {
+    padding: var(--padding-xs) var(--padding-sm);
+    border-radius: var(--rounded-xs);
+  }
+}
+
+#construction {
+  @include bg-base;
+  text-decoration: none;
+  color: #fadf63;
   transition: background-color 150ms;
 
   &:hover {
@@ -17,8 +27,15 @@
   }
 }
 
+.toast {
+  width: max-content;
+  background-color: rgba(129, 27, 27, 0.84);
+  backdrop-filter: saturate(150%) blur(4px);
+  transition: opacity 100ms;
+}
+
 @media screen and (max-width: 944px) {
-  #construction {
+  #alert-box {
     top: 68px;
   }
 }
