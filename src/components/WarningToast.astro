@@ -1,5 +1,5 @@
 ---
-
+import Icons from './Icons';
 ---
 
 <script>
@@ -10,11 +10,12 @@
 
     if (val === '') {
       toast.classList.remove('hide');
-      setTimeout(() => (toast.style.opacity = '1'));
     } else {
-      toast.style.opacity = '0';
-      setTimeout(() => toast.classList.add('hide'), 100);
+      toast.classList.add('hide');
     }
   });
 </script>
-<div class="toast hide">Warning: No building models are currently displayed.</div>
+<div class="toast hide">
+  <Icons.Alert />
+  <div>No building models selected.</div>
+</div>
