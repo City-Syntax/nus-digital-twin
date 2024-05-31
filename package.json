@@ -26,6 +26,7 @@
     "nanostores": "^0.9.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-transition-group": "^4.4.5",
     "sass": "^1.70.0",
     "tippy.js": "^6.3.7",
     "typescript": "^5.3.3"
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
+    "@types/react-transition-group": "^4.4.10",
     "@typescript-eslint/parser": "^6.16.0",
     "autoprefixer": "^10.4.17",
     "cssnano": "^6.0.3",
