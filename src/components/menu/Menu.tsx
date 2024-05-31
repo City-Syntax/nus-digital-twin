@@ -43,7 +43,7 @@ const Menu = () => {
           timeout={150}
           classNames="menu-left"
         >
-          <MenuContent title={leftMenu.includes($activeMenu) ? $activeMenu : ''}>
+          <div className="menubar-content">
             {$activeMenu === 'OSMBuildings' && <OSMBuildings></OSMBuildings>}
             {$activeMenu === 'AboutNUSCampus' && <AboutNUSCampus></AboutNUSCampus>}
             {$activeMenu === 'Help' && <Help></Help>}
@@ -55,7 +55,7 @@ const Menu = () => {
             {$activeMenu === 'BIMModels' && <BIMModels></BIMModels>}
             {$activeMenu === 'Settings' && <Settings></Settings>}
             {$activeMenu === 'BuildingInfo' && <BuildingInfo></BuildingInfo>}
-          </MenuContent>
+          </div>
         </CSSTransition>
       </div>
       <div className="menu-right show-md">
