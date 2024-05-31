@@ -66,7 +66,7 @@ const Menu = () => {
           timeout={100}
           classNames="my-node"
         >
-          <MenuContent title={$activeMenu}>
+          <MenuContent title={rightMenu.includes($activeMenu) ? $activeMenu : ''}>
             {$activeMenu === 'Buildings' && <Buildings></Buildings>}
             {$activeMenu === 'Energy' && <Energy></Energy>}
             {$activeMenu === 'ThermalComfort' && <ThermalComfort></ThermalComfort>}
