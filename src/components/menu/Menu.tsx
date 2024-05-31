@@ -43,7 +43,7 @@ const Menu = () => {
           timeout={100}
           classNames="my-node"
         >
-          <MenuContent title={$activeMenu}>
+          <MenuContent title={leftMenu.includes($activeMenu) ? $activeMenu : ''}>
             {$activeMenu === 'OSMBuildings' && <OSMBuildings></OSMBuildings>}
             {$activeMenu === 'AboutNUSCampus' && <AboutNUSCampus></AboutNUSCampus>}
             {$activeMenu === 'Help' && <Help></Help>}
@@ -85,7 +85,7 @@ const Menu = () => {
           timeout={100}
           classNames="my-node"
         >
-          <MenuContent title={$activeMenu}>
+          <MenuContent title={bottomMenu.includes($activeMenu) ? $activeMenu : ''}>
             {($activeMenu === 'AboutNUSCampus' || $activeMenu === 'About') && <AboutNUSCampus></AboutNUSCampus>}
             {$activeMenu === 'BuildingInfo' && <BuildingInfo></BuildingInfo>}
             {$activeMenu === 'StreetCenterlines' && <StreetCenterlines></StreetCenterlines>}
