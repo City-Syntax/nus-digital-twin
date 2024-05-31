@@ -10,6 +10,7 @@ export type Categories =
   | 'others';
 
 export const TITLE_MAPPINGS: BuildingPropertiesProps = {
+  name: 'Name',
   address: 'Address',
   postal: 'Postal Code',
   floorToFloorHeight: 'Floor to Floor Height',
