@@ -90,7 +90,7 @@
 .select-item {
   padding: var(--padding-xs);
   outline: none;
-  transition: 150ms background-color;
+  transition: background-color 150ms;
 }
 
 .select-item[data-highlighted] {

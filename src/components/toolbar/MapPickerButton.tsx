@@ -18,7 +18,7 @@ const MapPickerButton = () => {
         </button>
       </Popover.Trigger>
       <Popover.Portal>
-        <Popover.Content align="end">
+        <Popover.Content className="PopoverContent" align="end">
           <div id="map-picker">
             <button
               className={`map-picker-item ${$activeMapLayer === 'street' ? 'active' : ''}`}
