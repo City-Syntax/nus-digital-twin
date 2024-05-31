@@ -1,3 +1,8 @@
+/* ==========================================================================
+   POPOVER
+   Requires a PopoverContent class on the Popover.Content element.
+   ========================================================================== */
+
 .PopoverContent {
   transform-origin: var(--radix-popover-content-transform-origin);
 }
