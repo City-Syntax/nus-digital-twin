@@ -40,8 +40,8 @@ const Menu = () => {
           mountOnEnter
           unmountOnExit
           in={leftMenu.includes($activeMenu)}
-          timeout={100}
-          classNames="my-node"
+          timeout={150}
+          classNames="menu-left"
         >
           <MenuContent title={leftMenu.includes($activeMenu) ? $activeMenu : ''}>
             {$activeMenu === 'OSMBuildings' && <OSMBuildings></OSMBuildings>}
@@ -63,7 +63,7 @@ const Menu = () => {
           mountOnEnter
           unmountOnExit
           in={rightMenu.includes($activeMenu)}
-          timeout={100}
+          timeout={150}
           classNames="menu-right"
         >
           <MenuContent title={rightMenu.includes($activeMenu) ? $activeMenu : ''}>
