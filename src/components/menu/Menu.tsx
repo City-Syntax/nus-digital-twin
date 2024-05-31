@@ -82,8 +82,8 @@ const Menu = () => {
           mountOnEnter
           unmountOnExit
           in={bottomMenu.includes($activeMenu)}
-          timeout={100}
-          classNames="my-node"
+          timeout={150}
+          classNames="menu-bottom"
         >
           <MenuContent title={bottomMenu.includes($activeMenu) ? $activeMenu : ''}>
             {($activeMenu === 'AboutNUSCampus' || $activeMenu === 'About') && <AboutNUSCampus></AboutNUSCampus>}
