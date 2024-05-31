@@ -1,8 +1,4 @@
-const MENU_TITLE_MAPPINGS = {
-  OSMBuildings: 'Layers: OSM Buildings',
-};
-
-export const leftMenu = [
+export const LEFT_MENU = [
   'OSMBuildings',
   'AboutNUSCampus',
   'Help',
@@ -16,9 +12,9 @@ export const leftMenu = [
   'BuildingInfo',
 ];
 
-export const rightMenu = ['Buildings', 'Energy', 'ThermalComfort', 'Wind', 'Solar', 'Distance'];
+export const RIGHT_MENU = ['Buildings', 'Energy', 'ThermalComfort', 'Wind', 'Solar', 'Distance'];
 
-export const bottomMenu = [
+export const BOTTOM_MENU = [
   'AboutNUSCampus',
   'About',
   'BuildingInfo',
