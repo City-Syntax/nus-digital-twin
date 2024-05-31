@@ -64,7 +64,7 @@ const Menu = () => {
           unmountOnExit
           in={rightMenu.includes($activeMenu)}
           timeout={100}
-          classNames="my-node"
+          classNames="menu-right"
         >
           <MenuContent title={rightMenu.includes($activeMenu) ? $activeMenu : ''}>
             {$activeMenu === 'Buildings' && <Buildings></Buildings>}
