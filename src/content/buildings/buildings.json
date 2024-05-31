@@ -554,7 +554,8 @@
   {
     "elementId": "140087835",
     "name": "LT 3",
-    "address": "Kent Ridge Cres"
+    "address": "10 Kent Ridge Crescent",
+    "postal": "119260"
   },
   {
     "elementId": "140087837",
@@ -673,12 +674,14 @@
   {
     "elementId": "141907104",
     "name": "LT 28",
-    "address": "Lower Kent Ridge Road"
+    "address": "2 Medical Drive",
+    "postal": "117593"
   },
   {
     "elementId": "141907010",
     "name": "LT 29",
-    "address": "Lower Kent Ridge Road"
+    "address": "2 Medical Drive",
+    "postal": "117593"
   },
   {
     "elementId": "142075681",
@@ -731,7 +734,8 @@
   {
     "elementId": "140087193",
     "name": "The Deck",
-    "address": "Computing Drive"
+    "address": "5 Arts Link",
+    "postal": "117570"
   },
   {
     "elementId": "54619730",
