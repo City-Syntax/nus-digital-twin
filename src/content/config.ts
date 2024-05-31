@@ -1,10 +1,13 @@
 import { defineCollection, z } from 'astro:content';
 
+const buildingMetadataSchema = z.object({
+  elementId: z.string(),
+});
+
 const buildingSchema = z.object({
-  elementId: z.string().optional(),
-  name: z.string().optional(),
-  address: z.string().optional(),
-  postal: z.string().optional(),
+  name: z.string(),
+  address: z.string(),
+  postal: z.string(),
   floorToFloorHeight: z.string().optional(),
   perimeterZoneDepth: z.string().optional(),
   wallConstruction: z.string().optional(),
@@ -42,7 +45,7 @@ const buildingSchema = z.object({
 
 const buildingsCollection = defineCollection({
   type: 'data',
-  schema: z.array(buildingSchema),
+  schema: z.array(buildingSchema.merge(buildingMetadataSchema)),
 });
 
 export const collections = {
