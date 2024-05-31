@@ -1,11 +1,17 @@
 import React from 'react';
-import MenuContent from './MenuContent';
+import CloseButton from './CloseButton';
 
 const AboutNUSCampus = () => {
   return (
-    <MenuContent title="About NUS Campus">
-      <p>Hello World!</p>
-    </MenuContent>
+    <>
+      <div className="menubar-content-header">
+        <h2>About NUS Campus</h2>
+        <CloseButton></CloseButton>
+      </div>
+      <div className="menubar-content-body">
+        <p>Hello World!</p>
+      </div>
+    </>
   );
 };
 

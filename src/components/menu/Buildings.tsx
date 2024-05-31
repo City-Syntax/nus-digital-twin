@@ -1,11 +1,17 @@
 import React from 'react';
-import MenuContent from './MenuContent';
+import CloseButton from './CloseButton';
 
 const Buildings = () => {
   return (
-    <MenuContent title="Controls: Buildings">
-      <p>This feature is under construction.</p>
-    </MenuContent>
+    <>
+      <div className="menubar-content-header">
+        <h2>Controls: Buildings</h2>
+        <CloseButton></CloseButton>
+      </div>
+      <div className="menubar-content-body">
+        <p>This feature is under construction.</p>
+      </div>
+    </>
   );
 };
 

@@ -1,11 +1,17 @@
 import React from 'react';
-import MenuContent from './MenuContent';
+import CloseButton from './CloseButton';
 
 const StreetCenterlines = () => {
   return (
-    <MenuContent title="Layers: Street Centerlines">
-      <p>This feature is under construction.</p>
-    </MenuContent>
+    <>
+      <div className="menubar-content-header">
+        <h2>Layers: Street Centerlines</h2>
+        <CloseButton></CloseButton>
+      </div>
+      <div className="menubar-content-body">
+        <p>This feature is under construction.</p>
+      </div>
+    </>
   );
 };
 

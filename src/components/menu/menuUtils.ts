@@ -1,0 +1,40 @@
+export const LEFT_MENU = [
+  'OSMBuildings',
+  'AboutNUSCampus',
+  'Help',
+  'StreetCenterlines',
+  'BuildingFootprints',
+  'GreenSpaces',
+  'WaterBodies',
+  'RhinoModels',
+  'BIMModels',
+  'Settings',
+  'BuildingInfo',
+];
+
+export const RIGHT_MENU = ['Buildings', 'Energy', 'ThermalComfort', 'Wind', 'Solar', 'Distance'];
+
+export const BOTTOM_MENU = [
+  'AboutNUSCampus',
+  'About',
+  'BuildingInfo',
+  'StreetCenterlines',
+  'BuildingFootprints',
+  'GreenSpaces',
+  'WaterBodies',
+  'OSMBuildings',
+  'RhinoModels',
+  'BIMModels',
+  'Buildings',
+  'Energy',
+  'ThermalComfort',
+  'Wind',
+  'Solar',
+  'Distance',
+  'Help',
+  'Settings',
+  'Search',
+  'Controls',
+  'Layers',
+  'Menu',
+];

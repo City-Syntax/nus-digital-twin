@@ -1,15 +1,21 @@
 import React from 'react';
-import MenuContent from './MenuContent';
 import MenuLink from './MenuLink';
+import CloseButton from './CloseButton';
 
 const MoreMenu = () => {
   return (
-    <MenuContent title="Menu">
-      <div className="menu-list">
-        <MenuLink label="Help"></MenuLink>
-        <MenuLink label="Settings"></MenuLink>
+    <>
+      <div className="menubar-content-header">
+        <h2>Menu</h2>
+        <CloseButton></CloseButton>
       </div>
-    </MenuContent>
+      <div className="menubar-content-body">
+        <div className="menu-list">
+          <MenuLink label="Help"></MenuLink>
+          <MenuLink label="Settings"></MenuLink>
+        </div>
+      </div>
+    </>
   );
 };
 
