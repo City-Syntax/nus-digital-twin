@@ -1,11 +1,17 @@
 import React from 'react';
-import MenuContent from './MenuContent';
+import CloseButton from './CloseButton';
 
 const Solar = () => {
   return (
-    <MenuContent title="Controls: Solar">
-      <p>This feature is under construction.</p>
-    </MenuContent>
+    <>
+      <div className="menubar-content-header">
+        <h2>Controls: Solar</h2>
+        <CloseButton></CloseButton>
+      </div>
+      <div className="menubar-content-body">
+        <p>This feature is under construction.</p>
+      </div>
+    </>
   );
 };
 

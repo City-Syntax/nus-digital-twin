@@ -26,7 +26,6 @@ import Layers from './Layers';
 import MoreMenu from './MoreMenu';
 import Distance from './Distance';
 import { CSSTransition } from 'react-transition-group';
-import MenuContent from './MenuContent';
 import { leftMenu, rightMenu, bottomMenu } from './menuUtils';
 
 const Menu = () => {
@@ -66,14 +65,14 @@ const Menu = () => {
           timeout={150}
           classNames="menu-right"
         >
-          <MenuContent title={rightMenu.includes($activeMenu) ? $activeMenu : ''}>
+          <div className="menubar-content">
             {$activeMenu === 'Buildings' && <Buildings></Buildings>}
             {$activeMenu === 'Energy' && <Energy></Energy>}
             {$activeMenu === 'ThermalComfort' && <ThermalComfort></ThermalComfort>}
             {$activeMenu === 'Wind' && <Wind></Wind>}
             {$activeMenu === 'Solar' && <Solar></Solar>}
             {$activeMenu === 'Distance' && <Distance></Distance>}
-          </MenuContent>
+          </div>
         </CSSTransition>
         <MenuRight></MenuRight>
       </div>
@@ -85,7 +84,7 @@ const Menu = () => {
           timeout={150}
           classNames="menu-bottom"
         >
-          <MenuContent title={bottomMenu.includes($activeMenu) ? $activeMenu : ''}>
+          <div className="menubar-content">
             {($activeMenu === 'AboutNUSCampus' || $activeMenu === 'About') && <AboutNUSCampus></AboutNUSCampus>}
             {$activeMenu === 'BuildingInfo' && <BuildingInfo></BuildingInfo>}
             {$activeMenu === 'StreetCenterlines' && <StreetCenterlines></StreetCenterlines>}
@@ -107,7 +106,7 @@ const Menu = () => {
             {$activeMenu === 'Controls' && <Controls></Controls>}
             {$activeMenu === 'Layers' && <Layers></Layers>}
             {$activeMenu === 'Menu' && <MoreMenu></MoreMenu>}
-          </MenuContent>
+          </div>
         </CSSTransition>
         <MenuBottom></MenuBottom>
       </div>
