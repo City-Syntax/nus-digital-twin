@@ -28,7 +28,7 @@
   width: 300px;
   height: 14px;
   border-radius: var(--rounded-xl);
-  background-color: #f5f5f5;
+  background-color: rgba(var(--base-300));
   overflow: clip;
 
   > div:first-child {
