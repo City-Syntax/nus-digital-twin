@@ -49,7 +49,7 @@ const MenuLeft = () => {
           <div className="menu-list-title">Urban Scale Models</div>
           <MenuLink toPage="osm" label="OSM Buildings" iconName="OSMBuildings"></MenuLink>
           <MenuLink toPage="rhino-urban" label="Rhino (Urban)" iconName="RhinoModels"></MenuLink>
-          <MenuLink toPage="bim" label="UBEM" iconName="BIMModels"></MenuLink>
+          <MenuLink toPage="ubem" label="UBEM" iconName="BIMModels"></MenuLink>
         </div>
       </div>
       <div className="menubar-footer">

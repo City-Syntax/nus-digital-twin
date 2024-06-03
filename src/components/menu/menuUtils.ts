@@ -10,6 +10,7 @@ export type MenuPages =
   | 'osm'
   | 'rhino-building'
   | 'rhino-urban'
+  | 'ubem'
   | 'bim'
   | 'buildings'
   | 'energy'
@@ -33,6 +34,7 @@ const LEFT_MENU_PAGES: MenuPages[] = [
   'water-bodies',
   'rhino-urban',
   'rhino-building',
+  'ubem',
   'bim',
   'building-info',
   'help',
@@ -51,6 +53,7 @@ const BOTTOM_MENU_PAGES: MenuPages[] = [
   'osm',
   'rhino-urban',
   'rhino-building',
+  'ubem',
   'bim',
   'buildings',
   'energy',
