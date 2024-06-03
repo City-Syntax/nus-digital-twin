@@ -80,7 +80,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
       const newPercent = currPercent + Math.floor(Math.random() * 3);
       loadingPercentage.textContent = `${newPercent}`;
-      loadingProgress.style.width = `${newPercent}%`;
+      loadingProgress.style.transform = `translateX(-${100 - newPercent}%)`;
       addLoadPercentUntilOffset();
     }, 100);
   })();
@@ -108,7 +108,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
     activeMapLayer.set(mapLayerOrder[mapLayerOrder.length - 1]);
   } else {
-    document.getElementById('loading-modal')?.remove();
+    // document.getElementById('loading-modal')?.remove();
   }
 
   const position = Cartesian3.fromDegrees(103.77678, 1.28342, 800);
@@ -254,14 +254,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (prevTotalTiles == totalTiles) {
       const newPercent = offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent));
       loadingPercentage.textContent = `${newPercent}`;
-      loadingProgress.style.width = `${newPercent}%`;
+      loadingProgress.style.transform = `translateX(-${100 - newPercent}%)`;
     }
 
     if (viewer.scene.globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
-      document.getElementById('loading-modal')?.classList.add('close');
       setTimeout(() => {
-        document.getElementById('loading-modal')?.remove();
-      }, 200);
+        document.getElementById('loading-modal')?.classList.add('close');
+        setTimeout(() => {
+          document.getElementById('loading-modal')?.remove();
+        }, 200);
+      }, 350);
       viewer.scene.globe.tileLoadProgressEvent.removeEventListener(tileLoadProgressListener);
     }
   }
