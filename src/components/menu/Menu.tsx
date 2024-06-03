@@ -26,7 +26,7 @@ import Layers from './Layers';
 import MoreMenu from './MoreMenu';
 import Distance from './Distance';
 import { CSSTransition } from 'react-transition-group';
-import { LEFT_MENU, RIGHT_MENU, BOTTOM_MENU } from './menuUtils';
+import { MENU_PAGES } from './menuUtils';
 
 const Menu = () => {
   const $activeMenu = useStore(activeMenu);
@@ -38,7 +38,7 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={LEFT_MENU.includes($activeMenu)}
+          in={MENU_PAGES.LEFT.includes($activeMenu)}
           timeout={150}
           classNames="menu-left"
         >
@@ -61,7 +61,7 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={RIGHT_MENU.includes($activeMenu)}
+          in={MENU_PAGES.RIGHT.includes($activeMenu)}
           timeout={150}
           classNames="menu-right"
         >
@@ -80,7 +80,7 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={BOTTOM_MENU.includes($activeMenu)}
+          in={MENU_PAGES.BOTTOM.includes($activeMenu)}
           timeout={150}
           classNames="menu-bottom"
         >

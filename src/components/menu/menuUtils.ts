@@ -23,7 +23,7 @@ export type MenuPages =
   | 'menu'
   | '';
 
-export const LEFT_MENU: MenuPages[] = [
+const LEFT_MENU_PAGES: MenuPages[] = [
   'osm',
   'about',
   'street-centerlines',
@@ -37,9 +37,9 @@ export const LEFT_MENU: MenuPages[] = [
   'settings',
 ];
 
-export const RIGHT_MENU: MenuPages[] = ['buildings', 'energy', 'thermal-comfort', 'wind', 'solar', 'distance'];
+const RIGHT_MENU_PAGES: MenuPages[] = ['buildings', 'energy', 'thermal-comfort', 'wind', 'solar', 'distance'];
 
-export const BOTTOM_MENU: MenuPages[] = [
+const BOTTOM_MENU_PAGES: MenuPages[] = [
   'about',
   'building-info',
   'street-centerlines',
@@ -62,3 +62,9 @@ export const BOTTOM_MENU: MenuPages[] = [
   'layers',
   'menu',
 ];
+
+export const MENU_PAGES: { LEFT: MenuPages[]; RIGHT: MenuPages[]; BOTTOM: MenuPages[] } = {
+  LEFT: LEFT_MENU_PAGES,
+  RIGHT: RIGHT_MENU_PAGES,
+  BOTTOM: BOTTOM_MENU_PAGES,
+};
