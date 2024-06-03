@@ -11,8 +11,8 @@ const MoreMenu = () => {
       </div>
       <div className="menubar-content-body">
         <div className="menu-list">
-          <MenuLink label="Help"></MenuLink>
-          <MenuLink label="Settings"></MenuLink>
+          <MenuLink toPage="help" label="Help" iconName="Help"></MenuLink>
+          <MenuLink toPage="settings" label="Settings" iconName="Settings"></MenuLink>
         </div>
       </div>
     </>
