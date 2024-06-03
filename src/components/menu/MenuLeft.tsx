@@ -31,7 +31,7 @@ const MenuLeft = () => {
       <div className="menubar-body">
         <div className="menu-list">
           <div className="menu-list-title">About</div>
-          <MenuLink toPage="about" label="About NUS Campus" iconName="AboutNUSCampus"></MenuLink>
+          <MenuLink toPage="about" label="About NUS Campus" iconName="About"></MenuLink>
         </div>
         <div className="menu-list">
           <div className="menu-list-title">GIS Layers</div>
@@ -41,10 +41,15 @@ const MenuLeft = () => {
           <MenuLink toPage="water-bodies" label="Water Bodies" iconName="WaterBodies"></MenuLink>
         </div>
         <div className="menu-list">
-          <div className="menu-list-title">Building Data Layers</div>
-          <MenuLink toPage="osm" label="OSM Buildings" iconName="OSMBuildings"></MenuLink>
-          <MenuLink toPage="rhino" label="Rhino Models" iconName="RhinoModels"></MenuLink>
+          <div className="menu-list-title">Building Scale Models</div>
           <MenuLink toPage="bim" label="BIM Models" iconName="BIMModels"></MenuLink>
+          <MenuLink toPage="rhino-building" label="Rhino (Building)" iconName="RhinoModels"></MenuLink>
+        </div>
+        <div className="menu-list">
+          <div className="menu-list-title">Urban Scale Models</div>
+          <MenuLink toPage="osm" label="OSM Buildings" iconName="OSMBuildings"></MenuLink>
+          <MenuLink toPage="rhino-urban" label="Rhino (Urban)" iconName="RhinoModels"></MenuLink>
+          <MenuLink toPage="ubem" label="UBEM" iconName="UBEM"></MenuLink>
         </div>
       </div>
       <div className="menubar-footer">

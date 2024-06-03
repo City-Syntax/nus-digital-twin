@@ -1,10 +1,10 @@
 import React from 'react';
 import CloseButton from './CloseButton';
-import { buildingDataLayer } from '../../store';
+import { activeModel } from '../../store';
 import { useStore } from '@nanostores/react';
 
 const BIMModels = () => {
-  const $buildingDataLayer = useStore(buildingDataLayer);
+  const $activeModel = useStore(activeModel);
   return (
     <>
       <div className="menubar-content-header">
@@ -19,13 +19,10 @@ const BIMModels = () => {
         </div>
         <div>
           <div className="btn-group">
-            <button
-              onClick={() => buildingDataLayer.set('bim')}
-              className={$buildingDataLayer === 'bim' ? 'active' : ''}
-            >
+            <button onClick={() => activeModel.set('bim')} className={$activeModel === 'bim' ? 'active' : ''}>
               On
             </button>
-            <button onClick={() => buildingDataLayer.set('')} className={$buildingDataLayer !== 'bim' ? 'active' : ''}>
+            <button onClick={() => activeModel.set('')} className={$activeModel !== 'bim' ? 'active' : ''}>
               Off
             </button>
           </div>

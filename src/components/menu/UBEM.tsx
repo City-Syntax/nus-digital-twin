@@ -1,11 +1,11 @@
 import React from 'react';
 import CloseButton from './CloseButton';
 
-const RhinoModels = () => {
+const UBEM = () => {
   return (
     <>
       <div className="menubar-content-header">
-        <h2>Layers: Rhino Models</h2>
+        <h2>Layers: Urban Building Energy Model</h2>
         <CloseButton></CloseButton>
       </div>
       <div className="menubar-content-body">
@@ -15,4 +15,4 @@ const RhinoModels = () => {
   );
 };
 
-export default RhinoModels;
+export default UBEM;

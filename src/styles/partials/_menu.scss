@@ -101,6 +101,7 @@
 }
 
 .menubar-footer {
+  padding-top: var(--padding-sm);
   margin-top: auto;
 }
 
@@ -119,7 +120,7 @@
 .menubar-content-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   h2 {
     line-height: 1.75rem;
@@ -278,7 +279,7 @@
 .menu-right-enter-active {
   opacity: 1;
   transform: translateX(0);
-  transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-right-exit {
@@ -289,7 +290,7 @@
 .menu-right-exit-active {
   opacity: 0;
   transform: translateX(12px);
-  transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-left-enter {

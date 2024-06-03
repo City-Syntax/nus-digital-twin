@@ -1,10 +1,10 @@
 import React from 'react';
 import { useStore } from '@nanostores/react';
-import { buildingDataLayer } from '../../store';
+import { activeModel } from '../../store';
 import CloseButton from './CloseButton';
 
 const OSMBuildings = () => {
-  const $buildingDataLayer = useStore(buildingDataLayer);
+  const $activeModel = useStore(activeModel);
   return (
     <>
       <div className="menubar-content-header">
@@ -15,13 +15,10 @@ const OSMBuildings = () => {
         <div>Displays OSM Buildings, a building layer provided by OpenStreetMaps.</div>
         <div>
           <div className="btn-group">
-            <button
-              onClick={() => buildingDataLayer.set('osm')}
-              className={$buildingDataLayer === 'osm' ? 'active' : ''}
-            >
+            <button onClick={() => activeModel.set('osm')} className={$activeModel === 'osm' ? 'active' : ''}>
               On
             </button>
-            <button onClick={() => buildingDataLayer.set('')} className={$buildingDataLayer !== 'osm' ? 'active' : ''}>
+            <button onClick={() => activeModel.set('')} className={$activeModel !== 'osm' ? 'active' : ''}>
               Off
             </button>
           </div>
