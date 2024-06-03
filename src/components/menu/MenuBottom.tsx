@@ -8,7 +8,7 @@ const MenuBottom = () => {
         <MenuLink toPage="search" isVertical label="Search" iconName="Search"></MenuLink>
       </div>
       <div className="menu-list">
-        <MenuLink toPage="about" isVertical label="About" iconName="AboutNUSCampus"></MenuLink>
+        <MenuLink toPage="about" isVertical label="About" iconName="About"></MenuLink>
       </div>
       <div className="menu-list">
         <MenuLink toPage="layers" isVertical label="Layers" iconName="Layers"></MenuLink>

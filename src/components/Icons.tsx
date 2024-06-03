@@ -17,7 +17,7 @@ const Close = () => {
   );
 };
 
-const AboutNUSCampus = () => {
+const About = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -514,7 +514,7 @@ const Warning = () => {
 export default {
   Close,
   Search,
-  AboutNUSCampus,
+  About,
   StreetCenterlines,
   BuildingFootprints,
   GreenSpaces,

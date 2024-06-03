@@ -31,7 +31,7 @@ const MenuLeft = () => {
       <div className="menubar-body">
         <div className="menu-list">
           <div className="menu-list-title">About</div>
-          <MenuLink toPage="about" label="About NUS Campus" iconName="AboutNUSCampus"></MenuLink>
+          <MenuLink toPage="about" label="About NUS Campus" iconName="About"></MenuLink>
         </div>
         <div className="menu-list">
           <div className="menu-list-title">GIS Layers</div>
