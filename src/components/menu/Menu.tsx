@@ -9,7 +9,6 @@ import BuildingFootprints from './BuildingFootprints';
 import GreenSpaces from './GreenSpaces';
 import WaterBodies from './WaterBodies';
 import OSMBuildings from './OSMBuildings';
-import RhinoModels from './RhinoModels';
 import BIMModels from './BIMModels';
 import Help from './Help';
 import Settings from './Settings';
@@ -27,6 +26,8 @@ import MoreMenu from './MoreMenu';
 import Distance from './Distance';
 import { CSSTransition } from 'react-transition-group';
 import { MENU_PAGES } from './menuUtils';
+import RhinoUrban from './RhinoUrban';
+import RhinoBuildings from './RhinoBuildings';
 
 const Menu = () => {
   const $activeMenu = useStore(activeMenu);
@@ -50,7 +51,8 @@ const Menu = () => {
             {$activeMenu === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
             {$activeMenu === 'green-spaces' && <GreenSpaces></GreenSpaces>}
             {$activeMenu === 'water-bodies' && <WaterBodies></WaterBodies>}
-            {$activeMenu === 'rhino' && <RhinoModels></RhinoModels>}
+            {$activeMenu === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
+            {$activeMenu === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
             {$activeMenu === 'bim' && <BIMModels></BIMModels>}
             {$activeMenu === 'settings' && <Settings></Settings>}
             {$activeMenu === 'building-info' && <BuildingInfo></BuildingInfo>}
@@ -92,7 +94,8 @@ const Menu = () => {
             {$activeMenu === 'green-spaces' && <GreenSpaces></GreenSpaces>}
             {$activeMenu === 'water-bodies' && <WaterBodies></WaterBodies>}
             {$activeMenu === 'osm' && <OSMBuildings></OSMBuildings>}
-            {$activeMenu === 'rhino' && <RhinoModels></RhinoModels>}
+            {$activeMenu === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
+            {$activeMenu === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
             {$activeMenu === 'bim' && <BIMModels></BIMModels>}
             {$activeMenu === 'buildings' && <Buildings></Buildings>}
             {$activeMenu === 'energy' && <Energy></Energy>}
