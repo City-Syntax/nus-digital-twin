@@ -5,25 +5,25 @@ const MenuBottom = () => {
   return (
     <nav className="menubar-bottom">
       <div className="menu-list">
-        <MenuLink isVertical label="Search"></MenuLink>
+        <MenuLink toPage="search" isVertical label="Search" iconName="Search"></MenuLink>
       </div>
       <div className="menu-list">
-        <MenuLink isVertical label="About" iconName="AboutNUSCampus"></MenuLink>
+        <MenuLink toPage="about" isVertical label="About" iconName="AboutNUSCampus"></MenuLink>
       </div>
       <div className="menu-list">
-        <MenuLink isVertical label="Layers"></MenuLink>
+        <MenuLink toPage="layers" isVertical label="Layers" iconName="Layers"></MenuLink>
       </div>
       <div className="menu-list">
-        <MenuLink isVertical label="Controls"></MenuLink>
+        <MenuLink toPage="controls" isVertical label="Controls" iconName="Controls"></MenuLink>
       </div>
       <div className="menu-list show-sm">
-        <MenuLink isVertical label="Help"></MenuLink>
+        <MenuLink toPage="help" isVertical label="Help" iconName="Help"></MenuLink>
       </div>
       <div className="menu-list show-sm">
-        <MenuLink isVertical label="Settings"></MenuLink>
+        <MenuLink toPage="settings" isVertical label="Settings" iconName="Settings"></MenuLink>
       </div>
       <div className="menu-list hide-sm">
-        <MenuLink isVertical label="Menu"></MenuLink>
+        <MenuLink toPage="menu" isVertical label="Menu" iconName="Menu"></MenuLink>
       </div>
     </nav>
   );

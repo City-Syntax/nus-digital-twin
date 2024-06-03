@@ -31,26 +31,26 @@ const MenuLeft = () => {
       <div className="menubar-body">
         <div className="menu-list">
           <div className="menu-list-title">About</div>
-          <MenuLink label="About NUS Campus"></MenuLink>
+          <MenuLink toPage="about" label="About NUS Campus" iconName="AboutNUSCampus"></MenuLink>
         </div>
         <div className="menu-list">
           <div className="menu-list-title">GIS Layers</div>
-          <MenuLink label="Street Centerlines"></MenuLink>
-          <MenuLink label="Building Footprints"></MenuLink>
-          <MenuLink label="Green Spaces"></MenuLink>
-          <MenuLink label="Water Bodies"></MenuLink>
+          <MenuLink toPage="street-centerlines" label="Street Centerlines" iconName="StreetCenterlines"></MenuLink>
+          <MenuLink toPage="building-footprints" label="Building Footprints" iconName="BuildingFootprints"></MenuLink>
+          <MenuLink toPage="green-spaces" label="Green Spaces" iconName="GreenSpaces"></MenuLink>
+          <MenuLink toPage="water-bodies" label="Water Bodies" iconName="WaterBodies"></MenuLink>
         </div>
         <div className="menu-list">
           <div className="menu-list-title">Building Data Layers</div>
-          <MenuLink label="OSM Buildings"></MenuLink>
-          <MenuLink label="Rhino Models"></MenuLink>
-          <MenuLink label="BIM Models"></MenuLink>
+          <MenuLink toPage="osm" label="OSM Buildings" iconName="OSMBuildings"></MenuLink>
+          <MenuLink toPage="rhino" label="Rhino Models" iconName="RhinoModels"></MenuLink>
+          <MenuLink toPage="bim" label="BIM Models" iconName="BIMModels"></MenuLink>
         </div>
       </div>
       <div className="menubar-footer">
         <div className="menu-list">
-          <MenuLink label="Help"></MenuLink>
-          <MenuLink label="Settings"></MenuLink>
+          <MenuLink toPage="help" label="Help" iconName="Help"></MenuLink>
+          <MenuLink toPage="settings" label="Settings" iconName="Settings"></MenuLink>
         </div>
       </div>
     </nav>
