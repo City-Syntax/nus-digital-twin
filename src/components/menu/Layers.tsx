@@ -26,7 +26,7 @@ const Layers = () => {
           <div className="menu-list-title">Urban Scale Models</div>
           <MenuLink toPage="osm" label="OSM Buildings" iconName="OSMBuildings"></MenuLink>
           <MenuLink toPage="rhino-urban" label="Rhino (Urban)" iconName="RhinoModels"></MenuLink>
-          <MenuLink toPage="ubem" label="UBEM" iconName="BIMModels"></MenuLink>
+          <MenuLink toPage="ubem" label="UBEM" iconName="UBEM"></MenuLink>
         </div>
       </div>
     </>
