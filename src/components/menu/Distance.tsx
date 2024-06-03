@@ -1,12 +1,12 @@
 import React from 'react';
 import CloseButton from './CloseButton';
-import { buildingColorSetting, buildingDataLayer, isSelectColorByDistance } from '../../store';
+import { buildingColorSetting, activeModel, isSelectColorByDistance } from '../../store';
 import { useStore } from '@nanostores/react';
 
 const Distance = () => {
   const $buildingColorSetting = useStore(buildingColorSetting);
   const $isSelectColorByDistance = useStore(isSelectColorByDistance);
-  const $buildingDataLayer = useStore(buildingDataLayer);
+  const $activeModel = useStore(activeModel);
   return (
     <>
       <div className="menubar-content-header">
@@ -16,7 +16,7 @@ const Distance = () => {
       <div className="menubar-content-body">
         <div>
           <h3>Color by distance</h3>
-          {$buildingDataLayer !== 'osm' ? (
+          {$activeModel !== 'osm' ? (
             <div className="hint">Color effects are only available on OpenStreetMaps models.</div>
           ) : (
             <>
@@ -25,14 +25,14 @@ const Distance = () => {
                 <button
                   className={`${$buildingColorSetting === 'distance' ? 'active' : ''}`}
                   onClick={() => buildingColorSetting.set('distance')}
-                  disabled={$buildingDataLayer !== 'osm'}
+                  disabled={$activeModel !== 'osm'}
                 >
                   On
                 </button>
                 <button
                   className={`${$buildingColorSetting === '' ? 'active' : ''}`}
                   onClick={() => buildingColorSetting.set('')}
-                  disabled={$buildingDataLayer !== 'osm'}
+                  disabled={$activeModel !== 'osm'}
                 >
                   Off
                 </button>
@@ -40,7 +40,7 @@ const Distance = () => {
             </>
           )}
         </div>
-        {$buildingColorSetting === 'distance' && $buildingDataLayer === 'osm' && (
+        {$buildingColorSetting === 'distance' && $activeModel === 'osm' && (
           <div>
             <h3>Options</h3>
             <div className="btn-group">

@@ -3,9 +3,9 @@ import Icons from './Icons';
 ---
 
 <script>
-  import { buildingDataLayer } from '../store';
+  import { activeModel } from '../store';
 
-  buildingDataLayer.subscribe((val) => {
+  activeModel.subscribe((val) => {
     const toast = document.querySelector<HTMLElement>('.toast')!;
 
     if (val === '') {

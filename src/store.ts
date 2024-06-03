@@ -6,7 +6,7 @@ export const searchQuery = atom('');
 
 export const activeMapLayer = atom('');
 
-export const buildingDataLayer = atom('osm');
+export const activeModel = atom('osm');
 export const buildingColorSetting = atom('');
 
 export const buildingId = atom('');

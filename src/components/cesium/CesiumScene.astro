@@ -8,7 +8,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   import {
     activeMenu,
-    buildingDataLayer,
+    activeModel,
     buildingId,
     activeMapLayer,
     buildingColorSetting,
@@ -220,7 +220,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   });
 
-  buildingDataLayer.subscribe((model) => {
+  activeModel.subscribe((model) => {
     if (model === 'osm') {
       osmBuildingsTileset.show = true;
     } else {
