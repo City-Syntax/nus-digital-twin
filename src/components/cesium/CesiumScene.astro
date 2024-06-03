@@ -258,6 +258,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     if (viewer.scene.globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
+      // Outer timeout is required for the translate animation to complete
       setTimeout(() => {
         document.getElementById('loading-modal')?.classList.add('close');
         setTimeout(() => {
