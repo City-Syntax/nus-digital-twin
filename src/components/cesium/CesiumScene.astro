@@ -69,15 +69,18 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
 
   // Simulate loading percentage until map tiles are requested
-  const loadPercentage = document.querySelector('#load-percentage');
+  const loadingPercentage = document.querySelector('#loading-percentage')!;
+  const loadingProgress = document.getElementById('loading-progress')!;
   const offsetPercent = 40;
   (function addLoadPercentUntilOffset() {
     setTimeout(() => {
-      const currPercent = Number(loadPercentage?.textContent) || 0;
+      const currPercent = Number(loadingPercentage.textContent);
       if (currPercent >= offsetPercent) {
         return;
       }
-      loadPercentage!.textContent = `${currPercent + Math.floor(Math.random() * 3) + 1}`;
+      const newPercent = currPercent + Math.floor(Math.random() * 3);
+      loadingPercentage.textContent = `${newPercent}`;
+      loadingProgress.style.width = `${newPercent}%`;
       addLoadPercentUntilOffset();
     }, 100);
   })();
@@ -249,7 +252,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     totalTiles = Math.max(totalTiles, queuedTiles);
 
     if (prevTotalTiles == totalTiles) {
-      loadPercentage!.textContent = `${offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent))}`;
+      const newPercent = offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent));
+      loadingPercentage.textContent = `${newPercent}`;
+      loadingProgress.style.width = `${newPercent}%`;
     }
 
     if (viewer.scene.globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
@@ -268,7 +273,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 <div id="loading-modal">
   <h1>NUS Digital Twin</h1>
   <div>
-    Application is loading...
-    <span id="load-percentage">0</span>%
+    <div id="loading-bar">
+      <div id="loading-progress"></div>
+    </div>
+    <div id="loading-text">
+      Loading...<span id="loading-percentage">0</span>%
+    </div>
   </div>
 </div>
