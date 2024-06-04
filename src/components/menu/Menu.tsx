@@ -29,6 +29,7 @@ import { MENU_PAGES } from './menuUtils';
 import RhinoUrban from './RhinoUrban';
 import RhinoBuildings from './RhinoBuildings';
 import UBEM from './UBEM';
+import AutoHeight from '../AutoHeight';
 
 const Menu = () => {
   const $activePage = useStore(activePage);
@@ -89,29 +90,31 @@ const Menu = () => {
           classNames="menu-bottom"
         >
           <div className="menubar-content">
-            {$activePage === 'about' && <AboutNUSCampus></AboutNUSCampus>}
-            {$activePage === 'building-info' && <BuildingInfo></BuildingInfo>}
-            {$activePage === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
-            {$activePage === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
-            {$activePage === 'green-spaces' && <GreenSpaces></GreenSpaces>}
-            {$activePage === 'water-bodies' && <WaterBodies></WaterBodies>}
-            {$activePage === 'bim' && <BIMModels></BIMModels>}
-            {$activePage === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
-            {$activePage === 'osm' && <OSMBuildings></OSMBuildings>}
-            {$activePage === 'ubem' && <UBEM></UBEM>}
-            {$activePage === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
-            {$activePage === 'buildings' && <Buildings></Buildings>}
-            {$activePage === 'energy' && <Energy></Energy>}
-            {$activePage === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
-            {$activePage === 'wind' && <Wind></Wind>}
-            {$activePage === 'solar' && <Solar></Solar>}
-            {$activePage === 'distance' && <Distance></Distance>}
-            {$activePage === 'help' && <Help></Help>}
-            {$activePage === 'settings' && <Settings></Settings>}
-            {$activePage === 'search' && <Search></Search>}
-            {$activePage === 'controls' && <Controls></Controls>}
-            {$activePage === 'layers' && <Layers></Layers>}
-            {$activePage === 'menu' && <MoreMenu></MoreMenu>}
+            <AutoHeight>
+              {$activePage === 'about' && <AboutNUSCampus></AboutNUSCampus>}
+              {$activePage === 'building-info' && <BuildingInfo></BuildingInfo>}
+              {$activePage === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
+              {$activePage === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
+              {$activePage === 'green-spaces' && <GreenSpaces></GreenSpaces>}
+              {$activePage === 'water-bodies' && <WaterBodies></WaterBodies>}
+              {$activePage === 'bim' && <BIMModels></BIMModels>}
+              {$activePage === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
+              {$activePage === 'osm' && <OSMBuildings></OSMBuildings>}
+              {$activePage === 'ubem' && <UBEM></UBEM>}
+              {$activePage === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
+              {$activePage === 'buildings' && <Buildings></Buildings>}
+              {$activePage === 'energy' && <Energy></Energy>}
+              {$activePage === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
+              {$activePage === 'wind' && <Wind></Wind>}
+              {$activePage === 'solar' && <Solar></Solar>}
+              {$activePage === 'distance' && <Distance></Distance>}
+              {$activePage === 'help' && <Help></Help>}
+              {$activePage === 'settings' && <Settings></Settings>}
+              {$activePage === 'search' && <Search></Search>}
+              {$activePage === 'controls' && <Controls></Controls>}
+              {$activePage === 'layers' && <Layers></Layers>}
+              {$activePage === 'menu' && <MoreMenu></MoreMenu>}
+            </AutoHeight>
           </div>
         </CSSTransition>
         <MenuBottom></MenuBottom>
