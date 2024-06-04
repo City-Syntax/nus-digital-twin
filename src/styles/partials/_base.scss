@@ -94,8 +94,8 @@ button {
 }
 
 @mixin bg-base {
-  background-color: rgba(var(--base-100), 0.85);
-  backdrop-filter: saturate(150%) blur(4px);
+  background-color: rgba(var(--base-100), 0.8);
+  backdrop-filter: saturate(140%) blur(4px);
   box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
 }
 

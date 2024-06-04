@@ -86,7 +86,7 @@ const Menu = () => {
           mountOnEnter
           unmountOnExit
           in={MENU_PAGES.BOTTOM.includes($activePage)}
-          timeout={150}
+          timeout={200}
           classNames="menu-bottom"
         >
           <div className="menubar-content">
