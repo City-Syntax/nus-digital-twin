@@ -45,9 +45,8 @@ const CommandMenu = () => {
         ></Command.Input>
         <Icons.Search></Icons.Search>
       </div>
-      <Command.List className={`CommandList ${open ? '' : 'hide'}`}>
+      <Command.List hidden={!open}>
         <Command.Empty>No results found.</Command.Empty>
-
         {values.map((val) => {
           return (
             <Command.Item
