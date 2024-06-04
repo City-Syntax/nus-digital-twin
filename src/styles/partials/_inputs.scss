@@ -57,7 +57,7 @@
   background-color: rgba(var(--base-100), 0.7);
   z-index: 10;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  transition: 100ms ease;
+  transition: 200ms ease;
   transition-property: height;
   height: calc(var(--cmdk-list-height));
   max-height: min(520px, calc(74vh - 78px));
