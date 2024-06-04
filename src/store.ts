@@ -1,7 +1,7 @@
 import { atom } from 'nanostores';
 import type { MenuPages } from './components/menu/menuUtils';
 
-export const activeMenu = atom<MenuPages>('');
+export const activePage = atom<MenuPages>('');
 export const searchQuery = atom('');
 
 export const activeMapLayer = atom('');
