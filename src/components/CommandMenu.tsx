@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Command } from 'cmdk';
 import Icons from './Icons';
-import { searchQuery } from '../store';
+import buildingsData from '../content/buildings/buildings.json';
+import { activePage, buildingId, searchQuery } from '../store';
 import { useStore } from '@nanostores/react';
 
 const CommandMenu = () => {
@@ -25,17 +26,31 @@ const CommandMenu = () => {
     return () => document.removeEventListener('keydown', down);
   }, []);
 
-  const values = ['COM1', 'COM2', 'COM3'];
+  const matchingBuildingsData = buildingsData.filter((building) =>
+    building.name.toLowerCase().startsWith($searchQuery.toLowerCase()),
+  );
 
   return (
-    <Command label="Search buildings">
+    <Command
+      shouldFilter={false}
+      label="Search buildings"
+      filter={(_, search, keywords) => {
+        const searchKey = (keywords || []).join('').toLowerCase();
+        if (searchKey.includes(search.toLowerCase())) {
+          return 1;
+        }
+        return 0;
+      }}
+      loop
+    >
       <div className="search">
         <Command.Input
           onFocus={() => setOpen(true)}
           onBlur={(e) => {
             const selectedOption = e.relatedTarget?.querySelector(`div[data-selected="true"]`) || null;
             if (selectedOption) {
-              searchQuery.set(selectedOption.getAttribute('data-value') || '');
+              activePage.set('building-info');
+              buildingId.set(selectedOption.getAttribute('data-value') || '');
             }
             setOpen(false);
           }}
@@ -47,19 +62,24 @@ const CommandMenu = () => {
       </div>
       <Command.List hidden={!open}>
         <Command.Empty>No results found.</Command.Empty>
-        {values.map((val) => {
-          return (
-            <Command.Item
-              key={val}
-              onSelect={() => {
-                searchQuery.set(val);
-                setOpen(false);
-              }}
-            >
-              {val}
-            </Command.Item>
-          );
-        })}
+        <Command.Group heading={`Search results (${matchingBuildingsData.length})`}>
+          {matchingBuildingsData.splice(0, 10).map((building) => {
+            return (
+              <Command.Item
+                key={building.elementId}
+                keywords={[building.name]}
+                value={building.elementId}
+                onSelect={() => {
+                  activePage.set('building-info');
+                  buildingId.set(building.elementId);
+                  setOpen(false);
+                }}
+              >
+                {building.name}
+              </Command.Item>
+            );
+          })}
+        </Command.Group>
       </Command.List>
     </Command>
   );
