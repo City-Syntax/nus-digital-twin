@@ -7,7 +7,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
   import {
-    activeMenu,
+    activePage,
     activeModel,
     buildingId,
     activeMapLayer,
@@ -196,7 +196,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    activeMenu.set('building-info');
+    activePage.set('building-info');
     if (bimModels.includes(pickedFeature.primitive)) {
       const resourceUrl = pickedFeature.primitive.resource.url;
 

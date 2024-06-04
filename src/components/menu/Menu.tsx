@@ -2,7 +2,7 @@ import React from 'react';
 import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
-import { activeMenu } from '../../store';
+import { activePage } from '../../store';
 import AboutNUSCampus from './AboutNUSCampus';
 import StreetCenterlines from './StreetCenterlines';
 import BuildingFootprints from './BuildingFootprints';
@@ -31,7 +31,7 @@ import RhinoBuildings from './RhinoBuildings';
 import UBEM from './UBEM';
 
 const Menu = () => {
-  const $activeMenu = useStore(activeMenu);
+  const $activePage = useStore(activePage);
 
   return (
     <div>
@@ -40,24 +40,24 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={MENU_PAGES.LEFT.includes($activeMenu)}
+          in={MENU_PAGES.LEFT.includes($activePage)}
           timeout={150}
           classNames="menu-left"
         >
           <div className="menubar-content">
-            {$activeMenu === 'osm' && <OSMBuildings></OSMBuildings>}
-            {$activeMenu === 'about' && <AboutNUSCampus></AboutNUSCampus>}
-            {$activeMenu === 'help' && <Help></Help>}
-            {$activeMenu === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
-            {$activeMenu === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
-            {$activeMenu === 'green-spaces' && <GreenSpaces></GreenSpaces>}
-            {$activeMenu === 'water-bodies' && <WaterBodies></WaterBodies>}
-            {$activeMenu === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
-            {$activeMenu === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
-            {$activeMenu === 'ubem' && <UBEM></UBEM>}
-            {$activeMenu === 'bim' && <BIMModels></BIMModels>}
-            {$activeMenu === 'settings' && <Settings></Settings>}
-            {$activeMenu === 'building-info' && <BuildingInfo></BuildingInfo>}
+            {$activePage === 'osm' && <OSMBuildings></OSMBuildings>}
+            {$activePage === 'about' && <AboutNUSCampus></AboutNUSCampus>}
+            {$activePage === 'help' && <Help></Help>}
+            {$activePage === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
+            {$activePage === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
+            {$activePage === 'green-spaces' && <GreenSpaces></GreenSpaces>}
+            {$activePage === 'water-bodies' && <WaterBodies></WaterBodies>}
+            {$activePage === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
+            {$activePage === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
+            {$activePage === 'ubem' && <UBEM></UBEM>}
+            {$activePage === 'bim' && <BIMModels></BIMModels>}
+            {$activePage === 'settings' && <Settings></Settings>}
+            {$activePage === 'building-info' && <BuildingInfo></BuildingInfo>}
           </div>
         </CSSTransition>
       </div>
@@ -65,17 +65,17 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={MENU_PAGES.RIGHT.includes($activeMenu)}
+          in={MENU_PAGES.RIGHT.includes($activePage)}
           timeout={150}
           classNames="menu-right"
         >
           <div className="menubar-content">
-            {$activeMenu === 'buildings' && <Buildings></Buildings>}
-            {$activeMenu === 'energy' && <Energy></Energy>}
-            {$activeMenu === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
-            {$activeMenu === 'wind' && <Wind></Wind>}
-            {$activeMenu === 'solar' && <Solar></Solar>}
-            {$activeMenu === 'distance' && <Distance></Distance>}
+            {$activePage === 'buildings' && <Buildings></Buildings>}
+            {$activePage === 'energy' && <Energy></Energy>}
+            {$activePage === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
+            {$activePage === 'wind' && <Wind></Wind>}
+            {$activePage === 'solar' && <Solar></Solar>}
+            {$activePage === 'distance' && <Distance></Distance>}
           </div>
         </CSSTransition>
         <MenuRight></MenuRight>
@@ -84,34 +84,34 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={MENU_PAGES.BOTTOM.includes($activeMenu)}
+          in={MENU_PAGES.BOTTOM.includes($activePage)}
           timeout={150}
           classNames="menu-bottom"
         >
           <div className="menubar-content">
-            {$activeMenu === 'about' && <AboutNUSCampus></AboutNUSCampus>}
-            {$activeMenu === 'building-info' && <BuildingInfo></BuildingInfo>}
-            {$activeMenu === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
-            {$activeMenu === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
-            {$activeMenu === 'green-spaces' && <GreenSpaces></GreenSpaces>}
-            {$activeMenu === 'water-bodies' && <WaterBodies></WaterBodies>}
-            {$activeMenu === 'bim' && <BIMModels></BIMModels>}
-            {$activeMenu === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
-            {$activeMenu === 'osm' && <OSMBuildings></OSMBuildings>}
-            {$activeMenu === 'ubem' && <UBEM></UBEM>}
-            {$activeMenu === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
-            {$activeMenu === 'buildings' && <Buildings></Buildings>}
-            {$activeMenu === 'energy' && <Energy></Energy>}
-            {$activeMenu === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
-            {$activeMenu === 'wind' && <Wind></Wind>}
-            {$activeMenu === 'solar' && <Solar></Solar>}
-            {$activeMenu === 'distance' && <Distance></Distance>}
-            {$activeMenu === 'help' && <Help></Help>}
-            {$activeMenu === 'settings' && <Settings></Settings>}
-            {$activeMenu === 'search' && <Search></Search>}
-            {$activeMenu === 'controls' && <Controls></Controls>}
-            {$activeMenu === 'layers' && <Layers></Layers>}
-            {$activeMenu === 'menu' && <MoreMenu></MoreMenu>}
+            {$activePage === 'about' && <AboutNUSCampus></AboutNUSCampus>}
+            {$activePage === 'building-info' && <BuildingInfo></BuildingInfo>}
+            {$activePage === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
+            {$activePage === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
+            {$activePage === 'green-spaces' && <GreenSpaces></GreenSpaces>}
+            {$activePage === 'water-bodies' && <WaterBodies></WaterBodies>}
+            {$activePage === 'bim' && <BIMModels></BIMModels>}
+            {$activePage === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
+            {$activePage === 'osm' && <OSMBuildings></OSMBuildings>}
+            {$activePage === 'ubem' && <UBEM></UBEM>}
+            {$activePage === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
+            {$activePage === 'buildings' && <Buildings></Buildings>}
+            {$activePage === 'energy' && <Energy></Energy>}
+            {$activePage === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
+            {$activePage === 'wind' && <Wind></Wind>}
+            {$activePage === 'solar' && <Solar></Solar>}
+            {$activePage === 'distance' && <Distance></Distance>}
+            {$activePage === 'help' && <Help></Help>}
+            {$activePage === 'settings' && <Settings></Settings>}
+            {$activePage === 'search' && <Search></Search>}
+            {$activePage === 'controls' && <Controls></Controls>}
+            {$activePage === 'layers' && <Layers></Layers>}
+            {$activePage === 'menu' && <MoreMenu></MoreMenu>}
           </div>
         </CSSTransition>
         <MenuBottom></MenuBottom>
