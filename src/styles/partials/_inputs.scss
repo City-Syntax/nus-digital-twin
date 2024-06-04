@@ -53,7 +53,6 @@
   position: absolute;
   width: calc(100% - (var(--padding-base) * 2));
   border-radius: var(--rounded-xs);
-  overflow: hidden;
   backdrop-filter: saturate(120%) blur(6px);
   background-color: rgba(var(--base-100), 0.7);
   z-index: 10;
@@ -63,12 +62,31 @@
   height: calc(var(--cmdk-list-height));
   max-height: min(520px, calc(74vh - 78px));
   overflow: scroll;
+
+  &.hide {
+    visibility: hidden;
+  }
+
+  @media screen and (max-width: $md) {
+    position: relative;
+    margin-top: 4px;
+    height: 240px;
+    width: 100%;
+    background-color: transparent;
+    backdrop-filter: none;
+    border-radius: 0;
+
+    &.hide {
+      visibility: visible;
+    }
+  }
 }
 
 [cmdk-item] {
   padding: var(--padding-xs);
   outline: none;
   transition: background-color 150ms;
+  border-radius: var(--rounded-xs);
 
   &[data-selected='true'] {
     background-color: rgba(var(--base-200), 0.8);
