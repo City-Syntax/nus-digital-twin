@@ -86,7 +86,10 @@
   padding: var(--padding-xs);
   outline: none;
   transition: background-color 150ms;
-  border-radius: var(--rounded-xs);
+
+  @media screen and (max-width: $md) {
+    border-radius: var(--rounded-xs);
+  }
 
   &[data-selected='true'] {
     background-color: rgba(var(--base-200), 0.8);
