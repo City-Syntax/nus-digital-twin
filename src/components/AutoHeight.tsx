@@ -21,7 +21,7 @@ const AutoHeight = ({ children, ...props }: any) => {
     <AnimateHeight
       {...props}
       height={height}
-      contentClassName="auto-height"
+      contentClassName="auto-height-container"
       contentRef={contentDiv}
       disableDisplayNone
       duration={300}
