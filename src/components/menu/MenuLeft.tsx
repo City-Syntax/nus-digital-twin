@@ -4,6 +4,7 @@ import { useStore } from '@nanostores/react';
 import { searchQuery, buildingId } from '../../store';
 import Icons from '../Icons';
 import buildingsData from '../../content/buildings/buildings.json';
+import CommandMenu from '../CommandMenu';
 
 const MenuLeft = () => {
   const $searchQuery = useStore(searchQuery);
@@ -17,6 +18,7 @@ const MenuLeft = () => {
   return (
     <nav className="menubar-left">
       <div className="menubar-header">
+        <CommandMenu></CommandMenu>
         <div className="search">
           <input
             type="text"
