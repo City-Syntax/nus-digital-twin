@@ -2,7 +2,7 @@ import React from 'react';
 import MenuLink from './MenuLink';
 import { searchQuery, buildingId } from '../../store';
 import buildingsData from '../../content/buildings/buildings.json';
-import CommandMenu from '../CommandMenu';
+import Searchbar from '../Searchbar';
 
 const MenuLeft = () => {
   buildingId.listen((newId) => {
@@ -15,7 +15,7 @@ const MenuLeft = () => {
   return (
     <nav className="menubar-left">
       <div className="menubar-header">
-        <CommandMenu></CommandMenu>
+        <Searchbar />
       </div>
       <div className="menubar-body">
         <div className="menu-list">

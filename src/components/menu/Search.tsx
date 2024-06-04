@@ -1,6 +1,6 @@
 import React from 'react';
 import CloseButton from './CloseButton';
-import CommandMenu from '../CommandMenu';
+import Searchbar from '../Searchbar';
 
 const Search = () => {
   return (
@@ -10,7 +10,7 @@ const Search = () => {
         <CloseButton></CloseButton>
       </div>
       <div className="menubar-content-body">
-        <CommandMenu></CommandMenu>
+        <Searchbar />
       </div>
     </>
   );

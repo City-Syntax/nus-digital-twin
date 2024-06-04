@@ -6,7 +6,7 @@ import { activePage, buildingId, searchQuery } from '../store';
 import { useStore } from '@nanostores/react';
 import Fuse from 'fuse.js';
 
-const CommandMenu = () => {
+const Searchbar = () => {
   const [open, setOpen] = useState(false);
   const $searchQuery = useStore(searchQuery);
 
@@ -85,4 +85,4 @@ const CommandMenu = () => {
   );
 };
 
-export default CommandMenu;
+export default Searchbar;
