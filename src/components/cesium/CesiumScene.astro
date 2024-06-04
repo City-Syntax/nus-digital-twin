@@ -256,9 +256,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     totalTiles = Math.max(totalTiles, queuedTiles);
 
     if (prevTotalTiles == totalTiles) {
+      const currPercent = Number(loadingPercentage.textContent);
       const newPercent = offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent));
-      loadingPercentage.textContent = `${newPercent}`;
-      loadingProgress.style.transform = `translateX(-${100 - newPercent}%)`;
+      if (newPercent > currPercent) {
+        loadingPercentage.textContent = `${newPercent}`;
+        loadingProgress.style.transform = `translateX(-${100 - newPercent}%)`;
+      }
     }
 
     if (viewer.scene.globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
