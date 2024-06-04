@@ -1,7 +1,5 @@
 import React from 'react';
 import MenuLink from './MenuLink';
-import { searchQuery, buildingId } from '../../store';
-import buildingsData from '../../content/buildings/buildings.json';
 import Searchbar from '../Searchbar';
 
 const MenuLeft = () => {
