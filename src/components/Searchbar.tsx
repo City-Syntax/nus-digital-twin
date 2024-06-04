@@ -9,6 +9,12 @@ import Fuse from 'fuse.js';
 const Searchbar = () => {
   const [open, setOpen] = useState(false);
   const $searchQuery = useStore(searchQuery);
+  buildingId.listen((newId) => {
+    if (newId === '') {
+      return;
+    }
+    searchQuery.set(buildingsData.filter((d) => d.elementId == newId)[0].name);
+  });
 
   useEffect(() => {
     const [desktopSearch, mobileSearch] = document.querySelectorAll('input');

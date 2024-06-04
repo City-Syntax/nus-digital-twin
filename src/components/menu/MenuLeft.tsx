@@ -5,13 +5,6 @@ import buildingsData from '../../content/buildings/buildings.json';
 import Searchbar from '../Searchbar';
 
 const MenuLeft = () => {
-  buildingId.listen((newId) => {
-    if (newId === '') {
-      return;
-    }
-    searchQuery.set(buildingsData.filter((d) => d.elementId == newId)[0].name);
-  });
-
   return (
     <nav className="menubar-left">
       <div className="menubar-header">
