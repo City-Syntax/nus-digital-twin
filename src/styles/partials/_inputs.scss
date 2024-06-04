@@ -64,7 +64,7 @@
   overflow: scroll;
 
   &.hide {
-    visibility: hidden;
+    height: 0;
   }
 
   @media screen and (max-width: $md) {
