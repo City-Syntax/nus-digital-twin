@@ -113,7 +113,15 @@
 
   @media screen and (max-width: $md) {
     width: 100%;
-    max-height: 60vh;
+  }
+}
+
+.auto-height-container {
+  display: flex;
+  flex-direction: column;
+
+  > * + * {
+    margin-top: var(--content-gap);
   }
 }
 
@@ -139,6 +147,10 @@
 .menubar-content-body {
   overflow: auto;
   line-height: 1.5rem;
+
+  @media screen and (max-width: $md) {
+    max-height: 50vh;
+  }
 
   h3 {
     margin-bottom: 4px;
