@@ -1,16 +1,15 @@
 /* ==========================================================================
    POPOVER
-   Requires a PopoverContent class on the Popover.Content element.
    ========================================================================== */
 
-.PopoverContent {
+.popover-content {
   transform-origin: var(--radix-popover-content-transform-origin);
 }
 
-.PopoverContent[data-state='open'] {
+.popover-content[data-state='open'] {
   animation: scaleIn 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.PopoverContent[data-state='closed'] {
+.popover-content[data-state='closed'] {
   animation: scaleOut 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
