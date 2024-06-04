@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from './Icons';
@@ -9,6 +9,15 @@ import { useStore } from '@nanostores/react';
 const Searchbar = () => {
   const [open, setOpen] = useState(false);
   const $searchQuery = useStore(searchQuery);
+  const listRef = useRef<HTMLDivElement>(null);
+
+  // https://github.com/pacocoursey/cmdk/issues/234
+  const scrollUpOnChange = useCallback(() => {
+    requestAnimationFrame(() => {
+      listRef!.current!.scrollTo({ top: 0 });
+    });
+  }, []);
+
   buildingId.listen((newId) => {
     if (newId === '') {
       return;
@@ -62,12 +71,15 @@ const Searchbar = () => {
             setOpen(false);
           }}
           value={$searchQuery}
-          onValueChange={(value) => searchQuery.set(value)}
+          onValueChange={(value) => {
+            searchQuery.set(value);
+            scrollUpOnChange();
+          }}
           placeholder="Search buildings"
         ></Command.Input>
         <Icons.Search></Icons.Search>
       </div>
-      <Command.List className={open ? '' : 'hide'}>
+      <Command.List className={open ? '' : 'hide'} ref={listRef}>
         <Command.Empty>No results found.</Command.Empty>
         {buildingsDataToShow.map((building, i) => {
           return (
