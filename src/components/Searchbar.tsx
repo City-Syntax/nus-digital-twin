@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from './Icons';
 import buildingsData from '../content/buildings/buildings.json';
 import { activePage, buildingId, searchQuery } from '../store';
 import { useStore } from '@nanostores/react';
-import Fuse from 'fuse.js';
 
 const Searchbar = () => {
   const [open, setOpen] = useState(false);
@@ -39,15 +39,11 @@ const Searchbar = () => {
     return () => document.removeEventListener('keydown', down);
   }, []);
 
-  const fuse = new Fuse(buildingsData, {
-    keys: ['name'],
-  });
-
   let buildingsDataToShow;
   if ($searchQuery.length === 0) {
     buildingsDataToShow = buildingsData;
   } else {
-    buildingsDataToShow = fuse.search($searchQuery).map((res) => res.item);
+    buildingsDataToShow = fuzzysort.go($searchQuery, buildingsData, { key: 'name' }).map((res) => res.obj);
   }
 
   return (
