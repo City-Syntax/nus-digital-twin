@@ -61,7 +61,7 @@
   transition: 100ms ease;
   transition-property: height;
   height: calc(var(--cmdk-list-height));
-  max-height: 500px;
+  max-height: min(520px, calc(74vh - 78px));
   overflow: scroll;
 }
 
