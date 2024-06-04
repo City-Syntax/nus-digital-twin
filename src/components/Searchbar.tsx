@@ -40,11 +40,13 @@ const Searchbar = () => {
   }, []);
 
   let buildingsDataToShow;
+  const fuzzyResults = fuzzysort.go($searchQuery, buildingsData, { key: 'name' });
   if ($searchQuery.length === 0) {
     buildingsDataToShow = buildingsData;
   } else {
-    buildingsDataToShow = fuzzysort.go($searchQuery, buildingsData, { key: 'name' }).map((res) => res.obj);
+    buildingsDataToShow = fuzzyResults.map((res) => res.obj);
   }
+  const searchResults = fuzzyResults.map((res) => res.highlight((m, i) => <mark key={i}>{m}</mark>));
 
   return (
     <Command shouldFilter={false} label="Search buildings" loop>
@@ -67,7 +69,7 @@ const Searchbar = () => {
       </div>
       <Command.List className={open ? '' : 'hide'}>
         <Command.Empty>No results found.</Command.Empty>
-        {buildingsDataToShow.map((building) => {
+        {buildingsDataToShow.map((building, i) => {
           return (
             <Command.Item
               key={building.elementId}
@@ -78,7 +80,7 @@ const Searchbar = () => {
                 setOpen(false);
               }}
             >
-              {building.name}
+              {searchResults[i] ? searchResults[i] : building.name}
             </Command.Item>
           );
         })}
