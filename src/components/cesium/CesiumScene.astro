@@ -68,6 +68,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   viewer.scene.screenSpaceCameraController.minimumZoomDistance = 100.0;
   viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
 
+  const DEFAULT_TILE_CACHE_SIZE = 100;
+  viewer.scene.globe.preloadSiblings = true;
+  viewer.scene.globe.tileCacheSize = DEFAULT_TILE_CACHE_SIZE * 3;
+
   // Simulate loading percentage until map tiles are requested
   const loadingPercentage = document.querySelector('#loading-percentage')!;
   const loadingProgress = document.getElementById('loading-progress')!;
