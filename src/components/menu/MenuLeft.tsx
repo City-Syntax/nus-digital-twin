@@ -19,16 +19,6 @@ const MenuLeft = () => {
     <nav className="menubar-left">
       <div className="menubar-header">
         <CommandMenu></CommandMenu>
-        <div className="search">
-          <input
-            type="text"
-            placeholder="Search buildings"
-            onChange={(e) => searchQuery.set(e.target.value)}
-            value={$searchQuery}
-            name="search"
-          />
-          <Icons.Search></Icons.Search>
-        </div>
       </div>
       <div className="menubar-body">
         <div className="menu-list">

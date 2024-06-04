@@ -54,6 +54,10 @@
   width: 186px;
   background-color: darkblue;
   z-index: 2;
+
+  &.hide {
+    visibility: hidden;
+  }
 }
 
 .select-trigger {

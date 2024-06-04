@@ -5,6 +5,7 @@ import { searchQuery } from '../store';
 import { useStore } from '@nanostores/react';
 
 const CommandMenu = () => {
+  const [open, setOpen] = useState(false);
   const $searchQuery = useStore(searchQuery);
 
   useEffect(() => {
@@ -25,13 +26,15 @@ const CommandMenu = () => {
     <Command label="Search buildings">
       <div className="search">
         <Command.Input
+          onFocus={() => setOpen(true)}
+          onBlur={() => setOpen(false)}
           value={$searchQuery}
           onValueChange={(value) => searchQuery.set(value)}
           placeholder="Search buildings"
         ></Command.Input>
         <Icons.Search></Icons.Search>
       </div>
-      <Command.List className="CommandList">
+      <Command.List className={`CommandList ${open ? '' : 'hide'}`}>
         <Command.Empty>No results found.</Command.Empty>
 
         {values.map((val) => {
