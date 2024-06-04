@@ -24,7 +24,7 @@
     "astro": "^4.8.5",
     "cesium": "^1.115.0",
     "cmdk": "^1.0.0",
-    "fuse.js": "^7.0.0",
+    "fuzzysort": "^3.0.1",
     "nanostores": "^0.9.5",
     "react": "^18.2.0",
     "react-animate-height": "^3.2.3",

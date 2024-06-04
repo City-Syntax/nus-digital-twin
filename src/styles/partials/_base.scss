@@ -93,6 +93,12 @@ button {
   padding: 0;
 }
 
+mark {
+  font-weight: 700;
+  color: currentColor;
+  background-color: transparent;
+}
+
 @mixin bg-base {
   background-color: rgba(var(--base-100), 0.8);
   backdrop-filter: saturate(140%) blur(4px);
