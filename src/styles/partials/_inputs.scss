@@ -49,6 +49,13 @@
   }
 }
 
+.CommandList {
+  position: absolute;
+  width: 186px;
+  background-color: darkblue;
+  z-index: 2;
+}
+
 .select-trigger {
   @include btn;
   font-size: var(--text-sm);
