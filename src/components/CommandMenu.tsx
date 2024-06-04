@@ -26,23 +26,12 @@ const CommandMenu = () => {
     return () => document.removeEventListener('keydown', down);
   }, []);
 
-  const matchingBuildingsData = buildingsData.filter((building) =>
+  const buildingsDataToShow = buildingsData.filter((building) =>
     building.name.toLowerCase().startsWith($searchQuery.toLowerCase()),
   );
 
   return (
-    <Command
-      shouldFilter={false}
-      label="Search buildings"
-      filter={(_, search, keywords) => {
-        const searchKey = (keywords || []).join('').toLowerCase();
-        if (searchKey.includes(search.toLowerCase())) {
-          return 1;
-        }
-        return 0;
-      }}
-      loop
-    >
+    <Command shouldFilter={false} label="Search buildings" loop>
       <div className="search">
         <Command.Input
           onFocus={() => setOpen(true)}
@@ -62,24 +51,21 @@ const CommandMenu = () => {
       </div>
       <Command.List hidden={!open}>
         <Command.Empty>No results found.</Command.Empty>
-        <Command.Group heading={`Search results (${matchingBuildingsData.length})`}>
-          {matchingBuildingsData.splice(0, 10).map((building) => {
-            return (
-              <Command.Item
-                key={building.elementId}
-                keywords={[building.name]}
-                value={building.elementId}
-                onSelect={() => {
-                  activePage.set('building-info');
-                  buildingId.set(building.elementId);
-                  setOpen(false);
-                }}
-              >
-                {building.name}
-              </Command.Item>
-            );
-          })}
-        </Command.Group>
+        {buildingsDataToShow.map((building) => {
+          return (
+            <Command.Item
+              key={building.elementId}
+              value={building.elementId}
+              onSelect={() => {
+                activePage.set('building-info');
+                buildingId.set(building.elementId);
+                setOpen(false);
+              }}
+            >
+              {building.name}
+            </Command.Item>
+          );
+        })}
       </Command.List>
     </Command>
   );

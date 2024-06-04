@@ -61,6 +61,8 @@
   transition: 100ms ease;
   transition-property: height;
   height: calc(var(--cmdk-list-height));
+  max-height: 500px;
+  overflow: scroll;
 }
 
 [cmdk-item] {
