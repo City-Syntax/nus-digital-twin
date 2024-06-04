@@ -1,32 +1,12 @@
 import React from 'react';
 import MenuLink from './MenuLink';
-import { useStore } from '@nanostores/react';
-import { searchQuery, buildingId } from '../../store';
-import Icons from '../Icons';
-import buildingsData from '../../content/buildings/buildings.json';
+import Searchbar from '../Searchbar';
 
 const MenuLeft = () => {
-  const $searchQuery = useStore(searchQuery);
-  buildingId.listen((newId) => {
-    if (newId === '') {
-      return;
-    }
-    searchQuery.set(buildingsData.filter((d) => d.elementId == newId)[0].name);
-  });
-
   return (
     <nav className="menubar-left">
       <div className="menubar-header">
-        <div className="search">
-          <input
-            type="text"
-            placeholder="Search buildings"
-            onChange={(e) => searchQuery.set(e.target.value)}
-            value={$searchQuery}
-            name="search"
-          />
-          <Icons.Search></Icons.Search>
-        </div>
+        <Searchbar />
       </div>
       <div className="menubar-body">
         <div className="menu-list">
