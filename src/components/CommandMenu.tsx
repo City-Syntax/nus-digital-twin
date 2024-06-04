@@ -4,6 +4,7 @@ import Icons from './Icons';
 import buildingsData from '../content/buildings/buildings.json';
 import { activePage, buildingId, searchQuery } from '../store';
 import { useStore } from '@nanostores/react';
+import Fuse from 'fuse.js';
 
 const CommandMenu = () => {
   const [open, setOpen] = useState(false);
@@ -26,9 +27,16 @@ const CommandMenu = () => {
     return () => document.removeEventListener('keydown', down);
   }, []);
 
-  const buildingsDataToShow = buildingsData.filter((building) =>
-    building.name.toLowerCase().startsWith($searchQuery.toLowerCase()),
-  );
+  const fuse = new Fuse(buildingsData, {
+    keys: ['name'],
+  });
+
+  let buildingsDataToShow;
+  if ($searchQuery.length === 0) {
+    buildingsDataToShow = buildingsData;
+  } else {
+    buildingsDataToShow = fuse.search($searchQuery).map((res) => res.item);
+  }
 
   return (
     <Command shouldFilter={false} label="Search buildings" loop>
