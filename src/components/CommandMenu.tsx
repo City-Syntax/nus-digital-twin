@@ -11,15 +11,21 @@ const CommandMenu = () => {
   const $searchQuery = useStore(searchQuery);
 
   useEffect(() => {
-    const searchInput = document.querySelector('input')!;
+    const [desktopSearch, mobileSearch] = document.querySelectorAll('input');
     const down = (e: KeyboardEvent) => {
-      if (searchInput == document.activeElement && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
+      if (desktopSearch == document.activeElement && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
         setOpen(true);
       }
-
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        searchInput.focus();
+        if (window.innerWidth <= 878) {
+          activePage.set('search');
+          if (mobileSearch) {
+            mobileSearch.focus();
+          }
+        } else {
+          desktopSearch.focus();
+        }
       }
     };
 
