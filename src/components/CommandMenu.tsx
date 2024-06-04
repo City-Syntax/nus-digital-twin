@@ -9,10 +9,15 @@ const CommandMenu = () => {
   const $searchQuery = useStore(searchQuery);
 
   useEffect(() => {
+    const searchInput = document.querySelector('input')!;
     const down = (e: KeyboardEvent) => {
+      if (searchInput == document.activeElement && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
+        setOpen(true);
+      }
+
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        document.querySelector('input')?.focus();
+        searchInput.focus();
       }
     };
 
@@ -27,7 +32,13 @@ const CommandMenu = () => {
       <div className="search">
         <Command.Input
           onFocus={() => setOpen(true)}
-          onBlur={() => setOpen(false)}
+          onBlur={(e) => {
+            const selectedOption = e.relatedTarget?.querySelector(`div[data-selected="true"]`) || null;
+            if (selectedOption) {
+              searchQuery.set(selectedOption.getAttribute('data-value') || '');
+            }
+            setOpen(false);
+          }}
           value={$searchQuery}
           onValueChange={(value) => searchQuery.set(value)}
           placeholder="Search buildings"
@@ -39,7 +50,13 @@ const CommandMenu = () => {
 
         {values.map((val) => {
           return (
-            <Command.Item key={val} onSelect={() => searchQuery.set(val)}>
+            <Command.Item
+              key={val}
+              onSelect={() => {
+                searchQuery.set(val);
+                setOpen(false);
+              }}
+            >
               {val}
             </Command.Item>
           );
