@@ -98,3 +98,8 @@ button {
   backdrop-filter: saturate(150%) blur(4px);
   box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
 }
+
+// Override the margin on inputs caused by Cesium
+input {
+  margin: 0 !important;
+}
