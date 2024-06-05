@@ -9,12 +9,11 @@ interface CategorySelectProps {
 }
 
 const CategorySelect = ({ value, onValueChange }: CategorySelectProps) => {
-  const [width, setWidth] = useState<any>(null);
-  const contentRef = useRef<HTMLButtonElement>(null);
-  const childRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState<number | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const element = childRef.current as HTMLDivElement;
+    const element = ref.current as HTMLDivElement;
 
     const resizeObserver = new ResizeObserver(() => {
       setWidth(element.clientWidth);
@@ -26,8 +25,8 @@ const CategorySelect = ({ value, onValueChange }: CategorySelectProps) => {
   }, []);
   return (
     <Select.Root value={value} onValueChange={onValueChange}>
-      <Select.Trigger className="select-trigger" ref={contentRef} style={{ width: `${width ? `${width}px` : 'auto'}` }}>
-        <div className="select-trigger-content" ref={childRef}>
+      <Select.Trigger className="select-trigger" style={{ width: `${width ? `${width}px` : 'auto'}` }}>
+        <div className="select-trigger-content" ref={ref}>
           <Select.Value />
           <Icons.ChevronDown></Icons.ChevronDown>
         </div>
