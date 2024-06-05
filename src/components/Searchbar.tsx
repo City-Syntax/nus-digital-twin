@@ -40,6 +40,7 @@ const Searchbar = () => {
           }
         } else {
           desktopSearch.focus();
+          setOpen(true);
         }
       }
     };
