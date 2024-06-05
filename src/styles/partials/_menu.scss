@@ -246,6 +246,12 @@
       font-size: var(--text-xs);
       font-weight: 600;
     }
+
+    &.vertical .active-dot {
+      position: absolute;
+      top: 4px;
+      left: 0;
+    }
   }
 
   @media screen and (max-width: $md) {
@@ -270,6 +276,10 @@
   transform: scale(0);
   opacity: 0;
   transition: all 150ms cubic-bezier(0.65, 0, 0.35, 1);
+
+  @media screen and (max-width: $md) {
+    margin-right: 8px;
+  }
 
   @media (prefers-reduced-motion) {
     transform: scale(1);
