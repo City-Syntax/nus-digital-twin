@@ -22,7 +22,7 @@ const Layers = () => {
         </div>
         <div className="menu-list">
           <div className="menu-list-title">Building Scale Models</div>
-          <MenuLink toPage="bim" label="BIM Models" iconName="BIMModels"></MenuLink>
+          <MenuLink toPage="bim" label="BIM Models" iconName="BIMModels" isActive={$activeModel === 'bim'}></MenuLink>
           <MenuLink toPage="rhino-building" label="Rhino (Building)" iconName="RhinoModels"></MenuLink>
         </div>
         <div className="menu-list">
