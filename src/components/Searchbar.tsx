@@ -75,6 +75,7 @@ const Searchbar = () => {
           }}
           value={searchQuery}
           onValueChange={(value) => {
+            setOpen(true);
             setSearchQuery(value);
             scrollUpOnChange();
           }}
