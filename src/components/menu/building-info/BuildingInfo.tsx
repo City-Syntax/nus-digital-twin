@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
 import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS } from './buildingInfoUtils';
-import type { BuildingInfoCategories } from '../menuTypes';
+import type { BuildingInfoCategories } from '../../../types';
 import CategorySelect from './CategorySelect';
 import type { BuildingPropertiesProps } from '../../../content/config';
 import buildingsData from '../../../content/buildings/buildings.json';

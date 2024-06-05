@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as Select from '@radix-ui/react-select';
 import Icons from '../../Icons';
 import { CATEGORY_MAPPINGS } from './buildingInfoUtils';
-import type { BuildingInfoCategories } from '../menuTypes';
+import type { BuildingInfoCategories } from '../../../types';
 
 interface CategorySelectProps {
   value: string;

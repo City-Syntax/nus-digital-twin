@@ -1,5 +1,5 @@
 import { atom } from 'nanostores';
-import type { MenuPages } from './components/menu/menuTypes';
+import type { MenuPages } from './types';
 
 export const activePage = atom<MenuPages>('');
 

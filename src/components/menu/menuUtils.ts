@@ -1,4 +1,4 @@
-import type { MenuPages } from './menuTypes';
+import type { MenuPages } from '../../types';
 
 const LEFT_MENU_PAGES: MenuPages[] = [
   'osm',

@@ -1,5 +1,5 @@
 import type { BuildingPropertiesProps } from '../../../content/config';
-import type { BuildingInfoCategories } from '../menuTypes';
+import type { BuildingInfoCategories } from '../../../types';
 
 export const TITLE_MAPPINGS: BuildingPropertiesProps = {
   name: 'Name',
