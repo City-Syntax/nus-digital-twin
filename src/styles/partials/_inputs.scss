@@ -160,6 +160,10 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   font-size: var(--text-sm);
   transform-origin: var(--radix-select-content-transform-origin);
+
+  @media screen and (max-width: $xs) {
+    width: var(--radix-select-trigger-width);
+  }
 }
 
 .select-content[data-state='open'] {
