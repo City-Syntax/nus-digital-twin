@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MenuLink from './MenuLink';
 import CloseButton from './CloseButton';
+import { activeModel } from '../../store';
+import { useStore } from '@nanostores/react';
 
 const Layers = () => {
+  const $activeModel = useStore(activeModel);
   return (
     <>
       <div className="menubar-content-header">
@@ -24,7 +27,12 @@ const Layers = () => {
         </div>
         <div className="menu-list">
           <div className="menu-list-title">Urban Scale Models</div>
-          <MenuLink toPage="osm" label="OSM Buildings" iconName="OSMBuildings"></MenuLink>
+          <MenuLink
+            toPage="osm"
+            label="OSM Buildings"
+            iconName="OSMBuildings"
+            isActive={$activeModel === 'osm'}
+          ></MenuLink>
           <MenuLink toPage="rhino-urban" label="Rhino (Urban)" iconName="RhinoModels"></MenuLink>
           <MenuLink toPage="ubem" label="UBEM" iconName="UBEM"></MenuLink>
         </div>

@@ -1,7 +1,11 @@
 import React from 'react';
 import MenuLink from './MenuLink';
+import { useStore } from '@nanostores/react';
+import { activeModel, buildingColorSetting } from '../../store';
 
 const MenuRight = () => {
+  const $activeModel = useStore(activeModel);
+  const $buildingColorSetting = useStore(buildingColorSetting);
   return (
     <nav className="menubar-right">
       <div className="menubar-body">
@@ -12,7 +16,12 @@ const MenuRight = () => {
           <MenuLink toPage="thermal-comfort" label="Thermal Comfort" iconName="ThermalComfort"></MenuLink>
           <MenuLink toPage="wind" label="Wind" iconName="Wind"></MenuLink>
           <MenuLink toPage="solar" label="Solar" iconName="Solar"></MenuLink>
-          <MenuLink toPage="distance" label="Distance" iconName="Distance"></MenuLink>
+          <MenuLink
+            toPage="distance"
+            label="Distance"
+            iconName="Distance"
+            isActive={$buildingColorSetting === 'distance' && $activeModel === 'osm'}
+          ></MenuLink>
         </div>
       </div>
     </nav>

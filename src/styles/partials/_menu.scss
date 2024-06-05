@@ -77,7 +77,7 @@
 
 .menubar-right {
   @include menu-x-base;
-  width: 188px;
+  width: 192px;
 }
 
 .menubar-bottom {
@@ -259,6 +259,14 @@
       padding-right: 0;
     }
   }
+}
+
+.active-dot {
+  margin-left: auto;
+  border-radius: var(--rounded-base);
+  height: 0.5rem;
+  width: 0.5rem;
+  background-color: #16a34a;
 }
 
 .menu-bottom-enter {

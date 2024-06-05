@@ -1,8 +1,11 @@
 import React from 'react';
 import MenuLink from './MenuLink';
 import Searchbar from '../Searchbar';
+import { useStore } from '@nanostores/react';
+import { activeModel } from '../../store';
 
 const MenuLeft = () => {
+  const $activeModel = useStore(activeModel);
   return (
     <nav className="menubar-left">
       <div className="menubar-header">
@@ -27,7 +30,12 @@ const MenuLeft = () => {
         </div>
         <div className="menu-list">
           <div className="menu-list-title">Urban Scale Models</div>
-          <MenuLink toPage="osm" label="OSM Buildings" iconName="OSMBuildings"></MenuLink>
+          <MenuLink
+            toPage="osm"
+            label="OSM Buildings"
+            iconName="OSMBuildings"
+            isActive={$activeModel === 'osm'}
+          ></MenuLink>
           <MenuLink toPage="rhino-urban" label="Rhino (Urban)" iconName="RhinoModels"></MenuLink>
           <MenuLink toPage="ubem" label="UBEM" iconName="UBEM"></MenuLink>
         </div>
