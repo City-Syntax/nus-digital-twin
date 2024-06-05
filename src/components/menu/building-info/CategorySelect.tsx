@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as Select from '@radix-ui/react-select';
 import Icons from '../../Icons';
 import { CATEGORY_MAPPINGS, type Categories } from './buildingInfoUtils';
@@ -9,11 +9,27 @@ interface CategorySelectProps {
 }
 
 const CategorySelect = ({ value, onValueChange }: CategorySelectProps) => {
+  const [width, setWidth] = useState<number | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = ref.current as HTMLDivElement;
+
+    const resizeObserver = new ResizeObserver(() => {
+      setWidth(element.clientWidth);
+    });
+
+    resizeObserver.observe(element);
+
+    return () => resizeObserver.disconnect();
+  }, []);
   return (
     <Select.Root value={value} onValueChange={onValueChange}>
-      <Select.Trigger className="select-trigger">
-        <Select.Value />
-        <Icons.ChevronDown></Icons.ChevronDown>
+      <Select.Trigger className="select-trigger" style={{ width: `${width ? `${width}px` : 'auto'}` }}>
+        <div className="select-trigger-content" ref={ref}>
+          <Select.Value />
+          <Icons.ChevronDown></Icons.ChevronDown>
+        </div>
       </Select.Trigger>
       <Select.Portal>
         <Select.Content className="select-content" position="popper">
