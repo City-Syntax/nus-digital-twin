@@ -1,11 +1,11 @@
 import { atom } from 'nanostores';
-import type { MenuPages } from './types';
+import type { MenuPages, Models } from './types';
 
 export const activePage = atom<MenuPages>('');
 
 export const activeMapLayer = atom('');
 
-export const activeModel = atom<'' | 'osm' | 'bim'>('osm');
+export const activeModel = atom<Models | ''>('osm');
 export const buildingColorSetting = atom<'' | 'distance'>('');
 
 export const buildingId = atom('');

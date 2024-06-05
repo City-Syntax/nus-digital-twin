@@ -1,3 +1,5 @@
+export type Models = 'bim' | 'osm';
+
 export type MenuPages =
   | 'osm'
   | 'about'
