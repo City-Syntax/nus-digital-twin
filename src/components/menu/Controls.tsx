@@ -1,8 +1,12 @@
 import React from 'react';
+import { useStore } from '@nanostores/react';
 import MenuLink from './MenuLink';
 import CloseButton from './CloseButton';
+import { activeModel, buildingColorSetting } from '../../store';
 
 const Controls = () => {
+  const $activeModel = useStore(activeModel);
+  const $buildingColorSetting = useStore(buildingColorSetting);
   return (
     <>
       <div className="menubar-content-header">
@@ -16,7 +20,12 @@ const Controls = () => {
           <MenuLink toPage="thermal-comfort" label="Thermal Comfort" iconName="ThermalComfort"></MenuLink>
           <MenuLink toPage="wind" label="Wind" iconName="Wind"></MenuLink>
           <MenuLink toPage="solar" label="Solar" iconName="Solar"></MenuLink>
-          <MenuLink toPage="distance" label="Distance" iconName="Distance"></MenuLink>
+          <MenuLink
+            toPage="distance"
+            label="Distance"
+            iconName="Distance"
+            isActive={$buildingColorSetting === 'distance' && $activeModel === 'osm'}
+          ></MenuLink>
         </div>
       </div>
     </>

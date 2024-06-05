@@ -6,8 +6,8 @@ export const searchQuery = atom('');
 
 export const activeMapLayer = atom('');
 
-export const activeModel = atom('osm');
-export const buildingColorSetting = atom('');
+export const activeModel = atom<'' | 'osm' | 'bim'>('osm');
+export const buildingColorSetting = atom<'' | 'distance'>('');
 
 export const buildingId = atom('');
 export const isSelectColorByDistance = atom(false);

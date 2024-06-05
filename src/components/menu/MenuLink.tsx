@@ -9,9 +9,10 @@ interface MenuLinkProps {
   toPage: MenuPages;
   iconName: keyof typeof Icons;
   isVertical?: boolean;
+  isActive?: boolean;
 }
 
-const MenuLink = ({ label, toPage, iconName, isVertical }: MenuLinkProps) => {
+const MenuLink = ({ label, toPage, iconName, isVertical, isActive }: MenuLinkProps) => {
   const $activePage = useStore(activePage);
   return (
     <button
@@ -26,6 +27,7 @@ const MenuLink = ({ label, toPage, iconName, isVertical }: MenuLinkProps) => {
     >
       {Icons[iconName]()}
       <span>{label}</span>
+      <span className={`active-dot ${isActive ? 'show' : ''}`}></span>
     </button>
   );
 };
