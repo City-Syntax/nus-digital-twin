@@ -138,6 +138,10 @@
       text-wrap: wrap;
     }
 
+    > span:first-child {
+      text-align: left;
+    }
+
     > svg {
       height: 16px;
       width: 16px;
