@@ -116,6 +116,10 @@
   overflow: clip;
   height: max-content;
 
+  @media (prefers-reduced-motion) {
+    transition: box-shadow 100ms;
+  }
+
   @media screen and (max-width: $xs) {
     min-width: 100%;
     max-width: 100%;
