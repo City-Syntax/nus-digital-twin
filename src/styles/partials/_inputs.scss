@@ -126,20 +126,17 @@
     box-shadow: inset 0 0 0 2px rgba(var(--primary-300));
   }
 
-  div {
+  .select-trigger-content {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
     text-wrap: nowrap;
+    text-align: left;
     padding: var(--padding-xs) var(--padding-xs) var(--padding-xs) var(--padding-sm);
 
     @media screen and (max-width: $xs) {
       width: 100%;
       text-wrap: wrap;
-    }
-
-    > span:first-child {
-      text-align: left;
     }
 
     > svg {
