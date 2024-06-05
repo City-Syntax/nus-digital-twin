@@ -1,29 +1,4 @@
-export type MenuPages =
-  | 'osm'
-  | 'about'
-  | 'help'
-  | 'settings'
-  | 'street-centerlines'
-  | 'building-footprints'
-  | 'green-spaces'
-  | 'water-bodies'
-  | 'osm'
-  | 'rhino-building'
-  | 'rhino-urban'
-  | 'ubem'
-  | 'bim'
-  | 'buildings'
-  | 'energy'
-  | 'thermal-comfort'
-  | 'wind'
-  | 'solar'
-  | 'distance'
-  | 'building-info'
-  | 'search'
-  | 'controls'
-  | 'layers'
-  | 'menu'
-  | '';
+import type { MenuPages } from '../../types';
 
 const LEFT_MENU_PAGES: MenuPages[] = [
   'osm',

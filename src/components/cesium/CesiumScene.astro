@@ -35,6 +35,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ImageryLayer,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
+  import type { MapLayers } from '../../types';
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
@@ -68,9 +69,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   viewer.scene.screenSpaceCameraController.minimumZoomDistance = 100.0;
   viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
 
+  // Increase the tileCacheSize
   const DEFAULT_TILE_CACHE_SIZE = 100;
-  viewer.scene.globe.preloadSiblings = true;
-  viewer.scene.globe.tileCacheSize = DEFAULT_TILE_CACHE_SIZE * 3;
+  viewer.scene.globe.tileCacheSize = DEFAULT_TILE_CACHE_SIZE * 5;
 
   // Simulate loading percentage until map tiles are requested
   const loadingPercentage = document.querySelector('#loading-percentage')!;
@@ -103,14 +104,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   // The displayed map layer is the last layer
-  let mapLayerOrder = ['satellite', 'dark', 'street'];
+  let mapLayerOrder: MapLayers[] = ['satellite', 'dark', 'street'];
   const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
   if (showMapbox) {
     viewer.imageryLayers.removeAll();
     viewer.imageryLayers.addImageryProvider(mapboxStreet);
     viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
     viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
-    activeMapLayer.set(mapLayerOrder[mapLayerOrder.length - 1]);
   } else {
     document.getElementById('loading-modal')?.remove();
   }
@@ -265,6 +265,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     if (viewer.scene.globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
+      // Preload siblings only after first load
+      viewer.scene.globe.preloadSiblings = true;
+
       // Outer timeout is required for the translate animation to complete
       setTimeout(() => {
         document.getElementById('loading-modal')?.classList.add('close');

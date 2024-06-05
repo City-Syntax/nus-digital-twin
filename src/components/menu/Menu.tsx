@@ -55,7 +55,7 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={MENU_PAGES.LEFT.includes($activePage)}
+          in={$activePage !== '' && MENU_PAGES.LEFT.includes($activePage)}
           timeout={150}
           classNames="menu-left"
         >
@@ -80,7 +80,7 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={MENU_PAGES.RIGHT.includes($activePage)}
+          in={$activePage !== '' && MENU_PAGES.RIGHT.includes($activePage)}
           timeout={150}
           classNames="menu-right"
         >
@@ -99,7 +99,7 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={MENU_PAGES.BOTTOM.includes($activePage)}
+          in={$activePage !== '' && MENU_PAGES.BOTTOM.includes($activePage)}
           timeout={200}
           classNames="menu-bottom"
         >

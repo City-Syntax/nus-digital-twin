@@ -1,13 +1,5 @@
 import type { BuildingPropertiesProps } from '../../../content/config';
-
-export type Categories =
-  | 'general'
-  | 'partitions'
-  | 'fenestration'
-  | 'hvac'
-  | 'density-and-power'
-  | 'schedules'
-  | 'others';
+import type { BuildingInfoCategories } from '../../../types';
 
 export const TITLE_MAPPINGS: BuildingPropertiesProps = {
   name: 'Name',
@@ -48,7 +40,7 @@ export const TITLE_MAPPINGS: BuildingPropertiesProps = {
   economizerCycle: 'Economizer Cycle',
 };
 
-export const CATEGORY_MAPPINGS: { [key in Categories]: string } = {
+export const CATEGORY_MAPPINGS: { [key in BuildingInfoCategories]: string } = {
   general: 'General',
   partitions: 'Structural, Enclosure and Internal Partitions',
   fenestration: 'Fenestration',
@@ -58,7 +50,7 @@ export const CATEGORY_MAPPINGS: { [key in Categories]: string } = {
   others: 'Others',
 };
 
-export const SECTIONS_TO_DISPLAY: { [key in Categories]: Array<keyof BuildingPropertiesProps> } = {
+export const SECTIONS_TO_DISPLAY: { [key in BuildingInfoCategories]: Array<keyof BuildingPropertiesProps> } = {
   general: ['address', 'postal'],
   partitions: [
     'floorToFloorHeight',
