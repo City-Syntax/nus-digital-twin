@@ -267,6 +267,12 @@
   height: 0.5rem;
   width: 0.5rem;
   background-color: rgba(var(--green));
+  opacity: 0;
+  transition: opacity 100ms;
+
+  &.show {
+    opacity: 1;
+  }
 }
 
 .menu-bottom-enter {
