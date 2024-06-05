@@ -27,7 +27,7 @@ const MenuLink = ({ label, toPage, iconName, isVertical, isActive }: MenuLinkPro
     >
       {Icons[iconName]()}
       <span>{label}</span>
-      <span className={`active-dot ${isActive ? 'show' : ''}`}></span>
+      <span className={`active-indicator ${isActive ? 'show' : ''}`}></span>
     </button>
   );
 };

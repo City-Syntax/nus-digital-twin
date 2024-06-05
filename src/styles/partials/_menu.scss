@@ -247,7 +247,7 @@
       font-weight: 600;
     }
 
-    &.vertical .active-dot {
+    &.vertical .active-indicator {
       position: absolute;
       top: 4px;
       left: 0;
@@ -267,7 +267,7 @@
   }
 }
 
-.active-dot {
+.active-indicator {
   margin-left: auto;
   border-radius: var(--rounded-base);
   height: 0.5rem;
