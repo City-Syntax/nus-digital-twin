@@ -9,12 +9,12 @@ interface CategorySelectProps {
 }
 
 const CategorySelect = ({ value, onValueChange }: CategorySelectProps) => {
-  const [width, setWidth] = useState<any>('0');
-  const contentRef = useRef<HTMLDivElement>(null);
-  const childRef = useRef<HTMLButtonElement>(null);
+  const [width, setWidth] = useState<any>(null);
+  const contentRef = useRef<HTMLButtonElement>(null);
+  const childRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const element = childRef.current as HTMLButtonElement;
+    const element = childRef.current as HTMLDivElement;
 
     const resizeObserver = new ResizeObserver(() => {
       setWidth(element.clientWidth);
@@ -26,16 +26,12 @@ const CategorySelect = ({ value, onValueChange }: CategorySelectProps) => {
   }, []);
   return (
     <Select.Root value={value} onValueChange={onValueChange}>
-      <div
-        className="select-trigger-wrapper"
-        ref={contentRef}
-        style={{ width: `${width}px`, transition: 'width 0.25s', overflow: 'clip' }}
-      >
-        <Select.Trigger className="select-trigger" ref={childRef} style={{ width: `max-content` }}>
+      <Select.Trigger className="select-trigger" ref={contentRef} style={{ width: `${width ? `${width}px` : 'auto'}` }}>
+        <div ref={childRef}>
           <Select.Value />
           <Icons.ChevronDown></Icons.ChevronDown>
-        </Select.Trigger>
-      </div>
+        </div>
+      </Select.Trigger>
       <Select.Portal>
         <Select.Content className="select-content" position="popper">
           <Select.Viewport>
