@@ -3,12 +3,11 @@ import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from './Icons';
 import buildingsData from '../content/buildings/buildings.json';
-import { activePage, buildingId, searchQuery } from '../store';
-import { useStore } from '@nanostores/react';
+import { activePage, buildingId } from '../store';
 
 const Searchbar = () => {
   const [open, setOpen] = useState(false);
-  const $searchQuery = useStore(searchQuery);
+  const [searchQuery, setSearchQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
 
   // https://github.com/pacocoursey/cmdk/issues/234
@@ -20,10 +19,10 @@ const Searchbar = () => {
 
   buildingId.listen((newId) => {
     if (newId === '') {
-      searchQuery.set('');
+      setSearchQuery('');
       return;
     }
-    searchQuery.set(buildingsData.filter((d) => d.elementId == newId)[0].name);
+    setSearchQuery(buildingsData.filter((d) => d.elementId == newId)[0].name);
   });
 
   useEffect(() => {
@@ -51,8 +50,8 @@ const Searchbar = () => {
   }, []);
 
   let buildingsDataToShow;
-  const fuzzyResults = fuzzysort.go($searchQuery, buildingsData, { key: 'name' });
-  if ($searchQuery.length === 0) {
+  const fuzzyResults = fuzzysort.go(searchQuery, buildingsData, { key: 'name' });
+  if (searchQuery === '') {
     buildingsDataToShow = buildingsData;
   } else {
     buildingsDataToShow = fuzzyResults.map((res) => res.obj);
@@ -74,9 +73,9 @@ const Searchbar = () => {
             }
             setOpen(false);
           }}
-          value={$searchQuery}
+          value={searchQuery}
           onValueChange={(value) => {
-            searchQuery.set(value);
+            setSearchQuery(value);
             scrollUpOnChange();
           }}
           placeholder="Search buildings"
