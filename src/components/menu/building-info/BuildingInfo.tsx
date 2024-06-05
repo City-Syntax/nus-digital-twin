@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
-import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, type Categories, CATEGORY_MAPPINGS } from './buildingInfoUtils';
+import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS } from './buildingInfoUtils';
+import type { BuildingInfoCategories } from '../menuTypes';
 import CategorySelect from './CategorySelect';
 import type { BuildingPropertiesProps } from '../../../content/config';
 import buildingsData from '../../../content/buildings/buildings.json';
 import CloseButton from '../CloseButton';
 
 const BuildingInfo = () => {
-  const [category, setCategory] = useState<Categories>('general');
+  const [category, setCategory] = useState<BuildingInfoCategories>('general');
   const $buildingId = useStore(buildingId);
   const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
   const propertiesToDisplay = Object.entries(buildingProperties).filter((data) =>
@@ -23,7 +24,10 @@ const BuildingInfo = () => {
         <CloseButton></CloseButton>
       </div>
       <div className="menubar-content-body">
-        <CategorySelect value={category} onValueChange={(value: Categories) => setCategory(value)}></CategorySelect>
+        <CategorySelect
+          value={category}
+          onValueChange={(value: BuildingInfoCategories) => setCategory(value)}
+        ></CategorySelect>
         {propertiesToDisplay.length < 1 && <p>No information under '{CATEGORY_MAPPINGS[category]}' yet.</p>}
         {propertiesToDisplay.map((data) => {
           const title = data[0] as keyof BuildingPropertiesProps;

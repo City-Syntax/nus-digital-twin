@@ -24,3 +24,12 @@ export type MenuPages =
   | 'layers'
   | 'menu'
   | '';
+
+export type BuildingInfoCategories =
+  | 'general'
+  | 'partitions'
+  | 'fenestration'
+  | 'hvac'
+  | 'density-and-power'
+  | 'schedules'
+  | 'others';

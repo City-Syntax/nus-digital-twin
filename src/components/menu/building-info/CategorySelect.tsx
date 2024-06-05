@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as Select from '@radix-ui/react-select';
 import Icons from '../../Icons';
-import { CATEGORY_MAPPINGS, type Categories } from './buildingInfoUtils';
+import { CATEGORY_MAPPINGS } from './buildingInfoUtils';
+import type { BuildingInfoCategories } from '../menuTypes';
 
 interface CategorySelectProps {
   value: string;
-  onValueChange: (val: Categories) => void;
+  onValueChange: (val: BuildingInfoCategories) => void;
 }
 
 const CategorySelect = ({ value, onValueChange }: CategorySelectProps) => {
