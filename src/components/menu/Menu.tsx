@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
-import { activePage, buildingId, isSelectColorByDistance, searchQuery } from '../../store';
+import { activePage, buildingId, isSelectColorByDistance } from '../../store';
 import AboutNUSCampus from './AboutNUSCampus';
 import StreetCenterlines from './StreetCenterlines';
 import BuildingFootprints from './BuildingFootprints';
@@ -39,7 +39,6 @@ const Menu = () => {
       if (e.key === 'Escape' && activePage.get() !== '') {
         e.preventDefault();
         activePage.set('');
-        searchQuery.set('');
         buildingId.set('');
         isSelectColorByDistance.set(false);
       }

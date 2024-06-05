@@ -20,6 +20,7 @@ const Searchbar = () => {
 
   buildingId.listen((newId) => {
     if (newId === '') {
+      searchQuery.set('');
       return;
     }
     searchQuery.set(buildingsData.filter((d) => d.elementId == newId)[0].name);
@@ -68,6 +69,7 @@ const Searchbar = () => {
             const selectedOption = e.relatedTarget?.querySelector(`div[data-selected="true"]`) || null;
             if (selectedOption) {
               activePage.set('building-info');
+              buildingId.set(''); // Force the listener on buildingId to trigger
               buildingId.set(selectedOption.getAttribute('data-value') || '');
             }
             setOpen(false);
@@ -90,6 +92,7 @@ const Searchbar = () => {
               value={building.elementId}
               onSelect={() => {
                 activePage.set('building-info');
+                buildingId.set(''); // Force the listener on buildingId to trigger
                 buildingId.set(building.elementId);
                 setOpen(false);
               }}

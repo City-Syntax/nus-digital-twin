@@ -1,6 +1,6 @@
 import React from 'react';
 import Icons from '../Icons';
-import { activePage, buildingId, isSelectColorByDistance, searchQuery } from '../../store';
+import { activePage, buildingId, isSelectColorByDistance } from '../../store';
 import { useStore } from '@nanostores/react';
 import type { MenuPages } from './menuUtils';
 
@@ -20,7 +20,6 @@ const MenuLink = ({ label, toPage, iconName, isVertical, isActive }: MenuLinkPro
       type="button"
       onClick={() => {
         activePage.set(toPage);
-        searchQuery.set('');
         buildingId.set('');
         isSelectColorByDistance.set(false);
       }}

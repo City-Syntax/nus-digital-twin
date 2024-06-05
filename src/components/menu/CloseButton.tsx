@@ -1,6 +1,6 @@
 import React from 'react';
 import Icons from '../Icons';
-import { activePage, isSelectColorByDistance, searchQuery, buildingId } from '../../store';
+import { activePage, isSelectColorByDistance, buildingId } from '../../store';
 
 const CloseButton = () => {
   return (
@@ -8,7 +8,6 @@ const CloseButton = () => {
       type="button"
       onClick={() => {
         activePage.set('');
-        searchQuery.set('');
         buildingId.set('');
         isSelectColorByDistance.set(false);
       }}
