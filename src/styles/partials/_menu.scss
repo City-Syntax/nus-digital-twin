@@ -268,10 +268,11 @@
   width: 0.5rem;
   background-color: rgba(var(--green));
   opacity: 0;
-  transition: opacity 100ms;
+  transition: opacity 150ms;
 
   &.show {
     opacity: 1;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) 1;
   }
 }
 
