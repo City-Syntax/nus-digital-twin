@@ -135,13 +135,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  text-wrap: nowrap;
+  min-width: max-content;
   text-align: left;
   padding: var(--padding-xs) var(--padding-xs) var(--padding-xs) var(--padding-sm);
 
   @media screen and (max-width: $xs) {
+    min-width: 0;
     width: 100%;
-    text-wrap: wrap;
+  }
+
+  > * + * {
+    flex-shrink: 0;
   }
 
   > svg {
