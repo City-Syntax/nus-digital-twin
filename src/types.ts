@@ -24,8 +24,7 @@ export type MenuPages =
   | 'search'
   | 'controls'
   | 'layers'
-  | 'menu'
-  | '';
+  | 'menu';
 
 export type BuildingInfoCategories =
   | 'general'

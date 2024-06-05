@@ -1,7 +1,7 @@
 import { atom } from 'nanostores';
 import type { MenuPages, Models } from './types';
 
-export const activePage = atom<MenuPages>('');
+export const activePage = atom<MenuPages | ''>('');
 
 export const activeMapLayer = atom('');
 
