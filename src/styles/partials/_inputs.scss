@@ -102,6 +102,11 @@
   padding: var(--padding-xs);
 }
 
+.select-trigger-wrapper {
+  box-shadow: inset 0 0 0 1px rgba(var(--base-300));
+  border-radius: var(--rounded-xs);
+}
+
 .select-trigger {
   @include btn;
   font-size: var(--text-sm);
@@ -111,14 +116,12 @@
   display: inline-flex;
   justify-content: space-between;
   height: auto;
-  box-shadow: inset 0 0 0 1px rgba(var(--base-300));
-  border-radius: var(--rounded-xs);
   padding: var(--padding-xs) var(--padding-xs) var(--padding-xs) var(--padding-sm);
-  transition: box-shadow 100ms;
+  transition: all 200ms;
 
   &:focus,
   &:hover {
-    box-shadow: inset 0 0 0 2px rgba(var(--primary-300));
+    // box-shadow: inset 0 0 0 2px rgba(var(--primary-300));
   }
 
   > svg {
