@@ -62,6 +62,7 @@ const Searchbar = () => {
       <div className="search">
         <Command.Input
           onFocus={() => setOpen(true)}
+          onClick={() => setOpen(true)}
           onBlur={(e) => {
             const selectedOption = e.relatedTarget?.querySelector(`div[data-selected="true"]`) || null;
             if (selectedOption) {
