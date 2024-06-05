@@ -2,7 +2,7 @@ import React from 'react';
 import Icons from '../Icons';
 import { activePage, buildingId, isSelectColorByDistance } from '../../store';
 import { useStore } from '@nanostores/react';
-import type { MenuPages } from './menuUtils';
+import type { MenuPages } from './menuTypes';
 
 interface MenuLinkProps {
   label: string;
