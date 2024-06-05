@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, type ReactNode } from 'react';
 import AnimateHeight, { type Height } from 'react-animate-height';
 
-const AutoHeight = ({ children, ...props }: any) => {
+const AutoHeight = ({ children, ...props }: { children: ReactNode }) => {
   const [height, setHeight] = useState<Height>('auto');
   const contentDiv = useRef<HTMLDivElement | null>(null);
 
