@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MenuLink from './MenuLink';
 import CloseButton from './CloseButton';
 import { activeModel } from '../../store';
