@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
-import { activePage } from '../../store';
+import { activePage, buildingId, isSelectColorByDistance, searchQuery } from '../../store';
 import AboutNUSCampus from './AboutNUSCampus';
 import StreetCenterlines from './StreetCenterlines';
 import BuildingFootprints from './BuildingFootprints';
@@ -33,6 +33,21 @@ import AutoHeight from '../AutoHeight';
 
 const Menu = () => {
   const $activePage = useStore(activePage);
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && activePage.get() !== '') {
+        e.preventDefault();
+        activePage.set('');
+        searchQuery.set('');
+        buildingId.set('');
+        isSelectColorByDistance.set(false);
+      }
+    };
+
+    document.addEventListener('keydown', down);
+    return () => document.removeEventListener('keydown', down);
+  }, []);
 
   return (
     <div>
