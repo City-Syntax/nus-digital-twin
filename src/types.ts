@@ -34,3 +34,5 @@ export type BuildingInfoCategories =
   | 'density-and-power'
   | 'schedules'
   | 'others';
+
+export type MapLayers = 'satellite' | 'dark' | 'street';

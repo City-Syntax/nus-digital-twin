@@ -35,6 +35,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ImageryLayer,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
+  import type { MapLayers } from '../../types';
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
@@ -103,14 +104,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   // The displayed map layer is the last layer
-  let mapLayerOrder = ['satellite', 'dark', 'street'];
+  let mapLayerOrder: MapLayers[] = ['satellite', 'dark', 'street'];
   const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
   if (showMapbox) {
     viewer.imageryLayers.removeAll();
     viewer.imageryLayers.addImageryProvider(mapboxStreet);
     viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
     viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
-    activeMapLayer.set(mapLayerOrder[mapLayerOrder.length - 1]);
   } else {
     document.getElementById('loading-modal')?.remove();
   }
