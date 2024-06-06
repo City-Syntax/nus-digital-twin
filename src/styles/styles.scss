@@ -14,22 +14,22 @@
 #scale-box {
   @include bg-base;
   position: absolute;
-  width: 100%;
   bottom: 0;
   left: 0;
   font-size: var(--text-xs);
   padding: 0 12px;
-  height: 28px;
+  width: 100%;
+  height: var(--bottom-bar-height);
   display: flex;
+  gap: 8px;
   align-items: center;
   justify-content: flex-end;
-  gap: 8px;
 }
 
 #scale-bar {
-  transition: width 100ms;
-  height: 6px;
+  height: 8px;
   width: 0;
   border: 1px solid white;
   border-top: none;
+  transition: width 100ms;
 }
