@@ -10,3 +10,24 @@
 @import 'src/styles/partials/tooltip';
 @import 'src/styles/partials/loading-modal';
 @import 'src/styles/partials/alert';
+
+#scale-box {
+  position: absolute;
+  width: 100%;
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  font-size: var(--text-xs);
+  padding: 4px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#scale-bar {
+  transition: width 100ms;
+  height: 12px;
+  width: 0;
+  border: 1px solid white;
+  border-top: none;
+}
