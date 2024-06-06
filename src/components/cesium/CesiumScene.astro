@@ -76,7 +76,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   // Increase the tileCacheSize
   const DEFAULT_TILE_CACHE_SIZE = 100;
-  globe.tileCacheSize = DEFAULT_TILE_CACHE_SIZE * 10;
+  globe.tileCacheSize = DEFAULT_TILE_CACHE_SIZE * 8;
 
   // Simulate loading percentage until map tiles are requested
   const loadingPercentage = document.querySelector('#loading-percentage')!;
@@ -290,10 +290,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const geodesic = new EllipsoidGeodesic();
   const distances = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 500, 1000];
-
   const width = viewer.scene.canvas.clientWidth;
   const height = viewer.scene.canvas.clientHeight;
-
+  const scaleLabel = document.getElementById('scale-label')!;
+  const scaleBar = document.getElementById('scale-bar')!;
   function updateDistanceScale() {
     const left = viewer.scene.camera.getPickRay(new Cartesian2((width / 2) | 0, height - 1));
     const right = viewer.scene.camera.getPickRay(new Cartesian2((1 + width / 2) | 0, height - 1));
@@ -332,8 +332,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
 
       const barWidth = distance / pixelDistance;
-      const scaleLabel = document.getElementById('scale-label')!;
-      const scaleBar = document.getElementById('scale-bar')!;
       scaleBar.style.width = barWidth + 'px';
       scaleLabel.textContent = label;
     }
