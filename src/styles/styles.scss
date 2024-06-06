@@ -12,21 +12,23 @@
 @import 'src/styles/partials/alert';
 
 #scale-box {
+  @include bg-base;
   position: absolute;
   width: 100%;
-  background-color: black;
   bottom: 0;
   left: 0;
   font-size: var(--text-xs);
-  padding: 4px 12px;
+  padding: 0 12px;
+  height: 28px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 8px;
 }
 
 #scale-bar {
   transition: width 100ms;
-  height: 12px;
+  height: 6px;
   width: 0;
   border: 1px solid white;
   border-top: none;

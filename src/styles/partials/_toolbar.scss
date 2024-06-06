@@ -7,7 +7,7 @@
   margin: 0 auto;
   left: var(--container-x-offset);
   right: var(--container-x-offset);
-  bottom: 8px;
+  bottom: calc(8px + 28px);
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;

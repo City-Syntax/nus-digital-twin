@@ -20,12 +20,19 @@ div.cesium-timeline-bar {
 }
 
 div.cesium-viewer-toolbar {
-  top: 32px;
+  bottom: 1px;
+  left: 8px;
+  top: unset;
 }
 
 div.cesium-viewer-bottom {
-  top: 32px;
-  bottom: unset !important;
+  bottom: 1px !important;
+  left: 8px !important;
+  z-index: 1;
+
+  img {
+    width: 100px;
+  }
 }
 
 .cesium-viewer div.cesium-widget-credits {
