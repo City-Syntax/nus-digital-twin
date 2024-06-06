@@ -46,6 +46,10 @@
   align-items: center;
   gap: 6px;
 
+  @media (prefers-reduced-motion) {
+    transition: opacity 150ms;
+  }
+
   > svg {
     height: 16px;
     width: 16px;
