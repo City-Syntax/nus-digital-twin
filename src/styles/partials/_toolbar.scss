@@ -40,7 +40,7 @@
     padding-right: var(--padding-xs);
     left: 0;
     right: 0;
-    bottom: 72px;
+    bottom: calc(72px + var(--bottom-bar-height));
   }
 }
 
