@@ -331,12 +331,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
 
       const barWidth = distance / pixelDistance;
+      const scaleLabel = document.getElementById('scale-label')!;
+      const scaleBar = document.getElementById('scale-bar')!;
+      scaleBar.style.width = barWidth + 'px';
+      scaleLabel.textContent = label;
       console.log(label);
       console.log(barWidth);
     }
   }
 
-  updateDistanceScale();
+  // TODO: Put this within the loading
+  setTimeout(() => updateDistanceScale(), 100);
   viewer.camera.moveEnd.addEventListener(function () {
     updateDistanceScale();
   });
@@ -354,3 +359,22 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     </div>
   </div>
 </div>
+<div id="scale-box">
+  <div id="scale-label">50 m</div>
+  <div id="scale-bar"></div>
+</div>
+<style>
+  #scale-box {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+  }
+
+  #scale-bar {
+    transition: width 100ms;
+    height: 12px;
+    width: 0;
+    border: 1px solid white;
+    border-top: none;
+  }
+</style>
