@@ -271,6 +271,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       // Preload siblings only after first load
       viewer.scene.globe.preloadSiblings = true;
 
+      updateDistanceScale();
+
       // Outer timeout is required for the translate animation to complete
       setTimeout(() => {
         document.getElementById('loading-modal')?.classList.add('close');
@@ -308,8 +310,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     const leftCartographic = globe.ellipsoid.cartesianToCartographic(leftPosition);
     const rightCartographic = globe.ellipsoid.cartesianToCartographic(rightPosition);
-    console.log(leftCartographic);
-    console.log(rightCartographic);
 
     geodesic.setEndPoints(leftCartographic, rightCartographic);
     const pixelDistance = geodesic.surfaceDistance;
@@ -335,13 +335,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       const scaleBar = document.getElementById('scale-bar')!;
       scaleBar.style.width = barWidth + 'px';
       scaleLabel.textContent = label;
-      console.log(label);
-      console.log(barWidth);
     }
   }
 
-  // TODO: Put this within the loading
-  setTimeout(() => updateDistanceScale(), 100);
   viewer.camera.moveEnd.addEventListener(function () {
     updateDistanceScale();
   });
@@ -366,8 +362,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 <style>
   #scale-box {
     position: absolute;
-    bottom: 8px;
-    left: 8px;
+    width: 100%;
+    background-color: black;
+    bottom: 0;
+    left: 0;
+    font-size: var(--text-xs);
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   #scale-bar {
