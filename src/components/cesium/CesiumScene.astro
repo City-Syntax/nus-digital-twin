@@ -16,6 +16,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     colorByDistancePosition,
   } from '../../store';
   import {
+    Cartesian2,
     Cartesian3,
     createOsmBuildingsAsync,
     Ion,
@@ -33,6 +34,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     Transforms,
     IonImageryProvider,
     ImageryLayer,
+    EllipsoidGeodesic,
+    Ray,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -280,6 +283,63 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   viewer.scene.globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
+
+  const geodesic = new EllipsoidGeodesic();
+  const distances = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 500, 1000];
+
+  const width = viewer.scene.canvas.clientWidth;
+  const height = viewer.scene.canvas.clientHeight;
+
+  function updateDistanceScale() {
+    const left = viewer.scene.camera.getPickRay(new Cartesian2((width / 2) | 0, height - 1));
+    const right = viewer.scene.camera.getPickRay(new Cartesian2((1 + width / 2) | 0, height - 1));
+
+    if (!left || !right) {
+      return;
+    }
+
+    const globe = viewer.scene.globe;
+    const leftPosition = globe.pick(left, viewer.scene);
+    const rightPosition = globe.pick(right, viewer.scene);
+
+    if (!leftPosition || !rightPosition) {
+      return;
+    }
+
+    const leftCartographic = globe.ellipsoid.cartesianToCartographic(leftPosition);
+    const rightCartographic = globe.ellipsoid.cartesianToCartographic(rightPosition);
+    console.log(leftCartographic);
+    console.log(rightCartographic);
+
+    geodesic.setEndPoints(leftCartographic, rightCartographic);
+    const pixelDistance = geodesic.surfaceDistance;
+    // Find the first distance that makes the scale bar less than 100 pixels.
+    const maxBarWidth = 100;
+    let distance;
+    for (let i = distances.length - 1; !defined(distance) && i >= 0; --i) {
+      if (distances[i] / pixelDistance < maxBarWidth) {
+        distance = distances[i];
+      }
+    }
+
+    if (defined(distance)) {
+      let label;
+      if (distance >= 1000) {
+        label = (distance / 1000).toString() + ' km';
+      } else {
+        label = distance.toString() + ' m';
+      }
+
+      const barWidth = distance / pixelDistance;
+      console.log(label);
+      console.log(barWidth);
+    }
+  }
+
+  updateDistanceScale();
+  viewer.camera.moveEnd.addEventListener(function () {
+    updateDistanceScale();
+  });
 </script>
 
 <div id="cesiumContainer"></div>
