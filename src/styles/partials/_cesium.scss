@@ -20,15 +20,13 @@ div.cesium-timeline-bar {
 }
 
 div.cesium-viewer-toolbar {
-  bottom: 1px;
-  left: 8px;
-  top: unset;
+  top: 32px;
 }
 
 div.cesium-viewer-bottom {
-  bottom: 1px !important;
+  top: 32px !important;
   left: 8px !important;
-  z-index: 1;
+  bottom: unset !important;
 
   img {
     width: 100px;

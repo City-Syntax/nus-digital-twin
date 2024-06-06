@@ -19,6 +19,10 @@
     padding: var(--padding-xs) var(--padding-sm);
     border-radius: var(--rounded-xs);
   }
+
+  @media screen and (max-width: $md) {
+    top: 58px;
+  }
 }
 
 #construction {

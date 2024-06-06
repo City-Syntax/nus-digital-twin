@@ -17,13 +17,23 @@
   bottom: 0;
   left: 0;
   font-size: var(--text-xs);
-  padding: 0 12px;
+  padding: 0 var(--padding-sm);
   width: 100%;
   height: var(--bottom-bar-height);
   display: flex;
-  gap: 8px;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  svg {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
 }
 
 #scale-bar {
