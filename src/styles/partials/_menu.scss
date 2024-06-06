@@ -24,7 +24,7 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  bottom: var(--container-y-offset);
+  bottom: calc(var(--container-y-offset) + var(--bottom-bar-height));
   flex-direction: column;
 
   > * + * {

@@ -16,6 +16,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     colorByDistancePosition,
   } from '../../store';
   import {
+    Cartesian2,
     Cartesian3,
     createOsmBuildingsAsync,
     Ion,
@@ -33,6 +34,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     Transforms,
     IonImageryProvider,
     ImageryLayer,
+    EllipsoidGeodesic,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -49,6 +51,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     geocoder: false, // Disables the Cesium search button
     baseLayer: ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}), // Default to Sentinel-2 base layer
   });
+
+  const globe = viewer.scene.globe;
 
   // @ts-ignore: https://community.cesium.com/t/change-timeline-from-utc-to-local-time/11203/7
   viewer.timeline.makeLabel = function (timelineDate: any) {
@@ -71,7 +75,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   // Increase the tileCacheSize
   const DEFAULT_TILE_CACHE_SIZE = 100;
-  viewer.scene.globe.tileCacheSize = DEFAULT_TILE_CACHE_SIZE * 10;
+  globe.tileCacheSize = DEFAULT_TILE_CACHE_SIZE * 8;
 
   // Simulate loading percentage until map tiles are requested
   const loadingPercentage = document.querySelector('#loading-percentage')!;
@@ -264,9 +268,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
     }
 
-    if (viewer.scene.globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
+    if (globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
       // Preload siblings only after first load
-      viewer.scene.globe.preloadSiblings = true;
+      globe.preloadSiblings = true;
+
+      updateDistanceScale();
 
       // Outer timeout is required for the translate animation to complete
       setTimeout(() => {
@@ -275,11 +281,64 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
           document.getElementById('loading-modal')?.remove();
         }, 200);
       }, 350);
-      viewer.scene.globe.tileLoadProgressEvent.removeEventListener(tileLoadProgressListener);
+      globe.tileLoadProgressEvent.removeEventListener(tileLoadProgressListener);
     }
   }
 
-  viewer.scene.globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
+  globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
+
+  const geodesic = new EllipsoidGeodesic();
+  const distances = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 400, 500, 750, 1000];
+  const width = viewer.scene.canvas.clientWidth;
+  const height = viewer.scene.canvas.clientHeight;
+  const scaleLabel = document.getElementById('scale-label')!;
+  const scaleBar = document.getElementById('scale-bar')!;
+  function updateDistanceScale() {
+    const left = viewer.scene.camera.getPickRay(new Cartesian2((width / 2) | 0, height - 1));
+    const right = viewer.scene.camera.getPickRay(new Cartesian2((1 + width / 2) | 0, height - 1));
+
+    if (!left || !right) {
+      return;
+    }
+
+    const leftPosition = globe.pick(left, viewer.scene);
+    const rightPosition = globe.pick(right, viewer.scene);
+
+    if (!leftPosition || !rightPosition) {
+      return;
+    }
+
+    const leftCartographic = globe.ellipsoid.cartesianToCartographic(leftPosition);
+    const rightCartographic = globe.ellipsoid.cartesianToCartographic(rightPosition);
+
+    geodesic.setEndPoints(leftCartographic, rightCartographic);
+    const pixelDistance = geodesic.surfaceDistance;
+    // Find the first distance that makes the scale bar less than 100 pixels.
+    const maxBarWidth = 100;
+    let distance;
+    for (let i = distances.length - 1; !defined(distance) && i >= 0; --i) {
+      if (distances[i] / pixelDistance < maxBarWidth) {
+        distance = distances[i];
+      }
+    }
+
+    if (defined(distance)) {
+      let label;
+      if (distance >= 1000) {
+        label = (distance / 1000).toString() + ' km';
+      } else {
+        label = distance.toString() + ' m';
+      }
+
+      const barWidth = distance / pixelDistance;
+      scaleBar.style.width = barWidth + 'px';
+      scaleLabel.textContent = label;
+    }
+  }
+
+  viewer.camera.moveEnd.addEventListener(function () {
+    updateDistanceScale();
+  });
 </script>
 
 <div id="cesiumContainer"></div>

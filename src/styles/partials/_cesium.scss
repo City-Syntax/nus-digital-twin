@@ -24,8 +24,13 @@ div.cesium-viewer-toolbar {
 }
 
 div.cesium-viewer-bottom {
-  top: 32px;
+  top: 32px !important;
+  left: 8px !important;
   bottom: unset !important;
+
+  img {
+    width: 100px;
+  }
 }
 
 .cesium-viewer div.cesium-widget-credits {

@@ -7,7 +7,7 @@
   margin: 0 auto;
   left: var(--container-x-offset);
   right: var(--container-x-offset);
-  bottom: 8px;
+  bottom: calc(8px + var(--bottom-bar-height));
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -40,7 +40,7 @@
     padding-right: var(--padding-xs);
     left: 0;
     right: 0;
-    bottom: 72px;
+    bottom: calc(72px + var(--bottom-bar-height));
   }
 }
 

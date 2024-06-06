@@ -5,7 +5,7 @@
 
 #alert-box {
   position: absolute;
-  top: 38px;
+  top: 32px;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -18,6 +18,10 @@
   > * {
     padding: var(--padding-xs) var(--padding-sm);
     border-radius: var(--rounded-xs);
+  }
+
+  @media screen and (max-width: $md) {
+    top: 58px;
   }
 }
 
@@ -50,11 +54,5 @@
   &.hide {
     opacity: 0;
     transform: translateX(calc(100% + 30px));
-  }
-}
-
-@media screen and (max-width: 944px) {
-  #alert-box {
-    top: 68px;
   }
 }
