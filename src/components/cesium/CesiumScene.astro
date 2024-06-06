@@ -53,6 +53,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     baseLayer: ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}), // Default to Sentinel-2 base layer
   });
 
+  const globe = viewer.scene.globe;
+
   // @ts-ignore: https://community.cesium.com/t/change-timeline-from-utc-to-local-time/11203/7
   viewer.timeline.makeLabel = function (timelineDate: any) {
     const date = JulianDate.toDate(timelineDate);
@@ -74,7 +76,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   // Increase the tileCacheSize
   const DEFAULT_TILE_CACHE_SIZE = 100;
-  viewer.scene.globe.tileCacheSize = DEFAULT_TILE_CACHE_SIZE * 10;
+  globe.tileCacheSize = DEFAULT_TILE_CACHE_SIZE * 10;
 
   // Simulate loading percentage until map tiles are requested
   const loadingPercentage = document.querySelector('#loading-percentage')!;
@@ -267,9 +269,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
     }
 
-    if (viewer.scene.globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
+    if (globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
       // Preload siblings only after first load
-      viewer.scene.globe.preloadSiblings = true;
+      globe.preloadSiblings = true;
 
       updateDistanceScale();
 
@@ -280,11 +282,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
           document.getElementById('loading-modal')?.remove();
         }, 200);
       }, 350);
-      viewer.scene.globe.tileLoadProgressEvent.removeEventListener(tileLoadProgressListener);
+      globe.tileLoadProgressEvent.removeEventListener(tileLoadProgressListener);
     }
   }
 
-  viewer.scene.globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
+  globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
 
   const geodesic = new EllipsoidGeodesic();
   const distances = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 500, 1000];
@@ -300,7 +302,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    const globe = viewer.scene.globe;
     const leftPosition = globe.pick(left, viewer.scene);
     const rightPosition = globe.pick(right, viewer.scene);
 
