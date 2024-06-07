@@ -65,11 +65,9 @@ const Searchbar = () => {
           onFocus={() => setOpen(true)}
           onClick={() => setOpen(true)}
           onBlur={(e) => {
-            const selectedOption = e.relatedTarget?.querySelector(`div[data-selected="true"]`) || null;
-            if (selectedOption) {
-              activePage.set('building-info');
-              buildingId.set(''); // Force the listener on buildingId to trigger
-              buildingId.set(selectedOption.getAttribute('data-value') || '');
+            if (e.relatedTarget?.contains(document.querySelector('[cmdk-root]'))) {
+              setOpen(true);
+              return;
             }
             setOpen(false);
           }}
