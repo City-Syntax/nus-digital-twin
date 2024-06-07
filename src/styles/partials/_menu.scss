@@ -72,7 +72,7 @@
 
 .menubar-left {
   @include menu-x-base;
-  width: 218px;
+  width: var(--menu-left-width);
 }
 
 .menubar-right {

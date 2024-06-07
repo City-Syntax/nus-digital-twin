@@ -6,9 +6,14 @@ import buildingsData from '../content/buildings/buildings.json';
 import { activePage, buildingId } from '../store';
 
 const Searchbar = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
+
+  // Force the component to render once first, else the group label is not included
+  useEffect(() => {
+    setOpen(false);
+  }, []);
 
   // https://github.com/pacocoursey/cmdk/issues/234
   const scrollUpOnChange = useCallback(() => {
@@ -65,11 +70,9 @@ const Searchbar = () => {
           onFocus={() => setOpen(true)}
           onClick={() => setOpen(true)}
           onBlur={(e) => {
-            const selectedOption = e.relatedTarget?.querySelector(`div[data-selected="true"]`) || null;
-            if (selectedOption) {
-              activePage.set('building-info');
-              buildingId.set(''); // Force the listener on buildingId to trigger
-              buildingId.set(selectedOption.getAttribute('data-value') || '');
+            if (e.relatedTarget?.contains(document.querySelector('[cmdk-root]'))) {
+              setOpen(true);
+              return;
             }
             setOpen(false);
           }}
@@ -84,23 +87,25 @@ const Searchbar = () => {
         <Icons.Search></Icons.Search>
       </div>
       <Command.List className={open ? '' : 'hide'} ref={listRef}>
-        <Command.Empty>No results found.</Command.Empty>
-        {buildingsDataToShow.map((building, i) => {
-          return (
-            <Command.Item
-              key={building.elementId}
-              value={building.elementId}
-              onSelect={() => {
-                activePage.set('building-info');
-                buildingId.set(''); // Force the listener on buildingId to trigger
-                buildingId.set(building.elementId);
-                setOpen(false);
-              }}
-            >
-              {searchResults[i] ? searchResults[i] : building.name}
-            </Command.Item>
-          );
-        })}
+        <Command.Group heading={`Search results (${buildingsDataToShow.length})`}>
+          <Command.Empty>No results found.</Command.Empty>
+          {buildingsDataToShow.map((building, i) => {
+            return (
+              <Command.Item
+                key={building.elementId}
+                value={building.elementId}
+                onSelect={() => {
+                  activePage.set('building-info');
+                  buildingId.set(''); // Force the listener on buildingId to trigger
+                  buildingId.set(building.elementId);
+                  setOpen(false);
+                }}
+              >
+                {searchResults[i] ? searchResults[i] : building.name}
+              </Command.Item>
+            );
+          })}
+        </Command.Group>
       </Command.List>
     </Command>
   );
