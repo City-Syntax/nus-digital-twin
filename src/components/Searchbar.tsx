@@ -6,9 +6,14 @@ import buildingsData from '../content/buildings/buildings.json';
 import { activePage, buildingId } from '../store';
 
 const Searchbar = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
+
+  // Force the component to render once first, else the group label is not included
+  useEffect(() => {
+    setOpen(false);
+  }, []);
 
   // https://github.com/pacocoursey/cmdk/issues/234
   const scrollUpOnChange = useCallback(() => {
@@ -50,7 +55,7 @@ const Searchbar = () => {
   }, []);
 
   let buildingsDataToShow;
-  const fuzzyResults = fuzzysort.go(searchQuery, buildingsData, { key: 'name', limit: 10 });
+  const fuzzyResults = fuzzysort.go(searchQuery, buildingsData, { key: 'name' });
   if (searchQuery === '') {
     buildingsDataToShow = buildingsData;
   } else {
@@ -82,7 +87,7 @@ const Searchbar = () => {
         <Icons.Search></Icons.Search>
       </div>
       <Command.List className={open ? '' : 'hide'} ref={listRef}>
-        <Command.Group heading={`Buildings`}>
+        <Command.Group heading={`Search results (${buildingsDataToShow.length})`}>
           <Command.Empty>No results found.</Command.Empty>
           {buildingsDataToShow.map((building, i) => {
             return (

@@ -102,6 +102,17 @@
   padding: var(--padding-xs);
 }
 
+[cmdk-group-heading] {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: rgba(var(--base-300));
+  padding: 6px var(--padding-xs);
+
+  @media screen and (max-width: $md) {
+    padding: 0;
+  }
+}
+
 .select-trigger {
   @include btn;
   font-size: var(--text-sm);
