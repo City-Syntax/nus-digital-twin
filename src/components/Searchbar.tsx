@@ -50,7 +50,7 @@ const Searchbar = () => {
   }, []);
 
   let buildingsDataToShow;
-  const fuzzyResults = fuzzysort.go(searchQuery, buildingsData, { key: 'name' });
+  const fuzzyResults = fuzzysort.go(searchQuery, buildingsData, { key: 'name', limit: 10 });
   if (searchQuery === '') {
     buildingsDataToShow = buildingsData;
   } else {
@@ -84,23 +84,25 @@ const Searchbar = () => {
         <Icons.Search></Icons.Search>
       </div>
       <Command.List className={open ? '' : 'hide'} ref={listRef}>
-        <Command.Empty>No results found.</Command.Empty>
-        {buildingsDataToShow.map((building, i) => {
-          return (
-            <Command.Item
-              key={building.elementId}
-              value={building.elementId}
-              onSelect={() => {
-                activePage.set('building-info');
-                buildingId.set(''); // Force the listener on buildingId to trigger
-                buildingId.set(building.elementId);
-                setOpen(false);
-              }}
-            >
-              {searchResults[i] ? searchResults[i] : building.name}
-            </Command.Item>
-          );
-        })}
+        <Command.Group heading={`Buildings`}>
+          <Command.Empty>No results found.</Command.Empty>
+          {buildingsDataToShow.map((building, i) => {
+            return (
+              <Command.Item
+                key={building.elementId}
+                value={building.elementId}
+                onSelect={() => {
+                  activePage.set('building-info');
+                  buildingId.set(''); // Force the listener on buildingId to trigger
+                  buildingId.set(building.elementId);
+                  setOpen(false);
+                }}
+              >
+                {searchResults[i] ? searchResults[i] : building.name}
+              </Command.Item>
+            );
+          })}
+        </Command.Group>
       </Command.List>
     </Command>
   );
