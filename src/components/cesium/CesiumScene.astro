@@ -73,9 +73,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   viewer.scene.screenSpaceCameraController.minimumZoomDistance = 100.0;
   viewer.scene.screenSpaceCameraController.maximumZoomDistance = 10000.0;
 
-  // Increase the tileCacheSize
   const DEFAULT_TILE_CACHE_SIZE = 100;
-  globe.tileCacheSize = DEFAULT_TILE_CACHE_SIZE * 8;
+  globe.tileCacheSize = DEFAULT_TILE_CACHE_SIZE * 1;
 
   // Simulate loading percentage until map tiles are requested
   const loadingPercentage = document.querySelector('#loading-percentage')!;
@@ -146,8 +145,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     show: { conditions: OSM_SHOW_CONDITIONS },
   });
   osmBuildingsTileset.maximumScreenSpaceError = 0;
-  osmBuildingsTileset.preloadWhenHidden = true;
   viewer.scene.primitives.add(osmBuildingsTileset);
+  osmBuildingsTileset.preloadWhenHidden = true;
 
   const sde4Id = 2464285;
   const yncId = 2463878;
@@ -157,7 +156,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   for (let i = 0; i < bimModels.length; i++) {
     viewer.scene.primitives.add(bimModels[i]);
     bimModels[i].show = false;
-    bimModels[i].preloadWhenHidden = true;
   }
 
   function showAllBIM() {
@@ -269,9 +267,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     if (globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
-      // Preload siblings only after first load
-      globe.preloadSiblings = true;
-
       updateDistanceScale();
 
       // Outer timeout is required for the translate animation to complete
