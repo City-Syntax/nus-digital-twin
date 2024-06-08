@@ -65,7 +65,8 @@
   width: calc(var(--menu-left-width) - var(--padding-base) * 2);
 
   &.hide {
-    height: 0;
+    // Safari doesn't apply backdrop filter correctly on height 0
+    height: 0.5px;
   }
 
   @media screen and (max-width: $md) {
