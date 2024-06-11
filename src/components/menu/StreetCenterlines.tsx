@@ -1,7 +1,10 @@
 import React from 'react';
 import CloseButton from './CloseButton';
+import { useStore } from '@nanostores/react';
+import { activeGISLayer } from '../../store';
 
 const StreetCenterlines = () => {
+  const $activeGISLayer = useStore(activeGISLayer);
   return (
     <>
       <div className="menubar-content-header">
@@ -9,7 +12,26 @@ const StreetCenterlines = () => {
         <CloseButton></CloseButton>
       </div>
       <div className="menubar-content-body">
-        <p>This feature is under construction.</p>
+        <div>
+          Display street centerlines. Street centerlines are a series of lines that represent each road and their
+          attributes.
+        </div>
+        <div>
+          <div className="btn-group">
+            <button
+              onClick={() => activeGISLayer.set('street-centerlines')}
+              className={$activeGISLayer === 'street-centerlines' ? 'active' : ''}
+            >
+              On
+            </button>
+            <button
+              onClick={() => activeGISLayer.set('')}
+              className={$activeGISLayer !== 'street-centerlines' ? 'active' : ''}
+            >
+              Off
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );

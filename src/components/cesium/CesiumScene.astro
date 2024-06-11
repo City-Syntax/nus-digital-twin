@@ -194,13 +194,19 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/buildings.json');
+  const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/roads.json');
   viewer.dataSources.add(buildingFootprintsData);
+  viewer.dataSources.add(streetCenterlinesData);
 
   activeGISLayer.subscribe((val) => {
+    buildingFootprintsData.show = false;
+    streetCenterlinesData.show = false;
     if (val === 'building-footprints') {
       buildingFootprintsData.show = true;
-    } else {
-      buildingFootprintsData.show = false;
+    }
+
+    if (val === 'street-centerlines') {
+      streetCenterlinesData.show = true;
     }
   });
 
@@ -221,8 +227,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    if (pickedFeature.id && dataSource.entities.contains(pickedFeature.id)) {
-      console.log('GIS building layer selected!');
+    if (pickedFeature.id && buildingFootprintsData.entities.contains(pickedFeature.id)) {
+      console.log('Building footprints layer selected!');
+      return;
+    }
+
+    if (pickedFeature.id && streetCenterlinesData.entities.contains(pickedFeature.id)) {
+      console.log('Street centerlines layer selected!');
       return;
     }
 

@@ -1,6 +1,6 @@
 export type Models = 'bim' | 'osm';
 
-export type GISLayers = 'building-footprints';
+export type GISLayers = 'building-footprints' | 'street-centerlines';
 
 export type MenuPages =
   | 'osm'

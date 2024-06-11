@@ -19,7 +19,12 @@ const MenuLeft = () => {
         </div>
         <div className="menu-list">
           <div className="menu-list-title">GIS Layers</div>
-          <MenuLink toPage="street-centerlines" label="Street Centerlines" iconName="StreetCenterlines"></MenuLink>
+          <MenuLink
+            toPage="street-centerlines"
+            label="Street Centerlines"
+            iconName="StreetCenterlines"
+            isActive={$activeGISLayer === 'street-centerlines'}
+          ></MenuLink>
           <MenuLink
             toPage="building-footprints"
             label="Building Footprints"
