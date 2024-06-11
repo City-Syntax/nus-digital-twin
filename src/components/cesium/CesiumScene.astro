@@ -195,18 +195,25 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/buildings.json');
   const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/roads.json');
+  const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/waterways.json');
   viewer.dataSources.add(buildingFootprintsData);
   viewer.dataSources.add(streetCenterlinesData);
+  viewer.dataSources.add(waterBodiesData);
 
   activeGISLayer.subscribe((val) => {
     buildingFootprintsData.show = false;
     streetCenterlinesData.show = false;
+    waterBodiesData.show = false;
     if (val === 'building-footprints') {
       buildingFootprintsData.show = true;
     }
 
     if (val === 'street-centerlines') {
       streetCenterlinesData.show = true;
+    }
+
+    if (val === 'water-bodies') {
+      waterBodiesData.show = true;
     }
   });
 
@@ -227,13 +234,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    if (pickedFeature.id && buildingFootprintsData.entities.contains(pickedFeature.id)) {
-      console.log('Building footprints layer selected!');
-      return;
-    }
-
-    if (pickedFeature.id && streetCenterlinesData.entities.contains(pickedFeature.id)) {
-      console.log('Street centerlines layer selected!');
+    if (pickedFeature.id) {
+      switch (true) {
+        case buildingFootprintsData.entities.contains(pickedFeature.id):
+          console.log('Building footprints layer selected!');
+          break;
+        case streetCenterlinesData.entities.contains(pickedFeature.id):
+          console.log('Street centerlines layer selected!');
+          break;
+      }
       return;
     }
 

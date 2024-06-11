@@ -29,7 +29,12 @@ const Layers = () => {
             isActive={$activeGISLayer === 'building-footprints'}
           ></MenuLink>
           <MenuLink toPage="green-spaces" label="Green Spaces" iconName="GreenSpaces"></MenuLink>
-          <MenuLink toPage="water-bodies" label="Water Bodies" iconName="WaterBodies"></MenuLink>
+          <MenuLink
+            toPage="water-bodies"
+            label="Water Bodies"
+            iconName="WaterBodies"
+            isActive={$activeGISLayer === 'water-bodies'}
+          ></MenuLink>
         </div>
         <div className="menu-list">
           <div className="menu-list-title">Building Scale Models</div>
