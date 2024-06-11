@@ -11,6 +11,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     activeModel,
     buildingId,
     activeMapLayer,
+    activeGISLayer,
     buildingColorSetting,
     isSelectColorByDistance,
     colorByDistancePosition,
@@ -195,6 +196,14 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const resource = await IonResource.fromAssetId(2616374);
   const dataSource = await GeoJsonDataSource.load(resource);
   viewer.dataSources.add(dataSource);
+
+  activeGISLayer.subscribe((val) => {
+    if (val === 'building-footprints') {
+      dataSource.show = true;
+    } else {
+      dataSource.show = false;
+    }
+  });
 
   const handler = viewer.screenSpaceEventHandler;
 

@@ -1,5 +1,7 @@
 export type Models = 'bim' | 'osm';
 
+export type GISLayers = 'building-footprints';
+
 export type MenuPages =
   | 'osm'
   | 'about'

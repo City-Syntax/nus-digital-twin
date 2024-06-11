@@ -1,8 +1,9 @@
 import { atom } from 'nanostores';
-import type { MapLayers, MenuPages, Models } from './types';
+import type { GISLayers, MapLayers, MenuPages, Models } from './types';
 
 export const activePage = atom<MenuPages | ''>('');
 export const activeMapLayer = atom<MapLayers>('street');
+export const activeGISLayer = atom<GISLayers | ''>('');
 
 export const activeModel = atom<Models | ''>('osm');
 export const buildingColorSetting = atom<'' | 'distance'>('');

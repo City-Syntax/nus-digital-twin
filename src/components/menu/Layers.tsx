@@ -1,11 +1,12 @@
 import React from 'react';
 import MenuLink from './MenuLink';
 import CloseButton from './CloseButton';
-import { activeModel } from '../../store';
+import { activeGISLayer, activeModel } from '../../store';
 import { useStore } from '@nanostores/react';
 
 const Layers = () => {
   const $activeModel = useStore(activeModel);
+  const $activeGISLayer = useStore(activeGISLayer);
   return (
     <>
       <div className="menubar-content-header">
@@ -16,7 +17,12 @@ const Layers = () => {
         <div className="menu-list">
           <div className="menu-list-title">GIS Layers</div>
           <MenuLink toPage="street-centerlines" label="Street Centerlines" iconName="StreetCenterlines"></MenuLink>
-          <MenuLink toPage="building-footprints" label="Building Footprints" iconName="BuildingFootprints"></MenuLink>
+          <MenuLink
+            toPage="building-footprints"
+            label="Building Footprints"
+            iconName="BuildingFootprints"
+            isActive={$activeGISLayer === 'building-footprints'}
+          ></MenuLink>
           <MenuLink toPage="green-spaces" label="Green Spaces" iconName="GreenSpaces"></MenuLink>
           <MenuLink toPage="water-bodies" label="Water Bodies" iconName="WaterBodies"></MenuLink>
         </div>
