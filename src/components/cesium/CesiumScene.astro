@@ -35,6 +35,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ImageryLayer,
     Model,
     HeadingPitchRoll,
+    HeightReference,
+    Color,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
 
@@ -269,23 +271,49 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   viewer.scene.globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
+  // const heading = CesiumMath.toRadians(18);
+  // const pitch = CesiumMath.toRadians(90);
+  // const roll = CesiumMath.toRadians(-90);
+  // const hpr = new HeadingPitchRoll(heading, pitch, roll);
+  // const orientation = Transforms.headingPitchRollToFixedFrame(
+  //   Cartesian3.fromDegrees(103.76999, 1.29691, -89.4356561141),
+  //   hpr,
+  // );
+
+  // const model = await Model.fromGltfAsync({
+  //   modelMatrix: orientation,
+  //   heightReference: HeightReference.CLAMP_TO_GROUND,
+  //   scene: viewer.scene,
+  //   id: '628774809',
+  //   url: '/NUS Urban Model.gltf',
+  //   gltfCallback: () => console.log("LOADED")
+  // });
+  // viewer.scene.primitives.add(model);
+
   const heading = CesiumMath.toRadians(18);
   const pitch = CesiumMath.toRadians(90);
   const roll = CesiumMath.toRadians(-90);
   const hpr = new HeadingPitchRoll(heading, pitch, roll);
-  const orientation = Transforms.headingPitchRollToFixedFrame(
+  const orientation = Transforms.headingPitchRollQuaternion(
     Cartesian3.fromDegrees(103.76999, 1.29691, -89.4356561141),
     hpr,
   );
-
-  const model = await Model.fromGltfAsync({
-    modelMatrix: orientation,
-    id: '628774809',
-    url: '/SDE_Archi_Fine.gltf',
+  const entity = viewer.entities.add({
+    position: Cartesian3.fromDegrees(103.76999, 1.29691, -3000),
+    orientation: orientation,
+    model: {
+      heightReference: HeightReference.RELATIVE_TO_TERRAIN,
+      uri: 'NUS Urban Model.gltf',
+      scale: 10,
+      color: Color.WHITE,
+    },
   });
-  viewer.scene.primitives.add(model);
 
-  document.getElementById('toggle-model')!.onclick = () => (model.show = !model.show);
+  viewer.flyTo(entity);
+
+  viewer.trackedEntity = entity;
+
+  // document.getElementById('toggle-model')!.onclick = () => (model.show = !model.show);
 </script>
 
 <button id="toggle-model">Toggle</button>
