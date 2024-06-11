@@ -193,9 +193,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
   }
 
-  const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/buildings.json');
-  const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/roads.json');
-  const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/waterways.json');
+  const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/buildings.json', {
+    clampToGround: true,
+  });
+  const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/roads.json', {
+    clampToGround: true,
+  });
+  const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/waterways.json', {
+    clampToGround: true,
+  });
   viewer.dataSources.add(buildingFootprintsData);
   viewer.dataSources.add(streetCenterlinesData);
   viewer.dataSources.add(waterBodiesData);
