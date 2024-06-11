@@ -35,9 +35,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     IonImageryProvider,
     ImageryLayer,
     EllipsoidGeodesic,
+    IonResource,
+    GeoJsonDataSource,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
+  import { data } from 'autoprefixer';
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
@@ -189,6 +192,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
   }
 
+  const resource = await IonResource.fromAssetId(2616374);
+  const dataSource = await GeoJsonDataSource.load(resource);
+  viewer.dataSources.add(dataSource);
+
   const handler = viewer.screenSpaceEventHandler;
   handler.setInputAction(function (movement: any) {
     const pickedFeature = viewer.scene.pick(movement.position);
@@ -199,6 +206,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (isSelectColorByDistance.get()) {
       colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
       isSelectColorByDistance.set(false);
+      return;
+    }
+
+    if (pickedFeature.id && dataSource.entities.contains(pickedFeature.id)) {
+      console.log('GIS building layer selected!');
       return;
     }
 
