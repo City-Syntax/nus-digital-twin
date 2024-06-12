@@ -3,7 +3,7 @@ import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from './Icons';
 import buildingsData from '../content/buildings/buildings.json';
-import { activePage, buildingId } from '../store';
+import { activePage, buildingId, flyToPosition } from '../store';
 
 const Searchbar = () => {
   const [open, setOpen] = useState(true);
@@ -98,6 +98,10 @@ const Searchbar = () => {
                   activePage.set('building-info');
                   buildingId.set(''); // Force the listener on buildingId to trigger
                   buildingId.set(building.elementId);
+                  flyToPosition.set({
+                    longitude: building.longitude,
+                    latitude: building.latitude,
+                  });
                   setOpen(false);
                 }}
               >

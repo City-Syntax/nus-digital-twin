@@ -1,5 +1,10 @@
 export type Models = 'bim' | 'osm';
 
+export type Position = {
+  latitude: number;
+  longitude: number;
+};
+
 export type MenuPages =
   | 'osm'
   | 'about'
