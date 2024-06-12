@@ -2,6 +2,8 @@ import { defineCollection, z } from 'astro:content';
 
 const buildingMetadataSchema = z.object({
   elementId: z.string(),
+  latitude: z.number(),
+  longitude: z.number(),
 });
 
 const buildingSchema = z.object({
