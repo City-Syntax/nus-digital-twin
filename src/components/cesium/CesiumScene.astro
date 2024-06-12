@@ -14,6 +14,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     buildingColorSetting,
     isSelectColorByDistance,
     colorByDistancePosition,
+    flyToPosition,
   } from '../../store';
   import {
     Cartesian2,
@@ -184,10 +185,23 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       show: { conditions: OSM_SHOW_CONDITIONS },
     });
   }
-
   function colorByNone() {
     osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
   }
+
+  flyToPosition.subscribe((val) => {
+    if (!val) {
+      return;
+    }
+
+    viewer.camera.flyTo({
+      destination: Cartesian3.fromDegrees(val.longitude, val.latitude - 0.005, 400),
+      orientation: {
+        heading: CesiumMath.toRadians(0.0),
+        pitch: CesiumMath.toRadians(-30.0),
+      },
+    });
+  });
 
   const handler = viewer.screenSpaceEventHandler;
   handler.setInputAction(function (movement: any) {
