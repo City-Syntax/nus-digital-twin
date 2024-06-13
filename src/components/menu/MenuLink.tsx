@@ -14,6 +14,7 @@ interface MenuLinkProps {
 
 const MenuLink = ({ label, toPage, iconName, isVertical, isActive }: MenuLinkProps) => {
   const $activePage = useStore(activePage);
+  const Icon = Icons[iconName];
   return (
     <button
       className={`${$activePage === toPage ? 'active' : ''} ${isVertical ? 'vertical' : ''}`}
@@ -24,7 +25,7 @@ const MenuLink = ({ label, toPage, iconName, isVertical, isActive }: MenuLinkPro
         isSelectColorByDistance.set(false);
       }}
     >
-      {Icons[iconName]()}
+      {Icon && <Icon></Icon>}
       <span>{label}</span>
       <span className={`active-indicator ${isActive ? 'show' : ''}`}></span>
     </button>
