@@ -5,6 +5,10 @@ export type Position = {
   longitude: number;
 };
 
+export type UserSettings = {
+  moveCamera: boolean;
+};
+
 export type MenuPages =
   | 'osm'
   | 'about'

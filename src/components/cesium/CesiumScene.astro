@@ -15,6 +15,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     isSelectColorByDistance,
     colorByDistancePosition,
     flyToPosition,
+    userSettings,
   } from '../../store';
   import {
     Cartesian2,
@@ -190,7 +191,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   flyToPosition.subscribe((val) => {
-    if (!val) {
+    if (!val || !userSettings.get().moveCamera) {
       return;
     }
 
