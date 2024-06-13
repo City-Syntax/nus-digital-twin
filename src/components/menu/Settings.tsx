@@ -1,7 +1,10 @@
 import React from 'react';
 import CloseButton from './CloseButton';
+import { useStore } from '@nanostores/react';
+import { userSettings } from '../../store';
 
 const Settings = () => {
+  const $userSettings = useStore(userSettings);
   return (
     <>
       <div className="menubar-content-header">
@@ -9,7 +12,28 @@ const Settings = () => {
         <CloseButton></CloseButton>
       </div>
       <div className="menubar-content-body">
-        <p>This feature is under construction.</p>
+        <div>
+          <h3>Move camera on search</h3>
+          <div className="hint">Adjust the camera view when selecting a building via the search bar.</div>
+          <div className="btn-group">
+            <button
+              className={`${$userSettings.moveCamera ? 'active' : ''}`}
+              onClick={() => {
+                userSettings.set({ ...$userSettings, moveCamera: true });
+              }}
+            >
+              Enable
+            </button>
+            <button
+              className={`${!$userSettings.moveCamera ? 'active' : ''}`}
+              onClick={() => {
+                userSettings.set({ ...$userSettings, moveCamera: false });
+              }}
+            >
+              Disable
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );
