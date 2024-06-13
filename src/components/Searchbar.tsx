@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from './Icons';
@@ -9,6 +9,16 @@ const Searchbar = () => {
   const [open, setOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
+  const uniqueBuildingData = useMemo(() => {
+    const seenNames = new Set();
+    return buildingsData.filter((building) => {
+      if (!seenNames.has(building.name)) {
+        seenNames.add(building.name);
+        return true;
+      }
+      return false;
+    });
+  }, [buildingsData]);
 
   // Force the component to render once first, else the group label is not included
   useEffect(() => {
@@ -64,9 +74,9 @@ const Searchbar = () => {
   }, []);
 
   let buildingsDataToShow;
-  const fuzzyResults = fuzzysort.go(searchQuery, buildingsData, { key: 'name' });
+  const fuzzyResults = fuzzysort.go(searchQuery, uniqueBuildingData, { key: 'name' });
   if (searchQuery === '') {
-    buildingsDataToShow = buildingsData;
+    buildingsDataToShow = uniqueBuildingData;
   } else {
     buildingsDataToShow = fuzzyResults.map((res) => res.obj);
   }
