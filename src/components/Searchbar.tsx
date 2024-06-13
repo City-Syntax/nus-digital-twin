@@ -1,14 +1,24 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from './Icons';
 import buildingsData from '../content/buildings/buildings.json';
-import { activePage, buildingId } from '../store';
+import { activePage, buildingId, flyToPosition } from '../store';
 
 const Searchbar = () => {
   const [open, setOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
+  const uniqueBuildingData = useMemo(() => {
+    const seenNames = new Set();
+    return buildingsData.filter((building) => {
+      if (!seenNames.has(building.name)) {
+        seenNames.add(building.name);
+        return true;
+      }
+      return false;
+    });
+  }, [buildingsData]);
 
   // Force the component to render once first, else the group label is not included
   useEffect(() => {
@@ -20,6 +30,15 @@ const Searchbar = () => {
     requestAnimationFrame(() => {
       listRef!.current!.scrollTo({ top: 0 });
     });
+  }, []);
+
+  const focusOnInput = useCallback(() => {
+    const [desktopSearch, mobileSearch] = document.querySelectorAll('input');
+    if (window.innerWidth <= 878) {
+      mobileSearch.focus();
+    } else {
+      desktopSearch.focus();
+    }
   }, []);
 
   buildingId.listen((newId) => {
@@ -55,9 +74,9 @@ const Searchbar = () => {
   }, []);
 
   let buildingsDataToShow;
-  const fuzzyResults = fuzzysort.go(searchQuery, buildingsData, { key: 'name' });
+  const fuzzyResults = fuzzysort.go(searchQuery, uniqueBuildingData, { key: 'name' });
   if (searchQuery === '') {
-    buildingsDataToShow = buildingsData;
+    buildingsDataToShow = uniqueBuildingData;
   } else {
     buildingsDataToShow = fuzzyResults.map((res) => res.obj);
   }
@@ -84,7 +103,13 @@ const Searchbar = () => {
           }}
           placeholder="Search buildings"
         ></Command.Input>
-        <Icons.Search></Icons.Search>
+        <Icons.Close
+          onClick={() => {
+            setSearchQuery('');
+            scrollUpOnChange();
+            focusOnInput();
+          }}
+        ></Icons.Close>
       </div>
       <Command.List className={open ? '' : 'hide'} ref={listRef}>
         <Command.Group heading={`Search results (${buildingsDataToShow.length})`}>
@@ -98,6 +123,10 @@ const Searchbar = () => {
                   activePage.set('building-info');
                   buildingId.set(''); // Force the listener on buildingId to trigger
                   buildingId.set(building.elementId);
+                  flyToPosition.set({
+                    longitude: building.longitude,
+                    latitude: building.latitude,
+                  });
                   setOpen(false);
                 }}
               >

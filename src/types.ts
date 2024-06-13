@@ -2,6 +2,15 @@ export type Models = 'bim' | 'osm';
 
 export type GISLayers = 'building-footprints' | 'street-centerlines' | 'water-bodies';
 
+export type Position = {
+  latitude: number;
+  longitude: number;
+};
+
+export type UserSettings = {
+  moveCameraOnSearch: boolean;
+};
+
 export type MenuPages =
   | 'osm'
   | 'about'

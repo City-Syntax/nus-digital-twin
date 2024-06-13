@@ -3,1512 +3,2008 @@
     "elementId": "732229053",
     "name": "Cendana College",
     "address": "28 College Avenue West",
-    "postal": "138533"
+    "postal": "138533",
+    "latitude": 1.30814,
+    "longitude": 103.77248
   },
   {
     "elementId": "732229037",
     "name": "Cendana College",
     "address": "28 College Avenue West",
-    "postal": "138533"
+    "postal": "138533",
+    "latitude": 1.30812,
+    "longitude": 103.77221
   },
   {
     "elementId": "732229054",
     "name": "Cendana College",
     "address": "28 College Avenue West",
-    "postal": "138533"
+    "postal": "138533",
+    "latitude": 1.30783,
+    "longitude": 103.77207
   },
   {
     "elementId": "732229051",
     "name": "Cendana College",
     "address": "28 College Avenue West",
-    "postal": "138533"
+    "postal": "138533",
+    "latitude": 1.30791,
+    "longitude": 103.77249
   },
   {
     "elementId": "732229052",
     "name": "Cendana College",
     "address": "28 College Avenue West",
-    "postal": "138533"
+    "postal": "138533",
+    "latitude": 1.30775,
+    "longitude": 103.77239
   },
   {
     "elementId": "732229050",
     "name": "Yale-NUS College",
     "address": "20 College Ave East",
-    "postal": "138529"
+    "postal": "138529",
+    "latitude": 1.30739,
+    "longitude": 103.77257
   },
   {
     "elementId": "732229049",
     "name": "Yale-NUS College Arts Centre",
     "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.30716,
+    "longitude": 103.77196
   },
   {
     "elementId": "732229044",
     "name": "Yale-NUS College Reception and Admissions",
     "address": "16 College Ave West",
-    "postal": "138627"
-  },
-  {
-    "elementId": "732229035",
-    "name": "Yale-NUS College",
-    "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.30644,
+    "longitude": 103.7718
   },
   {
     "elementId": "732229048",
     "name": "Elm College",
     "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.30646,
+    "longitude": 103.77236
   },
   {
     "elementId": "732229043",
     "name": "Elm College",
     "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.30654,
+    "longitude": 103.77214
   },
   {
     "elementId": "732229045",
     "name": "Elm College",
     "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.30624,
+    "longitude": 103.77195
   },
   {
     "elementId": "732229047",
     "name": "Elm College",
     "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.30616,
+    "longitude": 103.77237
   },
   {
     "elementId": "732229046",
     "name": "Saga College",
     "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.3059,
+    "longitude": 103.77206
   },
   {
     "elementId": "732229042",
     "name": "Saga College",
     "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.30585,
+    "longitude": 103.77179
   },
   {
     "elementId": "732229041",
     "name": "Saga College",
     "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.30561,
+    "longitude": 103.77182
   },
   {
     "elementId": "732229038",
     "name": "Saga College",
     "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.30581,
+    "longitude": 103.77231
   },
   {
     "elementId": "732229039",
     "name": "Saga College",
     "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.30554,
+    "longitude": 103.77205
   },
   {
     "elementId": "732229040",
     "name": "Saga College",
     "address": "16 College Ave West",
-    "postal": "138627"
+    "postal": "138627",
+    "latitude": 1.30562,
+    "longitude": 103.77227
   },
   {
     "elementId": "124543531",
     "name": "NUS College Office",
     "address": "18 College Ave East",
-    "postal": "138593"
+    "postal": "138593",
+    "latitude": 1.30684,
+    "longitude": 103.77303
   },
   {
     "elementId": "124543998",
     "name": "RC4 Multi-Purpose Hall",
     "address": "6 College Avenue East",
-    "postal": "138614"
+    "postal": "138614",
+    "latitude": 1.30836,
+    "longitude": 103.77297
   },
   {
     "elementId": "124543999",
     "name": "RC4 Tower",
     "address": "6 College Avenue East",
-    "postal": "138614"
+    "postal": "138614",
+    "latitude": 1.30824,
+    "longitude": 103.77329
   },
   {
     "elementId": "124543529",
     "name": "Dining Hall",
     "address": "8 College Avenue East",
-    "postal": "138615"
+    "postal": "138615",
+    "latitude": 1.3079,
+    "longitude": 103.77328
   },
   {
     "elementId": "124543527",
     "name": "College of Alice & Peter Tan",
     "address": "8 College Avenue East",
-    "postal": "138615"
+    "postal": "138615",
+    "latitude": 1.3076,
+    "longitude": 103.77315
   },
   {
     "elementId": "124543528",
     "name": "College of Alice & Peter Tan Multi-Purpose Hall",
     "address": "8 College Avenue East",
-    "postal": "138615"
+    "postal": "138615",
+    "latitude": 1.30731,
+    "longitude": 103.77314
   },
   {
     "elementId": "124543532",
     "name": "Chua Thian Poh Hall",
     "address": "16 College Ave East",
-    "postal": "138592"
+    "postal": "138592",
+    "latitude": 1.30702,
+    "longitude": 103.77329
   },
   {
     "elementId": "124542228",
     "name": "Cinnamon College",
     "address": "22 College Ave East",
-    "postal": "138593"
+    "postal": "138593",
+    "latitude": 1.30669,
+    "longitude": 103.77347
   },
   {
     "elementId": "124549211",
     "name": "Cinnamon South Learn Lobe",
     "address": "22 College Ave East",
-    "postal": "138593"
+    "postal": "138593",
+    "latitude": 1.30657,
+    "longitude": 103.77315
   },
   {
     "elementId": "124236990",
     "name": "Dining Hall",
     "address": "22 College Ave East",
-    "postal": "138593"
+    "postal": "138593",
+    "latitude": 1.30646,
+    "longitude": 103.77361
   },
   {
     "elementId": "124230878",
     "name": "Tembusu Tower",
     "address": "28 College Ave East",
-    "postal": "138598"
+    "postal": "138598",
+    "latitude": 1.30621,
+    "longitude": 103.7737
   },
   {
     "elementId": "124230875",
     "name": "Tembusu Multi-Purpose Hall",
     "address": "28 College Ave East",
-    "postal": "138598"
+    "postal": "138598",
+    "latitude": 1.30594,
+    "longitude": 103.77385
   },
   {
     "elementId": "124411297",
     "name": "Tembusu West Learn Lobe",
     "address": "28 College Ave East",
-    "postal": "138598"
+    "postal": "138598",
+    "latitude": 1.30592,
+    "longitude": 103.77348
   },
   {
     "elementId": "124550688",
     "name": "Ngee Ann Kongsi Auditorium",
     "address": "8 College Ave West",
-    "postal": "138608"
+    "postal": "138608",
+    "latitude": 1.30553,
+    "longitude": 103.77316
   },
   {
     "elementId": "7765113",
     "name": "UTown Residence North Tower",
     "address": "36 College Ave East",
-    "postal": "138600"
+    "postal": "138600",
+    "latitude": 1.30538,
+    "longitude": 103.77379
   },
   {
     "elementId": "7765114",
     "name": "UTown Residence South Tower",
     "address": "36 College Ave East",
-    "postal": "138600"
+    "postal": "138600",
+    "latitude": 1.30488,
+    "longitude": 103.77395
   },
   {
     "elementId": "420847275",
     "name": "Create",
     "address": "1 Create Wy",
-    "postal": "138602"
+    "postal": "138602",
+    "latitude": 1.30418,
+    "longitude": 103.77437
   },
   {
     "elementId": "125842215",
     "name": "Create Tower",
     "address": "1 Create Wy",
-    "postal": "138602"
+    "postal": "138602",
+    "latitude": 1.30385,
+    "longitude": 103.77358
   },
   {
     "elementId": "15314907",
     "name": "Town Plaza",
     "address": "2 College Ave West",
-    "postal": "138607"
+    "postal": "138607",
+    "latitude": 1.3039,
+    "longitude": 103.77398
   },
   {
     "elementId": "54619794",
     "name": "Lee Kong Chian Natural History Museum",
     "address": "2 Conservatory Drive",
-    "postal": "117377"
+    "postal": "117377",
+    "latitude": 1.30152,
+    "longitude": 103.77361
   },
   {
     "elementId": "643598737",
     "name": "Singapore Wind Tunnel Facility",
     "address": "5 Sports Drive 2",
-    "postal": "117508"
+    "postal": "117508",
+    "latitude": 1.30105,
+    "longitude": 103.77535
   },
   {
     "elementId": "142090371",
     "name": "MPSH 1 - 4",
     "address": "Sports Drive 1",
-    "postal": "119077"
+    "postal": "119077",
+    "latitude": 1.30076,
+    "longitude": 103.77603
   },
   {
     "elementId": "54619808",
     "name": "MPSH 5",
     "address": "Sports Drive 1",
-    "postal": "119077"
+    "postal": "119077",
+    "latitude": 1.30036,
+    "longitude": 103.77633
   },
   {
     "elementId": "142090370",
     "name": "MPSH 6",
     "address": "Sports Drive 1",
-    "postal": "119077"
+    "postal": "119077",
+    "latitude": 1.30031,
+    "longitude": 103.77576
   },
   {
     "elementId": "54619777",
     "name": "NUS Staff Club",
     "address": "30 Lower Kent Ridge Road",
-    "postal": "119075"
+    "postal": "119075",
+    "latitude": 1.29922,
+    "longitude": 103.77578
   },
   {
     "elementId": "427077073",
     "name": "Ridge View Residential College Block A",
     "address": "25 Lower Kent Ridge Road",
-    "postal": "119081"
+    "postal": "119081",
+    "latitude": 1.29773,
+    "longitude": 103.77624
   },
   {
     "elementId": "427077081",
     "name": "Ridge View Residential College Block B",
     "address": "25 Lower Kent Ridge Road",
-    "postal": "119081"
+    "postal": "119081",
+    "latitude": 1.29807,
+    "longitude": 103.77595
   },
   {
     "elementId": "427077076",
     "name": "Ridge View Residential College Block C",
     "address": "25 Lower Kent Ridge Road",
-    "postal": "119081"
+    "postal": "119081",
+    "latitude": 1.29813,
+    "longitude": 103.77641
   },
   {
     "elementId": "427077083",
     "name": "Ridge View Residential College Block D",
     "address": "25 Lower Kent Ridge Road",
-    "postal": "119081"
+    "postal": "119081",
+    "latitude": 1.29841,
+    "longitude": 103.7758
   },
   {
     "elementId": "427077084",
     "name": "Ridge View Residential College Block E",
     "address": "25 Lower Kent Ridge Road",
-    "postal": "119081"
+    "postal": "119081",
+    "latitude": 1.29856,
+    "longitude": 103.77617
   },
   {
     "elementId": "546382548",
     "name": "Ridge View Annex",
     "address": "25 Lower Kent Ridge Road",
-    "postal": "119081"
+    "postal": "119081",
+    "latitude": 1.29739,
+    "longitude": 103.77681
   },
   {
     "elementId": "427077072",
     "name": "Ridge View Tower",
     "address": "25 Lower Kent Ridge Road",
-    "postal": "119081"
+    "postal": "119081",
+    "latitude": 1.29791,
+    "longitude": 103.77678
   },
   {
     "elementId": "54619731",
     "name": "Runme Shaw CFA Studios",
     "address": "17 Kent Ridge Crescent",
-    "postal": "119277"
+    "postal": "119277",
+    "latitude": 1.29919,
+    "longitude": 103.77375
   },
   {
     "elementId": "241265457",
     "name": "Kuok Foundation House",
     "address": "21 Kent Ridge Crescent",
-    "postal": "119280"
+    "postal": "119280",
+    "latitude": 1.30034,
+    "longitude": 103.77361
   },
   {
     "elementId": "241265458",
     "name": "Raffles Hall",
     "address": "19 Kent Ridge Crescent",
-    "postal": "119278"
+    "postal": "119278",
+    "latitude": 1.29989,
+    "longitude": 103.77389
   },
   {
     "elementId": "241265453",
     "name": "Raffles Hall",
     "address": "19 Kent Ridge Crescent",
-    "postal": "119278"
+    "postal": "119278",
+    "latitude": 1.30032,
+    "longitude": 103.77317
   },
   {
     "elementId": "241265456",
     "name": "Raffles Hall",
     "address": "19 Kent Ridge Crescent",
-    "postal": "119278"
+    "postal": "119278",
+    "latitude": 1.30029,
+    "longitude": 103.77265
   },
   {
     "elementId": "241265454",
     "name": "Raffles Hall",
     "address": "19 Kent Ridge Crescent",
-    "postal": "119278"
+    "postal": "119278",
+    "latitude": 1.2999,
+    "longitude": 103.77299
   },
   {
     "elementId": "241265455",
     "name": "Raffles Hall",
     "address": "19 Kent Ridge Crescent",
-    "postal": "119278"
+    "postal": "119278",
+    "latitude": 1.29952,
+    "longitude": 103.77333
   },
   {
     "elementId": "142077688",
     "name": "AS1",
     "address": "11 Arts Link",
-    "postal": "117573"
+    "postal": "117573",
+    "latitude": 1.29526,
+    "longitude": 103.77214
   },
   {
     "elementId": "142077129",
     "name": "AS2",
     "address": "1 Arts Link",
-    "postal": "117568"
+    "postal": "117568",
+    "latitude": 1.29522,
+    "longitude": 103.77134
   },
   {
     "elementId": "142077984",
     "name": "AS3",
     "address": "3 Arts Link",
-    "postal": "117570"
+    "postal": "117570",
+    "latitude": 1.29475,
+    "longitude": 103.77129
   },
   {
     "elementId": "142078389",
     "name": "AS4",
     "address": "9 Arts Link",
-    "postal": "117572"
+    "postal": "117572",
+    "latitude": 1.29455,
+    "longitude": 103.77178
   },
   {
     "elementId": "142080062",
     "name": "AS5",
     "address": "7 Arts Link",
-    "postal": "117570"
+    "postal": "117570",
+    "latitude": 1.29416,
+    "longitude": 103.77182
   },
   {
     "elementId": "15347235",
     "name": "AS6",
     "address": "11 Computing Drive",
-    "postal": "117416"
+    "postal": "117416",
+    "latitude": 1.29557,
+    "longitude": 103.77322
   },
   {
     "elementId": "142079835",
     "name": "AS7 - Shaw Foundation Building",
     "address": "5 Arts Link",
-    "postal": "117570"
+    "postal": "117570",
+    "latitude": 1.29432,
+    "longitude": 103.77111
   },
   {
     "elementId": "54583485",
     "name": "AS8",
     "address": "10 Kent Ridge Crescent",
-    "postal": "119260"
+    "postal": "119260",
+    "latitude": 1.29603,
+    "longitude": 103.77229
   },
   {
     "elementId": "140078777",
     "name": "SDE1",
     "address": "4 Architecture Drive",
-    "postal": "117566"
+    "postal": "117566",
+    "latitude": 1.29732,
+    "longitude": 103.77068
   },
   {
     "elementId": "140078560",
     "name": "SDE2",
     "address": "2 Architecture Drive",
-    "postal": "117565"
+    "postal": "117565",
+    "latitude": 1.29728,
+    "longitude": 103.77113
   },
   {
     "elementId": "140079084",
     "name": "SDE3",
     "address": "4 Architecture Drive",
-    "postal": "117566"
+    "postal": "117566",
+    "latitude": 1.29793,
+    "longitude": 103.77037
   },
   {
     "elementId": "628774809",
     "name": "SDE4",
     "address": "8 Architecture Drive",
-    "postal": "117356"
+    "postal": "117356",
+    "latitude": 1.29681,
+    "longitude": 103.77035
   },
   {
     "elementId": "139976357",
     "name": "E1",
     "address": "9 Engineering Drive 1",
-    "postal": "117575"
+    "postal": "117575",
+    "latitude": 1.29939,
+    "longitude": 103.77079
   },
   {
     "elementId": "139976284",
     "name": "E1A",
     "address": "9 Engineering Drive 1",
-    "postal": "117575"
+    "postal": "117575",
+    "latitude": 1.29871,
+    "longitude": 103.7711
   },
   {
     "elementId": "139974570",
     "name": "E2",
     "address": "9 Engineering Drive 1",
-    "postal": "117575"
+    "postal": "117575",
+    "latitude": 1.29931,
+    "longitude": 103.77118
   },
   {
     "elementId": "628777635",
     "name": "E2A",
     "address": "6 Engineering Drive 4",
-    "postal": "117361"
+    "postal": "117361",
+    "latitude": 1.29877,
+    "longitude": 103.77138
   },
   {
     "elementId": "139971771",
     "name": "E3",
     "address": "1 Engineering Drive 2",
-    "postal": "117576"
+    "postal": "117576",
+    "latitude": 1.29945,
+    "longitude": 103.77172
   },
   {
     "elementId": "139974054",
     "name": "E3A",
     "address": "9 Engineering Drive 1",
-    "postal": "117575"
+    "postal": "117575",
+    "latitude": 1.30026,
+    "longitude": 103.77144
   },
   {
     "elementId": "139970613",
     "name": "E4",
     "address": "9 Engineering Drive 1",
-    "postal": "117575"
+    "postal": "117575",
+    "latitude": 1.29871,
+    "longitude": 103.77219
   },
   {
     "elementId": "139960333",
     "name": "E4A",
     "address": "9 Engineering Drive 1",
-    "postal": "117575"
+    "postal": "117575",
+    "latitude": 1.29864,
+    "longitude": 103.77258
   },
   {
     "elementId": "54583929",
     "name": "E5",
     "address": "9 Engineering Drive 1",
-    "postal": "117575"
+    "postal": "117575",
+    "latitude": 1.29801,
+    "longitude": 103.77244
   },
   {
     "elementId": "139957953",
     "name": "E5A / T-Lab",
     "address": "5A Engineering Drive 1",
-    "postal": "117411"
+    "postal": "117411",
+    "latitude": 1.29973,
+    "longitude": 103.7721
   },
   {
     "elementId": "139959760",
     "name": "E6",
     "address": "5 Engineering Drive 1",
-    "postal": "117608"
+    "postal": "117608",
+    "latitude": 1.29916,
+    "longitude": 103.77304
   },
   {
     "elementId": "1060426986",
     "name": "E7",
     "address": "15 Kent Ridge Crescent",
-    "postal": "119276"
+    "postal": "119276",
+    "latitude": 1.2986,
+    "longitude": 103.77335
   },
   {
     "elementId": "139959807",
     "name": "E8",
     "address": "1 Engineering Drive 3",
-    "postal": "117580"
+    "postal": "117580",
+    "latitude": 1.29914,
+    "longitude": 103.77252
   },
   {
     "elementId": "139978993",
     "name": "EA",
     "address": "9 Engineering Drive 1",
-    "postal": "117575"
+    "postal": "117575",
+    "latitude": 1.30055,
+    "longitude": 103.77077
   },
   {
     "elementId": "54619717",
     "name": "EW1",
     "address": "9 Engineering Drive 1",
-    "postal": "117575"
+    "postal": "117575",
+    "latitude": 1.29854,
+    "longitude": 103.77072
   },
   {
     "elementId": "624224897",
     "name": "EW1A",
     "address": "1 Engineering Drive 2",
-    "postal": "117576"
+    "postal": "117576",
+    "latitude": 1.29943,
+    "longitude": 103.77038
   },
   {
     "elementId": "54583488",
     "name": "Information Technology",
     "address": "2 Engineering Drive 4",
-    "postal": "117584"
+    "postal": "117584",
+    "latitude": 1.29755,
+    "longitude": 103.77251
   },
   {
     "elementId": "140087374",
     "name": "Chinese Library",
     "address": "12 Kent Ridge Crescent",
-    "postal": "119275"
+    "postal": "119275",
+    "latitude": 1.29695,
+    "longitude": 103.77339
   },
   {
     "elementId": "54583490",
     "name": "Central Library",
     "address": "12 Kent Ridge Crescent",
-    "postal": "119275"
+    "postal": "119275",
+    "latitude": 1.29662,
+    "longitude": 103.77308
   },
   {
     "elementId": "140087398",
     "name": "Central Library Annexe",
     "address": "12 Kent Ridge Crescent",
-    "postal": "119275"
+    "postal": "119275",
+    "latitude": 1.29692,
+    "longitude": 103.77378
   },
   {
     "elementId": "139974326",
     "name": "LT 1",
     "address": "5 Engineering Drive 2",
-    "postal": "117579"
+    "postal": "117579",
+    "latitude": 1.2995,
+    "longitude": 103.77131
   },
   {
     "elementId": "139974364",
     "name": "LT 2",
     "address": "9 Engineering Drive 2",
-    "postal": "117575"
+    "postal": "117575",
+    "latitude": 1.29932,
+    "longitude": 103.77142
   },
   {
     "elementId": "140087835",
     "name": "LT 3",
     "address": "10 Kent Ridge Crescent",
-    "postal": "119260"
+    "postal": "119260",
+    "latitude": 1.29767,
+    "longitude": 103.77333
   },
   {
     "elementId": "140087837",
     "name": "LT 4",
     "address": "10 Kent Ridge Crescent",
-    "postal": "119260"
+    "postal": "119260",
+    "latitude": 1.29757,
+    "longitude": 103.77352
   },
   {
     "elementId": "139960627",
     "name": "LT 6",
     "address": "10 Kent Ridge Crescent",
-    "postal": "119260"
+    "postal": "119260",
+    "latitude": 1.29878,
+    "longitude": 103.77197
   },
   {
     "elementId": "139972031",
     "name": "LT 7",
     "address": "9 Engineering Drive 1",
-    "postal": "117575"
+    "postal": "117575",
+    "latitude": 1.30008,
+    "longitude": 103.77106
   },
   {
     "elementId": "142080063",
     "name": "LT 8",
     "address": "7 Arts Link",
-    "postal": "117571"
+    "postal": "117571",
+    "latitude": 1.29414,
+    "longitude": 103.77197
   },
   {
     "elementId": "142078782",
     "name": "LT 9",
     "address": "11 Arts Link",
-    "postal": "117573"
+    "postal": "117573",
+    "latitude": 1.29494,
+    "longitude": 103.77223
   },
   {
     "elementId": "142078783",
     "name": "LT 10",
     "address": "11 Computing Drive",
-    "postal": "117416"
+    "postal": "117416",
+    "latitude": 1.29487,
+    "longitude": 103.772
   },
   {
     "elementId": "142076923",
     "name": "LT 11",
     "address": "10 Kent Ridge Drive",
-    "postal": "119242"
+    "postal": "119242",
+    "latitude": 1.29545,
+    "longitude": 103.7714
   },
   {
     "elementId": "142077784",
     "name": "LT 12",
     "address": "Kent Ridge Drive",
-    "postal": "119246"
+    "postal": "119246",
+    "latitude": 1.29497,
+    "longitude": 103.77114
   },
   {
     "elementId": "142077734",
     "name": "LT 13",
     "address": "Kent Ridge Drive",
-    "postal": "119246"
+    "postal": "119246",
+    "latitude": 1.29506,
+    "longitude": 103.77089
   },
   {
     "elementId": "142079319",
     "name": "LT 14",
     "address": "11 Computing Drive",
-    "postal": "117416"
+    "postal": "117416",
+    "latitude": 1.29571,
+    "longitude": 103.77337
   },
   {
     "elementId": "142079318",
     "name": "LT 15",
     "address": "11 Computing Drive",
-    "postal": "117416"
+    "postal": "117416",
+    "latitude": 1.29552,
+    "longitude": 103.77343
   },
   {
     "elementId": "142082467",
     "name": "LT 16",
     "address": "13 Computing Drive",
-    "postal": "117417"
+    "postal": "117417",
+    "latitude": 1.29392,
+    "longitude": 103.77386
   },
   {
     "elementId": "142082470",
     "name": "LT 17",
     "address": "13 Computing Drive",
-    "postal": "117417"
+    "postal": "117417",
+    "latitude": 1.29361,
+    "longitude": 103.774
   },
   {
     "elementId": "142083506",
     "name": "LT 18",
     "address": "1 Business Link",
-    "postal": "117592"
+    "postal": "117592",
+    "latitude": 1.29332,
+    "longitude": 103.7746
   },
   {
     "elementId": "142083509",
     "name": "LT 19",
     "address": "Computing Drive",
-    "postal": "119077"
+    "postal": "119077",
+    "latitude": 1.29364,
+    "longitude": 103.77445
   },
   {
     "elementId": "141905825",
     "name": "LT 20",
     "address": "8 Science Drive 2",
-    "postal": "117547"
+    "postal": "117547",
+    "latitude": 1.29582,
+    "longitude": 103.7788
   },
   {
     "elementId": "141906024",
     "name": "LT 21",
     "address": "8 Science Drive 2",
-    "postal": "117547"
+    "postal": "117547",
+    "latitude": 1.29536,
+    "longitude": 103.77946
   },
   {
     "elementId": "141910214",
     "name": "LT 26",
     "address": "Science Drive 2",
-    "postal": "117547"
+    "postal": "117547",
+    "latitude": 1.29642,
+    "longitude": 103.78113
   },
   {
     "elementId": "141907258",
     "name": "Lim Seng Tjoe Lecture Theatre (LT 27)",
     "address": "27 Science Drive 1",
-    "postal": "117541"
+    "postal": "117541",
+    "latitude": 1.297,
+    "longitude": 103.78086
   },
   {
     "elementId": "141907104",
     "name": "LT 28",
     "address": "2 Medical Drive",
-    "postal": "117593"
+    "postal": "117593",
+    "latitude": 1.29723,
+    "longitude": 103.78116
   },
   {
     "elementId": "141907010",
     "name": "LT 29",
     "address": "2 Medical Drive",
-    "postal": "117593"
+    "postal": "117593",
+    "latitude": 1.29712,
+    "longitude": 103.78128
   },
   {
     "elementId": "142075681",
     "name": "LT 31",
     "address": "6 Science Drive 2",
-    "postal": "117546"
+    "postal": "117546",
+    "latitude": 1.29687,
+    "longitude": 103.78039
   },
   {
     "elementId": "141905556",
     "name": "Lee Wee Kheng Building (S1A/LT 32)",
     "address": "3 Science Drive 2",
-    "postal": "117543"
+    "postal": "117543",
+    "latitude": 1.29606,
+    "longitude": 103.77833
   },
   {
     "elementId": "142074913",
     "name": "LT 33",
     "address": "10 Lower Kent Ridge Road",
-    "postal": "119076"
+    "postal": "119076",
+    "latitude": 1.29776,
+    "longitude": 103.78096
   },
   {
     "elementId": "142074910",
     "name": "LT 34",
     "address": "21 Lower Kent Ridge Road",
-    "postal": "119077"
+    "postal": "119077",
+    "latitude": 1.29772,
+    "longitude": 103.78081
   },
   {
     "elementId": "54619721",
     "name": "COM1",
     "address": "13 Computing Drive",
-    "postal": "117417"
+    "postal": "117417",
+    "latitude": 1.29502,
+    "longitude": 103.77391
   },
   {
     "elementId": "54619699",
     "name": "COM2",
     "address": "15 Computing Drive",
-    "postal": "117418"
+    "postal": "117418",
+    "latitude": 1.29397,
+    "longitude": 103.77413
   },
   {
     "elementId": "15780831",
     "name": "COM3",
     "address": "11 Research Link",
-    "postal": "119391"
+    "postal": "119391",
+    "latitude": 1.29458,
+    "longitude": 103.77458
   },
   {
     "elementId": "1084196072",
     "name": "COM4",
     "address": "3A Research Link",
-    "postal": "119392"
+    "postal": "119392",
+    "latitude": 1.29513,
+    "longitude": 103.77538
   },
   {
     "elementId": "140087193",
     "name": "The Deck",
     "address": "5 Arts Link",
-    "postal": "117570"
+    "postal": "117570",
+    "latitude": 1.29467,
+    "longitude": 103.77249
   },
   {
     "elementId": "54619730",
     "name": "Singapore Synchrotron Light Source",
     "address": "5 Research Link",
-    "postal": "117603"
+    "postal": "117603",
+    "latitude": 1.29563,
+    "longitude": 103.77515
   },
   {
     "elementId": "54619687",
     "name": "i3",
     "address": "21 Heng Mui Keng Ter",
-    "postal": "119613"
+    "postal": "119613",
+    "latitude": 1.2925,
+    "longitude": 103.77571
   },
   {
     "elementId": "54619703",
     "name": "Innovation 4.0",
     "address": "3 Research Link",
-    "postal": "117602"
+    "postal": "117602",
+    "latitude": 1.29458,
+    "longitude": 103.77569
   },
   {
     "elementId": "84517831",
     "name": "Temasek Life Sciences Laboratory",
     "address": "1 Research Link",
-    "postal": "117604"
+    "postal": "117604",
+    "latitude": 1.29415,
+    "longitude": 103.77716
   },
   {
     "elementId": "1158481785",
     "name": "Greenhouse",
     "address": "1 Research Link",
-    "postal": "117604"
+    "postal": "117604",
+    "latitude": 1.29461,
+    "longitude": 103.77716
   },
   {
     "elementId": "142089841",
     "name": "Greenhouse",
     "address": "1 Research Link",
-    "postal": "117604"
+    "postal": "117604",
+    "latitude": 1.29391,
+    "longitude": 103.7767
   },
   {
     "elementId": "84517830",
     "name": "Greenhouse",
     "address": "1 Research Link",
-    "postal": "117604"
+    "postal": "117604",
+    "latitude": 1.29384,
+    "longitude": 103.77723
   },
   {
     "elementId": "12017240",
     "name": "NUS Enterprise Incubator",
     "address": "9 Prince George's Park",
-    "postal": "118408"
+    "postal": "118408",
+    "latitude": 1.29331,
+    "longitude": 103.77816
   },
   {
     "elementId": "351136508",
     "name": "Institute for Math and Science",
     "address": "3 Prince George's Park",
-    "postal": "118402"
+    "postal": "118402",
+    "latitude": 1.29266,
+    "longitude": 103.77951
   },
   {
     "elementId": "351136509",
     "name": "Institute for Math and Science",
     "address": "4 Prince George's Park",
-    "postal": "118403"
+    "postal": "118403",
+    "latitude": 1.2929,
+    "longitude": 103.77928
   },
   {
     "elementId": "351136507",
     "name": "IMS Auditorium",
     "address": "3 Prince George's Park",
-    "postal": "118402"
+    "postal": "118402",
+    "latitude": 1.29257,
+    "longitude": 103.77974
   },
   {
     "elementId": "173058823",
     "name": "Director Administration Conference Room",
     "address": "17 Prince George's Park",
-    "postal": "118416"
+    "postal": "118416",
+    "latitude": 1.29253,
+    "longitude": 103.77919
   },
   {
     "elementId": "1136599404",
     "name": "OCS Command Centre",
     "address": "18A Prince George's Park",
-    "postal": "118417"
+    "postal": "118417",
+    "latitude": 1.29226,
+    "longitude": 103.77923
   },
   {
     "elementId": "173059405",
     "name": "Investigation Division Multi-Purpose Room",
     "address": "18 Prince George's Park",
-    "postal": "118417"
+    "postal": "118417",
+    "latitude": 1.29229,
+    "longitude": 103.77958
   },
   {
     "elementId": "351136506",
     "name": "Office of Safety, Health and Environment",
     "address": "2 Prince George's Park",
-    "postal": "118401"
+    "postal": "118401",
+    "latitude": 1.29241,
+    "longitude": 103.77999
   },
   {
     "elementId": "238933471",
     "name": "King Edward VII Hall Communal Hall",
     "address": "1A Kent Ridge Road",
-    "postal": "119224"
+    "postal": "119224",
+    "latitude": 1.29234,
+    "longitude": 103.78097
   },
   {
     "elementId": "238933469",
     "name": "King Edward VII Hall Block A",
     "address": "1A Kent Ridge Road",
-    "postal": "119224"
+    "postal": "119224",
+    "latitude": 1.29169,
+    "longitude": 103.78138
   },
   {
     "elementId": "15521866",
     "name": "King Edward VII Hall Block B",
     "address": "1A Kent Ridge Road",
-    "postal": "119224"
+    "postal": "119224",
+    "latitude": 1.29162,
+    "longitude": 103.78127
   },
   {
     "elementId": "15521865",
     "name": "King Edward VII Hall Block C",
     "address": "1A Kent Ridge Road",
-    "postal": "119224"
+    "postal": "119224",
+    "latitude": 1.29149,
+    "longitude": 103.78116
   },
   {
     "elementId": "238933484",
     "name": "King Edward VII Hall Block D",
     "address": "1A Kent Ridge Road",
-    "postal": "119224"
+    "postal": "119224",
+    "latitude": 1.29141,
+    "longitude": 103.78079
   },
   {
     "elementId": "238933479",
     "name": "King Edward VII Hall Block E",
     "address": "1A Kent Ridge Road",
-    "postal": "119224"
+    "postal": "119224",
+    "latitude": 1.29303,
+    "longitude": 103.78084
   },
   {
     "elementId": "238933477",
     "name": "King Edward VII Hall Block E",
     "address": "1A Kent Ridge Road",
-    "postal": "119224"
+    "postal": "119224",
+    "latitude": 1.29336,
+    "longitude": 103.78052
   },
   {
     "elementId": "238933473",
     "name": "King Edward VII Hall Block F",
     "address": "1A Kent Ridge Road",
-    "postal": "119224"
+    "postal": "119224",
+    "latitude": 1.29327,
+    "longitude": 103.78035
   },
   {
     "elementId": "238933482",
     "name": "King Edward VII Hall Block F",
     "address": "1A Kent Ridge Road",
-    "postal": "119224"
+    "postal": "119224",
+    "latitude": 1.29284,
+    "longitude": 103.78074
   },
   {
     "elementId": "15521864",
     "name": "King Edward VII Hall Block G",
     "address": "1A Kent Ridge Road",
-    "postal": "119224"
+    "postal": "119224",
+    "latitude": 1.2929,
+    "longitude": 103.78039
   },
   {
     "elementId": "238933488",
     "name": "King Edward VII Hall Block H",
     "address": "1A Kent Ridge Road",
-    "postal": "119224"
+    "postal": "119224",
+    "latitude": 1.29299,
+    "longitude": 103.78022
   },
   {
     "elementId": "141905781",
     "name": "S1",
     "address": "Science Drive 4",
-    "postal": "117543"
+    "postal": "117543",
+    "latitude": 1.29577,
+    "longitude": 103.77793
   },
   {
     "elementId": "141905796",
     "name": "S2",
     "address": "8 Science Drive 2",
-    "postal": "117547"
+    "postal": "117547",
+    "latitude": 1.29546,
+    "longitude": 103.77801
   },
   {
     "elementId": "141905799",
     "name": "S3",
     "address": "Science Drive 3",
-    "postal": "117542"
+    "postal": "117542",
+    "latitude": 1.29556,
+    "longitude": 103.77865
   },
   {
     "elementId": "141905829",
     "name": "S4",
     "address": "Science Drive 3",
-    "postal": "117542"
+    "postal": "117542",
+    "latitude": 1.29562,
+    "longitude": 103.77919
   },
   {
     "elementId": "141905922",
     "name": "S4A",
     "address": "Science Drive 4",
-    "postal": "117597"
+    "postal": "117597",
+    "latitude": 1.29581,
+    "longitude": 103.77922
   },
   {
     "elementId": "141905956",
     "name": "S5",
     "address": "Science Drive 2",
-    "postal": "117546"
+    "postal": "117546",
+    "latitude": 1.29546,
+    "longitude": 103.77971
   },
   {
     "elementId": "141913009",
     "name": "S6",
     "address": "Science Drive 2",
-    "postal": "117548"
+    "postal": "117548",
+    "latitude": 1.29509,
+    "longitude": 103.78023
   },
   {
     "elementId": "141905434",
     "name": "S7",
     "address": "6 Science Drive 3",
-    "postal": "117554"
+    "postal": "117554",
+    "latitude": 1.29633,
+    "longitude": 103.77888
   },
   {
     "elementId": "141905474",
     "name": "S8",
     "address": "Lower Kent Ridge Road",
-    "postal": "119076"
+    "postal": "119076",
+    "latitude": 1.29613,
+    "longitude": 103.77934
   },
   {
     "elementId": "141906130",
     "name": "S9 - Wet Science Building",
     "address": "4 Science Drive 2",
-    "postal": "117544"
+    "postal": "117544",
+    "latitude": 1.29594,
+    "longitude": 103.77999
   },
   {
     "elementId": "141906238",
     "name": "S10",
     "address": "Science Drive 4",
-    "postal": "117543"
+    "postal": "117543",
+    "latitude": 1.29627,
+    "longitude": 103.77971
   },
   {
     "elementId": "141905252",
     "name": "S11",
     "address": "Science Drive 4",
-    "postal": "117543"
+    "postal": "117543",
+    "latitude": 1.29665,
+    "longitude": 103.77877
   },
   {
     "elementId": "141905202",
     "name": "S12",
     "address": "Science Drive 2",
-    "postal": "117542"
+    "postal": "117542",
+    "latitude": 1.29694,
+    "longitude": 103.77869
   },
   {
     "elementId": "141905403",
     "name": "S13",
     "address": "Science Drive 2",
-    "postal": "117543"
+    "postal": "117543",
+    "latitude": 1.29674,
+    "longitude": 103.77925
   },
   {
     "elementId": "140087728",
     "name": "S14",
     "address": "Science Drive 3",
-    "postal": "117543"
+    "postal": "117543",
+    "latitude": 1.29686,
+    "longitude": 103.77973
   },
   {
     "elementId": "141906507",
     "name": "S15",
     "address": "Science Drive 2",
-    "postal": "117543"
+    "postal": "117543",
+    "latitude": 1.29714,
+    "longitude": 103.78025
   },
   {
     "elementId": "141906506",
     "name": "S16",
     "address": "Science Drive 2",
-    "postal": "117543"
+    "postal": "117543",
+    "latitude": 1.29687,
+    "longitude": 103.78039
   },
   {
     "elementId": "142074912",
     "name": "S17",
     "address": "Science Drive 2",
-    "postal": "117543"
+    "postal": "117543",
+    "latitude": 1.29772,
+    "longitude": 103.78055
   },
   {
     "elementId": "874067395",
     "name": "Frontier",
     "address": "12 Science Drive 2",
-    "postal": "117549"
+    "postal": "117549",
+    "latitude": 1.29645,
+    "longitude": 103.78033
   },
   {
     "elementId": "141910213",
     "name": "Frontier",
     "address": "12 Science Drive 2",
-    "postal": "117549"
+    "postal": "117549",
+    "latitude": 1.29647,
+    "longitude": 103.78067
   },
   {
     "elementId": "141912739",
     "name": "MD1 - Tahir Foundation Building",
     "address": "12 Science Drive 2",
-    "postal": "117549"
+    "postal": "117549",
+    "latitude": 1.29536,
+    "longitude": 103.78051
   },
   {
     "elementId": "141912951",
     "name": "MD2",
     "address": "12 Science Drive 2",
-    "postal": "117549"
+    "postal": "117549",
+    "latitude": 1.29491,
+    "longitude": 103.78118
   },
   {
     "elementId": "141912946",
     "name": "MD3",
     "address": "16 Medical Drive",
-    "postal": "117600"
+    "postal": "117600",
+    "latitude": 1.29533,
+    "longitude": 103.78115
   },
   {
     "elementId": "141910523",
     "name": "MD4",
     "address": "5 Science Drive 2",
-    "postal": "117545"
+    "postal": "117545",
+    "latitude": 1.29575,
+    "longitude": 103.78093
   },
   {
     "elementId": "141910559",
     "name": "MD4A",
     "address": "5 Science Drive 2",
-    "postal": "117545"
+    "postal": "117545",
+    "latitude": 1.29562,
+    "longitude": 103.78084
   },
   {
     "elementId": "141910561",
     "name": "MD5",
     "address": "16 Medical Drive",
-    "postal": "117600"
+    "postal": "117600",
+    "latitude": 1.29563,
+    "longitude": 103.78139
   },
   {
     "elementId": "141912974",
     "name": "MD6",
     "address": "15 Medical Drive",
-    "postal": "117599"
+    "postal": "117599",
+    "latitude": 1.29532,
+    "longitude": 103.78171
   },
   {
     "elementId": "141910273",
     "name": "MD7",
     "address": "8 Medical Drive",
-    "postal": "117596"
+    "postal": "117596",
+    "latitude": 1.296,
+    "longitude": 103.78114
   },
   {
     "elementId": "141908093",
     "name": "MD9",
     "address": "2 Medical Drive",
-    "postal": "117593"
+    "postal": "117593",
+    "latitude": 1.2967,
+    "longitude": 103.78127
   },
   {
     "elementId": "141908489",
     "name": "MD10",
     "address": "4 Medical Drive",
-    "postal": "117594"
+    "postal": "117594",
+    "latitude": 1.29649,
+    "longitude": 103.78178
   },
   {
     "elementId": "141910336",
     "name": "MD11",
     "address": "10 Medical Drive",
-    "postal": "117597"
+    "postal": "117597",
+    "latitude": 1.29602,
+    "longitude": 103.78178
   },
   {
     "elementId": "455250294",
     "name": "Sheares Block A",
     "address": "20 Heng Mui Keng Ter",
-    "postal": "119618"
+    "postal": "119618",
+    "latitude": 1.29151,
+    "longitude": 103.77531
   },
   {
     "elementId": "627395979",
     "name": "Sheares Block B",
     "address": "20 Heng Mui Keng Ter",
-    "postal": "119618"
+    "postal": "119618",
+    "latitude": 1.29125,
+    "longitude": 103.7752
   },
   {
     "elementId": "455250299",
     "name": "Sheares Block C",
     "address": "20 Heng Mui Keng Ter",
-    "postal": "119618"
+    "postal": "119618",
+    "latitude": 1.29112,
+    "longitude": 103.7754
   },
   {
     "elementId": "455250300",
     "name": "Sheares Block D",
     "address": "20 Heng Mui Keng Ter",
-    "postal": "119618"
+    "postal": "119618",
+    "latitude": 1.29105,
+    "longitude": 103.77571
   },
   {
     "elementId": "639080232",
     "name": "Sheares Block E",
     "address": "20 Heng Mui Keng Ter",
-    "postal": "119618"
+    "postal": "119618",
+    "latitude": 1.29095,
+    "longitude": 103.77595
   },
   {
     "elementId": "639258228",
     "name": "Sheares Hall",
     "address": "20 Heng Mui Keng Ter",
-    "postal": "119618"
+    "postal": "119618",
+    "latitude": 1.29137,
+    "longitude": 103.7761
   },
   {
     "elementId": "640840065",
     "name": "Sheares Hall",
     "address": "20 Heng Mui Keng Ter",
-    "postal": "119618"
+    "postal": "119618",
+    "latitude": 1.2914,
+    "longitude": 103.77601
   },
   {
     "elementId": "455250293",
     "name": "Kent Ridge Hall",
     "address": "10 Heng Mui Keng Ter",
-    "postal": "119617"
+    "postal": "119617",
+    "latitude": 1.29163,
+    "longitude": 103.775
   },
   {
     "elementId": "455250298",
     "name": "Kent Ridge Hall",
     "address": "10 Heng Mui Keng Ter",
-    "postal": "119617"
+    "postal": "119617",
+    "latitude": 1.29132,
+    "longitude": 103.7749
   },
   {
     "elementId": "627395978",
     "name": "Kent Ridge Hall",
     "address": "10 Heng Mui Keng Ter",
-    "postal": "119617"
+    "postal": "119617",
+    "latitude": 1.29178,
+    "longitude": 103.77451
   },
   {
     "elementId": "455250295",
     "name": "Kent Ridge Hall",
     "address": "10 Heng Mui Keng Ter",
-    "postal": "1196187"
+    "postal": "1196187",
+    "latitude": 1.29172,
+    "longitude": 103.77412
   },
   {
     "elementId": "455250296",
     "name": "Kent Ridge Hall",
     "address": "10 Heng Mui Keng Ter",
-    "postal": "1196187"
+    "postal": "1196187",
+    "latitude": 1.29154,
+    "longitude": 103.77437
   },
   {
     "elementId": "455250297",
     "name": "Kent Ridge Hall",
     "address": "10 Heng Mui Keng Ter",
-    "postal": "119617"
+    "postal": "119617",
+    "latitude": 1.29148,
+    "longitude": 103.77471
   },
   {
     "elementId": "546374635",
     "name": "Technology Centre for Offshore and Marine, Singapore",
     "address": "12 Prince George's Park",
-    "postal": "118411"
+    "postal": "118411",
+    "latitude": 1.29311,
+    "longitude": 103.77668
   },
   {
     "elementId": "140087580",
     "name": "University Hall (Lee Kong Chian Wing)",
     "address": "21 Lower Kent Ridge Road",
-    "postal": "119077"
+    "postal": "119077",
+    "latitude": 1.29697,
+    "longitude": 103.77787
   },
   {
     "elementId": "140087584",
     "name": "University Hall (Tan Chin Tuan Wing)",
     "address": "21 Lower Kent Ridge Road",
-    "postal": "119077"
+    "postal": "119077",
+    "latitude": 1.29716,
+    "longitude": 103.77744
   },
   {
     "elementId": "54583930",
     "name": "University Cultural Centre",
     "address": "50 Kent Ridge Crescent",
-    "postal": "119279"
+    "postal": "119279",
+    "latitude": 1.30176,
+    "longitude": 103.77229
   },
   {
     "elementId": "54583487",
     "name": "University Health Centre",
     "address": "20 Lower Kent Ridge Road",
-    "postal": "119080"
+    "postal": "119080",
+    "latitude": 1.29905,
+    "longitude": 103.77643
   },
   {
     "elementId": "730956214",
     "name": "University Sports Centre",
     "address": "2 Sports Drive 1",
-    "postal": "117561"
+    "postal": "117561",
+    "latitude": 1.29971,
+    "longitude": 103.77546
   },
   {
     "elementId": "111973157",
     "name": "Yong Siew Toh Conservatory of Music",
     "address": "3 Conservatory Drive",
-    "postal": "117376"
+    "postal": "117376",
+    "latitude": 1.30218,
+    "longitude": 103.77265
   },
   {
     "elementId": "54583491",
     "name": "Yusof Ishak House",
     "address": "31 Lower Kent Ridge Road",
-    "postal": "119078"
+    "postal": "119078",
+    "latitude": 1.2985,
+    "longitude": 103.77477
   },
   {
     "elementId": "298991082",
     "name": "Centre for Protective Technology",
     "address": "12 Kent Ridge Road",
-    "postal": "119222"
+    "postal": "119222",
+    "latitude": 1.29719,
+    "longitude": 103.77515
   },
   {
     "elementId": "163560567",
     "name": "Tropical Marine Science Institute",
     "address": "18 Kent Ridge Road",
-    "postal": "119227"
+    "postal": "119227",
+    "latitude": 1.29756,
+    "longitude": 103.77421
   },
   {
     "elementId": "54619685",
     "name": "Hon Sui Sen Memorial Library",
     "address": "1 Hon Sui Sen Drive",
-    "postal": "117588"
+    "postal": "117588",
+    "latitude": 1.29302,
+    "longitude": 103.77444
   },
   {
     "elementId": "503403831",
     "name": "Ventus",
     "address": "8 Kent Ridge Drive",
-    "postal": "119246"
+    "postal": "119246",
+    "latitude": 1.29529,
+    "longitude": 103.77022
   },
   {
     "elementId": "858981035",
     "name": "Kent Ridge Guild House",
     "address": "9 Kent Ridge Drive",
-    "postal": "119241"
+    "postal": "119241",
+    "latitude": 1.2938,
+    "longitude": 103.77262
   },
   {
     "elementId": "54619694",
     "name": "Kent Ridge Guild House Extension",
     "address": "9 Kent Ridge Drive",
-    "postal": "119241"
+    "postal": "119241",
+    "latitude": 1.29387,
+    "longitude": 103.77308
   },
   {
     "elementId": "142219217",
     "name": "Eusoff Hall Block A",
     "address": "10 Kent Ridge Drive",
-    "postal": "119242"
+    "postal": "119242",
+    "latitude": 1.29349,
+    "longitude": 103.76968
   },
   {
     "elementId": "142219214",
     "name": "Eusoff Hall Block B and C",
     "address": "10 Kent Ridge Drive",
-    "postal": "119242"
+    "postal": "119242",
+    "latitude": 1.29304,
+    "longitude": 103.77002
   },
   {
     "elementId": "142219212",
     "name": "Eusoff Hall Block D",
     "address": "10 Kent Ridge Drive",
-    "postal": "119242"
+    "postal": "119242",
+    "latitude": 1.29326,
+    "longitude": 103.77039
   },
   {
     "elementId": "142219213",
     "name": "Eusoff Hall Block E",
     "address": "10 Kent Ridge Drive",
-    "postal": "119242"
+    "postal": "119242",
+    "latitude": 1.29352,
+    "longitude": 103.77027
   },
   {
     "elementId": "142221851",
     "name": "Temasek Hall",
     "address": "12 Kent Ridge Drive",
-    "postal": "119243"
+    "postal": "119243",
+    "latitude": 1.2927,
+    "longitude": 103.77138
   },
   {
     "elementId": "142221852",
     "name": "Temasek Hall Block A",
     "address": "12 Kent Ridge Drive",
-    "postal": "119243"
+    "postal": "119243",
+    "latitude": 1.29304,
+    "longitude": 103.77079
   },
   {
     "elementId": "142221865",
     "name": "Temasek Hall Block B",
     "address": "12 Kent Ridge Drive",
-    "postal": "119243"
+    "postal": "119243",
+    "latitude": 1.29268,
+    "longitude": 103.77056
   },
   {
     "elementId": "142221858",
     "name": "Temasek Hall Block C",
     "address": "12 Kent Ridge Drive",
-    "postal": "119243"
+    "postal": "119243",
+    "latitude": 1.29265,
+    "longitude": 103.77096
   },
   {
     "elementId": "142221853",
     "name": "Temasek Hall Block D",
     "address": "12 Kent Ridge Drive",
-    "postal": "119243"
+    "postal": "119243",
+    "latitude": 1.29268,
+    "longitude": 103.77182
   },
   {
     "elementId": "142221863",
     "name": "Temasek Hall Block E",
     "address": "12 Kent Ridge Drive",
-    "postal": "119243"
+    "postal": "119243",
+    "latitude": 1.29265,
+    "longitude": 103.77221
   },
   {
     "elementId": "125774787",
     "name": "Stephen Riady Centre",
     "address": "2 College Avenue West",
-    "postal": "138607"
+    "postal": "138607",
+    "latitude": 1.30462,
+    "longitude": 103.77252
   },
   {
     "elementId": "124549217",
     "name": "Education Resource Centre",
     "address": "8 College Avenue West",
-    "postal": "138608"
+    "postal": "138608",
+    "latitude": 1.30598,
+    "longitude": 103.77291
   },
   {
     "elementId": "140087160",
     "name": "BIZ 1 - Mochtar Riady Building",
     "address": "15 Kent Ridge Drive",
-    "postal": "119245"
+    "postal": "119245",
+    "latitude": 1.2925,
+    "longitude": 103.77415
   },
   {
     "elementId": "54619697",
     "name": "BIZ 2",
     "address": "1 Business Link",
-    "postal": "117592"
+    "postal": "117592",
+    "latitude": 1.29355,
+    "longitude": 103.77507
   },
   {
     "elementId": "142080252",
     "name": "Shaw Foundation Alumni House",
     "address": "11 Kent Ridge Drive",
-    "postal": "119244"
+    "postal": "119244",
+    "latitude": 1.29325,
+    "longitude": 103.7736
   },
   {
     "elementId": "730959512",
     "name": "Techno Edge",
     "address": "2 Engineering Drive 4",
-    "postal": "117584"
+    "postal": "117584",
+    "latitude": 1.29795,
+    "longitude": 103.77153
   },
   {
     "elementId": "141913023",
     "name": "Centre for Life Sciences",
     "address": "28 Medical Drive",
-    "postal": "117456"
+    "postal": "117456",
+    "latitude": 1.29444,
+    "longitude": 103.78077
   },
   {
     "elementId": "140084916",
     "name": "Centre for English Language Communication",
     "address": "10 Architecture Drive",
-    "postal": "117511"
+    "postal": "117511",
+    "latitude": 1.29698,
+    "longitude": 103.77139
   },
   {
     "elementId": "141913116",
     "name": "Medicine+Science Library",
     "address": "11 Lower Kent Ridge Road",
-    "postal": "119083"
+    "postal": "119083",
+    "latitude": 1.29696,
+    "longitude": 103.78173
   },
   {
     "elementId": "238932786",
     "name": "PGP Residence 1 Block 1",
     "address": "21 Prince George's Park",
-    "postal": "118420"
+    "postal": "118420",
+    "latitude": 1.29155,
+    "longitude": 103.7829
   },
   {
     "elementId": "238932783",
     "name": "PGP Residence 1 Block 2",
     "address": "21 Prince George's Park",
-    "postal": "118420"
+    "postal": "118420",
+    "latitude": 1.29143,
+    "longitude": 103.78266
   },
   {
     "elementId": "238932785",
     "name": "PGP Residence 1 Block 3",
     "address": "21 Prince George's Park",
-    "postal": "118420"
+    "postal": "118420",
+    "latitude": 1.29132,
+    "longitude": 103.78242
   },
   {
     "elementId": "238932792",
     "name": "PGP Residence 1 Block 4",
     "address": "21 Prince George's Park",
-    "postal": "118420"
+    "postal": "118420",
+    "latitude": 1.2912,
+    "longitude": 103.78218
   },
   {
     "elementId": "238932778",
     "name": "PGP Residence 2 Block 5",
     "address": "27 Prince George's Park",
-    "postal": "118425"
+    "postal": "118425",
+    "latitude": 1.29101,
+    "longitude": 103.78176
   },
   {
     "elementId": "238932780",
     "name": "PGP Residence 2 Block 6",
     "address": "27 Prince George's Park",
-    "postal": "118425"
+    "postal": "118425",
+    "latitude": 1.29088,
+    "longitude": 103.78148
   },
   {
     "elementId": "238932775",
     "name": "PGP Residence 2 Block 7",
     "address": "27 Prince George's Park",
-    "postal": "118425"
+    "postal": "118425",
+    "latitude": 1.29083,
+    "longitude": 103.78121
   },
   {
     "elementId": "1084099106",
     "name": "PGP Residence 2 Block 8",
     "address": "27 Prince George's Park",
-    "postal": "118425"
+    "postal": "118425",
+    "latitude": 1.29085,
+    "longitude": 103.78086
   },
   {
     "elementId": "238932782",
     "name": "PGP Residence 3 Block 9",
     "address": "29 Prince George's Park",
-    "postal": "118426"
+    "postal": "118426",
+    "latitude": 1.29098,
+    "longitude": 103.78056
   },
   {
     "elementId": "238932777",
     "name": "PGP Residence 3 Block 10",
     "address": "29 Prince George's Park",
-    "postal": "118426"
+    "postal": "118426",
+    "latitude": 1.29119,
+    "longitude": 103.78032
   },
   {
     "elementId": "238932781",
     "name": "PGP Residence 3 Block 11",
     "address": "29 Prince George's Park",
-    "postal": "118426"
+    "postal": "118426",
+    "latitude": 1.29148,
+    "longitude": 103.78017
   },
   {
     "elementId": "238932776",
     "name": "PGP Residence 3 Block 12",
     "address": "29 Prince George's Park",
-    "postal": "118426"
+    "postal": "118426",
+    "latitude": 1.29181,
+    "longitude": 103.78011
   },
   {
     "elementId": "238932768",
     "name": "PGR Graduate Student Block 13",
     "address": "39 Prince George's Park",
-    "postal": "118431"
+    "postal": "118431",
+    "latitude": 1.29185,
+    "longitude": 103.77986
   },
   {
     "elementId": "238932769",
     "name": "PGR Graduate Student Block 14",
     "address": "39 Prince George's Park",
-    "postal": "118431"
+    "postal": "118431",
+    "latitude": 1.29164,
+    "longitude": 103.77964
   },
   {
     "elementId": "251677507",
     "name": "PGP Foyer",
     "address": "27 Prince George's Park",
-    "postal": "118425"
+    "postal": "118425",
+    "latitude": 1.29097,
+    "longitude": 103.78114
   },
   {
     "elementId": "241503843",
     "name": "PGP Amphitheatre",
     "address": "39 Prince George's Park",
-    "postal": "118431"
+    "postal": "118431",
+    "latitude": 1.29159,
+    "longitude": 103.7799
   },
   {
     "elementId": "238932766",
     "name": "Helix House Block 15 - 17",
     "address": "37 Prince George's Park",
-    "postal": "118430"
+    "postal": "118430",
+    "latitude": 1.29134,
+    "longitude": 103.7796
   },
   {
     "elementId": "238932773",
     "name": "Helix House Block 18 and 19",
     "address": "37 Prince George's Park",
-    "postal": "118430"
+    "postal": "118430",
+    "latitude": 1.29109,
+    "longitude": 103.77989
   },
   {
     "elementId": "238932772",
     "name": "Pioneer House Block 20 and 21",
     "address": "35 Prince George's Park",
-    "postal": "118429"
+    "postal": "118429",
+    "latitude": 1.29072,
+    "longitude": 103.78013
   },
   {
     "elementId": "238932774",
     "name": "Pioneer House Block 22 - 25",
     "address": "35 Prince George's Park",
-    "postal": "118429"
+    "postal": "118429",
+    "latitude": 1.29037,
+    "longitude": 103.78042
   },
   {
     "elementId": "238932795",
     "name": "PGP Gym",
     "address": "33 Prince George's Park",
-    "postal": "118428"
+    "postal": "118428",
+    "latitude": 1.29038,
+    "longitude": 103.78084
   },
   {
     "elementId": "241523920",
     "name": "PGP MPSH / Minimart",
     "address": "31 Prince George's Park",
-    "postal": "118427"
+    "postal": "118427",
+    "latitude": 1.29048,
+    "longitude": 103.78133
   },
   {
     "elementId": "238932790",
     "name": "LightHouse Block 26",
     "address": "24 Prince George's Park",
-    "postal": "118424"
+    "postal": "118424",
+    "latitude": 1.29062,
+    "longitude": 103.78158
   },
   {
     "elementId": "238932793",
     "name": "LightHouse Block 27 and 28",
     "address": "24 Prince George's Park",
-    "postal": "118424"
+    "postal": "118424",
+    "latitude": 1.29029,
+    "longitude": 103.78169
   },
   {
     "elementId": "238932794",
     "name": "LightHouse Block 29 and 30",
     "address": "24 Prince George's Park",
-    "postal": "118424"
+    "postal": "118424",
+    "latitude": 1.29049,
+    "longitude": 103.7819
   },
   {
     "elementId": "732229815",
     "name": "PGP Canteen",
     "address": "27 Prince George's Park",
-    "postal": "118425"
+    "postal": "118425",
+    "latitude": 1.29078,
+    "longitude": 103.78215
   }
 ]

@@ -1,5 +1,5 @@
 import { atom } from 'nanostores';
-import type { GISLayers, MapLayers, MenuPages, Models } from './types';
+import type { GISLayers, MapLayers, MenuPages, Models, Position, UserSettings } from './types';
 
 export const activePage = atom<MenuPages | ''>('');
 export const activeMapLayer = atom<MapLayers>('street');
@@ -10,7 +10,13 @@ export const buildingColorSetting = atom<'' | 'distance'>('');
 
 export const buildingId = atom('');
 export const isSelectColorByDistance = atom(false);
-export const colorByDistancePosition = atom({
+export const colorByDistancePosition = atom<Position>({
   latitude: 1.29563,
   longitude: 103.77515,
 });
+
+export const userSettings = atom<UserSettings>({
+  moveCameraOnSearch: true,
+});
+
+export const flyToPosition = atom<Position | null>(null);
