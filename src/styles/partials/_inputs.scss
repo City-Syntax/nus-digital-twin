@@ -46,7 +46,7 @@
   }
 
   > svg {
-    height: 24px;
+    height: 1.5rem;
     padding: 4px;
     stroke: rgba(var(--base-300));
     cursor: pointer;
@@ -58,6 +58,11 @@
     right: 0;
     transform: translateY(-50%);
     display: none;
+    transition: opacity 150ms;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 
