@@ -9,6 +9,48 @@
   max-height: 100%;
 }
 
+div.cesium-credit-lightbox-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: saturate(120%) blur(6px);
+}
+
+div.cesium-credit-lightbox.cesium-credit-lightbox-expanded,
+div.cesium-credit-lightbox.cesium-credit-lightbox-mobile {
+  background-color: rgba(var(--base-100), 0.8);
+  backdrop-filter: saturate(140%) blur(4px);
+  box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
+  border: none;
+  border-radius: var(--rounded-base);
+  padding: var(--padding-base);
+  max-width: 428px;
+
+  ul {
+    padding: 0;
+  }
+}
+
+div.cesium-credit-lightbox.cesium-credit-lightbox-mobile {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0;
+
+  .cesium-credit-lightbox-close {
+    display: block;
+  }
+}
+
+.cesium-credit-lightbox-close {
+  display: none;
+}
+
+div.cesium-credit-lightbox-title {
+  font-family: 'IBM Plex Sans';
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 12px;
+}
+
 div.cesium-viewer-timelineContainer {
   width: 100%;
   top: 0;
