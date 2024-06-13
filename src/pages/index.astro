@@ -19,3 +19,23 @@ import BottomBar from '../components/BottomBar.astro';
   </div>
   <BottomBar />
 </Layout>
+<script>
+  import tippy from 'tippy.js';
+
+  tippy('#home-btn', {
+    content: 'Reset view',
+    arrow: false,
+  });
+
+  tippy('#map-picker-btn', {
+    content: 'Map picker',
+    arrow: false,
+    touch: false,
+  });
+
+  tippy('.search > svg', {
+    content: 'Clear search',
+    arrow: false,
+    touch: false,
+  });
+</script>
