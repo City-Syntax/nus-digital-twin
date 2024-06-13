@@ -22,6 +22,15 @@ const Searchbar = () => {
     });
   }, []);
 
+  const focusOnInput = useCallback(() => {
+    const [desktopSearch, mobileSearch] = document.querySelectorAll('input');
+    if (window.innerWidth <= 878) {
+      mobileSearch.focus();
+    } else {
+      desktopSearch.focus();
+    }
+  }, []);
+
   buildingId.listen((newId) => {
     if (newId === '') {
       setSearchQuery('');
@@ -84,7 +93,13 @@ const Searchbar = () => {
           }}
           placeholder="Search buildings"
         ></Command.Input>
-        <Icons.Search></Icons.Search>
+        <Icons.Close
+          onClick={() => {
+            setSearchQuery('');
+            scrollUpOnChange();
+            focusOnInput();
+          }}
+        ></Icons.Close>
       </div>
       <Command.List className={open ? '' : 'hide'} ref={listRef}>
         <Command.Group heading={`Search results (${buildingsDataToShow.length})`}>

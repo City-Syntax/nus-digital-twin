@@ -23,7 +23,6 @@
   > input {
     @include input;
     width: 100%;
-    padding-right: 40px;
     transition: box-shadow 100ms;
     text-overflow: ellipsis;
     box-shadow: inset 0 0 0 1px rgba(var(--base-300));
@@ -33,19 +32,32 @@
       box-shadow: inset 0 0 0 2px rgba(var(--primary-300));
     }
 
+    &:not(:placeholder-shown) {
+      padding-right: 32px;
+
+      & ~ svg {
+        display: block;
+      }
+    }
+
     @media screen and (max-width: $md) {
       font-size: var(--text-base);
     }
   }
 
   > svg {
-    height: 20px;
-    margin-right: 12px;
+    height: 24px;
+    padding: 4px;
+    stroke: rgba(var(--base-300));
+    cursor: pointer;
+    border-radius: 100%;
+    margin-right: 4px;
     position: absolute;
     top: 50%;
     bottom: 0;
     right: 0;
     transform: translateY(-50%);
+    display: none;
   }
 }
 
