@@ -191,7 +191,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   flyToPosition.subscribe((val) => {
-    if (!val || !userSettings.get().moveCamera) {
+    if (!val || !userSettings.get().moveCameraOnSearch) {
       return;
     }
 

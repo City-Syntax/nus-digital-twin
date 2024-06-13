@@ -17,17 +17,17 @@ const Settings = () => {
           <div className="hint">Adjust the camera view when selecting a building via the search bar.</div>
           <div className="btn-group">
             <button
-              className={`${$userSettings.moveCamera ? 'active' : ''}`}
+              className={`${$userSettings.moveCameraOnSearch ? 'active' : ''}`}
               onClick={() => {
-                userSettings.set({ ...$userSettings, moveCamera: true });
+                userSettings.set({ ...$userSettings, moveCameraOnSearch: true });
               }}
             >
               Enable
             </button>
             <button
-              className={`${!$userSettings.moveCamera ? 'active' : ''}`}
+              className={`${!$userSettings.moveCameraOnSearch ? 'active' : ''}`}
               onClick={() => {
-                userSettings.set({ ...$userSettings, moveCamera: false });
+                userSettings.set({ ...$userSettings, moveCameraOnSearch: false });
               }}
             >
               Disable

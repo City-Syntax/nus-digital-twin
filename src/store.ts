@@ -15,7 +15,7 @@ export const colorByDistancePosition = atom<Position>({
 });
 
 export const userSettings = atom<UserSettings>({
-  moveCamera: true,
+  moveCameraOnSearch: true,
 });
 
 export const flyToPosition = atom<Position | null>(null);
