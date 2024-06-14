@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
 import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS } from './buildingInfoUtils';
@@ -8,8 +8,12 @@ import type { BuildingPropertiesProps } from '../../../content/config';
 import buildingsData from '../../../content/buildings/buildings.json';
 import CloseButton from '../CloseButton';
 
-const BuildingInfo = () => {
-  const [category, setCategory] = useState<BuildingInfoCategories>('general');
+type BuildingInfoProps = {
+  category: BuildingInfoCategories;
+  setCategory: (category: BuildingInfoCategories) => void;
+};
+
+const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
   const $buildingId = useStore(buildingId);
   const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
   const propertiesToDisplay = Object.entries(buildingProperties).filter((data) =>

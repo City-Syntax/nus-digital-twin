@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
 import { activePage, buildingId, isSelectColorByDistance } from '../../store';
+import type { BuildingInfoCategories } from '../../types';
 import AboutNUSCampus from './AboutNUSCampus';
 import StreetCenterlines from './StreetCenterlines';
 import BuildingFootprints from './BuildingFootprints';
@@ -33,6 +34,7 @@ import AutoHeight from '../AutoHeight';
 
 const Menu = () => {
   const $activePage = useStore(activePage);
+  const [category, setCategory] = useState<BuildingInfoCategories>('general');
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -72,7 +74,9 @@ const Menu = () => {
             {$activePage === 'ubem' && <UBEM></UBEM>}
             {$activePage === 'bim' && <BIMModels></BIMModels>}
             {$activePage === 'settings' && <Settings></Settings>}
-            {$activePage === 'building-info' && <BuildingInfo></BuildingInfo>}
+            {$activePage === 'building-info' && (
+              <BuildingInfo category={category} setCategory={setCategory}></BuildingInfo>
+            )}
           </div>
         </CSSTransition>
       </div>
@@ -106,7 +110,9 @@ const Menu = () => {
           <div className="menubar-content">
             <AutoHeight>
               {$activePage === 'about' && <AboutNUSCampus></AboutNUSCampus>}
-              {$activePage === 'building-info' && <BuildingInfo></BuildingInfo>}
+              {$activePage === 'building-info' && (
+                <BuildingInfo category={category} setCategory={setCategory}></BuildingInfo>
+              )}
               {$activePage === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
               {$activePage === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
               {$activePage === 'green-spaces' && <GreenSpaces></GreenSpaces>}
