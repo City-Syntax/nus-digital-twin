@@ -38,12 +38,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     IonImageryProvider,
     ImageryLayer,
     EllipsoidGeodesic,
-    IonResource,
     GeoJsonDataSource,
+    ClassificationType,
+    HeightReference,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
-  import { data } from 'autoprefixer';
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
@@ -194,18 +194,27 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
   }
 
-  const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/buildings.json', {
-    clampToGround: true,
-  });
-  const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/roads.json', {
-    clampToGround: true,
-  });
-  const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/waterways.json', {
-    clampToGround: true,
-  });
+  GeoJsonDataSource.clampToGround = true;
+  const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/buildings.json');
+  const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/roads.json');
+  const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/waterways.json');
   viewer.dataSources.add(buildingFootprintsData);
   viewer.dataSources.add(streetCenterlinesData);
   viewer.dataSources.add(waterBodiesData);
+
+  streetCenterlinesData.entities.values.forEach((entity) => {
+    if (entity.polyline) {
+      // @ts-ignore: Cesium types are incorrect
+      entity.polyline.classificationType = ClassificationType.TERRAIN;
+    }
+  });
+
+  buildingFootprintsData.entities.values.forEach((entity) => {
+    if (entity.polygon) {
+      // @ts-ignore: Cesium types are incorrect
+      entity.polygon.classificationType = ClassificationType.TERRAIN;
+    }
+  });
 
   activeGISLayer.subscribe((val) => {
     buildingFootprintsData.show = false;
