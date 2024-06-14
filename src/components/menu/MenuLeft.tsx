@@ -13,8 +13,13 @@ const MenuLeft = () => {
       </div>
       <div className="menubar-body">
         <div className="menu-list">
-          <div className="menu-list-title">About</div>
-          <MenuLink toPage="about" label="About NUS Campus" iconName="About"></MenuLink>
+          <input id="about-left" className="toggle" type="checkbox" defaultChecked />
+          <label htmlFor="about-left" className="toggle-label menu-list-title">
+            About
+          </label>
+          <div className="menu-list-content">
+            <MenuLink toPage="about" label="About NUS Campus" iconName="About"></MenuLink>
+          </div>
         </div>
         <div className="menu-list">
           <div className="menu-list-title">GIS Layers</div>
