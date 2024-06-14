@@ -172,7 +172,7 @@
   display: flex;
   flex-direction: column;
 
-  .menu-list-title {
+  > .menu-list-title {
     padding-left: var(--padding-base);
     padding-right: var(--padding-base);
     color: rgba(var(--base-300));
@@ -180,7 +180,8 @@
     font-weight: 600;
   }
 
-  button {
+  > button,
+  .menu-list-content > button {
     @include btn;
 
     font-size: var(--text-sm);
@@ -261,6 +262,7 @@
     }
 
     > button,
+    .menu-list-content > button,
     > .menu-list-title {
       padding-left: 0;
       padding-right: 0;
@@ -282,6 +284,10 @@
     justify-content: space-between;
     border-radius: var(--rounded-base);
 
+    &:hover {
+      color: rgba(var(--base-300), 0.6);
+    }
+
     > svg {
       height: 1rem;
       width: 1rem;
@@ -290,22 +296,20 @@
     }
   }
 
-  .toggle-label:hover {
-    color: rgba(var(--base-300), 0.6);
-  }
-
   .menu-list-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 250ms ease-in-out;
   }
 
-  .toggle:checked ~ .menu-list-content {
-    max-height: 100vh;
-  }
+  .toggle:checked {
+    & ~ .menu-list-content {
+      max-height: 100vh;
+    }
 
-  .toggle:checked + .toggle-label > svg {
-    transform: rotate(0);
+    & + .toggle-label > svg {
+      transform: rotate(0);
+    }
   }
 }
 
