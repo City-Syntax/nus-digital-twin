@@ -3,6 +3,7 @@ import MenuLink from './MenuLink';
 import Searchbar from '../Searchbar';
 import { useStore } from '@nanostores/react';
 import { activeModel } from '../../store';
+import Icons from '../Icons';
 
 const MenuLeft = () => {
   const $activeModel = useStore(activeModel);
@@ -15,7 +16,8 @@ const MenuLeft = () => {
         <div className="menu-list">
           <input id="about-left" className="toggle" type="checkbox" defaultChecked />
           <label htmlFor="about-left" className="toggle-label menu-list-title">
-            About
+            <span>About</span>
+            <Icons.ChevronDown></Icons.ChevronDown>
           </label>
           <div className="menu-list-content">
             <MenuLink toPage="about" label="About NUS Campus" iconName="About"></MenuLink>
