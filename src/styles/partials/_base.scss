@@ -92,6 +92,10 @@ h3 {
   font-size: var(--text-base);
 }
 
+a:focus-visible {
+  outline: rgba(var(--primary-300)) 2px solid;
+}
+
 p,
 button {
   margin: 0;

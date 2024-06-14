@@ -3,9 +3,25 @@ import MenuLink from './MenuLink';
 import Searchbar from '../Searchbar';
 import { useStore } from '@nanostores/react';
 import { activeModel } from '../../store';
+import Icons from '../Icons';
 
 const MenuLeft = () => {
   const $activeModel = useStore(activeModel);
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const isOpen = e.target.checked;
+    const buttons = e.target.parentElement?.querySelector('.menu-list-content')?.querySelectorAll('button');
+
+    if (buttons) {
+      buttons.forEach((button) => {
+        if (isOpen) {
+          button.tabIndex = 0;
+        } else {
+          button.tabIndex = -1;
+        }
+      });
+    }
+  };
+
   return (
     <nav className="menubar-left">
       <div className="menubar-header">
@@ -13,31 +29,55 @@ const MenuLeft = () => {
       </div>
       <div className="menubar-body">
         <div className="menu-list">
-          <div className="menu-list-title">About</div>
-          <MenuLink toPage="about" label="About NUS Campus" iconName="About"></MenuLink>
+          <input id="about-left" className="toggle" type="checkbox" defaultChecked onChange={handleOnChange} />
+          <label htmlFor="about-left" className="toggle-label menu-list-title">
+            <span>About</span>
+            <Icons.ChevronDown></Icons.ChevronDown>
+          </label>
+          <div className="menu-list-content">
+            <MenuLink toPage="about" label="About NUS Campus" iconName="About"></MenuLink>
+          </div>
         </div>
         <div className="menu-list">
-          <div className="menu-list-title">GIS Layers</div>
-          <MenuLink toPage="street-centerlines" label="Street Centerlines" iconName="StreetCenterlines"></MenuLink>
-          <MenuLink toPage="building-footprints" label="Building Footprints" iconName="BuildingFootprints"></MenuLink>
-          <MenuLink toPage="green-spaces" label="Green Spaces" iconName="GreenSpaces"></MenuLink>
-          <MenuLink toPage="water-bodies" label="Water Bodies" iconName="WaterBodies"></MenuLink>
+          <input id="gis-layers-left" className="toggle" type="checkbox" defaultChecked onChange={handleOnChange} />
+          <label htmlFor="gis-layers-left" className="toggle-label menu-list-title">
+            <span>GIS Layers</span>
+            <Icons.ChevronDown></Icons.ChevronDown>
+          </label>
+          <div className="menu-list-content">
+            <MenuLink toPage="street-centerlines" label="Street Centerlines" iconName="StreetCenterlines"></MenuLink>
+            <MenuLink toPage="building-footprints" label="Building Footprints" iconName="BuildingFootprints"></MenuLink>
+            <MenuLink toPage="green-spaces" label="Green Spaces" iconName="GreenSpaces"></MenuLink>
+            <MenuLink toPage="water-bodies" label="Water Bodies" iconName="WaterBodies"></MenuLink>
+          </div>
         </div>
         <div className="menu-list">
-          <div className="menu-list-title">Building Scale Models</div>
-          <MenuLink toPage="bim" label="BIM Models" iconName="BIMModels" isActive={$activeModel === 'bim'}></MenuLink>
-          <MenuLink toPage="rhino-building" label="Rhino (Building)" iconName="RhinoModels"></MenuLink>
+          <input id="building-scale-left" className="toggle" type="checkbox" defaultChecked onChange={handleOnChange} />
+          <label htmlFor="building-scale-left" className="toggle-label menu-list-title">
+            <span>Building Scale Models</span>
+            <Icons.ChevronDown></Icons.ChevronDown>
+          </label>
+          <div className="menu-list-content">
+            <MenuLink toPage="bim" label="BIM Models" iconName="BIMModels" isActive={$activeModel === 'bim'}></MenuLink>
+            <MenuLink toPage="rhino-building" label="Rhino (Building)" iconName="RhinoModels"></MenuLink>
+          </div>
         </div>
         <div className="menu-list">
-          <div className="menu-list-title">Urban Scale Models</div>
-          <MenuLink
-            toPage="osm"
-            label="OSM Buildings"
-            iconName="OSMBuildings"
-            isActive={$activeModel === 'osm'}
-          ></MenuLink>
-          <MenuLink toPage="rhino-urban" label="Rhino (Urban)" iconName="RhinoModels"></MenuLink>
-          <MenuLink toPage="ubem" label="UBEM" iconName="UBEM"></MenuLink>
+          <input id="urban-scale-left" className="toggle" type="checkbox" defaultChecked onChange={handleOnChange} />
+          <label htmlFor="urban-scale-left" className="toggle-label menu-list-title">
+            <span>Urban Scale Models</span>
+            <Icons.ChevronDown></Icons.ChevronDown>
+          </label>
+          <div className="menu-list-content">
+            <MenuLink
+              toPage="osm"
+              label="OSM Buildings"
+              iconName="OSMBuildings"
+              isActive={$activeModel === 'osm'}
+            ></MenuLink>
+            <MenuLink toPage="rhino-urban" label="Rhino (Urban)" iconName="RhinoModels"></MenuLink>
+            <MenuLink toPage="ubem" label="UBEM" iconName="UBEM"></MenuLink>
+          </div>
         </div>
       </div>
       <div className="menubar-footer">
