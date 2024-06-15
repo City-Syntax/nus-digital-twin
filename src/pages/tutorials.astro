@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="NUS Digital Twin: Tutorials">
+  <h1>NUS Digital Twin: Tutorials</h1>
+  <a href="/">Back to NUS Digital Twin</a>
+  <div>
+    <iframe
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=uC20jdl4GHOh0C2y"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+</Layout>
+<style>
+  body {
+    color: #212121;
+    background-color: #f5f5f5;
+    max-width: 800px;
+    padding: 24px 16px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin-bottom: 4px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      color: #ffffff;
+      background-color: #212121;
+    }
+
+    a {
+      color: #0066ff;
+    }
+  }
+
+  iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+</style>
