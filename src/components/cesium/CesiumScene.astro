@@ -110,7 +110,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   // The displayed map layer is the last layer
   let mapLayerOrder: MapLayers[] = ['satellite', 'dark', 'street'];
-  const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
+  // const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
+  const showMapbox = false;
   if (showMapbox) {
     viewer.imageryLayers.removeAll();
     viewer.imageryLayers.addImageryProvider(mapboxStreet);
