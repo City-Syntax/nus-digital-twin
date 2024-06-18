@@ -26,7 +26,7 @@ const MenuRight = () => {
         </div>
         <div className="menu-list">
           <div className="menu-list-title">Learnings</div>
-          <a className="menu-link" type="button" href="/tutorial">
+          <a className="menu-link" type="button" href="/tutorials">
             <Icons.Learning></Icons.Learning>
             <span>Tutorial Videos</span>
           </a>

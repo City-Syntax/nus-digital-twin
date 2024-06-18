@@ -43,7 +43,7 @@
   @include menu-x-container;
   right: var(--container-x-offset);
   height: max-content;
-  max-height: 668px;
+  max-height: 74vh;
 }
 
 .menu-bottom {
@@ -178,6 +178,10 @@
     color: rgba(var(--base-300));
     font-size: var(--text-sm);
     font-weight: 600;
+  }
+
+  a.menu-link {
+    text-decoration: none;
   }
 
   .menu-link {
