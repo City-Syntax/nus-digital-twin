@@ -90,6 +90,12 @@
 .menubar-header {
   padding-left: var(--padding-base);
   padding-right: var(--padding-base);
+
+  > .menu-list {
+    position: relative;
+    width: var(--menu-left-width);
+    inset: 0 -16px;
+  }
 }
 
 .menubar-body {
