@@ -17,7 +17,7 @@ const MenuLink = ({ label, toPage, iconName, isVertical, isActive }: MenuLinkPro
   const Icon = Icons[iconName];
   return (
     <button
-      className={`${$activePage === toPage ? 'active' : ''} ${isVertical ? 'vertical' : ''}`}
+      className={`menu-link ${$activePage === toPage ? 'active' : ''} ${isVertical ? 'vertical' : ''}`}
       type="button"
       onClick={() => {
         activePage.set(toPage);

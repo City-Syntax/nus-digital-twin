@@ -26,10 +26,10 @@ const MenuRight = () => {
         </div>
         <div className="menu-list">
           <div className="menu-list-title">Learnings</div>
-          <button type="button">
+          <a className="menu-link" type="button" href="/tutorial">
             <Icons.Learning></Icons.Learning>
             <span>Tutorial Videos</span>
-          </button>
+          </a>
         </div>
       </div>
     </nav>

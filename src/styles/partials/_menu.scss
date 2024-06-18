@@ -180,8 +180,7 @@
     font-weight: 600;
   }
 
-  > button,
-  .menu-list-content > button {
+  .menu-link {
     @include btn;
 
     font-size: var(--text-sm);
@@ -261,8 +260,7 @@
       @include btn-lg;
     }
 
-    > button,
-    .menu-list-content > button,
+    .menu-link,
     > .menu-list-title {
       padding-left: 0;
       padding-right: 0;
