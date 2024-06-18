@@ -33,7 +33,8 @@ export type MenuPages =
   | 'search'
   | 'controls'
   | 'layers'
-  | 'menu';
+  | 'menu'
+  | 'learnings';
 
 export type BuildingInfoCategories =
   | 'general'

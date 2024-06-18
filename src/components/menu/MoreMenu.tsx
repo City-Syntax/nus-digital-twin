@@ -11,6 +11,7 @@ const MoreMenu = () => {
       </div>
       <div className="menubar-content-body">
         <div className="menu-list">
+          <MenuLink toPage="about" label="About NUS Campus" iconName="About"></MenuLink>
           <MenuLink toPage="help" label="Help" iconName="Help"></MenuLink>
           <MenuLink toPage="settings" label="Settings" iconName="Settings"></MenuLink>
         </div>

@@ -31,6 +31,7 @@ import RhinoUrban from './RhinoUrban';
 import RhinoBuildings from './RhinoBuildings';
 import UBEM from './UBEM';
 import AutoHeight from '../AutoHeight';
+import Learnings from './Learnings';
 
 const Menu = () => {
   const $activePage = useStore(activePage);
@@ -134,6 +135,7 @@ const Menu = () => {
               {$activePage === 'controls' && <Controls></Controls>}
               {$activePage === 'layers' && <Layers></Layers>}
               {$activePage === 'menu' && <MoreMenu></MoreMenu>}
+              {$activePage === 'learnings' && <Learnings></Learnings>}
             </AutoHeight>
           </div>
         </CSSTransition>

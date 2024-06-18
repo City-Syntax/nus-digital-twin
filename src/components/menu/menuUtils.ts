@@ -42,6 +42,7 @@ const BOTTOM_MENU_PAGES: MenuPages[] = [
   'controls',
   'layers',
   'menu',
+  'learnings',
 ];
 
 export const MENU_PAGES: { LEFT: MenuPages[]; RIGHT: MenuPages[]; BOTTOM: MenuPages[] } = {
