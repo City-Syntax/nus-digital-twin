@@ -42,8 +42,8 @@
 .menu-right {
   @include menu-x-container;
   right: var(--container-x-offset);
-  height: 36vh;
-  max-height: 288px;
+  height: max-content;
+  max-height: 668px;
 }
 
 .menu-bottom {
@@ -90,12 +90,6 @@
 .menubar-header {
   padding-left: var(--padding-base);
   padding-right: var(--padding-base);
-
-  > .menu-list {
-    position: relative;
-    width: var(--menu-left-width);
-    inset: 0 -16px;
-  }
 }
 
 .menubar-body {

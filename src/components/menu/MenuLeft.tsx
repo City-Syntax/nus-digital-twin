@@ -26,9 +26,6 @@ const MenuLeft = () => {
     <nav className="menubar-left">
       <div className="menubar-header">
         <Searchbar />
-        <div className="menu-list">
-          <MenuLink toPage="buildings" label="Tutorial Videos" iconName="Learning"></MenuLink>
-        </div>
       </div>
       <div className="menubar-body">
         <div className="menu-list">

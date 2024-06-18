@@ -2,6 +2,7 @@ import React from 'react';
 import MenuLink from './MenuLink';
 import { useStore } from '@nanostores/react';
 import { activeModel, buildingColorSetting } from '../../store';
+import Icons from '../Icons';
 
 const MenuRight = () => {
   const $activeModel = useStore(activeModel);
@@ -22,6 +23,13 @@ const MenuRight = () => {
             iconName="Distance"
             isActive={$buildingColorSetting === 'distance' && $activeModel === 'osm'}
           ></MenuLink>
+        </div>
+        <div className="menu-list">
+          <div className="menu-list-title">Learnings</div>
+          <button type="button">
+            <Icons.Learning></Icons.Learning>
+            <span>Tutorial Videos</span>
+          </button>
         </div>
       </div>
     </nav>
