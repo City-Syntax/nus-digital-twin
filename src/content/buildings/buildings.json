@@ -549,7 +549,10 @@
     "address": "8 Architecture Drive",
     "postal": "117356",
     "latitude": 1.29681,
-    "longitude": 103.77035
+    "longitude": 103.77035,
+    "downloads": [
+      { "type": "BIM", "url": "/favicon.png"}
+    ]
   },
   {
     "elementId": "139976357",

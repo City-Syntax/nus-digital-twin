@@ -39,7 +39,19 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           return (
             <div key={title}>
               <h3>{TITLE_MAPPINGS[title]}</h3>
-              <p>{content}</p>
+              {title === 'downloads' ? (
+                <>
+                  {content.map((c: { url: string; type: string }) => {
+                    return (
+                      <a className="download-btn" key={c.url} href={c.url} download>
+                        Download {c.type}
+                      </a>
+                    );
+                  })}
+                </>
+              ) : (
+                <p>{content}</p>
+              )}
             </div>
           );
         })}

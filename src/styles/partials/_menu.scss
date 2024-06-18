@@ -432,3 +432,13 @@
     transform: translateX(0);
   }
 }
+
+.download-btn {
+  @include btn-primary;
+  @include btn-xs;
+  border-radius: 4px;
+  text-decoration: none;
+  width: max-content;
+  font-size: var(--text-sm);
+  padding: 0 var(--padding-sm);
+}
