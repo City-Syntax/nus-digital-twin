@@ -72,7 +72,9 @@
   position: absolute;
   font-size: var(--text-sm);
   transition: height 200ms ease;
-  height: min(min(520px, calc(74vh - 78px)), calc(var(--cmdk-list-height)));
+
+  // 2px accounts for the border in dropdown-base
+  height: min(min(520px, calc(74vh - 78px)), calc(var(--cmdk-list-height) + 2px));
   max-height: min(520px, calc(74vh - 78px));
   overflow: scroll;
   width: calc(var(--menu-left-width) - var(--padding-base) * 2);
@@ -91,7 +93,6 @@
     backdrop-filter: none;
     border-radius: 0;
     font-size: var(--text-base);
-    border: none;
 
     &.hide {
       height: 240px;
