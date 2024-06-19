@@ -55,24 +55,22 @@ export default BuildingInfo;
 const DownloadButtons = ({ content }: { content: { type: string; files: { filetype: string; url: string }[] }[] }) => {
   return (
     <div className="download-btn-container">
-      {content.map((c) => {
-        return (
-          <div key={c.type} className="download-btn">
-            {c.files.length === 1 ? (
+      {content.map((c) => (
+        <div key={c.type} className="download-btn">
+          {c.files.length === 1 ? (
+            <a href={c.files[0].url} download>
+              Download {c.type} {c.files[0].filetype}
+            </a>
+          ) : (
+            <>
               <a href={c.files[0].url} download>
-                Download {c.type} {c.files[0].filetype}
+                Download {c.type}
               </a>
-            ) : (
-              <>
-                <a href={c.files[0].url} download>
-                  Download {c.type}
-                </a>
-                <DownloadDropdown files={c.files}></DownloadDropdown>
-              </>
-            )}
-          </div>
-        );
-      })}
+              <DownloadDropdown files={c.files}></DownloadDropdown>
+            </>
+          )}
+        </div>
+      ))}
     </div>
   );
 };
@@ -86,15 +84,13 @@ const DownloadDropdown = ({ files }: { files: { filetype: string; url: string }[
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
         <DropdownMenu.Content align="start" className="DropdownMenuContent">
-          {files.map((file) => {
-            return (
-              <DropdownMenu.Item className="DropdownMenuItem" asChild key={file.filetype}>
-                <a href={file.url} download>
-                  {file.filetype}
-                </a>
-              </DropdownMenu.Item>
-            );
-          })}
+          {files.map((file) => (
+            <DropdownMenu.Item className="DropdownMenuItem" asChild key={file.filetype}>
+              <a href={file.url} download>
+                {file.filetype}
+              </a>
+            </DropdownMenu.Item>
+          ))}
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
