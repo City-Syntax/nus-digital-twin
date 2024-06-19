@@ -29,7 +29,7 @@ const CategorySelect = ({ value, onValueChange }: CategorySelectProps) => {
       <Select.Trigger className="select-trigger" style={{ width: `${width ? `${width}px` : 'auto'}` }}>
         <div className="select-trigger-content" ref={ref}>
           <Select.Value />
-          <Icons.ChevronDown></Icons.ChevronDown>
+          <Icons.ChevronDown className="select-icon"></Icons.ChevronDown>
         </div>
       </Select.Trigger>
       <Select.Portal>

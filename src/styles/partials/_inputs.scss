@@ -67,18 +67,16 @@
 }
 
 [cmdk-list] {
+  @include dropdown-base;
+
   position: absolute;
-  width: calc(100% - (var(--padding-base) * 2));
-  border-radius: var(--rounded-xs);
-  backdrop-filter: saturate(120%) blur(6px);
-  background-color: rgba(var(--base-100), 0.7);
-  z-index: 10;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-size: var(--text-sm);
   transition: height 200ms ease;
-  height: min(min(520px, calc(74vh - 78px)), calc(var(--cmdk-list-height)));
+
+  // 2px accounts for the border in dropdown-base
+  height: min(min(520px, calc(74vh - 78px)), calc(var(--cmdk-list-height) + 2px));
   max-height: min(520px, calc(74vh - 78px));
   overflow: scroll;
-  font-size: var(--text-sm);
   width: calc(var(--menu-left-width) - var(--padding-base) * 2);
 
   &.hide {
@@ -95,6 +93,7 @@
     backdrop-filter: none;
     border-radius: 0;
     font-size: var(--text-base);
+    border: none;
 
     &.hide {
       height: 240px;
@@ -145,6 +144,21 @@
   overflow: clip;
   height: max-content;
 
+  &[data-state='open'] .select-icon {
+    transform: rotate(-180deg);
+  }
+
+  .select-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-left: 6px;
+    transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media (prefers-reduced-motion) {
+      transition: none;
+    }
+  }
+
   @media (prefers-reduced-motion) {
     transition: box-shadow 100ms;
   }
@@ -176,22 +190,13 @@
   > * + * {
     flex-shrink: 0;
   }
-
-  > svg {
-    height: 1.25rem;
-    width: 1.25rem;
-    margin-left: 6px;
-  }
 }
 
 .select-content {
-  border-radius: var(--rounded-xs);
-  overflow: hidden;
-  backdrop-filter: saturate(120%) blur(6px);
-  background-color: rgba(var(--base-100), 0.7);
-  z-index: 10;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  @include dropdown-base;
+
   font-size: var(--text-sm);
+  overflow: hidden;
   transform-origin: var(--radix-select-content-transform-origin);
 
   @media screen and (max-width: $xs) {
@@ -218,6 +223,7 @@
 .select-item {
   padding: var(--padding-xs);
   outline: none;
+  user-select: none;
   transition: background-color 150ms;
 }
 
