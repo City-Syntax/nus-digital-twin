@@ -41,50 +41,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           return (
             <div key={title}>
               <h3>{TITLE_MAPPINGS[title]}</h3>
-              {title === 'downloads' ? (
-                <div className="download-btn-container">
-                  {content.map((c: { type: string; files: { filetype: string; url: string }[] }) => {
-                    return (
-                      <div key={c.type} className="download-btn">
-                        {c.files.length === 1 ? (
-                          <a href={c.files[0].url} download>
-                            Download {c.type} {c.files[0].filetype}
-                          </a>
-                        ) : (
-                          <>
-                            <a href={c.files[0].url} download>
-                              Download {c.type}
-                            </a>
-                            <DropdownMenu.Root>
-                              <DropdownMenu.Trigger>
-                                {c.files[0].filetype}
-                                <Icons.ChevronDown style={{ marginLeft: '4px' }}></Icons.ChevronDown>
-                              </DropdownMenu.Trigger>
-                              <DropdownMenu.Portal>
-                                <DropdownMenu.Content align="start" className="DropdownMenuContent">
-                                  <>
-                                    {c.files.map((file) => {
-                                      return (
-                                        <DropdownMenu.Item className="DropdownMenuItem" asChild key={file.filetype}>
-                                          <a href={file.url} download>
-                                            {file.filetype}
-                                          </a>
-                                        </DropdownMenu.Item>
-                                      );
-                                    })}
-                                  </>
-                                </DropdownMenu.Content>
-                              </DropdownMenu.Portal>
-                            </DropdownMenu.Root>
-                          </>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <p>{content}</p>
-              )}
+              {title === 'downloads' ? <DownloadButtons content={content}></DownloadButtons> : <p>{content}</p>}
             </div>
           );
         })}
@@ -94,3 +51,48 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
 };
 
 export default BuildingInfo;
+
+const DownloadButtons = ({ content }: { content: { type: string; files: { filetype: string; url: string }[] }[] }) => {
+  return (
+    <div className="download-btn-container">
+      {content.map((c) => {
+        return (
+          <div key={c.type} className="download-btn">
+            {c.files.length === 1 ? (
+              <a href={c.files[0].url} download>
+                Download {c.type} {c.files[0].filetype}
+              </a>
+            ) : (
+              <>
+                <a href={c.files[0].url} download>
+                  Download {c.type}
+                </a>
+                <DropdownMenu.Root>
+                  <DropdownMenu.Trigger>
+                    {c.files[0].filetype}
+                    <Icons.ChevronDown style={{ marginLeft: '4px' }}></Icons.ChevronDown>
+                  </DropdownMenu.Trigger>
+                  <DropdownMenu.Portal>
+                    <DropdownMenu.Content align="start" className="DropdownMenuContent">
+                      <>
+                        {c.files.map((file) => {
+                          return (
+                            <DropdownMenu.Item className="DropdownMenuItem" asChild key={file.filetype}>
+                              <a href={file.url} download>
+                                {file.filetype}
+                              </a>
+                            </DropdownMenu.Item>
+                          );
+                        })}
+                      </>
+                    </DropdownMenu.Content>
+                  </DropdownMenu.Portal>
+                </DropdownMenu.Root>
+              </>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
