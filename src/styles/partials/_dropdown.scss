@@ -15,6 +15,7 @@
 
 .dropdown-content {
   @include dropdown-base;
+
   overflow: hidden;
   min-width: 120px;
   transform-origin: var(--radix-dropdown-menu-content-transform-origin);
