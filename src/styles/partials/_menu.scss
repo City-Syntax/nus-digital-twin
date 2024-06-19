@@ -433,12 +433,31 @@
   }
 }
 
+.download-btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .download-btn {
-  @include btn-primary;
-  @include btn-xs;
-  border-radius: 4px;
-  text-decoration: none;
-  width: max-content;
-  font-size: var(--text-sm);
-  padding: 0 var(--padding-sm);
+  display: flex;
+
+  > a {
+    @include btn-secondary;
+    @include btn-sm;
+    border-radius: 0;
+    text-decoration: none;
+    width: max-content;
+    font-size: var(--text-sm);
+    padding: 0 var(--padding-sm);
+
+    &:first-child {
+      border-radius: var(--rounded-base) 0 0 var(--rounded-base);
+      border-right: 1px solid rgba(var(--base-100));
+    }
+
+    &:last-child {
+      border-radius: 0 var(--rounded-base) var(--rounded-base) 0;
+    }
+  }
 }

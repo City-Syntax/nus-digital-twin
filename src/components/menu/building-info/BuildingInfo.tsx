@@ -7,6 +7,7 @@ import CategorySelect from './CategorySelect';
 import type { BuildingPropertiesProps } from '../../../content/config';
 import buildingsData from '../../../content/buildings/buildings.json';
 import CloseButton from '../CloseButton';
+import Icons from '../../Icons';
 
 type BuildingInfoProps = {
   category: BuildingInfoCategories;
@@ -40,15 +41,21 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
             <div key={title}>
               <h3>{TITLE_MAPPINGS[title]}</h3>
               {title === 'downloads' ? (
-                <>
+                <div className="download-btn-container">
                   {content.map((c: { url: string; type: string }) => {
                     return (
-                      <a className="download-btn" key={c.url} href={c.url} download>
-                        Download {c.type}
-                      </a>
+                      <div key={c.type} className="download-btn">
+                        <a href={c.url} download>
+                          Download {c.type}
+                        </a>
+                        <a href={c.url}>
+                          .glTF
+                          <Icons.ChevronDown style={{ marginLeft: '4px' }}></Icons.ChevronDown>
+                        </a>
+                      </div>
                     );
                   })}
-                </>
+                </div>
               ) : (
                 <p>{content}</p>
               )}
