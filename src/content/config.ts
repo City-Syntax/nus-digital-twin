@@ -8,12 +8,19 @@ const buildingMetadataSchema = z.object({
 
 const buildingSchema = z.object({
   name: z.string(),
-  downloads: z.array(
-    z.object({
-      type: z.string(),
-      url: z.string(),
-    }),
-  ),
+  downloads: z
+    .array(
+      z.object({
+        type: z.string(),
+        files: z.array(
+          z.object({
+            filetype: z.string(),
+            url: z.string(),
+          }),
+        ),
+      }),
+    )
+    .optional(),
   address: z.string(),
   postal: z.string(),
   floorToFloorHeight: z.string().optional(),

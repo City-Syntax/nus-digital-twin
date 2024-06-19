@@ -551,8 +551,13 @@
     "latitude": 1.29681,
     "longitude": 103.77035,
     "downloads": [
-      { "type": "BIM", "url": "/favicon.png"},
-      { "type": "Rhino", "url": "/favicon.png"}
+      {
+        "type": "BIM",
+        "files": [
+          { "filetype": ".glTF", "url": "/favicon.png" },
+          { "filetype": ".obj, .mtl", "url": "/favicon.png" }
+        ]
+      }
     ]
   },
   {

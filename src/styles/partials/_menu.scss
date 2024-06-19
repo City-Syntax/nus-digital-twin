@@ -453,11 +453,13 @@
   }
 
   > *:first-child {
-    border-radius: var(--rounded-base) 0 0 var(--rounded-base);
+    border-top-left-radius: var(--rounded-base);
+    border-bottom-left-radius: var(--rounded-base);
     border-right: 1px solid rgba(var(--base-100));
   }
 
   > *:last-child {
-    border-radius: 0 var(--rounded-base) var(--rounded-base) 0;
+    border-top-right-radius: var(--rounded-base);
+    border-bottom-right-radius: var(--rounded-base);
   }
 }

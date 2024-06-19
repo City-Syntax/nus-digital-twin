@@ -41,11 +41,19 @@
 }
 
 .DropdownMenuItem {
-  font-size: var(--font-sm);
+  font-size: var(--text-sm);
   padding: var(--padding-xs);
   user-select: none;
   outline: none;
+  display: block;
   transition: background-color 150ms;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .DropdownMenuItem[data-highlighted] {
