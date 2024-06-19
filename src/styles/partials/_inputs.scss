@@ -145,11 +145,14 @@
   overflow: clip;
   height: max-content;
 
-  &[data-state='open'] svg {
+  &[data-state='open'] .select-icon {
     transform: rotate(-180deg);
   }
 
-  svg {
+  .select-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-left: 6px;
     transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
     @media (prefers-reduced-motion) {
@@ -187,12 +190,6 @@
 
   > * + * {
     flex-shrink: 0;
-  }
-
-  > svg {
-    height: 1.25rem;
-    width: 1.25rem;
-    margin-left: 6px;
   }
 }
 
