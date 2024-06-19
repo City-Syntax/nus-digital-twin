@@ -78,7 +78,7 @@ const DownloadButtons = ({ content }: { content: { type: string; files: { filety
 const DownloadDropdown = ({ files }: { files: { filetype: string; url: string }[] }) => {
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger>
+      <DropdownMenu.Trigger className="DropdownMenuTrigger">
         {files[0].filetype}
         <Icons.ChevronDown style={{ marginLeft: '4px' }}></Icons.ChevronDown>
       </DropdownMenu.Trigger>

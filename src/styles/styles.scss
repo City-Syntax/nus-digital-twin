@@ -24,6 +24,20 @@
   transform-origin: var(--radix-dropdown-menu-content-transform-origin);
 }
 
+.DropdownMenuTrigger {
+  &[data-state='open'] > svg {
+    transform: rotate(-180deg);
+  }
+
+  > svg {
+    transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media (prefers-reduced-motion) {
+      transition: none;
+    }
+  }
+}
+
 .DropdownMenuContent[data-state='open'] {
   animation: scaleIn 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
