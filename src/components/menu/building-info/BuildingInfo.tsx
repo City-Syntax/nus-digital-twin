@@ -52,26 +52,39 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
 
 export default BuildingInfo;
 
-const DownloadButtons = ({ content }: { content: { type: string; files: { filetype: string; url: string }[] }[] }) => {
+const DownloadButtons = ({
+  content,
+}: {
+  content: { type: string; credits?: string; files: { filetype: string; url: string }[] }[];
+}) => {
   return (
-    <div className="download-btn-container">
-      {content.map((c) => (
-        <div key={c.type} className="download-btn">
-          {c.files.length === 1 ? (
-            <a href={c.files[0].url} download>
-              Download {c.type} ({c.files[0].filetype})
-            </a>
-          ) : (
-            <>
-              <a href={c.files[0].url} download>
-                Download {c.type}
-              </a>
-              <DownloadDropdown files={c.files}></DownloadDropdown>
-            </>
-          )}
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="download-btn-container">
+        {content.map((c) => (
+          <div>
+            {c.type && (
+              <div className="hint">
+                {c.type} models are provided by {c.credits}.
+              </div>
+            )}
+            <div key={c.type} className="download-btn">
+              {c.files.length === 1 ? (
+                <a href={c.files[0].url} download>
+                  Download {c.type} ({c.files[0].filetype})
+                </a>
+              ) : (
+                <>
+                  <a href={c.files[0].url} download>
+                    Download {c.type}
+                  </a>
+                  <DownloadDropdown files={c.files}></DownloadDropdown>
+                </>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

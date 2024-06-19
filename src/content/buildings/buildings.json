@@ -553,6 +553,7 @@
     "downloads": [
       {
         "type": "BIM",
+        "credits": "NUS",
         "files": [
           { "filetype": ".glTF", "url": "/favicon.png" },
           { "filetype": ".obj, .mtl", "url": "/favicon.png" }

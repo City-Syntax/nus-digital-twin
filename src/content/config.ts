@@ -12,6 +12,7 @@ const buildingSchema = z.object({
     .array(
       z.object({
         type: z.string(),
+        credits: z.string().optional(),
         files: z.array(
           z.object({
             filetype: z.string(),
