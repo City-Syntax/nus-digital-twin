@@ -185,6 +185,7 @@
 }
 
 .select-content {
+  border: 1px solid rgba(var(--base-200), 0.4);
   border-radius: var(--rounded-xs);
   overflow: hidden;
   backdrop-filter: saturate(120%) blur(6px);
@@ -218,6 +219,7 @@
 .select-item {
   padding: var(--padding-xs);
   outline: none;
+  user-select: none;
   transition: background-color 150ms;
 }
 

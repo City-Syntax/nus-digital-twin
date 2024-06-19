@@ -442,7 +442,7 @@
 .download-btn {
   display: flex;
 
-  > a {
+  > * {
     @include btn-secondary;
     @include btn-sm;
     border-radius: 0;
@@ -450,14 +450,14 @@
     width: max-content;
     font-size: var(--text-sm);
     padding: 0 var(--padding-sm);
+  }
 
-    &:first-child {
-      border-radius: var(--rounded-base) 0 0 var(--rounded-base);
-      border-right: 1px solid rgba(var(--base-100));
-    }
+  > *:first-child {
+    border-radius: var(--rounded-base) 0 0 var(--rounded-base);
+    border-right: 1px solid rgba(var(--base-100));
+  }
 
-    &:last-child {
-      border-radius: 0 var(--rounded-base) var(--rounded-base) 0;
-    }
+  > *:last-child {
+    border-radius: 0 var(--rounded-base) var(--rounded-base) 0;
   }
 }

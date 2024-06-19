@@ -8,6 +8,7 @@ import type { BuildingPropertiesProps } from '../../../content/config';
 import buildingsData from '../../../content/buildings/buildings.json';
 import CloseButton from '../CloseButton';
 import Icons from '../../Icons';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 type BuildingInfoProps = {
   category: BuildingInfoCategories;
@@ -48,10 +49,28 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
                         <a href={c.url} download>
                           Download {c.type}
                         </a>
-                        <a href={c.url}>
-                          .glTF
-                          <Icons.ChevronDown style={{ marginLeft: '4px' }}></Icons.ChevronDown>
-                        </a>
+                        <DropdownMenu.Root>
+                          <DropdownMenu.Trigger>
+                            .glTF
+                            <Icons.ChevronDown style={{ marginLeft: '4px' }}></Icons.ChevronDown>
+                          </DropdownMenu.Trigger>
+                          <DropdownMenu.Portal>
+                            <DropdownMenu.Content align="start" className="DropdownMenuContent">
+                              <DropdownMenu.Item
+                                className="DropdownMenuItem"
+                                onSelect={() => console.log('selected 1')}
+                              >
+                                .gltf
+                              </DropdownMenu.Item>
+                              <DropdownMenu.Item
+                                className="DropdownMenuItem"
+                                onSelect={() => console.log('selected 2')}
+                              >
+                                .gltf
+                              </DropdownMenu.Item>
+                            </DropdownMenu.Content>
+                          </DropdownMenu.Portal>
+                        </DropdownMenu.Root>
                       </div>
                     );
                   })}
