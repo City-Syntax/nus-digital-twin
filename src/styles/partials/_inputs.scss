@@ -194,6 +194,7 @@
 
 .select-content {
   @include dropdown-base;
+
   font-size: var(--text-sm);
   overflow: hidden;
   transform-origin: var(--radix-select-content-transform-origin);
