@@ -4,10 +4,10 @@ interface Props {
 }
 import 'tippy.js/dist/tippy.css';
 import '../styles/styles.scss';
+import '@fontsource-variable/figtree';
 import '@fontsource-variable/inter';
-import '@fontsource/ibm-plex-sans/600.css';
+import figtreeWoff2 from '@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2?url';
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
-import ibmPlexSansWoff2 from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-600-normal.woff2?url';
 import mapboxDark from '../assets/mapbox-dark.png';
 import mapboxSatellite from '../assets/mapbox-satellite.png';
 import mapboxStreet from '../assets/mapbox-street.png';
@@ -26,7 +26,7 @@ const SITE_DESCRIPTION = 'A digital twin of the National University of Singapore
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" type="image/png" href="/favicon192.png" />
     <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin="anonymous" />
-    <link rel="preload" as="font" type="font/woff2" href={ibmPlexSansWoff2} crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href={figtreeWoff2} crossorigin="anonymous" />
     <link rel="preload" href={mapboxDark.src} as="image" />
     <link rel="preload" href={mapboxStreet.src} as="image" />
     <link rel="preload" href={mapboxSatellite.src} as="image" />
