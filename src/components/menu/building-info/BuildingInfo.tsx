@@ -67,32 +67,36 @@ const DownloadButtons = ({ content }: { content: { type: string; files: { filety
                 <a href={c.files[0].url} download>
                   Download {c.type}
                 </a>
-                <DropdownMenu.Root>
-                  <DropdownMenu.Trigger>
-                    {c.files[0].filetype}
-                    <Icons.ChevronDown style={{ marginLeft: '4px' }}></Icons.ChevronDown>
-                  </DropdownMenu.Trigger>
-                  <DropdownMenu.Portal>
-                    <DropdownMenu.Content align="start" className="DropdownMenuContent">
-                      <>
-                        {c.files.map((file) => {
-                          return (
-                            <DropdownMenu.Item className="DropdownMenuItem" asChild key={file.filetype}>
-                              <a href={file.url} download>
-                                {file.filetype}
-                              </a>
-                            </DropdownMenu.Item>
-                          );
-                        })}
-                      </>
-                    </DropdownMenu.Content>
-                  </DropdownMenu.Portal>
-                </DropdownMenu.Root>
+                <DownloadDropdown files={c.files}></DownloadDropdown>
               </>
             )}
           </div>
         );
       })}
     </div>
+  );
+};
+
+const DownloadDropdown = ({ files }: { files: { filetype: string; url: string }[] }) => {
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger>
+        {files[0].filetype}
+        <Icons.ChevronDown style={{ marginLeft: '4px' }}></Icons.ChevronDown>
+      </DropdownMenu.Trigger>
+      <DropdownMenu.Portal>
+        <DropdownMenu.Content align="start" className="DropdownMenuContent">
+          {files.map((file) => {
+            return (
+              <DropdownMenu.Item className="DropdownMenuItem" asChild key={file.filetype}>
+                <a href={file.url} download>
+                  {file.filetype}
+                </a>
+              </DropdownMenu.Item>
+            );
+          })}
+        </DropdownMenu.Content>
+      </DropdownMenu.Portal>
+    </DropdownMenu.Root>
   );
 };
