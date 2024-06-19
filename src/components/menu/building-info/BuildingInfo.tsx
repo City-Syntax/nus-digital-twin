@@ -59,7 +59,7 @@ const DownloadButtons = ({ content }: { content: { type: string; files: { filety
         <div key={c.type} className="download-btn">
           {c.files.length === 1 ? (
             <a href={c.files[0].url} download>
-              Download {c.type} {c.files[0].filetype}
+              Download {c.type} ({c.files[0].filetype})
             </a>
           ) : (
             <>
