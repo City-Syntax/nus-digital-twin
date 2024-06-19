@@ -93,7 +93,7 @@ const DownloadDropdown = ({ files }: { files: { filetype: string; url: string }[
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className="dropdown-trigger">
         {files[0].filetype}
-        <Icons.ChevronDown style={{ marginLeft: '4px' }}></Icons.ChevronDown>
+        <Icons.ChevronDown className="dropdown-icon"></Icons.ChevronDown>
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
         <DropdownMenu.Content align="start" className="dropdown-content">
