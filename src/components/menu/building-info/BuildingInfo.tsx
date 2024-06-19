@@ -91,14 +91,14 @@ const DownloadButtons = ({
 const DownloadDropdown = ({ files }: { files: { filetype: string; url: string }[] }) => {
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger className="DropdownMenuTrigger">
+      <DropdownMenu.Trigger className="dropdown-trigger">
         {files[0].filetype}
         <Icons.ChevronDown style={{ marginLeft: '4px' }}></Icons.ChevronDown>
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
-        <DropdownMenu.Content align="start" className="DropdownMenuContent">
+        <DropdownMenu.Content align="start" className="dropdown-content">
           {files.map((file) => (
-            <DropdownMenu.Item className="DropdownMenuItem" asChild key={file.filetype}>
+            <DropdownMenu.Item className="dropdown-item" asChild key={file.filetype}>
               <a href={file.url} download>
                 {file.filetype}
               </a>
