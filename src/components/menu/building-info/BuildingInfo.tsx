@@ -1,4 +1,5 @@
 import React from 'react';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
 import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS } from './buildingInfoUtils';
@@ -8,11 +9,21 @@ import type { BuildingPropertiesProps } from '../../../content/config';
 import buildingsData from '../../../content/buildings/buildings.json';
 import CloseButton from '../CloseButton';
 import Icons from '../../Icons';
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 type BuildingInfoProps = {
   category: BuildingInfoCategories;
   setCategory: (category: BuildingInfoCategories) => void;
+};
+
+type DownloadFileProps = {
+  filetype: string;
+  url: string;
+};
+
+type DownloadProps = {
+  type: string;
+  credits?: string;
+  files: DownloadFileProps[];
 };
 
 const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
@@ -41,7 +52,15 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           return (
             <div key={title}>
               <h3>{TITLE_MAPPINGS[title]}</h3>
-              {title === 'downloads' ? <DownloadButtons content={content}></DownloadButtons> : <p>{content}</p>}
+              {title === 'downloads' ? (
+                <div className="download-btn-container">
+                  {content.map((c: DownloadProps) => (
+                    <DownloadButton key={c.type} {...c}></DownloadButton>
+                  ))}
+                </div>
+              ) : (
+                <p>{content}</p>
+              )}
             </div>
           );
         })}
@@ -52,43 +71,33 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
 
 export default BuildingInfo;
 
-const DownloadButtons = ({
-  content,
-}: {
-  content: { type: string; credits?: string; files: { filetype: string; url: string }[] }[];
-}) => {
+const DownloadButton = ({ type, credits, files }: DownloadProps) => {
   return (
-    <>
-      <div className="download-btn-container">
-        {content.map((c) => (
-          <div>
-            {c.type && (
-              <div className="hint">
-                {c.type} models are provided by {c.credits}.
-              </div>
-            )}
-            <div key={c.type} className="download-btn">
-              {c.files.length === 1 ? (
-                <a href={c.files[0].url} download>
-                  Download {c.type} ({c.files[0].filetype})
-                </a>
-              ) : (
-                <>
-                  <a href={c.files[0].url} download>
-                    Download {c.type}
-                  </a>
-                  <DownloadDropdown files={c.files}></DownloadDropdown>
-                </>
-              )}
-            </div>
-          </div>
-        ))}
+    <div>
+      {type && (
+        <div className="hint">
+          {type} models are provided by {credits}.
+        </div>
+      )}
+      <div key={type} className="download-btn">
+        {files.length === 1 ? (
+          <a href={files[0].url} download>
+            Download {type} ({files[0].filetype})
+          </a>
+        ) : (
+          <>
+            <a href={files[0].url} download>
+              Download {type}
+            </a>
+            <DownloadDropdown files={files}></DownloadDropdown>
+          </>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 
-const DownloadDropdown = ({ files }: { files: { filetype: string; url: string }[] }) => {
+const DownloadDropdown = ({ files }: { files: DownloadFileProps[] }) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className="dropdown-trigger">
