@@ -14,13 +14,8 @@
 }
 
 .dropdown-content {
-  border-radius: var(--rounded-xs);
-  border: 1px solid rgba(var(--base-200), 0.4);
-  backdrop-filter: saturate(120%) blur(6px);
-  background-color: rgba(var(--base-100), 0.7);
+  @include dropdown-base;
   overflow: hidden;
-  z-index: 10;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   min-width: 120px;
   transform-origin: var(--radix-dropdown-menu-content-transform-origin);
 

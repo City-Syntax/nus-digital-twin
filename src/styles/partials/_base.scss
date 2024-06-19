@@ -114,6 +114,15 @@ mark {
   box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
 }
 
+@mixin dropdown-base {
+  border: 1px solid rgba(var(--base-200), 0.4);
+  border-radius: var(--rounded-xs);
+  backdrop-filter: saturate(120%) blur(6px);
+  background-color: rgba(var(--base-100), 0.7);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  z-index: 10;
+}
+
 // Override the margin on inputs caused by Cesium
 input {
   margin: 0 !important;

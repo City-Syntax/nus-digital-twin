@@ -67,18 +67,14 @@
 }
 
 [cmdk-list] {
+  @include dropdown-base;
+
   position: absolute;
-  width: calc(100% - (var(--padding-base) * 2));
-  border-radius: var(--rounded-xs);
-  backdrop-filter: saturate(120%) blur(6px);
-  background-color: rgba(var(--base-100), 0.7);
-  z-index: 10;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-size: var(--text-sm);
   transition: height 200ms ease;
   height: min(min(520px, calc(74vh - 78px)), calc(var(--cmdk-list-height)));
   max-height: min(520px, calc(74vh - 78px));
   overflow: scroll;
-  font-size: var(--text-sm);
   width: calc(var(--menu-left-width) - var(--padding-base) * 2);
 
   &.hide {
@@ -95,6 +91,7 @@
     backdrop-filter: none;
     border-radius: 0;
     font-size: var(--text-base);
+    border: none;
 
     &.hide {
       height: 240px;
@@ -194,14 +191,9 @@
 }
 
 .select-content {
-  border: 1px solid rgba(var(--base-200), 0.4);
-  border-radius: var(--rounded-xs);
-  overflow: hidden;
-  backdrop-filter: saturate(120%) blur(6px);
-  background-color: rgba(var(--base-100), 0.7);
-  z-index: 10;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  @include dropdown-base;
   font-size: var(--text-sm);
+  overflow: hidden;
   transform-origin: var(--radix-select-content-transform-origin);
 
   @media screen and (max-width: $xs) {
