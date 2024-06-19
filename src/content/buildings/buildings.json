@@ -555,8 +555,8 @@
         "type": "BIM",
         "credits": "NUS",
         "files": [
-          { "filetype": ".glTF", "url": "/favicon.png" },
-          { "filetype": ".obj, .mtl", "url": "/favicon.png" }
+          { "filetype": ".glTF", "url": "/sde4/sde4.gltf" },
+          { "filetype": ".obj, .mtl", "url": "/sde4/sde4.zip" }
         ]
       }
     ]
