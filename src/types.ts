@@ -20,7 +20,6 @@ export type MenuPages =
   | 'building-footprints'
   | 'green-spaces'
   | 'water-bodies'
-  | 'osm'
   | 'rhino-building'
   | 'rhino-urban'
   | 'ubem'

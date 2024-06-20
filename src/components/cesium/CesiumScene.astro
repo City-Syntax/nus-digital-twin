@@ -243,25 +243,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   activeGISLayer.subscribe((val) => {
-    buildingFootprintsData.show = false;
-    streetCenterlinesData.show = false;
-    waterBodiesData.show = false;
-    greenSpacesData.show = false;
-    if (val === 'building-footprints') {
-      buildingFootprintsData.show = true;
-    }
-
-    if (val === 'street-centerlines') {
-      streetCenterlinesData.show = true;
-    }
-
-    if (val === 'water-bodies') {
-      waterBodiesData.show = true;
-    }
-
-    if (val === 'green-spaces') {
-      greenSpacesData.show = true;
-    }
+    buildingFootprintsData.show = val === 'building-footprints';
+    streetCenterlinesData.show = val === 'street-centerlines';
+    waterBodiesData.show = val === 'water-bodies';
+    greenSpacesData.show = val === 'green-spaces';
   });
 
   flyToPosition.subscribe((val) => {
@@ -338,11 +323,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   activeModel.subscribe((model) => {
-    if (model === 'osm') {
-      osmBuildingsTileset.show = true;
-    } else {
-      osmBuildingsTileset.show = false;
-    }
+    osmBuildingsTileset.show = model === 'osm';
 
     if (model === 'bim') {
       showAllBIM();
