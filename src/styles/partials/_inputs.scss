@@ -35,8 +35,10 @@
     &:not(:placeholder-shown) {
       padding-right: 32px;
 
-      & ~ svg {
-        display: block;
+      & ~ .clear-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
 
@@ -45,24 +47,28 @@
     }
   }
 
-  > svg {
-    height: 1.5rem;
-    padding: 4px;
-    stroke: rgba(var(--base-300));
-    cursor: pointer;
+  > .clear-btn {
+    @include btn;
+
+    > svg {
+      height: 1rem;
+      width: 1rem;
+      stroke: rgba(var(--base-300));
+      transition: opacity 150ms;
+    }
+
+    &:hover > svg {
+      opacity: 0.7;
+    }
+
+    height: 2rem;
+    width: 2rem;
     border-radius: 100%;
-    margin-right: 4px;
     position: absolute;
     top: 50%;
-    bottom: 0;
     right: 0;
     transform: translateY(-50%);
     display: none;
-    transition: opacity 150ms;
-
-    &:hover {
-      opacity: 0.7;
-    }
   }
 }
 
