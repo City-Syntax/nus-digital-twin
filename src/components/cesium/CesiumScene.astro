@@ -196,12 +196,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   GeoJsonDataSource.clampToGround = true;
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/buildings.json');
-  const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/roads.json');
+  const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/centerlines/roads.json');
   const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/waterways.json');
   viewer.dataSources.add(buildingFootprintsData);
   viewer.dataSources.add(streetCenterlinesData);
   viewer.dataSources.add(waterBodiesData);
 
+  // Prevent the lines from overlaying on top of 3D tiles
   streetCenterlinesData.entities.values.forEach((entity) => {
     if (entity.polyline) {
       // @ts-ignore: Cesium types are incorrect
