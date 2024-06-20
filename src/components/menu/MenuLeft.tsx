@@ -11,38 +11,38 @@ const MenuLeft = () => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const element = ref.current!;
-    if (element.scrollHeight > element.clientHeight) {
-      element.classList.add('overlay-bottom');
+    const menuBody = ref.current!;
+    if (menuBody.scrollHeight > menuBody.clientHeight) {
+      menuBody.classList.add('overlay-bottom');
     }
 
     const controlOverlay = () => {
-      if (element.scrollHeight <= element.clientHeight) {
-        element.classList.remove('overlay-top');
-        element.classList.remove('overlay-bottom');
+      if (menuBody.scrollHeight <= menuBody.clientHeight) {
+        menuBody.classList.remove('overlay-top');
+        menuBody.classList.remove('overlay-bottom');
         return;
       }
 
-      const isTop = element.scrollTop == 0;
-      const isBottom = Math.ceil(element.scrollTop + element.offsetHeight) >= element.scrollHeight;
+      const isTop = menuBody.scrollTop == 0;
+      const isBottom = Math.ceil(menuBody.scrollTop + menuBody.offsetHeight) >= menuBody.scrollHeight;
 
       if (isTop) {
-        element.classList.remove('overlay-top');
-        element.classList.add('overlay-bottom');
+        menuBody.classList.remove('overlay-top');
+        menuBody.classList.add('overlay-bottom');
       } else if (isBottom) {
-        element.classList.remove('overlay-bottom');
-        element.classList.add('overlay-top');
+        menuBody.classList.remove('overlay-bottom');
+        menuBody.classList.add('overlay-top');
       } else {
-        element.classList.add('overlay-top');
-        element.classList.add('overlay-bottom');
+        menuBody.classList.add('overlay-top');
+        menuBody.classList.add('overlay-bottom');
       }
     };
     const resizeObserver = new ResizeObserver(controlOverlay);
 
-    resizeObserver.observe(element);
-    element.addEventListener('scroll', controlOverlay);
+    resizeObserver.observe(menuBody);
+    menuBody.addEventListener('scroll', controlOverlay);
     return () => {
-      element.removeEventListener('scroll', controlOverlay);
+      menuBody.removeEventListener('scroll', controlOverlay);
       resizeObserver.disconnect();
     };
   }, []);
