@@ -298,10 +298,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (pickedFeature.id) {
       switch (true) {
         case buildingFootprintsData.entities.contains(pickedFeature.id):
-          console.log('Building footprints layer selected!');
           break;
         case streetCenterlinesData.entities.contains(pickedFeature.id):
-          console.log('Street centerlines layer selected!');
+          break;
+        case greenSpacesData.entities.contains(pickedFeature.id):
+          break;
+        case waterBodiesData.entities.contains(pickedFeature.id):
           break;
       }
       return;
