@@ -1,0 +1,74 @@
+---
+import Icons from '../components/Icons';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found | NUS Digital Twin">
+  <main>
+    <div>
+      <Icons.Logo />
+    </div>
+    <h1>The page you're looking for can't be found.</h1>
+    <p>
+      Why not check out the <a href="/">NUS Digital Twin</a>?
+    </p>
+  </main>
+</Layout>
+<style>
+  body {
+    background-color: rgba(var(--base-content));
+    color: rgba(var(--base-100), 0.85);
+    text-align: center;
+    padding: 0 var(--padding-base);
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100dvh;
+    gap: 8px;
+    max-width: 488px;
+    margin: 0 auto;
+  }
+
+  a {
+    color: rgba(var(--primary-100));
+    transition:
+      color 150ms,
+      transform 300ms;
+    display: inline-block;
+    text-decoration: none;
+
+    @media (prefers-reduced-motion) {
+      transition: color 150ms;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      color: rgba(var(--primary-200));
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  div:has(svg) {
+    > svg {
+      width: 5rem;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: rgba(var(--base-100));
+      color: rgba(var(--base-content));
+    }
+
+    a {
+      color: rgba(var(--primary-300));
+    }
+  }
+</style>
