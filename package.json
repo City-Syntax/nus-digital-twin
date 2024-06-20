@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro src",
     "format": "prettier --write .",
     "cesium:staticfiles": "rm -rf public/cesium && mkdir public/cesium && cp -r node_modules/cesium/Build/Cesium/Assets public/cesium/Assets && cp -r node_modules/cesium/Build/Cesium/ThirdParty public/cesium/ThirdParty && cp -r node_modules/cesium/Build/Cesium/Widgets public/cesium/Widgets && cp -r node_modules/cesium/Build/Cesium/Workers public/cesium/Workers",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
