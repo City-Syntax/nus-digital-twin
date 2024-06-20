@@ -195,7 +195,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   GeoJsonDataSource.clampToGround = true;
-  const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json');
+  const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
+    fill: new Color(249 / 255, 115 / 255, 22 / 255, 1),
+  });
   const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/centerlines/roads.json', {
     stroke: new Color(234 / 255, 179 / 255, 8 / 255, 1),
   });
