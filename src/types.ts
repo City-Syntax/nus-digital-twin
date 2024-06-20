@@ -1,5 +1,7 @@
 export type Models = 'bim' | 'osm';
 
+export type GISLayers = 'building-footprints' | 'street-centerlines' | 'water-bodies' | 'green-spaces';
+
 export type Position = {
   latitude: number;
   longitude: number;
