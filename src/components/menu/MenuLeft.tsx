@@ -11,7 +11,7 @@ const MenuLeft = () => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const menuBody = ref.current!;
+    const menuBody = ref.current as HTMLDivElement;
     if (menuBody.scrollHeight > menuBody.clientHeight) {
       menuBody.classList.add('overlay-bottom');
     }
