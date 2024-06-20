@@ -52,8 +52,7 @@ const Searchbar = () => {
   // Overrides how cmdk handles the enter key on nested buttons
   const clearSearchOnEnter = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
-      const element = e.target as HTMLButtonElement;
-      element.click();
+      (e.target as HTMLButtonElement).click();
     }
   };
 
