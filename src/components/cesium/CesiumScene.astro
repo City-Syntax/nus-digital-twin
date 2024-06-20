@@ -277,6 +277,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     activePage.set('building-info');
+    buildingId.set(''); // Force the listener on buildingId to trigger
     if (bimModels.includes(pickedFeature.primitive)) {
       const resourceUrl = pickedFeature.primitive.resource.url;
 
