@@ -10,7 +10,7 @@ import { useStore } from '@nanostores/react';
 const MapPickerButton = () => {
   const $activeMapLayer = useStore(activeMapLayer);
   return (
-    <Popover.Root>
+    <Popover.Root modal>
       <Popover.Trigger asChild>
         <button className="toolbar-btn" id="map-picker-btn" type="button">
           <Icons.Picker></Icons.Picker>
@@ -18,7 +18,7 @@ const MapPickerButton = () => {
         </button>
       </Popover.Trigger>
       <Popover.Portal>
-        <Popover.Content className="popover-content" align="end">
+        <Popover.Content className="popover-content" align="end" onCloseAutoFocus={(e) => e.preventDefault()}>
           <div id="map-picker">
             <button
               className={`map-picker-item ${$activeMapLayer === 'street' ? 'active' : ''}`}
