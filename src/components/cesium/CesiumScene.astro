@@ -196,17 +196,22 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   GeoJsonDataSource.clampToGround = true;
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
-    fill: new Color(249 / 255, 115 / 255, 22 / 255, 1),
+    fill: new Color(249 / 255, 115 / 255, 22 / 255, 0.8),
   });
   const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/centerlines/roads.json', {
-    stroke: new Color(234 / 255, 179 / 255, 8 / 255, 1),
+    stroke: new Color(234 / 255, 179 / 255, 8 / 255, 0.8),
   });
-  const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/waterbodies/water.json', {
-    stroke: new Color(0, 102 / 255, 1, 1),
+  const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/water-bodies/water.json', {
+    stroke: new Color(0, 102 / 255, 1, 0.8),
   });
+  const greenSpacesData = await GeoJsonDataSource.load('/shapefiles/green-spaces/natural.json', {
+    fill: new Color(34 / 255, 197 / 255, 94 / 255, 0.8),
+  });
+
   viewer.dataSources.add(buildingFootprintsData);
   viewer.dataSources.add(streetCenterlinesData);
   viewer.dataSources.add(waterBodiesData);
+  viewer.dataSources.add(greenSpacesData);
 
   // Prevent the lines from overlaying on top of 3D tiles
   streetCenterlinesData.entities.values.forEach((entity) => {
@@ -230,10 +235,18 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   });
 
+  greenSpacesData.entities.values.forEach((entity) => {
+    if (entity.polygon) {
+      // @ts-ignore: Cesium types are incorrect
+      entity.polygon.classificationType = ClassificationType.TERRAIN;
+    }
+  });
+
   activeGISLayer.subscribe((val) => {
     buildingFootprintsData.show = false;
     streetCenterlinesData.show = false;
     waterBodiesData.show = false;
+    greenSpacesData.show = false;
     if (val === 'building-footprints') {
       buildingFootprintsData.show = true;
     }
@@ -244,6 +257,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     if (val === 'water-bodies') {
       waterBodiesData.show = true;
+    }
+
+    if (val === 'green-spaces') {
+      greenSpacesData.show = true;
     }
   });
 
