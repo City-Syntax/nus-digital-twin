@@ -40,7 +40,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     EllipsoidGeodesic,
     GeoJsonDataSource,
     ClassificationType,
-    HeightReference,
+    Color,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -196,8 +196,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   GeoJsonDataSource.clampToGround = true;
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json');
-  const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/centerlines/roads.json');
-  const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/waterways.json');
+  const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/centerlines/roads.json', {
+    stroke: new Color(234 / 255, 179 / 255, 8 / 255, 1),
+  });
+  const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/waterbodies/water.json', {
+    stroke: new Color(0, 102 / 255, 1, 1),
+  });
   viewer.dataSources.add(buildingFootprintsData);
   viewer.dataSources.add(streetCenterlinesData);
   viewer.dataSources.add(waterBodiesData);
@@ -214,6 +218,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (entity.polygon) {
       // @ts-ignore: Cesium types are incorrect
       entity.polygon.classificationType = ClassificationType.TERRAIN;
+    }
+  });
+
+  waterBodiesData.entities.values.forEach((entity) => {
+    if (entity.polyline) {
+      // @ts-ignore: Cesium types are incorrect
+      entity.polyline.classificationType = ClassificationType.TERRAIN;
     }
   });
 
