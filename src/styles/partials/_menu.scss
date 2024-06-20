@@ -92,24 +92,31 @@
   padding-right: var(--padding-base);
 }
 
-.menubar-body.overlay-top {
-  mask-image: linear-gradient(180deg, transparent, #000 5%, #000 100%, transparent);
-}
-
-.menubar-body.overlay-bottom {
-  mask-image: linear-gradient(180deg, transparent, #000 1px, #000 95%, transparent);
-}
-
-.menubar-body.overlay-bottom.overlay-top {
-  mask-image: linear-gradient(180deg, transparent, #000 5%, #000 95%, transparent);
-}
-
 .menubar-body {
   overflow-y: auto;
+  --overlay-size: 20px;
 
   > * + * {
     margin-top: var(--content-gap);
   }
+}
+
+.menubar-body.overlay-top {
+  mask-image: linear-gradient(180deg, transparent, #000 var(--overlay-size), #000 100%, transparent);
+}
+
+.menubar-body.overlay-bottom {
+  mask-image: linear-gradient(180deg, transparent, #000 1px, #000 calc(100% - var(--overlay-size)), transparent);
+}
+
+.menubar-body.overlay-bottom.overlay-top {
+  mask-image: linear-gradient(
+    180deg,
+    transparent,
+    #000 var(--overlay-size),
+    #000 calc(100% - var(--overlay-size)),
+    transparent
+  );
 }
 
 .menubar-footer {
