@@ -11,14 +11,12 @@ const MenuLeft = () => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // ref.current?.classList.add('overlay-top')
     const element = ref.current!;
     if (element.scrollHeight > element.clientHeight) {
       element.classList.add('overlay-bottom');
     }
 
-    const test = () => {
-      console.log('triggered');
+    const controlOverlay = () => {
       if (element.scrollHeight <= element.clientHeight) {
         element.classList.remove('overlay-top');
         element.classList.remove('overlay-bottom');
@@ -39,9 +37,13 @@ const MenuLeft = () => {
         element.classList.add('overlay-bottom');
       }
     };
-    element.addEventListener('scroll', test);
+    const resizeObserver = new ResizeObserver(controlOverlay);
+
+    resizeObserver.observe(element);
+    element.addEventListener('scroll', controlOverlay);
     return () => {
-      element.removeEventListener('scroll', test);
+      element.removeEventListener('scroll', controlOverlay);
+      resizeObserver.disconnect();
     };
   }, []);
 
