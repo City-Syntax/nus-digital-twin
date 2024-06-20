@@ -11,6 +11,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     activeModel,
     buildingId,
     activeMapLayer,
+    activeGISLayer,
     buildingColorSetting,
     isSelectColorByDistance,
     colorByDistancePosition,
@@ -37,6 +38,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     IonImageryProvider,
     ImageryLayer,
     EllipsoidGeodesic,
+    GeoJsonDataSource,
+    ClassificationType,
+    Color,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -191,6 +195,76 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
   }
 
+  GeoJsonDataSource.clampToGround = true;
+  const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
+    fill: new Color(249 / 255, 115 / 255, 22 / 255, 0.8),
+  });
+  const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/centerlines/roads.json', {
+    stroke: new Color(234 / 255, 179 / 255, 8 / 255, 0.8),
+  });
+  const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/water-bodies/water.json', {
+    stroke: new Color(0, 102 / 255, 1, 0.8),
+  });
+  const greenSpacesData = await GeoJsonDataSource.load('/shapefiles/green-spaces/natural.json', {
+    fill: new Color(34 / 255, 197 / 255, 94 / 255, 0.8),
+  });
+
+  viewer.dataSources.add(buildingFootprintsData);
+  viewer.dataSources.add(streetCenterlinesData);
+  viewer.dataSources.add(waterBodiesData);
+  viewer.dataSources.add(greenSpacesData);
+
+  // Prevent the lines from overlaying on top of 3D tiles
+  streetCenterlinesData.entities.values.forEach((entity) => {
+    if (entity.polyline) {
+      // @ts-ignore: Cesium types are incorrect
+      entity.polyline.classificationType = ClassificationType.TERRAIN;
+    }
+  });
+
+  buildingFootprintsData.entities.values.forEach((entity) => {
+    if (entity.polygon) {
+      // @ts-ignore: Cesium types are incorrect
+      entity.polygon.classificationType = ClassificationType.TERRAIN;
+    }
+  });
+
+  waterBodiesData.entities.values.forEach((entity) => {
+    if (entity.polyline) {
+      // @ts-ignore: Cesium types are incorrect
+      entity.polyline.classificationType = ClassificationType.TERRAIN;
+    }
+  });
+
+  greenSpacesData.entities.values.forEach((entity) => {
+    if (entity.polygon) {
+      // @ts-ignore: Cesium types are incorrect
+      entity.polygon.classificationType = ClassificationType.TERRAIN;
+    }
+  });
+
+  activeGISLayer.subscribe((val) => {
+    buildingFootprintsData.show = false;
+    streetCenterlinesData.show = false;
+    waterBodiesData.show = false;
+    greenSpacesData.show = false;
+    if (val === 'building-footprints') {
+      buildingFootprintsData.show = true;
+    }
+
+    if (val === 'street-centerlines') {
+      streetCenterlinesData.show = true;
+    }
+
+    if (val === 'water-bodies') {
+      waterBodiesData.show = true;
+    }
+
+    if (val === 'green-spaces') {
+      greenSpacesData.show = true;
+    }
+  });
+
   flyToPosition.subscribe((val) => {
     if (!val || !userSettings.get().moveCameraOnSearch) {
       return;
@@ -206,6 +280,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   const handler = viewer.screenSpaceEventHandler;
+
+  // Disables double click on GeoJSON to focus
+  handler.removeInputAction(ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
+
   handler.setInputAction(function (movement: any) {
     const pickedFeature = viewer.scene.pick(movement.position);
     if (!defined(pickedFeature)) {
@@ -215,6 +293,20 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (isSelectColorByDistance.get()) {
       colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
       isSelectColorByDistance.set(false);
+      return;
+    }
+
+    if (pickedFeature.id) {
+      switch (true) {
+        case buildingFootprintsData.entities.contains(pickedFeature.id):
+          break;
+        case streetCenterlinesData.entities.contains(pickedFeature.id):
+          break;
+        case greenSpacesData.entities.contains(pickedFeature.id):
+          break;
+        case waterBodiesData.entities.contains(pickedFeature.id):
+          break;
+      }
       return;
     }
 

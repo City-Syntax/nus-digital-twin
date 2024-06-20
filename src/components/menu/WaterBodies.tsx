@@ -1,7 +1,10 @@
 import React from 'react';
 import CloseButton from './CloseButton';
+import { useStore } from '@nanostores/react';
+import { activeGISLayer } from '../../store';
 
 const WaterBodies = () => {
+  const $activeGISLayer = useStore(activeGISLayer);
   return (
     <>
       <div className="menubar-content-header">
@@ -9,7 +12,23 @@ const WaterBodies = () => {
         <CloseButton></CloseButton>
       </div>
       <div className="menubar-content-body">
-        <p>This feature is under construction.</p>
+        <div>Highlight water bodies.</div>
+        <div>
+          <div className="btn-group">
+            <button
+              onClick={() => activeGISLayer.set('water-bodies')}
+              className={$activeGISLayer === 'water-bodies' ? 'active' : ''}
+            >
+              On
+            </button>
+            <button
+              onClick={() => activeGISLayer.set('')}
+              className={$activeGISLayer !== 'water-bodies' ? 'active' : ''}
+            >
+              Off
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );

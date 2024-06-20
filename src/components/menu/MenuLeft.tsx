@@ -2,11 +2,12 @@ import React from 'react';
 import MenuLink from './MenuLink';
 import Searchbar from '../Searchbar';
 import { useStore } from '@nanostores/react';
-import { activeModel } from '../../store';
+import { activeGISLayer, activeModel } from '../../store';
 import Icons from '../Icons';
 
 const MenuLeft = () => {
   const $activeModel = useStore(activeModel);
+  const $activeGISLayer = useStore(activeGISLayer);
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const isOpen = e.target.checked;
     const buttons = e.target.parentElement?.querySelector('.menu-list-content')?.querySelectorAll('button');
@@ -45,10 +46,30 @@ const MenuLeft = () => {
             <Icons.ChevronDown></Icons.ChevronDown>
           </label>
           <div className="menu-list-content">
-            <MenuLink toPage="street-centerlines" label="Street Centerlines" iconName="StreetCenterlines"></MenuLink>
-            <MenuLink toPage="building-footprints" label="Building Footprints" iconName="BuildingFootprints"></MenuLink>
-            <MenuLink toPage="green-spaces" label="Green Spaces" iconName="GreenSpaces"></MenuLink>
-            <MenuLink toPage="water-bodies" label="Water Bodies" iconName="WaterBodies"></MenuLink>
+            <MenuLink
+              toPage="street-centerlines"
+              label="Street Centerlines"
+              iconName="StreetCenterlines"
+              isActive={$activeGISLayer === 'street-centerlines'}
+            ></MenuLink>
+            <MenuLink
+              toPage="building-footprints"
+              label="Building Footprints"
+              iconName="BuildingFootprints"
+              isActive={$activeGISLayer === 'building-footprints'}
+            ></MenuLink>
+            <MenuLink
+              toPage="green-spaces"
+              label="Green Spaces"
+              iconName="GreenSpaces"
+              isActive={$activeGISLayer === 'green-spaces'}
+            ></MenuLink>
+            <MenuLink
+              toPage="water-bodies"
+              label="Water Bodies"
+              iconName="WaterBodies"
+              isActive={$activeGISLayer === 'water-bodies'}
+            ></MenuLink>
           </div>
         </div>
         <div className="menu-list">
