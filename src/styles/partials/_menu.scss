@@ -64,6 +64,10 @@
   flex-direction: column;
   padding-top: var(--padding-base);
   padding-bottom: var(--padding-base);
+
+  > * + * {
+    margin-top: var(--content-gap);
+  }
 }
 
 .menubar-left {
@@ -74,10 +78,6 @@
 .menubar-right {
   @include menu-x-base;
   width: 192px;
-
-  > * + * {
-    margin-top: var(--content-gap);
-  }
 }
 
 .menubar-bottom {
@@ -92,10 +92,16 @@
   padding-right: var(--padding-base);
 }
 
-.menu-left .menubar-body {
-  padding-top: var(--padding-base);
-  padding-bottom: var(--padding-base);
-  mask-image: linear-gradient(180deg, transparent, #000 4%, #000 95%, transparent);
+.menubar-body.overlay-top {
+  mask-image: linear-gradient(180deg, transparent, #000 5%, #000 100%, transparent);
+}
+
+.menubar-body.overlay-bottom {
+  mask-image: linear-gradient(180deg, transparent, #000 1px, #000 95%, transparent);
+}
+
+.menubar-body.overlay-bottom.overlay-top {
+  mask-image: linear-gradient(180deg, transparent, #000 5%, #000 95%, transparent);
 }
 
 .menubar-body {

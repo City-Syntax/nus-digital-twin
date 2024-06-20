@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import MenuLink from './MenuLink';
 import Searchbar from '../Searchbar';
 import { useStore } from '@nanostores/react';
@@ -8,6 +8,43 @@ import Icons from '../Icons';
 const MenuLeft = () => {
   const $activeModel = useStore(activeModel);
   const $activeGISLayer = useStore(activeGISLayer);
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // ref.current?.classList.add('overlay-top')
+    const element = ref.current!;
+    if (element.scrollHeight > element.clientHeight) {
+      element.classList.add('overlay-bottom');
+    }
+
+    const test = () => {
+      console.log('triggered');
+      if (element.scrollHeight <= element.clientHeight) {
+        element.classList.remove('overlay-top');
+        element.classList.remove('overlay-bottom');
+        return;
+      }
+
+      const isTop = element.scrollTop == 0;
+      const isBottom = Math.ceil(element.scrollTop + element.offsetHeight) >= element.scrollHeight;
+
+      if (isTop) {
+        element.classList.remove('overlay-top');
+        element.classList.add('overlay-bottom');
+      } else if (isBottom) {
+        element.classList.remove('overlay-bottom');
+        element.classList.add('overlay-top');
+      } else {
+        element.classList.add('overlay-top');
+        element.classList.add('overlay-bottom');
+      }
+    };
+    element.addEventListener('scroll', test);
+    return () => {
+      element.removeEventListener('scroll', test);
+    };
+  }, []);
+
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const isOpen = e.target.checked;
     const buttons = e.target.parentElement?.querySelector('.menu-list-content')?.querySelectorAll('button');
@@ -28,7 +65,7 @@ const MenuLeft = () => {
       <div className="menubar-header">
         <Searchbar />
       </div>
-      <div className="menubar-body">
+      <div className="menubar-body" ref={ref}>
         <div className="menu-list">
           <input id="about-left" className="toggle" type="checkbox" defaultChecked onChange={handleOnChange} />
           <label htmlFor="about-left" className="toggle-label menu-list-title">
