@@ -10,7 +10,7 @@ import { useStore } from '@nanostores/react';
 const MapPickerButton = () => {
   const $activeMapLayer = useStore(activeMapLayer);
   return (
-    <Popover.Root>
+    <Popover.Root modal>
       <Popover.Trigger asChild>
         <button className="toolbar-btn" id="map-picker-btn" type="button">
           <Icons.Picker></Icons.Picker>
