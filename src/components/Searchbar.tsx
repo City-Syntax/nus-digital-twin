@@ -49,6 +49,13 @@ const Searchbar = () => {
     setSearchQuery(buildingsData.filter((d) => d.elementId == newId)[0].name);
   });
 
+  // Overrides how cmdk handles the enter key on nested buttons
+  const clearSearchOnEnter = (e: KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      (e.target as HTMLButtonElement).click();
+    }
+  };
+
   useEffect(() => {
     const [desktopSearch, mobileSearch] = document.querySelectorAll('input');
     const down = (e: KeyboardEvent) => {
@@ -103,13 +110,19 @@ const Searchbar = () => {
           }}
           placeholder="Search buildings"
         ></Command.Input>
-        <Icons.Close
+        <button
+          className="clear-btn"
+          type="button"
+          onFocus={() => document.addEventListener('keydown', clearSearchOnEnter)}
+          onBlur={() => document.removeEventListener('keydown', clearSearchOnEnter)}
           onClick={() => {
             setSearchQuery('');
             scrollUpOnChange();
             focusOnInput();
           }}
-        ></Icons.Close>
+        >
+          <Icons.Close></Icons.Close>
+        </button>
       </div>
       <Command.List className={open ? '' : 'hide'} ref={listRef}>
         <Command.Group heading={`Search results (${buildingsDataToShow.length})`}>
@@ -120,6 +133,7 @@ const Searchbar = () => {
                 key={building.elementId}
                 value={building.elementId}
                 onSelect={() => {
+                  if (!open) return;
                   activePage.set('building-info');
                   buildingId.set(''); // Force the listener on buildingId to trigger
                   buildingId.set(building.elementId);
