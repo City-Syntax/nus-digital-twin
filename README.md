@@ -27,7 +27,7 @@ Each building has the following attributes.
 | postal                      | The 6-digit postal code for the building                                              |
 | latitude                    | A number representing the latitude of the building, used to set the camera on search  |
 | latitude                    | A number representing the longitude of the building, used to set the camera on search |
-| downloads                   | The files available for this building                                                 |
+| downloads                   | The files available for this building, see the table below                            |
 | floorToFloorHeight          |                                                                                       |
 | perimeterZoneDepth          |                                                                                       |
 | wallConstruction            |                                                                                       |
@@ -61,6 +61,11 @@ Each building has the following attributes.
 | perimeterOutsideAirSchedule |                                                                                       |
 | exhaustAirRecovery          |                                                                                       |
 | economizerCycle             |                                                                                       |
+
+| Key      | Value                            |
+| -------- | -------------------------------- |
+| filetype | The file type for download       |
+| url      | Link to where the file is hosted |
 
 ### Adding Shapefiles
 
