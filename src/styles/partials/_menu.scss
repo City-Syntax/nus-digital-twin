@@ -94,7 +94,7 @@
 
 .menubar-body {
   overflow-y: auto;
-  --overlay-size: 20px;
+  --overlay-size: 2.5rem;
 
   > * + * {
     margin-top: var(--content-gap);
@@ -288,6 +288,7 @@
 
   .toggle {
     appearance: none;
+    outline: none;
   }
 
   .toggle:focus-visible + .toggle-label {

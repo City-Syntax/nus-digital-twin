@@ -124,7 +124,7 @@ const Searchbar = () => {
           <Icons.Close></Icons.Close>
         </button>
       </div>
-      <Command.List className={open ? '' : 'hide'} ref={listRef}>
+      <Command.List className={open ? '' : 'hide'} ref={listRef} tabIndex={-1}>
         <Command.Group heading={`Search results (${buildingsDataToShow.length})`}>
           <Command.Empty>No results found.</Command.Empty>
           {buildingsDataToShow.map((building, i) => {
