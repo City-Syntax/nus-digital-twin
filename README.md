@@ -17,8 +17,6 @@ This project is built with Astro and CesiumJS with Cesium Ion.
 
 The data for the buildings displayed can be found in `src/content/buildings/buildings.json`, and its schema can be found in `src/content/config.ts`.
 
-Each building has the following attributes.
-
 | Key                         | Value                                                                                 |
 | --------------------------- | ------------------------------------------------------------------------------------- |
 | elementId                   | A unique identifier for the building, corresponds to the OSM elementId                |
@@ -67,6 +65,17 @@ Each building has the following attributes.
 | filetype | The file type for download       |
 | url      | Link to where the file is hosted |
 
+### Adding Models
+
+Models in `.glTF` format can be loaded into Cesium using [`Model.fromGltfAsync`](https://cesium.com/learn/ion-sdk/ref-doc/Model.html#.fromGltfAsync).
+
+Models in other formats have to be converted into `.glTF` format.
+
+| File format                | Recommended tool                                                                                |
+| -------------------------- | ----------------------------------------------------------------------------------------------- |
+| Wavefront (`.obj`, `.mtl`) | [`obj2gltf`](https://github.com/CesiumGS/obj2gltf)<br>`obj2gltf -i model.obj`                   |
+| COLLADA (`.dae`)           | [`COLLADA2GLTF`](https://github.com/KhronosGroup/COLLADA2GLTF)<br>`./COLLADA2GTF-bin model.dae` |
+
 ### Adding Shapefiles
 
 Shapefiles have to be converted to GeoJSON format before they can be loaded into Cesium using [`GeoJsonDataSource`](https://cesium.com/learn/ion-sdk/ref-doc/GeoJsonDataSource.html). The conversion can be done using [`ogr2ogr`](https://gdal.org/programs/ogr2ogr.html) in [GDAL](https://gdal.org/).
@@ -77,8 +86,10 @@ ogr2ogr -f "GeoJSON" output.json input.shp
 
 ### Optional Environment Variables
 
-- `PUBLIC_SHOW_MAPBOX` is used to enable Mapbox tiles in development mode. By default, Mapbox tiles are disabled in development to save on bandwidth. The loading screen is also disabled when Mapbox tiles are disabled. The only valid value is `true`, all other values are ignored.
+- `PUBLIC_SHOW_MAPBOX` is used to enable Mapbox tiles in development mode. By default, Mapbox tiles are disabled in development to save on bandwidth. The loading screen is also disabled when Mapbox tiles are disabled. The only valid value is `"true"`, all other values are ignored.
 
 ### Known Issues
 
 - The `radix-ui/select` component does not support an exit animation.
+- Picking is disabled for Rhino (Urban) Models as individual building data is not available currently.
+- For GIS Layers that are clamped to the terrain (such as street centerlines and building footprints), an outline cannot be displayed.
