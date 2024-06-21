@@ -3,7 +3,7 @@ import type { GISLayers, MapLayers, MenuPages, Models, Position, UserSettings } 
 
 export const activePage = atom<MenuPages | ''>('');
 export const activeMapLayer = atom<MapLayers>('street');
-export const activeGISLayer = atom<GISLayers | ''>('');
+export const activeGISLayer = atom<Set<GISLayers>>(new Set());
 
 export const activeModel = atom<Models | ''>('osm');
 export const buildingColorSetting = atom<'' | 'distance'>('');

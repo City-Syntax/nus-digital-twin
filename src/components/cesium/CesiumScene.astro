@@ -87,7 +87,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   // Simulate loading percentage until map tiles are requested
   const loadingPercentage = document.querySelector('#loading-percentage')!;
   const loadingProgress = document.getElementById('loading-progress')!;
-  const offsetPercent = 40;
+  const offsetPercent = 30;
   (function addLoadPercentUntilOffset() {
     setTimeout(() => {
       const currPercent = Number(loadingPercentage.textContent);
@@ -115,16 +115,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   // The displayed map layer is the last layer
-  let mapLayerOrder: MapLayers[] = ['satellite', 'dark', 'street'];
-  // const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
-  const showMapbox = false;
+  let mapLayerOrder: MapLayers[] = ['street'];
+  const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
   if (showMapbox) {
     viewer.imageryLayers.removeAll();
     viewer.imageryLayers.addImageryProvider(mapboxStreet);
-    viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
-    viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
-  } else {
-    document.getElementById('loading-modal')?.remove();
   }
 
   const position = Cartesian3.fromDegrees(103.77678, 1.28342, 800);
@@ -156,6 +151,89 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   osmBuildingsTileset.maximumScreenSpaceError = 0;
   viewer.scene.primitives.add(osmBuildingsTileset);
   osmBuildingsTileset.preloadWhenHidden = true;
+
+  let totalTiles = 0;
+  function tileLoadProgressListener(queuedTiles: number) {
+    const prevTotalTiles = totalTiles;
+    totalTiles = Math.max(totalTiles, queuedTiles);
+
+    if (prevTotalTiles == totalTiles) {
+      const currPercent = Number(loadingPercentage.textContent);
+      const newPercent = offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent));
+      if (newPercent > currPercent) {
+        loadingPercentage.textContent = `${newPercent}`;
+        loadingProgress.style.transform = `translateX(-${100 - newPercent}%)`;
+      }
+    }
+
+    if (globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
+      updateDistanceScale();
+      viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
+      mapLayerOrder.unshift('dark');
+      viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
+      mapLayerOrder.unshift('satellite');
+
+      // Outer timeout is required for the translate animation to complete
+      setTimeout(() => {
+        document.getElementById('loading-modal')?.classList.add('close');
+        setTimeout(() => {
+          document.getElementById('loading-modal')?.remove();
+        }, 200);
+      }, 350);
+      globe.tileLoadProgressEvent.removeEventListener(tileLoadProgressListener);
+    }
+  }
+
+  globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
+
+  const geodesic = new EllipsoidGeodesic();
+  const distances = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 400, 500, 750, 1000];
+  const width = viewer.scene.canvas.clientWidth;
+  const height = viewer.scene.canvas.clientHeight;
+  const scaleLabel = document.getElementById('scale-label')!;
+  const scaleBar = document.getElementById('scale-bar')!;
+  function updateDistanceScale() {
+    const left = viewer.scene.camera.getPickRay(new Cartesian2((width / 2) | 0, height - 1));
+    const right = viewer.scene.camera.getPickRay(new Cartesian2((1 + width / 2) | 0, height - 1));
+
+    if (!left || !right) {
+      return;
+    }
+
+    const leftPosition = globe.pick(left, viewer.scene);
+    const rightPosition = globe.pick(right, viewer.scene);
+
+    if (!leftPosition || !rightPosition) {
+      return;
+    }
+
+    const leftCartographic = globe.ellipsoid.cartesianToCartographic(leftPosition);
+    const rightCartographic = globe.ellipsoid.cartesianToCartographic(rightPosition);
+
+    geodesic.setEndPoints(leftCartographic, rightCartographic);
+    const pixelDistance = geodesic.surfaceDistance;
+    // Find the first distance that makes the scale bar less than 100 pixels.
+    const maxBarWidth = 100;
+    let distance;
+    for (let i = distances.length - 1; !defined(distance) && i >= 0; --i) {
+      if (distances[i] / pixelDistance < maxBarWidth) {
+        distance = distances[i];
+      }
+    }
+
+    if (defined(distance)) {
+      let label;
+      if (distance >= 1000) {
+        label = (distance / 1000).toString() + ' km';
+      } else {
+        label = distance.toString() + ' m';
+      }
+
+      const barWidth = distance / pixelDistance;
+      scaleBar.style.width = barWidth + 'px';
+      scaleLabel.textContent = label;
+    }
+  }
 
   const sde4Id = 2464285;
   const yncId = 2463878;
@@ -256,10 +334,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   activeGISLayer.subscribe((val) => {
-    buildingFootprintsData.show = val === 'building-footprints';
-    streetCenterlinesData.show = val === 'street-centerlines';
-    waterBodiesData.show = val === 'water-bodies';
-    greenSpacesData.show = val === 'green-spaces';
+    buildingFootprintsData.show = val.has('building-footprints');
+    streetCenterlinesData.show = val.has('street-centerlines');
+    waterBodiesData.show = val.has('water-bodies');
+    greenSpacesData.show = val.has('green-spaces');
   });
 
   flyToPosition.subscribe((val) => {
@@ -359,85 +437,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(selectedMapLayer)));
     mapLayerOrder = [...mapLayerOrder.filter((l) => l !== selectedMapLayer), selectedMapLayer];
   });
-
-  let totalTiles = 0;
-  function tileLoadProgressListener(queuedTiles: number) {
-    const prevTotalTiles = totalTiles;
-    totalTiles = Math.max(totalTiles, queuedTiles);
-
-    if (prevTotalTiles == totalTiles) {
-      const currPercent = Number(loadingPercentage.textContent);
-      const newPercent = offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent));
-      if (newPercent > currPercent) {
-        loadingPercentage.textContent = `${newPercent}`;
-        loadingProgress.style.transform = `translateX(-${100 - newPercent}%)`;
-      }
-    }
-
-    if (globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
-      updateDistanceScale();
-
-      // Outer timeout is required for the translate animation to complete
-      setTimeout(() => {
-        document.getElementById('loading-modal')?.classList.add('close');
-        setTimeout(() => {
-          document.getElementById('loading-modal')?.remove();
-        }, 200);
-      }, 350);
-      globe.tileLoadProgressEvent.removeEventListener(tileLoadProgressListener);
-    }
-  }
-
-  globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
-
-  const geodesic = new EllipsoidGeodesic();
-  const distances = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 400, 500, 750, 1000];
-  const width = viewer.scene.canvas.clientWidth;
-  const height = viewer.scene.canvas.clientHeight;
-  const scaleLabel = document.getElementById('scale-label')!;
-  const scaleBar = document.getElementById('scale-bar')!;
-  function updateDistanceScale() {
-    const left = viewer.scene.camera.getPickRay(new Cartesian2((width / 2) | 0, height - 1));
-    const right = viewer.scene.camera.getPickRay(new Cartesian2((1 + width / 2) | 0, height - 1));
-
-    if (!left || !right) {
-      return;
-    }
-
-    const leftPosition = globe.pick(left, viewer.scene);
-    const rightPosition = globe.pick(right, viewer.scene);
-
-    if (!leftPosition || !rightPosition) {
-      return;
-    }
-
-    const leftCartographic = globe.ellipsoid.cartesianToCartographic(leftPosition);
-    const rightCartographic = globe.ellipsoid.cartesianToCartographic(rightPosition);
-
-    geodesic.setEndPoints(leftCartographic, rightCartographic);
-    const pixelDistance = geodesic.surfaceDistance;
-    // Find the first distance that makes the scale bar less than 100 pixels.
-    const maxBarWidth = 100;
-    let distance;
-    for (let i = distances.length - 1; !defined(distance) && i >= 0; --i) {
-      if (distances[i] / pixelDistance < maxBarWidth) {
-        distance = distances[i];
-      }
-    }
-
-    if (defined(distance)) {
-      let label;
-      if (distance >= 1000) {
-        label = (distance / 1000).toString() + ' km';
-      } else {
-        label = distance.toString() + ' m';
-      }
-
-      const barWidth = distance / pixelDistance;
-      scaleBar.style.width = barWidth + 'px';
-      scaleLabel.textContent = label;
-    }
-  }
 
   viewer.camera.moveEnd.addEventListener(function () {
     updateDistanceScale();
