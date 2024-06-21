@@ -487,6 +487,8 @@
 
 .clear-gis-btn {
   @include btn;
+  position: absolute;
+  right: var(--padding-base);
   font-size: var(--text-sm);
   color: rgba(var(--base-300));
   transition: color 150ms;
