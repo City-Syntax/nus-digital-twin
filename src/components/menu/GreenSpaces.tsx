@@ -18,6 +18,7 @@ const GreenSpaces = () => {
             <button
               onClick={() => activeGISLayer.set(new Set([...$activeGISLayer, 'green-spaces']))}
               className={$activeGISLayer.has('green-spaces') ? 'active' : ''}
+              type="button"
             >
               On
             </button>
@@ -26,10 +27,18 @@ const GreenSpaces = () => {
                 activeGISLayer.set(new Set([...$activeGISLayer].filter((layer) => layer !== 'green-spaces')))
               }
               className={!$activeGISLayer.has('green-spaces') ? 'active' : ''}
+              type="button"
             >
               Off
             </button>
           </div>
+          <button
+            onClick={() => activeGISLayer.set(new Set())}
+            type="button"
+            className={`clear-gis-btn ${$activeGISLayer.size === 0 ? 'hide' : ''}`}
+          >
+            Clear all GIS layers
+          </button>
         </div>
       </div>
     </>
