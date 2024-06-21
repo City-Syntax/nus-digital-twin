@@ -41,6 +41,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     GeoJsonDataSource,
     ClassificationType,
     Color,
+    Model,
+    HeadingPitchRoll,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -176,6 +178,21 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   }
 
+  const heading = CesiumMath.toRadians(90);
+  const pitch = CesiumMath.toRadians(0);
+  const roll = CesiumMath.toRadians(0);
+  const hpr = new HeadingPitchRoll(heading, pitch, roll);
+  const orientation = Transforms.headingPitchRollToFixedFrame(
+    Cartesian3.fromDegrees(103.7760172706, 1.2992870953, 65.8901890799),
+    hpr,
+  );
+  const ubemModel = await Model.fromGltfAsync({
+    modelMatrix: orientation,
+    url: '/ubem/ubem.gltf',
+  });
+  viewer.scene.primitives.add(ubemModel);
+  ubemModel.show = false;
+
   function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
     colorByDistancePosition.set({
       latitude: selectedLatitude,
@@ -294,6 +311,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
+    // Disable picking for UBEM
+    if (pickedFeature.primitive === ubemModel) {
+      return;
+    }
+
     activePage.set('building-info');
     buildingId.set(''); // Force the listener on buildingId to trigger
     if (bimModels.includes(pickedFeature.primitive)) {
@@ -324,6 +346,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   activeModel.subscribe((model) => {
     osmBuildingsTileset.show = model === 'osm';
+    ubemModel.show = model === 'ubem';
 
     if (model === 'bim') {
       showAllBIM();
