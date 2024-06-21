@@ -31,6 +31,14 @@ const GreenSpaces = () => {
             </button>
           </div>
         </div>
+        <button
+          className="hint"
+          type="button"
+          style={{ background: 'none', border: 'none' }}
+          onClick={() => activeGISLayer.set(new Set())}
+        >
+          Disable all GIS layers
+        </button>
       </div>
     </>
   );
