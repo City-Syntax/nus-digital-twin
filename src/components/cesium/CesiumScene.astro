@@ -41,6 +41,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     GeoJsonDataSource,
     ClassificationType,
     Color,
+    Model,
+    HeadingPitchRoll,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -176,6 +178,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   }
 
+  const rhinoUrbanModel = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.776073, 1.2992870953, 65.8901890799),
+      new HeadingPitchRoll(CesiumMath.toRadians(90), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    url: '/rhino/rhino-urban.gltf',
+    show: false,
+  });
+  viewer.scene.primitives.add(rhinoUrbanModel);
+
   function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
     colorByDistancePosition.set({
       latitude: selectedLatitude,
@@ -294,6 +306,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
+    // Disable picking for Rhino Urban Model
+    if (pickedFeature.primitive === rhinoUrbanModel) {
+      return;
+    }
+
     activePage.set('building-info');
     buildingId.set(''); // Force the listener on buildingId to trigger
     if (bimModels.includes(pickedFeature.primitive)) {
@@ -324,6 +341,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   activeModel.subscribe((model) => {
     osmBuildingsTileset.show = model === 'osm';
+    rhinoUrbanModel.show = model === 'rhino-urban';
 
     if (model === 'bim') {
       showAllBIM();
