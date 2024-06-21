@@ -40,6 +40,14 @@ const WaterBodies = () => {
             Clear all GIS layers
           </button>
         </div>
+        <div>
+          <h3>Downloads</h3>
+          <div className="download-btn">
+            <a href="/shapefiles/water-bodies/water.zip" download>
+              Download Shapefile (.shp)
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );

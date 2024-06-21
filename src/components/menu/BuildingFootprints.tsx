@@ -42,6 +42,14 @@ const BuildingFootprints = () => {
             Clear all GIS layers
           </button>
         </div>
+        <div>
+          <h3>Downloads</h3>
+          <div className="download-btn">
+            <a href="/shapefiles/footprints/buildings.zip" download>
+              Download Shapefile (.shp)
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );
