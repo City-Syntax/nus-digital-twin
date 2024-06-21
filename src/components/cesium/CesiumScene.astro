@@ -121,7 +121,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     viewer.imageryLayers.removeAll();
     viewer.imageryLayers.addImageryProvider(mapboxStreet);
   } else {
-    document.getElementById('loading-modal')?.remove();
+    // document.getElementById('loading-modal')?.remove();
   }
 
   const position = Cartesian3.fromDegrees(103.77678, 1.28342, 800);
@@ -153,56 +153,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   osmBuildingsTileset.maximumScreenSpaceError = 0;
   viewer.scene.primitives.add(osmBuildingsTileset);
   osmBuildingsTileset.preloadWhenHidden = true;
-
-  const sde4Id = 2464285;
-  const yncId = 2463878;
-  const sde4 = await Cesium3DTileset.fromIonAssetId(sde4Id);
-  const ync = await Cesium3DTileset.fromIonAssetId(yncId);
-  const bimModels = [sde4, ync];
-  for (let i = 0; i < bimModels.length; i++) {
-    viewer.scene.primitives.add(bimModels[i]);
-    bimModels[i].show = false;
-  }
-
-  function showAllBIM() {
-    for (let i = 0; i < bimModels.length; i++) {
-      bimModels[i].show = true;
-    }
-  }
-
-  function hideAllBIM() {
-    for (let i = 0; i < bimModels.length; i++) {
-      bimModels[i].show = false;
-    }
-  }
-
-  const rhinoUrbanModel = await Model.fromGltfAsync({
-    modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.776073, 1.2992870953, 65.8901890799),
-      new HeadingPitchRoll(CesiumMath.toRadians(90), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-    ),
-    url: '/rhino/rhino-urban.gltf',
-    show: false,
-  });
-  viewer.scene.primitives.add(rhinoUrbanModel);
-
-  function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
-    colorByDistancePosition.set({
-      latitude: selectedLatitude,
-      longitude: selectedLongitude,
-    });
-
-    osmBuildingsTileset.style = new Cesium3DTileStyle({
-      defines: {
-        distance: `distance(vec2(\${feature['cesium#longitude']}, \${feature['cesium#latitude']}), vec2(${selectedLongitude},${selectedLatitude}))`,
-      },
-      color: { conditions: OSM_DISTANCE_COLORS },
-      show: { conditions: OSM_SHOW_CONDITIONS },
-    });
-  }
-  function colorByNone() {
-    osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
-  }
 
   let totalTiles = 0;
   function tileLoadProgressListener(queuedTiles: number) {
@@ -287,9 +237,55 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   }
 
-  viewer.camera.moveEnd.addEventListener(function () {
-    updateDistanceScale();
+  const sde4Id = 2464285;
+  const yncId = 2463878;
+  const sde4 = await Cesium3DTileset.fromIonAssetId(sde4Id);
+  const ync = await Cesium3DTileset.fromIonAssetId(yncId);
+  const bimModels = [sde4, ync];
+  for (let i = 0; i < bimModels.length; i++) {
+    viewer.scene.primitives.add(bimModels[i]);
+    bimModels[i].show = false;
+  }
+
+  function showAllBIM() {
+    for (let i = 0; i < bimModels.length; i++) {
+      bimModels[i].show = true;
+    }
+  }
+
+  function hideAllBIM() {
+    for (let i = 0; i < bimModels.length; i++) {
+      bimModels[i].show = false;
+    }
+  }
+
+  const rhinoUrbanModel = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.776073, 1.2992870953, 65.8901890799),
+      new HeadingPitchRoll(CesiumMath.toRadians(90), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    url: '/rhino/rhino-urban.gltf',
+    show: false,
   });
+  viewer.scene.primitives.add(rhinoUrbanModel);
+
+  function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
+    colorByDistancePosition.set({
+      latitude: selectedLatitude,
+      longitude: selectedLongitude,
+    });
+
+    osmBuildingsTileset.style = new Cesium3DTileStyle({
+      defines: {
+        distance: `distance(vec2(\${feature['cesium#longitude']}, \${feature['cesium#latitude']}), vec2(${selectedLongitude},${selectedLatitude}))`,
+      },
+      color: { conditions: OSM_DISTANCE_COLORS },
+      show: { conditions: OSM_SHOW_CONDITIONS },
+    });
+  }
+  function colorByNone() {
+    osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
+  }
 
   GeoJsonDataSource.clampToGround = true;
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
@@ -442,6 +438,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(selectedMapLayer)));
     mapLayerOrder = [...mapLayerOrder.filter((l) => l !== selectedMapLayer), selectedMapLayer];
+  });
+
+  viewer.camera.moveEnd.addEventListener(function () {
+    updateDistanceScale();
   });
 </script>
 
