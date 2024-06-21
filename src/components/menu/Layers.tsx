@@ -20,25 +20,25 @@ const Layers = () => {
             toPage="street-centerlines"
             label="Street Centerlines"
             iconName="StreetCenterlines"
-            isActive={$activeGISLayer === 'street-centerlines'}
+            isActive={$activeGISLayer.has('street-centerlines')}
           ></MenuLink>
           <MenuLink
             toPage="building-footprints"
             label="Building Footprints"
             iconName="BuildingFootprints"
-            isActive={$activeGISLayer === 'building-footprints'}
+            isActive={$activeGISLayer.has('building-footprints')}
           ></MenuLink>
           <MenuLink
             toPage="green-spaces"
             label="Green Spaces"
             iconName="GreenSpaces"
-            isActive={$activeGISLayer === 'green-spaces'}
+            isActive={$activeGISLayer.has('green-spaces')}
           ></MenuLink>
           <MenuLink
             toPage="water-bodies"
             label="Water Bodies"
             iconName="WaterBodies"
-            isActive={$activeGISLayer === 'water-bodies'}
+            isActive={$activeGISLayer.has('water-bodies')}
           ></MenuLink>
         </div>
         <div className="menu-list">
