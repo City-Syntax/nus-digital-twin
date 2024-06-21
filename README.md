@@ -86,7 +86,7 @@ ogr2ogr -f "GeoJSON" output.json input.shp
 
 ### Optional Environment Variables
 
-- `PUBLIC_SHOW_MAPBOX` is used to enable Mapbox tiles in development mode. By default, Mapbox tiles are disabled in development to save on bandwidth. The loading screen is also disabled when Mapbox tiles are disabled. The only valid value is `true`, all other values are ignored.
+- `PUBLIC_SHOW_MAPBOX` is used to enable Mapbox tiles in development mode. By default, Mapbox tiles are disabled in development to save on bandwidth. The loading screen is also disabled when Mapbox tiles are disabled. The only valid value is `"true"`, all other values are ignored.
 
 ### Known Issues
 
