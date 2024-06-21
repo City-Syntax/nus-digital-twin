@@ -9,6 +9,7 @@ const Searchbar = () => {
   const [open, setOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
+  const clearBtnRef = useRef<HTMLButtonElement>(null);
   const uniqueBuildingData = useMemo(() => {
     const seenNames = new Set();
     return buildingsData.filter((building) => {
@@ -96,7 +97,7 @@ const Searchbar = () => {
           onFocus={() => setOpen(true)}
           onClick={() => setOpen(true)}
           onBlur={(e) => {
-            if (e.relatedTarget?.contains(document.querySelector('[cmdk-root]'))) {
+            if (e.relatedTarget?.contains(document.querySelector('[cmdk-list]'))) {
               setOpen(true);
               return;
             }
@@ -111,6 +112,7 @@ const Searchbar = () => {
           placeholder="Search buildings"
         ></Command.Input>
         <button
+          ref={clearBtnRef}
           className="clear-btn"
           type="button"
           onFocus={() => document.addEventListener('keydown', clearSearchOnEnter)}
@@ -133,7 +135,9 @@ const Searchbar = () => {
                 key={building.elementId}
                 value={building.elementId}
                 onSelect={() => {
-                  if (!open) return;
+                  if (clearBtnRef.current === document.activeElement) {
+                    return;
+                  }
                   activePage.set('building-info');
                   buildingId.set(''); // Force the listener on buildingId to trigger
                   buildingId.set(building.elementId);
