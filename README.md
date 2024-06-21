@@ -17,8 +17,6 @@ This project is built with Astro and CesiumJS with Cesium Ion.
 
 The data for the buildings displayed can be found in `src/content/buildings/buildings.json`, and its schema can be found in `src/content/config.ts`.
 
-Each building has the following attributes.
-
 | Key                         | Value                                                                                 |
 | --------------------------- | ------------------------------------------------------------------------------------- |
 | elementId                   | A unique identifier for the building, corresponds to the OSM elementId                |
@@ -93,4 +91,4 @@ ogr2ogr -f "GeoJSON" output.json input.shp
 ### Known Issues
 
 - The `radix-ui/select` component does not support an exit animation.
-- Picking is not available for Urban Building Energy Models (UBEM) as individual building data cannot be obtained currently.
+- Picking is not available for Urban Building Energy Models (UBEM) as individual building data is not available currently.
