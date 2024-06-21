@@ -54,8 +54,13 @@ const Layers = () => {
             iconName="OSMBuildings"
             isActive={$activeModel === 'osm'}
           ></MenuLink>
-          <MenuLink toPage="rhino-urban" label="Rhino (Urban)" iconName="RhinoModels"></MenuLink>
-          <MenuLink toPage="ubem" label="UBEM" iconName="UBEM" isActive={$activeModel === 'ubem'}></MenuLink>
+          <MenuLink
+            toPage="rhino-urban"
+            label="Rhino (Urban)"
+            iconName="RhinoModels"
+            isActive={$activeModel === 'rhino-urban'}
+          ></MenuLink>
+          <MenuLink toPage="ubem" label="UBEM" iconName="UBEM"></MenuLink>
         </div>
       </div>
     </>

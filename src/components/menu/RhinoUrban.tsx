@@ -1,7 +1,10 @@
 import React from 'react';
 import CloseButton from './CloseButton';
+import { useStore } from '@nanostores/react';
+import { activeModel } from '../../store';
 
 const RhinoUrban = () => {
+  const $activeModel = useStore(activeModel);
   return (
     <>
       <div className="menubar-content-header">
@@ -9,7 +12,20 @@ const RhinoUrban = () => {
         <CloseButton></CloseButton>
       </div>
       <div className="menubar-content-body">
-        <p>This feature is under construction.</p>
+        <div>Displays Rhino Urban Scale models. Selecting individual buildings is not available for UBEM.</div>
+        <div>
+          <div className="btn-group">
+            <button
+              onClick={() => activeModel.set('rhino-urban')}
+              className={$activeModel === 'rhino-urban' ? 'active' : ''}
+            >
+              On
+            </button>
+            <button onClick={() => activeModel.set('')} className={$activeModel !== 'rhino-urban' ? 'active' : ''}>
+              Off
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );

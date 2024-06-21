@@ -1,4 +1,4 @@
-export type Models = 'bim' | 'osm' | 'ubem';
+export type Models = 'bim' | 'osm' | 'rhino-urban';
 
 export type GISLayers = 'building-footprints' | 'street-centerlines' | 'water-bodies' | 'green-spaces';
 

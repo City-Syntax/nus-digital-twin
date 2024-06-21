@@ -178,15 +178,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   }
 
-  const ubemModel = await Model.fromGltfAsync({
+  const rhinoUrbanModel = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
       Cartesian3.fromDegrees(103.7760172706, 1.2992870953, 65.8901890799),
       new HeadingPitchRoll(CesiumMath.toRadians(90), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
     ),
-    url: '/ubem/ubem.gltf',
+    url: '/rhino/rhino-urban.gltf',
     show: false,
   });
-  viewer.scene.primitives.add(ubemModel);
+  viewer.scene.primitives.add(rhinoUrbanModel);
 
   function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
     colorByDistancePosition.set({
@@ -306,8 +306,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    // Disable picking for UBEM
-    if (pickedFeature.primitive === ubemModel) {
+    // Disable picking for Rhino Urban
+    if (pickedFeature.primitive === rhinoUrbanModel) {
       return;
     }
 
@@ -341,7 +341,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   activeModel.subscribe((model) => {
     osmBuildingsTileset.show = model === 'osm';
-    ubemModel.show = model === 'ubem';
+    rhinoUrbanModel.show = model === 'rhino-urban';
 
     if (model === 'bim') {
       showAllBIM();
