@@ -218,7 +218,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
     }
 
-    if (globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
+    if (globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded && viewer.scene.canvas) {
       updateDistanceScale();
       viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
       mapLayerOrder.unshift('dark');
@@ -287,10 +287,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   activeGISLayer.subscribe((val) => {
-    buildingFootprintsData.show = val === 'building-footprints';
-    streetCenterlinesData.show = val === 'street-centerlines';
-    waterBodiesData.show = val === 'water-bodies';
-    greenSpacesData.show = val === 'green-spaces';
+    buildingFootprintsData.show = val.has('building-footprints');
+    streetCenterlinesData.show = val.has('street-centerlines');
+    waterBodiesData.show = val.has('water-bodies');
+    greenSpacesData.show = val.has('green-spaces');
   });
 
   flyToPosition.subscribe((val) => {

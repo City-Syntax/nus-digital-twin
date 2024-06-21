@@ -16,14 +16,16 @@ const GreenSpaces = () => {
         <div>
           <div className="btn-group">
             <button
-              onClick={() => activeGISLayer.set('green-spaces')}
-              className={$activeGISLayer === 'green-spaces' ? 'active' : ''}
+              onClick={() => activeGISLayer.set(new Set([...$activeGISLayer, 'green-spaces']))}
+              className={$activeGISLayer.has('green-spaces') ? 'active' : ''}
             >
               On
             </button>
             <button
-              onClick={() => activeGISLayer.set('')}
-              className={$activeGISLayer !== 'green-spaces' ? 'active' : ''}
+              onClick={() =>
+                activeGISLayer.set(new Set([...$activeGISLayer].filter((layer) => layer !== 'green-spaces')))
+              }
+              className={!$activeGISLayer.has('green-spaces') ? 'active' : ''}
             >
               Off
             </button>

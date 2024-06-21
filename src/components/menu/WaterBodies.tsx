@@ -16,14 +16,16 @@ const WaterBodies = () => {
         <div>
           <div className="btn-group">
             <button
-              onClick={() => activeGISLayer.set('water-bodies')}
-              className={$activeGISLayer === 'water-bodies' ? 'active' : ''}
+              onClick={() => activeGISLayer.set(new Set([...$activeGISLayer, 'water-bodies']))}
+              className={$activeGISLayer.has('water-bodies') ? 'active' : ''}
             >
               On
             </button>
             <button
-              onClick={() => activeGISLayer.set('')}
-              className={$activeGISLayer !== 'water-bodies' ? 'active' : ''}
+              onClick={() =>
+                activeGISLayer.set(new Set([...$activeGISLayer].filter((layer) => layer !== 'water-bodies')))
+              }
+              className={!$activeGISLayer.has('water-bodies') ? 'active' : ''}
             >
               Off
             </button>

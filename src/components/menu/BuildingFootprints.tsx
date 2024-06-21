@@ -18,14 +18,16 @@ const BuildingFootprints = () => {
         <div>
           <div className="btn-group">
             <button
-              onClick={() => activeGISLayer.set('building-footprints')}
-              className={$activeGISLayer === 'building-footprints' ? 'active' : ''}
+              onClick={() => activeGISLayer.set(new Set([...$activeGISLayer, 'building-footprints']))}
+              className={$activeGISLayer.has('building-footprints') ? 'active' : ''}
             >
               On
             </button>
             <button
-              onClick={() => activeGISLayer.set('')}
-              className={$activeGISLayer !== 'building-footprints' ? 'active' : ''}
+              onClick={() =>
+                activeGISLayer.set(new Set([...$activeGISLayer].filter((layer) => layer !== 'building-footprints')))
+              }
+              className={!$activeGISLayer.has('building-footprints') ? 'active' : ''}
             >
               Off
             </button>

@@ -19,14 +19,16 @@ const StreetCenterlines = () => {
         <div>
           <div className="btn-group">
             <button
-              onClick={() => activeGISLayer.set('street-centerlines')}
-              className={$activeGISLayer === 'street-centerlines' ? 'active' : ''}
+              onClick={() => activeGISLayer.set(new Set([...$activeGISLayer, 'street-centerlines']))}
+              className={$activeGISLayer.has('street-centerlines') ? 'active' : ''}
             >
               On
             </button>
             <button
-              onClick={() => activeGISLayer.set('')}
-              className={$activeGISLayer !== 'street-centerlines' ? 'active' : ''}
+              onClick={() =>
+                activeGISLayer.set(new Set([...$activeGISLayer].filter((layer) => layer !== 'street-centerlines')))
+              }
+              className={!$activeGISLayer.has('street-centerlines') ? 'active' : ''}
             >
               Off
             </button>
