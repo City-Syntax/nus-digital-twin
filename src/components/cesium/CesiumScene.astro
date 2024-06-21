@@ -120,8 +120,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   if (showMapbox) {
     viewer.imageryLayers.removeAll();
     viewer.imageryLayers.addImageryProvider(mapboxStreet);
-  } else {
-    // document.getElementById('loading-modal')?.remove();
   }
 
   const position = Cartesian3.fromDegrees(103.77678, 1.28342, 800);
