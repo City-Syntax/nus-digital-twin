@@ -218,7 +218,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
     }
 
-    if (globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded && viewer.scene.canvas) {
+    if (globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
       updateDistanceScale();
       viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
       mapLayerOrder.unshift('dark');
@@ -237,6 +237,59 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
+
+  const geodesic = new EllipsoidGeodesic();
+  const distances = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 400, 500, 750, 1000];
+  const width = viewer.scene.canvas.clientWidth;
+  const height = viewer.scene.canvas.clientHeight;
+  const scaleLabel = document.getElementById('scale-label')!;
+  const scaleBar = document.getElementById('scale-bar')!;
+  function updateDistanceScale() {
+    const left = viewer.scene.camera.getPickRay(new Cartesian2((width / 2) | 0, height - 1));
+    const right = viewer.scene.camera.getPickRay(new Cartesian2((1 + width / 2) | 0, height - 1));
+
+    if (!left || !right) {
+      return;
+    }
+
+    const leftPosition = globe.pick(left, viewer.scene);
+    const rightPosition = globe.pick(right, viewer.scene);
+
+    if (!leftPosition || !rightPosition) {
+      return;
+    }
+
+    const leftCartographic = globe.ellipsoid.cartesianToCartographic(leftPosition);
+    const rightCartographic = globe.ellipsoid.cartesianToCartographic(rightPosition);
+
+    geodesic.setEndPoints(leftCartographic, rightCartographic);
+    const pixelDistance = geodesic.surfaceDistance;
+    // Find the first distance that makes the scale bar less than 100 pixels.
+    const maxBarWidth = 100;
+    let distance;
+    for (let i = distances.length - 1; !defined(distance) && i >= 0; --i) {
+      if (distances[i] / pixelDistance < maxBarWidth) {
+        distance = distances[i];
+      }
+    }
+
+    if (defined(distance)) {
+      let label;
+      if (distance >= 1000) {
+        label = (distance / 1000).toString() + ' km';
+      } else {
+        label = distance.toString() + ' m';
+      }
+
+      const barWidth = distance / pixelDistance;
+      scaleBar.style.width = barWidth + 'px';
+      scaleLabel.textContent = label;
+    }
+  }
+
+  viewer.camera.moveEnd.addEventListener(function () {
+    updateDistanceScale();
+  });
 
   GeoJsonDataSource.clampToGround = true;
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
@@ -389,59 +442,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(selectedMapLayer)));
     mapLayerOrder = [...mapLayerOrder.filter((l) => l !== selectedMapLayer), selectedMapLayer];
-  });
-
-  const geodesic = new EllipsoidGeodesic();
-  const distances = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 400, 500, 750, 1000];
-  const width = viewer.scene.canvas.clientWidth;
-  const height = viewer.scene.canvas.clientHeight;
-  const scaleLabel = document.getElementById('scale-label')!;
-  const scaleBar = document.getElementById('scale-bar')!;
-  function updateDistanceScale() {
-    const left = viewer.scene.camera.getPickRay(new Cartesian2((width / 2) | 0, height - 1));
-    const right = viewer.scene.camera.getPickRay(new Cartesian2((1 + width / 2) | 0, height - 1));
-
-    if (!left || !right) {
-      return;
-    }
-
-    const leftPosition = globe.pick(left, viewer.scene);
-    const rightPosition = globe.pick(right, viewer.scene);
-
-    if (!leftPosition || !rightPosition) {
-      return;
-    }
-
-    const leftCartographic = globe.ellipsoid.cartesianToCartographic(leftPosition);
-    const rightCartographic = globe.ellipsoid.cartesianToCartographic(rightPosition);
-
-    geodesic.setEndPoints(leftCartographic, rightCartographic);
-    const pixelDistance = geodesic.surfaceDistance;
-    // Find the first distance that makes the scale bar less than 100 pixels.
-    const maxBarWidth = 100;
-    let distance;
-    for (let i = distances.length - 1; !defined(distance) && i >= 0; --i) {
-      if (distances[i] / pixelDistance < maxBarWidth) {
-        distance = distances[i];
-      }
-    }
-
-    if (defined(distance)) {
-      let label;
-      if (distance >= 1000) {
-        label = (distance / 1000).toString() + ' km';
-      } else {
-        label = distance.toString() + ' m';
-      }
-
-      const barWidth = distance / pixelDistance;
-      scaleBar.style.width = barWidth + 'px';
-      scaleLabel.textContent = label;
-    }
-  }
-
-  viewer.camera.moveEnd.addEventListener(function () {
-    updateDistanceScale();
   });
 </script>
 
