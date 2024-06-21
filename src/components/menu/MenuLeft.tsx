@@ -136,7 +136,7 @@ const MenuLeft = () => {
               isActive={$activeModel === 'osm'}
             ></MenuLink>
             <MenuLink toPage="rhino-urban" label="Rhino (Urban)" iconName="RhinoModels"></MenuLink>
-            <MenuLink toPage="ubem" label="UBEM" iconName="UBEM"></MenuLink>
+            <MenuLink toPage="ubem" label="UBEM" iconName="UBEM" isActive={$activeModel === 'ubem'}></MenuLink>
           </div>
         </div>
       </div>
