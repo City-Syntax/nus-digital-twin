@@ -40,6 +40,14 @@ const GreenSpaces = () => {
             Clear all GIS layers
           </button>
         </div>
+        <div>
+          <h3>Downloads</h3>
+          <div className="download-btn">
+            <a href="/shapefiles/green-spaces/natural.zip" download>
+              Download Shapefile (.shp)
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );
