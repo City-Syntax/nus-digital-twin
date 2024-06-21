@@ -178,20 +178,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   }
 
-  const heading = CesiumMath.toRadians(90);
-  const pitch = CesiumMath.toRadians(0);
-  const roll = CesiumMath.toRadians(0);
-  const hpr = new HeadingPitchRoll(heading, pitch, roll);
-  const orientation = Transforms.headingPitchRollToFixedFrame(
-    Cartesian3.fromDegrees(103.7760172706, 1.2992870953, 65.8901890799),
-    hpr,
-  );
   const ubemModel = await Model.fromGltfAsync({
-    modelMatrix: orientation,
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7760172706, 1.2992870953, 65.8901890799),
+      new HeadingPitchRoll(CesiumMath.toRadians(90), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
     url: '/ubem/ubem.gltf',
+    show: false,
   });
   viewer.scene.primitives.add(ubemModel);
-  ubemModel.show = false;
 
   function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
     colorByDistancePosition.set({

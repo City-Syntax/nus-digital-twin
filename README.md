@@ -91,4 +91,4 @@ ogr2ogr -f "GeoJSON" output.json input.shp
 ### Known Issues
 
 - The `radix-ui/select` component does not support an exit animation.
-- Picking is not available for Urban Building Energy Models (UBEM) as individual building data is not available currently.
+- Picking is disabled for Urban Building Energy Models (UBEM) as individual building data is not available currently.
