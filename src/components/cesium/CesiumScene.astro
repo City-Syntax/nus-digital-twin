@@ -87,7 +87,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   // Simulate loading percentage until map tiles are requested
   const loadingPercentage = document.querySelector('#loading-percentage')!;
   const loadingProgress = document.getElementById('loading-progress')!;
-  const offsetPercent = 40;
+  const offsetPercent = 30;
   (function addLoadPercentUntilOffset() {
     setTimeout(() => {
       const currPercent = Number(loadingPercentage.textContent);
@@ -115,13 +115,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   // The displayed map layer is the last layer
-  let mapLayerOrder: MapLayers[] = ['satellite', 'dark', 'street'];
+  let mapLayerOrder: MapLayers[] = ['street'];
   const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
   if (showMapbox) {
     viewer.imageryLayers.removeAll();
     viewer.imageryLayers.addImageryProvider(mapboxStreet);
-    viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
-    viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
   } else {
     document.getElementById('loading-modal')?.remove();
   }
@@ -205,6 +203,40 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   function colorByNone() {
     osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
   }
+
+  let totalTiles = 0;
+  function tileLoadProgressListener(queuedTiles: number) {
+    const prevTotalTiles = totalTiles;
+    totalTiles = Math.max(totalTiles, queuedTiles);
+
+    if (prevTotalTiles == totalTiles) {
+      const currPercent = Number(loadingPercentage.textContent);
+      const newPercent = offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent));
+      if (newPercent > currPercent) {
+        loadingPercentage.textContent = `${newPercent}`;
+        loadingProgress.style.transform = `translateX(-${100 - newPercent}%)`;
+      }
+    }
+
+    if (globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
+      updateDistanceScale();
+      viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
+      mapLayerOrder.unshift('dark');
+      viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
+      mapLayerOrder.unshift('satellite');
+
+      // Outer timeout is required for the translate animation to complete
+      setTimeout(() => {
+        document.getElementById('loading-modal')?.classList.add('close');
+        setTimeout(() => {
+          document.getElementById('loading-modal')?.remove();
+        }, 200);
+      }, 350);
+      globe.tileLoadProgressEvent.removeEventListener(tileLoadProgressListener);
+    }
+  }
+
+  globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
 
   GeoJsonDataSource.clampToGround = true;
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
@@ -358,36 +390,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(selectedMapLayer)));
     mapLayerOrder = [...mapLayerOrder.filter((l) => l !== selectedMapLayer), selectedMapLayer];
   });
-
-  let totalTiles = 0;
-  function tileLoadProgressListener(queuedTiles: number) {
-    const prevTotalTiles = totalTiles;
-    totalTiles = Math.max(totalTiles, queuedTiles);
-
-    if (prevTotalTiles == totalTiles) {
-      const currPercent = Number(loadingPercentage.textContent);
-      const newPercent = offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent));
-      if (newPercent > currPercent) {
-        loadingPercentage.textContent = `${newPercent}`;
-        loadingProgress.style.transform = `translateX(-${100 - newPercent}%)`;
-      }
-    }
-
-    if (globe.tilesLoaded && osmBuildingsTileset.allTilesLoaded) {
-      updateDistanceScale();
-
-      // Outer timeout is required for the translate animation to complete
-      setTimeout(() => {
-        document.getElementById('loading-modal')?.classList.add('close');
-        setTimeout(() => {
-          document.getElementById('loading-modal')?.remove();
-        }, 200);
-      }, 350);
-      globe.tileLoadProgressEvent.removeEventListener(tileLoadProgressListener);
-    }
-  }
-
-  globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
 
   const geodesic = new EllipsoidGeodesic();
   const distances = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 400, 500, 750, 1000];
