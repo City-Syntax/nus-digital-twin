@@ -13,6 +13,7 @@ const CloseButton = () => {
       }}
     >
       <Icons.Close></Icons.Close>
+      <span className="sr-only">Close</span>
     </button>
   );
 };
