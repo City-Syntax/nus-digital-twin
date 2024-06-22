@@ -49,10 +49,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   (function initReducedMotion() {
     const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
-    userSettings.set({
-      ...userSettings.get(),
-      reducedMotion: isReduced,
-    });
+    userSettings.setKey('reducedMotion', isReduced);
     isReduced ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
   })();
 

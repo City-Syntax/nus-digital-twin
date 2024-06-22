@@ -18,17 +18,13 @@ const Settings = () => {
           <div className="btn-group">
             <button
               className={`${$userSettings.moveCameraOnSearch ? 'active' : ''}`}
-              onClick={() => {
-                userSettings.set({ ...$userSettings, moveCameraOnSearch: true });
-              }}
+              onClick={() => userSettings.setKey('moveCameraOnSearch', true)}
             >
               Enable
             </button>
             <button
               className={`${!$userSettings.moveCameraOnSearch ? 'active' : ''}`}
-              onClick={() => {
-                userSettings.set({ ...$userSettings, moveCameraOnSearch: false });
-              }}
+              onClick={() => userSettings.setKey('moveCameraOnSearch', false)}
             >
               Disable
             </button>
@@ -42,17 +38,13 @@ const Settings = () => {
           <div className="btn-group">
             <button
               className={`${!$userSettings.reducedMotion ? 'active' : ''}`}
-              onClick={() => {
-                userSettings.set({ ...$userSettings, reducedMotion: false });
-              }}
+              onClick={() => userSettings.setKey('reducedMotion', false)}
             >
               On
             </button>
             <button
               className={`${$userSettings.reducedMotion ? 'active' : ''}`}
-              onClick={() => {
-                userSettings.set({ ...$userSettings, reducedMotion: true });
-              }}
+              onClick={() => userSettings.setKey('reducedMotion', true)}
             >
               Off
             </button>
