@@ -1,4 +1,4 @@
-import React, { useId } from 'react';
+import React from 'react';
 import CloseButton from './CloseButton';
 import { useStore } from '@nanostores/react';
 import { userSettings } from '../../store';
