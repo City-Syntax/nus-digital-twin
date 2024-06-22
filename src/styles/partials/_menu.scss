@@ -311,6 +311,10 @@
       width: 1rem;
       transform: rotate(-90deg);
       transition: transform 150ms var(--ease-in-out-sine);
+
+      @media (prefers-reduced-motion) {
+        transition: none;
+      }
     }
   }
 
@@ -318,6 +322,10 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 250ms ease-in-out;
+
+    @media (prefers-reduced-motion) {
+      transition: none;
+    }
   }
 
   .toggle:checked {

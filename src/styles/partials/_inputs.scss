@@ -80,9 +80,13 @@
   transition: height 200ms ease;
   height: min(min(520px, calc(74vh - 78px)), calc(var(--cmdk-list-height)));
   max-height: min(520px, calc(74vh - 78px));
-  overflow: scroll;
+  overflow-y: auto;
   width: calc(var(--menu-left-width) - var(--padding-base) * 2);
   border: none;
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
 
   &.hide {
     // Safari doesn't apply backdrop filter correctly on height 0
