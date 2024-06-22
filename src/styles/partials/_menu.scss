@@ -135,6 +135,15 @@
   }
 }
 
+// Force react-animate-height to animate unless
+// reduce motion is toggled on
+.rah-animating {
+  body.reduce-motion & {
+    transition: none !important;
+  }
+  transition: height 300ms ease !important;
+}
+
 .auto-height-container {
   display: flex;
   flex-direction: column;
