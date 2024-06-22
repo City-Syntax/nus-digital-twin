@@ -294,7 +294,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
-    stroke: new Color(0, 0, 0, 1),
+    stroke: new Color(194 / 255, 65 / 255, 12 / 255, 1),
     fill: new Color(249 / 255, 115 / 255, 22 / 255, 0.8),
   });
   const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/centerlines/roads.json', {
@@ -304,6 +304,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     stroke: new Color(0, 102 / 255, 1, 0.8),
   });
   const greenSpacesData = await GeoJsonDataSource.load('/shapefiles/green-spaces/natural.json', {
+    stroke: new Color(21 / 255, 128 / 255, 61 / 255, 1),
     fill: new Color(34 / 255, 197 / 255, 94 / 255, 0.8),
   });
 
@@ -345,7 +346,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       // @ts-ignore: Cesium types are incorrect
       entity.polygon.classificationType = ClassificationType.TERRAIN;
       // @ts-ignore: Cesium types are incorrect
-      entity.polyline.clampToGround = true;
+      entity.polygon.heightReference = HeightReference.CLAMP_TO_GROUND;
     }
   });
 
