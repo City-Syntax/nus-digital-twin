@@ -9,6 +9,7 @@ export type Position = {
 
 export type UserSettings = {
   moveCameraOnSearch: boolean;
+  reducedMotion: boolean;
 };
 
 export type MenuPages =

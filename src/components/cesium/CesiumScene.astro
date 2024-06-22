@@ -47,7 +47,14 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
 
-  const isReducedMotion = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+  (function initReducedMotion() {
+    const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+    userSettings.set({
+      ...userSettings.get(),
+      reducedMotion: isReduced,
+    });
+    isReduced ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
+  })();
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
@@ -135,7 +142,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   };
   viewer.camera.setView(nusView);
   document.getElementById('home-btn')!.onclick = () => {
-    isReducedMotion ? viewer.camera.setView(nusView) : viewer.camera.flyTo(nusView);
+    userSettings.get().reducedMotion ? viewer.camera.setView(nusView) : viewer.camera.flyTo(nusView);
   };
 
   const osmBuildingsTileset = await createOsmBuildingsAsync();
@@ -356,7 +363,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       },
     };
 
-    if (isReducedMotion) {
+    if (userSettings.get().reducedMotion) {
       viewer.camera.setView(position);
     } else {
       viewer.camera.flyTo(position);
@@ -449,6 +456,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   viewer.camera.moveEnd.addEventListener(function () {
     updateDistanceScale();
+  });
+
+  userSettings.subscribe(({ reducedMotion }) => {
+    reducedMotion ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
   });
 </script>
 

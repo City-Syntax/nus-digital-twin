@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import CloseButton from './CloseButton';
 import { useStore } from '@nanostores/react';
 import { userSettings } from '../../store';
@@ -31,6 +31,30 @@ const Settings = () => {
               }}
             >
               Disable
+            </button>
+          </div>
+        </div>
+        <div>
+          <h3>Motion effects</h3>
+          <div className="hint">
+            Control animations on the application. Turning off motion effects may increase performance.
+          </div>
+          <div className="btn-group">
+            <button
+              className={`${!$userSettings.reducedMotion ? 'active' : ''}`}
+              onClick={() => {
+                userSettings.set({ ...$userSettings, reducedMotion: false });
+              }}
+            >
+              On
+            </button>
+            <button
+              className={`${$userSettings.reducedMotion ? 'active' : ''}`}
+              onClick={() => {
+                userSettings.set({ ...$userSettings, reducedMotion: true });
+              }}
+            >
+              Off
             </button>
           </div>
         </div>
