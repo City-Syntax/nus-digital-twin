@@ -43,6 +43,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     Color,
     Model,
     HeadingPitchRoll,
+    HeightReference,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -292,8 +293,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
   }
 
-  GeoJsonDataSource.clampToGround = true;
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
+    stroke: new Color(0, 0, 0, 1),
     fill: new Color(249 / 255, 115 / 255, 22 / 255, 0.8),
   });
   const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/centerlines/roads.json', {
@@ -316,6 +317,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (entity.polyline) {
       // @ts-ignore: Cesium types are incorrect
       entity.polyline.classificationType = ClassificationType.TERRAIN;
+      // @ts-ignore: Cesium types are incorrect
+      entity.polyline.clampToGround = true;
     }
   });
 
@@ -323,6 +326,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (entity.polygon) {
       // @ts-ignore: Cesium types are incorrect
       entity.polygon.classificationType = ClassificationType.TERRAIN;
+      // @ts-ignore: Cesium types are incorrect
+      entity.polygon.heightReference = HeightReference.CLAMP_TO_GROUND;
     }
   });
 
@@ -330,6 +335,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (entity.polyline) {
       // @ts-ignore: Cesium types are incorrect
       entity.polyline.classificationType = ClassificationType.TERRAIN;
+      // @ts-ignore: Cesium types are incorrect
+      entity.polyline.clampToGround = true;
     }
   });
 
@@ -337,6 +344,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (entity.polygon) {
       // @ts-ignore: Cesium types are incorrect
       entity.polygon.classificationType = ClassificationType.TERRAIN;
+      // @ts-ignore: Cesium types are incorrect
+      entity.polyline.clampToGround = true;
     }
   });
 
