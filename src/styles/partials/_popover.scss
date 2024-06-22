@@ -10,7 +10,7 @@
 .popover-content[data-state='open'] {
   animation: scaleIn 150ms var(--ease-in-out-cubic);
 
-  @media (prefers-reduced-motion) {
+  body.reduce-motion & {
     animation: none;
   }
 }
@@ -18,7 +18,7 @@
 .popover-content[data-state='closed'] {
   animation: scaleOut 150ms var(--ease-in-out-cubic);
 
-  @media (prefers-reduced-motion) {
+  body.reduce-motion & {
     animation: none;
   }
 }

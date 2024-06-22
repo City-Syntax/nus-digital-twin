@@ -1,4 +1,5 @@
 import { atom } from 'nanostores';
+import { persistentAtom, persistentMap } from '@nanostores/persistent';
 import type { GISLayers, MapLayers, MenuPages, Models, Position, UserSettings } from './types';
 
 export const activePage = atom<MenuPages | ''>('');
@@ -15,8 +16,16 @@ export const colorByDistancePosition = atom<Position>({
   longitude: 103.77515,
 });
 
-export const userSettings = atom<UserSettings>({
-  moveCameraOnSearch: true,
-});
+export const userSettings = persistentMap<UserSettings>(
+  'settings',
+  {
+    moveCameraOnSearch: true,
+    reducedMotion: false,
+  },
+  {
+    encode: JSON.stringify,
+    decode: JSON.parse,
+  },
+);
 
 export const flyToPosition = atom<Position | null>(null);

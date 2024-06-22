@@ -18,19 +18,35 @@ const Settings = () => {
           <div className="btn-group">
             <button
               className={`${$userSettings.moveCameraOnSearch ? 'active' : ''}`}
-              onClick={() => {
-                userSettings.set({ ...$userSettings, moveCameraOnSearch: true });
-              }}
+              onClick={() => userSettings.setKey('moveCameraOnSearch', true)}
             >
               Enable
             </button>
             <button
               className={`${!$userSettings.moveCameraOnSearch ? 'active' : ''}`}
-              onClick={() => {
-                userSettings.set({ ...$userSettings, moveCameraOnSearch: false });
-              }}
+              onClick={() => userSettings.setKey('moveCameraOnSearch', false)}
             >
               Disable
+            </button>
+          </div>
+        </div>
+        <div>
+          <h3>Motion effects</h3>
+          <div className="hint">
+            Control animations on the application. Turning off motion effects may increase performance.
+          </div>
+          <div className="btn-group">
+            <button
+              className={`${!$userSettings.reducedMotion ? 'active' : ''}`}
+              onClick={() => userSettings.setKey('reducedMotion', false)}
+            >
+              On
+            </button>
+            <button
+              className={`${$userSettings.reducedMotion ? 'active' : ''}`}
+              onClick={() => userSettings.setKey('reducedMotion', true)}
+            >
+              Off
             </button>
           </div>
         </div>

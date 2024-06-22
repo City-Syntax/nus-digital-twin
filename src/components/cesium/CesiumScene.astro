@@ -47,6 +47,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
 
+  (function initReducedMotion() {
+    const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+    userSettings.setKey('reducedMotion', isReduced);
+    isReduced ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
+  })();
+
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
     terrain: Terrain.fromWorldTerrain(),
@@ -132,7 +138,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     },
   };
   viewer.camera.setView(nusView);
-  document.getElementById('home-btn')!.onclick = () => viewer.camera.flyTo(nusView);
+  document.getElementById('home-btn')!.onclick = () => {
+    userSettings.get().reducedMotion ? viewer.camera.setView(nusView) : viewer.camera.flyTo(nusView);
+  };
 
   const osmBuildingsTileset = await createOsmBuildingsAsync();
   osmBuildingsTileset.clippingPlanes = new ClippingPlaneCollection({
@@ -344,13 +352,19 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    viewer.camera.flyTo({
+    const position = {
       destination: Cartesian3.fromDegrees(val.longitude, val.latitude - 0.005, 400),
       orientation: {
         heading: CesiumMath.toRadians(0.0),
         pitch: CesiumMath.toRadians(-30.0),
       },
-    });
+    };
+
+    if (userSettings.get().reducedMotion) {
+      viewer.camera.setView(position);
+    } else {
+      viewer.camera.flyTo(position);
+    }
   });
 
   const handler = viewer.screenSpaceEventHandler;
@@ -439,6 +453,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   viewer.camera.moveEnd.addEventListener(function () {
     updateDistanceScale();
+  });
+
+  userSettings.subscribe(({ reducedMotion }) => {
+    reducedMotion ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
   });
 </script>
 
