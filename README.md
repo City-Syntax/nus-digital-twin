@@ -92,4 +92,3 @@ ogr2ogr -f "GeoJSON" output.json input.shp
 
 - The `radix-ui/select` component does not support an exit animation.
 - Picking is disabled for Rhino (Urban) Models as individual building data is not available currently.
-- For GIS Layers that are clamped to the terrain (such as street centerlines and building footprints), an outline cannot be displayed.
