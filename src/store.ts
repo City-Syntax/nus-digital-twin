@@ -1,5 +1,5 @@
 import { atom } from 'nanostores';
-import { persistentAtom, persistentMap } from '@nanostores/persistent';
+import { persistentMap } from '@nanostores/persistent';
 import type { GISLayers, MapLayers, MenuPages, Models, Position, UserSettings } from './types';
 
 export const activePage = atom<MenuPages | ''>('');

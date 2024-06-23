@@ -99,24 +99,6 @@
   > * + * {
     margin-top: var(--content-gap);
   }
-
-  &.overlay-top {
-    mask-image: linear-gradient(180deg, transparent, #000 var(--overlay-size), #000 100%, transparent);
-  }
-
-  &.overlay-bottom {
-    mask-image: linear-gradient(180deg, transparent, #000 1px, #000 calc(100% - var(--overlay-size)), transparent);
-  }
-
-  &.overlay-bottom.overlay-top {
-    mask-image: linear-gradient(
-      180deg,
-      transparent,
-      #000 var(--overlay-size),
-      #000 calc(100% - var(--overlay-size)),
-      transparent
-    );
-  }
 }
 
 .menubar-footer {
@@ -132,24 +114,6 @@
 
   @media screen and (max-width: $md) {
     width: 100%;
-  }
-}
-
-// Force react-animate-height to animate unless
-// reduce motion is toggled on
-.rah-animating {
-  body.reduce-motion & {
-    transition: none !important;
-  }
-  transition: height 300ms ease !important;
-}
-
-.auto-height-container {
-  display: flex;
-  flex-direction: column;
-
-  > * + * {
-    margin-top: var(--content-gap);
   }
 }
 
@@ -172,12 +136,20 @@
   }
 }
 
+@media screen and (max-width: $md) {
+  .scroll-area-viewport:has(.menubar-content-body) {
+    max-height: 46vh;
+  }
+}
+
 .menubar-content-body {
   overflow: auto;
   line-height: 1.5rem;
+  max-height: 46vh;
 
-  @media screen and (max-width: $md) {
-    max-height: 50vh;
+  // If there is a scrollArea, limit max height by scroll area
+  .scroll-area-viewport & {
+    max-height: none;
   }
 
   h3 {
