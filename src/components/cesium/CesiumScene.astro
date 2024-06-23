@@ -440,6 +440,18 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     } else {
       hideAllBIM();
     }
+
+    const timeStart = () => {
+      console.log('start loading');
+      viewer.scene.postRender.addEventListener(timeEnd);
+      viewer.scene.preRender.removeEventListener(timeStart);
+    };
+    const timeEnd = () => {
+      console.log('end loading');
+      viewer.scene.postRender.removeEventListener(timeEnd);
+    };
+
+    viewer.scene.preRender.addEventListener(timeStart);
   });
 
   activeMapLayer.subscribe((selectedMapLayer) => {
