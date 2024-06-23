@@ -5,7 +5,7 @@
    ========================================================================== */
 
 // Force react-animate-height to animate unless
-// reduce motion is toggled on
+// reduced motion setting is toggled on
 .rah-animating {
   body.reduce-motion & {
     transition: none !important;
