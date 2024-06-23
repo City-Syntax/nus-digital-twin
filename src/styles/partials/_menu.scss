@@ -155,7 +155,7 @@
 }
 
 @media screen and (max-width: $md) {
-  .ScrollAreaViewport:has(.menubar-content-body) {
+  .scroll-area-viewport:has(.menubar-content-body) {
     max-height: 46vh;
   }
 }
@@ -166,7 +166,7 @@
   max-height: 46vh;
 
   // If there is a scrollArea, limit max height by scroll area
-  .ScrollAreaViewport & {
+  .scroll-area-viewport & {
     max-height: none;
   }
 

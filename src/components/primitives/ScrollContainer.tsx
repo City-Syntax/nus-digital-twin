@@ -41,12 +41,12 @@ const ScrollContainer = ({ children }: { children: React.ReactNode }) => {
     };
   }, []);
   return (
-    <ScrollArea.Root className="ScrollAreaRoot">
-      <ScrollArea.Viewport ref={ref} className="ScrollAreaViewport">
+    <ScrollArea.Root className="scroll-area-root">
+      <ScrollArea.Viewport ref={ref} className="scroll-area-viewport">
         {children}
       </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar className="ScrollAreaScrollbar" orientation="vertical">
-        <ScrollArea.Thumb className="ScrollAreaThumb" />
+      <ScrollArea.Scrollbar className="scroll-area-scrollbar" orientation="vertical">
+        <ScrollArea.Thumb className="scroll-area-thumb" />
       </ScrollArea.Scrollbar>
     </ScrollArea.Root>
   );

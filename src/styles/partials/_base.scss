@@ -131,14 +131,14 @@ input {
   margin: 0 !important;
 }
 
-.ScrollAreaRoot {
+.scroll-area-root {
   width: 100%;
   height: 100%;
   overflow: hidden;
   --scrollbar-size: 10px;
 }
 
-.ScrollAreaViewport {
+.scroll-area-viewport {
   width: 100%;
   height: 100%;
   border-radius: inherit;
@@ -163,7 +163,7 @@ input {
   }
 }
 
-.ScrollAreaScrollbar {
+.scroll-area-scrollbar {
   display: flex;
   user-select: none;
   touch-action: none;
@@ -182,21 +182,21 @@ input {
   }
 }
 
-.ScrollAreaThumb {
+.scroll-area-thumb {
   flex: 1;
   background: rgba(var(--base-300), 0.7);
   border-radius: var(--scrollbar-size);
   position: relative;
-}
 
-.ScrollAreaThumb::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  min-width: 44px;
-  min-height: 44px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    min-width: 44px;
+    min-height: 44px;
+  }
 }
