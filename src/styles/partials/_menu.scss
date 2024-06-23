@@ -154,12 +154,20 @@
   }
 }
 
+@media screen and (max-width: $md) {
+  .ScrollAreaViewport:has(.menubar-content-body) {
+    max-height: 46vh;
+  }
+}
+
 .menubar-content-body {
   overflow: auto;
   line-height: 1.5rem;
+  max-height: 46vh;
 
-  @media screen and (max-width: $md) {
-    max-height: 50vh;
+  // If there is a scrollArea, limit max height by scroll area
+  .ScrollAreaViewport & {
+    max-height: none;
   }
 
   h3 {
