@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import MenuLink from './MenuLink';
 import Searchbar from '../Searchbar';
 import { useStore } from '@nanostores/react';
