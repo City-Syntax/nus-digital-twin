@@ -135,7 +135,7 @@ input {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  --scrollbar-size: 12px;
+  --scrollbar-size: 10px;
 }
 
 .ScrollAreaViewport {
@@ -184,7 +184,7 @@ input {
 
 .ScrollAreaThumb {
   flex: 1;
-  background: rgba(var(--base-300), 0.8);
+  background: rgba(var(--base-300), 0.7);
   border-radius: var(--scrollbar-size);
   position: relative;
 }
