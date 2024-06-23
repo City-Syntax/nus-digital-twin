@@ -99,24 +99,6 @@
   > * + * {
     margin-top: var(--content-gap);
   }
-
-  &.overlay-top {
-    mask-image: linear-gradient(180deg, transparent, #000 var(--overlay-size), #000 100%, transparent);
-  }
-
-  &.overlay-bottom {
-    mask-image: linear-gradient(180deg, transparent, #000 1px, #000 calc(100% - var(--overlay-size)), transparent);
-  }
-
-  &.overlay-bottom.overlay-top {
-    mask-image: linear-gradient(
-      180deg,
-      transparent,
-      #000 var(--overlay-size),
-      #000 calc(100% - var(--overlay-size)),
-      transparent
-    );
-  }
 }
 
 .menubar-footer {
