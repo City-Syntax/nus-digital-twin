@@ -9,6 +9,7 @@ export type Position = {
 
 export type UserSettings = {
   moveCameraOnSearch: boolean;
+  reducedMotion: boolean;
 };
 
 export type MenuPages =
@@ -47,3 +48,14 @@ export type BuildingInfoCategories =
   | 'others';
 
 export type MapLayers = 'satellite' | 'dark' | 'street';
+
+export type DownloadFileProps = {
+  filetype: string;
+  url: string;
+};
+
+export type DownloadProps = {
+  type: string;
+  credits?: string;
+  files: DownloadFileProps[];
+};

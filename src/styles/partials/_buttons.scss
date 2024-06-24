@@ -140,4 +140,8 @@
     background: transparent;
     color: rgba(var(--base-300));
   }
+
+  button.active {
+    background-color: rgba(var(--primary-200), 0.5);
+  }
 }

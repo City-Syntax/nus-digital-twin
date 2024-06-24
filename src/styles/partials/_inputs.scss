@@ -80,9 +80,13 @@
   transition: height 200ms ease;
   height: min(min(520px, calc(74vh - 78px)), calc(var(--cmdk-list-height)));
   max-height: min(520px, calc(74vh - 78px));
-  overflow: scroll;
+  overflow-y: auto;
   width: calc(var(--menu-left-width) - var(--padding-base) * 2);
   border: none;
+
+  body.reduce-motion & {
+    transition: none;
+  }
 
   &.hide {
     // Safari doesn't apply backdrop filter correctly on height 0
@@ -158,12 +162,12 @@
     margin-left: 6px;
     transition: transform 150ms var(--ease-in-out-sine);
 
-    @media (prefers-reduced-motion) {
+    body.reduce-motion & {
       transition: none;
     }
   }
 
-  @media (prefers-reduced-motion) {
+  body.reduce-motion & {
     transition: box-shadow 100ms;
   }
 
@@ -211,7 +215,7 @@
 .select-content[data-state='open'] {
   animation: scaleIn 150ms var(--ease-in-out-cubic);
 
-  @media (prefers-reduced-motion) {
+  body.reduce-motion & {
     animation: none;
   }
 }
@@ -219,7 +223,7 @@
 .select-content[data-state='closed'] {
   animation: scaleOut 150ms var(--ease-in-out-cubic);
 
-  @media (prefers-reduced-motion) {
+  body.reduce-motion & {
     animation: none;
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import CloseButton from './CloseButton';
 import { useStore } from '@nanostores/react';
 import { activeModel } from '../../store';
+import DownloadButton from '../primitives/DownloadButton';
 
 const RhinoUrban = () => {
   const $activeModel = useStore(activeModel);
@@ -25,6 +26,10 @@ const RhinoUrban = () => {
               Off
             </button>
           </div>
+        </div>
+        <div>
+          <h3>Downloads</h3>
+          <DownloadButton type="Rhino" files={[{ filetype: '.dae', url: '/rhino/rhino-urban.dae' }]}></DownloadButton>
         </div>
       </div>
     </>

@@ -46,7 +46,7 @@
   align-items: center;
   gap: 6px;
 
-  @media (prefers-reduced-motion) {
+  body.reduce-motion & {
     transition: opacity 150ms;
   }
 

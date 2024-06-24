@@ -2,6 +2,7 @@ import React from 'react';
 import CloseButton from './CloseButton';
 import { useStore } from '@nanostores/react';
 import { activeGISLayer } from '../../store';
+import DownloadButton from '../primitives/DownloadButton';
 
 const BuildingFootprints = () => {
   const $activeGISLayer = useStore(activeGISLayer);
@@ -44,11 +45,10 @@ const BuildingFootprints = () => {
         </div>
         <div>
           <h3>Downloads</h3>
-          <div className="download-btn">
-            <a href="/shapefiles/footprints/buildings.zip" download>
-              Download Shapefile (.shp)
-            </a>
-          </div>
+          <DownloadButton
+            type="Shapefile"
+            files={[{ filetype: '.shp', url: '/shapefiles/footprints/buildings.zip' }]}
+          ></DownloadButton>
         </div>
       </div>
     </>

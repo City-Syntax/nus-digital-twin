@@ -30,8 +30,8 @@ import { MENU_PAGES } from './menuUtils';
 import RhinoUrban from './RhinoUrban';
 import RhinoBuildings from './RhinoBuildings';
 import UBEM from './UBEM';
-import AutoHeight from '../AutoHeight';
 import Learnings from './Learnings';
+import AutoHeight from '../primitives/AutoHeight';
 
 const Menu = () => {
   const $activePage = useStore(activePage);
