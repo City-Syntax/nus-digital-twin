@@ -92,4 +92,5 @@ ogr2ogr -f "GeoJSON" output.json input.shp
 
 - The `radix-ui/select` component does not support an exit animation.
 - Picking is disabled for Rhino (Urban) Models as individual building data is not available currently.
-- For GIS Layers that are clamped to the terrain (such as street centerlines and building footprints), an outline cannot be displayed.
+- For GIS Layers made up of polygons, such as building footprints and street centerlines, clamping them to ground directly using [`GeoJsonDataSource.clampToGround`](https://cesium.com/learn/ion-sdk/ref-doc/GeoJsonDataSource.html?classFilter=geojson#.clampToGround) results in rendering issues on certain browsers. A [workaround](https://github.com/City-Syntax/nus-digital-twin/pull/74) is used, but the GIS layer may appear on top of the building and not comform to the terrain.
+  - See this [post](https://community.cesium.com/t/macos-driver-bug-for-small-clamp-to-ground-polygons/24277) on Cesium forums.
