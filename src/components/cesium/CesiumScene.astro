@@ -299,20 +299,20 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
-    stroke: new Color(194 / 255, 65 / 255, 12 / 255, 1),
-    fill: new Color(249 / 255, 115 / 255, 22 / 255, 0.8),
+    stroke: Color.fromCssColorString('#0e7490ff'),
+    fill: Color.fromCssColorString('#06b6d4cc'),
   });
   const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/centerlines/roads.json', {
-    stroke: new Color(234 / 255, 179 / 255, 8 / 255, 0.8),
+    stroke: Color.fromCssColorString('#ca8a04ff'),
     clampToGround: true,
   });
   const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/water-bodies/water.json', {
-    stroke: new Color(0, 102 / 255, 1, 0.8),
+    stroke: Color.fromCssColorString('#0066ffff'),
     clampToGround: true,
   });
   const greenSpacesData = await GeoJsonDataSource.load('/shapefiles/green-spaces/natural.json', {
-    stroke: new Color(21 / 255, 128 / 255, 61 / 255, 1),
-    fill: new Color(34 / 255, 197 / 255, 94 / 255, 0.8),
+    stroke: Color.fromCssColorString('#15803dff'),
+    fill: Color.fromCssColorString('#22c55ecc'),
   });
 
   viewer.dataSources.add(buildingFootprintsData);
