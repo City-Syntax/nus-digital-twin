@@ -138,14 +138,20 @@
 
 @media screen and (max-width: $md) {
   .scroll-area-viewport:has(.menubar-content-body) {
-    max-height: 46vh;
+    .menu-bottom & {
+      max-height: 46vh;
+    }
   }
 }
 
 .menubar-content-body {
   overflow: auto;
   line-height: 1.5rem;
-  max-height: 46vh;
+  height: 100%;
+
+  .menu-bottom & {
+    max-height: 46vh;
+  }
 
   // If there is a scrollArea, limit max height by scroll area
   .scroll-area-viewport & {
@@ -166,6 +172,10 @@
   > * + * {
     margin-top: var(--content-gap);
   }
+}
+
+.menubar-content-footer {
+  margin-top: auto;
 }
 
 .menu-list {
