@@ -43,6 +43,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     Color,
     Model,
     HeadingPitchRoll,
+    ConstantProperty,
+    ArcType,
+    HeightReference,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -295,17 +298,20 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
   }
 
-  GeoJsonDataSource.clampToGround = true;
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
+    stroke: new Color(194 / 255, 65 / 255, 12 / 255, 1),
     fill: new Color(249 / 255, 115 / 255, 22 / 255, 0.8),
   });
   const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/centerlines/roads.json', {
     stroke: new Color(234 / 255, 179 / 255, 8 / 255, 0.8),
+    clampToGround: true,
   });
   const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/water-bodies/water.json', {
     stroke: new Color(0, 102 / 255, 1, 0.8),
+    clampToGround: true,
   });
   const greenSpacesData = await GeoJsonDataSource.load('/shapefiles/green-spaces/natural.json', {
+    stroke: new Color(21 / 255, 128 / 255, 61 / 255, 1),
     fill: new Color(34 / 255, 197 / 255, 94 / 255, 0.8),
   });
 
@@ -317,29 +323,25 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   // Prevent the lines from overlaying on top of 3D tiles
   streetCenterlinesData.entities.values.forEach((entity) => {
     if (entity.polyline) {
-      // @ts-ignore: Cesium types are incorrect
-      entity.polyline.classificationType = ClassificationType.TERRAIN;
+      entity.polyline.classificationType = new ConstantProperty(ClassificationType.TERRAIN);
     }
   });
 
   buildingFootprintsData.entities.values.forEach((entity) => {
     if (entity.polygon) {
-      // @ts-ignore: Cesium types are incorrect
-      entity.polygon.classificationType = ClassificationType.TERRAIN;
+      entity.polygon.heightReference = new ConstantProperty(HeightReference.CLAMP_TO_TERRAIN);
     }
   });
 
   waterBodiesData.entities.values.forEach((entity) => {
     if (entity.polyline) {
-      // @ts-ignore: Cesium types are incorrect
-      entity.polyline.classificationType = ClassificationType.TERRAIN;
+      entity.polyline.classificationType = new ConstantProperty(ClassificationType.TERRAIN);
     }
   });
 
   greenSpacesData.entities.values.forEach((entity) => {
     if (entity.polygon) {
-      // @ts-ignore: Cesium types are incorrect
-      entity.polygon.classificationType = ClassificationType.TERRAIN;
+      entity.polygon.heightReference = new ConstantProperty(HeightReference.CLAMP_TO_TERRAIN);
     }
   });
 
