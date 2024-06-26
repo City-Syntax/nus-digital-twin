@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
@@ -35,6 +35,15 @@ import AutoHeight from '../primitives/AutoHeight';
 const Menu = () => {
   const $activePage = useStore(activePage);
   const [category, setCategory] = useState<BuildingInfoCategories>('general');
+  const menuBottomRef = useRef<HTMLDivElement>(null);
+
+  // Retain the height of menu bottom before its closes
+  activePage.listen((val) => {
+    if (val === '') {
+      const menuBottom = menuBottomRef.current as HTMLDivElement;
+      menuBottom.style.height = menuBottom.clientHeight + 'px';
+    }
+  });
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -104,10 +113,10 @@ const Menu = () => {
           mountOnEnter
           unmountOnExit
           in={$activePage !== '' && MENU_PAGES.BOTTOM.includes($activePage)}
-          timeout={200}
+          timeout={150}
           classNames="menu-bottom"
         >
-          <div className="menubar-content">
+          <div className="menubar-content" ref={menuBottomRef}>
             <AutoHeight>
               {$activePage === 'about' && <AboutNUSCampus></AboutNUSCampus>}
               {$activePage === 'building-info' && (

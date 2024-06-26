@@ -358,7 +358,7 @@
 
 .menu-bottom-enter {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(-6px);
 
   body.reduce-motion & {
     transform: translateY(0);
@@ -368,7 +368,7 @@
 .menu-bottom-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: all 200ms var(--ease-in-out-cubic);
+  transition: all 150ms var(--ease-in-out-cubic);
 }
 
 .menu-bottom-exit {
@@ -378,8 +378,8 @@
 
 .menu-bottom-exit-active {
   opacity: 0;
-  transform: translateY(28px);
-  transition: all 200ms var(--ease-in-out-cubic);
+  transform: translateY(-6px);
+  transition: all 150ms var(--ease-in-out-cubic);
 
   body.reduce-motion & {
     transform: translateY(0);
@@ -388,7 +388,7 @@
 
 .menu-right-enter {
   opacity: 0;
-  transform: translateX(12px);
+  transform: translateX(-4px);
 
   body.reduce-motion & {
     transform: translateX(0);
@@ -408,7 +408,7 @@
 
 .menu-right-exit-active {
   opacity: 0;
-  transform: translateX(12px);
+  transform: translateX(-4px);
   transition: all 150ms var(--ease-in-out-cubic);
 
   body.reduce-motion & {
@@ -418,7 +418,7 @@
 
 .menu-left-enter {
   opacity: 0;
-  transform: translateX(-12px);
+  transform: translateX(4px);
 
   body.reduce-motion & {
     transform: translateX(0);
@@ -438,7 +438,7 @@
 
 .menu-left-exit-active {
   opacity: 0;
-  transform: translateX(-12px);
+  transform: translateX(4px);
   transition: all 150ms var(--ease-in-out-cubic);
 
   body.reduce-motion & {
