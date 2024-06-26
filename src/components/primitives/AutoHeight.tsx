@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect, type ReactNode } from 'react';
 import AnimateHeight, { type Height } from 'react-animate-height';
 
-const AutoHeight = ({ children, ...props }: { children: ReactNode }) => {
+const AutoHeight = ({ duration = 300, children, ...props }: { duration?: number; children: ReactNode }) => {
   const [height, setHeight] = useState<Height>('auto');
   const contentDiv = useRef<HTMLDivElement | null>(null);
 
@@ -24,7 +24,7 @@ const AutoHeight = ({ children, ...props }: { children: ReactNode }) => {
       contentClassName="auto-height-container"
       contentRef={contentDiv}
       disableDisplayNone
-      duration={300}
+      duration={duration}
     >
       {children}
     </AnimateHeight>

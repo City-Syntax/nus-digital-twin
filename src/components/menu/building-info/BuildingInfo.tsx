@@ -1,13 +1,14 @@
 import React from 'react';
 import { buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
-import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS } from './buildingInfoUtils';
+import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS, SORT_ORDER } from './buildingInfoUtils';
 import type { BuildingInfoCategories, DownloadProps } from '../../../types';
 import CategorySelect from './CategorySelect';
 import type { BuildingPropertiesProps } from '../../../content/config';
 import buildingsData from '../../../content/buildings/buildings.json';
 import CloseButton from '../CloseButton';
 import DownloadButton from '../../primitives/DownloadButton';
+import Carousel from '../../primitives/Carousel';
 
 type BuildingInfoProps = {
   category: BuildingInfoCategories;
@@ -34,27 +35,54 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           onValueChange={(value: BuildingInfoCategories) => setCategory(value)}
         ></CategorySelect>
         {propertiesToDisplay.length < 1 && <p>No information under '{CATEGORY_MAPPINGS[category]}' yet.</p>}
-        {propertiesToDisplay.map((data) => {
-          const title = data[0] as keyof BuildingPropertiesProps;
-          const content = data[1];
-          return (
-            <div key={title}>
-              <h3>{TITLE_MAPPINGS[title]}</h3>
-              {title === 'downloads' ? (
-                <div className="download-btn-container">
-                  {content.map((c: DownloadProps) => (
-                    <DownloadButton key={c.type} {...c}></DownloadButton>
-                  ))}
-                </div>
-              ) : (
-                <p>{content}</p>
-              )}
-            </div>
-          );
-        })}
+        {propertiesToDisplay
+          .sort((a, b) => {
+            const firstTitle = a[0] as keyof BuildingPropertiesProps;
+            const secondTitle = b[0] as keyof BuildingPropertiesProps;
+            return SORT_ORDER.indexOf(firstTitle) - SORT_ORDER.indexOf(secondTitle);
+          })
+          .map((data) => {
+            return (
+              <div key={data[0]}>
+                <BuildingInfoContent
+                  title={data[0] as keyof BuildingPropertiesProps}
+                  content={data[1]}
+                ></BuildingInfoContent>
+              </div>
+            );
+          })}
       </div>
     </>
   );
 };
 
 export default BuildingInfo;
+
+const BuildingInfoContent = ({ title, content }: { title: keyof BuildingPropertiesProps; content: any }) => {
+  switch (title) {
+    case 'downloads':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <div className="download-btn-container">
+            {content.map((c: DownloadProps) => (
+              <DownloadButton key={c.type} {...c}></DownloadButton>
+            ))}
+          </div>
+        </>
+      );
+    case 'images':
+      return (
+        <>
+          <Carousel imageSources={content}></Carousel>
+        </>
+      );
+    default:
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content}</p>
+        </>
+      );
+  }
+};

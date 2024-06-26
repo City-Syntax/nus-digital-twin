@@ -1,8 +1,50 @@
 import type { BuildingPropertiesProps } from '../../../content/config';
 import type { BuildingInfoCategories } from '../../../types';
 
+export const SORT_ORDER: (keyof BuildingPropertiesProps)[] = [
+  'name',
+  'images',
+  'address',
+  'postal',
+  'downloads',
+  'floorToFloorHeight',
+  'perimeterZoneDepth',
+  'wallConstruction',
+  'roofConstruction',
+  'externalWallType',
+  'internalWalls',
+  'fenestrationType',
+  'fenestrationShading',
+  'northWindowToWallRatio',
+  'southWindowToWallRatio',
+  'eastWindowToWallRatio',
+  'westWindowToWallRatio',
+  'windowFrameConductance',
+  'glazingType',
+  'windowLeakage',
+  'naturalVentilation',
+  'daylightResponse',
+  'thermostatSetPoint',
+  'coreOutsideAirFlowrate',
+  'perimeterOutsideAirFlowrate',
+  'coreOccupantDensity',
+  'perimeterOccupantDensity',
+  'coreEquipmentPower',
+  'perimeterEquipmentPower',
+  'coreLightingPower',
+  'perimeterLightingPower',
+  'occupancySchedule',
+  'equipmentUsage',
+  'lightingUsage',
+  'coreOutsideAirSchedule',
+  'perimeterOutsideAirSchedule',
+  'exhaustAirRecovery',
+  'economizerCycle',
+];
+
 export const TITLE_MAPPINGS: { [key in keyof BuildingPropertiesProps]: string } = {
   name: 'Name',
+  images: 'Images',
   downloads: 'Downloads',
   address: 'Address',
   postal: 'Postal Code',
@@ -52,7 +94,7 @@ export const CATEGORY_MAPPINGS: { [key in BuildingInfoCategories]: string } = {
 };
 
 export const SECTIONS_TO_DISPLAY: { [key in BuildingInfoCategories]: Array<keyof BuildingPropertiesProps> } = {
-  general: ['address', 'postal', 'downloads'],
+  general: ['address', 'postal', 'images', 'downloads'],
   partitions: [
     'floorToFloorHeight',
     'perimeterZoneDepth',
