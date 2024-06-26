@@ -4,7 +4,11 @@ import type { EmblaCarouselType } from 'embla-carousel';
 import Icons from '../Icons';
 import AutoHeight from './AutoHeight';
 
-const Carousel = () => {
+const Carousel = ({ urls }: { urls: string[] }) => {
+  if (!urls || urls.length === 0) {
+    return <></>;
+  }
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -16,10 +20,12 @@ const Carousel = () => {
   useEffect(() => {
     const fetchImages = async () => {
       const sources = await Promise.all(
-        Object.values(images).map(async (image) => {
-          const res = await image();
-          return res.default.src;
-        }),
+        Object.entries(images)
+          .filter(([key]) => urls.includes(key))
+          .map(async ([_, image]) => {
+            const res = await image();
+            return res.default.src;
+          }),
       );
       setImageSources(sources);
     };
