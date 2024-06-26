@@ -1,6 +1,5 @@
 import React from 'react';
 import CloseButton from './CloseButton';
-import Carousel from '../primitives/Carousel';
 
 const AboutNUSCampus = () => {
   return (
