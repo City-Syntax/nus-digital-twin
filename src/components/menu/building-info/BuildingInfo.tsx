@@ -1,7 +1,7 @@
 import React from 'react';
 import { buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
-import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS } from './buildingInfoUtils';
+import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS, SORT_ORDER } from './buildingInfoUtils';
 import type { BuildingInfoCategories, DownloadProps } from '../../../types';
 import CategorySelect from './CategorySelect';
 import type { BuildingPropertiesProps } from '../../../content/config';
@@ -35,16 +35,22 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           onValueChange={(value: BuildingInfoCategories) => setCategory(value)}
         ></CategorySelect>
         {propertiesToDisplay.length < 1 && <p>No information under '{CATEGORY_MAPPINGS[category]}' yet.</p>}
-        {propertiesToDisplay.map((data) => {
-          return (
-            <div key={data[0]}>
-              <BuildingInfoContent
-                title={data[0] as keyof BuildingPropertiesProps}
-                content={data[1]}
-              ></BuildingInfoContent>
-            </div>
-          );
-        })}
+        {propertiesToDisplay
+          .sort((a, b) => {
+            const firstTitle = a[0] as keyof BuildingPropertiesProps;
+            const secondTitle = b[0] as keyof BuildingPropertiesProps;
+            return SORT_ORDER.indexOf(firstTitle) - SORT_ORDER.indexOf(secondTitle);
+          })
+          .map((data) => {
+            return (
+              <div key={data[0]}>
+                <BuildingInfoContent
+                  title={data[0] as keyof BuildingPropertiesProps}
+                  content={data[1]}
+                ></BuildingInfoContent>
+              </div>
+            );
+          })}
       </div>
     </>
   );
