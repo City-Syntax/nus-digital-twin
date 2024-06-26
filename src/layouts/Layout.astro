@@ -15,6 +15,12 @@ import mapboxStreet from '../assets/mapbox-street.png';
 const { title } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const SITE_DESCRIPTION = 'A digital twin of the National University of Singapore campus.';
+
+// Force validation of buildings data
+import { getCollection } from 'astro:content';
+if (import.meta.env.DEV) {
+  getCollection('buildings');
+}
 ---
 
 <!doctype html>

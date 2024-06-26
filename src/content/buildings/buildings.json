@@ -548,6 +548,7 @@
     "name": "SDE4",
     "address": "8 Architecture Drive",
     "postal": "117356",
+    "images": ["/src/assets/mapbox-dark.png"],
     "latitude": 1.29681,
     "longitude": 103.77035,
     "downloads": [

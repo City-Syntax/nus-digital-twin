@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z, type ImageFunction } from 'astro:content';
 
 const buildingMetadataSchema = z.object({
   elementId: z.string(),
@@ -61,7 +61,14 @@ const buildingSchema = z.object({
 
 const buildingsCollection = defineCollection({
   type: 'data',
-  schema: z.array(buildingSchema.merge(buildingMetadataSchema)),
+  schema: ({ image }) =>
+    z.array(
+      buildingSchema.merge(buildingMetadataSchema).merge(
+        z.object({
+          images: z.array(image()).optional(),
+        }),
+      ),
+    ),
 });
 
 export const collections = {
