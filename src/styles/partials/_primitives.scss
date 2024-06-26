@@ -108,6 +108,10 @@
 
 .carousel {
   position: relative;
+
+  &:hover .carousel-actions {
+    opacity: 1;
+  }
 }
 
 .carousel-content {
@@ -141,6 +145,12 @@
   left: 0;
   transform: translateY(-50%);
   padding: 0 4px;
+  opacity: 0;
+  transition: opacity 150ms;
+
+  &:has(button:focus-visible) {
+    opacity: 1;
+  }
 }
 
 .carousel button {
