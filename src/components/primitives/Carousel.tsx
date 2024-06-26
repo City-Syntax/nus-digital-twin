@@ -109,15 +109,16 @@ export default Carousel;
 
 const CarouselImage = ({ src }: { src?: string }) => {
   const PLACEHOLDER_SRC = `data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D`;
+  const [hasLoaded, setHasLoaded] = useState(!src);
 
   return (
     <div className="carousel-item">
-      {!src && (
+      {!hasLoaded && (
         <div className="carousel-spinner">
           <Icons.Spinner />
         </div>
       )}
-      <img src={src ? src : PLACEHOLDER_SRC} alt="" />
+      <img onLoad={() => setHasLoaded(true)} src={src ? src : PLACEHOLDER_SRC} alt="" />
     </div>
   );
 };
