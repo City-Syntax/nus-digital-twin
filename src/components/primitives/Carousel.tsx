@@ -76,6 +76,11 @@ const Carousel = () => {
                 </div>
               );
             })}
+            {imgSrc.length === 0 && (
+              <div className="carousel-item">
+                <img src="" alt="" />
+              </div>
+            )}
           </div>
         </div>
         <div className="carousel-actions">
