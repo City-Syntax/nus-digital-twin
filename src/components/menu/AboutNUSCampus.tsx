@@ -12,6 +12,7 @@ const AboutNUSCampus = () => {
       <div className="menubar-content-body">
         <p>Hello World!</p>
         <Carousel></Carousel>
+        <p>Hello World!</p>
       </div>
     </>
   );

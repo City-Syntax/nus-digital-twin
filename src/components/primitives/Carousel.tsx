@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import type { EmblaCarouselType } from 'embla-carousel';
 import Icons from '../Icons';
+import AutoHeight from './AutoHeight';
 
 const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
@@ -25,12 +27,12 @@ const Carousel = () => {
     fetchData();
   }, []);
 
-  const onSelect = useCallback((emblaApi: any) => {
+  const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
     setNextBtnDisabled(!emblaApi.canScrollNext());
   }, []);
 
-  const onSelectDotBtn = useCallback((emblaApi: any) => {
+  const onSelectDotBtn = useCallback((emblaApi: EmblaCarouselType) => {
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, []);
 
@@ -45,7 +47,7 @@ const Carousel = () => {
     [emblaApi],
   );
 
-  const onInit = useCallback((emblaApi: any) => {
+  const onInit = useCallback((emblaApi: EmblaCarouselType) => {
     setScrollSnaps(emblaApi.scrollSnapList());
   }, []);
 
@@ -65,7 +67,7 @@ const Carousel = () => {
   }, [emblaApi, onSelect, onSelectDotBtn]);
 
   return (
-    <>
+    <AutoHeight duration={150}>
       <div className="carousel">
         <div className="carousel-content" ref={emblaRef}>
           <div className="carousel-content-container">
@@ -76,11 +78,6 @@ const Carousel = () => {
                 </div>
               );
             })}
-            {imgSrc.length === 0 && (
-              <div className="carousel-item">
-                <img src="" alt="" />
-              </div>
-            )}
           </div>
         </div>
         <div className="carousel-actions">
@@ -101,7 +98,7 @@ const Carousel = () => {
           ></button>
         ))}
       </div>
-    </>
+    </AutoHeight>
   );
 };
 
