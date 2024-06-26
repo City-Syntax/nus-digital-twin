@@ -85,24 +85,28 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
             })}
           </div>
         </div>
-        <div className="carousel-actions">
-          <button onClick={() => emblaApi?.scrollPrev()} disabled={prevBtnDisabled}>
-            <Icons.ChevronLeft></Icons.ChevronLeft>
-          </button>
-          <button onClick={() => emblaApi?.scrollNext()} disabled={nextBtnDisabled}>
-            <Icons.ChevronRight></Icons.ChevronRight>
-          </button>
+        {imageSources.length > 1 && (
+          <div className="carousel-actions">
+            <button onClick={() => emblaApi?.scrollPrev()} disabled={prevBtnDisabled}>
+              <Icons.ChevronLeft></Icons.ChevronLeft>
+            </button>
+            <button onClick={() => emblaApi?.scrollNext()} disabled={nextBtnDisabled}>
+              <Icons.ChevronRight></Icons.ChevronRight>
+            </button>
+          </div>
+        )}
+      </div>
+      {imageSources.length > 1 && (
+        <div className="carousel-dots">
+          {scrollSnaps.map((_, index) => (
+            <button
+              key={index}
+              className={selectedIndex === index ? 'active' : ''}
+              onClick={() => onDotButtonClick(index)}
+            ></button>
+          ))}
         </div>
-      </div>
-      <div className="carousel-dots">
-        {scrollSnaps.map((_, index) => (
-          <button
-            key={index}
-            className={selectedIndex === index ? 'active' : ''}
-            onClick={() => onDotButtonClick(index)}
-          ></button>
-        ))}
-      </div>
+      )}
     </AutoHeight>
   );
 };
