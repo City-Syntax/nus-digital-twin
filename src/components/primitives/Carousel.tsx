@@ -4,7 +4,7 @@ import type { EmblaCarouselType } from 'embla-carousel';
 import Icons from '../Icons';
 import AutoHeight from './AutoHeight';
 
-const Carousel = ({ urls }: { urls: string[] }) => {
+const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
   if (!urls || urls.length === 0) {
     return <></>;
   }

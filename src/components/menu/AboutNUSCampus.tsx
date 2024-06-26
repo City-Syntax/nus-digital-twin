@@ -12,7 +12,11 @@ const AboutNUSCampus = () => {
       <div className="menubar-content-body">
         <p>Hello World!</p>
         <Carousel
-          urls={['/src/assets/mapbox-dark.png', '/src/assets/mapbox-satellite.png', '/src/assets/mapbox-street.png']}
+          imageSources={[
+            '/src/assets/mapbox-dark.png',
+            '/src/assets/mapbox-satellite.png',
+            '/src/assets/mapbox-street.png',
+          ]}
         ></Carousel>
         <p>Hello World!</p>
       </div>
