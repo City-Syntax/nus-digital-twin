@@ -179,3 +179,18 @@
     }
   }
 }
+
+.carousel-spinner {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  > svg {
+    height: 2rem;
+    width: 2rem;
+    animation: spin 1s linear infinite;
+  }
+}
