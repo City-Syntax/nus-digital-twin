@@ -3,6 +3,7 @@ import type { BuildingInfoCategories } from '../../../types';
 
 export const TITLE_MAPPINGS: { [key in keyof BuildingPropertiesProps]: string } = {
   name: 'Name',
+  images: 'Images',
   downloads: 'Downloads',
   address: 'Address',
   postal: 'Postal Code',
@@ -52,7 +53,7 @@ export const CATEGORY_MAPPINGS: { [key in BuildingInfoCategories]: string } = {
 };
 
 export const SECTIONS_TO_DISPLAY: { [key in BuildingInfoCategories]: Array<keyof BuildingPropertiesProps> } = {
-  general: ['address', 'postal', 'downloads'],
+  general: ['address', 'postal', 'images', 'downloads'],
   partitions: [
     'floorToFloorHeight',
     'perimeterZoneDepth',

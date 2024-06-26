@@ -75,4 +75,4 @@ export const collections = {
   buildings: buildingsCollection,
 };
 
-export type BuildingPropertiesProps = z.infer<typeof buildingSchema>;
+export type BuildingPropertiesProps = z.infer<typeof buildingSchema> & { images: string[] };
