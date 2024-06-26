@@ -1,4 +1,4 @@
-import { defineCollection, z, type ImageFunction } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
 
 const buildingMetadataSchema = z.object({
   elementId: z.string(),
