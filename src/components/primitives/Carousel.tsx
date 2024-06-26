@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import type { EmblaCarouselType } from 'embla-carousel';
 import Icons from '../Icons';
-import AutoHeight from './AutoHeight';
 
 const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
   if (!urls || urls.length === 0) {
@@ -15,7 +14,7 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const [imageSources, setImageSources] = useState<string[]>([]);
-  const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+  const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -72,14 +71,15 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
   }, [emblaApi, onSelect, onSelectDotBtn]);
 
   return (
-    <AutoHeight duration={150}>
+    <>
       <div className="carousel">
         <div className="carousel-content" ref={emblaRef}>
           <div className="carousel-content-container">
+            {imageSources.length === 0 && <LazyImage src=""></LazyImage>}
             {imageSources.map((src) => {
               return (
                 <div key={src} className="carousel-item">
-                  <img src={src} alt="" />
+                  <LazyImage src={src} />
                 </div>
               );
             })}
@@ -96,19 +96,28 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
           </div>
         )}
       </div>
-      {imageSources.length > 1 && (
-        <div className="carousel-dots">
-          {scrollSnaps.map((_, index) => (
-            <button
-              key={index}
-              className={selectedIndex === index ? 'active' : ''}
-              onClick={() => onDotButtonClick(index)}
-            ></button>
-          ))}
-        </div>
-      )}
-    </AutoHeight>
+      <div className="carousel-dots">
+        {scrollSnaps.map((_, index) => (
+          <button
+            key={index}
+            className={selectedIndex === index ? 'active' : ''}
+            onClick={() => onDotButtonClick(index)}
+          ></button>
+        ))}
+      </div>
+    </>
   );
 };
 
 export default Carousel;
+
+const LazyImage = ({ src }: { src: string }) => {
+  const PLACEHOLDER_SRC = `data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D`;
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <>
+      <img onLoad={() => setLoaded(true)} src={loaded ? src : PLACEHOLDER_SRC} alt="" />
+    </>
+  );
+};
