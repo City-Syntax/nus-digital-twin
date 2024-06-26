@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Icons from '../Icons';
-import nus from '../../assets/about-nus/nus.jpeg';
+import mapboxDark from '../../assets/mapbox-dark.png';
 
 const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
@@ -55,13 +55,13 @@ const Carousel = () => {
         <div className="carousel-content" ref={emblaRef}>
           <div className="carousel-content-container">
             <div className="carousel-item">
-              <img src={nus.src} alt="" />
+              <img src={mapboxDark.src} alt="" />
             </div>
             <div className="carousel-item">
-              <img src={nus.src} alt="" />
+              <img src={mapboxDark.src} alt="" />
             </div>
             <div className="carousel-item">
-              <img src={nus.src} alt="" />
+              <img src={mapboxDark.src} alt="" />
             </div>
           </div>
         </div>

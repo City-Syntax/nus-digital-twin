@@ -1,5 +1,6 @@
 import React from 'react';
 import CloseButton from './CloseButton';
+import Carousel from '../primitives/Carousel';
 
 const AboutNUSCampus = () => {
   return (
@@ -10,6 +11,7 @@ const AboutNUSCampus = () => {
       </div>
       <div className="menubar-content-body">
         <p>Hello World!</p>
+        <Carousel></Carousel>
       </div>
     </>
   );
