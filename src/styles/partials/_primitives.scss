@@ -29,28 +29,42 @@
   --scrollbar-size: 10px;
 }
 
+@include property($variable: start, $syntax: '<color>', $inherits: false, $initial-value: #000);
+@include property($variable: end, $syntax: '<color>', $inherits: false, $initial-value: #000);
+
 .scroll-area-viewport {
   width: 100%;
   height: 100%;
   border-radius: inherit;
   --overlay-size: 2.5rem;
+  --start: #000;
+  --end: #000;
+
+  transition:
+    --start 150ms ease 0s,
+    --end 150ms ease 0s;
+
+  mask-image: linear-gradient(
+    to bottom,
+    var(--start) 0,
+    #000 var(--overlay-size),
+    #000 calc(100% - var(--overlay-size)),
+    var(--end) 100%
+  );
 
   &.overlay-top {
-    mask-image: linear-gradient(180deg, transparent, #000 var(--overlay-size), #000 100%, transparent);
+    --start: transparent;
+    --end: #000;
   }
 
   &.overlay-bottom {
-    mask-image: linear-gradient(180deg, transparent, #000 1px, #000 calc(100% - var(--overlay-size)), transparent);
+    --start: #000;
+    --end: transparent;
   }
 
   &.overlay-bottom.overlay-top {
-    mask-image: linear-gradient(
-      180deg,
-      transparent,
-      #000 var(--overlay-size),
-      #000 calc(100% - var(--overlay-size)),
-      transparent
-    );
+    --start: transparent;
+    --end: transparent;
   }
 }
 
