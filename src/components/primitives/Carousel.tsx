@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Icons from '../Icons';
-import mapboxDark from '../../assets/mapbox-dark.png';
 
 const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
@@ -9,6 +8,22 @@ const Carousel = () => {
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [imgSrc, setImgSrc] = useState<string[]>([]);
+
+  const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const sources = await Promise.all(
+        Object.values(images).map(async (image) => {
+          const res = await image();
+          return res.default.src;
+        }),
+      );
+      setImgSrc(sources);
+    };
+    fetchData();
+  }, []);
 
   const onSelect = useCallback((emblaApi: any) => {
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
@@ -54,15 +69,13 @@ const Carousel = () => {
       <div className="carousel">
         <div className="carousel-content" ref={emblaRef}>
           <div className="carousel-content-container">
-            <div className="carousel-item">
-              <img src={mapboxDark.src} alt="" />
-            </div>
-            <div className="carousel-item">
-              <img src={mapboxDark.src} alt="" />
-            </div>
-            <div className="carousel-item">
-              <img src={mapboxDark.src} alt="" />
-            </div>
+            {imgSrc.map((img) => {
+              return (
+                <div key={img} className="carousel-item">
+                  <img src={img} alt="" />
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="carousel-actions">
