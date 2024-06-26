@@ -10,21 +10,20 @@ const Carousel = () => {
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [imgSrc, setImgSrc] = useState<string[]>([]);
-
+  const [imageSources, setImageSources] = useState<string[]>([]);
   const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchImages = async () => {
       const sources = await Promise.all(
         Object.values(images).map(async (image) => {
           const res = await image();
           return res.default.src;
         }),
       );
-      setImgSrc(sources);
+      setImageSources(sources);
     };
-    fetchData();
+    fetchImages();
   }, []);
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
@@ -71,10 +70,10 @@ const Carousel = () => {
       <div className="carousel">
         <div className="carousel-content" ref={emblaRef}>
           <div className="carousel-content-container">
-            {imgSrc.map((img) => {
+            {imageSources.map((src) => {
               return (
-                <div key={img} className="carousel-item">
-                  <img src={img} alt="" />
+                <div key={src} className="carousel-item">
+                  <img src={src} alt="" />
                 </div>
               );
             })}
