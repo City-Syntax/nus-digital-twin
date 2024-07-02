@@ -178,6 +178,24 @@
   margin-top: auto;
 }
 
+.report-link {
+  text-decoration: none;
+  color: rgba(var(--base-300));
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 150ms;
+
+  > svg {
+    height: 0.875rem;
+  }
+
+  &:hover {
+    color: rgba(var(--amber));
+  }
+}
+
 .menu-list {
   display: flex;
   flex-direction: column;
