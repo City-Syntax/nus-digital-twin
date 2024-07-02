@@ -9,6 +9,7 @@ import buildingsData from '../../../content/buildings/buildings.json';
 import CloseButton from '../CloseButton';
 import DownloadButton from '../../primitives/DownloadButton';
 import Carousel from '../../primitives/Carousel';
+import Icons from '../../Icons';
 
 type BuildingInfoProps = {
   category: BuildingInfoCategories;
@@ -51,6 +52,17 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
               </div>
             );
           })}
+      </div>
+      <div className="menubar-content-footer">
+        <a
+          href={`https://docs.google.com/forms/d/e/1FAIpQLSdPktLMj_Ob6YvreQBa7M4_nd8FXK0sLGwQnCeAd8gtbk9HBw/viewform?entry.1908367072=Issue with building: ${buildingProperties.name} (${$buildingId})`}
+          target="_blank"
+          rel="noreferrer"
+          className="report-link"
+        >
+          <Icons.Flag></Icons.Flag>
+          Report issue
+        </a>
       </div>
     </>
   );
