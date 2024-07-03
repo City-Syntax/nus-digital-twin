@@ -12,17 +12,17 @@
   align-items: flex-end;
   gap: 4px;
   padding: 0 var(--padding-xs);
-  font-size: var(--text-sm);
   overflow: hidden;
-
-  > * {
-    padding: var(--padding-xs) var(--padding-sm);
-    border-radius: var(--rounded-xs);
-  }
 
   @media screen and (max-width: $md) {
     top: 58px;
   }
+}
+
+.notification {
+  padding: var(--padding-xs) var(--padding-sm);
+  border-radius: var(--rounded-xs);
+  font-size: var(--text-sm);
 }
 
 #construction {
