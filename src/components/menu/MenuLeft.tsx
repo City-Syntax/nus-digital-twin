@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuLink from './MenuLink';
-import Searchbar from '../Searchbar';
+import Searchbar from './Searchbar';
 import { useStore } from '@nanostores/react';
 import { activeGISLayer, activeModel } from '../../store';
 import Icons from '../Icons';

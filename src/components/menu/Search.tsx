@@ -1,6 +1,6 @@
 import React from 'react';
 import CloseButton from './CloseButton';
-import Searchbar from '../Searchbar';
+import Searchbar from './Searchbar';
 
 const Search = () => {
   return (

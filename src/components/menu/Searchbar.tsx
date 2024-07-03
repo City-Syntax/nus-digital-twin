@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
-import Icons from './Icons';
-import buildingsData from '../content/buildings/buildings.json';
-import { activePage, buildingId, flyToPosition } from '../store';
+import Icons from '../Icons';
+import buildingsData from '../../content/buildings/buildings.json';
+import { activePage, buildingId, flyToPosition } from '../../store';
 
 const Searchbar = () => {
   const [open, setOpen] = useState(true);
