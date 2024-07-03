@@ -1,7 +1,36 @@
 ---
-import WarningToast from './WarningToast.astro';
+import Icons from '../Icons';
 ---
 
+<script>
+  import { activeModel } from '../../store';
+
+  const removeElement = (element: HTMLElement | null) => {
+    if (!element) {
+      return;
+    }
+
+    element.classList.add('notification--state-hide');
+    setTimeout(() => (element.style.display = 'none'), 150);
+  };
+
+  const addElement = (element: HTMLElement | null) => {
+    if (!element) {
+      return;
+    }
+    element.style.display = '';
+    setTimeout(() => element.classList.remove('notification--state-hide'), 0);
+  };
+
+  activeModel.subscribe((val) => {
+    const buildingsAlert = document.querySelector<HTMLElement>('#no-buildings-alert');
+    if (val === '') {
+      addElement(buildingsAlert);
+    } else {
+      removeElement(buildingsAlert);
+    }
+  });
+</script>
 <div id="notifications-box">
   <a
     class="notification notification--primary"
@@ -12,5 +41,7 @@ import WarningToast from './WarningToast.astro';
   >
     This application is under construction. Report any issues or feedback here.
   </a>
-  <WarningToast />
+  <div class="notification notification--danger notification--state-hide" id="no-buildings-alert">
+    <Icons.Warning /> No building models selected.
+  </div>
 </div>
