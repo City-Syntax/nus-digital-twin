@@ -3,20 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import Menu from '../components/menu/Menu';
 import CesiumScene from '../components/cesium/CesiumScene.astro';
 import Toolbar from '../components/toolbar/Toolbar.astro';
-import WarningToast from '../components/WarningToast.astro';
 import BottomBar from '../components/BottomBar.astro';
+import NotificationBox from '../components/notifications/NotificationBox.astro';
 ---
 
 <Layout title="NUS Digital Twin">
   <Menu client:load />
   <CesiumScene />
   <Toolbar />
-  <div id="alert-box">
-    <a href="https://forms.gle/SbtKCbAqF1AKzKhi7" target="_blank" rel="noreferrer" id="construction">
-      This application is under construction. Report any issues or feedback here.
-    </a>
-    <WarningToast />
-  </div>
+  <NotificationBox />
   <BottomBar />
 </Layout>
 <script>

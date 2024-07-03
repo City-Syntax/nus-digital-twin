@@ -1,9 +1,9 @@
 ---
-import Icons from './Icons';
+import Icons from '../Icons';
 ---
 
 <script>
-  import { activeModel } from '../store';
+  import { activeModel } from '../../store';
 
   activeModel.subscribe((val) => {
     const toast = document.querySelector<HTMLElement>('.toast')!;
