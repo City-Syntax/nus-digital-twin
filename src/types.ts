@@ -12,6 +12,8 @@ export type UserSettings = {
   reducedMotion: boolean;
 };
 
+export type NavType = 'mouse' | 'touch';
+
 export type MenuPages =
   | 'osm'
   | 'about'
