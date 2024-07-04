@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CloseButton from './CloseButton';
 import Icons from '../Icons';
 
+type ControlTypeProp = 'mouse' | 'touch';
+
 const Help = () => {
-  const [controlType, setControlType] = useState<'mouse' | 'touch'>('mouse');
+  const [controlType, setControlType] = useState<ControlTypeProp>('mouse');
+
+  const handleClick = (controlType: ControlTypeProp) => () => {
+    setControlType(controlType);
+    localStorage.setItem('helpControlType', controlType);
+  };
+
+  useEffect(() => {
+    setControlType(localStorage['helpControlType'] || 'mouse');
+  }, []);
+
   return (
     <>
       <div className="menubar-content-header">
@@ -12,18 +24,10 @@ const Help = () => {
       </div>
       <div className="menubar-content-body">
         <div className="btn-group">
-          <button
-            type="button"
-            onClick={() => setControlType('mouse')}
-            className={controlType === 'mouse' ? 'active' : ''}
-          >
+          <button type="button" onClick={handleClick('mouse')} className={controlType === 'mouse' ? 'active' : ''}>
             Mouse
           </button>
-          <button
-            type="button"
-            onClick={() => setControlType('touch')}
-            className={controlType === 'touch' ? 'active' : ''}
-          >
+          <button type="button" onClick={handleClick('touch')} className={controlType === 'touch' ? 'active' : ''}>
             Touch
           </button>
         </div>
