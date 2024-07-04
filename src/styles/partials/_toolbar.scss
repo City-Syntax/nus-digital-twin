@@ -73,7 +73,10 @@
       height: 60px;
       border-radius: var(--rounded-sm);
       border: 2px solid transparent;
-      transition: border 150ms;
+      opacity: 0;
+      transition:
+        border 150ms,
+        opacity 150ms;
     }
 
     &.active {

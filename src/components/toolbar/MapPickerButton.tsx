@@ -25,7 +25,7 @@ const MapPickerButton = () => {
               type="button"
               onClick={() => activeMapLayer.set('street')}
             >
-              <img src={mapboxStreet.src} alt="Mapbox Street" />
+              <img onLoad={(e) => (e.currentTarget.style.opacity = '1')} src={mapboxStreet.src} alt="Mapbox Street" />
               Mapbox Street
             </button>
             <button
@@ -33,7 +33,7 @@ const MapPickerButton = () => {
               type="button"
               onClick={() => activeMapLayer.set('dark')}
             >
-              <img src={mapboxDark.src} alt="Mapbox Dark" />
+              <img onLoad={(e) => (e.currentTarget.style.opacity = '1')} src={mapboxDark.src} alt="Mapbox Dark" />
               Mapbox Dark
             </button>
             <button
@@ -41,7 +41,11 @@ const MapPickerButton = () => {
               type="button"
               onClick={() => activeMapLayer.set('satellite')}
             >
-              <img src={mapboxSatellite.src} alt="Mapbox Satellite" />
+              <img
+                onLoad={(e) => (e.currentTarget.style.opacity = '1')}
+                src={mapboxSatellite.src}
+                alt="Mapbox Satellite"
+              />
               Mapbox Satellite
             </button>
           </div>
