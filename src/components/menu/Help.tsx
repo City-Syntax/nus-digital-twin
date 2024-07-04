@@ -27,55 +27,88 @@ const Help = () => {
             Touch
           </button>
         </div>
-        <div>
-          <h3>Pan</h3>
-          {controlType === 'mouse' ? (
-            <ul className="help__content list--bullet">
-              <li>
-                <Icons.LeftClick /> Left Click + <Icons.Drag /> Drag
-              </li>
-              <li>
-                <Icons.Scroll /> Scroll
-              </li>
-            </ul>
-          ) : (
-            <p>Drag with one finger</p>
-          )}
-        </div>
-        <div>
-          <h3>Zoom</h3>
-          {controlType === 'mouse' ? (
-            <ul className="help__content list--bullet">
-              <li>
-                <Icons.RightClick /> Right Click + <Icons.Drag /> Drag
-              </li>
-            </ul>
-          ) : (
-            <div className="help__content">
-              <p>Drag with one finger</p>
-            </div>
-          )}
-        </div>
-        <div>
-          <h3>Rotate</h3>
-          {controlType === 'mouse' ? (
-            <ul className="help__content list--bullet">
-              <li>
-                <Icons.MiddleClick /> Middle Click + <Icons.Drag /> Drag
-              </li>
-              <li>
-                <kbd>CTRL</kbd> +
-                <Icons.LeftClick /> Left Click +
-                <Icons.Drag /> Drag
-              </li>
-            </ul>
-          ) : (
-            <p>Drag with one finger</p>
-          )}
-        </div>
+        {controlType === 'mouse' ? <MouseControls /> : <TouchControls />}
       </div>
     </>
   );
 };
 
 export default Help;
+
+const MouseControls = () => {
+  return (
+    <>
+      <div>
+        <h3>Pan</h3>
+        <ul className="help__content list--bullet">
+          <li>
+            <Icons.LeftClick /> Left Click + <Icons.Drag /> Drag
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Zoom</h3>
+        <ul className="help__content list--bullet">
+          <li>
+            <Icons.RightClick /> Right Click + <Icons.Drag /> Drag
+          </li>
+          <li>
+            <Icons.Scroll /> Scroll
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Rotate</h3>
+        <ul className="help__content list--bullet">
+          <li>
+            <Icons.MiddleClick /> Middle Click + <Icons.Drag /> Drag
+          </li>
+          <li>
+            <kbd>CTRL</kbd> +
+            <Icons.LeftClick /> Left Click +
+            <Icons.Drag /> Drag
+          </li>
+        </ul>
+      </div>
+    </>
+  );
+};
+
+const TouchControls = () => {
+  return (
+    <>
+      <div>
+        <h3>Pan</h3>
+        <ul className="help__content list--bullet">
+          <li>
+            <Icons.Drag /> Drag with one finger
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Zoom</h3>
+        <ul className="help__content list--bullet">
+          <li>
+            <Icons.RightClick /> Right Click + <Icons.Drag /> Drag
+          </li>
+          <li>
+            <Icons.Scroll /> Scroll
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Rotate</h3>
+        <ul className="help__content list--bullet">
+          <li>
+            <Icons.MiddleClick /> Middle Click + <Icons.Drag /> Drag
+          </li>
+          <li>
+            <kbd>CTRL</kbd> +
+            <Icons.LeftClick /> Left Click +
+            <Icons.Drag /> Drag
+          </li>
+        </ul>
+      </div>
+    </>
+  );
+};
