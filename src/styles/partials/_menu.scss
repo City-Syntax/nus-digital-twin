@@ -532,3 +532,20 @@
     display: none;
   }
 }
+
+.help__content {
+  > * + * {
+    margin-top: 4px;
+  }
+
+  > li {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+  }
+
+  svg {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+}
