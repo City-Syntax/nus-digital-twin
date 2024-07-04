@@ -6,9 +6,21 @@ import Icons from '../Icons';
 import * as Popover from '@radix-ui/react-popover';
 import { activeMapLayer } from '../../store';
 import { useStore } from '@nanostores/react';
+import type { MapLayers } from '../../types';
+import type { ImageMetadata } from 'astro';
 
 const MapPickerButton = () => {
   const $activeMapLayer = useStore(activeMapLayer);
+  const mapLayers: Array<{
+    id: MapLayers;
+    img: ImageMetadata;
+    name: string;
+  }> = [
+    { id: 'street', img: mapboxStreet, name: 'Mapbox Street' },
+    { id: 'dark', img: mapboxDark, name: 'Mapbox Dark' },
+    { id: 'satellite', img: mapboxSatellite, name: 'Mapbox Satellite' },
+  ];
+
   return (
     <Popover.Root modal>
       <Popover.Trigger asChild>
@@ -20,34 +32,19 @@ const MapPickerButton = () => {
       <Popover.Portal>
         <Popover.Content className="popover-content" align="end" onCloseAutoFocus={(e) => e.preventDefault()}>
           <div id="map-picker">
-            <button
-              className={`map-picker__item ${$activeMapLayer === 'street' ? 'active' : ''}`}
-              type="button"
-              onClick={() => activeMapLayer.set('street')}
-            >
-              <img onLoad={(e) => (e.currentTarget.style.opacity = '1')} src={mapboxStreet.src} alt="Mapbox Street" />
-              Mapbox Street
-            </button>
-            <button
-              className={`map-picker__item ${$activeMapLayer === 'dark' ? 'active' : ''}`}
-              type="button"
-              onClick={() => activeMapLayer.set('dark')}
-            >
-              <img onLoad={(e) => (e.currentTarget.style.opacity = '1')} src={mapboxDark.src} alt="Mapbox Dark" />
-              Mapbox Dark
-            </button>
-            <button
-              className={`map-picker__item ${$activeMapLayer === 'satellite' ? 'active' : ''}`}
-              type="button"
-              onClick={() => activeMapLayer.set('satellite')}
-            >
-              <img
-                onLoad={(e) => (e.currentTarget.style.opacity = '1')}
-                src={mapboxSatellite.src}
-                alt="Mapbox Satellite"
-              />
-              Mapbox Satellite
-            </button>
+            {mapLayers.map((layer) => {
+              return (
+                <button
+                  key={layer.id}
+                  className={`map-picker__item ${$activeMapLayer === layer.id ? 'map-picker__item--active' : ''}`}
+                  type="button"
+                  onClick={() => activeMapLayer.set(layer.id)}
+                >
+                  <img onLoad={(e) => (e.currentTarget.style.opacity = '1')} src={layer.img.src} alt={layer.name} />
+                  {layer.name}
+                </button>
+              );
+            })}
           </div>
         </Popover.Content>
       </Popover.Portal>

@@ -78,13 +78,13 @@
         border 150ms,
         opacity 150ms;
     }
+  }
 
-    &.active {
-      color: rgba(var(--primary-300));
+  .map-picker__item--active {
+    color: rgba(var(--primary-300));
 
-      img {
-        border: 2px solid rgba(var(--primary-300));
-      }
+    img {
+      border: 2px solid rgba(var(--primary-300));
     }
   }
 }
