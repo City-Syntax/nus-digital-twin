@@ -3,7 +3,7 @@ import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
 import { activePage, buildingId, isSelectColorByDistance } from '../../store';
-import type { BuildingInfoCategories } from '../../types';
+import type { BuildingInfoCategories, NavType } from '../../types';
 import AboutNUSCampus from './AboutNUSCampus';
 import StreetCenterlines from './StreetCenterlines';
 import BuildingFootprints from './BuildingFootprints';
@@ -35,6 +35,7 @@ import AutoHeight from '../primitives/AutoHeight';
 const Menu = () => {
   const $activePage = useStore(activePage);
   const [category, setCategory] = useState<BuildingInfoCategories>('general');
+  const [helpNavType, setHelpNavType] = useState<NavType>('mouse');
   const menuBottomRef = useRef<HTMLDivElement>(null);
 
   // Retain the height of menu bottom before its closes
@@ -73,7 +74,7 @@ const Menu = () => {
           <div className="menubar-content">
             {$activePage === 'osm' && <OSMBuildings></OSMBuildings>}
             {$activePage === 'about' && <AboutNUSCampus></AboutNUSCampus>}
-            {$activePage === 'help' && <Help></Help>}
+            {$activePage === 'help' && <Help navType={helpNavType} setNavType={setHelpNavType}></Help>}
             {$activePage === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
             {$activePage === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
             {$activePage === 'green-spaces' && <GreenSpaces></GreenSpaces>}
@@ -137,7 +138,7 @@ const Menu = () => {
               {$activePage === 'wind' && <Wind></Wind>}
               {$activePage === 'solar' && <Solar></Solar>}
               {$activePage === 'distance' && <Distance></Distance>}
-              {$activePage === 'help' && <Help></Help>}
+              {$activePage === 'help' && <Help navType={helpNavType} setNavType={setHelpNavType}></Help>}
               {$activePage === 'settings' && <Settings></Settings>}
               {$activePage === 'search' && <Search></Search>}
               {$activePage === 'controls' && <Controls></Controls>}

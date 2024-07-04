@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import CloseButton from './CloseButton';
 import Icons from '../Icons';
+import type { NavType } from '../../types';
 
-type ControlTypeProp = 'mouse' | 'touch';
+type HelpProps = {
+  navType: NavType;
+  setNavType: (navType: NavType) => void;
+};
 
-const Help = () => {
-  const [controlType, setControlType] = useState<ControlTypeProp>('mouse');
-
-  const handleClick = (controlType: ControlTypeProp) => () => {
-    setControlType(controlType);
+const Help = ({ navType, setNavType }: HelpProps) => {
+  const handleClick = (controlType: NavType) => () => {
+    setNavType(controlType);
     localStorage.setItem('helpControlType', controlType);
   };
 
   useEffect(() => {
-    setControlType(localStorage['helpControlType'] || 'mouse');
+    setNavType(localStorage['helpControlType'] || 'mouse');
   }, []);
 
   return (
@@ -24,14 +26,14 @@ const Help = () => {
       </div>
       <div className="menubar-content-body">
         <div className="btn-group">
-          <button type="button" onClick={handleClick('mouse')} className={controlType === 'mouse' ? 'active' : ''}>
+          <button type="button" onClick={handleClick('mouse')} className={navType === 'mouse' ? 'active' : ''}>
             Mouse
           </button>
-          <button type="button" onClick={handleClick('touch')} className={controlType === 'touch' ? 'active' : ''}>
+          <button type="button" onClick={handleClick('touch')} className={navType === 'touch' ? 'active' : ''}>
             Touch
           </button>
         </div>
-        {controlType === 'mouse' ? <MouseControls /> : <TouchControls />}
+        {navType === 'mouse' ? <MouseControls /> : <TouchControls />}
       </div>
     </>
   );
