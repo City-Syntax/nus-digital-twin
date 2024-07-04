@@ -540,8 +540,12 @@
 
   > li {
     display: flex;
-    gap: 2px;
+    gap: 4px;
     align-items: center;
+
+    > svg {
+      flex-shrink: 0;
+    }
   }
 
   svg {

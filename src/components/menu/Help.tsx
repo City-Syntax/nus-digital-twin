@@ -81,7 +81,7 @@ const TouchControls = () => {
         <h3>Pan</h3>
         <ul className="help__content list--bullet">
           <li>
-            <Icons.Drag /> Drag with one finger
+            <Icons.DragOneFinger /> One finger drag
           </li>
         </ul>
       </div>
@@ -89,10 +89,15 @@ const TouchControls = () => {
         <h3>Zoom</h3>
         <ul className="help__content list--bullet">
           <li>
-            <Icons.RightClick /> Right Click + <Icons.Drag /> Drag
+            <Icons.Pinch /> Pinch with two fingers
           </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tilt</h3>
+        <ul className="help__content list--bullet">
           <li>
-            <Icons.Scroll /> Scroll
+            <Icons.TapTwoFinger /> Two finger drag in the same direction
           </li>
         </ul>
       </div>
@@ -100,12 +105,7 @@ const TouchControls = () => {
         <h3>Rotate</h3>
         <ul className="help__content list--bullet">
           <li>
-            <Icons.MiddleClick /> Middle Click + <Icons.Drag /> Drag
-          </li>
-          <li>
-            <kbd>CTRL</kbd> +
-            <Icons.LeftClick /> Left Click +
-            <Icons.Drag /> Drag
+            <Icons.RotateTwoFinger /> Two finger drag in the opposite direction
           </li>
         </ul>
       </div>
