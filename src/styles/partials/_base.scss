@@ -104,6 +104,33 @@ h3 {
   font-size: var(--text-base);
 }
 
+ul {
+  margin: 0;
+  padding-left: 0;
+
+  > li + li {
+    margin-top: 4px;
+  }
+}
+
+.list--bullet {
+  > li::before {
+    content: '•';
+    font-size: var(--text-xs);
+  }
+}
+
+kbd {
+  font-size: var(--text-sm);
+  background: rgba(var(--base-100), 0.8);
+  margin: 1px 4px;
+  box-shadow: 0 0 0 1px rgba(var(--base-300), 0.6);
+  padding: 0 var(--padding-xs);
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+}
+
 a:focus-visible {
   outline: rgba(var(--primary-300)) 2px solid;
 }
