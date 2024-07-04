@@ -21,7 +21,7 @@ const MapPickerButton = () => {
         <Popover.Content className="popover-content" align="end" onCloseAutoFocus={(e) => e.preventDefault()}>
           <div id="map-picker">
             <button
-              className={`map-picker-item ${$activeMapLayer === 'street' ? 'active' : ''}`}
+              className={`map-picker__item ${$activeMapLayer === 'street' ? 'active' : ''}`}
               type="button"
               onClick={() => activeMapLayer.set('street')}
             >
@@ -29,7 +29,7 @@ const MapPickerButton = () => {
               Mapbox Street
             </button>
             <button
-              className={`map-picker-item ${$activeMapLayer === 'dark' ? 'active' : ''}`}
+              className={`map-picker__item ${$activeMapLayer === 'dark' ? 'active' : ''}`}
               type="button"
               onClick={() => activeMapLayer.set('dark')}
             >
@@ -37,7 +37,7 @@ const MapPickerButton = () => {
               Mapbox Dark
             </button>
             <button
-              className={`map-picker-item ${$activeMapLayer === 'satellite' ? 'active' : ''}`}
+              className={`map-picker__item ${$activeMapLayer === 'satellite' ? 'active' : ''}`}
               type="button"
               onClick={() => activeMapLayer.set('satellite')}
             >
