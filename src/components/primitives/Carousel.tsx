@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import type { EmblaCarouselType } from 'embla-carousel';
 import Icons from '../Icons';
+import LazyImage from './LazyImage';
 
 const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
   if (!urls || urls.length === 0) {
@@ -75,9 +76,15 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
       <div className="carousel">
         <div className="carousel-content" ref={emblaRef}>
           <div className="carousel-content-container">
-            {imageSources.length === 0 && <CarouselImage></CarouselImage>}
+            {imageSources.length === 0 && (
+              <div className="carousel-item">
+                <LazyImage></LazyImage>
+              </div>
+            )}
             {imageSources.map((src) => (
-              <CarouselImage key={src} src={src}></CarouselImage>
+              <div className="carousel-item">
+                <LazyImage key={src} src={src}></LazyImage>
+              </div>
             ))}
           </div>
         </div>
@@ -106,19 +113,3 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
 };
 
 export default Carousel;
-
-const CarouselImage = ({ src }: { src?: string }) => {
-  const PLACEHOLDER_SRC = `data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D`;
-  const [hasLoaded, setHasLoaded] = useState(!src);
-
-  return (
-    <div className="carousel-item">
-      {!hasLoaded && (
-        <div className="carousel-spinner">
-          <Icons.Spinner />
-        </div>
-      )}
-      <img onLoad={() => setHasLoaded(true)} src={src ? src : PLACEHOLDER_SRC} alt="" />
-    </div>
-  );
-};
