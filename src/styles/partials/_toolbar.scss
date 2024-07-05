@@ -52,7 +52,7 @@
   gap: 16px;
   margin-bottom: 4px;
 
-  > .map-picker-item {
+  > .map-picker__item {
     border: none;
     background: none;
     color: inherit;
@@ -75,13 +75,13 @@
       border: 2px solid transparent;
       transition: border 150ms;
     }
+  }
 
-    &.active {
-      color: rgba(var(--primary-300));
+  .map-picker__item--active {
+    color: rgba(var(--primary-300));
 
-      img {
-        border: 2px solid rgba(var(--primary-300));
-      }
+    img {
+      border: 2px solid rgba(var(--primary-300));
     }
   }
 }

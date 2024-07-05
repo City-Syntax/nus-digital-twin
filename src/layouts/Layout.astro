@@ -8,9 +8,6 @@ import '@fontsource-variable/figtree';
 import '@fontsource-variable/inter';
 import figtreeWoff2 from '@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2?url';
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
-import mapboxDark from '../assets/mapbox-dark.png';
-import mapboxSatellite from '../assets/mapbox-satellite.png';
-import mapboxStreet from '../assets/mapbox-street.png';
 
 const { title } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -33,9 +30,6 @@ if (import.meta.env.DEV) {
     <link rel="apple-touch-icon" type="image/png" href="/favicon192.png" />
     <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin="anonymous" />
     <link rel="preload" as="font" type="font/woff2" href={figtreeWoff2} crossorigin="anonymous" />
-    <link rel="preload" href={mapboxDark.src} as="image" />
-    <link rel="preload" href={mapboxStreet.src} as="image" />
-    <link rel="preload" href={mapboxSatellite.src} as="image" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
