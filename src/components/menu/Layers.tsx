@@ -1,13 +1,9 @@
 import React from 'react';
-import MenuLink from './MenuLink';
 import CloseButton from './CloseButton';
-import { activeModel } from '../../store';
-import { useStore } from '@nanostores/react';
 import ScrollContainer from '../primitives/ScrollContainer';
 import MenuLinks from './MenuLinks';
 
 const Layers = () => {
-  const $activeModel = useStore(activeModel);
   return (
     <>
       <div className="menubar-content-header">

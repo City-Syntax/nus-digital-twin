@@ -1,5 +1,5 @@
 import React from 'react';
-import { activeGISLayer, activeModel } from '../../store';
+import { activeGISLayer, activeModel, buildingColorSetting } from '../../store';
 import MenuLink from './MenuLink';
 import { useStore } from '@nanostores/react';
 
@@ -57,8 +57,29 @@ const UrbanScaleModels = () => {
   );
 };
 
+const Controls = () => {
+  const $buildingColorSetting = useStore(buildingColorSetting);
+  const $activeModel = useStore(activeModel);
+  return (
+    <>
+      <MenuLink toPage="buildings" label="Buildings" iconName="Buildings"></MenuLink>
+      <MenuLink toPage="energy" label="Energy" iconName="Energy"></MenuLink>
+      <MenuLink toPage="thermal-comfort" label="Thermal Comfort" iconName="ThermalComfort"></MenuLink>
+      <MenuLink toPage="wind" label="Wind" iconName="Wind"></MenuLink>
+      <MenuLink toPage="solar" label="Solar" iconName="Solar"></MenuLink>
+      <MenuLink
+        toPage="distance"
+        label="Distance"
+        iconName="Distance"
+        isActive={$buildingColorSetting === 'distance' && $activeModel === 'osm'}
+      ></MenuLink>
+    </>
+  );
+};
+
 export default {
   GISLayers,
   BuildingScaleModels,
   UrbanScaleModels,
+  Controls,
 };

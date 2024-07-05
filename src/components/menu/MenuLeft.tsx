@@ -1,15 +1,11 @@
 import React from 'react';
 import MenuLink from './MenuLink';
 import Searchbar from './Searchbar';
-import { useStore } from '@nanostores/react';
-import { activeModel } from '../../store';
 import Icons from '../Icons';
 import ScrollContainer from '../primitives/ScrollContainer';
 import MenuLinks from './MenuLinks';
 
 const MenuLeft = () => {
-  const $activeModel = useStore(activeModel);
-
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const isOpen = e.target.checked;
     const buttons = e.target.parentElement?.querySelector('.menu-list-content')?.querySelectorAll('button');
