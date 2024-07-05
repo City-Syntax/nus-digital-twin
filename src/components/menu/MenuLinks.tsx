@@ -40,7 +40,25 @@ const BuildingScaleModels = () => {
   );
 };
 
+const UrbanScaleModels = () => {
+  const $activeModel = useStore(activeModel);
+
+  return (
+    <>
+      <MenuLink toPage="osm" label="OSM Buildings" iconName="OSMBuildings" isActive={$activeModel === 'osm'}></MenuLink>
+      <MenuLink
+        toPage="rhino-urban"
+        label="Rhino (Urban)"
+        iconName="RhinoModels"
+        isActive={$activeModel === 'rhino-urban'}
+      ></MenuLink>
+      <MenuLink toPage="ubem" label="UBEM" iconName="UBEM"></MenuLink>
+    </>
+  );
+};
+
 export default {
   GISLayers,
   BuildingScaleModels,
+  UrbanScaleModels,
 };

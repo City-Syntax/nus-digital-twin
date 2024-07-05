@@ -75,19 +75,7 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLink
-                toPage="osm"
-                label="OSM Buildings"
-                iconName="OSMBuildings"
-                isActive={$activeModel === 'osm'}
-              ></MenuLink>
-              <MenuLink
-                toPage="rhino-urban"
-                label="Rhino (Urban)"
-                iconName="RhinoModels"
-                isActive={$activeModel === 'rhino-urban'}
-              ></MenuLink>
-              <MenuLink toPage="ubem" label="UBEM" iconName="UBEM"></MenuLink>
+              <MenuLinks.UrbanScaleModels />
             </div>
           </div>
         </div>
