@@ -1,9 +1,15 @@
 ---
+import CaptureButton from './CaptureButton.astro';
 import HomeButton from './HomeButton.astro';
 import MapPickerButton from './MapPickerButton';
 ---
 
 <div class="toolbar">
-  <MapPickerButton client:load />
-  <HomeButton />
+  <div>
+    <MapPickerButton client:load />
+    <HomeButton />
+  </div>
+  <div>
+    <CaptureButton />
+  </div>
 </div>

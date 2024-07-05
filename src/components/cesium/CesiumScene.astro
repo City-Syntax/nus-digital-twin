@@ -472,6 +472,14 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   userSettings.subscribe(({ reducedMotion }) => {
     reducedMotion ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
   });
+
+  document.getElementById('capture-btn')!.onclick = () => {
+    viewer.scene.render();
+    const link = document.createElement('a');
+    link.href = viewer.canvas.toDataURL('image/png', 1.0);
+    link.download = 'NUS Digital Twin';
+    link.click();
+  };
 </script>
 
 <div id="cesiumContainer"></div>
