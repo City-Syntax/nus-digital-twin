@@ -65,13 +65,7 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLink
-                toPage="bim"
-                label="BIM Models"
-                iconName="BIMModels"
-                isActive={$activeModel === 'bim'}
-              ></MenuLink>
-              <MenuLink toPage="rhino-building" label="Rhino (Building)" iconName="RhinoModels"></MenuLink>
+              <MenuLinks.BuildingScaleModels />
             </div>
           </div>
           <div className="menu-list">

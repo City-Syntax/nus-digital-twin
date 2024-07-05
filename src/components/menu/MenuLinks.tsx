@@ -1,5 +1,5 @@
 import React from 'react';
-import { activeGISLayer } from '../../store';
+import { activeGISLayer, activeModel } from '../../store';
 import MenuLink from './MenuLink';
 import { useStore } from '@nanostores/react';
 
@@ -29,6 +29,18 @@ const GISLayers = () => {
   );
 };
 
+const BuildingScaleModels = () => {
+  const $activeModel = useStore(activeModel);
+
+  return (
+    <>
+      <MenuLink toPage="bim" label="BIM Models" iconName="BIMModels" isActive={$activeModel === 'bim'}></MenuLink>
+      <MenuLink toPage="rhino-building" label="Rhino (Building)" iconName="RhinoModels"></MenuLink>
+    </>
+  );
+};
+
 export default {
   GISLayers,
+  BuildingScaleModels,
 };
