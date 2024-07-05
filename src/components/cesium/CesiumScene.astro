@@ -177,6 +177,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     show: { conditions: OSM_SHOW_CONDITIONS },
   });
   osmBuildingsTileset.maximumScreenSpaceError = 0;
+  osmBuildingsTileset.preloadWhenHidden = true;
   viewer.scene.primitives.add(osmBuildingsTileset);
 
   let totalTiles = 0;
