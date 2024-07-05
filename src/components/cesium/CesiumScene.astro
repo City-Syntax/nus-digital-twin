@@ -329,10 +329,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     stroke: Color.fromCssColorString('#ca8a04ff'),
     clampToGround: true,
   });
-  const waterBodiesData = await GeoJsonDataSource.load('/shapefiles/water-bodies/water.json', {
-    stroke: Color.fromCssColorString('#0066ffff'),
-    clampToGround: true,
-  });
   const greenSpacesData = await GeoJsonDataSource.load('/shapefiles/green-spaces/natural.json', {
     stroke: Color.fromCssColorString('#15803dff'),
     fill: Color.fromCssColorString('#22c55ecc'),
@@ -340,7 +336,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   viewer.dataSources.add(buildingFootprintsData);
   viewer.dataSources.add(streetCenterlinesData);
-  viewer.dataSources.add(waterBodiesData);
   viewer.dataSources.add(greenSpacesData);
 
   // Prevent the lines from overlaying on top of 3D tiles
@@ -356,12 +351,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   });
 
-  waterBodiesData.entities.values.forEach((entity) => {
-    if (entity.polyline) {
-      entity.polyline.classificationType = new ConstantProperty(ClassificationType.TERRAIN);
-    }
-  });
-
   greenSpacesData.entities.values.forEach((entity) => {
     if (entity.polygon) {
       entity.polygon.heightReference = new ConstantProperty(HeightReference.CLAMP_TO_TERRAIN);
@@ -371,7 +360,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   activeGISLayer.subscribe((val) => {
     buildingFootprintsData.show = val.has('building-footprints');
     streetCenterlinesData.show = val.has('street-centerlines');
-    waterBodiesData.show = val.has('water-bodies');
     greenSpacesData.show = val.has('green-spaces');
   });
 
@@ -419,8 +407,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
         case streetCenterlinesData.entities.contains(pickedFeature.id):
           break;
         case greenSpacesData.entities.contains(pickedFeature.id):
-          break;
-        case waterBodiesData.entities.contains(pickedFeature.id):
           break;
       }
       return;

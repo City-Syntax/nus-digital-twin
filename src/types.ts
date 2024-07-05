@@ -1,6 +1,6 @@
 export type Models = 'bim' | 'osm' | 'rhino-urban';
 
-export type GISLayers = 'building-footprints' | 'street-centerlines' | 'water-bodies' | 'green-spaces';
+export type GISLayers = 'building-footprints' | 'street-centerlines' | 'green-spaces';
 
 export type Position = {
   latitude: number;
@@ -22,7 +22,6 @@ export type MenuPages =
   | 'street-centerlines'
   | 'building-footprints'
   | 'green-spaces'
-  | 'water-bodies'
   | 'rhino-building'
   | 'rhino-urban'
   | 'ubem'
