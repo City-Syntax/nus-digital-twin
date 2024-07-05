@@ -1,13 +1,13 @@
 import React from 'react';
 import MenuLink from './MenuLink';
 import CloseButton from './CloseButton';
-import { activeGISLayer, activeModel } from '../../store';
+import { activeModel } from '../../store';
 import { useStore } from '@nanostores/react';
 import ScrollContainer from '../primitives/ScrollContainer';
+import MenuLinks from './MenuLinks';
 
 const Layers = () => {
   const $activeModel = useStore(activeModel);
-  const $activeGISLayer = useStore(activeGISLayer);
   return (
     <>
       <div className="menubar-content-header">
@@ -18,24 +18,7 @@ const Layers = () => {
         <div className="menubar-content-body">
           <div className="menu-list">
             <div className="menu-list-title">GIS Layers</div>
-            <MenuLink
-              toPage="street-centerlines"
-              label="Street Centerlines"
-              iconName="StreetCenterlines"
-              isActive={$activeGISLayer.has('street-centerlines')}
-            ></MenuLink>
-            <MenuLink
-              toPage="building-footprints"
-              label="Building Footprints"
-              iconName="BuildingFootprints"
-              isActive={$activeGISLayer.has('building-footprints')}
-            ></MenuLink>
-            <MenuLink
-              toPage="green-spaces"
-              label="Green Spaces"
-              iconName="GreenSpaces"
-              isActive={$activeGISLayer.has('green-spaces')}
-            ></MenuLink>
+            <MenuLinks.GISLayers />
           </div>
           <div className="menu-list">
             <div className="menu-list-title">Building Scale Models</div>
