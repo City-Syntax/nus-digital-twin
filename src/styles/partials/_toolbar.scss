@@ -73,10 +73,7 @@
       height: 60px;
       border-radius: var(--rounded-sm);
       border: 2px solid transparent;
-      opacity: 0;
-      transition:
-        border 150ms,
-        opacity 150ms;
+      transition: border 150ms;
     }
   }
 

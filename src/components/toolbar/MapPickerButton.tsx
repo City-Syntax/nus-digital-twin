@@ -8,6 +8,7 @@ import { activeMapLayer } from '../../store';
 import { useStore } from '@nanostores/react';
 import type { MapLayers } from '../../types';
 import type { ImageMetadata } from 'astro';
+import LazyImage from '../primitives/LazyImage';
 
 const MapPickerButton = () => {
   const $activeMapLayer = useStore(activeMapLayer);
@@ -40,7 +41,7 @@ const MapPickerButton = () => {
                   type="button"
                   onClick={() => activeMapLayer.set(layer.id)}
                 >
-                  <img onLoad={(e) => (e.currentTarget.style.opacity = '1')} src={layer.img.src} alt={layer.name} />
+                  <LazyImage src={layer.img.src} alt={layer.name}></LazyImage>
                   {layer.name}
                 </button>
               );
