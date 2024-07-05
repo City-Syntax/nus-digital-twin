@@ -67,12 +67,6 @@ const MenuLeft = () => {
                 iconName="GreenSpaces"
                 isActive={$activeGISLayer.has('green-spaces')}
               ></MenuLink>
-              <MenuLink
-                toPage="water-bodies"
-                label="Water Bodies"
-                iconName="WaterBodies"
-                isActive={$activeGISLayer.has('water-bodies')}
-              ></MenuLink>
             </div>
           </div>
           <div className="menu-list">

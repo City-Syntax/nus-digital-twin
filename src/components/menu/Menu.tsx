@@ -8,7 +8,6 @@ import AboutNUSCampus from './AboutNUSCampus';
 import StreetCenterlines from './StreetCenterlines';
 import BuildingFootprints from './BuildingFootprints';
 import GreenSpaces from './GreenSpaces';
-import WaterBodies from './WaterBodies';
 import OSMBuildings from './OSMBuildings';
 import BIMModels from './BIMModels';
 import Help from './Help';
@@ -78,7 +77,6 @@ const Menu = () => {
             {$activePage === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
             {$activePage === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
             {$activePage === 'green-spaces' && <GreenSpaces></GreenSpaces>}
-            {$activePage === 'water-bodies' && <WaterBodies></WaterBodies>}
             {$activePage === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
             {$activePage === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
             {$activePage === 'ubem' && <UBEM></UBEM>}
@@ -126,7 +124,6 @@ const Menu = () => {
               {$activePage === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
               {$activePage === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
               {$activePage === 'green-spaces' && <GreenSpaces></GreenSpaces>}
-              {$activePage === 'water-bodies' && <WaterBodies></WaterBodies>}
               {$activePage === 'bim' && <BIMModels></BIMModels>}
               {$activePage === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
               {$activePage === 'osm' && <OSMBuildings></OSMBuildings>}
