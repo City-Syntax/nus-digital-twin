@@ -125,10 +125,27 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   // The displayed map layer is the last layer
   let mapLayerOrder: MapLayers[] = ['street'];
+
+  const addMapLayer = (layer: MapLayers) => {
+    mapLayerOrder.unshift(layer);
+
+    switch (layer) {
+      case 'satellite':
+        viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
+        break;
+      case 'dark':
+        viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
+        break;
+      case 'street':
+        viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxStreet));
+        break;
+    }
+  };
+
   const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
   if (showMapbox) {
     viewer.imageryLayers.removeAll();
-    viewer.imageryLayers.addImageryProvider(mapboxStreet);
+    addMapLayer(activeMapLayer.get());
   }
 
   const position = Cartesian3.fromDegrees(103.77678, 1.28342, 800);
@@ -180,10 +197,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       updateDistanceScale();
 
       if (showMapbox) {
-        viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxDark));
-        mapLayerOrder.unshift('dark');
-        viewer.imageryLayers.lowerToBottom(viewer.imageryLayers.addImageryProvider(mapboxSatellite));
-        mapLayerOrder.unshift('satellite');
+        if (!mapLayerOrder.includes('dark')) {
+          addMapLayer('dark');
+        }
+        if (!mapLayerOrder.includes('satellite')) {
+          addMapLayer('satellite');
+        }
+        if (!mapLayerOrder.includes('street')) {
+          addMapLayer('street');
+        }
       }
 
       // Outer timeout is required for the translate animation to complete

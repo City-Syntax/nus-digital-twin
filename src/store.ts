@@ -1,9 +1,9 @@
 import { atom } from 'nanostores';
-import { persistentMap } from '@nanostores/persistent';
+import { persistentAtom, persistentMap } from '@nanostores/persistent';
 import type { GISLayers, MapLayers, MenuPages, Models, Position, UserSettings } from './types';
 
 export const activePage = atom<MenuPages | ''>('');
-export const activeMapLayer = atom<MapLayers>('street');
+export const activeMapLayer = persistentAtom<MapLayers>('mapLayer', 'street');
 export const activeGISLayer = atom<Set<GISLayers>>(new Set());
 
 export const activeModel = atom<Models | ''>('osm');
