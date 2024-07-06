@@ -1,15 +1,11 @@
 import React from 'react';
 import MenuLink from './MenuLink';
 import Searchbar from './Searchbar';
-import { useStore } from '@nanostores/react';
-import { activeGISLayer, activeModel } from '../../store';
 import Icons from '../Icons';
 import ScrollContainer from '../primitives/ScrollContainer';
+import MenuLinks from './MenuLinks';
 
 const MenuLeft = () => {
-  const $activeModel = useStore(activeModel);
-  const $activeGISLayer = useStore(activeGISLayer);
-
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const isOpen = e.target.checked;
     const buttons = e.target.parentElement?.querySelector('.menu-list-content')?.querySelectorAll('button');
@@ -49,24 +45,7 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLink
-                toPage="street-centerlines"
-                label="Street Centerlines"
-                iconName="StreetCenterlines"
-                isActive={$activeGISLayer.has('street-centerlines')}
-              ></MenuLink>
-              <MenuLink
-                toPage="building-footprints"
-                label="Building Footprints"
-                iconName="BuildingFootprints"
-                isActive={$activeGISLayer.has('building-footprints')}
-              ></MenuLink>
-              <MenuLink
-                toPage="green-spaces"
-                label="Green Spaces"
-                iconName="GreenSpaces"
-                isActive={$activeGISLayer.has('green-spaces')}
-              ></MenuLink>
+              <MenuLinks.GISLayers />
             </div>
           </div>
           <div className="menu-list">
@@ -82,13 +61,7 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLink
-                toPage="bim"
-                label="BIM Models"
-                iconName="BIMModels"
-                isActive={$activeModel === 'bim'}
-              ></MenuLink>
-              <MenuLink toPage="rhino-building" label="Rhino (Building)" iconName="RhinoModels"></MenuLink>
+              <MenuLinks.BuildingScaleModels />
             </div>
           </div>
           <div className="menu-list">
@@ -98,19 +71,7 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLink
-                toPage="osm"
-                label="OSM Buildings"
-                iconName="OSMBuildings"
-                isActive={$activeModel === 'osm'}
-              ></MenuLink>
-              <MenuLink
-                toPage="rhino-urban"
-                label="Rhino (Urban)"
-                iconName="RhinoModels"
-                isActive={$activeModel === 'rhino-urban'}
-              ></MenuLink>
-              <MenuLink toPage="ubem" label="UBEM" iconName="UBEM"></MenuLink>
+              <MenuLinks.UrbanScaleModels />
             </div>
           </div>
         </div>
