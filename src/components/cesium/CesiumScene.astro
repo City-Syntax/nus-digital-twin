@@ -70,6 +70,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   const globe = viewer.scene.globe;
+  const canvas = viewer.scene.canvas;
 
   // @ts-ignore: https://community.cesium.com/t/change-timeline-from-utc-to-local-time/11203/7
   viewer.timeline.makeLabel = function (timelineDate: any) {
@@ -474,11 +475,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   document.getElementById('capture-btn')!.onclick = () => {
+    const currHeight = canvas.height;
+    const currWidth = canvas.width;
+    canvas.width = currWidth * 3;
+    canvas.height = currHeight * 3;
     viewer.scene.render();
     const link = document.createElement('a');
     link.href = viewer.canvas.toDataURL('image/png', 1.0);
     link.download = 'NUS Digital Twin';
     link.click();
+    viewer.scene.canvas.width = currWidth;
+    viewer.scene.canvas.height = currHeight;
   };
 </script>
 
