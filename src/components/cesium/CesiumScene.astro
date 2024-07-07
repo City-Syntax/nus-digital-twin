@@ -474,18 +474,20 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     reducedMotion ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
   });
 
+  const CAPTURE_SIZE = 3840 * 2160;
   document.getElementById('capture-btn')!.onclick = () => {
     const currHeight = canvas.height;
     const currWidth = canvas.width;
-    canvas.width = currWidth * 3;
-    canvas.height = currHeight * 3;
+    const scaleFactor = Math.sqrt(Math.round((CAPTURE_SIZE / (currHeight * currWidth)) * 10) / 10);
+    canvas.width = currWidth * scaleFactor;
+    canvas.height = currHeight * scaleFactor;
     viewer.scene.render();
     const link = document.createElement('a');
     link.href = viewer.canvas.toDataURL('image/png', 1.0);
     link.download = 'NUS Digital Twin';
     link.click();
-    viewer.scene.canvas.width = currWidth;
-    viewer.scene.canvas.height = currHeight;
+    canvas.width = currWidth;
+    canvas.height = currHeight;
   };
 </script>
 
