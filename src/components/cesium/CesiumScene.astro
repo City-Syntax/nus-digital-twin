@@ -476,6 +476,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   const CAPTURE_SIZE = 3840 * 2160;
+  const LOGO_SIZE = 64;
+  const LOGO_MARGIN = 16;
   document.getElementById('capture-btn')!.onclick = () => {
     const currHeight = canvas.height;
     const currWidth = canvas.width;
@@ -484,16 +486,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     canvas.height = currHeight * scaleFactor;
     viewer.scene.render();
 
-    const img = document.createElement('img');
-    img.src = canvas.toDataURL('image/png', 1.0);
-    const img2 = document.createElement('img');
-    img2.src = '/favicon.png';
+    const cesiumImg = document.createElement('img');
+    cesiumImg.src = canvas.toDataURL('image/png', 1.0);
+    const logoImg = document.createElement('img');
+    logoImg.src = '/favicon.png';
 
-    const LOGO_SIZE = 52;
-    const LOGO_MARGIN = 16;
-
-    img.onload = onImageLoad;
-    img2.onload = onImageLoad;
+    cesiumImg.onload = onImageLoad;
+    logoImg.onload = onImageLoad;
 
     let imagesLoaded = 0;
     function onImageLoad() {
@@ -501,11 +500,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       if (imagesLoaded === 2) {
         const imgCanvas = document.createElement('canvas');
         const ctx = imgCanvas.getContext('2d')!;
-        imgCanvas.width = img.width;
-        imgCanvas.height = img.height;
-        ctx.drawImage(img, 0, 0);
-        ctx.globalAlpha = 0.8;
-        ctx.drawImage(img2, LOGO_MARGIN, img.height - LOGO_SIZE - LOGO_MARGIN, LOGO_SIZE, LOGO_SIZE);
+        imgCanvas.width = cesiumImg.width;
+        imgCanvas.height = cesiumImg.height;
+        ctx.drawImage(cesiumImg, 0, 0);
+        ctx.globalAlpha = 0.7;
+        ctx.drawImage(logoImg, LOGO_MARGIN, cesiumImg.height - LOGO_SIZE - LOGO_MARGIN, LOGO_SIZE, LOGO_SIZE);
         ctx.globalAlpha = 1;
 
         const link = document.createElement('a');
