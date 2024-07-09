@@ -35,7 +35,7 @@
 .menu-left {
   @include menu-x-container;
   left: var(--container-x-offset);
-  height: 74vh;
+  height: 72vh;
   max-height: 668px;
 }
 
@@ -175,6 +175,7 @@
 }
 
 .menubar-content-footer {
+  padding-top: var(--padding-sm);
   margin-top: auto;
 }
 

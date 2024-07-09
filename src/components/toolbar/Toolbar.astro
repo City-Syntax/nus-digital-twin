@@ -1,9 +1,15 @@
 ---
+import ScreenshotButton from './ScreenshotButton.astro';
 import HomeButton from './HomeButton.astro';
 import MapPickerButton from './MapPickerButton';
 ---
 
 <div class="toolbar">
-  <MapPickerButton client:load />
-  <HomeButton />
+  <div class="toolbar__section">
+    <ScreenshotButton />
+  </div>
+  <div class="toolbar__section">
+    <MapPickerButton client:load />
+    <HomeButton />
+  </div>
 </div>

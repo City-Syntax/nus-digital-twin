@@ -4,20 +4,28 @@
 
 .toolbar {
   position: absolute;
-  margin: 0 auto;
-  left: var(--container-x-offset);
-  right: var(--container-x-offset);
+  left: 0;
+  right: 0;
+  width: 100%;
   bottom: calc(8px + var(--bottom-bar-height));
+  padding: 0 var(--container-x-offset);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  flex-direction: row;
   align-items: flex-end;
-  gap: 6px;
+  pointer-events: none;
+
+  > .toolbar__section {
+    display: flex;
+    gap: 6px;
+  }
 
   .toolbar-btn {
     @include btn;
     @include bg-base;
     @include btn-xl-square;
     transition: background-color 150ms;
+    pointer-events: auto;
 
     &:hover {
       background-color: rgba(var(--base-100), 1);
@@ -25,9 +33,14 @@
   }
 }
 
+@media screen and (max-height: 578px) and (min-width: 879px) {
+  #screenshot-btn {
+    display: none;
+  }
+}
+
 @media screen and (max-width: $md) {
-  .toolbar {
-    align-items: flex-end;
+  .toolbar > .toolbar__section {
     flex-direction: column;
   }
 }
@@ -35,12 +48,13 @@
 @media screen and (max-width: 656px) {
   .toolbar {
     max-width: 500px;
-    flex-direction: row;
-    padding-left: var(--padding-xs);
-    padding-right: var(--padding-xs);
-    left: 0;
-    right: 0;
+    margin: 0 auto;
+    padding: 0 var(--padding-xs);
     bottom: calc(72px + var(--bottom-bar-height));
+
+    > .toolbar__section {
+      flex-direction: row;
+    }
   }
 }
 

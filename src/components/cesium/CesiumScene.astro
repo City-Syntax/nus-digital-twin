@@ -70,6 +70,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   const globe = viewer.scene.globe;
+  const canvas = viewer.scene.canvas;
 
   // @ts-ignore: https://community.cesium.com/t/change-timeline-from-utc-to-local-time/11203/7
   viewer.timeline.makeLabel = function (timelineDate: any) {
@@ -224,8 +225,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const geodesic = new EllipsoidGeodesic();
   const distances = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 400, 500, 750, 1000];
-  const width = viewer.scene.canvas.clientWidth;
-  const height = viewer.scene.canvas.clientHeight;
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
   const scaleLabel = document.getElementById('scale-label')!;
   const scaleBar = document.getElementById('scale-bar')!;
   function updateDistanceScale() {
@@ -472,6 +473,43 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   userSettings.subscribe(({ reducedMotion }) => {
     reducedMotion ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
   });
+
+  const LOGO_SIZE = 68;
+  const LOGO_MARGIN = 16;
+  document.getElementById('screenshot-btn')!.onclick = () => {
+    viewer.resolutionScale = 2.0;
+    viewer.scene.render(viewer.clock.currentTime);
+
+    const cesiumImg = document.createElement('img');
+    cesiumImg.src = canvas.toDataURL('image/png', 1.0);
+    const logoImg = document.createElement('img');
+    logoImg.src = '/favicon.png';
+
+    cesiumImg.onload = onImageLoad;
+    logoImg.onload = onImageLoad;
+
+    let imagesLoaded = 0;
+    function onImageLoad() {
+      imagesLoaded++;
+      if (imagesLoaded === 2) {
+        const imgCanvas = document.createElement('canvas');
+        const ctx = imgCanvas.getContext('2d')!;
+        imgCanvas.width = cesiumImg.width;
+        imgCanvas.height = cesiumImg.height;
+        ctx.drawImage(cesiumImg, 0, 0);
+        ctx.globalAlpha = 0.7;
+        ctx.drawImage(logoImg, LOGO_MARGIN, cesiumImg.height - LOGO_SIZE - LOGO_MARGIN, LOGO_SIZE, LOGO_SIZE);
+        ctx.globalAlpha = 1;
+
+        const link = document.createElement('a');
+        link.href = imgCanvas.toDataURL('image/png', 1.0);
+        link.download = 'NUS Digital Twin';
+        link.click();
+      }
+    }
+
+    viewer.resolutionScale = 1.0;
+  };
 </script>
 
 <div id="cesiumContainer"></div>
