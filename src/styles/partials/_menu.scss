@@ -35,7 +35,7 @@
 .menu-left {
   @include menu-x-container;
   left: var(--container-x-offset);
-  height: 72vh;
+  height: var(--menu-left-height);
   max-height: 668px;
 }
 
@@ -108,8 +108,6 @@
 
 .menubar-content {
   @include menu-x-base;
-  // padding-left: var(--padding-base);
-  // padding-right: var(--padding-base);
   width: 388px;
 
   @media screen and (max-width: $md) {
