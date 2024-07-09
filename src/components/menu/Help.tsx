@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import CloseButton from './CloseButton';
 import Icons from '../Icons';
 import type { NavType } from '../../types';
+import ScrollContainer from '../primitives/ScrollContainer';
 
 type HelpProps = {
   navType: NavType;
@@ -24,17 +25,19 @@ const Help = ({ navType, setNavType }: HelpProps) => {
         <h2>Help</h2>
         <CloseButton></CloseButton>
       </div>
-      <div className="menubar-content-body">
-        <div className="btn-group">
-          <button type="button" onClick={handleClick('mouse')} className={navType === 'mouse' ? 'active' : ''}>
-            Mouse
-          </button>
-          <button type="button" onClick={handleClick('touch')} className={navType === 'touch' ? 'active' : ''}>
-            Touch
-          </button>
+      <ScrollContainer>
+        <div className="menubar-content-body">
+          <div className="btn-group">
+            <button type="button" onClick={handleClick('mouse')} className={navType === 'mouse' ? 'active' : ''}>
+              Mouse
+            </button>
+            <button type="button" onClick={handleClick('touch')} className={navType === 'touch' ? 'active' : ''}>
+              Touch
+            </button>
+          </div>
+          {navType === 'mouse' ? <MouseControls /> : <TouchControls />}
         </div>
-        {navType === 'mouse' ? <MouseControls /> : <TouchControls />}
-      </div>
+      </ScrollContainer>
     </>
   );
 };
