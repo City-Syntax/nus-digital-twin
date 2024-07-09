@@ -11,11 +11,11 @@
   padding: 0 var(--container-x-offset);
   display: flex;
   justify-content: space-between;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: flex-end;
   pointer-events: none;
 
-  > div {
+  > .toolbar__section {
     display: flex;
     gap: 6px;
   }
@@ -34,7 +34,7 @@
 }
 
 @media screen and (max-width: $md) {
-  .toolbar > div {
+  .toolbar > .toolbar__section {
     flex-direction: column;
   }
 }
@@ -46,7 +46,7 @@
     padding: 0 var(--padding-xs);
     bottom: calc(72px + var(--bottom-bar-height));
 
-    > div {
+    > .toolbar__section {
       flex-direction: row;
     }
   }
