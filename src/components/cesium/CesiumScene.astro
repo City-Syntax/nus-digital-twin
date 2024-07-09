@@ -48,6 +48,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
+  import { Image } from 'astro:assets';
 
   (function initReducedMotion() {
     const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
@@ -482,10 +483,32 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     canvas.width = currWidth * scaleFactor;
     canvas.height = currHeight * scaleFactor;
     viewer.scene.render();
-    const link = document.createElement('a');
-    link.href = viewer.canvas.toDataURL('image/png', 1.0);
-    link.download = 'NUS Digital Twin';
-    link.click();
+
+    const img = document.createElement('img');
+    img.src = canvas.toDataURL('image/png', 1.0);
+    const img2 = document.createElement('img');
+    img2.src = '/favicon.png';
+
+    const LOGO_SIZE = 52;
+    const LOGO_MARGIN = 16;
+    img.onload = () => {
+      img2.onload = () => {
+        const imgCanvas = document.getElementById('canvas') as HTMLCanvasElement;
+        const ctx = imgCanvas.getContext('2d')!;
+        imgCanvas.width = img.width;
+        imgCanvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        ctx.globalAlpha = 0.8;
+        ctx.drawImage(img2, LOGO_MARGIN, img.height - LOGO_SIZE - LOGO_MARGIN, LOGO_SIZE, LOGO_SIZE);
+        ctx.globalAlpha = 1;
+
+        const link = document.createElement('a');
+        link.href = imgCanvas.toDataURL('image/png', 1.0);
+        link.download = 'NUS Digital Twin';
+        link.click();
+      };
+    };
+
     canvas.width = currWidth;
     canvas.height = currHeight;
   };
@@ -503,3 +526,4 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     </div>
   </div>
 </div>
+<canvas width="512" height="512" id="canvas"></canvas>
