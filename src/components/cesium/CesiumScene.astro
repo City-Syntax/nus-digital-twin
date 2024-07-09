@@ -491,9 +491,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     const LOGO_SIZE = 52;
     const LOGO_MARGIN = 16;
-    img.onload = () => {
-      img2.onload = () => {
-        const imgCanvas = document.getElementById('canvas') as HTMLCanvasElement;
+
+    img.onload = onImageLoad;
+    img2.onload = onImageLoad;
+
+    let imagesLoaded = 0;
+    function onImageLoad() {
+      imagesLoaded++;
+      if (imagesLoaded === 2) {
+        const imgCanvas = document.createElement('canvas');
         const ctx = imgCanvas.getContext('2d')!;
         imgCanvas.width = img.width;
         imgCanvas.height = img.height;
@@ -506,8 +512,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
         link.href = imgCanvas.toDataURL('image/png', 1.0);
         link.download = 'NUS Digital Twin';
         link.click();
-      };
-    };
+      }
+    }
 
     canvas.width = currWidth;
     canvas.height = currHeight;
@@ -526,4 +532,3 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     </div>
   </div>
 </div>
-<canvas width="512" height="512" id="canvas"></canvas>
