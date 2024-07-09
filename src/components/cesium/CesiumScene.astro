@@ -474,13 +474,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     reducedMotion ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
   });
 
-  const CAPTURE_SIZE = 2560 * 1440;
+  const SCREENSHOT_SIZE = 2560 * 1440;
   const LOGO_SIZE = 52;
   const LOGO_MARGIN = 16;
-  document.getElementById('capture-btn')!.onclick = () => {
+  document.getElementById('screenshot-btn')!.onclick = () => {
     const currHeight = canvas.height;
     const currWidth = canvas.width;
-    const scaleFactor = Math.sqrt(Math.round((CAPTURE_SIZE / (currHeight * currWidth)) * 10) / 10);
+    const scaleFactor = Math.sqrt(Math.round((SCREENSHOT_SIZE / (currHeight * currWidth)) * 10) / 10);
     canvas.width = currWidth * scaleFactor;
     canvas.height = currHeight * scaleFactor;
     viewer.scene.render(viewer.clock.currentTime);
