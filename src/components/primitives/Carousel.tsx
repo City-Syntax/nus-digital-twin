@@ -82,8 +82,8 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
               </div>
             )}
             {imageSources.map((src) => (
-              <div className="carousel-item">
-                <LazyImage key={src} src={src}></LazyImage>
+              <div className="carousel-item" key={src}>
+                <LazyImage src={src}></LazyImage>
               </div>
             ))}
           </div>
