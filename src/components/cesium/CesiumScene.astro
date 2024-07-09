@@ -474,15 +474,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     reducedMotion ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
   });
 
-  const SCREENSHOT_SIZE = 2560 * 1440;
-  const LOGO_SIZE = 52;
+  const LOGO_SIZE = 68;
   const LOGO_MARGIN = 16;
   document.getElementById('screenshot-btn')!.onclick = () => {
-    const currHeight = canvas.height;
-    const currWidth = canvas.width;
-    const scaleFactor = Math.sqrt(Math.round((SCREENSHOT_SIZE / (currHeight * currWidth)) * 10) / 10);
-    canvas.width = currWidth * scaleFactor;
-    canvas.height = currHeight * scaleFactor;
+    viewer.resolutionScale = 2.0;
     viewer.scene.render(viewer.clock.currentTime);
 
     const cesiumImg = document.createElement('img');
@@ -513,8 +508,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
     }
 
-    canvas.width = currWidth;
-    canvas.height = currHeight;
+    viewer.resolutionScale = 1.0;
   };
 </script>
 
