@@ -33,6 +33,12 @@
   }
 }
 
+@media screen and (max-height: 578px) and (min-width: 879px) {
+  #capture-btn {
+    display: none;
+  }
+}
+
 @media screen and (max-width: $md) {
   .toolbar > .toolbar__section {
     flex-direction: column;
