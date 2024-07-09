@@ -10,6 +10,7 @@ import CloseButton from '../CloseButton';
 import DownloadButton from '../../primitives/DownloadButton';
 import Carousel from '../../primitives/Carousel';
 import Icons from '../../Icons';
+import ScrollContainer from '../../primitives/ScrollContainer';
 
 type BuildingInfoProps = {
   category: BuildingInfoCategories;
@@ -30,29 +31,31 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
         <h2>{buildingProperties.name}</h2>
         <CloseButton></CloseButton>
       </div>
-      <div className="menubar-content-body">
-        <CategorySelect
-          value={category}
-          onValueChange={(value: BuildingInfoCategories) => setCategory(value)}
-        ></CategorySelect>
-        {propertiesToDisplay.length < 1 && <p>No information under '{CATEGORY_MAPPINGS[category]}' yet.</p>}
-        {propertiesToDisplay
-          .sort((a, b) => {
-            const firstTitle = a[0] as keyof BuildingPropertiesProps;
-            const secondTitle = b[0] as keyof BuildingPropertiesProps;
-            return SORT_ORDER.indexOf(firstTitle) - SORT_ORDER.indexOf(secondTitle);
-          })
-          .map((data) => {
-            return (
-              <div key={data[0]}>
-                <BuildingInfoContent
-                  title={data[0] as keyof BuildingPropertiesProps}
-                  content={data[1]}
-                ></BuildingInfoContent>
-              </div>
-            );
-          })}
-      </div>
+      <ScrollContainer>
+        <div className="menubar-content-body">
+          <CategorySelect
+            value={category}
+            onValueChange={(value: BuildingInfoCategories) => setCategory(value)}
+          ></CategorySelect>
+          {propertiesToDisplay.length < 1 && <p>No information under '{CATEGORY_MAPPINGS[category]}' yet.</p>}
+          {propertiesToDisplay
+            .sort((a, b) => {
+              const firstTitle = a[0] as keyof BuildingPropertiesProps;
+              const secondTitle = b[0] as keyof BuildingPropertiesProps;
+              return SORT_ORDER.indexOf(firstTitle) - SORT_ORDER.indexOf(secondTitle);
+            })
+            .map((data) => {
+              return (
+                <div key={data[0]}>
+                  <BuildingInfoContent
+                    title={data[0] as keyof BuildingPropertiesProps}
+                    content={data[1]}
+                  ></BuildingInfoContent>
+                </div>
+              );
+            })}
+        </div>
+      </ScrollContainer>
       <div className="menubar-content-footer">
         <a
           href={`https://docs.google.com/forms/d/e/1FAIpQLSdPktLMj_Ob6YvreQBa7M4_nd8FXK0sLGwQnCeAd8gtbk9HBw/viewform?entry.1908367072=Issue with building: ${buildingProperties.name} (${$buildingId})`}
