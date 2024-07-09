@@ -483,7 +483,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     const scaleFactor = Math.sqrt(Math.round((CAPTURE_SIZE / (currHeight * currWidth)) * 10) / 10);
     canvas.width = currWidth * scaleFactor;
     canvas.height = currHeight * scaleFactor;
-    viewer.scene.render();
+    viewer.scene.render(viewer.clock.currentTime);
 
     const cesiumImg = document.createElement('img');
     cesiumImg.src = canvas.toDataURL('image/png', 1.0);
