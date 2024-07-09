@@ -13,7 +13,7 @@ const LazyImage = ({ src, alt, author = 'Someone' }: { src?: string; alt?: strin
         </div>
       )}
       <img onLoad={() => setHasLoaded(true)} src={src ? src : PLACEHOLDER_SRC} alt={alt || ''} />
-      {author && <div className="img-container__author">Image by {author}</div>}
+      {hasLoaded && author && <div className="img-container__author">Image by {author}</div>}
     </div>
   );
 };
