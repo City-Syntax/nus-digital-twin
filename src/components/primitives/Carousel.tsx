@@ -15,16 +15,14 @@ const Carousel = ({ images }: { images: ImageProps }) => {
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [imageSources, setImageSources] = useState<ImageProps>([]);
+  const [imagesData, setImagesData] = useState<ImageProps>([]);
   const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
   useEffect(() => {
-    const res = images.map((img) => {
-      return {
-        ...img,
-        astroImage: astroImages[img.src],
-      };
-    });
+    const res = images.map((img) => ({
+      ...img,
+      astroImage: astroImages[img.src],
+    }));
 
     const fetchImages = async () => {
       const sources = await Promise.all(
@@ -33,7 +31,7 @@ const Carousel = ({ images }: { images: ImageProps }) => {
           return { ...r, src: img.default.src };
         }),
       );
-      setImageSources(sources);
+      setImagesData(sources);
     };
     fetchImages();
   }, []);
@@ -82,19 +80,19 @@ const Carousel = ({ images }: { images: ImageProps }) => {
       <div className="carousel">
         <div className="carousel-content" ref={emblaRef}>
           <div className="carousel-content-container">
-            {imageSources.length === 0 && (
+            {imagesData.length === 0 && (
               <div className="carousel-item">
                 <LazyImage></LazyImage>
               </div>
             )}
-            {imageSources.map((img) => (
+            {imagesData.map((img) => (
               <div className="carousel-item" key={img.src}>
                 <LazyImage src={img.src} caption={img.author ? `Image by ${img.author}` : ''}></LazyImage>
               </div>
             ))}
           </div>
         </div>
-        {imageSources.length > 1 && (
+        {imagesData.length > 1 && (
           <div className="carousel-actions">
             <button onClick={() => emblaApi?.scrollPrev()} disabled={prevBtnDisabled}>
               <Icons.ChevronLeft></Icons.ChevronLeft>
