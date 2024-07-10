@@ -77,5 +77,5 @@ export const collections = {
 };
 
 export type BuildingPropertiesProps = z.infer<typeof buildingSchema> & {
-  images: ImageProps;
+  images: ImageProps[];
 };

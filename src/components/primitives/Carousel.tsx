@@ -5,7 +5,7 @@ import Icons from '../Icons';
 import LazyImage from './LazyImage';
 import type { ImageProps } from '../../types';
 
-const Carousel = ({ images }: { images: ImageProps }) => {
+const Carousel = ({ images }: { images: ImageProps[] }) => {
   if (!images || images.length === 0) {
     return <></>;
   }
@@ -15,7 +15,7 @@ const Carousel = ({ images }: { images: ImageProps }) => {
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [imagesData, setImagesData] = useState<ImageProps>([]);
+  const [imagesData, setImagesData] = useState<ImageProps[]>([]);
   const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
   useEffect(() => {

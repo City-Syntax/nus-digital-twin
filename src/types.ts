@@ -60,7 +60,7 @@ export type DownloadProps = {
   files: DownloadFileProps[];
 };
 
-export type ImageProps = Array<{
+export type ImageProps = {
   src: string;
   author?: string;
-}>;
+};
