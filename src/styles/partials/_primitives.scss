@@ -66,6 +66,10 @@
     --start: transparent;
     --end: transparent;
   }
+
+  > div {
+    display: block !important;
+  }
 }
 
 .scroll-area-scrollbar {
