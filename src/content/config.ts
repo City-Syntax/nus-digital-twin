@@ -77,7 +77,7 @@ export const collections = {
 
 export type buildingImageProps = Array<{
   src: string;
-  author: string;
+  author?: string;
 }>;
 
 export type BuildingPropertiesProps = z.infer<typeof buildingSchema> & {

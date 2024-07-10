@@ -15,18 +15,23 @@ const Carousel = ({ imageSources: urls }: { imageSources: buildingImageProps }) 
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [imageSources, setImageSources] = useState<string[]>([]);
+  const [imageSources, setImageSources] = useState<buildingImageProps>([]);
   const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
   useEffect(() => {
+    const res = urls.map((url) => {
+      return {
+        ...url,
+        astroImage: images[url.src],
+      };
+    });
+
     const fetchImages = async () => {
       const sources = await Promise.all(
-        Object.entries(images)
-          .filter(([key]) => urls.map((url) => url.src).includes(key))
-          .map(async ([_, image]) => {
-            const res = await image();
-            return res.default.src;
-          }),
+        res.map(async (r) => {
+          const img = await r.astroImage();
+          return { ...r, src: img.default.src };
+        }),
       );
       setImageSources(sources);
     };
@@ -82,9 +87,9 @@ const Carousel = ({ imageSources: urls }: { imageSources: buildingImageProps }) 
                 <LazyImage></LazyImage>
               </div>
             )}
-            {imageSources.map((src) => (
-              <div className="carousel-item" key={src}>
-                <LazyImage src={src} caption={`Image by ${src}`}></LazyImage>
+            {imageSources.map((img) => (
+              <div className="carousel-item" key={img.src}>
+                <LazyImage src={img.src} caption={img.author ? `Image by ${img.author}` : ''}></LazyImage>
               </div>
             ))}
           </div>

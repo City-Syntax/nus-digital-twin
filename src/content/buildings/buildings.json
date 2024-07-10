@@ -548,7 +548,7 @@
     "name": "SDE4",
     "address": "8 Architecture Drive",
     "postal": "117356",
-    "images": [{ "src": "/src/assets/sde4/sde4.jpg" }, { "src": "/src/assets/sde4/sde4-2.jpg" }],
+    "images": [{ "src": "/src/assets/sde4/sde4.jpg", "author": "Test"  }, { "src": "/src/assets/sde4/sde4-2.jpg" }],
     "latitude": 1.29681,
     "longitude": 103.77035,
     "downloads": [
