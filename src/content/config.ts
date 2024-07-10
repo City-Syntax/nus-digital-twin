@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import type { ImageProps } from '../types';
 
 const buildingMetadataSchema = z.object({
   elementId: z.string(),
@@ -75,11 +76,6 @@ export const collections = {
   buildings: buildingsCollection,
 };
 
-export type buildingImageProps = Array<{
-  src: string;
-  author?: string;
-}>;
-
 export type BuildingPropertiesProps = z.infer<typeof buildingSchema> & {
-  images: buildingImageProps;
+  images: ImageProps;
 };

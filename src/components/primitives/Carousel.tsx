@@ -3,9 +3,9 @@ import useEmblaCarousel from 'embla-carousel-react';
 import type { EmblaCarouselType } from 'embla-carousel';
 import Icons from '../Icons';
 import LazyImage from './LazyImage';
-import type { buildingImageProps } from '../../content/config';
+import type { ImageProps } from '../../types';
 
-const Carousel = ({ imageSources: urls }: { imageSources: buildingImageProps }) => {
+const Carousel = ({ imageSources: urls }: { imageSources: ImageProps }) => {
   if (!urls || urls.length === 0) {
     return <></>;
   }
@@ -15,7 +15,7 @@ const Carousel = ({ imageSources: urls }: { imageSources: buildingImageProps }) 
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [imageSources, setImageSources] = useState<buildingImageProps>([]);
+  const [imageSources, setImageSources] = useState<ImageProps>([]);
   const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
   useEffect(() => {

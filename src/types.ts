@@ -59,3 +59,8 @@ export type DownloadProps = {
   credits?: string;
   files: DownloadFileProps[];
 };
+
+export type ImageProps = Array<{
+  src: string;
+  author?: string;
+}>;
