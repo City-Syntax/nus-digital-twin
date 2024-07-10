@@ -98,7 +98,8 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
           </div>
         )}
       </div>
-      <div className="carousel-dots">
+      <div className="carousel-dots" style={{ visibility: `${imagesData.length === 0 ? 'hidden' : 'visible'}` }}>
+        {imagesData.length === 0 && <button></button>}
         {scrollSnaps.map((_, index) => (
           <button
             key={index}
