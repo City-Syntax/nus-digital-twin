@@ -19,16 +19,11 @@ const Carousel = ({ images }: { images: ImageProps }) => {
   const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
   useEffect(() => {
-    const res = images.map((img) => ({
-      ...img,
-      astroImage: astroImages[img.src],
-    }));
-
     const fetchImages = async () => {
       const sources = await Promise.all(
-        res.map(async (r) => {
-          const img = await r.astroImage();
-          return { ...r, src: img.default.src };
+        images.map(async (img) => {
+          const src = (await astroImages[img.src]()).default.src;
+          return { ...img, src };
         }),
       );
       setImagesData(sources);
