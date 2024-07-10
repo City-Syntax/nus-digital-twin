@@ -3,9 +3,10 @@ import useEmblaCarousel from 'embla-carousel-react';
 import type { EmblaCarouselType } from 'embla-carousel';
 import Icons from '../Icons';
 import LazyImage from './LazyImage';
+import type { ImageProps } from '../../types';
 
-const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
-  if (!urls || urls.length === 0) {
+const Carousel = ({ images }: { images: ImageProps[] }) => {
+  if (!images || images.length === 0) {
     return <></>;
   }
 
@@ -14,22 +15,20 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [imageSources, setImageSources] = useState<string[]>([]);
-  const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
+  const [imagesData, setImagesData] = useState<ImageProps[]>([]);
+  const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
   useEffect(() => {
-    const fetchImages = async () => {
-      const sources = await Promise.all(
-        Object.entries(images)
-          .filter(([key]) => urls.includes(key))
-          .map(async ([_, image]) => {
-            const res = await image();
-            return res.default.src;
-          }),
+    const fetchAstroImages = async () => {
+      const data = await Promise.all(
+        images.map(async (img) => ({
+          ...img,
+          src: (await astroImages[img.src]()).default.src,
+        })),
       );
-      setImageSources(sources);
+      setImagesData(data);
     };
-    fetchImages();
+    fetchAstroImages();
   }, []);
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
@@ -76,19 +75,19 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
       <div className="carousel">
         <div className="carousel-content" ref={emblaRef}>
           <div className="carousel-content-container">
-            {imageSources.length === 0 && (
+            {imagesData.length === 0 && (
               <div className="carousel-item">
                 <LazyImage></LazyImage>
               </div>
             )}
-            {imageSources.map((src) => (
-              <div className="carousel-item" key={src}>
-                <LazyImage src={src}></LazyImage>
+            {imagesData.map((img) => (
+              <div className="carousel-item" key={img.src}>
+                <LazyImage src={img.src} caption={img.author ? `Image by ${img.author}` : ''}></LazyImage>
               </div>
             ))}
           </div>
         </div>
-        {imageSources.length > 1 && (
+        {imagesData.length > 1 && (
           <div className="carousel-actions">
             <button onClick={() => emblaApi?.scrollPrev()} disabled={prevBtnDisabled}>
               <Icons.ChevronLeft></Icons.ChevronLeft>
@@ -99,7 +98,8 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
           </div>
         )}
       </div>
-      <div className="carousel-dots">
+      <div className="carousel-dots" style={{ visibility: `${imagesData.length === 0 ? 'hidden' : 'visible'}` }}>
+        {imagesData.length === 0 && <button></button>}
         {scrollSnaps.map((_, index) => (
           <button
             key={index}

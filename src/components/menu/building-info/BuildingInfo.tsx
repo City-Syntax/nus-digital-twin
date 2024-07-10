@@ -46,7 +46,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
             })
             .map((data) => {
               return (
-                <div key={data[0]}>
+                <div key={`${data[0]}-${$buildingId}`}>
                   <BuildingInfoContent
                     title={data[0] as keyof BuildingPropertiesProps}
                     content={data[1]}
@@ -89,7 +89,7 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
     case 'images':
       return (
         <>
-          <Carousel imageSources={content}></Carousel>
+          <Carousel images={content}></Carousel>
         </>
       );
     default:

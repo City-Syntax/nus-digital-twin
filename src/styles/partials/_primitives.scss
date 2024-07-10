@@ -194,14 +194,16 @@
   position: relative;
   height: 100%;
 
-  img {
+  img,
+  .img-container__caption {
     opacity: 0;
     transition: opacity 150ms;
   }
 }
 
 .img-container--loaded {
-  img {
+  img,
+  .img-container__caption {
     opacity: 1;
   }
 }
@@ -222,17 +224,13 @@
   }
 }
 
-.carousel-spinner {
+.img-container__caption {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-  > svg {
-    height: 2rem;
-    width: 2rem;
-    animation: spin 1s linear infinite;
-  }
+  bottom: 0;
+  left: 6px;
+  font-size: var(--text-xs);
+  color: rgba(var(--base-content));
+  font-family: 'Figtree Variable', system-ui, sans-serif;
+  font-weight: 600;
+  text-shadow: rgba(0, 0, 0, 0.82) 1px 1px 4px;
 }

@@ -548,7 +548,7 @@
     "name": "SDE4",
     "address": "8 Architecture Drive",
     "postal": "117356",
-    "images": ["/src/assets/sde4/sde4.jpg", "/src/assets/sde4/sde4-2.jpg"],
+    "images": [{ "src": "/src/assets/sde4/sde4.jpg" }, { "src": "/src/assets/sde4/sde4-2.jpg" }],
     "latitude": 1.29681,
     "longitude": 103.77035,
     "downloads": [
@@ -672,7 +672,11 @@
     "address": "9 Engineering Drive 1",
     "postal": "117575",
     "latitude": 1.30055,
-    "longitude": 103.77077
+    "longitude": 103.77077,
+    "images": [
+      { "src": "/src/assets/ea/ea.jpg", "author": "Lujia Zhu" },
+      { "src": "/src/assets/ea/ea-thermal.jpg", "author": "Lujia Zhu" }
+    ]
   },
   {
     "elementId": "54619717",

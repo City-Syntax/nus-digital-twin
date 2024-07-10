@@ -9,7 +9,10 @@ const ScrollContainer = ({ children }: { children: React.ReactNode }) => {
     if (scrollViewport.scrollHeight > scrollViewport.clientHeight) {
       scrollViewport.classList.add('overlay-bottom');
     }
+  }, [children]);
 
+  useEffect(() => {
+    const scrollViewport = ref.current as HTMLDivElement;
     const controlOverlay = () => {
       if (scrollViewport.scrollHeight <= scrollViewport.clientHeight) {
         scrollViewport.classList.remove('overlay-top');
