@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
 import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS, SORT_ORDER } from './buildingInfoUtils';
@@ -46,7 +46,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
             })
             .map((data) => {
               return (
-                <div key={data[0]}>
+                <div key={`${data[0]}-${$buildingId}`}>
                   <BuildingInfoContent
                     title={data[0] as keyof BuildingPropertiesProps}
                     content={data[1]}
