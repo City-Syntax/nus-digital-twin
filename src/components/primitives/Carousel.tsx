@@ -19,16 +19,16 @@ const Carousel = ({ images }: { images: ImageProps }) => {
   const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
   useEffect(() => {
-    const fetchImages = async () => {
-      const sources = await Promise.all(
-        images.map(async (img) => {
-          const src = (await astroImages[img.src]()).default.src;
-          return { ...img, src };
-        }),
+    const fetchAstroImages = async () => {
+      const data = await Promise.all(
+        images.map(async (img) => ({
+          ...img,
+          src: (await astroImages[img.src]()).default.src,
+        })),
       );
-      setImagesData(sources);
+      setImagesData(data);
     };
-    fetchImages();
+    fetchAstroImages();
   }, []);
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
