@@ -65,7 +65,7 @@ const buildingsCollection = defineCollection({
     z.array(
       buildingSchema.merge(buildingMetadataSchema).merge(
         z.object({
-          images: z.array(image()).optional(),
+          images: z.array(z.object({ src: image(), author: z.string().optional() })).optional(),
         }),
       ),
     ),
@@ -75,4 +75,11 @@ export const collections = {
   buildings: buildingsCollection,
 };
 
-export type BuildingPropertiesProps = z.infer<typeof buildingSchema> & { images: string[] };
+export type buildingImageProps = Array<{
+  src: string;
+  author: string;
+}>;
+
+export type BuildingPropertiesProps = z.infer<typeof buildingSchema> & {
+  images: buildingImageProps;
+};

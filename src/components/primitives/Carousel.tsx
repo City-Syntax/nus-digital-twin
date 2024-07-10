@@ -3,8 +3,9 @@ import useEmblaCarousel from 'embla-carousel-react';
 import type { EmblaCarouselType } from 'embla-carousel';
 import Icons from '../Icons';
 import LazyImage from './LazyImage';
+import type { buildingImageProps } from '../../content/config';
 
-const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
+const Carousel = ({ imageSources: urls }: { imageSources: buildingImageProps }) => {
   if (!urls || urls.length === 0) {
     return <></>;
   }
@@ -21,7 +22,7 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
     const fetchImages = async () => {
       const sources = await Promise.all(
         Object.entries(images)
-          .filter(([key]) => urls.includes(key))
+          .filter(([key]) => urls.map((url) => url.src).includes(key))
           .map(async ([_, image]) => {
             const res = await image();
             return res.default.src;
@@ -83,7 +84,7 @@ const Carousel = ({ imageSources: urls }: { imageSources: string[] }) => {
             )}
             {imageSources.map((src) => (
               <div className="carousel-item" key={src}>
-                <LazyImage src={src}></LazyImage>
+                <LazyImage src={src} caption={`Image by ${src}`}></LazyImage>
               </div>
             ))}
           </div>
