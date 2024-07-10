@@ -89,7 +89,7 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
     case 'images':
       return (
         <>
-          <Carousel imageSources={content}></Carousel>
+          <Carousel images={content}></Carousel>
         </>
       );
     default:

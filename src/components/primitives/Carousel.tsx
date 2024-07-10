@@ -5,8 +5,8 @@ import Icons from '../Icons';
 import LazyImage from './LazyImage';
 import type { ImageProps } from '../../types';
 
-const Carousel = ({ imageSources: urls }: { imageSources: ImageProps }) => {
-  if (!urls || urls.length === 0) {
+const Carousel = ({ images }: { images: ImageProps }) => {
+  if (!images || images.length === 0) {
     return <></>;
   }
 
@@ -16,13 +16,13 @@ const Carousel = ({ imageSources: urls }: { imageSources: ImageProps }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const [imageSources, setImageSources] = useState<ImageProps>([]);
-  const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
+  const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
   useEffect(() => {
-    const res = urls.map((url) => {
+    const res = images.map((img) => {
       return {
-        ...url,
-        astroImage: images[url.src],
+        ...img,
+        astroImage: astroImages[img.src],
       };
     });
 
