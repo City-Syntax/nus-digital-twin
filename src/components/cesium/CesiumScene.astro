@@ -478,12 +478,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
         }
         osmBuildingsTileset.show = model === 'osm';
         rhinoUrbanModel.show = model === 'rhino-urban';
+        model === 'bim' ? showAllBIM() : hideAllBIM();
 
-        if (model === 'bim') {
-          showAllBIM();
-        } else {
-          hideAllBIM();
-        }
         isFirstCall = false;
       },
       model ? 100 : 0,
