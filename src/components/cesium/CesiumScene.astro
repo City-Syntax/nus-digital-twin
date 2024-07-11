@@ -510,6 +510,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const LOGO_SIZE = 68;
   const LOGO_MARGIN = 16;
   document.getElementById('screenshot-btn')!.onclick = () => {
+    toastLoadingMessage.set({
+      msg: 'Generating screenshot',
+      isLoading: true,
+    });
     viewer.resolutionScale = 2.0;
     viewer.scene.render(viewer.clock.currentTime);
 
@@ -538,6 +542,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
         link.href = imgCanvas.toDataURL('image/png', 1.0);
         link.download = 'NUS Digital Twin';
         link.click();
+
+        toastLoadingMessage.set({
+          msg: 'Generated screenshot',
+          isLoading: false,
+        });
       }
     }
 
