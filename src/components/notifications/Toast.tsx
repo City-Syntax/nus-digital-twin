@@ -1,6 +1,20 @@
 import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { toastLoadingMessage, toastMessage } from '../../store';
+import { activeModel, toastLoadingMessage, toastMessage } from '../../store';
+import Icons from '../Icons';
+
+activeModel.listen((model) => {
+  if (model === '') {
+    toast('No building models selected.', {
+      className: 'notification notification--danger',
+      duration: Infinity,
+      id: 'building-models',
+      icon: <Icons.Warning></Icons.Warning>,
+    });
+  } else {
+    toast.dismiss('building-models');
+  }
+});
 
 toastMessage.listen((msg) => {
   if (!msg) {
@@ -34,7 +48,7 @@ const Toast = () => {
         width: '100%',
       }}
       toastOptions={{
-        className: 'toast',
+        className: 'notification',
       }}
     />
   );
