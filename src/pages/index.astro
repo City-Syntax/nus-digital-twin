@@ -5,14 +5,13 @@ import CesiumScene from '../components/cesium/CesiumScene.astro';
 import Toolbar from '../components/toolbar/Toolbar.astro';
 import BottomBar from '../components/BottomBar.astro';
 import NotificationsBox from '../components/notifications/NotificationsBox';
-import Toast from '../components/notifications/Toast';
 ---
 
 <Layout title="NUS Digital Twin">
   <Menu client:load />
   <CesiumScene />
   <Toolbar />
-  <NotificationsBox client:load />
+  <NotificationsBox client:only />
   <BottomBar />
 </Layout>
 <script>

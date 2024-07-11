@@ -161,18 +161,28 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     },
   };
   viewer.camera.setView(nusView);
+
   document.getElementById('home-btn')!.onclick = () => {
     toastLoadingMessage.set({
       msg: 'Resetting view',
       isLoading: true,
     });
-    userSettings.get().reducedMotion
-      ? viewer.camera.setView(nusView)
-      : viewer.camera.flyTo({ ...nusView, complete: () => console.log('done') });
-    toastLoadingMessage.set({
-      msg: 'Resetting view',
-      isLoading: false,
-    });
+
+    let flyToOptions: any = {
+      ...nusView,
+      complete: () => {
+        toastLoadingMessage.set({
+          msg: 'Reset view',
+          isLoading: false,
+        });
+      },
+    };
+
+    if (userSettings.get().reducedMotion) {
+      flyToOptions['duration'] = 0;
+    }
+
+    viewer.camera.flyTo(flyToOptions);
   };
 
   const osmBuildingsTileset = await createOsmBuildingsAsync();
