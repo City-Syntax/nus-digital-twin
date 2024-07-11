@@ -4,6 +4,10 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Icons from '../Icons';
 import { toastMessage } from '../../store';
 
+const handleClick = () => {
+  toastMessage.set('Download started');
+};
+
 const DownloadButton = ({ type, credits, files }: DownloadProps) => {
   return (
     <div>
@@ -14,12 +18,12 @@ const DownloadButton = ({ type, credits, files }: DownloadProps) => {
       )}
       <div key={type} className="download-btn">
         {files.length === 1 ? (
-          <a href={files[0].url} download>
+          <a href={files[0].url} download onClick={handleClick}>
             Download {type} ({files[0].filetype})
           </a>
         ) : (
           <>
-            <a href={files[0].url} download onClick={() => toastMessage.set('Download started')}>
+            <a href={files[0].url} download onClick={handleClick}>
               Download {type}
             </a>
             <DownloadDropdown files={files}></DownloadDropdown>
@@ -43,7 +47,7 @@ const DownloadDropdown = ({ files }: { files: DownloadFileProps[] }) => {
         <DropdownMenu.Content align="start" className="dropdown-content">
           {files.map((file) => (
             <DropdownMenu.Item className="dropdown-item" asChild key={file.filetype}>
-              <a href={file.url} download>
+              <a href={file.url} download onClick={handleClick}>
                 {file.filetype}
               </a>
             </DropdownMenu.Item>
