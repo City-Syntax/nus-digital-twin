@@ -17,6 +17,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     colorByDistancePosition,
     flyToPosition,
     userSettings,
+    toastMessage,
   } from '../../store';
   import {
     Cartesian2,
@@ -415,6 +416,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     // Disable picking for Rhino Urban Model
     if (pickedFeature.primitive === rhinoUrbanModel) {
+      toastMessage.set('Selecting individual buildings is unavailable for Rhino (Urban) models.');
       return;
     }
 
