@@ -162,7 +162,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   };
   viewer.camera.setView(nusView);
   document.getElementById('home-btn')!.onclick = () => {
-    userSettings.get().reducedMotion ? viewer.camera.setView(nusView) : viewer.camera.flyTo(nusView);
+    toastLoadingMessage.set({
+      msg: 'Resetting view',
+      isLoading: true,
+    });
+    userSettings.get().reducedMotion
+      ? viewer.camera.setView(nusView)
+      : viewer.camera.flyTo({ ...nusView, complete: () => console.log('done') });
+    toastLoadingMessage.set({
+      msg: 'Resetting view',
+      isLoading: false,
+    });
   };
 
   const osmBuildingsTileset = await createOsmBuildingsAsync();
