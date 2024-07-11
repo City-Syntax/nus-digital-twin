@@ -64,3 +64,20 @@
     background-color: rgba(var(--base-100), 1);
   }
 }
+
+div.toast {
+  @include bg-base;
+  color: inherit;
+  padding: var(--padding-xs) var(--padding-sm);
+  border-radius: var(--rounded-xs);
+  font-size: var(--text-sm);
+  gap: 6px;
+
+  > div[role='status'] {
+    margin: 0;
+  }
+
+  body.reduce-motion & {
+    animation: none !important;
+  }
+}
