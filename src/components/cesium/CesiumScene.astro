@@ -18,6 +18,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     flyToPosition,
     userSettings,
     toastMessage,
+    toastLoadingMessage,
   } from '../../store';
   import {
     Cartesian2,
@@ -179,7 +180,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     show: { conditions: OSM_SHOW_CONDITIONS },
   });
   osmBuildingsTileset.maximumScreenSpaceError = 0;
-  osmBuildingsTileset.preloadWhenHidden = true;
+  // osmBuildingsTileset.preloadWhenHidden = true;
   viewer.scene.primitives.add(osmBuildingsTileset);
 
   let totalTiles = 0;
@@ -449,14 +450,34 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   activeModel.subscribe((model) => {
-    osmBuildingsTileset.show = model === 'osm';
-    rhinoUrbanModel.show = model === 'rhino-urban';
-
-    if (model === 'bim') {
-      showAllBIM();
-    } else {
-      hideAllBIM();
+    if (model) {
+      toastLoadingMessage.set('Loading models.');
     }
+
+    const timeStart = () => {
+      viewer.scene.postRender.addEventListener(timeEnd);
+      viewer.scene.preRender.removeEventListener(timeStart);
+    };
+    const timeEnd = () => {
+      toastLoadingMessage.set('');
+      viewer.scene.postRender.removeEventListener(timeEnd);
+    };
+
+    // Allow toast to render first
+    setTimeout(
+      () => {
+        viewer.scene.preRender.addEventListener(timeStart);
+        osmBuildingsTileset.show = model === 'osm';
+        rhinoUrbanModel.show = model === 'rhino-urban';
+
+        if (model === 'bim') {
+          showAllBIM();
+        } else {
+          hideAllBIM();
+        }
+      },
+      model ? 100 : 0,
+    );
   });
 
   activeMapLayer.subscribe((selectedMapLayer) => {

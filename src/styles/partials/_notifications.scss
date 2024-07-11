@@ -25,6 +25,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  margin: 0 2px;
 
   opacity: 1;
   transition:
@@ -74,7 +75,7 @@ div.toast {
   gap: 6px;
 
   > div[role='status'] {
-    margin: 0;
+    margin: 0 2px;
   }
 
   body.reduce-motion & {

@@ -1,13 +1,23 @@
 import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { toastMessage } from '../../store';
+import { toastLoadingMessage, toastMessage } from '../../store';
 
 toastMessage.listen((msg) => {
-  if (msg === '') {
+  if (!msg) {
     return;
   }
   toast(msg);
   toastMessage.set('');
+});
+
+toastLoadingMessage.subscribe((msg) => {
+  if (!msg) {
+    toast.dismiss('loading-toast');
+    return;
+  }
+  toast.loading(msg, {
+    id: 'loading-toast',
+  });
 });
 
 const Toast = () => {

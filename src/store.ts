@@ -31,3 +31,4 @@ export const userSettings = persistentMap<UserSettings>(
 export const flyToPosition = atom<Position | null>(null);
 
 export const toastMessage = atom<string>('');
+export const toastLoadingMessage = atom<string>('');
