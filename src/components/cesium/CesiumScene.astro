@@ -517,8 +517,30 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(selectedMapLayer)));
-    mapLayerOrder = [...mapLayerOrder.filter((l) => l !== selectedMapLayer), selectedMapLayer];
+    let hasLoadingToast = false;
+    const updateLayer = () => {
+      if (mapLayerOrder.indexOf(selectedMapLayer) === -1) {
+        toastLoadingMessage.set({
+          msg: 'Loading map layer',
+          isLoading: true,
+        });
+        hasLoadingToast = true;
+        setTimeout(() => updateLayer(), 100);
+        return;
+      }
+
+      if (hasLoadingToast) {
+        toastLoadingMessage.set({
+          msg: 'Map layer loaded',
+          isLoading: false,
+        });
+      }
+
+      viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(selectedMapLayer)));
+      mapLayerOrder = [...mapLayerOrder.filter((l) => l !== selectedMapLayer), selectedMapLayer];
+    };
+
+    updateLayer();
   });
 
   viewer.camera.moveEnd.addEventListener(function () {
