@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Icons from '../Icons';
 import { activeModel } from '../../store';
+import Toast from './Toast';
 
 const NotificationsBox = () => {
   const removeElement = (element: HTMLElement | null) => {
@@ -45,6 +46,7 @@ const NotificationsBox = () => {
       <div className="notification notification--danger notification--state-hide" id="no-buildings-alert">
         <Icons.Warning /> No building models selected.
       </div>
+      <Toast />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import type { DownloadFileProps, DownloadProps } from '../../types';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Icons from '../Icons';
+import { toastMessage } from '../../store';
 
 const DownloadButton = ({ type, credits, files }: DownloadProps) => {
   return (
@@ -18,7 +19,7 @@ const DownloadButton = ({ type, credits, files }: DownloadProps) => {
           </a>
         ) : (
           <>
-            <a href={files[0].url} download>
+            <a href={files[0].url} download onClick={() => toastMessage.set('Download started')}>
               Download {type}
             </a>
             <DownloadDropdown files={files}></DownloadDropdown>
