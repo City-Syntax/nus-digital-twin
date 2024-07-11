@@ -452,7 +452,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   let isFirstCall = true;
   activeModel.subscribe((model) => {
     if (!isFirstCall && model) {
-      toastLoadingMessage.set('Loading models.');
+      toastLoadingMessage.set({
+        msg: 'Loading models.',
+        isLoading: true,
+      });
     }
 
     const startRender = () => {
@@ -460,14 +463,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       viewer.scene.preRender.removeEventListener(startRender);
     };
     const endRender = () => {
-      toastLoadingMessage.set('');
+      toastLoadingMessage.set({
+        msg: 'Model loaded.',
+        isLoading: false,
+      });
       viewer.scene.postRender.removeEventListener(endRender);
     };
 
     // Allow toast to render first
     setTimeout(
       () => {
-        if (!isFirstCall) {
+        if (!isFirstCall && model) {
           viewer.scene.preRender.addEventListener(startRender);
         }
         osmBuildingsTileset.show = model === 'osm';

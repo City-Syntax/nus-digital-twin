@@ -24,9 +24,13 @@ toastMessage.listen((msg) => {
   toastMessage.set('');
 });
 
-toastLoadingMessage.subscribe((msg) => {
+toastLoadingMessage.subscribe(({ msg, isLoading }) => {
   if (!msg) {
-    toast.success('Models loaded.', {
+    return;
+  }
+
+  if (!isLoading) {
+    toast.success(msg, {
       id: 'loading-toast',
       duration: 1500,
     });
