@@ -5,7 +5,7 @@ import Icons from '../Icons';
 
 activeModel.listen((model) => {
   if (model === '') {
-    toast('No building models selected.', {
+    toast('No building models selected', {
       className: 'notification notification--danger',
       duration: Infinity,
       id: 'building-models',

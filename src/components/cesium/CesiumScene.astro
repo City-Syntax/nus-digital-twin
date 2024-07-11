@@ -47,6 +47,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     HeadingPitchRoll,
     ConstantProperty,
     HeightReference,
+    Camera,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -168,11 +169,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       isLoading: true,
     });
 
-    let flyToOptions: any = {
+    let flyToOptions: {
+      destination: Cartesian3;
+      orientation?: any;
+      duration?: number;
+      complete: Camera.FlightCompleteCallback;
+    } = {
       ...nusView,
       complete: () => {
         toastLoadingMessage.set({
-          msg: 'Reset view',
+          msg: 'View has been reset',
           isLoading: false,
         });
       },
