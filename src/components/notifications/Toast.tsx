@@ -28,7 +28,7 @@ toastLoadingMessage.subscribe((msg) => {
   if (!msg) {
     toast.success('Models loaded.', {
       id: 'loading-toast',
-      duration: 1000,
+      duration: 1500,
     });
     return;
   }

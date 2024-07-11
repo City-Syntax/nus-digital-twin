@@ -449,8 +449,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   });
 
+  let isFirstCall = true;
   activeModel.subscribe((model) => {
-    if (model) {
+    if (!isFirstCall && model) {
       toastLoadingMessage.set('Loading models.');
     }
 
@@ -466,7 +467,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     // Allow toast to render first
     setTimeout(
       () => {
-        viewer.scene.preRender.addEventListener(startRender);
+        if (!isFirstCall) {
+          viewer.scene.preRender.addEventListener(startRender);
+        }
         osmBuildingsTileset.show = model === 'osm';
         rhinoUrbanModel.show = model === 'rhino-urban';
 
@@ -475,6 +478,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
         } else {
           hideAllBIM();
         }
+        isFirstCall = false;
       },
       model ? 100 : 0,
     );
