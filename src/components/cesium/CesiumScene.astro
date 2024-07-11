@@ -454,19 +454,19 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       toastLoadingMessage.set('Loading models.');
     }
 
-    const timeStart = () => {
-      viewer.scene.postRender.addEventListener(timeEnd);
-      viewer.scene.preRender.removeEventListener(timeStart);
+    const startRender = () => {
+      viewer.scene.postRender.addEventListener(endRender);
+      viewer.scene.preRender.removeEventListener(startRender);
     };
-    const timeEnd = () => {
+    const endRender = () => {
       toastLoadingMessage.set('');
-      viewer.scene.postRender.removeEventListener(timeEnd);
+      viewer.scene.postRender.removeEventListener(endRender);
     };
 
     // Allow toast to render first
     setTimeout(
       () => {
-        viewer.scene.preRender.addEventListener(timeStart);
+        viewer.scene.preRender.addEventListener(startRender);
         osmBuildingsTileset.show = model === 'osm';
         rhinoUrbanModel.show = model === 'rhino-urban';
 
