@@ -172,7 +172,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       destination: Cartesian3;
       orientation?: any;
       duration?: number;
-      complete: Camera.FlightCompleteCallback;
+      complete?: Camera.FlightCompleteCallback;
     } = {
       ...nusView,
       complete: () => {
