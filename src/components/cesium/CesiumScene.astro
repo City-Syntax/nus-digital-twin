@@ -50,6 +50,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
+  import { isMapLayer } from '../../utils';
 
   (function initReducedMotion() {
     const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
@@ -130,6 +131,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   let mapLayerOrder: MapLayers[] = [];
 
   const addMapLayer = (layer: MapLayers) => {
+    if (!isMapLayer(layer)) {
+      return;
+    }
+
     mapLayerOrder.unshift(layer);
 
     switch (layer) {
@@ -148,7 +153,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const showMapbox = import.meta.env.PROD || import.meta.env.PUBLIC_SHOW_MAPBOX === 'true';
   if (showMapbox) {
     viewer.imageryLayers.removeAll();
-    addMapLayer(activeMapLayer.get());
+
+    if (isMapLayer(activeMapLayer.get())) {
+      addMapLayer(activeMapLayer.get());
+    } else {
+      localStorage['mapLayer'] = 'street';
+      addMapLayer('street');
+    }
   }
 
   const position = Cartesian3.fromDegrees(103.77678, 1.28342, 800);
@@ -515,7 +526,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   activeMapLayer.subscribe((selectedMapLayer) => {
-    if (!showMapbox) {
+    if (!showMapbox || !isMapLayer(selectedMapLayer)) {
       return;
     }
 
