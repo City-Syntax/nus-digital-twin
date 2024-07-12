@@ -37,7 +37,7 @@
     "react-transition-group": "^4.4.5",
     "sass": "^1.70.0",
     "tippy.js": "^6.3.7",
-    "typescript": "^5.3.3"
+    "typescript": "^5.5.3"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
