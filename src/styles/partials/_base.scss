@@ -167,3 +167,13 @@ mark {
 input {
   margin: 0 !important;
 }
+
+.link {
+  text-decoration: underline;
+  color: inherit;
+  transition: color 150ms;
+
+  &:hover {
+    color: rgba(var(--primary-300));
+  }
+}
