@@ -3043,10 +3043,10 @@ fsevents@~2.3.2, fsevents@~2.3.3:
   resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
-fuzzysort@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/fuzzysort/-/fuzzysort-3.0.1.tgz#86acc3709d5a76e9b07920314e9193e00f316b6b"
-  integrity sha512-jpiSrv+j2GwtI13z3vzdBAD5m7iVH23spSZwJrD657dfr6jUV2Jyc5YuSPKirmTp9OqnJbHudPIBGIId1bCWmA==
+fuzzysort@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/fuzzysort/-/fuzzysort-3.0.2.tgz#22c84fb8776ad3646d9ac9bae500ee12370c770e"
+  integrity sha512-ZyahVgxvckB1Qosn7YGWLDJJp2XlyaQ2WmZeI+d0AzW0AMqVYnz5N89G6KAKa6m/LOtv+kzJn4lhDF/yVg11Cg==
 
 gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"
