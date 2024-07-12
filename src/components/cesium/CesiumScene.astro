@@ -443,7 +443,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     // Disable picking for Rhino Urban Model
     if (pickedFeature.primitive === rhinoUrbanModel) {
       toastMessage.set({
-        msg: 'Selecting individual buildings is unavailable for Rhino (Urban) models.',
+        msg: 'Selecting individual buildings is unavailable for Rhino (Urban) models',
         type: 'default',
       });
       return;
@@ -481,7 +481,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   activeModel.subscribe((model) => {
     if (!isFirstCall && model) {
       toastMessage.set({
-        msg: 'Loading models.',
+        msg: 'Loading models',
         type: 'loading',
       });
     }
@@ -492,7 +492,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     };
     const endRender = () => {
       toastMessage.set({
-        msg: 'Model loaded.',
+        msg: 'Model loaded',
         type: 'loaded',
       });
       viewer.scene.postRender.removeEventListener(endRender);
