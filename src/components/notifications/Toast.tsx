@@ -1,6 +1,6 @@
 import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { activeModel, toastLoadingMessage, toastMessage } from '../../store';
+import { activeModel, toastMessage } from '../../store';
 import Icons from '../Icons';
 
 activeModel.listen((model) => {
@@ -16,29 +16,29 @@ activeModel.listen((model) => {
   }
 });
 
-toastMessage.listen((msg) => {
-  if (!msg) {
-    return;
-  }
-  toast(msg);
-  toastMessage.set('');
-});
-
-toastLoadingMessage.subscribe(({ msg, isLoading }) => {
+toastMessage.listen(({ msg, type }) => {
   if (!msg) {
     return;
   }
 
-  if (!isLoading) {
-    toast.success(msg, {
-      id: 'loading-toast',
-      duration: 1500,
-    });
-    return;
+  switch (type) {
+    case 'default':
+      toast(msg);
+      toastMessage.setKey('msg', '');
+      break;
+    case 'loading':
+      toast.loading(msg, {
+        id: 'loading-toast',
+        duration: Infinity,
+      });
+      break;
+    case 'loaded':
+      toast.success(msg, {
+        id: 'loading-toast',
+        duration: 1500,
+      });
+      break;
   }
-  toast.loading(msg, {
-    id: 'loading-toast',
-  });
 });
 
 const Toast = () => {

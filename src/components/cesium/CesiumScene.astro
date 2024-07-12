@@ -18,7 +18,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     flyToPosition,
     userSettings,
     toastMessage,
-    toastLoadingMessage,
   } from '../../store';
   import {
     Cartesian2,
@@ -164,9 +163,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   viewer.camera.setView(nusView);
 
   document.getElementById('home-btn')!.onclick = () => {
-    toastLoadingMessage.set({
+    toastMessage.set({
       msg: 'Resetting view',
-      isLoading: true,
+      type: 'loading',
     });
 
     let flyToOptions: {
@@ -177,9 +176,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     } = {
       ...nusView,
       complete: () => {
-        toastLoadingMessage.set({
+        toastMessage.set({
           msg: 'View has been reset',
-          isLoading: false,
+          type: 'loaded',
         });
       },
     };
@@ -443,7 +442,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     // Disable picking for Rhino Urban Model
     if (pickedFeature.primitive === rhinoUrbanModel) {
-      toastMessage.set('Selecting individual buildings is unavailable for Rhino (Urban) models.');
+      toastMessage.set({
+        msg: 'Selecting individual buildings is unavailable for Rhino (Urban) models.',
+        type: 'default',
+      });
       return;
     }
 
@@ -478,9 +480,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   let isFirstCall = true;
   activeModel.subscribe((model) => {
     if (!isFirstCall && model) {
-      toastLoadingMessage.set({
+      toastMessage.set({
         msg: 'Loading models.',
-        isLoading: true,
+        type: 'loading',
       });
     }
 
@@ -489,9 +491,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       viewer.scene.preRender.removeEventListener(startRender);
     };
     const endRender = () => {
-      toastLoadingMessage.set({
+      toastMessage.set({
         msg: 'Model loaded.',
-        isLoading: false,
+        type: 'loaded',
       });
       viewer.scene.postRender.removeEventListener(endRender);
     };
@@ -520,9 +522,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     let hasLoadingToast = false;
     const updateLayer = () => {
       if (mapLayerOrder.indexOf(selectedMapLayer) === -1) {
-        toastLoadingMessage.set({
+        toastMessage.set({
           msg: 'Loading map layer',
-          isLoading: true,
+          type: 'loading',
         });
         hasLoadingToast = true;
         setTimeout(() => updateLayer(), 100);
@@ -530,9 +532,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
 
       if (hasLoadingToast) {
-        toastLoadingMessage.set({
+        toastMessage.set({
           msg: 'Map layer loaded',
-          isLoading: false,
+          type: 'loaded',
         });
       }
 
@@ -554,9 +556,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const LOGO_SIZE = 68;
   const LOGO_MARGIN = 16;
   document.getElementById('screenshot-btn')!.onclick = () => {
-    toastLoadingMessage.set({
+    toastMessage.set({
       msg: 'Generating screenshot',
-      isLoading: true,
+      type: 'loading',
     });
     viewer.resolutionScale = 2.0;
     viewer.scene.render(viewer.clock.currentTime);
@@ -587,9 +589,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
         link.download = 'NUS Digital Twin';
         link.click();
 
-        toastLoadingMessage.set({
+        toastMessage.set({
           msg: 'Generated screenshot',
-          isLoading: false,
+          type: 'loaded',
         });
       }
     }

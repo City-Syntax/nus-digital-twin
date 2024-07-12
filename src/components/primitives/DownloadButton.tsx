@@ -5,7 +5,7 @@ import Icons from '../Icons';
 import { toastMessage } from '../../store';
 
 const handleClick = () => {
-  toastMessage.set('Download started');
+  toastMessage.set({ msg: 'Download started', type: 'default' });
 };
 
 const DownloadButton = ({ type, credits, files }: DownloadProps) => {

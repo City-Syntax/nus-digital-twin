@@ -1,4 +1,4 @@
-import { atom } from 'nanostores';
+import { atom, map } from 'nanostores';
 import { persistentAtom, persistentMap } from '@nanostores/persistent';
 import type { GISLayers, MapLayers, MenuPages, Models, Position, UserSettings } from './types';
 
@@ -30,8 +30,7 @@ export const userSettings = persistentMap<UserSettings>(
 
 export const flyToPosition = atom<Position | null>(null);
 
-export const toastMessage = atom<string>('');
-export const toastLoadingMessage = atom<{ msg: string; isLoading: boolean }>({
+export const toastMessage = map<{ msg: string; type: 'loading' | 'loaded' | 'default' }>({
   msg: '',
-  isLoading: false,
+  type: 'default',
 });
