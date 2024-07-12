@@ -35,6 +35,8 @@ const Menu = () => {
   const $activePage = useStore(activePage);
   const [category, setCategory] = useState<BuildingInfoCategories>('general');
   const [helpNavType, setHelpNavType] = useState<NavType>('mouse');
+  const menuLeftRef = useRef<HTMLDivElement>(null);
+  const menuRightRef = useRef<HTMLDivElement>(null);
   const menuBottomRef = useRef<HTMLDivElement>(null);
 
   // Retain the height of menu bottom before its closes
@@ -69,8 +71,9 @@ const Menu = () => {
           in={$activePage !== '' && MENU_PAGES.LEFT.includes($activePage)}
           timeout={150}
           classNames="menu-left"
+          nodeRef={menuLeftRef}
         >
-          <div className="menubar-content">
+          <div className="menubar-content" ref={menuLeftRef}>
             {$activePage === 'osm' && <OSMBuildings></OSMBuildings>}
             {$activePage === 'about' && <AboutNUSCampus></AboutNUSCampus>}
             {$activePage === 'help' && <Help navType={helpNavType} setNavType={setHelpNavType}></Help>}
@@ -95,8 +98,9 @@ const Menu = () => {
           in={$activePage !== '' && MENU_PAGES.RIGHT.includes($activePage)}
           timeout={150}
           classNames="menu-right"
+          nodeRef={menuRightRef}
         >
-          <div className="menubar-content">
+          <div className="menubar-content" ref={menuRightRef}>
             {$activePage === 'buildings' && <Buildings></Buildings>}
             {$activePage === 'energy' && <Energy></Energy>}
             {$activePage === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
@@ -114,6 +118,7 @@ const Menu = () => {
           in={$activePage !== '' && MENU_PAGES.BOTTOM.includes($activePage)}
           timeout={150}
           classNames="menu-bottom"
+          nodeRef={menuBottomRef}
         >
           <div className="menubar-content" ref={menuBottomRef}>
             <AutoHeight>
