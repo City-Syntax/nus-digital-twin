@@ -17,6 +17,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     colorByDistancePosition,
     flyToPosition,
     userSettings,
+    toastMessage,
   } from '../../store';
   import {
     Cartesian2,
@@ -45,6 +46,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     HeadingPitchRoll,
     ConstantProperty,
     HeightReference,
+    Camera,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -159,8 +161,33 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     },
   };
   viewer.camera.setView(nusView);
+
   document.getElementById('home-btn')!.onclick = () => {
-    userSettings.get().reducedMotion ? viewer.camera.setView(nusView) : viewer.camera.flyTo(nusView);
+    toastMessage.set({
+      msg: 'Resetting view',
+      type: 'loading',
+    });
+
+    let flyToOptions: {
+      destination: Cartesian3;
+      orientation?: any;
+      duration?: number;
+      complete?: Camera.FlightCompleteCallback;
+    } = {
+      ...nusView,
+      complete: () => {
+        toastMessage.set({
+          msg: 'View has been reset',
+          type: 'loaded',
+        });
+      },
+    };
+
+    if (userSettings.get().reducedMotion) {
+      flyToOptions['duration'] = 0;
+    }
+
+    viewer.camera.flyTo(flyToOptions);
   };
 
   const osmBuildingsTileset = await createOsmBuildingsAsync();
@@ -415,6 +442,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     // Disable picking for Rhino Urban Model
     if (pickedFeature.primitive === rhinoUrbanModel) {
+      toastMessage.set({
+        msg: 'Selecting individual buildings is unavailable for Rhino (Urban) models.',
+        type: 'default',
+      });
       return;
     }
 
@@ -446,15 +477,41 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   });
 
+  let isFirstCall = true;
   activeModel.subscribe((model) => {
-    osmBuildingsTileset.show = model === 'osm';
-    rhinoUrbanModel.show = model === 'rhino-urban';
-
-    if (model === 'bim') {
-      showAllBIM();
-    } else {
-      hideAllBIM();
+    if (!isFirstCall && model) {
+      toastMessage.set({
+        msg: 'Loading models.',
+        type: 'loading',
+      });
     }
+
+    const startRender = () => {
+      viewer.scene.postRender.addEventListener(endRender);
+      viewer.scene.preRender.removeEventListener(startRender);
+    };
+    const endRender = () => {
+      toastMessage.set({
+        msg: 'Model loaded.',
+        type: 'loaded',
+      });
+      viewer.scene.postRender.removeEventListener(endRender);
+    };
+
+    // Allow toast to render first
+    setTimeout(
+      () => {
+        if (!isFirstCall && model) {
+          viewer.scene.preRender.addEventListener(startRender);
+        }
+        osmBuildingsTileset.show = model === 'osm';
+        rhinoUrbanModel.show = model === 'rhino-urban';
+        model === 'bim' ? showAllBIM() : hideAllBIM();
+
+        isFirstCall = false;
+      },
+      model ? 100 : 0,
+    );
   });
 
   activeMapLayer.subscribe((selectedMapLayer) => {
@@ -462,8 +519,30 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(selectedMapLayer)));
-    mapLayerOrder = [...mapLayerOrder.filter((l) => l !== selectedMapLayer), selectedMapLayer];
+    let hasLoadingToast = false;
+    const updateLayer = () => {
+      if (mapLayerOrder.indexOf(selectedMapLayer) === -1) {
+        toastMessage.set({
+          msg: 'Loading map layer',
+          type: 'loading',
+        });
+        hasLoadingToast = true;
+        setTimeout(() => updateLayer(), 100);
+        return;
+      }
+
+      if (hasLoadingToast) {
+        toastMessage.set({
+          msg: 'Map layer loaded',
+          type: 'loaded',
+        });
+      }
+
+      viewer.imageryLayers.raiseToTop(viewer.imageryLayers.get(mapLayerOrder.indexOf(selectedMapLayer)));
+      mapLayerOrder = [...mapLayerOrder.filter((l) => l !== selectedMapLayer), selectedMapLayer];
+    };
+
+    updateLayer();
   });
 
   viewer.camera.moveEnd.addEventListener(function () {
@@ -477,6 +556,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const LOGO_SIZE = 68;
   const LOGO_MARGIN = 16;
   document.getElementById('screenshot-btn')!.onclick = () => {
+    toastMessage.set({
+      msg: 'Generating screenshot',
+      type: 'loading',
+    });
     viewer.resolutionScale = 2.0;
     viewer.scene.render(viewer.clock.currentTime);
 
@@ -505,6 +588,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
         link.href = imgCanvas.toDataURL('image/png', 1.0);
         link.download = 'NUS Digital Twin';
         link.click();
+
+        toastMessage.set({
+          msg: 'Generated screenshot',
+          type: 'loaded',
+        });
       }
     }
 
