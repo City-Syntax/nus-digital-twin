@@ -14,7 +14,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/check": "^0.7.0",
+    "@astrojs/check": "0.8.1",
     "@astrojs/react": "3.6.0",
     "@fontsource-variable/figtree": "^5.0.21",
     "@fontsource-variable/inter": "^5.0.16",
@@ -24,7 +24,7 @@
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-scroll-area": "^1.1.0",
     "@radix-ui/react-select": "^2.0.0",
-    "astro": "4.11.0",
+    "astro": "4.11.5",
     "cesium": "^1.115.0",
     "cmdk": "^1.0.0",
     "embla-carousel-react": "^8.1.5",
