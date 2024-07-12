@@ -979,10 +979,10 @@
   resolved "https://registry.yarnpkg.com/@nanostores/persistent/-/persistent-0.10.1.tgz#547f4cf40e3d22af953d981ed826e51e87207bba"
   integrity sha512-BMYj47ONmkrPkHfomimtBAwtDNNjO57lw0uk7jB35GHVwixmqWtlK6DVAAbioqwJn9WEaWSB/9Ss5ukBG0NHlQ==
 
-"@nanostores/react@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.npmjs.org/@nanostores/react/-/react-0.7.1.tgz"
-  integrity sha512-EXQg9N4MdI4eJQz/AZLIx3hxQ6BuBmV4Q55bCd5YCSgEOAW7tGTsIZxpRXxvxLXzflNvHTBvfrDNY38TlSVBkQ==
+"@nanostores/react@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@nanostores/react/-/react-0.7.2.tgz#627b478cb78c1b8c8ddce97a8523602c416db232"
+  integrity sha512-e3OhHJFv3NMSFYDgREdlAQqkyBTHJM91s31kOZ4OvZwJKdFk5BLk0MLbh51EOGUz9QGX2aCHfy1RvweSi7fgwA==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
