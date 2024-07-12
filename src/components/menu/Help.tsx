@@ -3,6 +3,7 @@ import CloseButton from './CloseButton';
 import Icons from '../Icons';
 import type { NavType } from '../../types';
 import ScrollContainer from '../primitives/ScrollContainer';
+import { isNavType } from '../../utils';
 
 type HelpProps = {
   navType: NavType;
@@ -16,6 +17,10 @@ const Help = ({ navType, setNavType }: HelpProps) => {
   };
 
   useEffect(() => {
+    if (!isNavType(localStorage['helpControlType'])) {
+      localStorage.setItem('helpControlType', 'mouse');
+    }
+
     setNavType(localStorage['helpControlType'] || 'mouse');
   }, []);
 
