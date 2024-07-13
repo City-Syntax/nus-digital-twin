@@ -8,10 +8,16 @@ const AboutModal = () => {
         <button className="link">About</button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="DialogOverlay" />
-        <Dialog.Content className="DialogContent">
+        <Dialog.Overlay className="modal__overlay" />
+        <Dialog.Content className="modal__content">
           <Dialog.Title className="modal__title">About NUS Digital Twin</Dialog.Title>
-          <Dialog.Description>NUS Digital Twin is developed by City Syntax Lab.</Dialog.Description>
+          <Dialog.Description>
+            NUS Digital Twin is developed by{' '}
+            <a className="link" href="https://www.citysyntax.io" target="_blank" rel="noreferrer">
+              City Syntax Lab
+            </a>
+            .
+          </Dialog.Description>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

@@ -6,7 +6,7 @@
   cursor: pointer;
   font-size: inherit;
   height: max-content;
-  justify-content: flex-start;
+  display: inline-flex;
 
   &:hover {
     color: rgba(var(--primary-300));

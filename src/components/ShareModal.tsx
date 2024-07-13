@@ -9,8 +9,8 @@ const ShareModal = () => {
         <button className="link">Share</button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="DialogOverlay" />
-        <Dialog.Content className="DialogContent">
+        <Dialog.Overlay className="modal__overlay" />
+        <Dialog.Content className="modal__content">
           <Dialog.Title className="modal__title">Share NUS Digital Twin</Dialog.Title>
           <Dialog.Description className="sr-only">Share NUS Digital Twin</Dialog.Description>
           <div className="input-group">
