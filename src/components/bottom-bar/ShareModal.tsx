@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { toastMessage } from '../../store';
 
 const ShareModal = () => {
   const SHARE_TEXT = 'View NUS Digital Twin at https://www.nus-digital-twin.com';
+  const [isCopied, setIsCopied] = useState(false);
   return (
-    <Dialog.Root>
+    <Dialog.Root
+      onOpenChange={() => {
+        setIsCopied(false);
+      }}
+    >
       <Dialog.Trigger asChild>
         <button className="link">Share</button>
       </Dialog.Trigger>
@@ -88,11 +92,11 @@ const ShareModal = () => {
             <input disabled className="input input--full" type="text" defaultValue="www.nus-digital-twin.com" />
             <button
               onClick={() => {
-                toastMessage.set({ msg: 'Copied to clipboard', type: 'default' });
+                setIsCopied(true);
                 navigator.clipboard.writeText('www.nus-digital-twin.com');
               }}
             >
-              Copy
+              {isCopied ? 'Copied!' : 'Copy'}
             </button>
           </div>
         </Dialog.Content>
