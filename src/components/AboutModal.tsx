@@ -10,10 +10,8 @@ const AboutModal = () => {
       <Dialog.Portal>
         <Dialog.Overlay className="DialogOverlay" />
         <Dialog.Content className="DialogContent">
-          <Dialog.Title>About NUS Digital Twin</Dialog.Title>
-          <Dialog.Description className="DialogDescription">
-            NUS Digital Twin is developed by City Syntax Lab.
-          </Dialog.Description>
+          <Dialog.Title className="modal__title">About NUS Digital Twin</Dialog.Title>
+          <Dialog.Description>NUS Digital Twin is developed by City Syntax Lab.</Dialog.Description>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

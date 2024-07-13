@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
+import { toastMessage } from '../store';
 
 const ShareModal = () => {
   return (
@@ -10,8 +11,19 @@ const ShareModal = () => {
       <Dialog.Portal>
         <Dialog.Overlay className="DialogOverlay" />
         <Dialog.Content className="DialogContent">
-          <Dialog.Title>Share NUS Digital Twin</Dialog.Title>
-          <Dialog.Description className="DialogDescription">Hello</Dialog.Description>
+          <Dialog.Title className="modal__title">Share NUS Digital Twin</Dialog.Title>
+          <Dialog.Description className="sr-only">Share NUS Digital Twin</Dialog.Description>
+          <div className="input-group">
+            <input disabled className="input input--full" type="text" defaultValue="www.nus-digital-twin.com" />
+            <button
+              onClick={() => {
+                toastMessage.set({ msg: 'Copied to clipboard', type: 'default' });
+                navigator.clipboard.writeText('www.nus-digital-twin.com');
+              }}
+            >
+              Copy
+            </button>
+          </div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
