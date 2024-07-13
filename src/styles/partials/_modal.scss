@@ -50,8 +50,23 @@
   backdrop-filter: saturate(120%) blur(6px);
   position: fixed;
   inset: 0;
-  animation: fadeIn 150ms cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 99999;
+
+  &[data-state='open'] {
+    animation: fadeIn 150ms var(--ease-in-out-sine);
+
+    body.reduce-motion & {
+      animation: none;
+    }
+  }
+
+  &[data-state='closed'] {
+    animation: fadeOut 150ms var(--ease-in-out-sine);
+
+    body.reduce-motion & {
+      animation: none;
+    }
+  }
 }
 
 .modal__content {
@@ -68,10 +83,25 @@
   max-width: 450px;
   max-height: 85vh;
   padding: var(--padding-xl);
-  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
 
   > * + * {
     margin-top: 12px;
+  }
+
+  &[data-state='open'] {
+    animation: contentShow 150ms var(--ease-in-out-sine);
+
+    body.reduce-motion & {
+      animation: none;
+    }
+  }
+
+  &[data-state='closed'] {
+    animation: contentHide 150ms var(--ease-in-out-sine);
+
+    body.reduce-motion & {
+      animation: none;
+    }
   }
 }
 
