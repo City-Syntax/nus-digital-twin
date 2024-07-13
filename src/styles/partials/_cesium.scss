@@ -10,8 +10,9 @@
 }
 
 div.cesium-credit-lightbox-overlay {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: transparent;
   backdrop-filter: saturate(120%) blur(6px);
+  animation: fadeIn 150ms var(--ease-in-out-sine);
 }
 
 div.cesium-credit-lightbox.cesium-credit-lightbox-expanded,
@@ -21,23 +22,27 @@ div.cesium-credit-lightbox.cesium-credit-lightbox-mobile {
   box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
   border: none;
   border-radius: var(--rounded-base);
-  padding: var(--padding-base);
-  max-width: 428px;
+  padding: var(--padding-xl);
+  animation: scaleIn 150ms var(--ease-in-out-sine);
+  width: 90vw;
+  max-width: 450px;
+  max-height: 85vh;
 
   ul {
-    padding: 0;
+    padding: 0 0 0 var(--padding-base);
   }
 }
 
 div.cesium-credit-lightbox.cesium-credit-lightbox-mobile {
-  height: 100%;
-  width: 100%;
-  max-width: 100%;
-  border-radius: 0;
-
-  .cesium-credit-lightbox-close {
-    display: block;
-  }
+  width: 90vw;
+  height: max-content;
+  max-width: 450px;
+  max-height: 85vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: none;
 }
 
 .cesium-credit-lightbox-close {
@@ -49,6 +54,7 @@ div.cesium-credit-lightbox-title {
   font-weight: 625;
   padding: 0;
   margin-bottom: 12px;
+  font-size: var(--text-2xl);
 }
 
 div.cesium-viewer-timelineContainer {

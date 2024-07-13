@@ -238,3 +238,50 @@
 .select-item[data-highlighted] {
   background-color: rgba(var(--base-200), 0.8);
 }
+
+.input {
+  background-color: transparent;
+  color: inherit;
+  font-size: var(--text-base);
+  padding: var(--padding-sm);
+  outline: none;
+  border-radius: var(--rounded-xs);
+  border: none;
+  box-shadow: inset 0 0 0 1px rgba(var(--base-300));
+
+  &:focus-visible {
+    box-shadow: inset 0 0 0 2px rgba(var(--primary-300));
+  }
+}
+
+.input--full {
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+
+  > * {
+    border-radius: 0;
+  }
+
+  > *:first-child {
+    border-top-left-radius: var(--rounded-xs);
+    border-bottom-left-radius: var(--rounded-xs);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  > *:last-child {
+    border-top-right-radius: var(--rounded-xs);
+    border-bottom-right-radius: var(--rounded-xs);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  > button {
+    @include btn-secondary;
+    height: unset;
+    padding: var(--padding-sm);
+  }
+}

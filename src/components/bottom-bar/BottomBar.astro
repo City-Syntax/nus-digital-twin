@@ -1,5 +1,6 @@
 ---
-
+import AboutModal from './AboutModal';
+import ShareModal from './ShareModal';
 ---
 
 <div id="bottom-bar">
@@ -14,7 +15,10 @@
       <path d="M21.3987 10.6171L18.8684 12.1327L17.8209 12.7595L17.813 21.3625L21.3987 23.5132V10.6171Z" fill="#003D7C"
       ></path>
     </svg>
-    <span>NUS Digital Twin</span>
+    <span class="show-sm">NUS Digital Twin</span>
+    <span style="color: rgba(var(--base-300), 0.6); user-select: none;">|</span>
+    <AboutModal client:load />
+    <ShareModal client:load />
   </div>
   <div id="scale-container">
     <div id="scale-label"></div>
