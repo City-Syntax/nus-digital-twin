@@ -12,7 +12,7 @@
 div.cesium-credit-lightbox-overlay {
   background-color: transparent;
   backdrop-filter: saturate(120%) blur(6px);
-  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  animation: fadeIn 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 div.cesium-credit-lightbox.cesium-credit-lightbox-expanded,
