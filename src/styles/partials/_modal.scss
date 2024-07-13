@@ -96,9 +96,20 @@
     gap: 6px;
     text-decoration: none;
     color: inherit;
-    padding: var(--padding-xs) var(--padding-xs);
-    border: 1px solid white;
+    padding: var(--padding-sm) var(--padding-xs);
+    border: none;
+    box-shadow: inset 0 0 0 1px rgba(var(--base-300));
     border-radius: var(--rounded-xs);
+    transition: background-color 150ms;
+
+    &:hover {
+      background-color: rgba(var(--base-200), 1);
+    }
+
+    &:focus-visible {
+      box-shadow: inset 0 0 0 2px rgba(var(--primary-300));
+      outline: none;
+    }
   }
 
   svg {

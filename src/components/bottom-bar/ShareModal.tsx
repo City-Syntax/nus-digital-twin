@@ -14,18 +14,6 @@ const ShareModal = () => {
         <Dialog.Content className="modal__content">
           <Dialog.Title>Share NUS Digital Twin</Dialog.Title>
           <Dialog.Description className="sr-only">Share NUS Digital Twin</Dialog.Description>
-          <div className="input-group">
-            <input disabled className="input input--full" type="text" defaultValue="www.nus-digital-twin.com" />
-            <button
-              onClick={() => {
-                toastMessage.set({ msg: 'Copied to clipboard', type: 'default' });
-                navigator.clipboard.writeText('www.nus-digital-twin.com');
-              }}
-            >
-              Copy
-            </button>
-          </div>
-          <div className="divider">OR</div>
           <div className="share-container">
             <a className="" href={`mailto:?body=${SHARE_TEXT}`}>
               <svg
@@ -94,6 +82,18 @@ const ShareModal = () => {
               </svg>
               WhatsApp
             </a>
+          </div>
+          <div className="divider">OR</div>
+          <div className="input-group">
+            <input disabled className="input input--full" type="text" defaultValue="www.nus-digital-twin.com" />
+            <button
+              onClick={() => {
+                toastMessage.set({ msg: 'Copied to clipboard', type: 'default' });
+                navigator.clipboard.writeText('www.nus-digital-twin.com');
+              }}
+            >
+              Copy
+            </button>
           </div>
         </Dialog.Content>
       </Dialog.Portal>
