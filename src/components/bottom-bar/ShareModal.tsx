@@ -11,7 +11,7 @@ const ShareModal = () => {
       <Dialog.Portal>
         <Dialog.Overlay className="modal__overlay" />
         <Dialog.Content className="modal__content">
-          <Dialog.Title className="modal__title">Share NUS Digital Twin</Dialog.Title>
+          <Dialog.Title>Share NUS Digital Twin</Dialog.Title>
           <Dialog.Description className="sr-only">Share NUS Digital Twin</Dialog.Description>
           <div className="input-group">
             <input disabled className="input input--full" type="text" defaultValue="www.nus-digital-twin.com" />
