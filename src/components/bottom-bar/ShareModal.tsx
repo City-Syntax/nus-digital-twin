@@ -5,11 +5,7 @@ const ShareModal = () => {
   const SHARE_TEXT = 'View NUS Digital Twin at https://www.nus-digital-twin.com';
   const [isCopied, setIsCopied] = useState(false);
   return (
-    <Dialog.Root
-      onOpenChange={() => {
-        setIsCopied(false);
-      }}
-    >
+    <Dialog.Root onOpenChange={() => setIsCopied(false)}>
       <Dialog.Trigger asChild>
         <button className="link">Share</button>
       </Dialog.Trigger>
