@@ -23,8 +23,10 @@ div.cesium-credit-lightbox.cesium-credit-lightbox-mobile {
   border: none;
   border-radius: var(--rounded-base);
   padding: var(--padding-xl);
-  max-width: 428px;
   animation: scaleIn 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 90vw;
+  max-width: 450px;
+  max-height: 85vh;
 
   ul {
     padding: 0 0 0 var(--padding-base);
@@ -32,14 +34,15 @@ div.cesium-credit-lightbox.cesium-credit-lightbox-mobile {
 }
 
 div.cesium-credit-lightbox.cesium-credit-lightbox-mobile {
-  height: 100%;
-  width: 100%;
-  max-width: 100%;
-  border-radius: 0;
-
-  .cesium-credit-lightbox-close {
-    display: block;
-  }
+  width: 90vw;
+  height: max-content;
+  max-width: 450px;
+  max-height: 85vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: none;
 }
 
 .cesium-credit-lightbox-close {
