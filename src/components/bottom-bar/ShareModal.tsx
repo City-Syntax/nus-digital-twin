@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { toastMessage } from '../store';
+import { toastMessage } from '../../store';
 
 const ShareModal = () => {
   return (
