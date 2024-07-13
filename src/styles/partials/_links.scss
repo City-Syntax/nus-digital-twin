@@ -1,0 +1,13 @@
+.link {
+  @include btn;
+  text-decoration: underline;
+  color: inherit;
+  transition: color 150ms;
+  cursor: pointer;
+  font-size: inherit;
+  height: max-content;
+
+  &:hover {
+    color: rgba(var(--primary-300));
+  }
+}
