@@ -1,5 +1,6 @@
 ---
 import AboutModal from './AboutModal';
+import ShareModal from './ShareModal';
 ---
 
 <div id="bottom-bar">
@@ -17,7 +18,7 @@ import AboutModal from './AboutModal';
     <span class="show-sm">NUS Digital Twin</span>
     <span style="color: rgba(var(--base-300), 0.5)">|</span>
     <AboutModal client:load />
-    <span class="link">Share</span>
+    <ShareModal client:load />
   </div>
   <div id="scale-container">
     <div id="scale-label"></div>

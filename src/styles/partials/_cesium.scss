@@ -21,11 +21,11 @@ div.cesium-credit-lightbox.cesium-credit-lightbox-mobile {
   box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
   border: none;
   border-radius: var(--rounded-base);
-  padding: var(--padding-base);
+  padding: var(--padding-xl);
   max-width: 428px;
 
   ul {
-    padding: 0;
+    padding: 0 0 0 var(--rounded-base);
   }
 }
 
@@ -49,6 +49,7 @@ div.cesium-credit-lightbox-title {
   font-weight: 625;
   padding: 0;
   margin-bottom: 12px;
+  font-size: var(--text-2xl);
 }
 
 div.cesium-viewer-timelineContainer {

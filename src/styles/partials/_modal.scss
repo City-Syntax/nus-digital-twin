@@ -58,6 +58,8 @@
 .DialogContent {
   z-index: 2;
   background-color: rgba(var(--base-100), 0.8);
+  backdrop-filter: saturate(140%) blur(4px);
+  box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
   border-radius: var(--rounded-base);
   position: fixed;
   top: 50%;
@@ -66,7 +68,7 @@
   width: 90vw;
   max-width: 450px;
   max-height: 85vh;
-  padding: 25px;
+  padding: var(--padding-xl);
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
