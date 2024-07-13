@@ -12,7 +12,7 @@ const AboutModal = () => {
         <Dialog.Content className="DialogContent">
           <Dialog.Title>About NUS Digital Twin</Dialog.Title>
           <Dialog.Description className="DialogDescription">
-            <p>NUS Digital Twin is developed by City Syntax Lab.</p>
+            NUS Digital Twin is developed by City Syntax Lab.
           </Dialog.Description>
         </Dialog.Content>
       </Dialog.Portal>
