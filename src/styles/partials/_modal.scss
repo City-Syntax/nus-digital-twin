@@ -78,3 +78,31 @@
 .modal__content:focus {
   outline: none;
 }
+
+.share-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+
+  @media screen and (max-width: $sm) {
+    grid-template-columns: 1fr;
+  }
+
+  > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-sm);
+    gap: 6px;
+    text-decoration: none;
+    color: inherit;
+    padding: var(--padding-xs) var(--padding-xs);
+    border: 1px solid white;
+    border-radius: var(--rounded-xs);
+  }
+
+  svg {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+}
