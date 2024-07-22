@@ -973,7 +973,17 @@
     "address": "15 Computing Drive",
     "postal": "117418",
     "latitude": 1.29397,
-    "longitude": 103.77413
+    "longitude": 103.77413,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus",
+        "files": [
+          { "filetype": ".3dm", "url": "/com2/com2-rhino.3dm" }
+        ]
+      }
+    ]
+
   },
   {
     "elementId": "15780831",
