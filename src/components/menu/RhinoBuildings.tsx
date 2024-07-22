@@ -12,7 +12,7 @@ const RhinoBuildings = () => {
         <CloseButton></CloseButton>
       </div>
       <div className="menubar-content-body">
-        <div>Displays Rhino Urban Scale models. Selecting individual buildings is not available.</div>
+        <div>Displays Rhino Building Scale models.</div>
         <div>
           <div className="btn-group">
             <button
