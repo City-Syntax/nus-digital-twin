@@ -1990,7 +1990,16 @@
     "address": "35 Prince George's Park",
     "postal": "118429",
     "latitude": 1.29037,
-    "longitude": 103.78042
+    "longitude": 103.78042,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Ng Jing Cheng, Mao Jun Chi",
+        "files": [
+          { "filetype": ".3dm", "url": "/pioneer-house/pioneer-house-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "238932795",
