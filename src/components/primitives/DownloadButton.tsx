@@ -11,11 +11,7 @@ const handleClick = () => {
 const DownloadButton = ({ type, credits, files }: DownloadProps) => {
   return (
     <div>
-      {credits && (
-        <div className="hint">
-          {type} is provided by {credits}.
-        </div>
-      )}
+      {credits && <div className="hint">Provided by {credits}.</div>}
       <div key={type} className="download-btn">
         {files.length === 1 ? (
           <a href={files[0].url} download onClick={handleClick}>

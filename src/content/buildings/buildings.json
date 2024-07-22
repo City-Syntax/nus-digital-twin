@@ -648,7 +648,16 @@
     "address": "5 Engineering Drive 1",
     "postal": "117608",
     "latitude": 1.29916,
-    "longitude": 103.77304
+    "longitude": 103.77304,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan",
+        "files": [
+          { "filetype": ".3dm", "url": "/e6/e6-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "1060426986",
