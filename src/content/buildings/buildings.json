@@ -1996,7 +1996,7 @@
         "type": "Rhino",
         "credits": "Ng Jing Cheng, Mao Jun Chi",
         "files": [
-          { "filetype": ".3dm", "url": "/pioneer-house/pioneer-house.zip" }
+          { "filetype": ".3dm", "url": "/pioneer-house/pioneer-house-rhino.3dm" }
         ]
       }
     ]
