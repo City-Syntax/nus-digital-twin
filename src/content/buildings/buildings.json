@@ -1848,7 +1848,16 @@
     "address": "21 Prince George's Park",
     "postal": "118420",
     "latitude": 1.29155,
-    "longitude": 103.7829
+    "longitude": 103.7829,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Joey Sia Junwei, Georsia Ang Li Qi",
+        "files": [
+          { "filetype": ".3dm", "url": "/pgpr/pgpr-block1-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "238932783",
