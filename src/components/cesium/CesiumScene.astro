@@ -331,6 +331,32 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
   viewer.scene.primitives.add(rhinoUrbanModel);
 
+  const rhinoE6 = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.776073, 1.2992870953, 65.8901890799),
+      new HeadingPitchRoll(CesiumMath.toRadians(90), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    url: '/e6/e6-rhino.gltf',
+    show: false,
+    featureIdLabel: '139959760',
+  });
+  const rhinoBuildingModels: Model[] = [rhinoE6];
+
+  for (const model of rhinoBuildingModels) {
+    viewer.scene.primitives.add(model);
+  }
+
+  function showRhinoBuildings() {
+    for (const model of rhinoBuildingModels) {
+      model.show = true;
+    }
+  }
+  function hideRhinoBuildings() {
+    for (const model of rhinoBuildingModels) {
+      model.show = false;
+    }
+  }
+
   function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
     colorByDistancePosition.set({
       latitude: selectedLatitude,
@@ -451,6 +477,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     activePage.set('building-info');
     buildingId.set(''); // Force the listener on buildingId to trigger
+
+    if (pickedFeature.primitive && pickedFeature.primitive.featureIdLabel) {
+      buildingId.set(pickedFeature.primitive.featureIdLabel);
+      return;
+    }
+
     if (bimModels.includes(pickedFeature.primitive)) {
       const resourceUrl = pickedFeature.primitive.resource.url;
 
@@ -507,6 +539,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
         osmBuildingsTileset.show = model === 'osm';
         rhinoUrbanModel.show = model === 'rhino-urban';
         model === 'bim' ? showAllBIM() : hideAllBIM();
+        model === 'rhino-building' ? showRhinoBuildings() : hideRhinoBuildings();
 
         isFirstCall = false;
       },
