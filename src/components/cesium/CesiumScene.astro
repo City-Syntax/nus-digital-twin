@@ -333,8 +333,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const rhinoE6 = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.776073, 1.2992870953, 65.8901890799),
-      new HeadingPitchRoll(CesiumMath.toRadians(90), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+      Cartesian3.fromDegrees(103.77304, 1.29916, 65.8901890799),
+      new HeadingPitchRoll(CesiumMath.toRadians(0), CesiumMath.toRadians(90), CesiumMath.toRadians(0)),
     ),
     url: '/e6/e6-rhino.gltf',
     show: false,
@@ -478,7 +478,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     activePage.set('building-info');
     buildingId.set(''); // Force the listener on buildingId to trigger
 
-    if (pickedFeature.primitive && pickedFeature.primitive.featureIdLabel) {
+    if (
+      pickedFeature.primitive &&
+      pickedFeature.primitive.featureIdLabel &&
+      pickedFeature.primitive.featureIdLabel !== 'featureId_0'
+    ) {
       buildingId.set(pickedFeature.primitive.featureIdLabel);
       return;
     }
