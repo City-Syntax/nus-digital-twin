@@ -1813,7 +1813,16 @@
     "address": "10 Architecture Drive",
     "postal": "117511",
     "latitude": 1.29698,
-    "longitude": 103.77139
+    "longitude": 103.77139,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Chee Hui Zhen, Irene Siew Pui Yan",
+        "files": [
+          { "filetype": ".3dm", "url": "/celc/celc-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "141913116",
