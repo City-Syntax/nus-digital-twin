@@ -1832,7 +1832,16 @@
     "address": "2 Engineering Drive 4",
     "postal": "117584",
     "latitude": 1.29795,
-    "longitude": 103.77153
+    "longitude": 103.77153,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey",
+        "files": [
+          { "filetype": ".3dm", "url": "/techno-edge/techno-edge-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "141913023",
