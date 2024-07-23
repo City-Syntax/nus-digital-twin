@@ -301,7 +301,16 @@
     "address": "2 Conservatory Drive",
     "postal": "117377",
     "latitude": 1.30152,
-    "longitude": 103.77361
+    "longitude": 103.77361,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Angel Zhou An Ting, Vivian Yeo",
+        "files": [
+          { "filetype": ".3dm", "url": "/nus-museum/nus-museum-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "643598737",
@@ -517,7 +526,16 @@
     "address": "10 Kent Ridge Crescent",
     "postal": "119260",
     "latitude": 1.29603,
-    "longitude": 103.77229
+    "longitude": 103.77229,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Fathima Zaina Naushard, Yong Huey Zhing, Christabella Yip Kei Yarn",
+        "files": [
+          { "filetype": ".3dm", "url": "https://drive.google.com/uc?export=download&id=1H2HcirWVcqgIed4YeViJIV5pUa3xWjc4" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "140078777",
@@ -558,6 +576,13 @@
         "files": [
           { "filetype": ".glTF", "url": "/sde4/sde4.gltf" },
           { "filetype": ".obj, .mtl", "url": "/sde4/sde4.zip" }
+        ]
+      },
+      {
+        "type": "Rhino",
+        "credits": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi",
+        "files": [
+          { "filetype": ".3dm", "url": "/sde4/sde4-rhino.3dm" }
         ]
       }
     ]
@@ -648,7 +673,16 @@
     "address": "5 Engineering Drive 1",
     "postal": "117608",
     "latitude": 1.29916,
-    "longitude": 103.77304
+    "longitude": 103.77304,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan",
+        "files": [
+          { "filetype": ".3dm", "url": "/e6/e6-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "1060426986",
@@ -964,7 +998,17 @@
     "address": "15 Computing Drive",
     "postal": "117418",
     "latitude": 1.29397,
-    "longitude": 103.77413
+    "longitude": 103.77413,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus",
+        "files": [
+          { "filetype": ".3dm", "url": "/com2/com2-rhino.3dm" }
+        ]
+      }
+    ]
+
   },
   {
     "elementId": "15780831",
@@ -1788,7 +1832,16 @@
     "address": "2 Engineering Drive 4",
     "postal": "117584",
     "latitude": 1.29795,
-    "longitude": 103.77153
+    "longitude": 103.77153,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey",
+        "files": [
+          { "filetype": ".3dm", "url": "/techno-edge/techno-edge-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "141913023",
@@ -1804,7 +1857,16 @@
     "address": "10 Architecture Drive",
     "postal": "117511",
     "latitude": 1.29698,
-    "longitude": 103.77139
+    "longitude": 103.77139,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Chee Hui Zhen, Irene Siew Pui Yan",
+        "files": [
+          { "filetype": ".3dm", "url": "/celc/celc-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "141913116",
@@ -1820,7 +1882,16 @@
     "address": "21 Prince George's Park",
     "postal": "118420",
     "latitude": 1.29155,
-    "longitude": 103.7829
+    "longitude": 103.7829,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Joey Sia Junwei, Georsia Ang Li Qi",
+        "files": [
+          { "filetype": ".3dm", "url": "/pgpr/pgpr-block1-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "238932783",
@@ -1972,7 +2043,16 @@
     "address": "35 Prince George's Park",
     "postal": "118429",
     "latitude": 1.29037,
-    "longitude": 103.78042
+    "longitude": 103.78042,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Ng Jing Cheng, Mao Jun Chi",
+        "files": [
+          { "filetype": ".3dm", "url": "/pioneer-house/pioneer-house-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "238932795",

@@ -331,6 +331,121 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
   viewer.scene.primitives.add(rhinoUrbanModel);
 
+  const rhinoE6 = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7733996498, 1.2994468755, 106.6098321746),
+      new HeadingPitchRoll(CesiumMath.toRadians(-204.1), CesiumMath.toRadians(90), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/e6/e6-rhino.gltf',
+    featureIdLabel: '139959760',
+  });
+  const rhinoCELC = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7715383286, 1.2969267027, 41.9),
+      new HeadingPitchRoll(CesiumMath.toRadians(15.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    scale: 0.5,
+    url: '/celc/celc-rhino.gltf',
+    featureIdLabel: '140084916',
+  });
+  const rhinoPioneerHouse = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7804112385, 1.2902299393, 26.1901156884),
+      new HeadingPitchRoll(CesiumMath.toRadians(99.4), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/pioneer-house/pioneer-house-rhino.gltf',
+    featureIdLabel: '238932774',
+  });
+  const rhinoCOM2 = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7743124495, 1.2939952856, 37.2996820597),
+      new HeadingPitchRoll(CesiumMath.toRadians(-204), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    scale: 0.43,
+    url: '/com2/com2-rhino.gltf',
+    featureIdLabel: '54619699',
+  });
+  const rhinoPgprBlock1 = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7829198753, 1.291489802, 51.2208270602),
+      new HeadingPitchRoll(CesiumMath.toRadians(-40), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    scale: 0.48,
+    url: '/pgpr/pgpr-block1-rhino.gltf',
+    featureIdLabel: '238932786',
+  });
+  const rhinoAS8 = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7722692363, 1.296027148, 55.2598169315),
+      new HeadingPitchRoll(CesiumMath.toRadians(109.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/as8/as8-rhino.gltf',
+    featureIdLabel: '54583485',
+  });
+  const rhinoNUSMuseum = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7738450938, 1.3011976187, 25.0583082028),
+      new HeadingPitchRoll(CesiumMath.toRadians(17.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    scale: 1.5,
+    url: '/nus-museum/nus-museum-rhino.gltf',
+    featureIdLabel: '54619794',
+  });
+
+  const rhinoSDE4 = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7692381868, 1.2980152539, 39.1295878511),
+      new HeadingPitchRoll(CesiumMath.toRadians(108.8), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/sde4/sde4-rhino.gltf',
+    featureIdLabel: '628774809',
+  });
+
+  // TODO: Position TechnoEdge
+  // const rhinoTechnoedge = await Model.fromGltfAsync({
+  //   modelMatrix: Transforms.headingPitchRollToFixedFrame(
+  //     Cartesian3.fromDegrees(103.7692381868, 1.2980152539, 39.1295878511),
+  //     new HeadingPitchRoll(CesiumMath.toRadians(108.8), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+  //   ),
+  //   show: false,
+  //   url: '/techno-edge/techno-edge-rhino.gltf',
+  //   featureIdLabel: '730959512',
+  // });
+
+  const rhinoBuildingModels: Model[] = [
+    rhinoE6,
+    rhinoCELC,
+    rhinoPioneerHouse,
+    rhinoCOM2,
+    rhinoPgprBlock1,
+    rhinoAS8,
+    rhinoNUSMuseum,
+    rhinoSDE4,
+  ];
+
+  for (const model of rhinoBuildingModels) {
+    viewer.scene.primitives.add(model);
+  }
+
+  function showRhinoBuildings() {
+    for (const model of rhinoBuildingModels) {
+      model.show = true;
+    }
+  }
+  function hideRhinoBuildings() {
+    for (const model of rhinoBuildingModels) {
+      model.show = false;
+    }
+  }
+
   function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
     colorByDistancePosition.set({
       latitude: selectedLatitude,
@@ -451,6 +566,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     activePage.set('building-info');
     buildingId.set(''); // Force the listener on buildingId to trigger
+
+    if (
+      pickedFeature.primitive &&
+      pickedFeature.primitive.featureIdLabel &&
+      pickedFeature.primitive.featureIdLabel !== 'featureId_0'
+    ) {
+      buildingId.set(pickedFeature.primitive.featureIdLabel);
+      return;
+    }
+
     if (bimModels.includes(pickedFeature.primitive)) {
       const resourceUrl = pickedFeature.primitive.resource.url;
 
@@ -507,6 +632,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
         osmBuildingsTileset.show = model === 'osm';
         rhinoUrbanModel.show = model === 'rhino-urban';
         model === 'bim' ? showAllBIM() : hideAllBIM();
+        model === 'rhino-building' ? showRhinoBuildings() : hideRhinoBuildings();
 
         isFirstCall = false;
       },

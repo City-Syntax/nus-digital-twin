@@ -35,7 +35,12 @@ const BuildingScaleModels = () => {
   return (
     <>
       <MenuLink toPage="bim" label="BIM Models" iconName="BIMModels" isActive={$activeModel === 'bim'}></MenuLink>
-      <MenuLink toPage="rhino-building" label="Rhino (Building)" iconName="RhinoModels"></MenuLink>
+      <MenuLink
+        toPage="rhino-building"
+        label="Rhino (Building)"
+        iconName="RhinoModels"
+        isActive={$activeModel === 'rhino-building'}
+      ></MenuLink>
     </>
   );
 };
