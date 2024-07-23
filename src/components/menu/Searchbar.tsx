@@ -44,6 +44,7 @@ const Searchbar = () => {
 
   buildingId.listen((newId) => {
     if (newId === '') {
+      scrollUpOnChange();
       setSearchQuery('');
       return;
     }
@@ -94,8 +95,14 @@ const Searchbar = () => {
     <Command shouldFilter={false} label="Search buildings" loop>
       <div className="search">
         <Command.Input
-          onFocus={() => setOpen(true)}
-          onClick={() => setOpen(true)}
+          onFocus={() => {
+            setOpen(true);
+            scrollUpOnChange();
+          }}
+          onClick={() => {
+            setOpen(true);
+            scrollUpOnChange();
+          }}
           onBlur={(e) => {
             if (e.relatedTarget?.contains(document.querySelector('[cmdk-list]'))) {
               setOpen(true);
