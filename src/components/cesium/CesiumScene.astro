@@ -379,8 +379,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     url: '/pgpr/pgpr-block1-rhino.gltf',
     featureIdLabel: '238932786',
   });
-
-  const rhinoBuildingModels: Model[] = [rhinoE6, rhinoCELC, rhinoPioneerHouse, rhinoCOM2, rhinoPgprBlock1];
+  const rhinoAS8 = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7722692363, 1.296027148, 55.2598169315),
+      new HeadingPitchRoll(CesiumMath.toRadians(109.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/as8/as8-rhino.gltf',
+    featureIdLabel: '54583485',
+  });
+  const rhinoBuildingModels: Model[] = [rhinoE6, rhinoCELC, rhinoPioneerHouse, rhinoCOM2, rhinoPgprBlock1, rhinoAS8];
 
   for (const model of rhinoBuildingModels) {
     viewer.scene.primitives.add(model);

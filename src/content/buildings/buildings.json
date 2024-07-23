@@ -517,7 +517,16 @@
     "address": "10 Kent Ridge Crescent",
     "postal": "119260",
     "latitude": 1.29603,
-    "longitude": 103.77229
+    "longitude": 103.77229,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Fathima Zaina Naushard, Yong Huey Zhing, Christabella Yip Kei Yarn",
+        "files": [
+          { "filetype": ".3dm", "url": "https://drive.google.com/uc?export=download&id=1H2HcirWVcqgIed4YeViJIV5pUa3xWjc4" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "140078777",
