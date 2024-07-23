@@ -577,6 +577,13 @@
           { "filetype": ".glTF", "url": "/sde4/sde4.gltf" },
           { "filetype": ".obj, .mtl", "url": "/sde4/sde4.zip" }
         ]
+      },
+      {
+        "type": "Rhino",
+        "credits": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi",
+        "files": [
+          { "filetype": ".3dm", "url": "/sde4/sde4-rhino.3dm" }
+        ]
       }
     ]
   },
