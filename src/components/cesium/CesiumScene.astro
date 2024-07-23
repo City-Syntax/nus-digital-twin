@@ -420,6 +420,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   //   featureIdLabel: '730959512',
   // });
 
+  const rhinoUSC = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.775544178, 1.2997341879, 27.7347173989),
+      new HeadingPitchRoll(CesiumMath.toRadians(-2.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    scale: 0.9,
+    url: '/usc/usc-rhino.gltf',
+    featureIdLabel: '730956214',
+  });
+
   const rhinoBuildingModels: Model[] = [
     rhinoE6,
     rhinoCELC,
@@ -429,6 +440,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoAS8,
     rhinoNUSMuseum,
     rhinoSDE4,
+    rhinoUSC,
   ];
 
   for (const model of rhinoBuildingModels) {

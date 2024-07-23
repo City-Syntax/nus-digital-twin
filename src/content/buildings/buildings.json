@@ -1640,7 +1640,16 @@
     "address": "2 Sports Drive 1",
     "postal": "117561",
     "latitude": 1.29971,
-    "longitude": 103.77546
+    "longitude": 103.77546,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Tjoeng Levana, Lor Yong Hui, Mabel",
+        "files": [
+          { "filetype": ".3dm", "url": "/usc/usc-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "111973157",
