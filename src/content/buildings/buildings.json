@@ -1058,7 +1058,16 @@
     "address": "5 Research Link",
     "postal": "117603",
     "latitude": 1.29563,
-    "longitude": 103.77515
+    "longitude": 103.77515,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Li Yuhang, Yang Zhengran",
+        "files": [
+          { "filetype": ".3dm", "url": "/ssls/ssls-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "54619687",

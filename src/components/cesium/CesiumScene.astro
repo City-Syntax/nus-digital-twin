@@ -452,6 +452,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '140087193',
   });
 
+  const rhinoSSLS = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7750945264, 1.295625549, 45.8205900698),
+      new HeadingPitchRoll(CesiumMath.toRadians(55.6), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/ssls/ssls-rhino.gltf',
+    featureIdLabel: '54619730',
+  });
+
   const rhinoBuildingModels: Model[] = [
     rhinoE6,
     rhinoCELC,
@@ -464,6 +474,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoSDE4,
     rhinoUSC,
     rhinoTheDeck,
+    rhinoSSLS,
   ];
 
   for (const model of rhinoBuildingModels) {
