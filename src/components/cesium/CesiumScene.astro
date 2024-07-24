@@ -431,6 +431,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '730956214',
   });
 
+  const rhinoTheDeck = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7724884969, 1.2946662859, 65.883810451),
+      new HeadingPitchRoll(CesiumMath.toRadians(-28), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    scale: 1.4,
+    url: '/the-deck/the-deck-rhino.gltf',
+    featureIdLabel: '140087193',
+  });
+
   const rhinoBuildingModels: Model[] = [
     rhinoE6,
     rhinoCELC,
@@ -441,6 +452,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoNUSMuseum,
     rhinoSDE4,
     rhinoUSC,
+    rhinoTheDeck,
   ];
 
   for (const model of rhinoBuildingModels) {

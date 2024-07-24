@@ -1032,7 +1032,16 @@
     "address": "5 Arts Link",
     "postal": "117570",
     "latitude": 1.29467,
-    "longitude": 103.77249
+    "longitude": 103.77249,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Tang Kai Jun, Lim Zhi An Dashiell",
+        "files": [
+          { "filetype": ".3dm", "url": "/the-deck/the-deck-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "54619730",
