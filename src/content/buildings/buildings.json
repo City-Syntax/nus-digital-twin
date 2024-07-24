@@ -551,7 +551,16 @@
     "address": "2 Architecture Drive",
     "postal": "117565",
     "latitude": 1.29728,
-    "longitude": 103.77113
+    "longitude": 103.77113,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Steffi Seah, Tay Hui Xin",
+        "files": [
+          { "filetype": ".3dm", "url": "/sde2/sde2-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "140079084",
