@@ -420,6 +420,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '140078560',
   });
 
+  const rhinoSDE3 = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7703213411, 1.2981575567, 72.1150038858),
+      new HeadingPitchRoll(CesiumMath.toRadians(154.7), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    scale: 1.2,
+    show: false,
+    url: '/sde3/sde3-rhino.gltf',
+    featureIdLabel: '140079084',
+  });
+
   const rhinoSDE4 = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
       Cartesian3.fromDegrees(103.7692381868, 1.2980152539, 39.1295878511),
@@ -503,6 +514,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoAS8,
     rhinoNUSMuseum,
     rhinoSDE2,
+    rhinoSDE3,
     rhinoSDE4,
     rhinoUSC,
     rhinoTheDeck,

@@ -577,7 +577,16 @@
     "address": "4 Architecture Drive",
     "postal": "117566",
     "latitude": 1.29793,
-    "longitude": 103.77037
+    "longitude": 103.77037,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Ng Jia Yee, Weng Yingyi",
+        "files": [
+          { "filetype": ".3dm", "url": "/sde3/sde3-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "628774809",
