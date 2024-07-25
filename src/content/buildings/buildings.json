@@ -422,7 +422,16 @@
     "address": "21 Kent Ridge Crescent",
     "postal": "119280",
     "latitude": 1.30034,
-    "longitude": 103.77361
+    "longitude": 103.77361,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Li Ziming, Caleb Tan Chong Sheng",
+        "files": [
+          { "filetype": ".3dm", "url": "/raffles-hall/kuok-foundation-house-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "241265458",

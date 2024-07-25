@@ -462,6 +462,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '54619730',
   });
 
+  const rhinoKuokFoundationHouse = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7736143773, 1.3003285747, 51.8848008027),
+      new HeadingPitchRoll(CesiumMath.toRadians(154.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/raffles-hall/kuok-foundation-house-rhino.gltf',
+    featureIdLabel: '241265457',
+  });
+
   const rhinoBuildingModels: Model[] = [
     rhinoE6,
     rhinoCELC,
@@ -475,6 +485,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoUSC,
     rhinoTheDeck,
     rhinoSSLS,
+    rhinoKuokFoundationHouse,
   ];
 
   for (const model of rhinoBuildingModels) {
