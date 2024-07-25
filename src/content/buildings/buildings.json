@@ -1550,7 +1550,16 @@
     "address": "20 Heng Mui Keng Ter",
     "postal": "119618",
     "latitude": 1.29151,
-    "longitude": 103.77531
+    "longitude": 103.77531,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Alden Khoo Ding Hong, Jesmine Pang Sheau Xuan",
+        "files": [
+          { "filetype": ".3dm", "url": "/sheares-hall/sheares-a-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "627395979",
