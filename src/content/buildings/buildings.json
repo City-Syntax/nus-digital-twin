@@ -301,16 +301,7 @@
     "address": "2 Conservatory Drive",
     "postal": "117377",
     "latitude": 1.30152,
-    "longitude": 103.77361,
-    "downloads": [
-      {
-        "type": "Rhino",
-        "credits": "Angel Zhou An Ting, Vivian Yeo",
-        "files": [
-          { "filetype": ".3dm", "url": "/nus-museum/nus-museum-rhino.3dm" }
-        ]
-      }
-    ]
+    "longitude": 103.77361
   },
   {
     "elementId": "643598737",
