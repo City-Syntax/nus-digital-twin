@@ -340,6 +340,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     url: '/e6/e6-rhino.gltf',
     featureIdLabel: '139959760',
   });
+
+  const rhinoE2A = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7713864135, 1.2987547954, 74.0860869039),
+      new HeadingPitchRoll(CesiumMath.toRadians(75), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/e2a/e2a-rhino.gltf',
+    featureIdLabel: '628777635',
+  });
+
   const rhinoCELC = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
       Cartesian3.fromDegrees(103.7715383286, 1.2969267027, 41.9),
@@ -473,6 +484,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   const rhinoBuildingModels: Model[] = [
+    rhinoE2A,
     rhinoE6,
     rhinoCELC,
     rhinoPioneerHouse,

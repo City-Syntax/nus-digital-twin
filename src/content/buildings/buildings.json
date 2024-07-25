@@ -635,7 +635,16 @@
     "address": "6 Engineering Drive 4",
     "postal": "117361",
     "latitude": 1.29877,
-    "longitude": 103.77138
+    "longitude": 103.77138,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Chua Shu Hui Jessica, Adishree Archana Sanker, Gordon Sun Zhen Xiong",
+        "files": [
+          { "filetype": ".3dm", "url": "/e2a/e2a-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "139971771",
