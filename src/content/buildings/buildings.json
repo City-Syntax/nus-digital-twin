@@ -1928,7 +1928,16 @@
     "address": "11 Lower Kent Ridge Road",
     "postal": "119083",
     "latitude": 1.29696,
-    "longitude": 103.78173
+    "longitude": 103.78173,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En",
+        "files": [
+          { "filetype": ".3dm", "url": "/medicine-science-library/medicine-science-library-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "238932786",

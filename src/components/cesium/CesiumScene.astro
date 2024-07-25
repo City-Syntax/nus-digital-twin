@@ -483,6 +483,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '241265457',
   });
 
+  const rhinoMedicineScienceLibrary = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7817655955, 1.2969427365, 42.6703826862),
+      new HeadingPitchRoll(CesiumMath.toRadians(-69.8), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/medicine-science-library/medicine-science-library-rhino.gltf',
+    featureIdLabel: '141913116',
+  });
+
   const rhinoBuildingModels: Model[] = [
     rhinoE2A,
     rhinoE6,
@@ -498,6 +508,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoTheDeck,
     rhinoSSLS,
     rhinoKuokFoundationHouse,
+    rhinoMedicineScienceLibrary,
   ];
 
   for (const model of rhinoBuildingModels) {
