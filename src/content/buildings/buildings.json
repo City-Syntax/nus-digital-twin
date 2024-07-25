@@ -394,11 +394,20 @@
   },
   {
     "elementId": "546382548",
-    "name": "Ridge View Annex",
+    "name": "Ridge View Residential College Block G",
     "address": "25 Lower Kent Ridge Road",
     "postal": "119081",
     "latitude": 1.29739,
-    "longitude": 103.77681
+    "longitude": 103.77681,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Chan Jia Wei, Chye Yi De, Tan Soon Sian Aaron",
+        "files": [
+          { "filetype": ".3dm", "url": "/rvrc/rvrc-g-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "427077072",
