@@ -504,6 +504,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '141913116',
   });
 
+  const rhinoShearesMain = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7758329693, 1.2914051269, 44.1314822062),
+      new HeadingPitchRoll(CesiumMath.toRadians(28.7), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    scale: 1.2,
+    show: false,
+    url: '/sheares-hall/sheares-main-rhino.gltf',
+    featureIdLabel: '639258228',
+  });
+
   const rhinoBuildingModels: Model[] = [
     rhinoE2A,
     rhinoE6,
@@ -521,6 +532,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoSSLS,
     rhinoKuokFoundationHouse,
     rhinoMedicineScienceLibrary,
+    rhinoShearesMain,
   ];
 
   for (const model of rhinoBuildingModels) {
