@@ -301,16 +301,7 @@
     "address": "2 Conservatory Drive",
     "postal": "117377",
     "latitude": 1.30152,
-    "longitude": 103.77361,
-    "downloads": [
-      {
-        "type": "Rhino",
-        "credits": "Angel Zhou An Ting, Vivian Yeo",
-        "files": [
-          { "filetype": ".3dm", "url": "/nus-museum/nus-museum-rhino.3dm" }
-        ]
-      }
-    ]
+    "longitude": 103.77361
   },
   {
     "elementId": "643598737",
@@ -394,11 +385,20 @@
   },
   {
     "elementId": "546382548",
-    "name": "Ridge View Annex",
+    "name": "Ridge View Residential College Block G",
     "address": "25 Lower Kent Ridge Road",
     "postal": "119081",
     "latitude": 1.29739,
-    "longitude": 103.77681
+    "longitude": 103.77681,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Chan Jia Wei, Chye Yi De, Tan Soon Sian Aaron",
+        "files": [
+          { "filetype": ".3dm", "url": "/rvrc/rvrc-g-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "427077072",
@@ -422,7 +422,16 @@
     "address": "21 Kent Ridge Crescent",
     "postal": "119280",
     "latitude": 1.30034,
-    "longitude": 103.77361
+    "longitude": 103.77361,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Li Ziming, Caleb Tan Chong Sheng",
+        "files": [
+          { "filetype": ".3dm", "url": "/raffles-hall/kuok-foundation-house-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "241265458",
@@ -551,7 +560,16 @@
     "address": "2 Architecture Drive",
     "postal": "117565",
     "latitude": 1.29728,
-    "longitude": 103.77113
+    "longitude": 103.77113,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Steffi Seah, Tay Hui Xin",
+        "files": [
+          { "filetype": ".3dm", "url": "/sde2/sde2-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "140079084",
@@ -559,7 +577,16 @@
     "address": "4 Architecture Drive",
     "postal": "117566",
     "latitude": 1.29793,
-    "longitude": 103.77037
+    "longitude": 103.77037,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Ng Jia Yee, Weng Yingyi",
+        "files": [
+          { "filetype": ".3dm", "url": "/sde3/sde3-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "628774809",
@@ -617,7 +644,16 @@
     "address": "6 Engineering Drive 4",
     "postal": "117361",
     "latitude": 1.29877,
-    "longitude": 103.77138
+    "longitude": 103.77138,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Chua Shu Hui Jessica, Adishree Archana Sanker, Gordon Sun Zhen Xiong",
+        "files": [
+          { "filetype": ".3dm", "url": "/e2a/e2a-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "139971771",
@@ -1032,7 +1068,16 @@
     "address": "5 Arts Link",
     "postal": "117570",
     "latitude": 1.29467,
-    "longitude": 103.77249
+    "longitude": 103.77249,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Tang Kai Jun, Lim Zhi An Dashiell",
+        "files": [
+          { "filetype": ".3dm", "url": "/the-deck/the-deck-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "54619730",
@@ -1040,7 +1085,16 @@
     "address": "5 Research Link",
     "postal": "117603",
     "latitude": 1.29563,
-    "longitude": 103.77515
+    "longitude": 103.77515,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Li Yuhang, Yang Zhengran",
+        "files": [
+          { "filetype": ".3dm", "url": "/ssls/ssls-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "54619687",
@@ -1496,7 +1550,16 @@
     "address": "20 Heng Mui Keng Ter",
     "postal": "119618",
     "latitude": 1.29151,
-    "longitude": 103.77531
+    "longitude": 103.77531,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Alden Khoo Ding Hong, Jesmine Pang Sheau Xuan",
+        "files": [
+          { "filetype": ".3dm", "url": "/sheares-hall/sheares-a-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "627395979",
@@ -1536,7 +1599,16 @@
     "address": "20 Heng Mui Keng Ter",
     "postal": "119618",
     "latitude": 1.29137,
-    "longitude": 103.7761
+    "longitude": 103.7761,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": " Lim Xin Hui Sheryl, Lee Yi",
+        "files": [
+          { "filetype": ".3dm", "url": "/sheares-hall/sheares-main-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "640840065",
@@ -1544,7 +1616,16 @@
     "address": "20 Heng Mui Keng Ter",
     "postal": "119618",
     "latitude": 1.2914,
-    "longitude": 103.77601
+    "longitude": 103.77601,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": " Lim Xin Hui Sheryl, Lee Yi",
+        "files": [
+          { "filetype": ".3dm", "url": "/sheares-hall/sheares-main-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "455250293",
@@ -1640,7 +1721,16 @@
     "address": "2 Sports Drive 1",
     "postal": "117561",
     "latitude": 1.29971,
-    "longitude": 103.77546
+    "longitude": 103.77546,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Tjoeng Levana, Lor Yong Hui Mabel",
+        "files": [
+          { "filetype": ".3dm", "url": "/usc/usc-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "111973157",
@@ -1874,7 +1964,16 @@
     "address": "11 Lower Kent Ridge Road",
     "postal": "119083",
     "latitude": 1.29696,
-    "longitude": 103.78173
+    "longitude": 103.78173,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En",
+        "files": [
+          { "filetype": ".3dm", "url": "/medicine-science-library/medicine-science-library-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "238932786",

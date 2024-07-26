@@ -340,6 +340,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     url: '/e6/e6-rhino.gltf',
     featureIdLabel: '139959760',
   });
+
+  const rhinoE2A = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7713864135, 1.2987547954, 74.0860869039),
+      new HeadingPitchRoll(CesiumMath.toRadians(75), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/e2a/e2a-rhino.gltf',
+    featureIdLabel: '628777635',
+  });
+
   const rhinoCELC = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
       Cartesian3.fromDegrees(103.7715383286, 1.2969267027, 41.9),
@@ -388,15 +399,36 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     url: '/as8/as8-rhino.gltf',
     featureIdLabel: '54583485',
   });
-  const rhinoNUSMuseum = await Model.fromGltfAsync({
+  // const rhinoNUSMuseum = await Model.fromGltfAsync({
+  //   modelMatrix: Transforms.headingPitchRollToFixedFrame(
+  //     Cartesian3.fromDegrees(103.7738450938, 1.3011976187, 25.0583082028),
+  //     new HeadingPitchRoll(CesiumMath.toRadians(17.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+  //   ),
+  //   show: false,
+  //   scale: 1.5,
+  //   url: '/nus-museum/nus-museum-rhino.gltf',
+  //   featureIdLabel: '54619794',
+  // });
+
+  const rhinoSDE2 = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7738450938, 1.3011976187, 25.0583082028),
-      new HeadingPitchRoll(CesiumMath.toRadians(17.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+      Cartesian3.fromDegrees(103.7711425478, 1.297249525, 50.3291321597),
+      new HeadingPitchRoll(CesiumMath.toRadians(199), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
     ),
     show: false,
-    scale: 1.5,
-    url: '/nus-museum/nus-museum-rhino.gltf',
-    featureIdLabel: '54619794',
+    url: '/sde2/sde2-rhino.gltf',
+    featureIdLabel: '140078560',
+  });
+
+  const rhinoSDE3 = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7703213411, 1.2981575567, 72.1150038858),
+      new HeadingPitchRoll(CesiumMath.toRadians(154.7), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    scale: 1.2,
+    show: false,
+    url: '/sde3/sde3-rhino.gltf',
+    featureIdLabel: '140079084',
   });
 
   const rhinoSDE4 = await Model.fromGltfAsync({
@@ -420,15 +452,107 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   //   featureIdLabel: '730959512',
   // });
 
+  const rhinoUSC = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.775544178, 1.2997341879, 27.7347173989),
+      new HeadingPitchRoll(CesiumMath.toRadians(-2.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    scale: 0.9,
+    url: '/usc/usc-rhino.gltf',
+    featureIdLabel: '730956214',
+  });
+
+  const rhinoTheDeck = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7724884969, 1.2946662859, 65.883810451),
+      new HeadingPitchRoll(CesiumMath.toRadians(-28), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    scale: 1.4,
+    url: '/the-deck/the-deck-rhino.gltf',
+    featureIdLabel: '140087193',
+  });
+
+  const rhinoSSLS = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7750945264, 1.295625549, 45.8205900698),
+      new HeadingPitchRoll(CesiumMath.toRadians(55.6), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/ssls/ssls-rhino.gltf',
+    featureIdLabel: '54619730',
+  });
+
+  const rhinoKuokFoundationHouse = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7736143773, 1.3003285747, 51.8848008027),
+      new HeadingPitchRoll(CesiumMath.toRadians(154.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/raffles-hall/kuok-foundation-house-rhino.gltf',
+    featureIdLabel: '241265457',
+  });
+
+  const rhinoMedicineScienceLibrary = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7817655955, 1.2969427365, 42.6703826862),
+      new HeadingPitchRoll(CesiumMath.toRadians(-69.8), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/medicine-science-library/medicine-science-library-rhino.gltf',
+    featureIdLabel: '141913116',
+  });
+
+  const rhinoShearesMain = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7758329693, 1.2914051269, 44.1314822062),
+      new HeadingPitchRoll(CesiumMath.toRadians(28.7), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    scale: 1.2,
+    show: false,
+    url: '/sheares-hall/sheares-main-rhino.gltf',
+    featureIdLabel: '639258228',
+  });
+
+  const rhinoRvrcG = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7767993479, 1.2974922895, 44.840297406),
+      new HeadingPitchRoll(CesiumMath.toRadians(-70.1), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/rvrc/rvrc-g-rhino.gltf',
+    featureIdLabel: '546382548',
+  });
+
+  // const rhinoLKCMuseum = await Model.fromGltfAsync({
+  //   modelMatrix: Transforms.headingPitchRollToFixedFrame(
+  //     Cartesian3.fromDegrees(103.7738450938, 1.3011976187, 25.0583082028),
+  //     new HeadingPitchRoll(CesiumMath.toRadians(17.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+  //   ),
+  //   show: false,
+  //   url: '/lkc-museum/lkc-museum-rhino.gltf',
+  //   featureIdLabel: '54619794',
+  // });
+
   const rhinoBuildingModels: Model[] = [
+    rhinoE2A,
     rhinoE6,
     rhinoCELC,
     rhinoPioneerHouse,
     rhinoCOM2,
     rhinoPgprBlock1,
     rhinoAS8,
-    rhinoNUSMuseum,
+    rhinoSDE2,
+    rhinoSDE3,
     rhinoSDE4,
+    rhinoUSC,
+    rhinoTheDeck,
+    rhinoSSLS,
+    rhinoKuokFoundationHouse,
+    rhinoMedicineScienceLibrary,
+    rhinoShearesMain,
+    rhinoRvrcG,
   ];
 
   for (const model of rhinoBuildingModels) {
