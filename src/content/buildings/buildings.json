@@ -1084,6 +1084,11 @@
     "postal": "117570",
     "latitude": 1.29467,
     "longitude": 103.77249,
+    "images": [
+      { "src": "/src/assets/the-deck/the-deck-3.png", "author": "Tang Kai Jun, Lim Zhi An Dashiell" },
+      { "src": "/src/assets/the-deck/the-deck-1.png", "author": "Tang Kai Jun, Lim Zhi An Dashiell" },
+      { "src": "/src/assets/the-deck/the-deck-2.png", "author": "Tang Kai Jun, Lim Zhi An Dashiell" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
