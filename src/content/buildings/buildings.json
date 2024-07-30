@@ -1039,6 +1039,10 @@
     "postal": "117418",
     "latitude": 1.29397,
     "longitude": 103.77413,
+    "images": [
+      { "src": "/src/assets/com2/com2-1.jpg", "author": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus" },
+      { "src": "/src/assets/com2/com2-2.jpg", "author": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
