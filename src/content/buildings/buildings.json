@@ -536,6 +536,10 @@
     "postal": "119260",
     "latitude": 1.29603,
     "longitude": 103.77229,
+    "images": [
+      { "src": "/src/assets/as8/as8-1.jpg", "author": "Fathima Zaina Naushard, Yong Huey Zhing, Christabella Yip Kei Yarn" },
+      { "src": "/src/assets/as8/as8-2.jpg", "author": "Fathima Zaina Naushard, Yong Huey Zhing, Christabella Yip Kei Yarn" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
