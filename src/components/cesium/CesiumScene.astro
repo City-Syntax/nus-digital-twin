@@ -333,10 +333,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const rhinoE6 = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7733996498, 1.2994468755, 106.6098321746),
-      new HeadingPitchRoll(CesiumMath.toRadians(-204.1), CesiumMath.toRadians(90), CesiumMath.toRadians(0)),
+      Cartesian3.fromDegrees(103.7730368432, 1.2991728525, 52.20497546),
+      new HeadingPitchRoll(CesiumMath.toRadians(155.6), CesiumMath.toRadians(90), CesiumMath.toRadians(0)),
     ),
     show: false,
+    scale: 1.05,
     url: '/e6/e6-rhino.gltf',
     featureIdLabel: '139959760',
   });
@@ -353,14 +354,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const rhinoCELC = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7715383286, 1.2969267027, 41.9),
-      new HeadingPitchRoll(CesiumMath.toRadians(15.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+      Cartesian3.fromDegrees(103.7713937579, 1.2969843253, 44.9642791517),
+      new HeadingPitchRoll(CesiumMath.toRadians(18.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
     ),
     show: false,
-    scale: 0.5,
+    scale: 0.52,
     url: '/celc/celc-rhino.gltf',
     featureIdLabel: '140084916',
   });
+
   const rhinoPioneerHouse = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
       Cartesian3.fromDegrees(103.7804112385, 1.2902299393, 26.1901156884),
@@ -399,16 +401,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     url: '/as8/as8-rhino.gltf',
     featureIdLabel: '54583485',
   });
-  // const rhinoNUSMuseum = await Model.fromGltfAsync({
-  //   modelMatrix: Transforms.headingPitchRollToFixedFrame(
-  //     Cartesian3.fromDegrees(103.7738450938, 1.3011976187, 25.0583082028),
-  //     new HeadingPitchRoll(CesiumMath.toRadians(17.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-  //   ),
-  //   show: false,
-  //   scale: 1.5,
-  //   url: '/nus-museum/nus-museum-rhino.gltf',
-  //   featureIdLabel: '54619794',
-  // });
+
+  const rhinoNUSMuseum = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7724974951, 1.3014554191, 38.705815314),
+      new HeadingPitchRoll(CesiumMath.toRadians(19.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    scale: 1.1,
+    url: '/nus-museum/nus-museum-rhino.gltf',
+    featureIdLabel: '54583930',
+  });
 
   const rhinoSDE2 = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
@@ -433,7 +436,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const rhinoSDE4 = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7692381868, 1.2980152539, 39.1295878511),
+      Cartesian3.fromDegrees(103.7703672003, 1.2968668531, 45.0226349587),
       new HeadingPitchRoll(CesiumMath.toRadians(108.8), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
     ),
     show: false,
@@ -540,6 +543,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoE6,
     rhinoCELC,
     rhinoPioneerHouse,
+    rhinoNUSMuseum,
     rhinoCOM2,
     rhinoPgprBlock1,
     rhinoAS8,

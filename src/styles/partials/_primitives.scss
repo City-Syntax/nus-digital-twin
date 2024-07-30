@@ -225,9 +225,11 @@
 }
 
 .img-container__caption {
+  line-height: 1rem;
+  padding: 0 6px 2px 6px;
   position: absolute;
   bottom: 0;
-  left: 6px;
+  left: 0;
   font-size: var(--text-xs);
   color: rgba(var(--base-content));
   font-family: 'Figtree Variable', system-ui, sans-serif;

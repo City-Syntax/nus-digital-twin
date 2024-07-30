@@ -536,6 +536,10 @@
     "postal": "119260",
     "latitude": 1.29603,
     "longitude": 103.77229,
+    "images": [
+      { "src": "/src/assets/as8/as8-1.jpg", "author": "Fathima Zaina Naushard, Yong Huey Zhing, Christabella Yip Kei Yarn" },
+      { "src": "/src/assets/as8/as8-2.jpg", "author": "Fathima Zaina Naushard, Yong Huey Zhing, Christabella Yip Kei Yarn" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -561,6 +565,10 @@
     "postal": "117565",
     "latitude": 1.29728,
     "longitude": 103.77113,
+    "images": [
+      { "src": "/src/assets/sde2/sde2-1.png", "author": "Steffi Seah, Tay Hui Xin" },
+      { "src": "/src/assets/sde2/sde2-2.png", "author": "Steffi Seah, Tay Hui Xin" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -593,7 +601,10 @@
     "name": "SDE4",
     "address": "8 Architecture Drive",
     "postal": "117356",
-    "images": [{ "src": "/src/assets/sde4/sde4.jpg" }, { "src": "/src/assets/sde4/sde4-2.jpg" }],
+    "images": [
+      { "src": "/src/assets/sde4/sde4.jpg", "author": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi" },
+      { "src": "/src/assets/sde4/sde4-2.jpg", "author": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi" }
+    ],
     "latitude": 1.29681,
     "longitude": 103.77035,
     "downloads": [
@@ -710,6 +721,10 @@
     "postal": "117608",
     "latitude": 1.29916,
     "longitude": 103.77304,
+    "images": [
+      { "src": "/src/assets/e6/e6-1.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" },
+      { "src": "/src/assets/e6/e6-2.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -1035,6 +1050,10 @@
     "postal": "117418",
     "latitude": 1.29397,
     "longitude": 103.77413,
+    "images": [
+      { "src": "/src/assets/com2/com2-1.jpg", "author": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus" },
+      { "src": "/src/assets/com2/com2-2.jpg", "author": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -1069,6 +1088,11 @@
     "postal": "117570",
     "latitude": 1.29467,
     "longitude": 103.77249,
+    "images": [
+      { "src": "/src/assets/the-deck/the-deck-3.png", "author": "Tang Kai Jun, Lim Zhi An Dashiell" },
+      { "src": "/src/assets/the-deck/the-deck-1.png", "author": "Tang Kai Jun, Lim Zhi An Dashiell" },
+      { "src": "/src/assets/the-deck/the-deck-2.png", "author": "Tang Kai Jun, Lim Zhi An Dashiell" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -1086,6 +1110,10 @@
     "postal": "117603",
     "latitude": 1.29563,
     "longitude": 103.77515,
+    "images": [
+      { "src": "/src/assets/ssls/ssls-1.jpg", "author": "Li Yuhang, Yang Zhengran" },
+      { "src": "/src/assets/ssls/ssls-2.jpg", "author": "Li Yuhang, Yang Zhengran" } 
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -1600,10 +1628,13 @@
     "postal": "119618",
     "latitude": 1.29137,
     "longitude": 103.7761,
+    "images": [
+      { "src": "/src/assets/sheares-hall/sheares-main.jpg", "author": "Lim Xin Hui Sheryl, Lee Yi" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
-        "credits": " Lim Xin Hui Sheryl, Lee Yi",
+        "credits": "Lim Xin Hui Sheryl, Lee Yi",
         "files": [
           { "filetype": ".3dm", "url": "/sheares-hall/sheares-main-rhino.3dm" }
         ]
@@ -1701,11 +1732,24 @@
   },
   {
     "elementId": "54583930",
-    "name": "University Cultural Centre",
+    "name": "University Cultural Centre / NUS Museum",
     "address": "50 Kent Ridge Crescent",
     "postal": "119279",
     "latitude": 1.30176,
-    "longitude": 103.77229
+    "longitude": 103.77229,
+    "images": [
+      { "src": "/src/assets/nus-museum/nus-museum-1.jpg", "author": "Angel Zhou An Ting, Vivian Yeo" },
+      { "src": "/src/assets/nus-museum/nus-museum-2.jpg", "author": "Angel Zhou An Ting, Vivian Yeo" }
+    ],
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Angel Zhou An Ting, Vivian Yeo",
+        "files": [
+          { "filetype": ".3dm", "url": "/nus-museum/nus-museum-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "54583487",
@@ -1948,6 +1992,9 @@
     "postal": "117511",
     "latitude": 1.29698,
     "longitude": 103.77139,
+    "images": [
+      { "src": "/src/assets/celc/celc.jpg", "author": "Chee Hui Zhen, Irene Siew Pui Yan" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -1982,6 +2029,9 @@
     "postal": "118420",
     "latitude": 1.29155,
     "longitude": 103.7829,
+    "images": [
+      { "src": "/src/assets/pgpr/pgpr-block1.jpg", "author": "Joey Sia Junwei, Georsia Ang Li Qi" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -2143,6 +2193,10 @@
     "postal": "118429",
     "latitude": 1.29037,
     "longitude": 103.78042,
+    "images": [
+      { "src": "/src/assets/pioneer-house/pioneer-house-1.jpg", "author": "Ng Jing Cheng, Mao Jun Chi" },
+      { "src": "/src/assets/pioneer-house/pioneer-house-2.jpg", "author": "Ng Jing Cheng, Mao Jun Chi" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
