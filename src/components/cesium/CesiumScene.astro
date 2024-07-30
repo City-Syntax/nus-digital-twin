@@ -354,14 +354,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const rhinoCELC = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7715383286, 1.2969267027, 41.9),
-      new HeadingPitchRoll(CesiumMath.toRadians(15.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+      Cartesian3.fromDegrees(103.7713937579, 1.2969843253, 44.9642791517),
+      new HeadingPitchRoll(CesiumMath.toRadians(18.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
     ),
     show: false,
-    scale: 0.5,
+    scale: 0.52,
     url: '/celc/celc-rhino.gltf',
     featureIdLabel: '140084916',
   });
+
   const rhinoPioneerHouse = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
       Cartesian3.fromDegrees(103.7804112385, 1.2902299393, 26.1901156884),
