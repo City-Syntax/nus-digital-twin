@@ -196,6 +196,8 @@
 
   img,
   .img-container__caption {
+    line-height: 1rem;
+    margin-bottom: 2px;
     opacity: 0;
     transition: opacity 150ms;
   }
