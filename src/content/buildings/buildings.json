@@ -2150,6 +2150,10 @@
     "postal": "118429",
     "latitude": 1.29037,
     "longitude": 103.78042,
+    "images": [
+      { "src": "/src/assets/pioneer-house/pioneer-house-1.jpg", "author": "Ng Jing Cheng, Mao Jun Chi" },
+      { "src": "/src/assets/pioneer-house/pioneer-house-2.jpg", "author": "Ng Jing Cheng, Mao Jun Chi" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
