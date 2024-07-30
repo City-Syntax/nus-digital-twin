@@ -1713,11 +1713,20 @@
   },
   {
     "elementId": "54583930",
-    "name": "University Cultural Centre",
+    "name": "University Cultural Centre / NUS Museum",
     "address": "50 Kent Ridge Crescent",
     "postal": "119279",
     "latitude": 1.30176,
-    "longitude": 103.77229
+    "longitude": 103.77229,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Angel Zhou An Ting, Vivian Yeo",
+        "files": [
+          { "filetype": ".3dm", "url": "/nus-museum/nus-museum-rhino.3dm" }
+        ]
+      }
+    ]
   },
   {
     "elementId": "54583487",
