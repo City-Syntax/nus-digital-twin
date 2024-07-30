@@ -1718,6 +1718,10 @@
     "postal": "119279",
     "latitude": 1.30176,
     "longitude": 103.77229,
+    "images": [
+      { "src": "/src/assets/nus-museum/nus-museum-1.jpg", "author": "Angel Zhou An Ting, Vivian Yeo" },
+      { "src": "/src/assets/nus-museum/nus-museum-2.jpg", "author": "Angel Zhou An Ting, Vivian Yeo" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
