@@ -1993,6 +1993,9 @@
     "postal": "118420",
     "latitude": 1.29155,
     "longitude": 103.7829,
+    "images": [
+      { "src": "/src/assets/pgpr/pgpr-block1.jpg", "author": "Joey Sia Junwei, Georsia Ang Li Qi" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
