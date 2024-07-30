@@ -1952,6 +1952,9 @@
     "postal": "117511",
     "latitude": 1.29698,
     "longitude": 103.77139,
+    "images": [
+      { "src": "/src/assets/celc/celc.jpg", "author": "Chee Hui Zhen, Irene Siew Pui Yan" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
