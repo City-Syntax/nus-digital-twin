@@ -1628,10 +1628,13 @@
     "postal": "119618",
     "latitude": 1.29137,
     "longitude": 103.7761,
+    "images": [
+      { "src": "/src/assets/sheares-hall/sheares-main.jpg", "author": "Lim Xin Hui Sheryl, Lee Yi" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
-        "credits": " Lim Xin Hui Sheryl, Lee Yi",
+        "credits": "Lim Xin Hui Sheryl, Lee Yi",
         "files": [
           { "filetype": ".3dm", "url": "/sheares-hall/sheares-main-rhino.3dm" }
         ]
