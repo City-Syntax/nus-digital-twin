@@ -76,6 +76,8 @@ Models in other formats have to be converted into `.glTF` format.
 | Wavefront (`.obj`, `.mtl`) | [`obj2gltf`](https://github.com/CesiumGS/obj2gltf)<br>`obj2gltf -i model.obj`                   |
 | COLLADA (`.dae`)           | [`COLLADA2GLTF`](https://github.com/KhronosGroup/COLLADA2GLTF)<br>`./COLLADA2GTF-bin model.dae` |
 
+For larger models (over a few hundred MBs), it is recommended to use Cesium ion Archives instead and load it into Cesium using [`Cesium3DTileset.fromUrl`](https://cesium.com/learn/ion-sdk/ref-doc/Cesium3DTileset.html#.fromUrl). See how to create a Cesium ion Archive [here](https://cesium.com/learn/ion/cesium-ion-archives-and-exports/).
+
 ### Adding Shapefiles
 
 Shapefiles have to be converted to GeoJSON format before they can be loaded into Cesium using [`GeoJsonDataSource`](https://cesium.com/learn/ion-sdk/ref-doc/GeoJsonDataSource.html). The conversion can be done using [`ogr2ogr`](https://gdal.org/programs/ogr2ogr.html) in [GDAL](https://gdal.org/).
@@ -93,5 +95,5 @@ ogr2ogr -f "GeoJSON" output.json input.shp
 - The `radix-ui/select` component does not support an exit animation.
 - The `radix-ui/scroll-area` applies `display:table` which affects our layout, and is manually overriden in the CSS class `.scroll-area-viewport > div`. See the [GitHub issue](https://github.com/radix-ui/primitives/issues/926) and an [ongoing fix](https://github.com/radix-ui/primitives/pull/2945).
 - Picking is disabled for Rhino (Urban) Models as individual building data is not available currently.
-- For GIS Layers made up of polygons, such as building footprints and street centerlines, clamping them to ground directly using [`GeoJsonDataSource.clampToGround`](https://cesium.com/learn/ion-sdk/ref-doc/GeoJsonDataSource.html?classFilter=geojson#.clampToGround) results in rendering issues on certain browsers. A [workaround](https://github.com/City-Syntax/nus-digital-twin/pull/74) is used, but the GIS layer may appear on top of the building and not comform to the terrain.
+- For GIS Layers made up of polygons, such as building footprints and street centerlines, clamping them to ground directly using [`GeoJsonDataSource.clampToGround`](https://cesium.com/learn/ion-sdk/ref-doc/GeoJsonDataSource.html?classFilter=geojson#.clampToGround) results in rendering issues on certain browsers. A [workaround](https://github.com/City-Syntax/nus-digital-twin/pull/74) is used, but the GIS layer may appear on top of the building and not conform to the terrain.
   - See this [post](https://community.cesium.com/t/macos-driver-bug-for-small-clamp-to-ground-polygons/24277) on Cesium forums.
