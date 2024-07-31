@@ -76,6 +76,8 @@ Models in other formats have to be converted into `.glTF` format.
 | Wavefront (`.obj`, `.mtl`) | [`obj2gltf`](https://github.com/CesiumGS/obj2gltf)<br>`obj2gltf -i model.obj`                   |
 | COLLADA (`.dae`)           | [`COLLADA2GLTF`](https://github.com/KhronosGroup/COLLADA2GLTF)<br>`./COLLADA2GTF-bin model.dae` |
 
+For larger models (over a few hundred MBs), it is recommended to use Cesium ion Archives instead and load it into Cesium using [`Cesium3DTileset.fromUrl`](https://cesium.com/learn/ion-sdk/ref-doc/Cesium3DTileset.html#.fromUrl). See how to create a Cesium ion Archive [here](https://cesium.com/learn/ion/cesium-ion-archives-and-exports/).
+
 ### Adding Shapefiles
 
 Shapefiles have to be converted to GeoJSON format before they can be loaded into Cesium using [`GeoJsonDataSource`](https://cesium.com/learn/ion-sdk/ref-doc/GeoJsonDataSource.html). The conversion can be done using [`ogr2ogr`](https://gdal.org/programs/ogr2ogr.html) in [GDAL](https://gdal.org/).
