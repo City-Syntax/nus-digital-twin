@@ -510,16 +510,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '628774809',
   });
 
-  // TODO: Position TechnoEdge
-  // const rhinoTechnoedge = await Model.fromGltfAsync({
-  //   modelMatrix: Transforms.headingPitchRollToFixedFrame(
-  //     Cartesian3.fromDegrees(103.7692381868, 1.2980152539, 39.1295878511),
-  //     new HeadingPitchRoll(CesiumMath.toRadians(108.8), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-  //   ),
-  //   show: false,
-  //   url: '/techno-edge/techno-edge-rhino.gltf',
-  //   featureIdLabel: '730959512',
-  // });
+  const rhinoTechnoEdge = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7714223457, 1.2979071911, 58.3863356009),
+      new HeadingPitchRoll(CesiumMath.toRadians(233.1), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/techno-edge/techno-edge-rhino.gltf',
+    featureIdLabel: '730959512',
+  });
 
   const rhinoUSC = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
@@ -620,6 +619,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoUSC,
     rhinoTheDeck,
     rhinoSSLS,
+    rhinoTechnoEdge,
     rhinoKuokFoundationHouse,
     rhinoMedicineScienceLibrary,
     rhinoShearesMain,
