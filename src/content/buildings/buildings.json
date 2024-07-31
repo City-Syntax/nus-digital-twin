@@ -655,6 +655,16 @@
     "postal": "117361",
     "latitude": 1.29877,
     "longitude": 103.77138,
+    "images": [
+      {
+        "src": "/src/assets/e2a/e2a-1.jpg",
+        "author": "Chua Shu Hui Jessica, Adishree Archana Sanker, Gordon Sun Zhen Xiong"
+      },
+      {
+        "src": "/src/assets/e2a/e2a-2.jpg",
+        "author": "Chua Shu Hui Jessica, Adishree Archana Sanker, Gordon Sun Zhen Xiong"
+      }
+    ],
     "downloads": [
       {
         "type": "Rhino",
