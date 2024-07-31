@@ -73,6 +73,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const globe = viewer.scene.globe;
   const canvas = viewer.scene.canvas;
+  const handler = viewer.screenSpaceEventHandler;
+
+  // Disables double click on GeoJSON to focus
+  handler.removeInputAction(ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
 
   // @ts-ignore: https://community.cesium.com/t/change-timeline-from-utc-to-local-time/11203/7
   viewer.timeline.makeLabel = function (timelineDate: any) {
@@ -249,6 +253,68 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
+
+  handler.setInputAction(function (movement: any) {
+    const pickedFeature = viewer.scene.pick(movement.position);
+    if (!defined(pickedFeature)) {
+      return;
+    }
+
+    if (isSelectColorByDistance.get()) {
+      colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
+      isSelectColorByDistance.set(false);
+      return;
+    }
+
+    if (pickedFeature.id) {
+      switch (true) {
+        case buildingFootprintsData.entities.contains(pickedFeature.id):
+          break;
+        case streetCenterlinesData.entities.contains(pickedFeature.id):
+          break;
+        case greenSpacesData.entities.contains(pickedFeature.id):
+          break;
+      }
+      return;
+    }
+
+    // Disable picking for Rhino Urban Model
+    if (pickedFeature.primitive === rhinoUrbanModel) {
+      toastMessage.set({
+        msg: 'Selecting individual buildings is unavailable for Rhino (Urban) models',
+        type: 'default',
+      });
+      return;
+    }
+
+    activePage.set('building-info');
+    buildingId.set(''); // Force the listener on buildingId to trigger
+
+    if (
+      pickedFeature.primitive &&
+      pickedFeature.primitive.featureIdLabel &&
+      pickedFeature.primitive.featureIdLabel !== 'featureId_0'
+    ) {
+      buildingId.set(pickedFeature.primitive.featureIdLabel);
+      return;
+    }
+
+    if (bimModels.includes(pickedFeature.primitive)) {
+      const resourceUrl = pickedFeature.primitive.resource.url;
+
+      if (resourceUrl.includes(yncId)) {
+        buildingId.set('732229050');
+      }
+
+      if (resourceUrl.includes(sde4Id)) {
+        buildingId.set('628774809');
+      }
+
+      return;
+    }
+
+    buildingId.set(pickedFeature.getProperty('elementId'));
+  }, ScreenSpaceEventType.LEFT_CLICK);
 
   const geodesic = new EllipsoidGeodesic();
   const distances = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 400, 500, 750, 1000];
@@ -653,73 +719,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       viewer.camera.flyTo(position);
     }
   });
-
-  const handler = viewer.screenSpaceEventHandler;
-
-  // Disables double click on GeoJSON to focus
-  handler.removeInputAction(ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
-
-  handler.setInputAction(function (movement: any) {
-    const pickedFeature = viewer.scene.pick(movement.position);
-    if (!defined(pickedFeature)) {
-      return;
-    }
-
-    if (isSelectColorByDistance.get()) {
-      colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
-      isSelectColorByDistance.set(false);
-      return;
-    }
-
-    if (pickedFeature.id) {
-      switch (true) {
-        case buildingFootprintsData.entities.contains(pickedFeature.id):
-          break;
-        case streetCenterlinesData.entities.contains(pickedFeature.id):
-          break;
-        case greenSpacesData.entities.contains(pickedFeature.id):
-          break;
-      }
-      return;
-    }
-
-    // Disable picking for Rhino Urban Model
-    if (pickedFeature.primitive === rhinoUrbanModel) {
-      toastMessage.set({
-        msg: 'Selecting individual buildings is unavailable for Rhino (Urban) models',
-        type: 'default',
-      });
-      return;
-    }
-
-    activePage.set('building-info');
-    buildingId.set(''); // Force the listener on buildingId to trigger
-
-    if (
-      pickedFeature.primitive &&
-      pickedFeature.primitive.featureIdLabel &&
-      pickedFeature.primitive.featureIdLabel !== 'featureId_0'
-    ) {
-      buildingId.set(pickedFeature.primitive.featureIdLabel);
-      return;
-    }
-
-    if (bimModels.includes(pickedFeature.primitive)) {
-      const resourceUrl = pickedFeature.primitive.resource.url;
-
-      if (resourceUrl.includes(yncId)) {
-        buildingId.set('732229050');
-      }
-
-      if (resourceUrl.includes(sde4Id)) {
-        buildingId.set('628774809');
-      }
-
-      return;
-    }
-
-    buildingId.set(pickedFeature.getProperty('elementId'));
-  }, ScreenSpaceEventType.LEFT_CLICK);
 
   buildingColorSetting.subscribe((colorSetting) => {
     if (colorSetting === 'distance') {
