@@ -594,17 +594,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '546382548',
   });
 
-  // const rhinoLKCMuseum = await Model.fromGltfAsync({
-  //   modelMatrix: Transforms.headingPitchRollToFixedFrame(
-  //     Cartesian3.fromDegrees(103.7738450938, 1.3011976187, 25.0583082028),
-  //     new HeadingPitchRoll(CesiumMath.toRadians(17.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-  //   ),
-  //   show: false,
-  //   url: '/lkc-museum/lkc-museum-rhino.gltf',
-  //   featureIdLabel: '54619794',
-  // });
+  const rhinoLKCMuseum = await Cesium3DTileset.fromIonAssetId(2685876, {
+    show: false,
+    featureIdLabel: '54619794',
+  });
 
-  const rhinoBuildingModels: Model[] = [
+  const rhinoBuildingModels: Array<Model | Cesium3DTileset> = [
     rhinoE2A,
     rhinoE6,
     rhinoCELC,
@@ -624,6 +619,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoMedicineScienceLibrary,
     rhinoShearesMain,
     rhinoRvrcG,
+    rhinoLKCMuseum,
   ];
 
   for (const model of rhinoBuildingModels) {
