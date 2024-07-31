@@ -1993,16 +1993,21 @@
   },
   {
     "elementId": "141913116",
-    "name": "Medicine+Science Library",
+    "name": "Medicine + Science Library",
     "address": "11 Lower Kent Ridge Road",
     "postal": "119083",
     "latitude": 1.29696,
     "longitude": 103.78173,
+    "images": [
+      { "src": "/src/assets/msl/msl-1.jpg", "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En" },
+      { "src": "/src/assets/msl/msl-2.jpg", "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En" },
+      { "src": "/src/assets/msl/msl-3.jpg", "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En",
-        "files": [{ "filetype": ".3dm", "url": "/medicine-science-library/medicine-science-library-rhino.3dm" }]
+        "files": [{ "filetype": ".3dm", "url": "/msl/msl-rhino.3dm" }]
       }
     ]
   },
