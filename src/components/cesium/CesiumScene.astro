@@ -555,10 +555,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const rhinoKuokFoundationHouse = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7736143773, 1.3003285747, 51.8848008027),
-      new HeadingPitchRoll(CesiumMath.toRadians(154.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+      Cartesian3.fromDegrees(103.7736119902, 1.3003336117, 51.8346518242),
+      new HeadingPitchRoll(CesiumMath.toRadians(-25.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
     ),
     show: false,
+    scale: 1.52,
     url: '/raffles-hall/kuok-foundation-house-rhino.gltf',
     featureIdLabel: '241265457',
   });
