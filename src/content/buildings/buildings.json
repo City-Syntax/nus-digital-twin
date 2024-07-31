@@ -1963,6 +1963,13 @@
     "postal": "117584",
     "latitude": 1.29795,
     "longitude": 103.77153,
+    "images": [
+      {
+        "src": "/src/assets/techno-edge/techno-edge-1.jpg",
+        "author": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey"
+      },
+      { "src": "/src/assets/techno-edge/techno-edge-2.jpg", "author": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
