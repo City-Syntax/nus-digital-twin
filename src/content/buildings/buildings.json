@@ -394,9 +394,7 @@
       {
         "type": "Rhino",
         "credits": "Chan Jia Wei, Chye Yi De, Tan Soon Sian Aaron",
-        "files": [
-          { "filetype": ".3dm", "url": "/rvrc/rvrc-g-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/rvrc/rvrc-g-rhino.3dm" }]
       }
     ]
   },
@@ -427,9 +425,7 @@
       {
         "type": "Rhino",
         "credits": "Li Ziming, Caleb Tan Chong Sheng",
-        "files": [
-          { "filetype": ".3dm", "url": "/raffles-hall/kuok-foundation-house-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/raffles-hall/kuok-foundation-house-rhino.3dm" }]
       }
     ]
   },
@@ -537,15 +533,24 @@
     "latitude": 1.29603,
     "longitude": 103.77229,
     "images": [
-      { "src": "/src/assets/as8/as8-1.jpg", "author": "Fathima Zaina Naushard, Yong Huey Zhing, Christabella Yip Kei Yarn" },
-      { "src": "/src/assets/as8/as8-2.jpg", "author": "Fathima Zaina Naushard, Yong Huey Zhing, Christabella Yip Kei Yarn" }
+      {
+        "src": "/src/assets/as8/as8-1.jpg",
+        "author": "Fathima Zaina Naushard, Yong Huey Zhing, Christabella Yip Kei Yarn"
+      },
+      {
+        "src": "/src/assets/as8/as8-2.jpg",
+        "author": "Fathima Zaina Naushard, Yong Huey Zhing, Christabella Yip Kei Yarn"
+      }
     ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Fathima Zaina Naushard, Yong Huey Zhing, Christabella Yip Kei Yarn",
         "files": [
-          { "filetype": ".3dm", "url": "https://drive.google.com/uc?export=download&id=1H2HcirWVcqgIed4YeViJIV5pUa3xWjc4" }
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.google.com/uc?export=download&id=1H2HcirWVcqgIed4YeViJIV5pUa3xWjc4"
+          }
         ]
       }
     ]
@@ -573,9 +578,7 @@
       {
         "type": "Rhino",
         "credits": "Steffi Seah, Tay Hui Xin",
-        "files": [
-          { "filetype": ".3dm", "url": "/sde2/sde2-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/sde2/sde2-rhino.3dm" }]
       }
     ]
   },
@@ -590,9 +593,7 @@
       {
         "type": "Rhino",
         "credits": "Ng Jia Yee, Weng Yingyi",
-        "files": [
-          { "filetype": ".3dm", "url": "/sde3/sde3-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/sde3/sde3-rhino.3dm" }]
       }
     ]
   },
@@ -619,9 +620,7 @@
       {
         "type": "Rhino",
         "credits": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi",
-        "files": [
-          { "filetype": ".3dm", "url": "/sde4/sde4-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/sde4/sde4-rhino.3dm" }]
       }
     ]
   },
@@ -660,9 +659,7 @@
       {
         "type": "Rhino",
         "credits": "Chua Shu Hui Jessica, Adishree Archana Sanker, Gordon Sun Zhen Xiong",
-        "files": [
-          { "filetype": ".3dm", "url": "/e2a/e2a-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/e2a/e2a-rhino.3dm" }]
       }
     ]
   },
@@ -729,9 +726,7 @@
       {
         "type": "Rhino",
         "credits": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan",
-        "files": [
-          { "filetype": ".3dm", "url": "/e6/e6-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/e6/e6-rhino.3dm" }]
       }
     ]
   },
@@ -1051,19 +1046,22 @@
     "latitude": 1.29397,
     "longitude": 103.77413,
     "images": [
-      { "src": "/src/assets/com2/com2-1.jpg", "author": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus" },
-      { "src": "/src/assets/com2/com2-2.jpg", "author": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus" }
+      {
+        "src": "/src/assets/com2/com2-1.jpg",
+        "author": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus"
+      },
+      {
+        "src": "/src/assets/com2/com2-2.jpg",
+        "author": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus"
+      }
     ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus",
-        "files": [
-          { "filetype": ".3dm", "url": "/com2/com2-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/com2/com2-rhino.3dm" }]
       }
     ]
-
   },
   {
     "elementId": "15780831",
@@ -1097,9 +1095,7 @@
       {
         "type": "Rhino",
         "credits": "Tang Kai Jun, Lim Zhi An Dashiell",
-        "files": [
-          { "filetype": ".3dm", "url": "/the-deck/the-deck-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/the-deck/the-deck-rhino.3dm" }]
       }
     ]
   },
@@ -1112,15 +1108,13 @@
     "longitude": 103.77515,
     "images": [
       { "src": "/src/assets/ssls/ssls-1.jpg", "author": "Li Yuhang, Yang Zhengran" },
-      { "src": "/src/assets/ssls/ssls-2.jpg", "author": "Li Yuhang, Yang Zhengran" } 
+      { "src": "/src/assets/ssls/ssls-2.jpg", "author": "Li Yuhang, Yang Zhengran" }
     ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Li Yuhang, Yang Zhengran",
-        "files": [
-          { "filetype": ".3dm", "url": "/ssls/ssls-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/ssls/ssls-rhino.3dm" }]
       }
     ]
   },
@@ -1583,9 +1577,7 @@
       {
         "type": "Rhino",
         "credits": "Alden Khoo Ding Hong, Jesmine Pang Sheau Xuan",
-        "files": [
-          { "filetype": ".3dm", "url": "/sheares-hall/sheares-a-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/sheares-hall/sheares-a-rhino.3dm" }]
       }
     ]
   },
@@ -1628,16 +1620,12 @@
     "postal": "119618",
     "latitude": 1.29137,
     "longitude": 103.7761,
-    "images": [
-      { "src": "/src/assets/sheares-hall/sheares-main.jpg", "author": "Lim Xin Hui Sheryl, Lee Yi" }
-    ],
+    "images": [{ "src": "/src/assets/sheares-hall/sheares-main.jpg", "author": "Lim Xin Hui Sheryl, Lee Yi" }],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Lim Xin Hui Sheryl, Lee Yi",
-        "files": [
-          { "filetype": ".3dm", "url": "/sheares-hall/sheares-main-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/sheares-hall/sheares-main-rhino.3dm" }]
       }
     ]
   },
@@ -1652,9 +1640,7 @@
       {
         "type": "Rhino",
         "credits": " Lim Xin Hui Sheryl, Lee Yi",
-        "files": [
-          { "filetype": ".3dm", "url": "/sheares-hall/sheares-main-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/sheares-hall/sheares-main-rhino.3dm" }]
       }
     ]
   },
@@ -1745,9 +1731,7 @@
       {
         "type": "Rhino",
         "credits": "Angel Zhou An Ting, Vivian Yeo",
-        "files": [
-          { "filetype": ".3dm", "url": "/nus-museum/nus-museum-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/nus-museum/nus-museum-rhino.3dm" }]
       }
     ]
   },
@@ -1770,9 +1754,7 @@
       {
         "type": "Rhino",
         "credits": "Tjoeng Levana, Lor Yong Hui Mabel",
-        "files": [
-          { "filetype": ".3dm", "url": "/usc/usc-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/usc/usc-rhino.3dm" }]
       }
     ]
   },
@@ -1971,9 +1953,7 @@
       {
         "type": "Rhino",
         "credits": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey",
-        "files": [
-          { "filetype": ".3dm", "url": "/techno-edge/techno-edge-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/techno-edge/techno-edge-rhino.3dm" }]
       }
     ]
   },
@@ -1992,16 +1972,12 @@
     "postal": "117511",
     "latitude": 1.29698,
     "longitude": 103.77139,
-    "images": [
-      { "src": "/src/assets/celc/celc.jpg", "author": "Chee Hui Zhen, Irene Siew Pui Yan" }
-    ],
+    "images": [{ "src": "/src/assets/celc/celc.jpg", "author": "Chee Hui Zhen, Irene Siew Pui Yan" }],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Chee Hui Zhen, Irene Siew Pui Yan",
-        "files": [
-          { "filetype": ".3dm", "url": "/celc/celc-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/celc/celc-rhino.3dm" }]
       }
     ]
   },
@@ -2016,9 +1992,7 @@
       {
         "type": "Rhino",
         "credits": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En",
-        "files": [
-          { "filetype": ".3dm", "url": "/medicine-science-library/medicine-science-library-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/medicine-science-library/medicine-science-library-rhino.3dm" }]
       }
     ]
   },
@@ -2029,16 +2003,12 @@
     "postal": "118420",
     "latitude": 1.29155,
     "longitude": 103.7829,
-    "images": [
-      { "src": "/src/assets/pgpr/pgpr-block1.jpg", "author": "Joey Sia Junwei, Georsia Ang Li Qi" }
-    ],
+    "images": [{ "src": "/src/assets/pgpr/pgpr-block1.jpg", "author": "Joey Sia Junwei, Georsia Ang Li Qi" }],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Joey Sia Junwei, Georsia Ang Li Qi",
-        "files": [
-          { "filetype": ".3dm", "url": "/pgpr/pgpr-block1-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/pgpr/pgpr-block1-rhino.3dm" }]
       }
     ]
   },
@@ -2201,9 +2171,7 @@
       {
         "type": "Rhino",
         "credits": "Ng Jing Cheng, Mao Jun Chi",
-        "files": [
-          { "filetype": ".3dm", "url": "/pioneer-house/pioneer-house-rhino.3dm" }
-        ]
+        "files": [{ "filetype": ".3dm", "url": "/pioneer-house/pioneer-house-rhino.3dm" }]
       }
     ]
   },
