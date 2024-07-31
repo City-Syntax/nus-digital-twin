@@ -410,8 +410,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const rhinoE2A = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7713864135, 1.2987547954, 74.0860869039),
-      new HeadingPitchRoll(CesiumMath.toRadians(75), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+      Cartesian3.fromDegrees(103.7713864135, 1.2987547954, 71.4093914346),
+      new HeadingPitchRoll(CesiumMath.toRadians(67), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
     ),
     show: false,
     url: '/e2a/e2a-rhino.gltf',
@@ -510,16 +510,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '628774809',
   });
 
-  // TODO: Position TechnoEdge
-  // const rhinoTechnoedge = await Model.fromGltfAsync({
-  //   modelMatrix: Transforms.headingPitchRollToFixedFrame(
-  //     Cartesian3.fromDegrees(103.7692381868, 1.2980152539, 39.1295878511),
-  //     new HeadingPitchRoll(CesiumMath.toRadians(108.8), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-  //   ),
-  //   show: false,
-  //   url: '/techno-edge/techno-edge-rhino.gltf',
-  //   featureIdLabel: '730959512',
-  // });
+  const rhinoTechnoEdge = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.7714223457, 1.2979071911, 58.3863356009),
+      new HeadingPitchRoll(CesiumMath.toRadians(233.1), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+    ),
+    show: false,
+    url: '/techno-edge/techno-edge-rhino.gltf',
+    featureIdLabel: '730959512',
+  });
 
   const rhinoUSC = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
@@ -555,21 +554,22 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const rhinoKuokFoundationHouse = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7736143773, 1.3003285747, 51.8848008027),
-      new HeadingPitchRoll(CesiumMath.toRadians(154.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+      Cartesian3.fromDegrees(103.7736119902, 1.3003336117, 51.8346518242),
+      new HeadingPitchRoll(CesiumMath.toRadians(-25.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
     ),
     show: false,
+    scale: 1.52,
     url: '/raffles-hall/kuok-foundation-house-rhino.gltf',
     featureIdLabel: '241265457',
   });
 
   const rhinoMedicineScienceLibrary = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7817655955, 1.2969427365, 42.6703826862),
+      Cartesian3.fromDegrees(103.7817655955, 1.2969427365, 39.6354038487),
       new HeadingPitchRoll(CesiumMath.toRadians(-69.8), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
     ),
     show: false,
-    url: '/medicine-science-library/medicine-science-library-rhino.gltf',
+    url: '/msl/msl-rhino.gltf',
     featureIdLabel: '141913116',
   });
 
@@ -584,6 +584,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '639258228',
   });
 
+  const rhinoShearesA = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.775214582, 1.2914901374, 30.437453453),
+      new HeadingPitchRoll(CesiumMath.toRadians(111.3), CesiumMath.toRadians(0), CesiumMath.toRadians(90)),
+    ),
+    scale: 0.4,
+    show: false,
+    url: '/sheares-hall/sheares-a-rhino.gltf',
+    featureIdLabel: '455250294',
+  });
+
   const rhinoRvrcG = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
       Cartesian3.fromDegrees(103.7767993479, 1.2974922895, 44.840297406),
@@ -594,17 +605,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '546382548',
   });
 
-  // const rhinoLKCMuseum = await Model.fromGltfAsync({
-  //   modelMatrix: Transforms.headingPitchRollToFixedFrame(
-  //     Cartesian3.fromDegrees(103.7738450938, 1.3011976187, 25.0583082028),
-  //     new HeadingPitchRoll(CesiumMath.toRadians(17.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-  //   ),
-  //   show: false,
-  //   url: '/lkc-museum/lkc-museum-rhino.gltf',
-  //   featureIdLabel: '54619794',
-  // });
+  const rhinoLKCMuseum = await Cesium3DTileset.fromIonAssetId(2685876, {
+    show: false,
+    featureIdLabel: '54619794',
+  });
 
-  const rhinoBuildingModels: Model[] = [
+  const rhinoYNCArtsCenter = await Cesium3DTileset.fromIonAssetId(2686261, {
+    show: false,
+    featureIdLabel: '732229049',
+  });
+
+  const rhinoBuildingModels: Array<Model | Cesium3DTileset> = [
     rhinoE2A,
     rhinoE6,
     rhinoCELC,
@@ -619,10 +630,14 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoUSC,
     rhinoTheDeck,
     rhinoSSLS,
+    rhinoTechnoEdge,
     rhinoKuokFoundationHouse,
     rhinoMedicineScienceLibrary,
     rhinoShearesMain,
+    rhinoShearesA,
     rhinoRvrcG,
+    rhinoLKCMuseum,
+    rhinoYNCArtsCenter,
   ];
 
   for (const model of rhinoBuildingModels) {

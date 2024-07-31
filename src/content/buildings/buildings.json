@@ -301,7 +301,11 @@
     "address": "2 Conservatory Drive",
     "postal": "117377",
     "latitude": 1.30152,
-    "longitude": 103.77361
+    "longitude": 103.77361,
+    "images": [
+      { "src": "/src/assets/lkc-museum/lkc-museum-1.png", "author": "Samantha Peh, Toh Yu En" },
+      { "src": "/src/assets/lkc-museum/lkc-museum-2.png", "author": "Samantha Peh, Toh Yu En" }
+    ]
   },
   {
     "elementId": "643598737",
@@ -421,6 +425,10 @@
     "postal": "119280",
     "latitude": 1.30034,
     "longitude": 103.77361,
+    "images": [
+      { "src": "/src/assets/raffles-hall/kuok-foundation-house-1.jpg", "author": "Li Ziming, Caleb Tan Chong Sheng" },
+      { "src": "/src/assets/raffles-hall/kuok-foundation-house-2.jpg", "author": "Li Ziming, Caleb Tan Chong Sheng" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -655,6 +663,16 @@
     "postal": "117361",
     "latitude": 1.29877,
     "longitude": 103.77138,
+    "images": [
+      {
+        "src": "/src/assets/e2a/e2a-1.jpg",
+        "author": "Chua Shu Hui Jessica, Adishree Archana Sanker, Gordon Sun Zhen Xiong"
+      },
+      {
+        "src": "/src/assets/e2a/e2a-2.jpg",
+        "author": "Chua Shu Hui Jessica, Adishree Archana Sanker, Gordon Sun Zhen Xiong"
+      }
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -1573,10 +1591,11 @@
     "postal": "119618",
     "latitude": 1.29151,
     "longitude": 103.77531,
+    "images": [{ "src": "/src/assets/sheares-hall/sheares-a.jpg", "author": "Jesmine Pang Sheau Xuan" }],
     "downloads": [
       {
         "type": "Rhino",
-        "credits": "Alden Khoo Ding Hong, Jesmine Pang Sheau Xuan",
+        "credits": "Alden Khoo Ding Hong",
         "files": [{ "filetype": ".3dm", "url": "/sheares-hall/sheares-a-rhino.3dm" }]
       }
     ]
@@ -1949,6 +1968,13 @@
     "postal": "117584",
     "latitude": 1.29795,
     "longitude": 103.77153,
+    "images": [
+      {
+        "src": "/src/assets/techno-edge/techno-edge-1.jpg",
+        "author": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey"
+      },
+      { "src": "/src/assets/techno-edge/techno-edge-2.jpg", "author": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -1983,16 +2009,21 @@
   },
   {
     "elementId": "141913116",
-    "name": "Medicine+Science Library",
+    "name": "Medicine + Science Library",
     "address": "11 Lower Kent Ridge Road",
     "postal": "119083",
     "latitude": 1.29696,
     "longitude": 103.78173,
+    "images": [
+      { "src": "/src/assets/msl/msl-1.jpg", "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En" },
+      { "src": "/src/assets/msl/msl-2.jpg", "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En" },
+      { "src": "/src/assets/msl/msl-3.jpg", "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En",
-        "files": [{ "filetype": ".3dm", "url": "/medicine-science-library/medicine-science-library-rhino.3dm" }]
+        "files": [{ "filetype": ".3dm", "url": "/msl/msl-rhino.3dm" }]
       }
     ]
   },
