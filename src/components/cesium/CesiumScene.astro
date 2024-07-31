@@ -599,6 +599,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '54619794',
   });
 
+  const test = await Cesium3DTileset.fromUrl('/test-compress/tileset.json');
+  console.log(test);
+  viewer.scene.primitives.add(test);
+
   const rhinoBuildingModels: Array<Model | Cesium3DTileset> = [
     rhinoE2A,
     rhinoE6,
