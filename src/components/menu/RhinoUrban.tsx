@@ -29,7 +29,7 @@ const RhinoUrban = () => {
         </div>
         <div>
           <h3>Downloads</h3>
-          <DownloadButton type="Rhino" files={[{ filetype: '.dae', url: '/rhino/rhino-urban.dae' }]}></DownloadButton>
+          <DownloadButton type="Rhino" files={[{ filetype: '.dae', url: '/urban/rhino-urban.dae' }]}></DownloadButton>
         </div>
       </div>
     </>
