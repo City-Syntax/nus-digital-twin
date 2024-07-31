@@ -53,7 +53,19 @@
     "address": "16 College Ave West",
     "postal": "138627",
     "latitude": 1.30716,
-    "longitude": 103.77196
+    "longitude": 103.77196,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Ivy Lim Kai Yee, Jolyn Teo Jing Hui, Yeo Min Beverley Benita",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1HFWE7wJKeP7d4akTdZ99l2nKTIvJ4DNT&export=download"
+          }
+        ]
+      }
+    ]
   },
   {
     "elementId": "732229044",
@@ -305,6 +317,18 @@
     "images": [
       { "src": "/src/assets/lkc-museum/lkc-museum-1.png", "author": "Samantha Peh, Toh Yu En" },
       { "src": "/src/assets/lkc-museum/lkc-museum-2.png", "author": "Samantha Peh, Toh Yu En" }
+    ],
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Samantha Peh, Toh Yu En",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1i6gyAL7XptHf-355mkMeKC9_i_M57WOZ&export=download"
+          }
+        ]
+      }
     ]
   },
   {
@@ -557,7 +581,7 @@
         "files": [
           {
             "filetype": ".3dm",
-            "url": "https://drive.google.com/uc?export=download&id=1H2HcirWVcqgIed4YeViJIV5pUa3xWjc4"
+            "url": "https://drive.usercontent.google.com/download?id=1UfZGq89aNr55ZdAKpy13cPRd2amwGfdc&export=download"
           }
         ]
       }
