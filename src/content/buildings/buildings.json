@@ -301,7 +301,14 @@
     "address": "2 Conservatory Drive",
     "postal": "117377",
     "latitude": 1.30152,
-    "longitude": 103.77361
+    "longitude": 103.77361,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Samantha Peh, Toh Yu En",
+        "files": [{ "filetype": ".3dm", "url": "https://api.cesium.com/v1/assets/2685876/archives/93751/download" }]
+      }
+    ]
   },
   {
     "elementId": "643598737",
