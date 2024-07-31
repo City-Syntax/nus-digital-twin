@@ -302,6 +302,10 @@
     "postal": "117377",
     "latitude": 1.30152,
     "longitude": 103.77361,
+    "images": [
+      { "src": "/src/assets/lkc-museum/lkc-museum-1.png", "author": "Samantha Peh, Toh Yu En" },
+      { "src": "/src/assets/lkc-museum/lkc-museum-2.png", "author": "Samantha Peh, Toh Yu En" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
