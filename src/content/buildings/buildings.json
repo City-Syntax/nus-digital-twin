@@ -1591,10 +1591,11 @@
     "postal": "119618",
     "latitude": 1.29151,
     "longitude": 103.77531,
+    "images": [{ "src": "/src/assets/sheares-hall/sheares-a.jpg", "author": "Jesmine Pang Sheau Xuan" }],
     "downloads": [
       {
         "type": "Rhino",
-        "credits": "Alden Khoo Ding Hong, Jesmine Pang Sheau Xuan",
+        "credits": "Alden Khoo Ding Hong",
         "files": [{ "filetype": ".3dm", "url": "/sheares-hall/sheares-a-rhino.3dm" }]
       }
     ]
