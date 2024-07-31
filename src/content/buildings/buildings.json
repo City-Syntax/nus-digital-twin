@@ -305,13 +305,6 @@
     "images": [
       { "src": "/src/assets/lkc-museum/lkc-museum-1.png", "author": "Samantha Peh, Toh Yu En" },
       { "src": "/src/assets/lkc-museum/lkc-museum-2.png", "author": "Samantha Peh, Toh Yu En" }
-    ],
-    "downloads": [
-      {
-        "type": "Rhino",
-        "credits": "Samantha Peh, Toh Yu En",
-        "files": [{ "filetype": ".3dm", "url": "https://api.cesium.com/v1/assets/2685876/archives/93751/download" }]
-      }
     ]
   },
   {
