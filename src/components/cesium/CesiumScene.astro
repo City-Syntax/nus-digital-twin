@@ -279,7 +279,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     // Disable picking for Rhino Urban Model
-    if (pickedFeature.primitive === rhinoUrbanModel) {
+    if (pickedFeature.primitive && pickedFeature.primitive.featureIdLabel === 'rhino-urban-model') {
       toastMessage.set({
         msg: 'Selecting individual buildings is unavailable for Rhino (Urban) models',
         type: 'default',
@@ -387,13 +387,19 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   }
 
-  const rhinoUrbanModel = await Model.fromGltfAsync({
-    modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.776073, 1.2992870953, 65.8901890799),
-      new HeadingPitchRoll(CesiumMath.toRadians(90), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-    ),
-    url: '/rhino/rhino-urban.gltf',
+  // const rhinoUrbanModel = await Model.fromGltfAsync({
+  //   modelMatrix: Transforms.headingPitchRollToFixedFrame(
+  //     Cartesian3.fromDegrees(103.776073, 1.2992870953, 65.8901890799),
+  //     new HeadingPitchRoll(CesiumMath.toRadians(90), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
+  //   ),
+  //   url: '/rhino/rhino-urban.gltf',
+  //   show: false,
+  // });
+  // viewer.scene.primitives.add(rhinoUrbanModel);
+
+  const rhinoUrbanModel = await Cesium3DTileset.fromUrl('/urban/data/tileset.json', {
     show: false,
+    featureIdLabel: 'rhino-urban-model',
   });
   viewer.scene.primitives.add(rhinoUrbanModel);
 
