@@ -584,6 +584,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '639258228',
   });
 
+  const rhinoShearesA = await Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(103.775214582, 1.2914901374, 30.437453453),
+      new HeadingPitchRoll(CesiumMath.toRadians(111.3), CesiumMath.toRadians(0), CesiumMath.toRadians(90)),
+    ),
+    scale: 0.4,
+    show: false,
+    url: '/sheares-hall/sheares-a-rhino.gltf',
+    featureIdLabel: '455250294',
+  });
+
   const rhinoRvrcG = await Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
       Cartesian3.fromDegrees(103.7767993479, 1.2974922895, 44.840297406),
@@ -623,6 +634,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoKuokFoundationHouse,
     rhinoMedicineScienceLibrary,
     rhinoShearesMain,
+    rhinoShearesA,
     rhinoRvrcG,
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
