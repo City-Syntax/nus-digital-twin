@@ -421,6 +421,10 @@
     "postal": "119280",
     "latitude": 1.30034,
     "longitude": 103.77361,
+    "images": [
+      { "src": "/src/assets/raffles-hall/kuok-foundation-house-1.jpg", "author": "Li Ziming, Caleb Tan Chong Sheng" },
+      { "src": "/src/assets/raffles-hall/kuok-foundation-house-2.jpg", "author": "Li Ziming, Caleb Tan Chong Sheng" }
+    ],
     "downloads": [
       {
         "type": "Rhino",
