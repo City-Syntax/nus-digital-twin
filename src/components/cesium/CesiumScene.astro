@@ -599,6 +599,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: '54619794',
   });
 
+  const rhinoYNCArtsCenter = await Cesium3DTileset.fromIonAssetId(2686261, {
+    show: false,
+    featureIdLabel: '732229049',
+  });
+
   const rhinoBuildingModels: Array<Model | Cesium3DTileset> = [
     rhinoE2A,
     rhinoE6,
@@ -620,6 +625,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoShearesMain,
     rhinoRvrcG,
     rhinoLKCMuseum,
+    rhinoYNCArtsCenter,
   ];
 
   for (const model of rhinoBuildingModels) {
