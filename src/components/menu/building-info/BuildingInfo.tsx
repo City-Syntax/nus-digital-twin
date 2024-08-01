@@ -159,6 +159,15 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
           </p>
         </>
       );
+    case 'occupancySchedule':
+    case 'equipmentUsage':
+    case 'lightingUsage':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content} h/wk</p>
+        </>
+      );
     default:
       return (
         <>

@@ -46,15 +46,15 @@ The data for the buildings displayed can be found in `src/content/buildings/buil
 | thermostatSetPoint          | Specified in degrees Celcius                                                          |
 | coreOutsideAirFlowrate      | Specified in air changes per hour (ACH)                                               |
 | perimeterOutsideAirFlowrate | Specified in air changes per hour (ACH)                                               |
-| coreOccupantDensity         |                                                                                       |
-| perimeterOccupantDensity    |                                                                                       |
-| coreEquipmentPower          |                                                                                       |
-| perimeterEquipmentPower     |                                                                                       |
-| coreLightingPower           |                                                                                       |
-| perimeterLightingPower      |                                                                                       |
-| occupancySchedule           |                                                                                       |
-| equipmentUsage              |                                                                                       |
-| lightingUsage               |                                                                                       |
+| coreOccupantDensity         | Specified in people per square meter                                                  |
+| perimeterOccupantDensity    | Specified in people per square meter                                                  |
+| coreEquipmentPower          | Specified in Watts per square meter                                                   |
+| perimeterEquipmentPower     | Specified in Watts per square meter                                                   |
+| coreLightingPower           | Specified in Watts per square meter                                                   |
+| perimeterLightingPower      | Specified in Watts per square meter                                                   |
+| occupancySchedule           | Specified in hours per week                                                           |
+| equipmentUsage              | Specified in hours per week                                                           |
+| lightingUsage               | Specified in hours per week                                                           |
 | coreOutsideAirSchedule      |                                                                                       |
 | perimeterOutsideAirSchedule |                                                                                       |
 | exhaustAirRecovery          |                                                                                       |
