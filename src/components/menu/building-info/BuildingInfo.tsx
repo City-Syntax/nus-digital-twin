@@ -111,6 +111,16 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
           </p>
         </>
       );
+    case 'northWindowToWallRatio':
+    case 'southWindowToWallRatio':
+    case 'eastWindowToWallRatio':
+    case 'westWindowToWallRatio':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content}%</p>
+        </>
+      );
     default:
       return (
         <>

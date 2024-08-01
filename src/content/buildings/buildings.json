@@ -764,6 +764,14 @@
     "perimeterZoneDepth": 4,
     "wallConstruction": 3.0,
     "roofConstruction": 0.4,
+    "externalWallType": "Precast concrete wall",
+    "internalWalls": "Precast concrete",
+    "fenestrationType": "Windows and doors",
+    "fenestrationShading": "Horizontal panel",
+    "northWindowToWallRatio": 60,
+    "southWindowToWallRatio": 40,
+    "eastWindowToWallRatio": 80,
+    "westWindowToWallRatio": 80,
     "images": [
       { "src": "/src/assets/e6/e6-1.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" },
       { "src": "/src/assets/e6/e6-2.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" }
