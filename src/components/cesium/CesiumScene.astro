@@ -810,12 +810,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     updateLayer();
   });
 
-  const pointsOfInterest = new BillboardCollection();
+  const pointsOfInterest = new BillboardCollection({
+    scene: viewer.scene,
+  });
   pointsOfInterest.add({
     position: Cartesian3.fromDegrees(37358317 / 360000, 93311 / 72000),
-    image: '../mapbox-dark.png',
-    width: 24,
-    height: 24,
+    image: '../dot.png',
+    sizeInMeters: true,
+    height: 16,
+    width: 16,
+    heightReference: HeightReference.CLAMP_TO_GROUND,
   });
 
   viewer.scene.primitives.add(pointsOfInterest);

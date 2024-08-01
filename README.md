@@ -97,3 +97,4 @@ ogr2ogr -f "GeoJSON" output.json input.shp
 - Picking is disabled for Rhino (Urban) Models as individual building data is not available currently.
 - For GIS Layers made up of polygons, such as building footprints and street centerlines, clamping them to ground directly using [`GeoJsonDataSource.clampToGround`](https://cesium.com/learn/ion-sdk/ref-doc/GeoJsonDataSource.html?classFilter=geojson#.clampToGround) results in rendering issues on certain browsers. A [workaround](https://github.com/City-Syntax/nus-digital-twin/pull/74) is used, but the GIS layer may appear on top of the building and not conform to the terrain.
   - See this [post](https://community.cesium.com/t/macos-driver-bug-for-small-clamp-to-ground-polygons/24277) on Cesium forums.
+- Billboard images are provided in `.png` instead of `.svg` due to rendering issues on Cesium. See relevant [GitHub issue](https://github.com/CesiumGS/cesium/issues/4235).
