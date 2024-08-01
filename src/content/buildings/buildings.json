@@ -760,6 +760,10 @@
     "postal": "117608",
     "latitude": 1.29916,
     "longitude": 103.77304,
+    "floorToFloorHeight": 3.005,
+    "perimeterZoneDepth": 4,
+    "wallConstruction": 3.0,
+    "roofConstruction": 0.4,
     "images": [
       { "src": "/src/assets/e6/e6-1.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" },
       { "src": "/src/assets/e6/e6-2.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" }

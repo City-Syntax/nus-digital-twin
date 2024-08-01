@@ -26,10 +26,10 @@ The data for the buildings displayed can be found in `src/content/buildings/buil
 | latitude                    | A number representing the latitude of the building, used to set the camera on search  |
 | latitude                    | A number representing the longitude of the building, used to set the camera on search |
 | downloads                   | The files available for this building, see the table below                            |
-| floorToFloorHeight          |                                                                                       |
-| perimeterZoneDepth          |                                                                                       |
-| wallConstruction            |                                                                                       |
-| roofConstruction            |                                                                                       |
+| floorToFloorHeight          | Specified in meters                                                                   |
+| perimeterZoneDepth          | Specified in meters                                                                   |
+| wallConstruction            | Specified in U value                                                                  |
+| roofConstruction            | Specified in U value                                                                  |
 | externalWallType            |                                                                                       |
 | internalWalls               |                                                                                       |
 | fenestrationType            |                                                                                       |

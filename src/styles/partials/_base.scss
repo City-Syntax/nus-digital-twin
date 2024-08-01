@@ -105,6 +105,12 @@ h3 {
   font-size: var(--text-base);
 }
 
+sup {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.5em;
+}
+
 ul {
   margin: 0;
   padding-left: 0;

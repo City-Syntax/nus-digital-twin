@@ -92,6 +92,25 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
           <Carousel images={content}></Carousel>
         </>
       );
+    case 'floorToFloorHeight':
+    case 'perimeterZoneDepth':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content} m</p>
+        </>
+      );
+    case 'wallConstruction':
+    case 'roofConstruction':
+    case 'windowFrameConductance':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>
+            U:{Number.isInteger(content) ? content + '.0' : content} W/m<sup>2</sup>K
+          </p>
+        </>
+      );
     default:
       return (
         <>
