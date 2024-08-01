@@ -34,18 +34,18 @@ The data for the buildings displayed can be found in `src/content/buildings/buil
 | internalWalls               |                                                                                       |
 | fenestrationType            |                                                                                       |
 | fenestrationShading         |                                                                                       |
-| northWindowToWallRatio      |                                                                                       |
-| southWindowToWallRatio      |                                                                                       |
-| eastWindowToWallRatio       |                                                                                       |
-| westWindowToWallRatio       |                                                                                       |
-| windowFrameConductance      |                                                                                       |
+| northWindowToWallRatio      | Specified in percentage                                                               |
+| southWindowToWallRatio      | Specified in percentage                                                               |
+| eastWindowToWallRatio       | Specified in percentage                                                               |
+| westWindowToWallRatio       | Specified in percentage                                                               |
+| windowFrameConductance      | Specified in U value                                                                  |
 | glazingType                 |                                                                                       |
-| windowLeakage               |                                                                                       |
+| windowLeakage               | Specified in air changes per hour (ACH)                                               |
 | naturalVentilation          |                                                                                       |
 | daylightResponse            |                                                                                       |
-| thermostatSetPoint          |                                                                                       |
-| coreOutsideAirFlowrate      |                                                                                       |
-| perimeterOutsideAirFlowrate |                                                                                       |
+| thermostatSetPoint          | Specified in degrees Celcius                                                          |
+| coreOutsideAirFlowrate      | Specified in air changes per hour (ACH)                                               |
+| perimeterOutsideAirFlowrate | Specified in air changes per hour (ACH)                                               |
 | coreOccupantDensity         |                                                                                       |
 | perimeterOccupantDensity    |                                                                                       |
 | coreEquipmentPower          |                                                                                       |

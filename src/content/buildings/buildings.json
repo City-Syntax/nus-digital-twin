@@ -777,6 +777,9 @@
     "naturalVentilation": "No (closed environment)",
     "daylightResponse": "Continuous",
     "windowLeakage": 1.0,
+    "thermostatSetPoint": 25,
+    "coreOutsideAirFlowrate": 0.5,
+    "perimeterOutsideAirFlowrate": 0.5,
     "images": [
       { "src": "/src/assets/e6/e6-1.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" },
       { "src": "/src/assets/e6/e6-2.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" }

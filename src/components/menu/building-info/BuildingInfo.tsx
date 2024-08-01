@@ -122,10 +122,41 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
         </>
       );
     case 'windowLeakage':
+    case 'coreOutsideAirFlowrate':
+    case 'perimeterOutsideAirFlowrate':
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>
           <p>{Number.isInteger(content) ? content + '.0' : content} ACH</p>
+        </>
+      );
+    case 'thermostatSetPoint':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content}&deg;C</p>
+        </>
+      );
+    case 'coreOccupantDensity':
+    case 'perimeterOccupantDensity':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>
+            {content} pp/m<sup>2</sup>
+          </p>
+        </>
+      );
+    case 'coreEquipmentPower':
+    case 'perimeterEquipmentPower':
+    case 'coreLightingPower':
+    case 'perimeterLightingPower':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>
+            {content} W/m<sup>2</sup>
+          </p>
         </>
       );
     default:
