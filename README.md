@@ -26,35 +26,35 @@ The data for the buildings displayed can be found in `src/content/buildings/buil
 | latitude                    | A number representing the latitude of the building, used to set the camera on search  |
 | latitude                    | A number representing the longitude of the building, used to set the camera on search |
 | downloads                   | The files available for this building, see the table below                            |
-| floorToFloorHeight          |                                                                                       |
-| perimeterZoneDepth          |                                                                                       |
-| wallConstruction            |                                                                                       |
-| roofConstruction            |                                                                                       |
+| floorToFloorHeight          | Specified in meters                                                                   |
+| perimeterZoneDepth          | Specified in meters                                                                   |
+| wallConstruction            | Specified in U value                                                                  |
+| roofConstruction            | Specified in U value                                                                  |
 | externalWallType            |                                                                                       |
 | internalWalls               |                                                                                       |
 | fenestrationType            |                                                                                       |
 | fenestrationShading         |                                                                                       |
-| northWindowToWallRatio      |                                                                                       |
-| southWindowToWallRatio      |                                                                                       |
-| eastWindowToWallRatio       |                                                                                       |
-| westWindowToWallRatio       |                                                                                       |
-| windowFrameConductance      |                                                                                       |
+| northWindowToWallRatio      | Specified in percentage                                                               |
+| southWindowToWallRatio      | Specified in percentage                                                               |
+| eastWindowToWallRatio       | Specified in percentage                                                               |
+| westWindowToWallRatio       | Specified in percentage                                                               |
+| windowFrameConductance      | Specified in U value                                                                  |
 | glazingType                 |                                                                                       |
-| windowLeakage               |                                                                                       |
+| windowLeakage               | Specified in air changes per hour (ACH)                                               |
 | naturalVentilation          |                                                                                       |
 | daylightResponse            |                                                                                       |
-| thermostatSetPoint          |                                                                                       |
-| coreOutsideAirFlowrate      |                                                                                       |
-| perimeterOutsideAirFlowrate |                                                                                       |
-| coreOccupantDensity         |                                                                                       |
-| perimeterOccupantDensity    |                                                                                       |
-| coreEquipmentPower          |                                                                                       |
-| perimeterEquipmentPower     |                                                                                       |
-| coreLightingPower           |                                                                                       |
-| perimeterLightingPower      |                                                                                       |
-| occupancySchedule           |                                                                                       |
-| equipmentUsage              |                                                                                       |
-| lightingUsage               |                                                                                       |
+| thermostatSetPoint          | Specified in degrees Celcius                                                          |
+| coreOutsideAirFlowrate      | Specified in air changes per hour (ACH)                                               |
+| perimeterOutsideAirFlowrate | Specified in air changes per hour (ACH)                                               |
+| coreOccupantDensity         | Specified in people per square meter                                                  |
+| perimeterOccupantDensity    | Specified in people per square meter                                                  |
+| coreEquipmentPower          | Specified in Watts per square meter                                                   |
+| perimeterEquipmentPower     | Specified in Watts per square meter                                                   |
+| coreLightingPower           | Specified in Watts per square meter                                                   |
+| perimeterLightingPower      | Specified in Watts per square meter                                                   |
+| occupancySchedule           | Specified in hours per week                                                           |
+| equipmentUsage              | Specified in hours per week                                                           |
+| lightingUsage               | Specified in hours per week                                                           |
 | coreOutsideAirSchedule      |                                                                                       |
 | perimeterOutsideAirSchedule |                                                                                       |
 | exhaustAirRecovery          |                                                                                       |

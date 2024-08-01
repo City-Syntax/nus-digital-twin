@@ -92,6 +92,82 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
           <Carousel images={content}></Carousel>
         </>
       );
+    case 'floorToFloorHeight':
+    case 'perimeterZoneDepth':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content} m</p>
+        </>
+      );
+    case 'wallConstruction':
+    case 'roofConstruction':
+    case 'windowFrameConductance':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>
+            U:{Number.isInteger(content) ? content + '.0' : content} W/m<sup>2</sup>K
+          </p>
+        </>
+      );
+    case 'northWindowToWallRatio':
+    case 'southWindowToWallRatio':
+    case 'eastWindowToWallRatio':
+    case 'westWindowToWallRatio':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content}%</p>
+        </>
+      );
+    case 'windowLeakage':
+    case 'coreOutsideAirFlowrate':
+    case 'perimeterOutsideAirFlowrate':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{Number.isInteger(content) ? content + '.0' : content} ACH</p>
+        </>
+      );
+    case 'thermostatSetPoint':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content}&deg;C</p>
+        </>
+      );
+    case 'coreOccupantDensity':
+    case 'perimeterOccupantDensity':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>
+            {content} pp/m<sup>2</sup>
+          </p>
+        </>
+      );
+    case 'coreEquipmentPower':
+    case 'perimeterEquipmentPower':
+    case 'coreLightingPower':
+    case 'perimeterLightingPower':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>
+            {content} W/m<sup>2</sup>
+          </p>
+        </>
+      );
+    case 'occupancySchedule':
+    case 'equipmentUsage':
+    case 'lightingUsage':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content} h/wk</p>
+        </>
+      );
     default:
       return (
         <>
