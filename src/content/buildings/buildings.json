@@ -772,6 +772,11 @@
     "southWindowToWallRatio": 40,
     "eastWindowToWallRatio": 80,
     "westWindowToWallRatio": 80,
+    "windowFrameConductance": 15,
+    "glazingType": "Double pane",
+    "naturalVentilation": "No (closed environment)",
+    "daylightResponse": "Continuous",
+    "windowLeakage": 1.0,
     "images": [
       { "src": "/src/assets/e6/e6-1.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" },
       { "src": "/src/assets/e6/e6-2.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" }
