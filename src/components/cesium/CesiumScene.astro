@@ -267,6 +267,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
+    console.log(pickedFeature.id);
+
     if (pickedFeature.id) {
       switch (true) {
         case buildingFootprintsData.entities.contains(pickedFeature.id):
@@ -820,6 +822,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     height: 16,
     width: 16,
     heightReference: HeightReference.CLAMP_TO_GROUND,
+    id: { id: 'cesiumBillboard' },
   });
 
   viewer.scene.primitives.add(pointsOfInterest);
