@@ -48,6 +48,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     HeightReference,
     Camera,
     BillboardCollection,
+    DistanceDisplayCondition,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -821,6 +822,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     sizeInMeters: true,
     height: 16,
     width: 16,
+    distanceDisplayCondition: new DistanceDisplayCondition(0, 1200),
     heightReference: HeightReference.CLAMP_TO_GROUND,
     id: { id: 'cesiumBillboard' },
   });
