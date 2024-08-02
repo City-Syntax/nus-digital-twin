@@ -72,6 +72,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
             content={`Building data by ${buildingProperties.buildingDataCredits}.`}
             arrow={false}
             placement="top-end"
+            maxWidth={'min(calc(100vw - (var(--padding-xs) * 2) - (var(--padding-base)) * 2), 350px)'}
           >
             <button>
               <Icons.About height="20"></Icons.About>
