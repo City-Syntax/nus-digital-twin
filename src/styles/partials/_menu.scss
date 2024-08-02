@@ -181,6 +181,21 @@
   margin-top: auto;
   padding-left: var(--padding-base);
   padding-right: var(--padding-base);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background: none;
+    border: none;
+    color: rgba(var(--base-300));
+    height: 1.375rem;
+
+    > svg {
+      height: 1.375rem;
+      width: 1.375rem;
+    }
+  }
 }
 
 .report-link {

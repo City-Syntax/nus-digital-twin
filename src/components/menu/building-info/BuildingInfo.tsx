@@ -11,6 +11,7 @@ import DownloadButton from '../../primitives/DownloadButton';
 import Carousel from '../../primitives/Carousel';
 import Icons from '../../Icons';
 import ScrollContainer from '../../primitives/ScrollContainer';
+import Tippy from '@tippyjs/react';
 
 type BuildingInfoProps = {
   category: BuildingInfoCategories;
@@ -66,6 +67,13 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           <Icons.Flag></Icons.Flag>
           Report issue
         </a>
+        <div>
+          <Tippy content="Data provided by NUS" arrow={false}>
+            <button>
+              <Icons.About height="20"></Icons.About>
+            </button>
+          </Tippy>
+        </div>
       </div>
     </>
   );
