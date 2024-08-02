@@ -67,13 +67,17 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           <Icons.Flag></Icons.Flag>
           Report issue
         </a>
-        <div>
-          <Tippy content="Data provided by NUS" arrow={false}>
+        {buildingProperties.buildingDataCredits && (
+          <Tippy
+            content={`Building data by ${buildingProperties.buildingDataCredits}.`}
+            arrow={false}
+            placement="top-end"
+          >
             <button>
               <Icons.About height="20"></Icons.About>
             </button>
           </Tippy>
-        </div>
+        )}
       </div>
     </>
   );
