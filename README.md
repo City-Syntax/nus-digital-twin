@@ -25,6 +25,7 @@ The data for the buildings displayed can be found in `src/content/buildings/buil
 | postal                      | The 6-digit postal code for the building                                              |
 | latitude                    | A number representing the latitude of the building, used to set the camera on search  |
 | latitude                    | A number representing the longitude of the building, used to set the camera on search |
+| buildingDataCredits         | The provider of the building data                                                     |
 | downloads                   | The files available for this building, see the table below                            |
 | floorToFloorHeight          | Specified in meters                                                                   |
 | perimeterZoneDepth          | Specified in meters                                                                   |
