@@ -760,6 +760,7 @@
     "postal": "117608",
     "latitude": 1.29916,
     "longitude": 103.77304,
+    "buildingDataCredits": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan",
     "floorToFloorHeight": 3.005,
     "perimeterZoneDepth": 4,
     "wallConstruction": 3.0,

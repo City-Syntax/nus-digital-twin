@@ -3,6 +3,7 @@ import type { ImageProps } from '../types';
 
 const buildingMetadataSchema = z.object({
   elementId: z.string(),
+  buildingDataCredits: z.string().optional(),
   latitude: z.number(),
   longitude: z.number(),
 });

@@ -25,6 +25,7 @@
     "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-scroll-area": "^1.1.0",
     "@radix-ui/react-select": "^2.1.1",
+    "@tippyjs/react": "^4.2.6",
     "astro": "4.11.5",
     "cesium": "^1.119.0",
     "cmdk": "^1.0.0",

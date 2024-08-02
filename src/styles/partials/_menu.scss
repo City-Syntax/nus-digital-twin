@@ -181,6 +181,26 @@
   margin-top: auto;
   padding-left: var(--padding-base);
   padding-right: var(--padding-base);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background: none;
+    border: none;
+    color: rgba(var(--base-300));
+    transition: color 150ms;
+    height: 1.25rem;
+
+    &:hover {
+      color: rgba(var(--base-content));
+    }
+
+    > svg {
+      height: 100%;
+      width: auto;
+    }
+  }
 }
 
 .report-link {
@@ -192,6 +212,7 @@
   gap: 4px;
   transition: color 150ms;
   width: max-content;
+  height: 1.25rem;
 
   > svg {
     height: 0.875rem;

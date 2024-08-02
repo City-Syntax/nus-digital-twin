@@ -11,6 +11,7 @@ import DownloadButton from '../../primitives/DownloadButton';
 import Carousel from '../../primitives/Carousel';
 import Icons from '../../Icons';
 import ScrollContainer from '../../primitives/ScrollContainer';
+import Tippy from '@tippyjs/react';
 
 type BuildingInfoProps = {
   category: BuildingInfoCategories;
@@ -66,6 +67,18 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           <Icons.Flag></Icons.Flag>
           Report issue
         </a>
+        {buildingProperties.buildingDataCredits && (
+          <Tippy
+            content={`Building data by ${buildingProperties.buildingDataCredits}.`}
+            arrow={false}
+            placement="top-end"
+            maxWidth={'min(calc(100vw - (var(--padding-xs) * 2) - (var(--padding-base)) * 2), 350px)'}
+          >
+            <button>
+              <Icons.About height="20"></Icons.About>
+            </button>
+          </Tippy>
+        )}
       </div>
     </>
   );
