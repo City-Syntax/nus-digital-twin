@@ -2,7 +2,6 @@ import { atom, map } from 'nanostores';
 import { persistentAtom, persistentMap } from '@nanostores/persistent';
 import type { GISLayers, MapLayers, MenuPages, Models, Position, UserSettings } from './types';
 
-export const activePage = atom<MenuPages | ''>('');
 export const activePages = map<{
   left: MenuPages | '';
   right: MenuPages | '';

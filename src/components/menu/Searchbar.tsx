@@ -3,7 +3,7 @@ import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from '../Icons';
 import buildingsData from '../../content/buildings/buildings.json';
-import { activePage, activePages, buildingId, flyToPosition } from '../../store';
+import { activePages, buildingId, flyToPosition } from '../../store';
 
 const Searchbar = () => {
   const [open, setOpen] = useState(true);
@@ -67,7 +67,6 @@ const Searchbar = () => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         if (window.innerWidth <= 878) {
-          activePage.set('search');
           activePages.set({
             left: '',
             right: '',
@@ -150,7 +149,11 @@ const Searchbar = () => {
                   if (clearBtnRef.current === document.activeElement) {
                     return;
                   }
-                  activePage.set('building-info');
+                  activePages.set({
+                    ...activePages.get(),
+                    left: 'building-info',
+                    bottom: 'building-info',
+                  });
                   buildingId.set(''); // Force the listener on buildingId to trigger
                   buildingId.set(building.elementId);
                   flyToPosition.set({

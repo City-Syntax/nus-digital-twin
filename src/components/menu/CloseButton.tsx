@@ -1,13 +1,12 @@
 import React from 'react';
 import Icons from '../Icons';
-import { activePage, activePages, isSelectColorByDistance, buildingId } from '../../store';
+import { activePages, isSelectColorByDistance, buildingId } from '../../store';
 
 const CloseButton = () => {
   return (
     <button
       type="button"
       onClick={() => {
-        activePage.set('');
         activePages.set({
           left: '',
           right: '',

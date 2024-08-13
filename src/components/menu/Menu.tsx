@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
-import { activePage, activePages, buildingId, isSelectColorByDistance } from '../../store';
+import { activePages } from '../../store';
 import type { BuildingInfoCategories, NavType } from '../../types';
 import AboutNUSCampus from './AboutNUSCampus';
 import StreetCenterlines from './StreetCenterlines';
@@ -32,7 +32,6 @@ import UBEM from './UBEM';
 import AutoHeight from '../primitives/AutoHeight';
 
 const Menu = () => {
-  const $activePage = useStore(activePage);
   const $activePages = useStore(activePages);
   const [category, setCategory] = useState<BuildingInfoCategories>('general');
   const [helpNavType, setHelpNavType] = useState<NavType>('mouse');

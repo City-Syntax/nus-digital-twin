@@ -1,6 +1,6 @@
 import React from 'react';
 import Icons from '../Icons';
-import { activePage, activePages, buildingId, isSelectColorByDistance } from '../../store';
+import { activePages, buildingId, isSelectColorByDistance } from '../../store';
 import { useStore } from '@nanostores/react';
 import type { MenuPages } from '../../types';
 
@@ -27,7 +27,6 @@ const MenuLink = ({
   isRight,
   isBottom,
 }: MenuLinkProps) => {
-  const $activePage = useStore(activePage);
   const $activePages = useStore(activePages);
   const Icon = Icons[iconName];
   return (
@@ -35,7 +34,6 @@ const MenuLink = ({
       className={`menu-link ${$activePages[dir] === toPage ? 'active' : ''} ${isVertical ? 'vertical' : ''}`}
       type="button"
       onClick={() => {
-        activePage.set(toPage);
         if (isBottom && !(isLeft || isRight)) {
           activePages.set({
             left: '',

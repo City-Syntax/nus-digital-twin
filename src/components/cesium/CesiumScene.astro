@@ -7,7 +7,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
   import {
-    activePage,
+    activePages,
     activeModel,
     buildingId,
     activeMapLayer,
@@ -18,7 +18,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     flyToPosition,
     userSettings,
     toastMessage,
-    activePages,
   } from '../../store';
   import {
     Cartesian2,
@@ -288,7 +287,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    activePage.set('building-info');
     activePages.set({
       ...activePages.get(),
       left: 'building-info',
