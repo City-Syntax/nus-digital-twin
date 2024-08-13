@@ -112,7 +112,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
       const newPercent = currPercent + Math.floor(Math.random() * 3);
       loadingPercentage.textContent = `${newPercent}`;
-      loadingProgress.style.transform = `translateX(-${100 - newPercent}%)`;
+      loadingProgress.style.width = `${newPercent}%`;
       addLoadPercentUntilOffset();
     }, 100);
   })();
@@ -222,7 +222,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       const newPercent = offsetPercent + Math.round(((totalTiles - queuedTiles) / totalTiles) * (100 - offsetPercent));
       if (newPercent > currPercent) {
         loadingPercentage.textContent = `${newPercent}`;
-        loadingProgress.style.transform = `translateX(-${100 - newPercent}%)`;
+        loadingProgress.style.width = `${newPercent}%`;
       }
     }
 
