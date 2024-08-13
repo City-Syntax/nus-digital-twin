@@ -33,6 +33,7 @@ import AutoHeight from '../primitives/AutoHeight';
 
 const Menu = () => {
   const $activePage = useStore(activePage);
+  const $activePages = useStore(activePages);
   const [category, setCategory] = useState<BuildingInfoCategories>('general');
   const [helpNavType, setHelpNavType] = useState<NavType>('mouse');
   const menuLeftRef = useRef<HTMLDivElement>(null);
@@ -40,29 +41,27 @@ const Menu = () => {
   const menuBottomRef = useRef<HTMLDivElement>(null);
 
   // Retain the height of menu bottom before its closes
-  activePage.listen((val) => {
-    if (val === '') {
+  activePages.listen((val) => {
+    if (val.bottom === '') {
       const menuBottom = menuBottomRef.current as HTMLDivElement;
       menuBottom.style.height = menuBottom.clientHeight + 'px';
     }
   });
-  activePages.listen((val) => {
-    console.log(val);
-  });
 
-  useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && activePage.get() !== '') {
-        e.preventDefault();
-        activePage.set('');
-        buildingId.set('');
-        isSelectColorByDistance.set(false);
-      }
-    };
+  // TODO: Escape shortcut for modal
+  // useEffect(() => {
+  //   const down = (e: KeyboardEvent) => {
+  //     if (e.key === 'Escape' && activePage.get() !== '') {
+  //       e.preventDefault();
+  //       activePage.set('');
+  //       buildingId.set('');
+  //       isSelectColorByDistance.set(false);
+  //     }
+  //   };
 
-    document.addEventListener('keydown', down);
-    return () => document.removeEventListener('keydown', down);
-  }, []);
+  //   document.addEventListener('keydown', down);
+  //   return () => document.removeEventListener('keydown', down);
+  // }, []);
 
   return (
     <div>
@@ -71,24 +70,24 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={$activePage !== '' && MENU_PAGES.LEFT.includes($activePage)}
+          in={$activePages.left !== '' && MENU_PAGES.LEFT.includes($activePages.left)}
           timeout={150}
           classNames="menu-left"
           nodeRef={menuLeftRef}
         >
           <div className="menubar-content" ref={menuLeftRef}>
-            {$activePage === 'osm' && <OSMBuildings></OSMBuildings>}
-            {$activePage === 'about' && <AboutNUSCampus></AboutNUSCampus>}
-            {$activePage === 'help' && <Help navType={helpNavType} setNavType={setHelpNavType}></Help>}
-            {$activePage === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
-            {$activePage === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
-            {$activePage === 'green-spaces' && <GreenSpaces></GreenSpaces>}
-            {$activePage === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
-            {$activePage === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
-            {$activePage === 'ubem' && <UBEM></UBEM>}
-            {$activePage === 'bim' && <BIMModels></BIMModels>}
-            {$activePage === 'settings' && <Settings></Settings>}
-            {$activePage === 'building-info' && (
+            {$activePages.left === 'osm' && <OSMBuildings></OSMBuildings>}
+            {$activePages.left === 'about' && <AboutNUSCampus></AboutNUSCampus>}
+            {$activePages.left === 'help' && <Help navType={helpNavType} setNavType={setHelpNavType}></Help>}
+            {$activePages.left === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
+            {$activePages.left === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
+            {$activePages.left === 'green-spaces' && <GreenSpaces></GreenSpaces>}
+            {$activePages.left === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
+            {$activePages.left === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
+            {$activePages.left === 'ubem' && <UBEM></UBEM>}
+            {$activePages.left === 'bim' && <BIMModels></BIMModels>}
+            {$activePages.left === 'settings' && <Settings></Settings>}
+            {$activePages.left === 'building-info' && (
               <BuildingInfo category={category} setCategory={setCategory}></BuildingInfo>
             )}
           </div>
@@ -98,18 +97,18 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={$activePage !== '' && MENU_PAGES.RIGHT.includes($activePage)}
+          in={$activePages.right !== '' && MENU_PAGES.RIGHT.includes($activePages.right)}
           timeout={150}
           classNames="menu-right"
           nodeRef={menuRightRef}
         >
           <div className="menubar-content" ref={menuRightRef}>
-            {$activePage === 'buildings' && <Buildings></Buildings>}
-            {$activePage === 'energy' && <Energy></Energy>}
-            {$activePage === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
-            {$activePage === 'wind' && <Wind></Wind>}
-            {$activePage === 'solar' && <Solar></Solar>}
-            {$activePage === 'distance' && <Distance></Distance>}
+            {$activePages.right === 'buildings' && <Buildings></Buildings>}
+            {$activePages.right === 'energy' && <Energy></Energy>}
+            {$activePages.right === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
+            {$activePages.right === 'wind' && <Wind></Wind>}
+            {$activePages.right === 'solar' && <Solar></Solar>}
+            {$activePages.right === 'distance' && <Distance></Distance>}
           </div>
         </CSSTransition>
         <MenuRight></MenuRight>
@@ -118,37 +117,37 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={$activePage !== '' && MENU_PAGES.BOTTOM.includes($activePage)}
+          in={$activePages.bottom !== '' && MENU_PAGES.BOTTOM.includes($activePages.bottom)}
           timeout={150}
           classNames="menu-bottom"
           nodeRef={menuBottomRef}
         >
           <div className="menubar-content" ref={menuBottomRef}>
             <AutoHeight>
-              {$activePage === 'about' && <AboutNUSCampus></AboutNUSCampus>}
-              {$activePage === 'building-info' && (
+              {$activePages.bottom === 'about' && <AboutNUSCampus></AboutNUSCampus>}
+              {$activePages.bottom === 'building-info' && (
                 <BuildingInfo category={category} setCategory={setCategory}></BuildingInfo>
               )}
-              {$activePage === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
-              {$activePage === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
-              {$activePage === 'green-spaces' && <GreenSpaces></GreenSpaces>}
-              {$activePage === 'bim' && <BIMModels></BIMModels>}
-              {$activePage === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
-              {$activePage === 'osm' && <OSMBuildings></OSMBuildings>}
-              {$activePage === 'ubem' && <UBEM></UBEM>}
-              {$activePage === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
-              {$activePage === 'buildings' && <Buildings></Buildings>}
-              {$activePage === 'energy' && <Energy></Energy>}
-              {$activePage === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
-              {$activePage === 'wind' && <Wind></Wind>}
-              {$activePage === 'solar' && <Solar></Solar>}
-              {$activePage === 'distance' && <Distance></Distance>}
-              {$activePage === 'help' && <Help navType={helpNavType} setNavType={setHelpNavType}></Help>}
-              {$activePage === 'settings' && <Settings></Settings>}
-              {$activePage === 'search' && <Search></Search>}
-              {$activePage === 'controls' && <Controls></Controls>}
-              {$activePage === 'layers' && <Layers></Layers>}
-              {$activePage === 'menu' && <MoreMenu></MoreMenu>}
+              {$activePages.bottom === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
+              {$activePages.bottom === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
+              {$activePages.bottom === 'green-spaces' && <GreenSpaces></GreenSpaces>}
+              {$activePages.bottom === 'bim' && <BIMModels></BIMModels>}
+              {$activePages.bottom === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
+              {$activePages.bottom === 'osm' && <OSMBuildings></OSMBuildings>}
+              {$activePages.bottom === 'ubem' && <UBEM></UBEM>}
+              {$activePages.bottom === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
+              {$activePages.bottom === 'buildings' && <Buildings></Buildings>}
+              {$activePages.bottom === 'energy' && <Energy></Energy>}
+              {$activePages.bottom === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
+              {$activePages.bottom === 'wind' && <Wind></Wind>}
+              {$activePages.bottom === 'solar' && <Solar></Solar>}
+              {$activePages.bottom === 'distance' && <Distance></Distance>}
+              {$activePages.bottom === 'help' && <Help navType={helpNavType} setNavType={setHelpNavType}></Help>}
+              {$activePages.bottom === 'settings' && <Settings></Settings>}
+              {$activePages.bottom === 'search' && <Search></Search>}
+              {$activePages.bottom === 'controls' && <Controls></Controls>}
+              {$activePages.bottom === 'layers' && <Layers></Layers>}
+              {$activePages.bottom === 'menu' && <MoreMenu></MoreMenu>}
             </AutoHeight>
           </div>
         </CSSTransition>

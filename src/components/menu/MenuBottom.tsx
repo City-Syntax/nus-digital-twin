@@ -17,7 +17,7 @@ const MenuBottom = () => {
         <MenuLink toPage="controls" isVertical isBottom label="Controls" iconName="Controls"></MenuLink>
       </div>
       <div className="menu-list show-sm">
-        <MenuLink toPage="help" isVertical isBottom label="Help" iconName="Help"></MenuLink>
+        <MenuLink toPage="help" isVertical isBottom isLeft label="Help" iconName="Help"></MenuLink>
       </div>
       <div className="menu-list show-sm">
         <MenuLink toPage="settings" isVertical isBottom isLeft label="Settings" iconName="Settings"></MenuLink>
