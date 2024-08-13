@@ -6,7 +6,7 @@
 
 $xs: 378px;
 $sm: 448px;
-$md: 878px;
+$md: 1252px;
 
 @mixin property($variable: variable, $syntax: '<number>', $inherits: true, $initial-value: 0) {
   @property --#{$variable} {

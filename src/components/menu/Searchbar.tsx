@@ -35,7 +35,7 @@ const Searchbar = () => {
 
   const focusOnInput = useCallback(() => {
     const [desktopSearch, mobileSearch] = document.querySelectorAll('input');
-    if (window.innerWidth <= 878) {
+    if (window.innerWidth <= 1252) {
       mobileSearch.focus();
     } else {
       desktopSearch.focus();
@@ -66,7 +66,7 @@ const Searchbar = () => {
       }
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        if (window.innerWidth <= 878) {
+        if (window.innerWidth <= 1252) {
           activePages.set({
             left: '',
             right: '',
