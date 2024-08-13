@@ -110,7 +110,7 @@
   @include menu-x-base;
   width: 388px;
 
-  @media screen and (max-width: $md) {
+  @media screen and (max-width: $lg) {
     width: 100%;
   }
 }
@@ -136,7 +136,7 @@
   }
 }
 
-@media screen and (max-width: $md) {
+@media screen and (max-width: $lg) {
   .scroll-area-viewport:has(.menubar-content-body) {
     .menu-bottom & {
       max-height: 46vh;
@@ -328,7 +328,7 @@
     }
   }
 
-  @media screen and (max-width: $md) {
+  @media screen and (max-width: $lg) {
     > button:not(:first-child) {
       @include btn-lg;
     }
@@ -404,7 +404,7 @@
   transition: all 150ms cubic-bezier(0.65, 0, 0.35, 1);
   margin-right: 4px;
 
-  @media screen and (max-width: $md) {
+  @media screen and (max-width: $lg) {
     margin-right: 8px;
   }
 
