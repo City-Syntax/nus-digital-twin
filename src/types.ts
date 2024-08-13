@@ -12,6 +12,8 @@ export type UserSettings = {
   reducedMotion: boolean;
 };
 
+export type MenuDir = 'left' | 'right' | 'bottom';
+
 export type NavType = 'mouse' | 'touch';
 
 export type MenuPages =

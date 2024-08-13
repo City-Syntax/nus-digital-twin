@@ -2,13 +2,13 @@ import React from 'react';
 import Icons from '../Icons';
 import { activePages, buildingId, isSelectColorByDistance } from '../../store';
 import { useStore } from '@nanostores/react';
-import type { MenuPages } from '../../types';
+import type { MenuDir, MenuPages } from '../../types';
 
 interface MenuLinkProps {
   label: string;
   toPage: MenuPages;
   iconName: keyof typeof Icons;
-  dir: 'left' | 'right' | 'bottom';
+  dir: MenuDir;
   isVertical?: boolean;
   isActive?: boolean;
   isBottom?: boolean;

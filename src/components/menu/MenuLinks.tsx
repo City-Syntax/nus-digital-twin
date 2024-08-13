@@ -2,9 +2,10 @@ import React from 'react';
 import { activeGISLayer, activeModel, buildingColorSetting } from '../../store';
 import MenuLink from './MenuLink';
 import { useStore } from '@nanostores/react';
+import type { MenuDir } from '../../types';
 
 type MenuLinksProps = {
-  dir: 'left' | 'right' | 'bottom';
+  dir: MenuDir;
 };
 
 const GISLayers = ({ dir }: MenuLinksProps) => {
