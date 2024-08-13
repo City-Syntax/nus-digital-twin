@@ -47,6 +47,11 @@ const MenuLink = ({
             bottom: isBottom ? toPage : $activePages.bottom,
           });
         }
+
+        if (dir === 'left') {
+          buildingId.set('');
+        }
+
         isSelectColorByDistance.set(false);
       }}
     >
