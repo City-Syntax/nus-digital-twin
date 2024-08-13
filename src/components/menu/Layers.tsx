@@ -8,7 +8,7 @@ const Layers = () => {
     <>
       <div className="menubar-content-header">
         <h2>Layers</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="layers"></CloseButton>
       </div>
       <ScrollContainer>
         <div className="menubar-content-body">

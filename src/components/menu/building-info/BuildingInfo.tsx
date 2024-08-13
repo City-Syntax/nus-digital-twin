@@ -30,7 +30,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
     <>
       <div className="menubar-content-header">
         <h2>{buildingProperties.name}</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="building-info"></CloseButton>
       </div>
       <ScrollContainer>
         <div className="menubar-content-body">

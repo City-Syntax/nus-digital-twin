@@ -10,7 +10,7 @@ const GreenSpaces = () => {
     <>
       <div className="menubar-content-header">
         <h2>Layers: Green Spaces</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="green-spaces"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <div>Highlight green spaces. Green spaces refer to open-space areas reserved for nature.</div>

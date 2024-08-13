@@ -8,7 +8,7 @@ const MoreMenu = () => {
     <>
       <div className="menubar-content-header">
         <h2>Menu</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="menu"></CloseButton>
       </div>
       <ScrollContainer>
         <div className="menubar-content-body">

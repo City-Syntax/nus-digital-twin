@@ -11,7 +11,7 @@ const Distance = () => {
     <>
       <div className="menubar-content-header">
         <h2>Controls: Distance</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="distance"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <div>

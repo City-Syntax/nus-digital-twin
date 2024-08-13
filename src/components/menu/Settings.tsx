@@ -10,7 +10,7 @@ const Settings = () => {
     <>
       <div className="menubar-content-header">
         <h2>Settings</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="settings"></CloseButton>
       </div>
       <ScrollContainer>
         <div className="menubar-content-body">

@@ -6,7 +6,7 @@ const Buildings = () => {
     <>
       <div className="menubar-content-header">
         <h2>Controls: Buildings</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="buildings"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <p>This feature is under construction.</p>

@@ -9,7 +9,7 @@ const RhinoBuildings = () => {
     <>
       <div className="menubar-content-header">
         <h2>Layers: Rhino Models (Building)</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="rhino-building"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <div>Displays Rhino Building Scale models.</div>

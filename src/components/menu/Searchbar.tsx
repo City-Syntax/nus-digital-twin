@@ -29,7 +29,9 @@ const Searchbar = () => {
   // https://github.com/pacocoursey/cmdk/issues/234
   const scrollUpOnChange = useCallback(() => {
     requestAnimationFrame(() => {
-      listRef!.current!.scrollTo({ top: 0 });
+      if (listRef && listRef.current) {
+        listRef.current.scrollTo({ top: 0 });
+      }
     });
   }, []);
 

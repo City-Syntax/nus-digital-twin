@@ -8,7 +8,7 @@ const Controls = () => {
     <>
       <div className="menubar-content-header">
         <h2>Controls</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="controls"></CloseButton>
       </div>
       <ScrollContainer>
         <div className="menubar-content-body">
