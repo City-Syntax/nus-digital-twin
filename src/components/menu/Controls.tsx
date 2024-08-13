@@ -13,7 +13,7 @@ const Controls = () => {
       <ScrollContainer>
         <div className="menubar-content-body">
           <div className="menu-list">
-            <MenuLinks.Controls />
+            <MenuLinks.Controls dir="bottom" />
           </div>
         </div>
       </ScrollContainer>

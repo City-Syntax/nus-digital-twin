@@ -8,6 +8,7 @@ interface MenuLinkProps {
   label: string;
   toPage: MenuPages;
   iconName: keyof typeof Icons;
+  dir: 'left' | 'right' | 'bottom';
   isVertical?: boolean;
   isActive?: boolean;
   isBottom?: boolean;
@@ -15,13 +16,23 @@ interface MenuLinkProps {
   isRight?: boolean;
 }
 
-const MenuLink = ({ label, toPage, iconName, isVertical, isActive, isLeft, isRight, isBottom }: MenuLinkProps) => {
+const MenuLink = ({
+  label,
+  toPage,
+  iconName,
+  dir = 'left',
+  isVertical,
+  isActive,
+  isLeft,
+  isRight,
+  isBottom,
+}: MenuLinkProps) => {
   const $activePage = useStore(activePage);
   const $activePages = useStore(activePages);
   const Icon = Icons[iconName];
   return (
     <button
-      className={`menu-link ${$activePage === toPage ? 'active' : ''} ${isVertical ? 'vertical' : ''}`}
+      className={`menu-link ${$activePages[dir] === toPage ? 'active' : ''} ${isVertical ? 'vertical' : ''}`}
       type="button"
       onClick={() => {
         activePage.set(toPage);

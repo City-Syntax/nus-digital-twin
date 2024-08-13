@@ -14,15 +14,15 @@ const Layers = () => {
         <div className="menubar-content-body">
           <div className="menu-list">
             <div className="menu-list-title">GIS Layers</div>
-            <MenuLinks.GISLayers />
+            <MenuLinks.GISLayers dir="bottom" />
           </div>
           <div className="menu-list">
             <div className="menu-list-title">Building Scale Models</div>
-            <MenuLinks.BuildingScaleModels />
+            <MenuLinks.BuildingScaleModels dir="bottom" />
           </div>
           <div className="menu-list">
             <div className="menu-list-title">Urban Scale Models</div>
-            <MenuLinks.UrbanScaleModels />
+            <MenuLinks.UrbanScaleModels dir="bottom" />
           </div>
         </div>
       </ScrollContainer>

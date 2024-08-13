@@ -3,7 +3,11 @@ import { activeGISLayer, activeModel, buildingColorSetting } from '../../store';
 import MenuLink from './MenuLink';
 import { useStore } from '@nanostores/react';
 
-const GISLayers = () => {
+type MenuLinksProps = {
+  dir: 'left' | 'right' | 'bottom';
+};
+
+const GISLayers = ({ dir }: MenuLinksProps) => {
   const $activeGISLayer = useStore(activeGISLayer);
   return (
     <>
@@ -11,6 +15,7 @@ const GISLayers = () => {
         toPage="street-centerlines"
         label="Street Centerlines"
         iconName="StreetCenterlines"
+        dir={dir}
         isActive={$activeGISLayer.has('street-centerlines')}
         isLeft
         isBottom
@@ -19,6 +24,7 @@ const GISLayers = () => {
         toPage="building-footprints"
         label="Building Footprints"
         iconName="BuildingFootprints"
+        dir={dir}
         isActive={$activeGISLayer.has('building-footprints')}
         isLeft
         isBottom
@@ -27,6 +33,7 @@ const GISLayers = () => {
         toPage="green-spaces"
         label="Green Spaces"
         iconName="GreenSpaces"
+        dir={dir}
         isActive={$activeGISLayer.has('green-spaces')}
         isLeft
         isBottom
@@ -35,7 +42,7 @@ const GISLayers = () => {
   );
 };
 
-const BuildingScaleModels = () => {
+const BuildingScaleModels = ({ dir }: MenuLinksProps) => {
   const $activeModel = useStore(activeModel);
 
   return (
@@ -44,6 +51,7 @@ const BuildingScaleModels = () => {
         toPage="bim"
         label="BIM Models"
         iconName="BIMModels"
+        dir={dir}
         isActive={$activeModel === 'bim'}
         isLeft
         isBottom
@@ -52,6 +60,7 @@ const BuildingScaleModels = () => {
         toPage="rhino-building"
         label="Rhino (Building)"
         iconName="RhinoModels"
+        dir={dir}
         isActive={$activeModel === 'rhino-building'}
         isLeft
         isBottom
@@ -60,7 +69,7 @@ const BuildingScaleModels = () => {
   );
 };
 
-const UrbanScaleModels = () => {
+const UrbanScaleModels = ({ dir }: MenuLinksProps) => {
   const $activeModel = useStore(activeModel);
 
   return (
@@ -69,6 +78,7 @@ const UrbanScaleModels = () => {
         toPage="osm"
         label="OSM Buildings"
         iconName="OSMBuildings"
+        dir={dir}
         isActive={$activeModel === 'osm'}
         isLeft
         isBottom
@@ -77,29 +87,38 @@ const UrbanScaleModels = () => {
         toPage="rhino-urban"
         label="Rhino (Urban)"
         iconName="RhinoModels"
+        dir={dir}
         isActive={$activeModel === 'rhino-urban'}
         isLeft
         isBottom
       ></MenuLink>
-      <MenuLink toPage="ubem" label="UBEM" iconName="UBEM" isLeft isBottom></MenuLink>
+      <MenuLink toPage="ubem" label="UBEM" iconName="UBEM" dir={dir} isLeft isBottom></MenuLink>
     </>
   );
 };
 
-const Controls = () => {
+const Controls = ({ dir }: MenuLinksProps) => {
   const $buildingColorSetting = useStore(buildingColorSetting);
   const $activeModel = useStore(activeModel);
   return (
     <>
-      <MenuLink toPage="buildings" label="Buildings" iconName="Buildings" isRight isBottom></MenuLink>
-      <MenuLink toPage="energy" label="Energy" iconName="Energy" isRight isBottom></MenuLink>
-      <MenuLink toPage="thermal-comfort" label="Thermal Comfort" iconName="ThermalComfort" isRight isBottom></MenuLink>
-      <MenuLink toPage="wind" label="Wind" iconName="Wind" isRight isBottom></MenuLink>
-      <MenuLink toPage="solar" label="Solar" iconName="Solar" isRight isBottom></MenuLink>
+      <MenuLink toPage="buildings" label="Buildings" iconName="Buildings" dir={dir} isRight isBottom></MenuLink>
+      <MenuLink toPage="energy" label="Energy" iconName="Energy" dir={dir} isRight isBottom></MenuLink>
+      <MenuLink
+        toPage="thermal-comfort"
+        label="Thermal Comfort"
+        dir={dir}
+        iconName="ThermalComfort"
+        isRight
+        isBottom
+      ></MenuLink>
+      <MenuLink toPage="wind" label="Wind" dir={dir} iconName="Wind" isRight isBottom></MenuLink>
+      <MenuLink toPage="solar" label="Solar" dir={dir} iconName="Solar" isRight isBottom></MenuLink>
       <MenuLink
         toPage="distance"
         label="Distance"
         iconName="Distance"
+        dir={dir}
         isActive={$buildingColorSetting === 'distance' && $activeModel === 'osm'}
         isRight
         isBottom
