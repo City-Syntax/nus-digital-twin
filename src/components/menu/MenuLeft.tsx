@@ -35,7 +35,7 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLink toPage="about" label="About NUS Campus" iconName="About"></MenuLink>
+              <MenuLink toPage="about" label="About NUS Campus" iconName="About" isLeft isBottom></MenuLink>
             </div>
           </div>
           <div className="menu-list">
@@ -78,8 +78,8 @@ const MenuLeft = () => {
       </ScrollContainer>
       <div className="menubar-footer">
         <div className="menu-list">
-          <MenuLink toPage="help" label="Help" iconName="Help"></MenuLink>
-          <MenuLink toPage="settings" label="Settings" iconName="Settings"></MenuLink>
+          <MenuLink toPage="help" label="Help" iconName="Help" isLeft isBottom></MenuLink>
+          <MenuLink toPage="settings" label="Settings" iconName="Settings" isLeft isBottom></MenuLink>
         </div>
       </div>
     </nav>

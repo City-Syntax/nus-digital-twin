@@ -3,7 +3,7 @@ import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from '../Icons';
 import buildingsData from '../../content/buildings/buildings.json';
-import { activePage, buildingId, flyToPosition } from '../../store';
+import { activePage, activePages, buildingId, flyToPosition } from '../../store';
 
 const Searchbar = () => {
   const [open, setOpen] = useState(true);
@@ -68,6 +68,11 @@ const Searchbar = () => {
         e.preventDefault();
         if (window.innerWidth <= 878) {
           activePage.set('search');
+          activePages.set({
+            left: '',
+            right: '',
+            bottom: 'search',
+          });
           if (mobileSearch) {
             mobileSearch.focus();
           }

@@ -13,8 +13,8 @@ const MoreMenu = () => {
       <ScrollContainer>
         <div className="menubar-content-body">
           <div className="menu-list">
-            <MenuLink toPage="help" label="Help" iconName="Help"></MenuLink>
-            <MenuLink toPage="settings" label="Settings" iconName="Settings"></MenuLink>
+            <MenuLink toPage="help" label="Help" iconName="Help" isBottom isLeft></MenuLink>
+            <MenuLink toPage="settings" label="Settings" iconName="Settings" isBottom isLeft></MenuLink>
           </div>
         </div>
       </ScrollContainer>

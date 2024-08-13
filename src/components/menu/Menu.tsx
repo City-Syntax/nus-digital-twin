@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
-import { activePage, buildingId, isSelectColorByDistance } from '../../store';
+import { activePage, activePages, buildingId, isSelectColorByDistance } from '../../store';
 import type { BuildingInfoCategories, NavType } from '../../types';
 import AboutNUSCampus from './AboutNUSCampus';
 import StreetCenterlines from './StreetCenterlines';
@@ -45,6 +45,9 @@ const Menu = () => {
       const menuBottom = menuBottomRef.current as HTMLDivElement;
       menuBottom.style.height = menuBottom.clientHeight + 'px';
     }
+  });
+  activePages.listen((val) => {
+    console.log(val);
   });
 
   useEffect(() => {

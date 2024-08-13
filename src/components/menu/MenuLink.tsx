@@ -1,6 +1,6 @@
 import React from 'react';
 import Icons from '../Icons';
-import { activePage, buildingId, isSelectColorByDistance } from '../../store';
+import { activePage, activePages, buildingId, isSelectColorByDistance } from '../../store';
 import { useStore } from '@nanostores/react';
 import type { MenuPages } from '../../types';
 
@@ -10,10 +10,14 @@ interface MenuLinkProps {
   iconName: keyof typeof Icons;
   isVertical?: boolean;
   isActive?: boolean;
+  isBottom?: boolean;
+  isLeft?: boolean;
+  isRight?: boolean;
 }
 
-const MenuLink = ({ label, toPage, iconName, isVertical, isActive }: MenuLinkProps) => {
+const MenuLink = ({ label, toPage, iconName, isVertical, isActive, isLeft, isRight, isBottom }: MenuLinkProps) => {
   const $activePage = useStore(activePage);
+  const $activePages = useStore(activePages);
   const Icon = Icons[iconName];
   return (
     <button
@@ -21,6 +25,20 @@ const MenuLink = ({ label, toPage, iconName, isVertical, isActive }: MenuLinkPro
       type="button"
       onClick={() => {
         activePage.set(toPage);
+        if (isBottom && !(isLeft || isRight)) {
+          activePages.set({
+            left: '',
+            right: '',
+            bottom: toPage,
+          });
+        } else {
+          activePages.set({
+            left: isLeft ? toPage : $activePages.left,
+            right: isRight ? toPage : $activePages.right,
+            bottom: isBottom ? toPage : $activePages.bottom,
+          });
+        }
+
         buildingId.set('');
         isSelectColorByDistance.set(false);
       }}

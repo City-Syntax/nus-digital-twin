@@ -3,6 +3,15 @@ import { persistentAtom, persistentMap } from '@nanostores/persistent';
 import type { GISLayers, MapLayers, MenuPages, Models, Position, UserSettings } from './types';
 
 export const activePage = atom<MenuPages | ''>('');
+export const activePages = map<{
+  left: MenuPages | '';
+  right: MenuPages | '';
+  bottom: MenuPages | '';
+}>({
+  left: '',
+  right: '',
+  bottom: '',
+});
 export const activeMapLayer = persistentAtom<MapLayers>('mapLayer', 'street');
 export const activeGISLayer = atom<Set<GISLayers>>(new Set());
 

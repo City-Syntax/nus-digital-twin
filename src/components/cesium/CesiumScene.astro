@@ -18,6 +18,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     flyToPosition,
     userSettings,
     toastMessage,
+    activePages,
   } from '../../store';
   import {
     Cartesian2,
@@ -288,6 +289,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     activePage.set('building-info');
+    activePages.set({
+      ...activePages.get(),
+      left: 'building-info',
+      bottom: 'building-info',
+    });
     buildingId.set(''); // Force the listener on buildingId to trigger
 
     if (
