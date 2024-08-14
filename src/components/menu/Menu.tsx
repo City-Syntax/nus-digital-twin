@@ -47,21 +47,6 @@ const Menu = () => {
     }
   });
 
-  // TODO: Escape shortcut for modal
-  // useEffect(() => {
-  //   const down = (e: KeyboardEvent) => {
-  //     if (e.key === 'Escape' && activePage.get() !== '') {
-  //       e.preventDefault();
-  //       activePage.set('');
-  //       buildingId.set('');
-  //       isSelectColorByDistance.set(false);
-  //     }
-  //   };
-
-  //   document.addEventListener('keydown', down);
-  //   return () => document.removeEventListener('keydown', down);
-  // }, []);
-
   return (
     <div>
       <div className="menu-left show-md">
