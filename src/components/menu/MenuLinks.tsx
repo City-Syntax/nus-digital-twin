@@ -128,9 +128,19 @@ const Controls = ({ dir }: MenuLinksProps) => {
   );
 };
 
+const Menu = ({ dir }: MenuLinksProps) => {
+  return (
+    <>
+      <MenuLink toPage="help" label="Help" iconName="Help" dir={dir} isBottom isLeft></MenuLink>
+      <MenuLink toPage="settings" label="Settings" iconName="Settings" dir={dir} isBottom isLeft></MenuLink>
+    </>
+  );
+};
+
 export default {
   GISLayers,
   BuildingScaleModels,
   UrbanScaleModels,
   Controls,
+  Menu,
 };

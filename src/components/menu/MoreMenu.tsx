@@ -2,6 +2,7 @@ import React from 'react';
 import MenuLink from './MenuLink';
 import CloseButton from './CloseButton';
 import ScrollContainer from '../primitives/ScrollContainer';
+import MenuLinks from './MenuLinks';
 
 const MoreMenu = () => {
   return (
@@ -13,8 +14,7 @@ const MoreMenu = () => {
       <ScrollContainer>
         <div className="menubar-content-body">
           <div className="menu-list">
-            <MenuLink toPage="help" label="Help" iconName="Help" dir="bottom" isBottom isLeft></MenuLink>
-            <MenuLink toPage="settings" label="Settings" iconName="Settings" dir="bottom" isBottom isLeft></MenuLink>
+            <MenuLinks.Menu dir="bottom"></MenuLinks.Menu>
           </div>
         </div>
       </ScrollContainer>

@@ -78,8 +78,7 @@ const MenuLeft = () => {
       </ScrollContainer>
       <div className="menubar-footer">
         <div className="menu-list">
-          <MenuLink toPage="help" label="Help" iconName="Help" dir="left" isLeft isBottom></MenuLink>
-          <MenuLink toPage="settings" label="Settings" iconName="Settings" dir="left" isLeft isBottom></MenuLink>
+          <MenuLinks.Menu dir="left"></MenuLinks.Menu>
         </div>
       </div>
     </nav>
