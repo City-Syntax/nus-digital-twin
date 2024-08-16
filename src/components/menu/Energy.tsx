@@ -16,7 +16,6 @@ const Energy = () => {
 
   const handleSelect = (newId = $buildingId) => {
     const buildingProperties = buildingsData.filter((d) => d.elementId == newId)[0];
-    console.log('hello');
     if (
       !newId ||
       (graphType === 'eu' && !buildingProperties.energyUse) ||
@@ -98,7 +97,7 @@ const Energy = () => {
               data={data}
               keys={['equipment', 'lighting', 'cooling', 'heating', 'hotWater']}
               indexBy="month"
-              margin={{ top: 20, right: 30, bottom: 70, left: 80 }}
+              margin={{ top: 20, right: 22, bottom: 70, left: 72 }}
               padding={0.3}
               valueScale={{ type: 'linear' }}
               indexScale={{ type: 'band', round: true }}
@@ -112,19 +111,13 @@ const Energy = () => {
                 truncateTickAt: 0,
               }}
               axisLeft={{
-                tickSize: 5,
-                tickPadding: 5,
+                tickSize: 3,
+                tickPadding: 2,
                 tickRotation: 0,
-                legend: 'kWh',
+                legend: graphType === 'eu' ? 'kWh' : <>kWhm&sup2;</>,
                 legendPosition: 'middle',
                 legendOffset: -60,
                 truncateTickAt: 0,
-              }}
-              labelSkipWidth={12}
-              labelSkipHeight={12}
-              labelTextColor={{
-                from: 'color',
-                modifiers: [['brighter', 2]],
               }}
               tooltip={({ id, value }) => {
                 return (
