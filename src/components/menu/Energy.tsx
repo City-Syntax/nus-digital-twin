@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import CloseButton from './CloseButton';
-import { ResponsiveBar } from '@nivo/bar';
+import { ResponsiveBar, type BarDatum, type ComputedBarDatum, type ComputedDatum } from '@nivo/bar';
 import buildingsData from '../../content/buildings/buildings.json';
 import { useStore } from '@nanostores/react';
 import { buildingId } from '../../store';
+import Select from '../primitives/Select';
 const energyData = import.meta.glob('../../content/energy/*.json');
+
+type EnergyGraphType = 'eu' | 'eui';
 
 const Energy = () => {
   const $buildingId = useStore(buildingId);
   const [data, setData] = useState<any>(null);
-  const [isEnergyUse, setIsEnergyUse] = useState(false);
+  const [graphType, setGraphType] = useState<EnergyGraphType>('eu');
 
   const handleSelect = (newId = $buildingId) => {
     const buildingProperties = buildingsData.filter((d) => d.elementId == newId)[0];
+    console.log('hello');
     if (
       !newId ||
-      (!isEnergyUse && !buildingProperties.energyUse) ||
-      (isEnergyUse && !buildingProperties.energyUseIntensity)
+      (graphType === 'eu' && !buildingProperties.energyUse) ||
+      (graphType === 'eui' && !buildingProperties.energyUseIntensity)
     ) {
       setData(null);
       return;
     }
 
     energyData[
-      `../../content/energy/${isEnergyUse ? buildingProperties.energyUseIntensity : buildingProperties.energyUse}.json`
+      `../../content/energy/${graphType === 'eu' ? buildingProperties.energyUse : buildingProperties.energyUseIntensity}.json`
     ]().then((res: any) => {
       setData(res.default);
     });
@@ -31,14 +35,7 @@ const Energy = () => {
 
   useEffect(() => {
     handleSelect();
-  }, []);
-
-  buildingId.listen((newId) => {
-    if (!newId) {
-      return;
-    }
-    handleSelect(newId);
-  });
+  }, [$buildingId, graphType]);
 
   const colors = {
     cooling: '#2563eb',
@@ -47,7 +44,7 @@ const Energy = () => {
     heating: '#f87171',
     hotWater: '#fecaca',
   };
-  const getColor = (bar: any) => {
+  const getColor = (bar: ComputedDatum<BarDatum>) => {
     return colors[bar.id as keyof typeof colors];
   };
 
@@ -58,6 +55,16 @@ const Energy = () => {
         <CloseButton page="energy"></CloseButton>
       </div>
       <div className="menubar-content-body">
+        <Select<EnergyGraphType>
+          value={graphType}
+          onValueChange={(value) => {
+            setGraphType(value);
+          }}
+          options={[
+            { id: 'eu', label: 'Energy Use' },
+            { id: 'eui', label: 'Energy Use Intensity' },
+          ]}
+        ></Select>
         {$buildingId === '' ? (
           <p>No building selected.</p>
         ) : !data ? (
