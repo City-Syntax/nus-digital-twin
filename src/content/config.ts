@@ -77,15 +77,15 @@ const buildingsCollection = defineCollection({
 
 const energyUseSchema = z.object({
   month: z.string(),
-  equip: z.number().optional(),
+  equipment: z.number().optional(),
   fans: z.number().optional(),
   pumps: z.number().optional(),
   humid: z.number().optional(),
-  hReject: z.number().optional(),
-  light: z.number().optional(),
+  heatReject: z.number().optional(),
+  lighting: z.number().optional(),
   hotWater: z.number().optional(),
-  heat: z.number().optional(),
-  cool: z.number().optional(),
+  heating: z.number().optional(),
+  cooling: z.number().optional(),
 });
 
 const energyCollection = defineCollection({
