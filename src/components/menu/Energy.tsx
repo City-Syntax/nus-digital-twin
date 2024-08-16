@@ -66,11 +66,6 @@ const Energy = () => {
           <div style={{ height: '208px' }}>
             <ResponsiveBar
               theme={{
-                tooltip: {
-                  wrapper: {
-                    zIndex: 1000,
-                  },
-                },
                 legends: {
                   text: {
                     fontFamily: 'inherit',
@@ -96,7 +91,7 @@ const Energy = () => {
               data={data}
               keys={['equipment', 'lighting', 'cooling', 'heating', 'hotWater']}
               indexBy="month"
-              margin={{ top: 20, right: 10, bottom: 70, left: 70 }}
+              margin={{ top: 20, right: 30, bottom: 70, left: 80 }}
               padding={0.3}
               valueScale={{ type: 'linear' }}
               indexScale={{ type: 'band', round: true }}
@@ -124,10 +119,10 @@ const Energy = () => {
                 from: 'color',
                 modifiers: [['brighter', 2]],
               }}
-              tooltip={({ label, value }) => {
+              tooltip={({ id, value }) => {
                 return (
                   <div className="tooltip">
-                    {label}: {value}
+                    {id}: {value}
                   </div>
                 );
               }}
