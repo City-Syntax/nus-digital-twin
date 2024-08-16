@@ -4,8 +4,10 @@ import { Command } from 'cmdk';
 import Icons from '../Icons';
 import buildingsData from '../../content/buildings/buildings.json';
 import { activePages, buildingId, flyToPosition } from '../../store';
+import styles from '../../styles/exports.module.scss';
 
 const Searchbar = () => {
+  const breakpoint = Number(styles.breakpointLg.substring(0, styles.breakpointLg.length - 2));
   const [open, setOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
@@ -37,7 +39,7 @@ const Searchbar = () => {
 
   const focusOnInput = useCallback(() => {
     const [desktopSearch, mobileSearch] = document.querySelectorAll('input');
-    if (window.innerWidth <= 1252) {
+    if (window.innerWidth <= breakpoint) {
       mobileSearch.focus();
     } else {
       desktopSearch.focus();
@@ -68,7 +70,7 @@ const Searchbar = () => {
       }
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        if (window.innerWidth <= 1252) {
+        if (window.innerWidth <= breakpoint) {
           activePages.set({
             left: '',
             right: '',

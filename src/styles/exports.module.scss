@@ -1,0 +1,8 @@
+@import 'src/styles/partials/base';
+
+:export {
+  breakpointXs: $xs;
+  breakpointSm: $sm;
+  breakpointMd: $md;
+  breakpointLg: $lg;
+}
