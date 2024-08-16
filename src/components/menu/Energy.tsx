@@ -40,7 +40,13 @@ const Energy = () => {
     handleSelect(newId);
   });
 
-  const colors = { cooling: '#2563eb', lighting: '#eab308', equipment: '#6b7280', heating: '#f87171' };
+  const colors = {
+    cooling: '#2563eb',
+    lighting: '#eab308',
+    equipment: '#6b7280',
+    heating: '#f87171',
+    hotWater: '#fecaca',
+  };
   const getColor = (bar: any) => {
     return colors[bar.id as keyof typeof colors];
   };
@@ -82,9 +88,9 @@ const Energy = () => {
             }}
             enableLabel={false}
             data={data}
-            keys={['equipment', 'lighting', 'cooling', 'heating']}
+            keys={['equipment', 'lighting', 'cooling', 'heating', 'hotWater']}
             indexBy="month"
-            margin={{ top: 20, right: 10, bottom: 50, left: 70 }}
+            margin={{ top: 20, right: 10, bottom: 70, left: 70 }}
             padding={0.3}
             valueScale={{ type: 'linear' }}
             indexScale={{ type: 'band', round: true }}
@@ -125,14 +131,14 @@ const Energy = () => {
                 anchor: 'bottom',
                 direction: 'row',
                 justify: false,
-                translateX: 0,
-                translateY: 50,
+                translateX: -25,
+                translateY: 68,
                 itemsSpacing: 2,
-                itemWidth: 85,
-                itemHeight: 16,
-                itemDirection: 'left-to-right',
+                itemWidth: 70,
+                itemHeight: 30,
+                itemDirection: 'top-to-bottom',
                 itemOpacity: 0.85,
-                symbolSize: 12,
+                symbolSize: 10,
                 effects: [
                   {
                     on: 'hover',
