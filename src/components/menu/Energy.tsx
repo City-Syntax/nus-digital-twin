@@ -8,7 +8,7 @@ const energyData = import.meta.glob('../../content/energy/*.json');
 
 const Energy = () => {
   const $buildingId = useStore(buildingId);
-  const [data, setD] = useState<any>(null); // add state for json
+  const [data, setData] = useState<any>(null);
   const [isEnergyUse, setIsEnergyUse] = useState(false);
   const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
 
@@ -18,14 +18,14 @@ const Energy = () => {
       (isEnergyUse && !buildingProperties.energyUse) ||
       (!isEnergyUse && !buildingProperties.energyUseIntensity)
     ) {
-      setD(null);
+      setData(null);
       return;
     }
 
     energyData[
       `../../content/energy/${isEnergyUse ? buildingProperties.energyUseIntensity : buildingProperties.energyUse}.json`
     ]().then((res: any) => {
-      setD(res.default);
+      setData(res.default);
     });
   };
 
