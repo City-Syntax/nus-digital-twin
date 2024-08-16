@@ -6,7 +6,7 @@ const Wind = () => {
     <>
       <div className="menubar-content-header">
         <h2>Controls: Wind</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="wind"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <p>This feature is under construction.</p>

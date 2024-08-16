@@ -10,7 +10,7 @@ const RhinoUrban = () => {
     <>
       <div className="menubar-content-header">
         <h2>Layers: Rhino Models (Urban)</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="rhino-urban"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <div>Displays Rhino Urban Scale models. Selecting individual buildings is not available.</div>

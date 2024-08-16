@@ -6,7 +6,7 @@ const Energy = () => {
     <>
       <div className="menubar-content-header">
         <h2>Controls: Energy</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="energy"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <p>This feature is under construction.</p>

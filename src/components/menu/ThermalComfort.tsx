@@ -6,7 +6,7 @@ const ThermalComfort = () => {
     <>
       <div className="menubar-content-header">
         <h2>Controls: Thermal Comfort</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="thermal-comfort"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <p>This feature is under construction.</p>

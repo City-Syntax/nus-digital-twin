@@ -35,7 +35,7 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLink toPage="about" label="About NUS Campus" iconName="About"></MenuLink>
+              <MenuLink toPage="about" label="About NUS Campus" iconName="About" dir="left" isLeft isBottom></MenuLink>
             </div>
           </div>
           <div className="menu-list">
@@ -45,7 +45,7 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLinks.GISLayers />
+              <MenuLinks.GISLayers dir="left" />
             </div>
           </div>
           <div className="menu-list">
@@ -61,7 +61,7 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLinks.BuildingScaleModels />
+              <MenuLinks.BuildingScaleModels dir="left" />
             </div>
           </div>
           <div className="menu-list">
@@ -71,15 +71,14 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLinks.UrbanScaleModels />
+              <MenuLinks.UrbanScaleModels dir="left" />
             </div>
           </div>
         </div>
       </ScrollContainer>
       <div className="menubar-footer">
         <div className="menu-list">
-          <MenuLink toPage="help" label="Help" iconName="Help"></MenuLink>
-          <MenuLink toPage="settings" label="Settings" iconName="Settings"></MenuLink>
+          <MenuLinks.Menu dir="left"></MenuLinks.Menu>
         </div>
       </div>
     </nav>

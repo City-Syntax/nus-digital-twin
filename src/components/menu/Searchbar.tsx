@@ -3,9 +3,11 @@ import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from '../Icons';
 import buildingsData from '../../content/buildings/buildings.json';
-import { activePage, buildingId, flyToPosition } from '../../store';
+import { activePages, buildingId, flyToPosition } from '../../store';
+import styles from '../../styles/exports.module.scss';
 
 const Searchbar = () => {
+  const breakpoint = Number(styles.breakpointLg.substring(0, styles.breakpointLg.length - 2));
   const [open, setOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
@@ -29,13 +31,15 @@ const Searchbar = () => {
   // https://github.com/pacocoursey/cmdk/issues/234
   const scrollUpOnChange = useCallback(() => {
     requestAnimationFrame(() => {
-      listRef!.current!.scrollTo({ top: 0 });
+      if (listRef && listRef.current) {
+        listRef.current.scrollTo({ top: 0 });
+      }
     });
   }, []);
 
   const focusOnInput = useCallback(() => {
     const [desktopSearch, mobileSearch] = document.querySelectorAll('input');
-    if (window.innerWidth <= 878) {
+    if (window.innerWidth <= breakpoint) {
       mobileSearch.focus();
     } else {
       desktopSearch.focus();
@@ -66,8 +70,12 @@ const Searchbar = () => {
       }
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        if (window.innerWidth <= 878) {
-          activePage.set('search');
+        if (window.innerWidth <= breakpoint) {
+          activePages.set({
+            left: '',
+            right: '',
+            bottom: 'search',
+          });
           if (mobileSearch) {
             mobileSearch.focus();
           }
@@ -145,7 +153,11 @@ const Searchbar = () => {
                   if (clearBtnRef.current === document.activeElement) {
                     return;
                   }
-                  activePage.set('building-info');
+                  activePages.set({
+                    ...activePages.get(),
+                    left: 'building-info',
+                    bottom: 'building-info',
+                  });
                   buildingId.set(''); // Force the listener on buildingId to trigger
                   buildingId.set(building.elementId);
                   flyToPosition.set({

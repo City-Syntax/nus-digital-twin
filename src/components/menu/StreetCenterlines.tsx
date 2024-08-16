@@ -10,7 +10,7 @@ const StreetCenterlines = () => {
     <>
       <div className="menubar-content-header">
         <h2>Layers: Street Centerlines</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="street-centerlines"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <div>

@@ -10,7 +10,7 @@ const BuildingFootprints = () => {
     <>
       <div className="menubar-content-header">
         <h2>Layers: Building Footprints</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="building-footprints"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <div>

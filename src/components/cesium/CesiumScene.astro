@@ -7,7 +7,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
   import {
-    activePage,
+    activePages,
     activeModel,
     buildingId,
     activeMapLayer,
@@ -287,7 +287,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    activePage.set('building-info');
+    activePages.set({
+      ...activePages.get(),
+      left: 'building-info',
+      bottom: 'building-info',
+    });
     buildingId.set(''); // Force the listener on buildingId to trigger
 
     if (

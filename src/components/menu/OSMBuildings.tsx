@@ -9,7 +9,7 @@ const OSMBuildings = () => {
     <>
       <div className="menubar-content-header">
         <h2>Layers: OSM Buildings</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="osm"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <div>Displays OSM Buildings, a building layer provided by OpenStreetMaps.</div>

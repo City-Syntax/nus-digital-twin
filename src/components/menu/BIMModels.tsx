@@ -9,7 +9,7 @@ const BIMModels = () => {
     <>
       <div className="menubar-content-header">
         <h2>Layers: BIM Models</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="bim"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <div>

@@ -6,7 +6,7 @@ const UBEM = () => {
     <>
       <div className="menubar-content-header">
         <h2>Layers: Urban Building Energy Model</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="ubem"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <p>This feature is under construction.</p>

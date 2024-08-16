@@ -9,7 +9,7 @@ const MenuRight = () => {
         <div className="menubar-body">
           <div className="menu-list">
             <div className="menu-list-title">Controls</div>
-            <MenuLinks.Controls />
+            <MenuLinks.Controls dir="right" />
           </div>
         </div>
       </ScrollContainer>

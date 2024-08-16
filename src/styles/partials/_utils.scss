@@ -20,7 +20,7 @@
   }
 }
 
-@media screen and (min-width: calc($md + 1px)) {
+@media screen and (min-width: calc($lg + 1px)) {
   .hide-md {
     display: none !important;
   }
@@ -32,7 +32,7 @@
   }
 }
 
-@media screen and (max-width: $md) {
+@media screen and (max-width: $lg) {
   .show-md {
     display: none !important;
   }

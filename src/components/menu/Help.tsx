@@ -23,7 +23,7 @@ const Help = ({ navType, setNavType }: HelpProps) => {
     <>
       <div className="menubar-content-header">
         <h2>Help</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="help"></CloseButton>
       </div>
       <ScrollContainer>
         <div className="menubar-content-body">

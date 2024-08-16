@@ -7,7 +7,7 @@ const Search = () => {
     <>
       <div className="menubar-content-header">
         <h2>Search</h2>
-        <CloseButton></CloseButton>
+        <CloseButton page="search"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <Searchbar />

@@ -1,27 +1,47 @@
 import React from 'react';
 import Icons from '../Icons';
-import { activePage, buildingId, isSelectColorByDistance } from '../../store';
+import { activePages, buildingId, isSelectColorByDistance } from '../../store';
 import { useStore } from '@nanostores/react';
-import type { MenuPages } from '../../types';
+import type { MenuDir, MenuPages } from '../../types';
 
 interface MenuLinkProps {
   label: string;
   toPage: MenuPages;
   iconName: keyof typeof Icons;
+  dir: MenuDir;
   isVertical?: boolean;
   isActive?: boolean;
+  isBottom?: boolean;
+  isLeft?: boolean;
+  isRight?: boolean;
 }
 
-const MenuLink = ({ label, toPage, iconName, isVertical, isActive }: MenuLinkProps) => {
-  const $activePage = useStore(activePage);
+const MenuLink = ({ label, toPage, iconName, dir, isVertical, isActive, isLeft, isRight, isBottom }: MenuLinkProps) => {
+  const $activePages = useStore(activePages);
   const Icon = Icons[iconName];
   return (
     <button
-      className={`menu-link ${$activePage === toPage ? 'active' : ''} ${isVertical ? 'vertical' : ''}`}
+      className={`menu-link ${$activePages[dir] === toPage ? 'active' : ''} ${isVertical ? 'vertical' : ''}`}
       type="button"
       onClick={() => {
-        activePage.set(toPage);
-        buildingId.set('');
+        if (isBottom && !(isLeft || isRight)) {
+          activePages.set({
+            left: '',
+            right: '',
+            bottom: toPage,
+          });
+        } else {
+          activePages.set({
+            left: isLeft ? toPage : $activePages.left,
+            right: isRight ? toPage : $activePages.right,
+            bottom: isBottom ? toPage : $activePages.bottom,
+          });
+        }
+
+        if (dir === 'left') {
+          buildingId.set('');
+        }
+
         isSelectColorByDistance.set(false);
       }}
     >
