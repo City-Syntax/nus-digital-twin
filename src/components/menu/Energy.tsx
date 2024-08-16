@@ -10,13 +10,13 @@ const Energy = () => {
   const $buildingId = useStore(buildingId);
   const [data, setData] = useState<any>(null);
   const [isEnergyUse, setIsEnergyUse] = useState(false);
-  const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
 
-  const handleSelect = () => {
+  const handleSelect = (newId = $buildingId) => {
+    const buildingProperties = buildingsData.filter((d) => d.elementId == newId)[0];
     if (
-      !$buildingId ||
-      (isEnergyUse && !buildingProperties.energyUse) ||
-      (!isEnergyUse && !buildingProperties.energyUseIntensity)
+      !newId ||
+      (!isEnergyUse && !buildingProperties.energyUse) ||
+      (isEnergyUse && !buildingProperties.energyUseIntensity)
     ) {
       setData(null);
       return;
@@ -33,7 +33,14 @@ const Energy = () => {
     handleSelect();
   }, []);
 
-  const colors = { cool: '#2563eb', light: '#eab308', equip: '#6b7280' };
+  buildingId.listen((newId) => {
+    if (!newId) {
+      return;
+    }
+    handleSelect(newId);
+  });
+
+  const colors = { cooling: '#2563eb', lighting: '#eab308', equipment: '#6b7280', heating: '#f87171' };
   const getColor = (bar: any) => {
     return colors[bar.id as keyof typeof colors];
   };
@@ -48,7 +55,7 @@ const Energy = () => {
         {$buildingId === '' ? (
           <p>No building selected.</p>
         ) : !data ? (
-          <p>No data available for {buildingProperties.name}.</p>
+          <p>No data available for {buildingsData.filter((d) => d.elementId == $buildingId)[0].name}.</p>
         ) : (
           <ResponsiveBar
             theme={{
@@ -75,7 +82,7 @@ const Energy = () => {
             }}
             enableLabel={false}
             data={data}
-            keys={['equip', 'light', 'cool']}
+            keys={['equipment', 'lighting', 'cooling', 'heating']}
             indexBy="month"
             margin={{ top: 20, right: 10, bottom: 50, left: 70 }}
             padding={0.3}
@@ -121,11 +128,11 @@ const Energy = () => {
                 translateX: 0,
                 translateY: 50,
                 itemsSpacing: 2,
-                itemWidth: 100,
+                itemWidth: 85,
                 itemHeight: 16,
                 itemDirection: 'left-to-right',
                 itemOpacity: 0.85,
-                symbolSize: 16,
+                symbolSize: 12,
                 effects: [
                   {
                     on: 'hover',
