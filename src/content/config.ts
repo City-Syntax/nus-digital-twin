@@ -6,6 +6,9 @@ const buildingMetadataSchema = z.object({
   buildingDataCredits: z.string().optional(),
   latitude: z.number(),
   longitude: z.number(),
+});
+
+const buildingEnergySchema = z.object({
   energyUse: reference('energy').optional(),
   energyUseIntensity: reference('energy').optional(),
 });
@@ -67,11 +70,14 @@ const buildingsCollection = defineCollection({
   type: 'data',
   schema: ({ image }) =>
     z.array(
-      buildingSchema.merge(buildingMetadataSchema).merge(
-        z.object({
-          images: z.array(z.object({ src: image(), author: z.string().optional() })).optional(),
-        }),
-      ),
+      buildingSchema
+        .merge(buildingMetadataSchema)
+        .merge(buildingEnergySchema)
+        .merge(
+          z.object({
+            images: z.array(z.object({ src: image(), author: z.string().optional() })).optional(),
+          }),
+        ),
     ),
 });
 
