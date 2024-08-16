@@ -1,56 +1,15 @@
 import React from 'react';
 import CloseButton from './CloseButton';
 import { ResponsiveBar } from '@nivo/bar';
+import energyUse from '../../content/energy/as8-eu.json';
 
 const Energy = () => {
   const colors = { cool: '#2563eb', light: '#eab308', equip: '#6b7280' };
   const getColor = (bar: any) => {
     return colors[bar.id as keyof typeof colors];
   };
-  const data = [
-    {
-      month: 'AD',
-      cool: 93,
-      light: 75,
-      equip: 189,
-    },
-    {
-      month: 'AE',
-      cool: 53,
-      light: 121,
-      equip: 76,
-    },
-    {
-      month: 'AF',
-      cool: 93,
-      light: 86,
-      equip: 88,
-    },
-    {
-      month: 'AG',
-      cool: 154,
-      light: 92,
-      equip: 49,
-    },
-    {
-      month: 'AI',
-      cool: 17,
-      light: 41,
-      equip: 175,
-    },
-    {
-      month: 'AL',
-      cool: 111,
-      light: 18,
-      equip: 150,
-    },
-    {
-      month: 'AM',
-      cool: 108,
-      light: 130,
-      equip: 199,
-    },
-  ];
+
+  const data = energyUse;
 
   return (
     <>
@@ -58,7 +17,7 @@ const Energy = () => {
         <h2>Controls: Energy</h2>
         <CloseButton page="energy"></CloseButton>
       </div>
-      <div className="menubar-content-body" style={{ height: '300px' }}>
+      <div className="menubar-content-body" style={{ height: '328px' }}>
         <ResponsiveBar
           theme={{
             legends: {
@@ -82,10 +41,11 @@ const Energy = () => {
               },
             },
           }}
+          enableLabel={false}
           data={data}
           keys={['equip', 'light', 'cool']}
           indexBy="month"
-          margin={{ top: 20, right: 90, bottom: 50, left: 60 }}
+          margin={{ top: 20, right: 10, bottom: 50, left: 70 }}
           padding={0.3}
           valueScale={{ type: 'linear' }}
           indexScale={{ type: 'band', round: true }}
@@ -96,9 +56,6 @@ const Energy = () => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'month',
-            legendPosition: 'middle',
-            legendOffset: 32,
             truncateTickAt: 0,
           }}
           axisLeft={{
@@ -107,7 +64,7 @@ const Energy = () => {
             tickRotation: 0,
             legend: 'kWh',
             legendPosition: 'middle',
-            legendOffset: -40,
+            legendOffset: -60,
             truncateTickAt: 0,
           }}
           labelSkipWidth={12}
@@ -126,11 +83,11 @@ const Energy = () => {
           legends={[
             {
               dataFrom: 'keys',
-              anchor: 'bottom-right',
-              direction: 'column',
+              anchor: 'bottom',
+              direction: 'row',
               justify: false,
-              translateX: 120,
-              translateY: 0,
+              translateX: 20,
+              translateY: 50,
               itemsSpacing: 2,
               itemWidth: 100,
               itemHeight: 16,
