@@ -54,6 +54,7 @@ const CloseButton = ({ page }: { page: MenuPages }) => {
       }
       arrow={false}
       allowHTML
+      touch={false}
     >
       <button type="button" onClick={handleClose}>
         <Icons.Close></Icons.Close>
