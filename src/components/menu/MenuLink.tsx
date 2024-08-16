@@ -16,17 +16,7 @@ interface MenuLinkProps {
   isRight?: boolean;
 }
 
-const MenuLink = ({
-  label,
-  toPage,
-  iconName,
-  dir = 'left',
-  isVertical,
-  isActive,
-  isLeft,
-  isRight,
-  isBottom,
-}: MenuLinkProps) => {
+const MenuLink = ({ label, toPage, iconName, dir, isVertical, isActive, isLeft, isRight, isBottom }: MenuLinkProps) => {
   const $activePages = useStore(activePages);
   const Icon = Icons[iconName];
   return (
