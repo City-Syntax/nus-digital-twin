@@ -14,10 +14,3 @@
 @import 'src/styles/partials/modal';
 @import 'src/styles/partials/notifications';
 @import 'src/styles/partials/bottom-bar';
-
-:export {
-  breakpointXs: $xs;
-  breakpointSm: $sm;
-  breakpointMd: $md;
-  breakpointLg: $lg;
-}
