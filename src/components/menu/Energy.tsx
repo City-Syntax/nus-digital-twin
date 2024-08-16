@@ -85,7 +85,7 @@ const Energy = () => {
           data={data}
           keys={['kebab', 'fries', 'donut']}
           indexBy="month"
-          margin={{ top: 20, right: 130, bottom: 50, left: 60 }}
+          margin={{ top: 20, right: 90, bottom: 50, left: 60 }}
           padding={0.3}
           valueScale={{ type: 'linear' }}
           indexScale={{ type: 'band', round: true }}
@@ -133,10 +133,10 @@ const Energy = () => {
               translateY: 0,
               itemsSpacing: 2,
               itemWidth: 100,
-              itemHeight: 20,
+              itemHeight: 16,
               itemDirection: 'left-to-right',
               itemOpacity: 0.85,
-              symbolSize: 20,
+              symbolSize: 16,
               effects: [
                 {
                   on: 'hover',
