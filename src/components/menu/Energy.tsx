@@ -3,52 +3,52 @@ import CloseButton from './CloseButton';
 import { ResponsiveBar } from '@nivo/bar';
 
 const Energy = () => {
-  const colors = { kebab: '#2563eb', fries: '#eab308', donut: '#6b7280' };
+  const colors = { cool: '#2563eb', light: '#eab308', equip: '#6b7280' };
   const getColor = (bar: any) => {
     return colors[bar.id as keyof typeof colors];
   };
   const data = [
     {
       month: 'AD',
-      kebab: 93,
-      fries: 75,
-      donut: 189,
+      cool: 93,
+      light: 75,
+      equip: 189,
     },
     {
       month: 'AE',
-      kebab: 53,
-      fries: 121,
-      donut: 76,
+      cool: 53,
+      light: 121,
+      equip: 76,
     },
     {
       month: 'AF',
-      kebab: 93,
-      fries: 86,
-      donut: 88,
+      cool: 93,
+      light: 86,
+      equip: 88,
     },
     {
       month: 'AG',
-      kebab: 154,
-      fries: 92,
-      donut: 49,
+      cool: 154,
+      light: 92,
+      equip: 49,
     },
     {
       month: 'AI',
-      kebab: 17,
-      fries: 41,
-      donut: 175,
+      cool: 17,
+      light: 41,
+      equip: 175,
     },
     {
       month: 'AL',
-      kebab: 111,
-      fries: 18,
-      donut: 150,
+      cool: 111,
+      light: 18,
+      equip: 150,
     },
     {
       month: 'AM',
-      kebab: 108,
-      fries: 130,
-      donut: 199,
+      cool: 108,
+      light: 130,
+      equip: 199,
     },
   ];
 
@@ -83,7 +83,7 @@ const Energy = () => {
             },
           }}
           data={data}
-          keys={['kebab', 'fries', 'donut']}
+          keys={['equip', 'light', 'cool']}
           indexBy="month"
           margin={{ top: 20, right: 90, bottom: 50, left: 60 }}
           padding={0.3}
