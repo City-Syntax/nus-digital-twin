@@ -21,6 +21,7 @@ type BuildingInfoProps = {
 const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
   const $buildingId = useStore(buildingId);
   const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
+  console.log(buildingProperties);
   const propertiesToDisplay = Object.entries(buildingProperties).filter((data) =>
     SECTIONS_TO_DISPLAY[category].includes(data[0] as keyof BuildingPropertiesProps),
   );

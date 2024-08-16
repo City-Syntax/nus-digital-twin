@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, reference, z } from 'astro:content';
 import type { ImageProps } from '../types';
 
 const buildingMetadataSchema = z.object({
@@ -6,6 +6,8 @@ const buildingMetadataSchema = z.object({
   buildingDataCredits: z.string().optional(),
   latitude: z.number(),
   longitude: z.number(),
+  energyUse: reference('energy').optional(),
+  energyUseIntensity: reference('energy').optional(),
 });
 
 const buildingSchema = z.object({
@@ -73,8 +75,27 @@ const buildingsCollection = defineCollection({
     ),
 });
 
+const energyUseSchema = z.object({
+  month: z.string(),
+  equip: z.number().optional(),
+  fans: z.number().optional(),
+  pumps: z.number().optional(),
+  humid: z.number().optional(),
+  hReject: z.number().optional(),
+  light: z.number().optional(),
+  hotWater: z.number().optional(),
+  heat: z.number().optional(),
+  cool: z.number().optional(),
+});
+
+const energyCollection = defineCollection({
+  type: 'data',
+  schema: () => z.array(energyUseSchema),
+});
+
 export const collections = {
   buildings: buildingsCollection,
+  energy: energyCollection,
 };
 
 export type BuildingPropertiesProps = z.infer<typeof buildingSchema> & {

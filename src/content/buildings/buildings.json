@@ -564,6 +564,8 @@
     "postal": "119260",
     "latitude": 1.29603,
     "longitude": 103.77229,
+    "energyUse": "as8-eu",
+    "energyUseIntensity": "as8-eu",
     "images": [
       {
         "src": "/src/assets/as8/as8-1.jpg",
