@@ -11,6 +11,7 @@ const buildingMetadataSchema = z.object({
 const buildingEnergySchema = z.object({
   energyUse: reference('energy').optional(),
   energyUseIntensity: reference('energy').optional(),
+  idfDownload: z.string().optional(),
 });
 
 const buildingSchema = z.object({

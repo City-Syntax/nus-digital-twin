@@ -5,6 +5,7 @@ import buildingsData from '../../content/buildings/buildings.json';
 import { useStore } from '@nanostores/react';
 import { buildingId } from '../../store';
 import Select from '../primitives/Select';
+import DownloadButton from '../primitives/DownloadButton';
 const energyData = import.meta.glob('../../content/energy/*.json');
 
 type EnergyGraphType = 'eu' | 'eui';
@@ -156,6 +157,7 @@ const Energy = () => {
             />
           </div>
         )}
+        <DownloadButton type="IDF" files={[{ filetype: '.idf', url: '/as8/as8.idf' }]}></DownloadButton>
       </div>
     </>
   );
