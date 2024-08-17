@@ -1,5 +1,5 @@
 import React from 'react';
-import { buildingId } from '../../../store';
+import { activePages, buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
 import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS, SORT_ORDER } from './buildingInfoUtils';
 import type { BuildingInfoCategories, DownloadProps } from '../../../types';
@@ -67,18 +67,35 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           <Icons.Flag></Icons.Flag>
           Report issue
         </a>
-        {buildingProperties.buildingDataCredits && (
-          <Tippy
-            content={`Building data by ${buildingProperties.buildingDataCredits}.`}
-            arrow={false}
-            placement="top-end"
-            maxWidth={'min(calc(100vw - (var(--padding-xs) * 2) - (var(--padding-base)) * 2), 350px)'}
-          >
-            <button>
-              <Icons.About height="20"></Icons.About>
-            </button>
-          </Tippy>
-        )}
+        <span>
+          {(buildingProperties.energyUse || buildingProperties.energyUseIntensity) && (
+            <Tippy content="View energy use data" arrow={false} placement="top-end">
+              <button
+                onClick={() =>
+                  activePages.set({
+                    left: 'building-info',
+                    right: 'energy',
+                    bottom: 'energy',
+                  })
+                }
+              >
+                <Icons.Energy></Icons.Energy>
+              </button>
+            </Tippy>
+          )}
+          {buildingProperties.buildingDataCredits && (
+            <Tippy
+              content={`Building data by ${buildingProperties.buildingDataCredits}.`}
+              arrow={false}
+              placement="top-end"
+              maxWidth={'min(calc(100vw - (var(--padding-xs) * 2) - (var(--padding-base)) * 2), 350px)'}
+            >
+              <button>
+                <Icons.About height="20"></Icons.About>
+              </button>
+            </Tippy>
+          )}
+        </span>
       </div>
     </>
   );
