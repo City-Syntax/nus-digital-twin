@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CloseButton from './CloseButton';
-import { ResponsiveBar, type BarDatum, type ComputedBarDatum, type ComputedDatum } from '@nivo/bar';
+import { ResponsiveBar, type BarDatum, type ComputedDatum } from '@nivo/bar';
 import buildingsData from '../../content/buildings/buildings.json';
 import { useStore } from '@nanostores/react';
 import { buildingId } from '../../store';
