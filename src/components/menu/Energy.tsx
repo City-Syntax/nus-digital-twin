@@ -16,7 +16,7 @@ const Energy = () => {
   const [graphType, setGraphType] = useState<EnergyGraphType>('eu');
   const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
 
-  const handleSelect = () => {
+  useEffect(() => {
     if (
       !$buildingId ||
       (graphType === 'eu' && !buildingProperties.energyUse) ||
@@ -31,10 +31,6 @@ const Energy = () => {
     ]().then((res: any) => {
       setData(res.default);
     });
-  };
-
-  useEffect(() => {
-    handleSelect();
   }, [$buildingId, graphType]);
 
   const colors = {
