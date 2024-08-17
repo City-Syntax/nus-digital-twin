@@ -42,8 +42,8 @@
 .menu-right {
   @include menu-x-container;
   right: var(--container-x-offset);
-  height: 70vh;
-  max-height: 408px;
+  height: 66vh;
+  max-height: 388px;
   min-height: 348px;
 }
 
