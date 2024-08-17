@@ -16,6 +16,8 @@ export type MenuDir = 'left' | 'right' | 'bottom';
 
 export type NavType = 'mouse' | 'touch';
 
+export type EnergyGraphType = 'eu' | 'eui';
+
 export type MenuPages =
   | 'osm'
   | 'about'

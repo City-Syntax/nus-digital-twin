@@ -6,14 +6,17 @@ import { useStore } from '@nanostores/react';
 import { buildingId } from '../../store';
 import Select from '../primitives/Select';
 import DownloadButton from '../primitives/DownloadButton';
+import type { EnergyGraphType } from '../../types';
 const energyData = import.meta.glob('../../content/energy/*.json');
 
-type EnergyGraphType = 'eu' | 'eui';
+type EnergyProps = {
+  graphType: EnergyGraphType;
+  setGraphType: (graphType: EnergyGraphType) => void;
+};
 
-const Energy = () => {
+const Energy = ({ graphType, setGraphType }: EnergyProps) => {
   const $buildingId = useStore(buildingId);
   const [data, setData] = useState<any>(null);
-  const [graphType, setGraphType] = useState<EnergyGraphType>('eu');
   const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
 
   useEffect(() => {

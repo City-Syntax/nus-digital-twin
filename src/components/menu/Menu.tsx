@@ -3,7 +3,7 @@ import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
 import { activePages } from '../../store';
-import type { BuildingInfoCategories, NavType } from '../../types';
+import type { BuildingInfoCategories, EnergyGraphType, NavType } from '../../types';
 import AboutNUSCampus from './AboutNUSCampus';
 import StreetCenterlines from './StreetCenterlines';
 import BuildingFootprints from './BuildingFootprints';
@@ -34,6 +34,7 @@ import AutoHeight from '../primitives/AutoHeight';
 const Menu = () => {
   const $activePages = useStore(activePages);
   const [category, setCategory] = useState<BuildingInfoCategories>('general');
+  const [graphType, setGraphType] = useState<EnergyGraphType>('eu');
   const [helpNavType, setHelpNavType] = useState<NavType>('mouse');
   const menuLeftRef = useRef<HTMLDivElement>(null);
   const menuRightRef = useRef<HTMLDivElement>(null);
@@ -88,7 +89,7 @@ const Menu = () => {
         >
           <div className="menubar-content" ref={menuRightRef}>
             {$activePages.right === 'buildings' && <Buildings></Buildings>}
-            {$activePages.right === 'energy' && <Energy></Energy>}
+            {$activePages.right === 'energy' && <Energy graphType={graphType} setGraphType={setGraphType}></Energy>}
             {$activePages.right === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
             {$activePages.right === 'wind' && <Wind></Wind>}
             {$activePages.right === 'solar' && <Solar></Solar>}
@@ -121,7 +122,7 @@ const Menu = () => {
               {$activePages.bottom === 'ubem' && <UBEM></UBEM>}
               {$activePages.bottom === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
               {$activePages.bottom === 'buildings' && <Buildings></Buildings>}
-              {$activePages.bottom === 'energy' && <Energy></Energy>}
+              {$activePages.bottom === 'energy' && <Energy graphType={graphType} setGraphType={setGraphType}></Energy>}
               {$activePages.bottom === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
               {$activePages.bottom === 'wind' && <Wind></Wind>}
               {$activePages.bottom === 'solar' && <Solar></Solar>}
