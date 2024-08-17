@@ -16,7 +16,7 @@ const Energy = () => {
   const [graphType, setGraphType] = useState<EnergyGraphType>('eu');
   const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
 
-  const handleSelect = (newId = $buildingId) => {
+  const handleSelect = () => {
     if (
       !$buildingId ||
       (graphType === 'eu' && !buildingProperties.energyUse) ||
