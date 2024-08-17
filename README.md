@@ -15,7 +15,7 @@ This project is built with Astro and CesiumJS with Cesium Ion.
 
 ### Building Data
 
-The data for the buildings displayed can be found in `src/content/buildings/buildings.json`, and its schema can be found in `src/content/config.ts`.
+The data for the buildings displayed can be found in `src/content/buildings/buildings.json`, and its schema can be found by referring to `buildingsCollection` in `src/content/config.ts`.
 
 | Key                         | Value                                                                                 |
 | --------------------------- | ------------------------------------------------------------------------------------- |
@@ -27,6 +27,7 @@ The data for the buildings displayed can be found in `src/content/buildings/buil
 | latitude                    | A number representing the longitude of the building, used to set the camera on search |
 | energyUse                   | The JSON file containing the energy use data                                          |
 | energyUseIntensity          | The JSON file containing the energy use intensity data                                |
+| idfDownload                 | Link to where the IDF file is hosted                                                  |
 | buildingDataCredits         | The provider of the building data                                                     |
 | downloads                   | The files available for this building, see the table below                            |
 | floorToFloorHeight          | Specified in meters                                                                   |
@@ -67,6 +68,23 @@ The data for the buildings displayed can be found in `src/content/buildings/buil
 | -------- | -------------------------------- |
 | filetype | The file type for download       |
 | url      | Link to where the file is hosted |
+
+### Energy Use Data
+
+The data for energy use displayed can be found in `src/content/energy/*.json`, and its schema can be found by referring to `energyCollection` in `src/content/config.ts`.
+
+| Key        | Value               |
+| ---------- | ------------------- |
+| month      | A string e.g. `Jan` |
+| equipment  | A number            |
+| fans       | A number            |
+| pumps      | A number            |
+| humid      | A number            |
+| heatReject | A number            |
+| lighting   | A number            |
+| hotWater   | A number            |
+| heating    | A number            |
+| cooling    | A number            |
 
 ### Adding Models
 
