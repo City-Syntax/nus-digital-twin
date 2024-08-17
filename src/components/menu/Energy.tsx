@@ -14,11 +14,11 @@ const Energy = () => {
   const $buildingId = useStore(buildingId);
   const [data, setData] = useState<any>(null);
   const [graphType, setGraphType] = useState<EnergyGraphType>('eu');
+  const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
 
   const handleSelect = (newId = $buildingId) => {
-    const buildingProperties = buildingsData.filter((d) => d.elementId == newId)[0];
     if (
-      !newId ||
+      !$buildingId ||
       (graphType === 'eu' && !buildingProperties.energyUse) ||
       (graphType === 'eui' && !buildingProperties.energyUseIntensity)
     ) {
@@ -68,7 +68,7 @@ const Energy = () => {
         {$buildingId === '' ? (
           <p>No building selected.</p>
         ) : !data ? (
-          <p>No data available for {buildingsData.filter((d) => d.elementId == $buildingId)[0].name}.</p>
+          <p>No data available for {buildingProperties.name}.</p>
         ) : (
           <div style={{ height: '208px' }}>
             <ResponsiveBar
@@ -157,7 +157,12 @@ const Energy = () => {
             />
           </div>
         )}
-        <DownloadButton type="IDF" files={[{ filetype: '.idf', url: '/as8/as8.idf' }]}></DownloadButton>
+        {buildingProperties && buildingProperties.idfDownload && (
+          <DownloadButton
+            type="IDF"
+            files={[{ filetype: '.idf', url: buildingProperties.idfDownload }]}
+          ></DownloadButton>
+        )}
       </div>
     </>
   );
