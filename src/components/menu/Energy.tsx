@@ -38,17 +38,6 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
     });
   }, [$buildingId, graphType]);
 
-  const colors = {
-    cooling: '#2563eb',
-    lighting: '#eab308',
-    equipment: '#6b7280',
-    heating: '#f87171',
-    hotWater: '#fecaca',
-  };
-  const getColor = (bar: ComputedDatum<BarDatum>) => {
-    return colors[bar.id as keyof typeof colors];
-  };
-
   return (
     <>
       <div className="menubar-content-header">
@@ -77,92 +66,7 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
                   {buildingProperties.name}.
                 </p>
               ) : (
-                <div style={{ height: '208px' }}>
-                  <ResponsiveBar
-                    theme={{
-                      legends: {
-                        text: {
-                          fontFamily: 'inherit',
-                          fill: 'rgba(var(--base-content))',
-                        },
-                      },
-                      axis: {
-                        ticks: {
-                          text: {
-                            fontFamily: 'inherit',
-                            fill: 'rgba(var(--base-content))',
-                          },
-                        },
-                        legend: {
-                          text: {
-                            fontFamily: 'inherit',
-                            fill: 'rgba(var(--base-content))',
-                          },
-                        },
-                      },
-                    }}
-                    enableLabel={false}
-                    data={data}
-                    keys={['equipment', 'lighting', 'cooling', 'heating', 'hotWater']}
-                    indexBy="month"
-                    margin={{ top: 20, right: 22, bottom: 70, left: 72 }}
-                    padding={0.3}
-                    valueScale={{ type: 'linear' }}
-                    indexScale={{ type: 'band', round: true }}
-                    colors={getColor}
-                    axisTop={null}
-                    axisRight={null}
-                    axisBottom={{
-                      tickSize: 5,
-                      tickPadding: 5,
-                      tickRotation: 0,
-                      truncateTickAt: 0,
-                    }}
-                    axisLeft={{
-                      tickSize: 3,
-                      tickPadding: 2,
-                      tickRotation: 0,
-                      legend: graphType === 'eu' ? 'kWh' : <>kWhm&sup2;</>,
-                      legendPosition: 'middle',
-                      legendOffset: -60,
-                      truncateTickAt: 0,
-                    }}
-                    tooltip={({ id, value }) => {
-                      return (
-                        <div className="tooltip">
-                          {id}: {value}
-                        </div>
-                      );
-                    }}
-                    legends={[
-                      {
-                        dataFrom: 'keys',
-                        anchor: 'bottom',
-                        direction: 'row',
-                        justify: false,
-                        translateX: -25,
-                        translateY: 68,
-                        itemsSpacing: 2,
-                        itemWidth: 70,
-                        itemHeight: 30,
-                        itemDirection: 'top-to-bottom',
-                        itemOpacity: 0.85,
-                        symbolSize: 10,
-                        effects: [
-                          {
-                            on: 'hover',
-                            style: {
-                              itemOpacity: 1,
-                            },
-                          },
-                        ],
-                      },
-                    ]}
-                    role="application"
-                    ariaLabel="Nivo bar chart demo"
-                    barAriaLabel={(e) => e.id + ': ' + e.formattedValue + ' in country: ' + e.indexValue}
-                  />
-                </div>
+                <EnergyChart data={data} graphType={graphType}></EnergyChart>
               )}
               {buildingProperties && buildingProperties.idfDownload && (
                 <DownloadButton
@@ -196,3 +100,106 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
 };
 
 export default Energy;
+
+const EnergyChart = ({ data, graphType }: { data: BarDatum[]; graphType: EnergyGraphType }) => {
+  const colors = {
+    cooling: '#2563eb',
+    lighting: '#eab308',
+    equipment: '#6b7280',
+    heating: '#f87171',
+    hotWater: '#fecaca',
+  };
+
+  const getColor = (bar: ComputedDatum<BarDatum>) => {
+    return colors[bar.id as keyof typeof colors];
+  };
+
+  return (
+    <div style={{ height: '208px' }}>
+      <ResponsiveBar
+        theme={{
+          legends: {
+            text: {
+              fontFamily: 'inherit',
+              fill: 'rgba(var(--base-content))',
+            },
+          },
+          axis: {
+            ticks: {
+              text: {
+                fontFamily: 'inherit',
+                fill: 'rgba(var(--base-content))',
+              },
+            },
+            legend: {
+              text: {
+                fontFamily: 'inherit',
+                fill: 'rgba(var(--base-content))',
+              },
+            },
+          },
+        }}
+        enableLabel={false}
+        data={data}
+        keys={['equipment', 'lighting', 'cooling', 'heating', 'hotWater']}
+        indexBy="month"
+        margin={{ top: 20, right: 22, bottom: 70, left: 72 }}
+        padding={0.3}
+        valueScale={{ type: 'linear' }}
+        indexScale={{ type: 'band', round: true }}
+        colors={getColor}
+        axisTop={null}
+        axisRight={null}
+        axisBottom={{
+          tickSize: 5,
+          tickPadding: 5,
+          tickRotation: 0,
+          truncateTickAt: 0,
+        }}
+        axisLeft={{
+          tickSize: 3,
+          tickPadding: 2,
+          tickRotation: 0,
+          legend: graphType === 'eu' ? 'kWh' : <>kWhm&sup2;</>,
+          legendPosition: 'middle',
+          legendOffset: -60,
+          truncateTickAt: 0,
+        }}
+        tooltip={({ id, value }) => {
+          return (
+            <div className="tooltip">
+              {id}: {value}
+            </div>
+          );
+        }}
+        legends={[
+          {
+            dataFrom: 'keys',
+            anchor: 'bottom',
+            direction: 'row',
+            justify: false,
+            translateX: -25,
+            translateY: 68,
+            itemsSpacing: 2,
+            itemWidth: 70,
+            itemHeight: 30,
+            itemDirection: 'top-to-bottom',
+            itemOpacity: 0.85,
+            symbolSize: 10,
+            effects: [
+              {
+                on: 'hover',
+                style: {
+                  itemOpacity: 1,
+                },
+              },
+            ],
+          },
+        ]}
+        role="application"
+        ariaLabel="Nivo bar chart demo"
+        barAriaLabel={(e) => e.id + ': ' + e.formattedValue + ' in country: ' + e.indexValue}
+      />
+    </div>
+  );
+};
