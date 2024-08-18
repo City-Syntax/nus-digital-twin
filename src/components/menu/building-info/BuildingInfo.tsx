@@ -1,9 +1,7 @@
-import React from 'react';
 import { activePages, buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
 import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS, SORT_ORDER } from './buildingInfoUtils';
 import type { BuildingInfoCategories, DownloadProps } from '../../../types';
-import CategorySelect from './CategorySelect';
 import type { BuildingPropertiesProps } from '../../../content/config';
 import buildingsData from '../../../content/buildings/buildings.json';
 import CloseButton from '../CloseButton';
@@ -12,6 +10,7 @@ import Carousel from '../../primitives/Carousel';
 import Icons from '../../Icons';
 import ScrollContainer from '../../primitives/ScrollContainer';
 import Tippy from '@tippyjs/react';
+import Select from '../../primitives/Select';
 
 type BuildingInfoProps = {
   category: BuildingInfoCategories;
@@ -34,10 +33,14 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
       </div>
       <ScrollContainer>
         <div className="menubar-content-body">
-          <CategorySelect
+          <Select<BuildingInfoCategories>
             value={category}
-            onValueChange={(value: BuildingInfoCategories) => setCategory(value)}
-          ></CategorySelect>
+            onValueChange={(value) => setCategory(value)}
+            options={Object.entries(CATEGORY_MAPPINGS).map(([id, label]) => ({
+              id: id as BuildingInfoCategories,
+              label,
+            }))}
+          ></Select>
           {propertiesToDisplay.length < 1 && <p>No information under '{CATEGORY_MAPPINGS[category]}' yet.</p>}
           {propertiesToDisplay
             .sort((a, b) => {
