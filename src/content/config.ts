@@ -108,3 +108,5 @@ export const collections = {
 export type BuildingPropertiesProps = z.infer<typeof buildingSchema> & {
   images: ImageProps[];
 };
+
+export type EnergyProperties = z.infer<typeof energyUseSchema>;

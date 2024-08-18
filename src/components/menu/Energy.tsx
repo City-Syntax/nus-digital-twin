@@ -9,12 +9,15 @@ import DownloadButton from '../primitives/DownloadButton';
 import type { EnergyGraphType } from '../../types';
 import ScrollContainer from '../primitives/ScrollContainer';
 import Icons from '../Icons';
+import type { EnergyProperties } from '../../content/config';
 const energyData = import.meta.glob('../../content/energy/*.json');
 
 type EnergyProps = {
   graphType: EnergyGraphType;
   setGraphType: (graphType: EnergyGraphType) => void;
 };
+
+const keys: Array<keyof EnergyProperties> = ['equipment', 'lighting', 'cooling', 'heating', 'hotWater'];
 
 const Energy = ({ graphType, setGraphType }: EnergyProps) => {
   const $buildingId = useStore(buildingId);
@@ -102,7 +105,7 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
 export default Energy;
 
 const EnergyChart = ({ data, graphType }: { data: BarDatum[]; graphType: EnergyGraphType }) => {
-  const colors = {
+  const colors: Partial<Record<keyof EnergyProperties, string>> = {
     cooling: '#2563eb',
     lighting: '#eab308',
     equipment: '#6b7280',
@@ -111,7 +114,7 @@ const EnergyChart = ({ data, graphType }: { data: BarDatum[]; graphType: EnergyG
   };
 
   const getColor = (bar: ComputedDatum<BarDatum>) => {
-    return colors[bar.id as keyof typeof colors];
+    return colors[bar.id as keyof typeof colors] || '#000000';
   };
 
   return (
@@ -141,7 +144,7 @@ const EnergyChart = ({ data, graphType }: { data: BarDatum[]; graphType: EnergyG
         }}
         enableLabel={false}
         data={data}
-        keys={['equipment', 'lighting', 'cooling', 'heating', 'hotWater']}
+        keys={keys}
         indexBy="month"
         margin={{ top: 20, right: 22, bottom: 70, left: 72 }}
         padding={0.3}
