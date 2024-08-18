@@ -224,8 +224,21 @@
     }
   }
 
+  .footer-link--energy--active {
+    color: rgba(var(--yellow));
+
+    &:hover {
+      color: rgba(var(--yellow));
+    }
+  }
+
   .footer-link--amber:hover {
     color: rgba(var(--amber));
+  }
+
+  .footer-section {
+    display: flex;
+    gap: 8px;
   }
 }
 

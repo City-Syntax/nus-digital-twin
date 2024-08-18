@@ -18,6 +18,8 @@ type BuildingInfoProps = {
 };
 
 const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
+  const $activePages = useStore(activePages);
+  console.log($activePages.right);
   const $buildingId = useStore(buildingId);
   const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
   const propertiesToDisplay = Object.entries(buildingProperties).filter((data) =>
@@ -65,24 +67,36 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           href={`https://docs.google.com/forms/d/e/1FAIpQLSdPktLMj_Ob6YvreQBa7M4_nd8FXK0sLGwQnCeAd8gtbk9HBw/viewform?entry.1908367072=Issue with building: ${buildingProperties.name} (${$buildingId})`}
           target="_blank"
           rel="noreferrer"
-          className="report-link"
         >
           <button className="footer-link footer-link--amber">
             <Icons.Flag></Icons.Flag>
             Report issue
           </button>
         </a>
-        <span>
+        <span className="footer-section">
           {(buildingProperties.energyUse || buildingProperties.energyUseIntensity) && (
-            <Tippy content="View energy use data" arrow={false} placement="top-end">
+            <Tippy
+              content={`${$activePages.right === 'energy' ? 'Close' : 'View'} energy use data`}
+              arrow={false}
+              placement="top-end"
+            >
               <button
-                onClick={() =>
-                  activePages.set({
-                    left: 'building-info',
-                    right: 'energy',
-                    bottom: 'energy',
-                  })
-                }
+                className={`footer-link--energy ${$activePages.right === 'energy' ? 'footer-link--energy--active' : ''}`}
+                onClick={() => {
+                  if ($activePages.right === 'energy') {
+                    activePages.set({
+                      left: 'building-info',
+                      right: '',
+                      bottom: 'building-info',
+                    });
+                  } else {
+                    activePages.set({
+                      left: 'building-info',
+                      right: 'energy',
+                      bottom: 'energy',
+                    });
+                  }
+                }}
               >
                 <Icons.Energy></Icons.Energy>
               </button>
