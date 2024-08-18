@@ -8,7 +8,7 @@ import NotificationsBox from '../components/notifications/NotificationsBox';
 ---
 
 <Layout title="NUS Digital Twin">
-  <Menu client:load />
+  <Menu client:only="react" />
   <CesiumScene />
   <Toolbar />
   <NotificationsBox client:load />

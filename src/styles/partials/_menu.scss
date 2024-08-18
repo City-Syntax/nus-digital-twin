@@ -42,8 +42,9 @@
 .menu-right {
   @include menu-x-container;
   right: var(--container-x-offset);
-  height: 36vh;
-  max-height: 288px;
+  height: 66vh;
+  max-height: 388px;
+  min-height: 348px;
 }
 
 .menu-bottom {
@@ -184,13 +185,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: var(--text-sm);
+  color: rgba(var(--base-300));
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
   button {
     background: none;
     border: none;
-    color: rgba(var(--base-300));
     transition: color 150ms;
+    color: inherit;
     height: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 
     &:hover {
       color: rgba(var(--base-content));
@@ -201,24 +212,18 @@
       width: auto;
     }
   }
-}
 
-.report-link {
-  text-decoration: none;
-  color: rgba(var(--base-300));
-  font-size: var(--text-sm);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  transition: color 150ms;
-  width: max-content;
-  height: 1.25rem;
+  .footer-link {
+    color: inherit;
+    display: flex;
+    align-items: center;
 
-  > svg {
-    height: 0.875rem;
+    > svg {
+      height: 1rem;
+    }
   }
 
-  &:hover {
+  .footer-link--amber:hover {
     color: rgba(var(--amber));
   }
 }

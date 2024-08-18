@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, reference, z } from 'astro:content';
 import type { ImageProps } from '../types';
 
 const buildingMetadataSchema = z.object({
@@ -6,6 +6,12 @@ const buildingMetadataSchema = z.object({
   buildingDataCredits: z.string().optional(),
   latitude: z.number(),
   longitude: z.number(),
+});
+
+const buildingEnergySchema = z.object({
+  energyUse: reference('energy').optional(),
+  energyUseIntensity: reference('energy').optional(),
+  idfDownload: z.string().optional(),
 });
 
 const buildingSchema = z.object({
@@ -65,18 +71,42 @@ const buildingsCollection = defineCollection({
   type: 'data',
   schema: ({ image }) =>
     z.array(
-      buildingSchema.merge(buildingMetadataSchema).merge(
-        z.object({
-          images: z.array(z.object({ src: image(), author: z.string().optional() })).optional(),
-        }),
-      ),
+      buildingSchema
+        .merge(buildingMetadataSchema)
+        .merge(buildingEnergySchema)
+        .merge(
+          z.object({
+            images: z.array(z.object({ src: image(), author: z.string().optional() })).optional(),
+          }),
+        ),
     ),
+});
+
+const energyUseSchema = z.object({
+  month: z.string(),
+  equipment: z.number(),
+  fans: z.number(),
+  pumps: z.number(),
+  humid: z.number(),
+  heatReject: z.number(),
+  lighting: z.number(),
+  hotWater: z.number(),
+  heating: z.number(),
+  cooling: z.number(),
+});
+
+const energyCollection = defineCollection({
+  type: 'data',
+  schema: () => z.array(energyUseSchema),
 });
 
 export const collections = {
   buildings: buildingsCollection,
+  energy: energyCollection,
 };
 
 export type BuildingPropertiesProps = z.infer<typeof buildingSchema> & {
   images: ImageProps[];
 };
+
+export type EnergyProperties = z.infer<typeof energyUseSchema>;

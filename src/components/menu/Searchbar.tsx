@@ -63,7 +63,9 @@ const Searchbar = () => {
   };
 
   useEffect(() => {
-    const [desktopSearch, mobileSearch] = document.querySelectorAll('input');
+    const [desktopSearch, mobileSearch] = document.querySelectorAll(
+      'input[cmdk-input]',
+    ) as NodeListOf<HTMLInputElement>;
     const down = (e: KeyboardEvent) => {
       if (desktopSearch == document.activeElement && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
         setOpen(true);
