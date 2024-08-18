@@ -1,27 +1,23 @@
 ---
+import Icons from '../components/Icons';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="NUS Digital Twin: Tutorials">
-  <div class="header">
+  <header>
     <a href="/">
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="11" fill="#F5F5F5"></rect>
-        <path d="M7.01729 10.6059L7.00146 27.8399L10.6027 30V12.7566L7.01729 10.6059Z" fill="#003D7C"></path>
-        <path d="M21.4012 2L15.2691 5.66205L7 10.6049L10.5983 12.7633L24.9968 4.15668L21.4012 2Z" fill="#003D7C"></path>
-        <path
-          d="M24.9842 4.13029L21.3987 6.281V6.30511L14.1882 10.62V10.6059L10.6028 12.7566V12.7655L10.6003 12.767L10.6018 17.0767L10.6028 17.076V29.9998L14.204 27.8397L14.1921 14.928L18.8685 12.1294L21.3987 10.6138V23.5242L25 21.364L24.9881 8.4641L24.9961 8.45929L24.9948 4.15287L24.9842 4.15926L24.9842 4.13029Z"
-          fill="#EF7C00"></path>
-        <path
-          d="M21.3987 10.6171L18.8684 12.1327L17.8209 12.7595L17.813 21.3625L21.3987 23.5132V10.6171Z"
-          fill="#003D7C"
-        >
-        </path>
-      </svg>
+      <Icons.Logo height="1.75rem" width="1.75rem" />
     </a>
-    <div class="divider">|</div>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1.25rem" width="1.25rem" viewBox="0 0 15 15">
+      <path
+        opacity="0.35"
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.109 14L9.466 1h1.352L5.46 14z"
+        clip-rule="evenodd"></path>
+    </svg>
     <h1>Tutorials</h1>
-  </div>
+  </header>
   <div>
     <iframe
       src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=uC20jdl4GHOh0C2y"
@@ -41,10 +37,6 @@ import Layout from '../layouts/Layout.astro';
     margin: 0 auto;
   }
 
-  h1 {
-    font-size: 1rem;
-  }
-
   @media (prefers-color-scheme: dark) {
     body {
       background-color: #212121;
@@ -56,30 +48,24 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
-  iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
-
-  .header {
+  header {
     display: flex;
+    gap: 4px;
     align-items: center;
-    justify-content: flex-start;
-    gap: 8px;
     margin-bottom: 12px;
-    font-size: 0.75rem;
-
-    svg,
-    a:has(svg) {
-      height: 1.75rem;
-    }
 
     a {
+      display: flex;
+      align-items: center;
+    }
+
+    h1 {
       font-size: 1rem;
     }
   }
 
-  .divider {
-    opacity: 0.5;
+  iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
   }
 </style>

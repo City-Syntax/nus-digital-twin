@@ -544,9 +544,9 @@ const Warning = ({ ...props }) => {
   );
 };
 
-const Logo = () => {
+const Logo = ({ ...props }) => {
   return (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <rect width="32" height="32" rx="11" fill="#F5F5F5" />
       <path d="M7.01729 10.6059L7.00146 27.8399L10.6027 30V12.7566L7.01729 10.6059Z" fill="#003D7C" />
       <path d="M21.4012 2L15.2691 5.66205L7 10.6049L10.5983 12.7633L24.9968 4.15668L21.4012 2Z" fill="#003D7C" />
