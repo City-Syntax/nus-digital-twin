@@ -186,7 +186,7 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
           }}
         >
           <Icons.Data></Icons.Data>
-          View building data
+          View data about {buildingProperties.name}
         </button>
       </div>
     </>
