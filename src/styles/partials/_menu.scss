@@ -240,6 +240,10 @@
     font-weight: 600;
   }
 
+  a.menu-link {
+    text-decoration: none;
+  }
+
   .menu-link {
     @include btn;
 

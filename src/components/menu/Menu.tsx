@@ -30,6 +30,7 @@ import RhinoUrban from './RhinoUrban';
 import RhinoBuildings from './RhinoBuildings';
 import UBEM from './UBEM';
 import AutoHeight from '../primitives/AutoHeight';
+import Learning from './Learning';
 
 const Menu = () => {
   const $activePages = useStore(activePages);
@@ -132,6 +133,7 @@ const Menu = () => {
               {$activePages.bottom === 'search' && <Search></Search>}
               {$activePages.bottom === 'controls' && <Controls></Controls>}
               {$activePages.bottom === 'layers' && <Layers></Layers>}
+              {$activePages.bottom === 'learning' && <Learning></Learning>}
               {$activePages.bottom === 'menu' && <MoreMenu></MoreMenu>}
             </AutoHeight>
           </div>

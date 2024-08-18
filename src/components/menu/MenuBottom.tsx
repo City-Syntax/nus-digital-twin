@@ -16,6 +16,9 @@ const MenuBottom = () => {
       <div className="menu-list">
         <MenuLink toPage="controls" dir="bottom" isVertical isBottom label="Controls" iconName="Controls"></MenuLink>
       </div>
+      <div className="menu-list">
+        <MenuLink toPage="learning" dir="bottom" isVertical isBottom label="Learning" iconName="Learning"></MenuLink>
+      </div>
       <div className="menu-list show-sm">
         <MenuLink toPage="help" dir="bottom" isVertical isBottom isLeft label="Help" iconName="Help"></MenuLink>
       </div>
