@@ -174,21 +174,23 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
           )}
         </div>
       </ScrollContainer>
-      <div className="menubar-content-footer hide-md">
-        <button
-          className="footer-link"
-          onClick={() => {
-            activePages.set({
-              left: 'building-info',
-              right: '',
-              bottom: 'building-info',
-            });
-          }}
-        >
-          <Icons.Data></Icons.Data>
-          View data about {buildingProperties.name}
-        </button>
-      </div>
+      {buildingProperties && (
+        <div className="menubar-content-footer hide-md">
+          <button
+            className="footer-link"
+            onClick={() => {
+              activePages.set({
+                left: 'building-info',
+                right: '',
+                bottom: 'building-info',
+              });
+            }}
+          >
+            <Icons.Data></Icons.Data>
+            View data about {buildingProperties.name}
+          </button>
+        </div>
+      )}
     </>
   );
 };
