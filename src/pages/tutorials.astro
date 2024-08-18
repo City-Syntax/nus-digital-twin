@@ -16,7 +16,9 @@ import Layout from '../layouts/Layout.astro';
         d="M4.109 14L9.466 1h1.352L5.46 14z"
         clip-rule="evenodd"></path>
     </svg>
-    <h1>Tutorials</h1>
+    <a href="/tutorials">
+      <h1>Tutorial Videos</h1>
+    </a>
   </header>
   <div>
     <iframe
@@ -35,6 +37,11 @@ import Layout from '../layouts/Layout.astro';
     max-width: 800px;
     padding: 16px 16px;
     margin: 0 auto;
+  }
+
+  a:has(h1) {
+    text-decoration: none;
+    color: inherit;
   }
 
   @media (prefers-color-scheme: dark) {
