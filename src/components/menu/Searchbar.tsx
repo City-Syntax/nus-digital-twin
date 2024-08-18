@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from '../Icons';
@@ -63,11 +63,28 @@ const Searchbar = () => {
   };
 
   useEffect(() => {
-    const [desktopSearch, mobileSearch] = document.querySelectorAll(
-      'input[cmdk-input]',
-    ) as NodeListOf<HTMLInputElement>;
+    const getDesktopSearch = () => {
+      const query = document.querySelectorAll('input[cmdk-input]') as NodeListOf<HTMLInputElement>;
+      if (query.length > 0) {
+        return query[0];
+      }
+      return null;
+    };
+
+    const getMobileSearch = () => {
+      const query = document.querySelectorAll('input[cmdk-input]') as NodeListOf<HTMLInputElement>;
+      console.log(query);
+      if (query.length == 2) {
+        return query[1];
+      }
+      return null;
+    };
+
     const down = (e: KeyboardEvent) => {
-      if (desktopSearch == document.activeElement && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
+      if (getDesktopSearch() == document.activeElement && e.key == 'Escape') {
+        getDesktopSearch()?.blur();
+      }
+      if (getDesktopSearch() == document.activeElement && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
         setOpen(true);
       }
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
@@ -78,11 +95,9 @@ const Searchbar = () => {
             right: '',
             bottom: 'search',
           });
-          if (mobileSearch) {
-            mobileSearch.focus();
-          }
+          setTimeout(() => getMobileSearch()?.focus());
         } else {
-          desktopSearch.focus();
+          getDesktopSearch()?.focus();
           setOpen(true);
         }
       }
