@@ -73,7 +73,6 @@ const Searchbar = () => {
 
     const getMobileSearch = () => {
       const query = document.querySelectorAll('input[cmdk-input]') as NodeListOf<HTMLInputElement>;
-      console.log(query);
       if (query.length == 2) {
         return query[1];
       }
