@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CloseButton from './CloseButton';
 import { ResponsiveBar, type BarDatum, type ComputedDatum } from '@nivo/bar';
 import buildingsData from '../../content/buildings/buildings.json';
@@ -18,7 +18,7 @@ type EnergyProps = {
 
 const Energy = ({ graphType, setGraphType }: EnergyProps) => {
   const $buildingId = useStore(buildingId);
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<BarDatum[] | null>(null);
   const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
     energyData[
       `../../content/energy/${graphType === 'eu' ? buildingProperties.energyUse : buildingProperties.energyUseIntensity}.json`
     ]().then((res: any) => {
-      setData(res.default);
+      setData(res.default as BarDatum[]);
     });
   }, [$buildingId, graphType]);
 
