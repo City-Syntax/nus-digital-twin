@@ -200,8 +200,7 @@ const EnergyChart = ({ data, graphType }: { data: BarDatum[]; graphType: EnergyG
           },
         ]}
         role="application"
-        ariaLabel="Nivo bar chart demo"
-        barAriaLabel={(e) => e.id + ': ' + e.formattedValue + ' in country: ' + e.indexValue}
+        ariaLabel={graphType === 'eu' ? 'Energy use graph' : 'Energy use intensity graph'}
       />
     </div>
   );
