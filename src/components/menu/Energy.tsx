@@ -3,11 +3,12 @@ import CloseButton from './CloseButton';
 import { ResponsiveBar, type BarDatum, type ComputedDatum } from '@nivo/bar';
 import buildingsData from '../../content/buildings/buildings.json';
 import { useStore } from '@nanostores/react';
-import { buildingId } from '../../store';
+import { activePages, buildingId } from '../../store';
 import Select from '../primitives/Select';
 import DownloadButton from '../primitives/DownloadButton';
 import type { EnergyGraphType } from '../../types';
 import ScrollContainer from '../primitives/ScrollContainer';
+import Icons from '../Icons';
 const energyData = import.meta.glob('../../content/energy/*.json');
 
 type EnergyProps = {
@@ -173,6 +174,21 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
           )}
         </div>
       </ScrollContainer>
+      <div className="menubar-content-footer hide-md">
+        <button
+          className="footer-link"
+          onClick={() => {
+            activePages.set({
+              left: 'building-info',
+              right: '',
+              bottom: 'building-info',
+            });
+          }}
+        >
+          <Icons.Data></Icons.Data>
+          View building data
+        </button>
+      </div>
     </>
   );
 };

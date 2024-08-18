@@ -64,8 +64,10 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           rel="noreferrer"
           className="report-link"
         >
-          <Icons.Flag></Icons.Flag>
-          Report issue
+          <button className="footer-link footer-link--amber">
+            <Icons.Flag></Icons.Flag>
+            Report issue
+          </button>
         </a>
         <span>
           {(buildingProperties.energyUse || buildingProperties.energyUseIntensity) && (
