@@ -36,6 +36,14 @@ import Layout from '../layouts/Layout.astro';
       allowfullscreen></iframe>
   </div>
 </Layout>
+<style is:inline>
+  @media (prefers-color-scheme: light) {
+    header a svg > rect {
+      fill: #dedede;
+      stroke-width: 1;
+    }
+  }
+</style>
 <style>
   body {
     color: #212121;
