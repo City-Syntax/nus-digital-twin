@@ -201,6 +201,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
+    cursor: pointer;
 
     &:hover {
       color: rgba(var(--base-content));
@@ -214,6 +215,7 @@
 
   .footer-link {
     color: inherit;
+    display: flex;
     text-align: left;
     font-size: var(--text-sm);
 
