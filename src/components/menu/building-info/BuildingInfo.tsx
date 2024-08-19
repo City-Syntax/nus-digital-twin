@@ -19,7 +19,6 @@ type BuildingInfoProps = {
 
 const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
   const $activePages = useStore(activePages);
-  console.log($activePages.right);
   const $buildingId = useStore(buildingId);
   const buildingProperties = buildingsData.filter((d) => d.elementId == $buildingId)[0];
   const propertiesToDisplay = Object.entries(buildingProperties).filter((data) =>
@@ -81,7 +80,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
               placement="top-end"
             >
               <button
-                className={`footer-link--energy ${$activePages.right === 'energy' ? 'footer-link--energy--active' : ''}`}
+                className={$activePages.right === 'energy' ? 'footer-link--energy--active' : ''}
                 onClick={() => {
                   if ($activePages.right === 'energy') {
                     activePages.set({
