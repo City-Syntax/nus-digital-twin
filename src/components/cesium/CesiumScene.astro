@@ -290,7 +290,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     activePages.set({
       ...activePages.get(),
       left: 'building-info',
-      bottom: 'building-info',
+      bottom: activePages.get().bottom === 'energy' ? 'energy' : 'building-info',
     });
     buildingId.set(''); // Force the listener on buildingId to trigger
 
