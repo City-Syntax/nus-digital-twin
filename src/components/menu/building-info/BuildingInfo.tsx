@@ -67,7 +67,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           target="_blank"
           rel="noreferrer"
         >
-          <button className="footer-link footer-link--amber">
+          <button className="footer-link footer-link--report">
             <Icons.Flag></Icons.Flag>
             Report issue
           </button>
