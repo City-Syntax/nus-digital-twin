@@ -26,15 +26,22 @@ import Layout from '../layouts/Layout.astro';
       <h1>Tutorial Videos</h1>
     </a>
   </header>
-  <div>
-    <iframe
-      src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=uC20jdl4GHOh0C2y"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen></iframe>
-  </div>
+  <main>
+    <nav>
+      <div class="nav-title">Playlist</div>
+      <div>Never gonna give you up</div>
+      <div>Dundun Dundun Dundun</div>
+    </nav>
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=uC20jdl4GHOh0C2y"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </main>
 </Layout>
 <style is:inline>
   @media (prefers-color-scheme: light) {
@@ -48,8 +55,8 @@ import Layout from '../layouts/Layout.astro';
   body {
     color: #212121;
     background-color: #f5f5f5;
-    max-width: 800px;
-    padding: 16px 16px;
+    max-width: 1068px;
+    padding: var(--padding-base);
     margin: 0 auto;
   }
 
@@ -73,7 +80,7 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     gap: 4px;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 
     a {
       display: flex;
@@ -88,5 +95,34 @@ import Layout from '../layouts/Layout.astro';
   iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
+  }
+
+  main {
+    display: flex;
+  }
+
+  nav {
+    padding-right: var(--padding-base);
+    margin-right: 16px;
+    border-right: 1px solid #333;
+    width: 258px;
+
+    .nav-title {
+      font-size: var(--text-sm);
+      color: rgba(var(--base-300));
+      font-weight: 600;
+    }
+
+    > * + * {
+      margin-top: 12px;
+    }
+
+    > *:nth-child(2) {
+      margin-top: 4px;
+    }
+  }
+
+  .video {
+    width: 100%;
   }
 </style>
