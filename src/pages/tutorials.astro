@@ -1,5 +1,6 @@
 ---
 import Icons from '../components/Icons';
+import VideoPlayer from '../components/tutorials/VideoPlayer';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -26,22 +27,7 @@ import Layout from '../layouts/Layout.astro';
       <h1>Tutorial Videos</h1>
     </a>
   </header>
-  <main>
-    <nav>
-      <div class="nav-title">Playlist</div>
-      <div>Never gonna give you up</div>
-      <div>Dundun Dundun Dundun</div>
-    </nav>
-    <div class="video">
-      <iframe
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=uC20jdl4GHOh0C2y"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen></iframe>
-    </div>
-  </main>
+  <VideoPlayer client:load />
 </Layout>
 <style is:inline>
   @media (prefers-color-scheme: light) {
@@ -50,8 +36,7 @@ import Layout from '../layouts/Layout.astro';
       stroke-width: 1;
     }
   }
-</style>
-<style>
+
   body {
     color: #212121;
     background-color: #f5f5f5;
@@ -92,22 +77,28 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
-  iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
-
-  main {
+  .video-container {
     display: flex;
   }
 
-  nav {
+  .video__nav button {
+    color: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(var(--primary-300));
+    }
+  }
+
+  .video__nav {
     padding-right: var(--padding-base);
     margin-right: 16px;
     border-right: 1px solid #333;
     width: 258px;
 
-    .nav-title {
+    .video__nav-title {
       font-size: var(--text-sm);
       color: rgba(var(--base-300));
       font-weight: 600;
@@ -124,5 +115,10 @@ import Layout from '../layouts/Layout.astro';
 
   .video {
     width: 100%;
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
   }
 </style>
