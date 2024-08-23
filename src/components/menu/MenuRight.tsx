@@ -17,6 +17,10 @@ const MenuRight = () => {
               <Icons.Learning></Icons.Learning>
               <span>Tutorial Videos</span>
             </a>
+            <a className="menu-link" href="/tutorials">
+              <Icons.UserGuide></Icons.UserGuide>
+              <span>User Guide</span>
+            </a>
           </div>
         </div>
       </ScrollContainer>

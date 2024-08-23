@@ -42,9 +42,9 @@
 .menu-right {
   @include menu-x-container;
   right: var(--container-x-offset);
-  height: 66vh;
-  max-height: 378px;
-  min-height: 348px;
+  height: max-content;
+  // max-height: 378px;
+  // min-height: 348px;
 }
 
 .menu-bottom {
