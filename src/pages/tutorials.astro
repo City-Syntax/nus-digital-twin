@@ -86,6 +86,10 @@ import Layout from '../layouts/Layout.astro';
     border: none;
     background: none;
     cursor: pointer;
+    text-align: left;
+    display: flex;
+    gap: 4px;
+    font-size: var(--text-sm);
 
     &:hover {
       color: rgba(var(--primary-300));
@@ -116,7 +120,8 @@ import Layout from '../layouts/Layout.astro';
   .video {
     width: 100%;
 
-    iframe {
+    iframe,
+    img {
       width: 100%;
       aspect-ratio: 16 / 9;
     }
