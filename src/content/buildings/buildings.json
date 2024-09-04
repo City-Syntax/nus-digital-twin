@@ -2258,6 +2258,9 @@
     "postal": "118429",
     "latitude": 1.29037,
     "longitude": 103.78042,
+    "energyUse": "pioneer-house-22-25-eu",
+    "energyUseIntensity": "pioneer-house-22-25-eui",
+    "idfDownload": "/pioneer-house/pioneer-house-22-25.idf",
     "images": [
       { "src": "/src/assets/pioneer-house/pioneer-house-1.jpg", "author": "Ng Jing Cheng, Mao Jun Chi" },
       { "src": "/src/assets/pioneer-house/pioneer-house-2.jpg", "author": "Ng Jing Cheng, Mao Jun Chi" }
@@ -2266,7 +2269,7 @@
       {
         "type": "Rhino",
         "credits": "Ng Jing Cheng, Mao Jun Chi",
-        "files": [{ "filetype": ".3dm", "url": "/pioneer-house/pioneer-house-rhino.3dm" }]
+        "files": [{ "filetype": ".3dm", "url": "/pioneer-house/pioneer-house-22-25-rhino.3dm" }]
       }
     ]
   },
