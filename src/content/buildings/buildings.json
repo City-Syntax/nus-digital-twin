@@ -2169,7 +2169,32 @@
         "credits": "Joey Sia Junwei, Georsia Ang Li Qi",
         "files": [{ "filetype": ".3dm", "url": "/pgpr/pgpr-block1-rhino.3dm" }]
       }
-    ]
+    ],
+    "buildingDataCredits": "Joey Sia Junwei, Georsia Ang Li Qi",
+    "floorToFloorHeight": 3,
+    "perimeterZoneDepth": 5,
+    "roofConstruction": 3.588,
+    "fenestrationType": "Windows",
+    "fenestrationShading": "Window blinds",
+    "northWindowToWallRatio": 30,
+    "southWindowToWallRatio": 30,
+    "eastWindowToWallRatio": 30,
+    "westWindowToWallRatio": 0,
+    "windowFrameConductance": 2,
+    "glazingType": "Double glazing",
+    "windowLeakage": 1.0,
+    "naturalVentilation": "Yes (all hours)",
+    "daylightResponse": "Continuous",
+    "perimeterOutsideAirFlowrate": 0.5,
+    "coreOccupantDensity": 0.0925,
+    "perimeterOccupantDensity": 0.08,
+    "coreEquipmentPower": 4,
+    "perimeterEquipmentPower": 4,
+    "coreLightingPower": 4,
+    "perimeterLightingPower": 4,
+    "occupancySchedule": 80,
+    "equipmentUsage": 80,
+    "lightingUsage": 50
   },
   {
     "elementId": "238932783",
