@@ -2168,7 +2168,32 @@
         "credits": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey",
         "files": [{ "filetype": ".3dm", "url": "/techno-edge/techno-edge-rhino.3dm" }]
       }
-    ]
+    ],
+    "buildingDataCredits": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey",
+    "floorToFloorHeight": 4,
+    "perimeterZoneDepth": 5,
+    "wallConstruction": 0.5,
+    "roofConstruction": 0.4,
+    "externalWallType": "Concrete",
+    "internalWalls": "Solid wall",
+    "fenestrationType": "French windows",
+    "fenestrationShading": "Exterior overhangs",
+    "northWindowToWallRatio": 85,
+    "southWindowToWallRatio": 85,
+    "eastWindowToWallRatio": 85,
+    "westWindowToWallRatio": 85,
+    "windowFrameConductance": 15,
+    "glazingType": "Double pane",
+    "naturalVentilation": "Yes (all hours)",
+    "daylightResponse": "Continuous",
+    "windowLeakage": 1.0,
+    "thermostatSetPoint": 25,
+    "coreOutsideAirFlowrate": 1.2,
+    "equipmentUsage": 168,
+    "coreOutsideAirSchedule": "Always on",
+    "perimeterOutsideAirSchedule": "Always on",
+    "exhaustAirRecovery": "None",
+    "economizerCycle": "None"
   },
   {
     "elementId": "141913023",
