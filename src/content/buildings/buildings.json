@@ -329,7 +329,33 @@
           }
         ]
       }
-    ]
+    ],
+    "buildingDataCredits": "Samantha Peh, Toh Yu En",
+    "perimeterZoneDepth": 5,
+    "wallConstruction": 1.442,
+    "roofConstruction": 0.8,
+    "fenestrationType": "Windows and doors",
+    "fenestrationShading": "None",
+    "northWindowToWallRatio": 3,
+    "southWindowToWallRatio": 2,
+    "eastWindowToWallRatio": 4,
+    "westWindowToWallRatio": 4,
+    "glazingType": "Single pane windows",
+    "naturalVentilation": "No (closed environment)",
+    "daylightResponse": "Continuous",
+    "thermostatSetPoint": 20,
+    "perimeterOutsideAirFlowrate": 1.5,
+    "coreOccupantDensity": 0.14285,
+    "perimeterOccupantDensity": 0.14285,
+    "coreLightingPower": 12,
+    "perimeterLightingPower": 12,
+    "occupancySchedule": 48,
+    "equipmentUsage": 48,
+    "lightingUsage": 168,
+    "coreOutsideAirSchedule": "Always on",
+    "perimeterOutsideAirSchedule": "Always on",
+    "exhaustAirRecovery": "None",
+    "economizerCycle": "None"
   },
   {
     "elementId": "643598737",
