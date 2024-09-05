@@ -1936,7 +1936,19 @@
         "credits": "Lim Xin Hui Sheryl, Lee Yi",
         "files": [{ "filetype": ".3dm", "url": "/sheares-hall/sheares-main-rhino.3dm" }]
       }
-    ]
+    ],
+    "buildingDataCredits": "Lim Xin Hui Sheryl, Lee Yi",
+    "floorToFloorHeight": 3.005,
+    "perimeterZoneDepth": 4,
+    "wallConstruction": 0.5,
+    "roofConstruction": 0.4,
+    "northWindowToWallRatio": 30,
+    "southWindowToWallRatio": 5,
+    "glazingType": "Double pane",
+    "naturalVentilation": "Yes",
+    "daylightResponse": "Continuous",
+    "occupancySchedule": 130,
+    "lightingUsage": 90
   },
   {
     "elementId": "640840065",
