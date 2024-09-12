@@ -14,8 +14,9 @@ const PointsOfInterest = () => {
         <CloseButton page="points-of-interest"></CloseButton>
       </div>
       <div className="menubar-content-body">
-        <p>This feature is under construction.</p>
-        <Carousel images={pointProperties.images} />
+        <div>
+          <Carousel images={pointProperties.images} />
+        </div>
       </div>
     </>
   );
