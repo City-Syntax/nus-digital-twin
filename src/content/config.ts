@@ -106,6 +106,8 @@ const pointsOfInterestCollection = defineCollection({
     z.array(
       z.object({
         id: z.string(),
+        latitude: z.number(),
+        longitude: z.number(),
         images: z.array(z.object({ src: image(), author: z.string().optional() })).optional(),
       }),
     ),
