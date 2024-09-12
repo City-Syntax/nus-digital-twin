@@ -40,6 +40,7 @@ export type MenuPages =
   | 'search'
   | 'controls'
   | 'layers'
+  | 'points-of-interest'
   | 'menu';
 
 export type BuildingInfoCategories =
