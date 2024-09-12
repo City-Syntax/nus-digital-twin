@@ -25,7 +25,6 @@ import Layers from './Layers';
 import MoreMenu from './MoreMenu';
 import Distance from './Distance';
 import { CSSTransition } from 'react-transition-group';
-import { MENU_PAGES } from './menuUtils';
 import RhinoUrban from './RhinoUrban';
 import RhinoBuildings from './RhinoBuildings';
 import UBEM from './UBEM';
