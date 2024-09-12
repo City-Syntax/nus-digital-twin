@@ -6,6 +6,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   window.CESIUM_BASE_URL = '/cesium';
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
+  import pointsData from '../../content/points-of-interest/points.json';
   import {
     activePages,
     activeModel,
@@ -270,7 +271,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     if (pickedFeature.id && pickedFeature.id.type === 'points-of-interest') {
-      pointsOfInterestId.set('51');
+      pointsOfInterestId.set(pickedFeature.id.id);
       activePages.set({
         left: 'points-of-interest',
         right: activePages.get().right,
@@ -689,15 +690,17 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const pointsOfInterest = new BillboardCollection({
     scene: viewer.scene,
   });
-  pointsOfInterest.add({
-    position: Cartesian3.fromDegrees(37358317 / 360000, 93311 / 72000),
-    image: '../dot.png',
-    sizeInMeters: true,
-    height: 16,
-    width: 16,
-    distanceDisplayCondition: new DistanceDisplayCondition(0, 2000),
-    heightReference: HeightReference.RELATIVE_TO_GROUND,
-    id: { id: 'POI1', type: 'points-of-interest' },
+  pointsData.forEach(({ longitude, latitude, id }) => {
+    pointsOfInterest.add({
+      position: Cartesian3.fromDegrees(longitude, latitude),
+      image: '../dot.png',
+      sizeInMeters: true,
+      height: 16,
+      width: 16,
+      distanceDisplayCondition: new DistanceDisplayCondition(0, 2000),
+      heightReference: HeightReference.RELATIVE_TO_GROUND,
+      id: { id: id, type: 'points-of-interest' },
+    });
   });
 
   viewer.scene.primitives.add(pointsOfInterest);

@@ -14,7 +14,7 @@ const PointsOfInterest = () => {
         <CloseButton page="points-of-interest"></CloseButton>
       </div>
       <div className="menubar-content-body">
-        <div>
+        <div key={$pointId}>
           <Carousel images={pointProperties.images} />
         </div>
       </div>
