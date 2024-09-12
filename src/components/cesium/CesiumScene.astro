@@ -47,6 +47,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ConstantProperty,
     HeightReference,
     Camera,
+    BillboardCollection,
+    DistanceDisplayCondition,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -263,6 +265,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     if (isSelectColorByDistance.get()) {
       colorByDistance(pickedFeature.getProperty('cesium#latitude'), pickedFeature.getProperty('cesium#longitude'));
       isSelectColorByDistance.set(false);
+      return;
+    }
+
+    if (pickedFeature.id && pickedFeature.id.type === 'points-of-interest') {
+      activePages.set({
+        left: 'points-of-interest',
+        right: activePages.get().right,
+        bottom: 'points-of-interest',
+      });
       return;
     }
 
@@ -672,6 +683,22 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   function colorByNone() {
     osmBuildingsTileset.style = new Cesium3DTileStyle({ show: { conditions: OSM_SHOW_CONDITIONS } });
   }
+
+  const pointsOfInterest = new BillboardCollection({
+    scene: viewer.scene,
+  });
+  pointsOfInterest.add({
+    position: Cartesian3.fromDegrees(37358317 / 360000, 93311 / 72000),
+    image: '../dot.png',
+    sizeInMeters: true,
+    height: 16,
+    width: 16,
+    distanceDisplayCondition: new DistanceDisplayCondition(0, 2000),
+    heightReference: HeightReference.RELATIVE_TO_GROUND,
+    id: { id: 'POI1', type: 'points-of-interest' },
+  });
+
+  viewer.scene.primitives.add(pointsOfInterest);
 
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
     stroke: Color.fromCssColorString('#0e7490ff'),
