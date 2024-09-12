@@ -1,6 +1,12 @@
+import { useStore } from '@nanostores/react';
+import { pointsOfInterestId } from '../../../store';
 import CloseButton from '../CloseButton';
+import buildingsData from '../../../content/points-of-interest/points.json';
+import Carousel from '../../primitives/Carousel';
 
 const PointsOfInterest = () => {
+  const $pointId = useStore(pointsOfInterestId);
+  const pointProperties = buildingsData.filter((d) => d.id == $pointId)[0];
   return (
     <>
       <div className="menubar-content-header">
@@ -9,6 +15,7 @@ const PointsOfInterest = () => {
       </div>
       <div className="menubar-content-body">
         <p>This feature is under construction.</p>
+        <Carousel images={pointProperties.images} />
       </div>
     </>
   );

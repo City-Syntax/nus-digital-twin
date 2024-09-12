@@ -18,6 +18,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     flyToPosition,
     userSettings,
     toastMessage,
+    pointsOfInterestId,
   } from '../../store';
   import {
     Cartesian2,
@@ -269,6 +270,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
 
     if (pickedFeature.id && pickedFeature.id.type === 'points-of-interest') {
+      pointsOfInterestId.set('1');
       activePages.set({
         left: 'points-of-interest',
         right: activePages.get().right,
