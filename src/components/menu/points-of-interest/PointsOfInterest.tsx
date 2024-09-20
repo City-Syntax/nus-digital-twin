@@ -3,10 +3,28 @@ import { pointsOfInterestId } from '../../../store';
 import CloseButton from '../CloseButton';
 import buildingsData from '../../../content/points-of-interest/points.json';
 import LazyImage from '../../primitives/LazyImage';
+import { useState, useEffect } from 'react';
+import type { ImageProps } from '../../../types';
 
 const PointsOfInterest = () => {
   const $pointId = useStore(pointsOfInterestId);
   const { images } = buildingsData.filter((d) => d.id == $pointId)[0];
+  const [imagesData, setImagesData] = useState<ImageProps[]>([]);
+  const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
+
+  useEffect(() => {
+    const fetchAstroImages = async () => {
+      const data = await Promise.all(
+        images.map(async (img) => ({
+          ...img,
+          src: (await astroImages[img.src]()).default.src,
+        })),
+      );
+      setImagesData(data);
+    };
+    fetchAstroImages();
+  }, []);
+
   return (
     <>
       <div className="menubar-content-header">
@@ -14,7 +32,7 @@ const PointsOfInterest = () => {
         <CloseButton page="points-of-interest"></CloseButton>
       </div>
       <div className="menubar-content-body">
-        {images
+        {imagesData
           .sort((a, b) => {
             if (a.src.includes('thermal') && b.src.includes('thermal')) {
               return 1;
