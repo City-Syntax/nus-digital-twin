@@ -52,7 +52,7 @@ const PointsOfInterest = () => {
             return (
               <div key={`${$pointId}-${i}`}>
                 <div className="img-wrapper">
-                  <LazyImage src={img.src} caption={img.author} />
+                  <LazyImage src={img.src} caption={img.author} canDownload />
                 </div>
               </div>
             );

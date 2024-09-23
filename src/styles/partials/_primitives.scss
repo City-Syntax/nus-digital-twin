@@ -207,7 +207,8 @@
   height: 100%;
 
   img,
-  .img-container__caption {
+  .img-container__caption,
+  .img-container__btn {
     opacity: 0;
     transition: opacity 150ms;
   }
@@ -216,6 +217,10 @@
 .img-container--loaded {
   img,
   .img-container__caption {
+    opacity: 1;
+  }
+
+  &:hover .img-container__btn {
     opacity: 1;
   }
 }
@@ -247,4 +252,24 @@
   font-family: 'Figtree Variable', system-ui, sans-serif;
   font-weight: 600;
   text-shadow: rgba(0, 0, 0, 0.82) 1px 1px 4px;
+}
+
+.img-container__btn {
+  @include btn;
+  @include btn-sm;
+  @include bg-base;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: var(--text-xs);
+  padding: 0 6px;
+
+  &:hover {
+    background-color: rgba(var(--base-100), 1);
+  }
+
+  svg {
+    height: 1rem;
+    width: 1rem;
+  }
 }
