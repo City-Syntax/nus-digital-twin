@@ -5,6 +5,7 @@ import buildingsData from '../../../content/points-of-interest/points.json';
 import LazyImage from '../../primitives/LazyImage';
 import { useState, useEffect } from 'react';
 import type { ImageProps } from '../../../types';
+import DownloadButton from '../../primitives/DownloadButton';
 
 const PointsOfInterest = () => {
   const $pointId = useStore(pointsOfInterestId);
@@ -51,9 +52,10 @@ const PointsOfInterest = () => {
           .map((img, i) => {
             return (
               <div key={`${$pointId}-${i}`}>
-                <div className="img-wrapper">
+                <div className="img-wrapper" style={{ marginBottom: '4px' }}>
                   <LazyImage src={img.src} caption={img.author} />
                 </div>
+                <DownloadButton type={'image'} files={[{ filetype: '.jpg', url: img.src }]} />
               </div>
             );
           })}
