@@ -2160,6 +2160,9 @@
     "postal": "119279",
     "latitude": 1.30176,
     "longitude": 103.77229,
+    "energyUse": "nus-museum-eu",
+    "energyUseIntensity": "nus-museum-eui",
+    "idfDownload": "/nus-museum/nus-museum.idf",
     "images": [
       { "src": "/src/assets/nus-museum/nus-museum-1.jpg", "author": "Angel Zhou An Ting, Vivian Yeo" },
       { "src": "/src/assets/nus-museum/nus-museum-2.jpg", "author": "Angel Zhou An Ting, Vivian Yeo" }
@@ -2504,6 +2507,7 @@
     "postal": "117511",
     "latitude": 1.29698,
     "longitude": 103.77139,
+    "idfDownload": "/celc/celc.idf",
     "images": [{ "src": "/src/assets/celc/celc.jpg", "author": "Chee Hui Zhen, Irene Siew Pui Yan" }],
     "downloads": [
       {
