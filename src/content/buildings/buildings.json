@@ -54,6 +54,9 @@
     "postal": "138627",
     "latitude": 1.30716,
     "longitude": 103.77196,
+    "energyUse": "ync-arts-centre-eu",
+    "energyUseIntensity": "ync-arts-centre-eui",
+    "idfDownload": "/ync/ync-arts-centre.idf",
     "downloads": [
       {
         "type": "Rhino",
