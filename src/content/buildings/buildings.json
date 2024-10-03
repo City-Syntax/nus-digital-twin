@@ -936,6 +936,9 @@
     "postal": "117361",
     "latitude": 1.29877,
     "longitude": 103.77138,
+    "idfDownload": "/e2a/e2a.idf",
+    "energyUse": "e2a-eu",
+    "energyUseIntensity": "e2a-eui",
     "images": [
       {
         "src": "/src/assets/e2a/e2a-1.jpg",
