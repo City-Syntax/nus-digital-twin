@@ -2566,6 +2566,9 @@
     "postal": "119083",
     "latitude": 1.29696,
     "longitude": 103.78173,
+    "idfDownload": "/msl/msl.idf",
+    "energyUse": "msl-eu",
+    "energyUseIntensity": "msl-eui",
     "images": [
       { "src": "/src/assets/msl/msl-1.jpg", "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En" },
       { "src": "/src/assets/msl/msl-2.jpg", "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En" },
