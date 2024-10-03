@@ -1493,6 +1493,9 @@
     "postal": "117603",
     "latitude": 1.29563,
     "longitude": 103.77515,
+    "energyUse": "ssls-eu",
+    "energyUseIntensity": "ssls-eui",
+    "idfDownload": "/ssls/ssls.idf",
     "images": [
       { "src": "/src/assets/ssls/ssls-1.jpg", "author": "Li Yuhang, Yang Zhengran" },
       { "src": "/src/assets/ssls/ssls-2.jpg", "author": "Li Yuhang, Yang Zhengran" }
