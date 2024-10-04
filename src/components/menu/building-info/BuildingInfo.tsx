@@ -146,7 +146,7 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
           <>
             <h3>{TITLE_MAPPINGS[title]}</h3>
             {content.map((c) => (
-              <p>
+              <p key={c.label}>
                 {c.label}: {c.value} m
               </p>
             ))}

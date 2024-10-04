@@ -369,6 +369,13 @@
       }
     ],
     "buildingDataCredits": "Samantha Peh, Toh Yu En",
+    "floorToFloorHeight": [
+      { "label": "Level 1 to 2", "value": 4.5 },
+      { "label": "Level 2 to 3", "value": 3.6 },
+      { "label": "Level 3 to 4", "value": 3.6 },
+      { "label": "Level 4 to 5", "value": 3.6 },
+      { "label": "Level 5 to 6", "value": 5.35 }
+    ],
     "perimeterZoneDepth": 5,
     "wallConstruction": 1.442,
     "roofConstruction": 0.8,
