@@ -70,7 +70,10 @@
       }
     ],
     "buildingDataCredits": "Ivy Lim Kai Yee, Jolyn Teo Jing Hui, Yeo Min Beverley Benita",
-    "floorToFloorHeight": 5.4,
+    "floorToFloorHeight": [
+      { "label": "Level 1", "value": 5.4 },
+      { "label": "Level 2", "value": 4.8 }
+    ],
     "perimeterZoneDepth": 4.8,
     "wallConstruction": 2,
     "roofConstruction": 0.8,
