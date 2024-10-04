@@ -17,52 +17,52 @@ This project is built with Astro and CesiumJS with Cesium Ion.
 
 The data for the buildings displayed can be found in `src/content/buildings/buildings.json`, and its schema can be found by referring to `buildingsCollection` in `src/content/config.ts`.
 
-| Key                         | Value                                                                                 |
-| --------------------------- | ------------------------------------------------------------------------------------- |
-| elementId                   | A unique identifier for the building, corresponds to the OSM elementId                |
-| name                        | The name of the building                                                              |
-| address                     | The location of the building                                                          |
-| postal                      | The 6-digit postal code for the building                                              |
-| latitude                    | A number representing the latitude of the building, used to set the camera on search  |
-| latitude                    | A number representing the longitude of the building, used to set the camera on search |
-| energyUse                   | The JSON file containing the energy use data                                          |
-| energyUseIntensity          | The JSON file containing the energy use intensity data                                |
-| idfDownload                 | Link to where the IDF file is hosted                                                  |
-| buildingDataCredits         | The provider of the building data                                                     |
-| downloads                   | The files available for this building, see the table below                            |
-| floorToFloorHeight          | Specified in meters                                                                   |
-| perimeterZoneDepth          | Specified in meters                                                                   |
-| wallConstruction            | Specified in U value                                                                  |
-| roofConstruction            | Specified in U value                                                                  |
-| externalWallType            |                                                                                       |
-| internalWalls               |                                                                                       |
-| fenestrationType            |                                                                                       |
-| fenestrationShading         |                                                                                       |
-| northWindowToWallRatio      | Specified in percentage                                                               |
-| southWindowToWallRatio      | Specified in percentage                                                               |
-| eastWindowToWallRatio       | Specified in percentage                                                               |
-| westWindowToWallRatio       | Specified in percentage                                                               |
-| windowFrameConductance      | Specified in U value                                                                  |
-| glazingType                 |                                                                                       |
-| windowLeakage               | Specified in air changes per hour (ACH)                                               |
-| naturalVentilation          |                                                                                       |
-| daylightResponse            |                                                                                       |
-| thermostatSetPoint          | Specified in degrees Celcius                                                          |
-| coreOutsideAirFlowrate      | Specified in litres per second per person (L/s/Person)                                |
-| perimeterOutsideAirFlowrate | Specified in air changes per hour (ACH)                                               |
-| coreOccupantDensity         | Specified in people per square meter                                                  |
-| perimeterOccupantDensity    | Specified in people per square meter                                                  |
-| coreEquipmentPower          | Specified in Watts per square meter                                                   |
-| perimeterEquipmentPower     | Specified in Watts per square meter                                                   |
-| coreLightingPower           | Specified in Watts per square meter                                                   |
-| perimeterLightingPower      | Specified in Watts per square meter                                                   |
-| occupancySchedule           | Specified in hours per week                                                           |
-| equipmentUsage              | Specified in hours per week                                                           |
-| lightingUsage               | Specified in hours per week                                                           |
-| coreOutsideAirSchedule      |                                                                                       |
-| perimeterOutsideAirSchedule |                                                                                       |
-| exhaustAirRecovery          |                                                                                       |
-| economizerCycle             |                                                                                       |
+| Key                         | Value                                                                                    |
+| --------------------------- | ---------------------------------------------------------------------------------------- |
+| elementId                   | A unique identifier for the building, corresponds to the OSM elementId                   |
+| name                        | The name of the building                                                                 |
+| address                     | The location of the building                                                             |
+| postal                      | The 6-digit postal code for the building                                                 |
+| latitude                    | A number representing the latitude of the building, used to set the camera on search     |
+| latitude                    | A number representing the longitude of the building, used to set the camera on search    |
+| energyUse                   | The JSON file containing the energy use data                                             |
+| energyUseIntensity          | The JSON file containing the energy use intensity data                                   |
+| idfDownload                 | Link to where the IDF file is hosted                                                     |
+| buildingDataCredits         | The provider of the building data                                                        |
+| downloads                   | The files available for this building, see the table below                               |
+| floorToFloorHeight          | Specified in meters, can be either a number or an array of objects (keys: label, value). |
+| perimeterZoneDepth          | Specified in meters                                                                      |
+| wallConstruction            | Specified in U value                                                                     |
+| roofConstruction            | Specified in U value                                                                     |
+| externalWallType            |                                                                                          |
+| internalWalls               |                                                                                          |
+| fenestrationType            |                                                                                          |
+| fenestrationShading         |                                                                                          |
+| northWindowToWallRatio      | Specified in percentage                                                                  |
+| southWindowToWallRatio      | Specified in percentage                                                                  |
+| eastWindowToWallRatio       | Specified in percentage                                                                  |
+| westWindowToWallRatio       | Specified in percentage                                                                  |
+| windowFrameConductance      | Specified in U value                                                                     |
+| glazingType                 |                                                                                          |
+| windowLeakage               | Specified in air changes per hour (ACH)                                                  |
+| naturalVentilation          |                                                                                          |
+| daylightResponse            |                                                                                          |
+| thermostatSetPoint          | Specified in degrees Celcius                                                             |
+| coreOutsideAirFlowrate      | Specified in litres per second per person (L/s/Person)                                   |
+| perimeterOutsideAirFlowrate | Specified in air changes per hour (ACH)                                                  |
+| coreOccupantDensity         | Specified in people per square meter                                                     |
+| perimeterOccupantDensity    | Specified in people per square meter                                                     |
+| coreEquipmentPower          | Specified in Watts per square meter                                                      |
+| perimeterEquipmentPower     | Specified in Watts per square meter                                                      |
+| coreLightingPower           | Specified in Watts per square meter                                                      |
+| perimeterLightingPower      | Specified in Watts per square meter                                                      |
+| occupancySchedule           | Specified in hours per week                                                              |
+| equipmentUsage              | Specified in hours per week                                                              |
+| lightingUsage               | Specified in hours per week                                                              |
+| coreOutsideAirSchedule      |                                                                                          |
+| perimeterOutsideAirSchedule |                                                                                          |
+| exhaustAirRecovery          |                                                                                          |
+| economizerCycle             |                                                                                          |
 
 | Key      | Value                            |
 | -------- | -------------------------------- |

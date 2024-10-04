@@ -32,7 +32,15 @@ const buildingSchema = z.object({
     .optional(),
   address: z.string(),
   postal: z.string(),
-  floorToFloorHeight: z.number().optional(),
+  floorToFloorHeight: z
+    .array(
+      z.object({
+        label: z.string(),
+        value: z.number(),
+      }),
+    )
+    .or(z.number())
+    .optional(),
   perimeterZoneDepth: z.number().optional(),
   wallConstruction: z.number().optional(),
   roofConstruction: z.number().optional(),

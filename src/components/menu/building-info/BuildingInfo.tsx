@@ -141,6 +141,24 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
         </>
       );
     case 'floorToFloorHeight':
+      if (Array.isArray(content)) {
+        return (
+          <>
+            <h3>{TITLE_MAPPINGS[title]}</h3>
+            {content.map((c) => (
+              <p>
+                {c.label}: {c.value} m
+              </p>
+            ))}
+          </>
+        );
+      }
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content} m</p>
+        </>
+      );
     case 'perimeterZoneDepth':
       return (
         <>
