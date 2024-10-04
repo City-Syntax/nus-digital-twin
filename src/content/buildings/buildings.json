@@ -785,6 +785,11 @@
       }
     ],
     "buildingDataCredits": "Steffi Seah, Tay Hui Xin",
+    "floorToFloorHeight": [
+      { "label": "Level 1", "value": 7 },
+      { "label": "Level M", "value": 4.45 },
+      { "label": "Level 2 and 3", "value": 3.5 }
+    ],
     "perimeterZoneDepth": 7,
     "wallConstruction": 0.67,
     "roofConstruction": 1.1,
