@@ -169,8 +169,14 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
           <p>{content}%</p>
         </>
       );
-    case 'windowLeakage':
     case 'coreOutsideAirFlowrate':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{Number.isInteger(content) ? content + '.0' : content} L/s/Person</p>
+        </>
+      );
+    case 'windowLeakage':
     case 'perimeterOutsideAirFlowrate':
       return (
         <>

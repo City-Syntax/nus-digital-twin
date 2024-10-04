@@ -48,7 +48,7 @@ The data for the buildings displayed can be found in `src/content/buildings/buil
 | naturalVentilation          |                                                                                       |
 | daylightResponse            |                                                                                       |
 | thermostatSetPoint          | Specified in degrees Celcius                                                          |
-| coreOutsideAirFlowrate      | Specified in air changes per hour (ACH)                                               |
+| coreOutsideAirFlowrate      | Specified in litres per second per person (L/s/Person)                                |
 | perimeterOutsideAirFlowrate | Specified in air changes per hour (ACH)                                               |
 | coreOccupantDensity         | Specified in people per square meter                                                  |
 | perimeterOccupantDensity    | Specified in people per square meter                                                  |
