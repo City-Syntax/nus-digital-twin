@@ -1,0 +1,98 @@
+[
+  {
+    "month": "Jan",
+    "equipment": 12170.21,
+    "fans": 0.0,
+    "lighting": 9007.16,
+    "heating": 0.0,
+    "cooling": 4908.93
+  },
+  {
+    "month": "Feb",
+    "equipment": 10992.44,
+    "fans": 0.0,
+    "lighting": 7947.75,
+    "heating": 0.0,
+    "cooling": 7847.41
+  },
+  {
+    "month": "Mar",
+    "equipment": 12170.21,
+    "fans": 0.0,
+    "lighting": 9256.89,
+    "heating": 0.0,
+    "cooling": 13140.97
+  },
+  {
+    "month": "Apr",
+    "equipment": 11777.62,
+    "fans": 0.0,
+    "lighting": 8816.05,
+    "heating": 0.0,
+    "cooling": 13032.9
+  },
+  {
+    "month": "May",
+    "equipment": 12170.21,
+    "fans": 0.0,
+    "lighting": 9045.28,
+    "heating": 0.0,
+    "cooling": 10708.9
+  },
+  {
+    "month": "Jun",
+    "equipment": 11777.62,
+    "fans": 0.0,
+    "lighting": 8802.23,
+    "heating": 0.0,
+    "cooling": 12218.27
+  },
+  {
+    "month": "Jul",
+    "equipment": 12170.21,
+    "fans": 0.0,
+    "lighting": 9112.18,
+    "heating": 0.0,
+    "cooling": 11035.59
+  },
+  {
+    "month": "Aug",
+    "equipment": 12170.21,
+    "fans": 0.0,
+    "lighting": 9280.03,
+    "heating": 0.0,
+    "cooling": 7594.38
+  },
+  {
+    "month": "Sep",
+    "equipment": 11777.62,
+    "fans": 0.0,
+    "lighting": 9035.74,
+    "heating": 0.0,
+    "cooling": 7825.1
+  },
+  {
+    "month": "Oct",
+    "equipment": 12170.21,
+    "fans": 0.0,
+    "lighting": 9275.29,
+    "heating": 0.0,
+    "cooling": 9879.46
+  },
+  {
+    "month": "Nov",
+    "equipment": 11777.62,
+    "fans": 0.0,
+    "lighting": 9015.43,
+    "heating": 0.0,
+    "cooling": 10550.6
+  },
+  {
+    "month": "Dec",
+    "equipment": 12170.21,
+    "fans": 0.0,
+    "lighting": 9254.42,
+    "heating": 0.0,
+    "cooling": 7774.21
+  }
+]

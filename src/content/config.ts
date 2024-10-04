@@ -32,7 +32,15 @@ const buildingSchema = z.object({
     .optional(),
   address: z.string(),
   postal: z.string(),
-  floorToFloorHeight: z.number().optional(),
+  floorToFloorHeight: z
+    .array(
+      z.object({
+        label: z.string(),
+        value: z.number(),
+      }),
+    )
+    .or(z.number())
+    .optional(),
   perimeterZoneDepth: z.number().optional(),
   wallConstruction: z.number().optional(),
   roofConstruction: z.number().optional(),
@@ -85,7 +93,7 @@ const buildingsCollection = defineCollection({
 const energyUseSchema = z.object({
   month: z.string(),
   equipment: z.number(),
-  fans: z.number(),
+  fans: z.number().optional(),
   pumps: z.number().optional(),
   humid: z.number().optional(),
   heatReject: z.number().optional(),
