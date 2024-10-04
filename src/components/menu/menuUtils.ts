@@ -39,6 +39,7 @@ const BOTTOM_MENU_PAGES: MenuPages[] = [
   'search',
   'controls',
   'layers',
+  'learning',
   'menu',
 ];
 

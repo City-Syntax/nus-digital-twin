@@ -1,0 +1,124 @@
+---
+import Icons from '../components/Icons';
+import VideoPlayer from '../components/tutorials/VideoPlayer';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="NUS Digital Twin: Tutorials">
+  <header>
+    <a href="/">
+      <Icons.Logo height="1.75rem" width="1.75rem" />
+    </a>
+    <svg
+      style="display: block; transform: scale(-1,1)"
+      xmlns="http://www.w3.org/2000/svg"
+      height="1.25rem"
+      width="1.25rem"
+      viewBox="0 0 15 15"
+    >
+      <path
+        opacity="0.35"
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.109 14L9.466 1h1.352L5.46 14z"
+        clip-rule="evenodd"></path>
+    </svg>
+    <a href="/tutorials">
+      <h1>Tutorial Videos</h1>
+    </a>
+  </header>
+  <VideoPlayer client:load />
+</Layout>
+<style is:inline>
+  @media (prefers-color-scheme: light) {
+    header a svg > rect {
+      fill: #dedede;
+      stroke-width: 1;
+    }
+  }
+
+  body {
+    color: #212121;
+    background-color: #f5f5f5;
+    max-width: 1068px;
+    padding: var(--padding-base);
+    margin: 0 auto;
+  }
+
+  a:has(h1) {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #212121;
+      color: #ffffff;
+    }
+
+    a {
+      color: #0066ff;
+    }
+  }
+
+  header {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-bottom: 20px;
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 1rem;
+    }
+  }
+
+  .video-container {
+    display: flex;
+  }
+
+  .video__nav button {
+    color: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(var(--primary-300));
+    }
+  }
+
+  .video__nav {
+    padding-right: var(--padding-base);
+    margin-right: 16px;
+    border-right: 1px solid #333;
+    width: 258px;
+
+    .video__nav-title {
+      font-size: var(--text-sm);
+      color: rgba(var(--base-300));
+      font-weight: 600;
+    }
+
+    > * + * {
+      margin-top: 12px;
+    }
+
+    > *:nth-child(2) {
+      margin-top: 4px;
+    }
+  }
+
+  .video {
+    width: 100%;
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+  }
+</style>
