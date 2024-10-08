@@ -1,7 +1,7 @@
 ---
 interface Props {
   title: string;
-  description?: string;
+  description: string;
 }
 import 'tippy.js/dist/tippy.css';
 import '@fontsource-variable/figtree';
@@ -10,8 +10,7 @@ import figtreeWoff2 from '@fontsource-variable/figtree/files/figtree-latin-wght-
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const SITE_DESCRIPTION = 'A digital twin of the National University of Singapore campus.';
-const { title, description = SITE_DESCRIPTION } = Astro.props;
+const { title, description } = Astro.props;
 
 // Force validation of content collections data
 import { getCollection } from 'astro:content';
@@ -36,12 +35,12 @@ if (import.meta.env.DEV) {
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={SITE_DESCRIPTION} />
+    <meta property="og:description" content={description} />
     <meta property="og:image" content="/favicon192.png" />
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={SITE_DESCRIPTION} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/favicon192.png" />
     <title>{title}</title>
   </head>
