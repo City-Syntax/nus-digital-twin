@@ -18,7 +18,7 @@ export const activeModel = atom<Models | ''>('osm');
 export const buildingColorSetting = atom<'' | 'distance'>('');
 
 export const buildingId = atom('');
-export const pointsOfInterestId = atom('');
+export const pointId = atom('');
 export const isSelectColorByDistance = atom(false);
 export const colorByDistancePosition = atom<Position>({
   latitude: 1.29563,

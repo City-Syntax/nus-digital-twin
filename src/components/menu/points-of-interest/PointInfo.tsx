@@ -1,5 +1,5 @@
 import { useStore } from '@nanostores/react';
-import { pointsOfInterestId } from '../../../store';
+import { pointId } from '../../../store';
 import CloseButton from '../CloseButton';
 import buildingsData from '../../../content/points-of-interest/points.json';
 import LazyImage from '../../primitives/LazyImage';
@@ -7,8 +7,8 @@ import { useState, useEffect } from 'react';
 import type { ImageProps } from '../../../types';
 import DownloadButton from '../../primitives/DownloadButton';
 
-const PointsOfInterest = () => {
-  const $pointId = useStore(pointsOfInterestId);
+const PointInfo = () => {
+  const $pointId = useStore(pointId);
   const { images } = buildingsData.filter((d) => d.id == $pointId)[0];
   const [imagesData, setImagesData] = useState<ImageProps[]>([]);
   const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
@@ -49,11 +49,11 @@ const PointsOfInterest = () => {
 
             return 1;
           })
-          .map((img, i) => {
+          .map((img) => {
             return (
-              <div key={`${$pointId}-${i}`}>
+              <div key={img.src}>
                 <div className="img-wrapper" style={{ marginBottom: '4px' }}>
-                  <LazyImage src={img.src} caption={img.author} />
+                  <LazyImage key={img.src} src={img.src} caption={img.author} />
                 </div>
                 <DownloadButton type={'image'} files={[{ filetype: '.jpg', url: img.src }]} />
               </div>
@@ -64,4 +64,4 @@ const PointsOfInterest = () => {
   );
 };
 
-export default PointsOfInterest;
+export default PointInfo;
