@@ -12,6 +12,7 @@ const LEFT_MENU_PAGES: MenuPages[] = [
   'bim',
   'building-info',
   'points-of-interest',
+  'point-info',
   'help',
   'settings',
 ];
@@ -22,6 +23,7 @@ const BOTTOM_MENU_PAGES: MenuPages[] = [
   'about',
   'building-info',
   'points-of-interest',
+  'point-info',
   'street-centerlines',
   'building-footprints',
   'green-spaces',

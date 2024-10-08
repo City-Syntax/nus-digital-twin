@@ -72,7 +72,7 @@ const Menu = () => {
             {$activePages.left === 'ubem' && <UBEM></UBEM>}
             {$activePages.left === 'bim' && <BIMModels></BIMModels>}
             {$activePages.left === 'settings' && <Settings></Settings>}
-            {$activePages.left === 'points-of-interest' && <PointInfo />}
+            {$activePages.left === 'point-info' && <PointInfo />}
             {$activePages.left === 'building-info' && (
               <BuildingInfo category={category} setCategory={setCategory}></BuildingInfo>
             )}
@@ -114,7 +114,7 @@ const Menu = () => {
               {$activePages.bottom === 'building-info' && (
                 <BuildingInfo category={category} setCategory={setCategory}></BuildingInfo>
               )}
-              {$activePages.bottom === 'points-of-interest' && <PointInfo />}
+              {$activePages.bottom === 'point-info' && <PointInfo />}
               {$activePages.bottom === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
               {$activePages.bottom === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
               {$activePages.bottom === 'green-spaces' && <GreenSpaces></GreenSpaces>}

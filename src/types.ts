@@ -41,6 +41,7 @@ export type MenuPages =
   | 'controls'
   | 'layers'
   | 'points-of-interest'
+  | 'point-info'
   | 'menu';
 
 export type BuildingInfoCategories =

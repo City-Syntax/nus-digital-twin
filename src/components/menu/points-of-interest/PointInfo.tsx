@@ -29,8 +29,8 @@ const PointInfo = () => {
   return (
     <>
       <div className="menubar-content-header">
-        <h2>Points of Interest</h2>
-        <CloseButton page="points-of-interest"></CloseButton>
+        <h2>Point of Interest</h2>
+        <CloseButton page="point-info"></CloseButton>
       </div>
       <div className="menubar-content-body">
         {imagesData
