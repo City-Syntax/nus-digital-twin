@@ -30,6 +30,7 @@ import RhinoBuildings from './RhinoBuildings';
 import UBEM from './UBEM';
 import AutoHeight from '../primitives/AutoHeight';
 import PointInfo from './points-of-interest/PointInfo';
+import PointsOfInterest from './points-of-interest/PointsOfInterest';
 
 const Menu = () => {
   const $activePages = useStore(activePages);
@@ -73,6 +74,7 @@ const Menu = () => {
             {$activePages.left === 'bim' && <BIMModels></BIMModels>}
             {$activePages.left === 'settings' && <Settings></Settings>}
             {$activePages.left === 'point-info' && <PointInfo />}
+            {$activePages.left === 'points-of-interest' && <PointsOfInterest />}
             {$activePages.left === 'building-info' && (
               <BuildingInfo category={category} setCategory={setCategory}></BuildingInfo>
             )}
@@ -115,6 +117,7 @@ const Menu = () => {
                 <BuildingInfo category={category} setCategory={setCategory}></BuildingInfo>
               )}
               {$activePages.bottom === 'point-info' && <PointInfo />}
+              {$activePages.bottom === 'points-of-interest' && <PointsOfInterest />}
               {$activePages.bottom === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
               {$activePages.bottom === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
               {$activePages.bottom === 'green-spaces' && <GreenSpaces></GreenSpaces>}

@@ -13,6 +13,10 @@ const Layers = () => {
       <ScrollContainer>
         <div className="menubar-content-body">
           <div className="menu-list">
+            <div className="menu-list-title">Points</div>
+            <MenuLinks.Points dir="bottom" />
+          </div>
+          <div className="menu-list">
             <div className="menu-list-title">GIS Layers</div>
             <MenuLinks.GISLayers dir="bottom" />
           </div>

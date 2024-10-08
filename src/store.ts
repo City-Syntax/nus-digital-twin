@@ -18,6 +18,10 @@ export const activeModel = atom<Models | ''>('osm');
 export const buildingColorSetting = atom<'' | 'distance'>('');
 
 export const buildingId = atom('');
+export const showPoints = persistentAtom<boolean>('points', false, {
+  encode: JSON.stringify,
+  decode: JSON.parse,
+});
 export const pointId = atom('');
 export const isSelectColorByDistance = atom(false);
 export const colorByDistancePosition = atom<Position>({
