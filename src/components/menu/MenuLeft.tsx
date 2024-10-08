@@ -39,6 +39,16 @@ const MenuLeft = () => {
             </div>
           </div>
           <div className="menu-list">
+            <input id="points-left" className="toggle" type="checkbox" defaultChecked onChange={handleOnChange} />
+            <label htmlFor="points-left" className="toggle-label menu-list-title">
+              <span>Points</span>
+              <Icons.ChevronDown></Icons.ChevronDown>
+            </label>
+            <div className="menu-list-content">
+              <MenuLinks.Points dir="left" />
+            </div>
+          </div>
+          <div className="menu-list">
             <input id="gis-layers-left" className="toggle" type="checkbox" defaultChecked onChange={handleOnChange} />
             <label htmlFor="gis-layers-left" className="toggle-label menu-list-title">
               <span>GIS Layers</span>

@@ -8,6 +8,21 @@ type MenuLinksProps = {
   dir: MenuDir;
 };
 
+const Points = ({ dir }: MenuLinksProps) => {
+  return (
+    <>
+      <MenuLink
+        toPage="points-of-interest"
+        label="Points of Interest"
+        iconName="Point"
+        dir={dir}
+        isLeft
+        isBottom
+      ></MenuLink>
+    </>
+  );
+};
+
 const GISLayers = ({ dir }: MenuLinksProps) => {
   const $activeGISLayer = useStore(activeGISLayer);
   return (
@@ -138,6 +153,7 @@ const Menu = ({ dir }: MenuLinksProps) => {
 };
 
 export default {
+  Points,
   GISLayers,
   BuildingScaleModels,
   UrbanScaleModels,

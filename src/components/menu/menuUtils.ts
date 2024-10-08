@@ -11,6 +11,8 @@ const LEFT_MENU_PAGES: MenuPages[] = [
   'ubem',
   'bim',
   'building-info',
+  'points-of-interest',
+  'point-info',
   'help',
   'settings',
 ];
@@ -20,6 +22,8 @@ const RIGHT_MENU_PAGES: MenuPages[] = ['buildings', 'energy', 'thermal-comfort',
 const BOTTOM_MENU_PAGES: MenuPages[] = [
   'about',
   'building-info',
+  'points-of-interest',
+  'point-info',
   'street-centerlines',
   'building-footprints',
   'green-spaces',

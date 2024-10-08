@@ -108,9 +108,23 @@ const energyCollection = defineCollection({
   schema: () => z.array(energyUseSchema),
 });
 
+const pointsOfInterestCollection = defineCollection({
+  type: 'data',
+  schema: ({ image }) =>
+    z.array(
+      z.object({
+        id: z.string(),
+        latitude: z.number(),
+        longitude: z.number(),
+        images: z.array(z.object({ src: image(), author: z.string().optional() })).optional(),
+      }),
+    ),
+});
+
 export const collections = {
   buildings: buildingsCollection,
   energy: energyCollection,
+  'points-of-interest': pointsOfInterestCollection,
 };
 
 export type BuildingPropertiesProps = z.infer<typeof buildingSchema> & {

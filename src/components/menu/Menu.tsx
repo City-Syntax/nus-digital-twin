@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
@@ -25,11 +25,12 @@ import Layers from './Layers';
 import MoreMenu from './MoreMenu';
 import Distance from './Distance';
 import { CSSTransition } from 'react-transition-group';
-import { MENU_PAGES } from './menuUtils';
 import RhinoUrban from './RhinoUrban';
 import RhinoBuildings from './RhinoBuildings';
 import UBEM from './UBEM';
 import AutoHeight from '../primitives/AutoHeight';
+import PointInfo from './points-of-interest/PointInfo';
+import PointsOfInterest from './points-of-interest/PointsOfInterest';
 
 const Menu = () => {
   const $activePages = useStore(activePages);
@@ -55,7 +56,7 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={$activePages.left !== '' && MENU_PAGES.LEFT.includes($activePages.left)}
+          in={$activePages.left !== ''}
           timeout={150}
           classNames="menu-left"
           nodeRef={menuLeftRef}
@@ -72,6 +73,8 @@ const Menu = () => {
             {$activePages.left === 'ubem' && <UBEM></UBEM>}
             {$activePages.left === 'bim' && <BIMModels></BIMModels>}
             {$activePages.left === 'settings' && <Settings></Settings>}
+            {$activePages.left === 'point-info' && <PointInfo />}
+            {$activePages.left === 'points-of-interest' && <PointsOfInterest />}
             {$activePages.left === 'building-info' && (
               <BuildingInfo category={category} setCategory={setCategory}></BuildingInfo>
             )}
@@ -82,7 +85,7 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={$activePages.right !== '' && MENU_PAGES.RIGHT.includes($activePages.right)}
+          in={$activePages.right !== ''}
           timeout={150}
           classNames="menu-right"
           nodeRef={menuRightRef}
@@ -102,7 +105,7 @@ const Menu = () => {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={$activePages.bottom !== '' && MENU_PAGES.BOTTOM.includes($activePages.bottom)}
+          in={$activePages.bottom !== ''}
           timeout={150}
           classNames="menu-bottom"
           nodeRef={menuBottomRef}
@@ -113,6 +116,8 @@ const Menu = () => {
               {$activePages.bottom === 'building-info' && (
                 <BuildingInfo category={category} setCategory={setCategory}></BuildingInfo>
               )}
+              {$activePages.bottom === 'point-info' && <PointInfo />}
+              {$activePages.bottom === 'points-of-interest' && <PointsOfInterest />}
               {$activePages.bottom === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
               {$activePages.bottom === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
               {$activePages.bottom === 'green-spaces' && <GreenSpaces></GreenSpaces>}
