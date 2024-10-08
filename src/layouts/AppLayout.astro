@@ -1,0 +1,13 @@
+---
+interface Props {
+  title: string;
+}
+
+import '../styles/app.scss';
+import Layout from './Layout.astro';
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+  <slot />
+</Layout>
