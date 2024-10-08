@@ -20,6 +20,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     userSettings,
     toastMessage,
     pointId,
+    showPoints,
   } from '../../store';
   import {
     Cartesian2,
@@ -689,6 +690,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   const pointsOfInterest = new BillboardCollection({
     scene: viewer.scene,
+    show: showPoints.get(),
   });
   pointsData.forEach(({ longitude, latitude, id }) => {
     pointsOfInterest.add({
@@ -697,13 +699,15 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       sizeInMeters: true,
       height: 16,
       width: 16,
-      distanceDisplayCondition: new DistanceDisplayCondition(0, 2000),
+      distanceDisplayCondition: new DistanceDisplayCondition(0, 4000),
       heightReference: HeightReference.RELATIVE_TO_GROUND,
       id: { id: id, type: 'points-of-interest' },
     });
   });
 
   viewer.scene.primitives.add(pointsOfInterest);
+
+  showPoints.listen((isShow) => (pointsOfInterest.show = isShow));
 
   const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
     stroke: Color.fromCssColorString('#0e7490ff'),
