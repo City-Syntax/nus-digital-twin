@@ -6,6 +6,14 @@ interface Props {
 import '../styles/app.scss';
 import Layout from './Layout.astro';
 const { title } = Astro.props;
+
+// Force validation of content collections data
+import { getCollection } from 'astro:content';
+if (import.meta.env.DEV) {
+  getCollection('buildings');
+  getCollection('energy');
+  getCollection('points-of-interest');
+}
 ---
 
 <Layout title={title} description="A digital twin of the National University of Singapore campus.">
