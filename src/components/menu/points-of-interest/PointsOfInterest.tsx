@@ -24,7 +24,7 @@ const PointsOfInterest = () => {
       setImagesData(data);
     };
     fetchAstroImages();
-  }, []);
+  }, [$pointId]);
 
   return (
     <>
