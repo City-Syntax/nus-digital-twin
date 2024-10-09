@@ -1,4 +1,5 @@
 ---
+import PageHeader from '../../../components/PageHeader.astro';
 import PageLayout from '../../../layouts/PageLayout.astro';
 
 let API_ROUTE = Astro.url.pathname;
@@ -14,6 +15,7 @@ if (API_ROUTE.endsWith('/')) {
 >
   <main>
     <div>
+      <PageHeader title="API Reference" />
       <h1>NUS Digital Twin API Reference</h1>
       <p>
         The NUS Digital Twin API is currently in <b>beta</b>. The NUS Digital Twin API contains building data used for <a
