@@ -1,0 +1,31 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+* {
+  font-family: 'Inter Variable', system-ui, sans-serif;
+}
+
+h1,
+h2 {
+  font-family: 'Figtree Variable', system-ui, sans-serif;
+}
+
+sup {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.5em;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+main {
+  max-width: 768px;
+  padding: 0 16px;
+  margin: 0 auto;
+}

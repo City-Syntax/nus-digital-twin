@@ -1,19 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
 import Menu from '../components/menu/Menu';
 import CesiumScene from '../components/cesium/CesiumScene.astro';
 import Toolbar from '../components/toolbar/Toolbar.astro';
 import BottomBar from '../components/bottom-bar/BottomBar.astro';
 import NotificationsBox from '../components/notifications/NotificationsBox';
+import AppLayout from '../layouts/AppLayout.astro';
 ---
 
-<Layout title="NUS Digital Twin">
+<AppLayout title="NUS Digital Twin">
   <Menu client:only="react" />
   <CesiumScene />
   <Toolbar />
   <NotificationsBox client:load />
   <BottomBar />
-</Layout>
+</AppLayout>
 <script>
   import tippy from 'tippy.js';
 
