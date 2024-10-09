@@ -1,5 +1,7 @@
 import buildingsData from '../../../content/buildings/buildings.json';
 
+export const prerender = false;
+
 export async function GET() {
   const keys = ['elementId', 'name', 'address', 'postal', 'latitude', 'longitude'];
 
