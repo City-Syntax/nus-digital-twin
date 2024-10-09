@@ -1,6 +1,6 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
   description: string;
 }
 import 'tippy.js/dist/tippy.css';
@@ -11,6 +11,8 @@ import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description } = Astro.props;
+
+const formattedTitle = `${title ? title + ' | ' : ''}NUS Digital Twin`;
 ---
 
 <!doctype html>
@@ -26,15 +28,15 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={formattedTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/favicon192.png" />
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:url" content={canonicalURL} />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:title" content={formattedTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/favicon192.png" />
-    <title>{title}</title>
+    <title>{formattedTitle}</title>
   </head>
   <body>
     <slot />
