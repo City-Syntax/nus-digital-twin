@@ -1,7 +1,11 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
 
-const API_ROUTE = Astro.url.pathname;
+let API_ROUTE = Astro.url.pathname;
+
+if (API_ROUTE.endsWith('/')) {
+  API_ROUTE = API_ROUTE.slice(0, -1);
+}
 ---
 
 <PageLayout
