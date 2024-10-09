@@ -1,5 +1,7 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
+
+const API_ROUTE = Astro.url.pathname;
 ---
 
 <PageLayout
@@ -16,7 +18,7 @@ import PageLayout from '../../../layouts/PageLayout.astro';
       </p>
     </div>
     <div>
-      <code>GET <a href="./buildings">/buildings</a></code>
+      <code>GET <a href=`${API_ROUTE}/buildings`>/buildings</a></code>
     </div>
   </main>
 </PageLayout>
