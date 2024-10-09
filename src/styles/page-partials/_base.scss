@@ -1,12 +1,6 @@
 body,
 html {
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-}
-
-* {
-  font-family: 'Inter Variable', system-ui, sans-serif;
+  font-size: var(--text-base);
 }
 
 h1,
@@ -21,11 +15,11 @@ sup {
 }
 
 p {
-  line-height: 1.5rem;
+  line-height: var(--text-3xl);
 }
 
 main {
   max-width: 768px;
-  padding: 0 16px;
+  padding: 0 var(--padding-base);
   margin: 0 auto;
 }
