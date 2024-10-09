@@ -1,0 +1,27 @@
+---
+import Icons from './Icons';
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<header class="page-header">
+  <a href="/">
+    <Icons.Logo height="1.75rem" width="1.75rem" />
+  </a>
+  <svg xmlns="http://www.w3.org/2000/svg" height="1.25rem" width="1.25rem" viewBox="0 0 15 15">
+    <path
+      opacity="0.35"
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M4.109 14L9.466 1h1.352L5.46 14z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+  <span class="page-title">
+    {title}
+  </span>
+</header>

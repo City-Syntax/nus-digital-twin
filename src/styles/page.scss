@@ -1,3 +1,21 @@
 @import 'src/styles/partials/normalize';
 @import 'src/styles/partials/common';
 @import 'src/styles/page-partials/base';
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 20px;
+
+  .page-title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    font-family: 'Figtree Variable', system-ui, sans-serif;
+  }
+
+  a {
+    display: flex;
+    text-decoration: none;
+  }
+}
