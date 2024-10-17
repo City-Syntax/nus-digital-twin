@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useStore } from '@nanostores/react';
 import { pointId } from '../../../store';
 import CloseButton from '../CloseButton';
@@ -8,7 +9,13 @@ import type { PointsOfInterestProps } from '../../../content/config';
 
 const PointInfo = () => {
   const $pointId = useStore(pointId);
+  const menubodyRef = useRef<HTMLDivElement>(null);
   const properties = Object.entries(pointsData.filter((d) => d.id == $pointId)[0]);
+  pointId.listen(() => {
+    if (menubodyRef && menubodyRef.current) {
+      menubodyRef.current.scrollTo(0, 0);
+    }
+  });
 
   return (
     <>
@@ -16,7 +23,7 @@ const PointInfo = () => {
         <h2>Point of Interest</h2>
         <CloseButton page="point-info"></CloseButton>
       </div>
-      <div className="menubar-content-body">
+      <div className="menubar-content-body" ref={menubodyRef}>
         {properties
           .filter(([title]) => title !== 'id')
           .map(([title, content]) => {
