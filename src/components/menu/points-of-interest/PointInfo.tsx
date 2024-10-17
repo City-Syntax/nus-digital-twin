@@ -56,6 +56,19 @@ const PointInfoContent = ({ title, content }: { title: keyof PointsOfInterestPro
           <DownloadButton type={'image'} files={[{ filetype: '.jpg', url: content.src }]} />
         </div>
       );
+    case 'skySegmentationPercent':
+    case 'pavementSegmentationPercent':
+    case 'waterSegmentationPercent':
+    case 'vegetationSegmentationPercent':
+    case 'buildingSegmentationPercent':
+    case 'otherSegmentationPercent':
+    case 'thermalRatio':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content}%</p>
+        </>
+      );
     default:
       return (
         <>
