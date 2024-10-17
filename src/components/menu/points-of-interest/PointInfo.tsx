@@ -6,7 +6,7 @@ import pointsData from '../../../content/points-of-interest/points.json';
 import LazyImage from '../../primitives/LazyImage';
 import DownloadButton from '../../primitives/DownloadButton';
 import type { PointsOfInterestProps } from '../../../content/config';
-import { SORT_ORDER } from './pointsInfoUtils';
+import { SORT_ORDER, TITLE_MAPPINGS } from './pointsInfoUtils';
 
 const PointInfo = () => {
   const $pointId = useStore(pointId);
@@ -59,7 +59,7 @@ const PointInfoContent = ({ title, content }: { title: keyof PointsOfInterestPro
     default:
       return (
         <>
-          <h3>{title}</h3>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
           <p>{content}</p>
         </>
       );
