@@ -1,25 +1,20 @@
-import React from 'react';
-import mapboxDark from '../../assets/mapbox-dark.png';
-import mapboxSatellite from '../../assets/mapbox-satellite.png';
-import mapboxStreet from '../../assets/mapbox-street.png';
 import Icons from '../Icons';
 import * as Popover from '@radix-ui/react-popover';
 import { activeMapLayer } from '../../store';
 import { useStore } from '@nanostores/react';
-import type { MapLayers } from '../../types';
-import type { ImageMetadata } from 'astro';
+import type { ImageProps, MapLayers } from '../../types';
 import LazyImage from '../primitives/LazyImage';
 
 const MapPickerButton = () => {
   const $activeMapLayer = useStore(activeMapLayer);
   const mapLayers: Array<{
     id: MapLayers;
-    img: ImageMetadata;
+    img: ImageProps;
     name: string;
   }> = [
-    { id: 'street', img: mapboxStreet, name: 'Mapbox Street' },
-    { id: 'dark', img: mapboxDark, name: 'Mapbox Dark' },
-    { id: 'satellite', img: mapboxSatellite, name: 'Mapbox Satellite' },
+    { id: 'street', img: { src: '/src/assets/mapbox-street.png' }, name: 'Mapbox Street' },
+    { id: 'dark', img: { src: '/src/assets/mapbox-dark.png' }, name: 'Mapbox Dark' },
+    { id: 'satellite', img: { src: '/src/assets/mapbox-satellite.png' }, name: 'Mapbox Satellite' },
   ];
 
   return (
@@ -41,7 +36,7 @@ const MapPickerButton = () => {
                   type="button"
                   onClick={() => activeMapLayer.set(layer.id)}
                 >
-                  <LazyImage src={layer.img.src} alt={layer.name}></LazyImage>
+                  <LazyImage img={layer.img} alt={layer.name}></LazyImage>
                   {layer.name}
                 </button>
               );

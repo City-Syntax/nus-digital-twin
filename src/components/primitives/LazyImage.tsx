@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Icons from '../Icons';
+import type { ImageProps } from '../../types';
 
-const LazyImage = ({ src, alt, caption }: { src?: string; alt?: string; caption?: string }) => {
-  const PLACEHOLDER_SRC = `data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D`;
-  const [hasLoaded, setHasLoaded] = useState(!src);
+const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
+
+const LazyImage = ({ img, alt, caption }: { img?: ImageProps; alt?: string; caption?: string }) => {
+  const [hasLoaded, setHasLoaded] = useState(!img);
+  const [src, setSrc] = useState('');
+
+  useEffect(() => {
+    const fetchAstroImages = async () => {
+      if (!img) {
+        return;
+      }
+
+      const data = (await astroImages[img.src]()).default.src;
+      setSrc(data);
+    };
+    fetchAstroImages();
+  }, [img]);
 
   return (
     <div className={`img-container ${hasLoaded ? 'img-container--loaded' : ''}`}>
@@ -12,7 +27,11 @@ const LazyImage = ({ src, alt, caption }: { src?: string; alt?: string; caption?
           <Icons.Spinner />
         </div>
       )}
-      <img onLoad={() => setHasLoaded(true)} src={src ? src : PLACEHOLDER_SRC} alt={alt || ''} />
+      <img
+        onLoad={() => src && setHasLoaded(true)}
+        src={src ? src : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'}
+        alt={alt || ''}
+      />
       {hasLoaded && caption && <div className="img-container__caption">{caption}</div>}
     </div>
   );

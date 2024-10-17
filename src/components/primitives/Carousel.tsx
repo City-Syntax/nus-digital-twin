@@ -15,21 +15,6 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [imagesData, setImagesData] = useState<ImageProps[]>([]);
-  const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
-
-  useEffect(() => {
-    const fetchAstroImages = async () => {
-      const data = await Promise.all(
-        images.map(async (img) => ({
-          ...img,
-          src: (await astroImages[img.src]()).default.src,
-        })),
-      );
-      setImagesData(data);
-    };
-    fetchAstroImages();
-  }, []);
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
@@ -75,19 +60,19 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
       <div className="carousel">
         <div className="carousel-content" ref={emblaRef}>
           <div className="carousel-content-container">
-            {imagesData.length === 0 && (
+            {images.length === 0 && (
               <div className="carousel-item">
                 <LazyImage></LazyImage>
               </div>
             )}
-            {imagesData.map((img) => (
+            {images.map((img) => (
               <div className="carousel-item" key={img.src}>
-                <LazyImage src={img.src} caption={img.author ? `Image by ${img.author}` : ''}></LazyImage>
+                <LazyImage img={img} caption={img.author}></LazyImage>
               </div>
             ))}
           </div>
         </div>
-        {imagesData.length > 1 && (
+        {images.length > 1 && (
           <div className="carousel-actions">
             <button onClick={() => emblaApi?.scrollPrev()} disabled={prevBtnDisabled}>
               <Icons.ChevronLeft></Icons.ChevronLeft>
@@ -98,8 +83,8 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
           </div>
         )}
       </div>
-      <div className="carousel-dots" style={{ visibility: `${imagesData.length === 0 ? 'hidden' : 'visible'}` }}>
-        {imagesData.length === 0 && <button></button>}
+      <div className="carousel-dots" style={{ visibility: `${images.length === 0 ? 'hidden' : 'visible'}` }}>
+        {images.length === 0 && <button></button>}
         {scrollSnaps.map((_, index) => (
           <button
             key={index}

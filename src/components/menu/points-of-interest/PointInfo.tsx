@@ -3,28 +3,11 @@ import { pointId } from '../../../store';
 import CloseButton from '../CloseButton';
 import buildingsData from '../../../content/points-of-interest/points.json';
 import LazyImage from '../../primitives/LazyImage';
-import { useState, useEffect } from 'react';
-import type { ImageProps } from '../../../types';
 import DownloadButton from '../../primitives/DownloadButton';
 
 const PointInfo = () => {
   const $pointId = useStore(pointId);
   const { images } = buildingsData.filter((d) => d.id == $pointId)[0];
-  const [imagesData, setImagesData] = useState<ImageProps[]>([]);
-  const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
-
-  useEffect(() => {
-    const fetchAstroImages = async () => {
-      const data = await Promise.all(
-        images.map(async (img) => ({
-          ...img,
-          src: (await astroImages[img.src]()).default.src,
-        })),
-      );
-      setImagesData(data);
-    };
-    fetchAstroImages();
-  }, [$pointId]);
 
   return (
     <>
@@ -33,32 +16,16 @@ const PointInfo = () => {
         <CloseButton page="point-info"></CloseButton>
       </div>
       <div className="menubar-content-body">
-        {imagesData
-          .sort((a, b) => {
-            if (a.src.includes('thermal') && b.src.includes('thermal')) {
-              return 1;
-            }
-
-            if (a.src.includes('thermal')) {
-              return 1;
-            }
-
-            if (b.src.includes('thermal')) {
-              return -1;
-            }
-
-            return 1;
-          })
-          .map((img) => {
-            return (
-              <div key={img.src}>
-                <div className="img-wrapper" style={{ marginBottom: '4px' }}>
-                  <LazyImage key={img.src} src={img.src} caption={img.author} />
-                </div>
-                <DownloadButton type={'image'} files={[{ filetype: '.jpg', url: img.src }]} />
+        {images.map((img) => {
+          return (
+            <div key={img.src}>
+              <div className="img-wrapper" style={{ marginBottom: '4px' }}>
+                <LazyImage key={img.src} img={img} caption={img.author} />
               </div>
-            );
-          })}
+              <DownloadButton type={'image'} files={[{ filetype: '.jpg', url: img.src }]} />
+            </div>
+          );
+        })}
       </div>
     </>
   );
