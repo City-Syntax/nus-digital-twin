@@ -33,6 +33,9 @@ const LazyImage = ({
     fetchAstroImages();
   }, [img]);
 
+  const srcArr = src.split('/');
+  const filetype = '.' + srcArr[srcArr.length - 1].split('?')[0].split('.')[1];
+
   return (
     <>
       <div className="img-wrapper" style={{ marginBottom: '4px', aspectRatio: ratio }}>
@@ -50,7 +53,7 @@ const LazyImage = ({
           {hasLoaded && caption && <div className="img-container__caption">{caption}</div>}
         </div>
       </div>
-      {canDownload && <DownloadButton type="image" files={[{ filetype: '.jpg', url: src }]} />}
+      {canDownload && src && <DownloadButton type="image" files={[{ filetype: filetype, url: src }]} />}
     </>
   );
 };
