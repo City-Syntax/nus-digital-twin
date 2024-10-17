@@ -7,7 +7,7 @@ import DownloadButton from '../../primitives/DownloadButton';
 
 const PointInfo = () => {
   const $pointId = useStore(pointId);
-  const { images } = buildingsData.filter((d) => d.id == $pointId)[0];
+  const { img, thermalImg } = buildingsData.filter((d) => d.id == $pointId)[0];
 
   return (
     <>
@@ -16,7 +16,11 @@ const PointInfo = () => {
         <CloseButton page="point-info"></CloseButton>
       </div>
       <div className="menubar-content-body">
-        {images.map((img) => {
+        {[img, thermalImg].map((img) => {
+          if (!img) {
+            return;
+          }
+
           return (
             <div key={img.src}>
               <div className="img-wrapper" style={{ marginBottom: '4px' }}>

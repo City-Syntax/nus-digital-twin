@@ -3,2025 +3,1755 @@
     "id": "1",
     "latitude": 1.2960416666666668,
     "longitude": 103.77333055555556,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/1.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-1.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/1.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-1.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "2",
     "latitude": 1.2959694444444445,
     "longitude": 103.77323055555556,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/2.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-2.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/2.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-2.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "3",
     "latitude": 1.2990194444444445,
     "longitude": 103.77491111111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/3.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-3.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/3.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-3.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "4",
     "latitude": 1.3015305555555556,
     "longitude": 103.77298055555555,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/4.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-4.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/4.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-4.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "5",
     "latitude": 1.301688888888889,
     "longitude": 103.77341388888888,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/5.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-5.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/5.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-5.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "6",
     "latitude": 1.2979138888888888,
     "longitude": 103.77159166666667,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/6.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-6.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/6.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-6.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "7",
     "latitude": 1.297775,
     "longitude": 103.77014166666666,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/7.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-7.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/7.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-7.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "8",
     "latitude": 1.2985694444444444,
     "longitude": 103.77688611111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/8.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-8.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/8.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-8.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "9",
     "latitude": 1.2977,
     "longitude": 103.77768611111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/9.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-9.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/9.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-9.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "10",
     "latitude": 1.2976333333333334,
     "longitude": 103.78019722222223,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/10.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-10.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/10.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-10.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "11",
     "latitude": 1.2948694444444444,
     "longitude": 103.784325,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/11.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-11.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/11.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-11.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "12",
     "latitude": 1.2941194444444444,
     "longitude": 103.78466944444445,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/12.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-12.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/12.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-12.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "13",
     "latitude": 1.2923805555555556,
     "longitude": 103.78426388888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/13.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-13.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/13.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-13.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "14",
     "latitude": 1.2903916666666666,
     "longitude": 103.78110555555556,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/14.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-14.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/14.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-14.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "15",
     "latitude": 1.2916222222222222,
     "longitude": 103.78031944444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/15.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-15.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/15.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-15.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "16",
     "latitude": 1.29815,
     "longitude": 103.77200277777777,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/16.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-16.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/16.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-16.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "17",
     "latitude": 1.2985722222222222,
     "longitude": 103.77138611111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/17.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-17.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/17.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-17.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "18",
     "latitude": 1.298875,
     "longitude": 103.77138611111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/18.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-18.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/18.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-18.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "19",
     "latitude": 1.3000305555555556,
     "longitude": 103.77066111111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/19.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-19.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/19.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-19.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "20",
     "latitude": 1.3008583333333332,
     "longitude": 103.77080555555555,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/20.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-20.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/20.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-20.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "21",
     "latitude": 1.2931805555555556,
     "longitude": 103.77288888888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/21.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-21.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/21.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-21.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "22",
     "latitude": 1.2936055555555555,
     "longitude": 103.77346111111112,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/22.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-22.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/22.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-22.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "23",
     "latitude": 1.2936555555555556,
     "longitude": 103.77517777777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/23.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-23.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/23.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-23.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "24",
     "latitude": 1.2977472222222222,
     "longitude": 103.7787388888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/24.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-24.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/24.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-24.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "25",
     "latitude": 1.2982027777777778,
     "longitude": 103.77886111111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/25.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-25.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/25.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-25.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "26",
     "latitude": 1.296186111111111,
     "longitude": 103.77234722222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/26.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-26.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/26.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-26.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "27",
     "latitude": 1.2969944444444443,
     "longitude": 103.77179722222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/27.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-27.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/27.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-27.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "28",
     "latitude": 1.3017444444444444,
     "longitude": 103.77301944444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/28.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-28.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/28.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-28.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "29",
     "latitude": 1.305363888888889,
     "longitude": 103.77271944444445,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/29.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-29.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/29.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-29.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "30",
     "latitude": 1.3068166666666667,
     "longitude": 103.7722111111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/30.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-30.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/30.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-30.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "31",
     "latitude": 1.2969277777777777,
     "longitude": 103.77001111111112,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/31.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-31.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/31.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-31.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "32",
     "latitude": 1.297938888888889,
     "longitude": 103.77778611111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/32.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-32.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/32.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-32.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "33",
     "latitude": 1.298038888888889,
     "longitude": 103.77784722222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/33.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-33.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/33.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-33.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "34",
     "latitude": 1.2911694444444444,
     "longitude": 103.78160277777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/34.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-34.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/34.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-34.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "35",
     "latitude": 1.2906055555555556,
     "longitude": 103.78099722222223,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/35.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-35.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/35.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-35.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "36",
     "latitude": 1.2916666666666667,
     "longitude": 103.78034166666667,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/36.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-36.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/36.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-36.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "37",
     "latitude": 1.293586111111111,
     "longitude": 103.77688611111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/37.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-37.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/37.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-37.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "38",
     "latitude": 1.2937083333333332,
     "longitude": 103.77538888888888,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/38.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-38.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/38.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-38.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "39",
     "latitude": 1.2932138888888889,
     "longitude": 103.77514722222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/39.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-39.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/39.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-39.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "40",
     "latitude": 1.293488888888889,
     "longitude": 103.77329444444445,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/40.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-40.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/40.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-40.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "41",
     "latitude": 1.293488888888889,
     "longitude": 103.77329444444445,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/41.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-41.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/41.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-41.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "42",
     "latitude": 1.2986444444444445,
     "longitude": 103.77208055555556,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/42.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-42.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/42.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-42.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "43",
     "latitude": 1.2986027777777778,
     "longitude": 103.7718111111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/43.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-43.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/43.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-43.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "44",
     "latitude": 1.2986111111111112,
     "longitude": 103.77134722222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/44.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-44.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/44.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-44.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "45",
     "latitude": 1.2999694444444445,
     "longitude": 103.77068333333334,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/45.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-45.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/45.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-45.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "46",
     "latitude": 1.3007194444444445,
     "longitude": 103.77089722222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/46.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-46.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/46.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-46.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "47",
     "latitude": 1.3006777777777778,
     "longitude": 103.7709888888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/47.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-47.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/47.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-47.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "48",
     "latitude": 1.300888888888889,
     "longitude": 103.77096388888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/48.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-48.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/48.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-48.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "49",
     "latitude": 1.3009694444444444,
     "longitude": 103.77080555555555,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/49.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-49.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/49.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-49.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "50",
     "latitude": 1.2962527777777777,
     "longitude": 103.77330833333333,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/50.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-50.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/50.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-50.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "51",
     "latitude": 1.295986111111111,
     "longitude": 103.77310277777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/51.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-51.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/51.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-51.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "52",
     "latitude": 1.2992388888888888,
     "longitude": 103.77516111111112,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/52.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-52.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/52.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-52.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "53",
     "latitude": 1.301663888888889,
     "longitude": 103.77321666666667,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/53.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-53.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/53.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-53.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "54",
     "latitude": 1.3036388888888888,
     "longitude": 103.77420833333333,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/54.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-54.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/54.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-54.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "55",
     "latitude": 1.3048166666666667,
     "longitude": 103.77348333333333,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/55.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-55.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/55.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-55.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "56",
     "latitude": 1.3054805555555555,
     "longitude": 103.77294166666667,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/56.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-56.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/56.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-56.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "57",
     "latitude": 1.2966833333333334,
     "longitude": 103.7722111111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/57.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-57.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/57.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-57.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "58",
     "latitude": 1.297763888888889,
     "longitude": 103.77001944444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/58.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-58.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/58.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-58.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "59",
     "latitude": 1.2977444444444444,
     "longitude": 103.77085833333334,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/59.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-59.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/59.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-59.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "60",
     "latitude": 1.2966222222222221,
     "longitude": 103.772675,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/60.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-60.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/60.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-60.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "61",
     "latitude": 1.2982972222222222,
     "longitude": 103.77367222222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/61.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-61.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/61.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-61.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "62",
     "latitude": 1.2975416666666666,
     "longitude": 103.77852777777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/62.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-62.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/62.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-62.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "63",
     "latitude": 1.2976055555555555,
     "longitude": 103.78012222222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/63.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-63.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/63.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-63.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "64",
     "latitude": 1.2903916666666666,
     "longitude": 103.78110555555556,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/64.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-64.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/64.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-64.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "65",
     "latitude": 1.2985305555555555,
     "longitude": 103.77196388888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/65.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-65.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/65.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-65.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "66",
     "latitude": 1.3007,
     "longitude": 103.77075277777777,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/66.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-66.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/66.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-66.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "67",
     "latitude": 1.2958666666666667,
     "longitude": 103.77087222222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/67.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-67.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/67.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-67.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "68",
     "latitude": 1.294936111111111,
     "longitude": 103.77085833333334,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/68.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-68.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/68.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-68.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "69",
     "latitude": 1.293588888888889,
     "longitude": 103.77334722222223,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/69.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-69.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/69.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-69.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "70",
     "latitude": 1.296338888888889,
     "longitude": 103.77327777777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/70.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-70.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/70.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-70.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "71",
     "latitude": 1.296338888888889,
     "longitude": 103.77327777777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/71.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-71.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/71.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-71.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "72",
     "latitude": 1.2962722222222223,
     "longitude": 103.772675,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/72.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-72.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/72.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-72.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "73",
     "latitude": 1.2967916666666666,
     "longitude": 103.7722111111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/73.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-73.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/73.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-73.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "74",
     "latitude": 1.297175,
     "longitude": 103.77159166666667,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/74.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-74.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/74.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-74.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "75",
     "latitude": 1.2976805555555555,
     "longitude": 103.77108888888888,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/75.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-75.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/75.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-75.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "76",
     "latitude": 1.2978777777777777,
     "longitude": 103.7707361111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/76.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-76.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/76.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-76.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "77",
     "latitude": 1.2975055555555555,
     "longitude": 103.77154444444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/77.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-77.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/77.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-77.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "78",
     "latitude": 1.3016805555555555,
     "longitude": 103.77308611111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/78.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-78.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/78.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-78.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "79",
     "latitude": 1.3038972222222223,
     "longitude": 103.774025,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/79.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-79.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/79.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-79.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "80",
     "latitude": 1.30525,
     "longitude": 103.77367222222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/80.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-80.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/80.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-80.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "81",
     "latitude": 1.3051222222222223,
     "longitude": 103.77367222222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/81.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-81.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/81.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-81.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "82",
     "latitude": 1.3054277777777779,
     "longitude": 103.77290277777777,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/82.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-82.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/82.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-82.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "83",
     "latitude": 1.3050583333333334,
     "longitude": 103.77249722222223,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/83.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-83.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/83.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-83.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "84",
     "latitude": 1.3063166666666666,
     "longitude": 103.77192777777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/84.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-84.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/84.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-84.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "85",
     "latitude": 1.306761111111111,
     "longitude": 103.77192777777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/85.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-85.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/85.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-85.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "86",
     "latitude": 1.296836111111111,
     "longitude": 103.77002777777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/86.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-86.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/86.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-86.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "87",
     "latitude": 1.297863888888889,
     "longitude": 103.77776388888888,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/87.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-87.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/87.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-87.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "88",
     "latitude": 1.2977277777777778,
     "longitude": 103.77745833333333,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/88.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-88.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/88.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-88.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "89",
     "latitude": 1.2975722222222221,
     "longitude": 103.77791666666667,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/89.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-89.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/89.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-89.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "90",
     "latitude": 1.2973694444444444,
     "longitude": 103.78021944444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/90.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-90.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/90.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-90.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "91",
     "latitude": 1.290575,
     "longitude": 103.78111944444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/91.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-91.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/91.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-91.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "92",
     "latitude": 1.2905888888888888,
     "longitude": 103.78081388888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/92.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-92.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/92.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-92.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "93",
     "latitude": 1.2918083333333332,
     "longitude": 103.78034166666667,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/93.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-93.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/93.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-93.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "94",
     "latitude": 1.2909861111111112,
     "longitude": 103.78118888888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/94.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-94.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/94.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-94.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "95",
     "latitude": 1.2909527777777778,
     "longitude": 103.78110555555556,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/95.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-95.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/95.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-95.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "96",
     "latitude": 1.293725,
     "longitude": 103.77670277777777,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/96.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-96.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/96.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-96.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "97",
     "latitude": 1.2935055555555555,
     "longitude": 103.77719722222223,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/97.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-97.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/97.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-97.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "98",
     "latitude": 1.2933777777777777,
     "longitude": 103.77746388888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/98.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-98.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/98.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-98.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "99",
     "latitude": 1.2929694444444444,
     "longitude": 103.77806944444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/99.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-99.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/99.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-99.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "100",
     "latitude": 1.2935944444444445,
     "longitude": 103.77688611111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/100.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-100.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/100.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-100.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "101",
     "latitude": 1.2937777777777777,
     "longitude": 103.77681666666666,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/101.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-101.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/101.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-101.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "102",
     "latitude": 1.2945305555555555,
     "longitude": 103.77500833333333,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/102.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-102.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/102.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-102.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "103",
     "latitude": 1.293036111111111,
     "longitude": 103.77477222222223,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/103.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-103.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/103.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-103.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "104",
     "latitude": 1.293436111111111,
     "longitude": 103.77514722222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/104.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-104.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/104.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-104.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "105",
     "latitude": 1.2932527777777778,
     "longitude": 103.77505555555555,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/105.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-105.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/105.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-105.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "106",
     "latitude": 1.2937888888888889,
     "longitude": 103.77213888888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/106.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-106.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/106.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-106.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "107",
     "latitude": 1.294,
     "longitude": 103.77234722222222,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/107.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-107.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/107.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-107.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "108",
     "latitude": 1.293188888888889,
     "longitude": 103.77295555555555,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/108.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-108.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/108.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-108.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "109",
     "latitude": 1.29325,
     "longitude": 103.7731388888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/109.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-109.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/109.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-109.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "110",
     "latitude": 1.2935472222222222,
     "longitude": 103.77345277777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/110.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-110.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/110.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-110.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "111",
     "latitude": 1.2936694444444445,
     "longitude": 103.77360555555556,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/111.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-111.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/111.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-111.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "112",
     "latitude": 1.292788888888889,
     "longitude": 103.77349166666667,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/112.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-112.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/112.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-112.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "113",
     "latitude": 1.2928861111111112,
     "longitude": 103.77388055555555,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/113.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-113.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/113.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-113.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "114",
     "latitude": 1.2928472222222223,
     "longitude": 103.77396388888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/114.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-114.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/114.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-114.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "115",
     "latitude": 1.292486111111111,
     "longitude": 103.77388888888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/115.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-115.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/115.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-115.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "116",
     "latitude": 1.2923722222222223,
     "longitude": 103.77454444444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/116.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-116.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/116.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-116.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "117",
     "latitude": 1.2987944444444444,
     "longitude": 103.77411666666667,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/117.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-117.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/117.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-117.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "118",
     "latitude": 1.298361111111111,
     "longitude": 103.7735611111111,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/118.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-118.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/118.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-118.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "119",
     "latitude": 1.298186111111111,
     "longitude": 103.77319444444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/119.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-119.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/119.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-119.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "120",
     "latitude": 1.2981111111111112,
     "longitude": 103.77291944444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/120.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-120.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/120.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-120.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "121",
     "latitude": 1.2985722222222222,
     "longitude": 103.772225,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/121.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-121.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/121.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-121.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "122",
     "latitude": 1.2985888888888888,
     "longitude": 103.77200277777777,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/122.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-122.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/122.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-122.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "123",
     "latitude": 1.2986444444444445,
     "longitude": 103.77178888888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/123.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-123.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/123.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-123.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "124",
     "latitude": 1.2985888888888888,
     "longitude": 103.77149166666666,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/124.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-124.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/124.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-124.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "125",
     "latitude": 1.2998222222222222,
     "longitude": 103.77072777777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/125.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-125.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/125.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-125.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "126",
     "latitude": 1.3006027777777778,
     "longitude": 103.77078888888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/126.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-126.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/126.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-126.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "127",
     "latitude": 1.3006777777777778,
     "longitude": 103.7709888888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/127.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-127.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/127.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-127.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "128",
     "latitude": 1.3004972222222222,
     "longitude": 103.77036944444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/128.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-128.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/128.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-128.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "129",
     "latitude": 1.2961916666666666,
     "longitude": 103.77184444444444,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/129.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-129.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/129.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-129.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "130",
     "latitude": 1.2958444444444444,
     "longitude": 103.7718888888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/130.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-130.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/130.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-130.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "131",
     "latitude": 1.2958444444444444,
     "longitude": 103.7718888888889,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/131.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-131.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/131.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-131.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "132",
     "latitude": 1.2964638888888889,
     "longitude": 103.77278888888888,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/132.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-132.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/132.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-132.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "133",
     "latitude": 1.2960277777777778,
     "longitude": 103.77370555555555,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/133.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-133.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/133.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-133.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "134",
     "latitude": 1.2959333333333334,
     "longitude": 103.77372777777778,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/134.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-134.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/134.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-134.jpg",
+      "author": "Zhu Lujia"
+    }
   },
   {
     "id": "135",
     "latitude": 1.2962305555555556,
     "longitude": 103.77350555555556,
-    "images": [
-      {
-        "src": "/src/assets/points-of-interest/135.jpg",
-        "author": "Zhu Lujia"
-      },
-      {
-        "src": "/src/assets/points-of-interest/thermal-135.jpg",
-        "author": "Zhu Lujia"
-      }
-    ]
+    "img": {
+      "src": "/src/assets/points-of-interest/135.jpg",
+      "author": "Zhu Lujia"
+    },
+    "thermalImg": {
+      "src": "/src/assets/points-of-interest/thermal-135.jpg",
+      "author": "Zhu Lujia"
+    }
   }
 ]
