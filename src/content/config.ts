@@ -1,4 +1,4 @@
-import { defineCollection, reference, z } from 'astro:content';
+import { defineCollection, reference, z, type ImageFunction } from 'astro:content';
 import type { ImageProps } from '../types';
 
 const buildingMetadataSchema = z.object({
@@ -108,50 +108,50 @@ const energyCollection = defineCollection({
   schema: () => z.array(energyUseSchema),
 });
 
+const pointsSchema = (image: ImageFunction) =>
+  z.object({
+    id: z.string(),
+    latitude: z.number(),
+    longitude: z.number(),
+    img: z.object({ src: image(), author: z.string().optional() }).optional(),
+    thermalImg: z.object({ src: image(), author: z.string().optional() }).optional(),
+    redHSV: z.number().optional(),
+    yellowHSV: z.number().optional(),
+    greenHSV: z.number().optional(),
+    cyanHSV: z.number().optional(),
+    blueHSV: z.number().optional(),
+    magentaHSV: z.number().optional(),
+    redMean: z.number().optional(),
+    greenMean: z.number().optional(),
+    blueMean: z.number().optional(),
+    redStdDev: z.number().optional(),
+    greenStdDev: z.number().optional(),
+    blueStdDev: z.number().optional(),
+    skySegmentationPercent: z.number().optional(),
+    pavementSegmentationPercent: z.number().optional(),
+    waterSegmentationPercent: z.number().optional(),
+    vegetationSegmentationPercent: z.number().optional(),
+    buildingSegmentationPercent: z.number().optional(),
+    otherSegmentationPercent: z.number().optional(),
+    concreteSurface: z.boolean().optional(),
+    grassSurface: z.boolean().optional(),
+    asphaltSurface: z.boolean().optional(),
+    woodSurface: z.boolean().optional(),
+    brickSurface: z.boolean().optional(),
+    gravelSurface: z.boolean().optional(),
+    tilesSurface: z.boolean().optional(),
+    rubber: z.boolean().optional(),
+    buildingShade: z.boolean().optional(),
+    treeShade: z.boolean().optional(),
+    shadeProvision: z.boolean().optional(),
+    restSpotOutdoorFurniture: z.boolean().optional(),
+    waterFeature: z.boolean().optional(),
+    thermalRatio: z.number().optional(),
+  });
+
 const pointsOfInterestCollection = defineCollection({
   type: 'data',
-  schema: ({ image }) =>
-    z.array(
-      z.object({
-        id: z.string(),
-        latitude: z.number(),
-        longitude: z.number(),
-        img: z.object({ src: image(), author: z.string().optional() }).optional(),
-        thermalImg: z.object({ src: image(), author: z.string().optional() }).optional(),
-        redHSV: z.number().optional(),
-        yellowHSV: z.number().optional(),
-        greenHSV: z.number().optional(),
-        cyanHSV: z.number().optional(),
-        blueHSV: z.number().optional(),
-        magentaHSV: z.number().optional(),
-        redMean: z.number().optional(),
-        greenMean: z.number().optional(),
-        blueMean: z.number().optional(),
-        redStdDev: z.number().optional(),
-        greenStdDev: z.number().optional(),
-        blueStdDev: z.number().optional(),
-        skySegmentationPercent: z.number().optional(),
-        pavementSegmentationPercent: z.number().optional(),
-        waterSegmentationPercent: z.number().optional(),
-        vegetationSegmentationPercent: z.number().optional(),
-        buildingSegmentationPercent: z.number().optional(),
-        otherSegmentationPercent: z.number().optional(),
-        concreteSurface: z.boolean().optional(),
-        grassSurface: z.boolean().optional(),
-        asphaltSurface: z.boolean().optional(),
-        woodSurface: z.boolean().optional(),
-        brickSurface: z.boolean().optional(),
-        gravelSurface: z.boolean().optional(),
-        tilesSurface: z.boolean().optional(),
-        rubber: z.boolean().optional(),
-        buildingShade: z.boolean().optional(),
-        treeShade: z.boolean().optional(),
-        shadeProvision: z.boolean().optional(),
-        restSpotOutdoorFurniture: z.boolean().optional(),
-        waterFeature: z.boolean().optional(),
-        thermalRatio: z.number().optional(),
-      }),
-    ),
+  schema: ({ image }) => z.array(pointsSchema(image)),
 });
 
 export const collections = {
@@ -159,6 +159,8 @@ export const collections = {
   energy: energyCollection,
   'points-of-interest': pointsOfInterestCollection,
 };
+
+export type PointsOfInterestProps = z.infer<ReturnType<typeof pointsSchema>>;
 
 export type BuildingPropertiesProps = z.infer<typeof buildingSchema> & {
   images: ImageProps[];
