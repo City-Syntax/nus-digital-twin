@@ -36,7 +36,7 @@ const MapPickerButton = () => {
                   type="button"
                   onClick={() => activeMapLayer.set(layer.id)}
                 >
-                  <LazyImage img={layer.img} alt={layer.name}></LazyImage>
+                  <LazyImage ratio="1/1" img={layer.img} alt={layer.name}></LazyImage>
                   {layer.name}
                 </button>
               );
