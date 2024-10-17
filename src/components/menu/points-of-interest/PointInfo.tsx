@@ -56,6 +56,25 @@ const PointInfoContent = ({ title, content }: { title: keyof PointsOfInterestPro
           <DownloadButton type={'image'} files={[{ filetype: '.jpg', url: content.src }]} />
         </div>
       );
+    case 'concreteSurface':
+    case 'grassSurface':
+    case 'asphaltSurface':
+    case 'woodSurface':
+    case 'brickSurface':
+    case 'gravelSurface':
+    case 'tilesSurface':
+    case 'rubber':
+    case 'buildingShade':
+    case 'treeShade':
+    case 'shadeProvision':
+    case 'restSpotOutdoorFurniture':
+    case 'waterFeature':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content ? 'Present' : 'Absent'}</p>
+        </>
+      );
     case 'skySegmentationPercent':
     case 'pavementSegmentationPercent':
     case 'waterSegmentationPercent':
