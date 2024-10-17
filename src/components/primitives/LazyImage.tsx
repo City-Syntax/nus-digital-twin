@@ -21,18 +21,20 @@ const LazyImage = ({ img, alt, caption }: { img?: ImageProps; alt?: string; capt
   }, [img]);
 
   return (
-    <div className={`img-container ${hasLoaded ? 'img-container--loaded' : ''}`}>
-      {!hasLoaded && (
-        <div className="img-container__spinner">
-          <Icons.Spinner />
-        </div>
-      )}
-      <img
-        onLoad={() => src && setHasLoaded(true)}
-        src={src ? src : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'}
-        alt={alt || ''}
-      />
-      {hasLoaded && caption && <div className="img-container__caption">{caption}</div>}
+    <div className="img-wrapper" style={{ marginBottom: '4px' }}>
+      <div className={`img-container ${hasLoaded ? 'img-container--loaded' : ''}`}>
+        {!hasLoaded && (
+          <div className="img-container__spinner">
+            <Icons.Spinner />
+          </div>
+        )}
+        <img
+          onLoad={() => src && setHasLoaded(true)}
+          src={src ? src : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'}
+          alt={alt || ''}
+        />
+        {hasLoaded && caption && <div className="img-container__caption">{caption}</div>}
+      </div>
     </div>
   );
 };

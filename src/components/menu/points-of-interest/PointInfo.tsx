@@ -39,9 +39,7 @@ const PointInfoContent = ({ title, content }: { title: keyof PointsOfInterestPro
     case 'thermalImg':
       return (
         <div>
-          <div className="img-wrapper" style={{ marginBottom: '4px' }}>
-            <LazyImage key={content.src} img={content} caption={content.author} />
-          </div>
+          <LazyImage key={content.src} img={content} caption={content.author} />
           <DownloadButton type={'image'} files={[{ filetype: '.jpg', url: content.src }]} />
         </div>
       );
