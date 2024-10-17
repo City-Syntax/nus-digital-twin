@@ -6,15 +6,17 @@ const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**
 
 const LazyImage = ({ img, alt, caption }: { img?: ImageProps; alt?: string; caption?: string }) => {
   const [hasLoaded, setHasLoaded] = useState(!img);
-  const [src, setSrc] = useState('data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D');
+  const [src, setSrc] = useState('');
 
   useEffect(() => {
     const fetchAstroImages = async () => {
       if (!img) {
+        setHasLoaded(true);
         return;
       }
 
       const data = (await astroImages[img.src]()).default.src;
+      setHasLoaded(true);
       setSrc(data);
     };
     fetchAstroImages();
@@ -27,7 +29,7 @@ const LazyImage = ({ img, alt, caption }: { img?: ImageProps; alt?: string; capt
           <Icons.Spinner />
         </div>
       )}
-      <img onLoad={() => setHasLoaded(true)} src={src} alt={alt || ''} />
+      <img src={src ? src : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'} alt={alt || ''} />
       {hasLoaded && caption && <div className="img-container__caption">{caption}</div>}
     </div>
   );
