@@ -67,7 +67,7 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
             )}
             {images.map((img) => (
               <div className="carousel-item" key={img.src}>
-                <LazyImage img={img} caption={img.author ? `Image by ${img.author}` : ''}></LazyImage>
+                <LazyImage img={img} caption={img.author}></LazyImage>
               </div>
             ))}
           </div>
