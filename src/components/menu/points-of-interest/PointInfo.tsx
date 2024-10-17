@@ -6,6 +6,7 @@ import pointsData from '../../../content/points-of-interest/points.json';
 import LazyImage from '../../primitives/LazyImage';
 import DownloadButton from '../../primitives/DownloadButton';
 import type { PointsOfInterestProps } from '../../../content/config';
+import { SORT_ORDER } from './pointsInfoUtils';
 
 const PointInfo = () => {
   const $pointId = useStore(pointId);
@@ -26,6 +27,11 @@ const PointInfo = () => {
       <div className="menubar-content-body" ref={menubodyRef}>
         {properties
           .filter(([title]) => title !== 'id')
+          .sort((a, b) => {
+            const firstTitle = a[0] as keyof PointsOfInterestProps;
+            const secondTitle = b[0] as keyof PointsOfInterestProps;
+            return SORT_ORDER.indexOf(firstTitle) - SORT_ORDER.indexOf(secondTitle);
+          })
           .map(([title, content]) => {
             return (
               <div key={`${title}-${$pointId}`}>
