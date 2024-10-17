@@ -85,7 +85,7 @@ const PointInfoContent = ({ title, content }: { title: keyof PointsOfInterestPro
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>
-          <p>{content}%</p>
+          <p>{Math.round(content * 100) / 100}%</p>
         </>
       );
     default:
