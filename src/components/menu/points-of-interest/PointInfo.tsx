@@ -52,8 +52,7 @@ const PointInfoContent = ({ title, content }: { title: keyof PointsOfInterestPro
     case 'thermalImg':
       return (
         <div>
-          <LazyImage key={content.src} img={content} caption={content.author} />
-          <DownloadButton type={'image'} files={[{ filetype: '.jpg', url: content.src }]} />
+          <LazyImage key={content.src} img={content} caption={content.author} canDownload />
         </div>
       );
     case 'concreteSurface':
