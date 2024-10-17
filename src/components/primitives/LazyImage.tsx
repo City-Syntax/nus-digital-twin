@@ -11,12 +11,10 @@ const LazyImage = ({ img, alt, caption }: { img?: ImageProps; alt?: string; capt
   useEffect(() => {
     const fetchAstroImages = async () => {
       if (!img) {
-        setHasLoaded(true);
         return;
       }
 
       const data = (await astroImages[img.src]()).default.src;
-      setHasLoaded(true);
       setSrc(data);
     };
     fetchAstroImages();
@@ -29,7 +27,11 @@ const LazyImage = ({ img, alt, caption }: { img?: ImageProps; alt?: string; capt
           <Icons.Spinner />
         </div>
       )}
-      <img src={src ? src : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'} alt={alt || ''} />
+      <img
+        onLoad={() => src && setHasLoaded(true)}
+        src={src ? src : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'}
+        alt={alt || ''}
+      />
       {hasLoaded && caption && <div className="img-container__caption">{caption}</div>}
     </div>
   );
