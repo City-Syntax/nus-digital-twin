@@ -18,6 +18,21 @@ const PointInfo = () => {
     }
   });
 
+  const rows = properties.reduce(
+    (acc, [first, second]) => {
+      if (['id', 'img', 'thermalImg'].includes(first)) {
+        return acc;
+      }
+
+      acc[0].push(first);
+      acc[1].push(second);
+      return acc;
+    },
+    [[] as string[], [] as string[]],
+  );
+
+  let csvContent = 'data:text/csv;charset=utf-8,' + rows.map((e) => e.join(',')).join('\n');
+
   return (
     <>
       <div className="menubar-content-header">
@@ -39,6 +54,10 @@ const PointInfo = () => {
               </div>
             );
           })}
+        <div>
+          <h3>Download</h3>
+          <DownloadButton type="data" files={[{ filetype: '.csv', url: csvContent }]} />
+        </div>
       </div>
     </>
   );
