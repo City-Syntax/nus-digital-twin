@@ -54,14 +54,19 @@ const PointInfo = () => {
               </div>
             );
           })}
+        {rows[0].length > 2 && (
+          <div>
+            <h3>Download point data</h3>
+            <DownloadButton type="data" files={[{ filetype: '.csv', url: csvContent }]} />
+          </div>
+        )}
         <div>
-          <h3>Downloads</h3>
-          <DownloadButton type="data" files={[{ filetype: '.csv', url: csvContent }]} />
+          <h3>Download all points data</h3>
+          <DownloadButton
+            type="full dataset"
+            files={[{ filetype: '.csv', url: '/points-of-interest/points-data.csv' }]}
+          />
         </div>
-        <DownloadButton
-          type="full dataset"
-          files={[{ filetype: '.csv', url: '/points-of-interest/points-data.csv' }]}
-        />
       </div>
     </>
   );
