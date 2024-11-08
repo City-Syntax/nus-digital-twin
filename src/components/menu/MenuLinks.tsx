@@ -1,5 +1,5 @@
 import React from 'react';
-import { activeGISLayer, activeModel, buildingColorSetting } from '../../store';
+import { activeGISLayer, activeModel, buildingColorSetting, showPoints } from '../../store';
 import MenuLink from './MenuLink';
 import { useStore } from '@nanostores/react';
 import type { MenuDir } from '../../types';
@@ -9,6 +9,7 @@ type MenuLinksProps = {
 };
 
 const Points = ({ dir }: MenuLinksProps) => {
+  const $showPoints = useStore(showPoints);
   return (
     <>
       <MenuLink
@@ -16,6 +17,7 @@ const Points = ({ dir }: MenuLinksProps) => {
         label="Points of Interest"
         iconName="Point"
         dir={dir}
+        isActive={$showPoints}
         isLeft
         isBottom
       ></MenuLink>
