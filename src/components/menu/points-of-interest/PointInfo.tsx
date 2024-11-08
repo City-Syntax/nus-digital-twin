@@ -55,9 +55,13 @@ const PointInfo = () => {
             );
           })}
         <div>
-          <h3>Download</h3>
+          <h3>Downloads</h3>
           <DownloadButton type="data" files={[{ filetype: '.csv', url: csvContent }]} />
         </div>
+        <DownloadButton
+          type="full dataset"
+          files={[{ filetype: '.csv', url: '/points-of-interest/points-data.csv' }]}
+        />
       </div>
     </>
   );
