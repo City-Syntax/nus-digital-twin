@@ -2112,6 +2112,9 @@
     "postal": "119618",
     "latitude": 1.29137,
     "longitude": 103.7761,
+    "idfDownload": "/sheares-hall/sheares-main.idf",
+    "energyUse": "sheares-main-eu",
+    "energyUseIntensity": "sheares-main-eui",
     "images": [{ "src": "/src/assets/sheares-hall/sheares-main.jpg", "author": "Lim Xin Hui Sheryl, Lee Yi" }],
     "downloads": [
       {
