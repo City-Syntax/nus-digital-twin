@@ -2322,6 +2322,8 @@
     "latitude": 1.29971,
     "longitude": 103.77546,
     "idfDownload": "/usc/usc.idf",
+    "energyUse": "usc-eu",
+    "energyUseIntensity": "usc-eui",
     "downloads": [
       {
         "type": "Rhino",
