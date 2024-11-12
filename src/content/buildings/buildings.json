@@ -779,6 +779,9 @@
     "postal": "117565",
     "latitude": 1.29728,
     "longitude": 103.77113,
+    "idfDownload": "/sde2/sde2.idf",
+    "energyUse": "sde2-eu",
+    "energyUseIntensity": "sde2-eui",
     "images": [
       { "src": "/src/assets/sde2/sde2-1.png", "author": "Steffi Seah, Tay Hui Xin" },
       { "src": "/src/assets/sde2/sde2-2.png", "author": "Steffi Seah, Tay Hui Xin" }
