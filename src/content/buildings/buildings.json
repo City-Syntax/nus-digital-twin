@@ -502,6 +502,9 @@
       }
     ],
     "buildingDataCredits": "Chan Jia Wei, Chye Yi De, Tan Soon Sian Aaron",
+    "idfDownload": "/rvrc/rvrc-g.idf",
+    "energyUse": "rvrc-g-eu",
+    "energyUseIntensity": "rvrc-g-eui",
     "floorToFloorHeight": 3.6,
     "perimeterZoneDepth": 4,
     "wallConstruction": 1.154,
