@@ -2035,6 +2035,9 @@
     "postal": "119618",
     "latitude": 1.29151,
     "longitude": 103.77531,
+    "idfDownload": "/sheares-hall/sheares-a.idf",
+    "energyUse": "sheares-a-eu",
+    "energyUseIntensity": "sheares-a-eui",
     "images": [{ "src": "/src/assets/sheares-hall/sheares-a.jpg", "author": "Jesmine Pang Sheau Xuan" }],
     "downloads": [
       {
