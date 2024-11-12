@@ -836,6 +836,9 @@
         "files": [{ "filetype": ".3dm", "url": "/sde3/sde3-rhino.3dm" }]
       }
     ],
+    "idfDownload": "/sde3/sde3.idf",
+    "energyUse": "sde3-eu",
+    "energyUseIntensity": "sde3-eui",
     "buildingDataCredits": "Ng Jia Yee, Weng Yingyi",
     "floorToFloorHeight": 2.8,
     "perimeterZoneDepth": 4,
