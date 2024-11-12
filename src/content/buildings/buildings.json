@@ -353,6 +353,7 @@
     "postal": "117377",
     "latitude": 1.30152,
     "longitude": 103.77361,
+    "idfDownload": "/lkc-museum/lkc-museum.idf",
     "energyUse": "lkc-museum-eu",
     "energyUseIntensity": "lkc-museum-eui",
     "images": [
