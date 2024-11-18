@@ -34,7 +34,7 @@ const LazyImage = ({
   }, [img]);
 
   const srcArr = src.split('/');
-  const filetype = '.' + srcArr[srcArr.length - 1].split('?')[0].split('.')[1];
+  const filetype = '.' + srcArr[srcArr.length - 1].split('?')[0].split('.').pop();
 
   return (
     <>
