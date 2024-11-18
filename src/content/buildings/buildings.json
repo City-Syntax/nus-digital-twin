@@ -739,6 +739,7 @@
     "southWindowToWallRatio": 70,
     "eastWindowToWallRatio": 70,
     "westWindowToWallRatio": 70,
+    "windowFrameConductance": 15,
     "glazingType": "Single pane",
     "windowLeakage": 1.0,
     "naturalVentilation": "Yes (all hours)",
@@ -753,7 +754,9 @@
     "occupancySchedule": 50,
     "equipmentUsage": 30,
     "lightingUsage": 50,
+    "coreOutsideAirFlowrate": 10,
     "coreOutsideAirSchedule": "Always on",
+    "perimeterOutsideAirFlowrate": 0.5,
     "perimeterOutsideAirSchedule": "Always on",
     "exhaustAirRecovery": "None",
     "economizerCycle": "None"
