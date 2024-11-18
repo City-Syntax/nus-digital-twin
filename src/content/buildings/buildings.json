@@ -2626,6 +2626,8 @@
     "latitude": 1.29698,
     "longitude": 103.77139,
     "idfDownload": "/celc/celc.idf",
+    "energyUse": "celc-eu",
+    "energyUseIntensity": "celc-eui",
     "images": [{ "src": "/src/assets/celc/celc.jpg", "author": "Chee Hui Zhen, Irene Siew Pui Yan" }],
     "downloads": [
       {
