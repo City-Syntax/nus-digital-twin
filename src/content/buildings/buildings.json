@@ -2122,6 +2122,7 @@
     "windowLeakage": 1.0,
     "naturalVentilation": "Yes (all hours)",
     "daylightResponse": "Continuous",
+    "thermostatSetPoint": 25,
     "coreOutsideAirFlowrate": 10,
     "perimeterOutsideAirFlowrate": 0.5,
     "coreOccupantDensity": 0.0925,
@@ -2132,7 +2133,11 @@
     "perimeterLightingPower": 2,
     "occupancySchedule": 80,
     "equipmentUsage": 80,
-    "lightingUsage": 50
+    "lightingUsage": 50,
+    "coreOutsideAirSchedule": "Always on",
+    "perimeterOutsideAirSchedule": "Always on",
+    "exhaustAirRecovery": "None",
+    "economizerCycle": "None"
   },
   {
     "elementId": "627395979",
