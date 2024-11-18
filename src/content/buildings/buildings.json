@@ -926,7 +926,9 @@
     "occupancySchedule": 60,
     "equipmentUsage": 30,
     "lightingUsage": 60,
+    "coreOutsideAirFlowrate": 0.1,
     "coreOutsideAirSchedule": "Always on",
+    "perimeterOutsideAirFlowrate": 0.3,
     "perimeterOutsideAirSchedule": "Always on",
     "exhaustAirRecovery": "None",
     "economizerCycle": "None"
