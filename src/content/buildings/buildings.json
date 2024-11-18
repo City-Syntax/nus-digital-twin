@@ -1446,6 +1446,9 @@
     "postal": "117418",
     "latitude": 1.29397,
     "longitude": 103.77413,
+    "idfDownload": "/com2/com2.idf",
+    "energyUse": "com2-eu",
+    "energyUseIntensity": "com2-eui",
     "images": [
       {
         "src": "/src/assets/com2/com2-1.jpg",
