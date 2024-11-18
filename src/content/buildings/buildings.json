@@ -529,6 +529,7 @@
     "naturalVentilation": "No",
     "daylightResponse": "No",
     "thermostatSetPoint": 23,
+    "coreOutsideAirFlowrate": 8,
     "perimeterOutsideAirFlowrate": 0.5,
     "coreOccupantDensity": 0.19,
     "perimeterOccupantDensity": 0.19,
