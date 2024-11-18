@@ -2556,6 +2556,9 @@
     "postal": "117584",
     "latitude": 1.29795,
     "longitude": 103.77153,
+    "idfDownload": "/techno-edge/techno-edge.idf",
+    "energyUse": "techno-edge-eu",
+    "energyUseIntensity": "techno-edge-eui",
     "images": [
       {
         "src": "/src/assets/techno-edge/techno-edge-1.jpg",
