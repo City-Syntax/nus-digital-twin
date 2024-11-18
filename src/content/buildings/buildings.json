@@ -2361,6 +2361,7 @@
     "windowLeakage": 1.0,
     "naturalVentilation": "Yes (all hours)",
     "daylightResponse": "Continuous",
+    "thermostatSetPoint": 25,
     "coreOutsideAirFlowrate": 4,
     "perimeterOutsideAirFlowrate": 4,
     "coreOccupantDensity": 0.25,
