@@ -887,6 +887,9 @@
     "name": "SDE4",
     "address": "8 Architecture Drive",
     "postal": "117356",
+    "idfDownload": "/sde4/sde4.idf",
+    "energyUse": "sde4-eu",
+    "energyUseIntensity": "sde4-eui",
     "images": [
       { "src": "/src/assets/sde4/sde4.jpg", "author": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi" },
       { "src": "/src/assets/sde4/sde4-2.jpg", "author": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi" }
