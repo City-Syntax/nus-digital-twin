@@ -353,6 +353,7 @@
     "postal": "117377",
     "latitude": 1.30152,
     "longitude": 103.77361,
+    "idfDownload": "/lkc-museum/lkc-museum.idf",
     "energyUse": "lkc-museum-eu",
     "energyUseIntensity": "lkc-museum-eui",
     "images": [
@@ -502,6 +503,9 @@
       }
     ],
     "buildingDataCredits": "Chan Jia Wei, Chye Yi De, Tan Soon Sian Aaron",
+    "idfDownload": "/rvrc/rvrc-g.idf",
+    "energyUse": "rvrc-g-eu",
+    "energyUseIntensity": "rvrc-g-eui",
     "floorToFloorHeight": 3.6,
     "perimeterZoneDepth": 4,
     "wallConstruction": 1.154,
@@ -558,6 +562,9 @@
     "postal": "119280",
     "latitude": 1.30034,
     "longitude": 103.77361,
+    "idfDownload": "/raffles-hall/kuok-foundation-house.idf",
+    "energyUse": "kuok-foundation-house-eu",
+    "energyUseIntensity": "kuok-foundation-house-eui",
     "images": [
       { "src": "/src/assets/raffles-hall/kuok-foundation-house-1.jpg", "author": "Li Ziming, Caleb Tan Chong Sheng" },
       { "src": "/src/assets/raffles-hall/kuok-foundation-house-2.jpg", "author": "Li Ziming, Caleb Tan Chong Sheng" }
@@ -773,6 +780,9 @@
     "postal": "117565",
     "latitude": 1.29728,
     "longitude": 103.77113,
+    "idfDownload": "/sde2/sde2.idf",
+    "energyUse": "sde2-eu",
+    "energyUseIntensity": "sde2-eui",
     "images": [
       { "src": "/src/assets/sde2/sde2-1.png", "author": "Steffi Seah, Tay Hui Xin" },
       { "src": "/src/assets/sde2/sde2-2.png", "author": "Steffi Seah, Tay Hui Xin" }
@@ -836,6 +846,9 @@
         "files": [{ "filetype": ".3dm", "url": "/sde3/sde3-rhino.3dm" }]
       }
     ],
+    "idfDownload": "/sde3/sde3.idf",
+    "energyUse": "sde3-eu",
+    "energyUseIntensity": "sde3-eui",
     "buildingDataCredits": "Ng Jia Yee, Weng Yingyi",
     "floorToFloorHeight": 2.8,
     "perimeterZoneDepth": 4,
@@ -874,6 +887,9 @@
     "name": "SDE4",
     "address": "8 Architecture Drive",
     "postal": "117356",
+    "idfDownload": "/sde4/sde4.idf",
+    "energyUse": "sde4-eu",
+    "energyUseIntensity": "sde4-eui",
     "images": [
       { "src": "/src/assets/sde4/sde4.jpg", "author": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi" },
       { "src": "/src/assets/sde4/sde4-2.jpg", "author": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi" }
@@ -1430,6 +1446,9 @@
     "postal": "117418",
     "latitude": 1.29397,
     "longitude": 103.77413,
+    "idfDownload": "/com2/com2.idf",
+    "energyUse": "com2-eu",
+    "energyUseIntensity": "com2-eui",
     "images": [
       {
         "src": "/src/assets/com2/com2-1.jpg",
@@ -2026,6 +2045,9 @@
     "postal": "119618",
     "latitude": 1.29151,
     "longitude": 103.77531,
+    "idfDownload": "/sheares-hall/sheares-a.idf",
+    "energyUse": "sheares-a-eu",
+    "energyUseIntensity": "sheares-a-eui",
     "images": [{ "src": "/src/assets/sheares-hall/sheares-a.jpg", "author": "Jesmine Pang Sheau Xuan" }],
     "downloads": [
       {
@@ -2103,6 +2125,9 @@
     "postal": "119618",
     "latitude": 1.29137,
     "longitude": 103.7761,
+    "idfDownload": "/sheares-hall/sheares-main.idf",
+    "energyUse": "sheares-main-eu",
+    "energyUseIntensity": "sheares-main-eui",
     "images": [{ "src": "/src/assets/sheares-hall/sheares-main.jpg", "author": "Lim Xin Hui Sheryl, Lee Yi" }],
     "downloads": [
       {
@@ -2303,6 +2328,8 @@
     "latitude": 1.29971,
     "longitude": 103.77546,
     "idfDownload": "/usc/usc.idf",
+    "energyUse": "usc-eu",
+    "energyUseIntensity": "usc-eui",
     "downloads": [
       {
         "type": "Rhino",
@@ -2535,6 +2562,9 @@
     "postal": "117584",
     "latitude": 1.29795,
     "longitude": 103.77153,
+    "idfDownload": "/techno-edge/techno-edge.idf",
+    "energyUse": "techno-edge-eu",
+    "energyUseIntensity": "techno-edge-eui",
     "images": [
       {
         "src": "/src/assets/techno-edge/techno-edge-1.jpg",
@@ -2596,6 +2626,8 @@
     "latitude": 1.29698,
     "longitude": 103.77139,
     "idfDownload": "/celc/celc.idf",
+    "energyUse": "celc-eu",
+    "energyUseIntensity": "celc-eui",
     "images": [{ "src": "/src/assets/celc/celc.jpg", "author": "Chee Hui Zhen, Irene Siew Pui Yan" }],
     "downloads": [
       {
@@ -2702,6 +2734,9 @@
     "postal": "118420",
     "latitude": 1.29155,
     "longitude": 103.7829,
+    "idfDownload": "/pgpr/pgpr-block1.idf",
+    "energyUse": "pgpr-block1-eu",
+    "energyUseIntensity": "pgpr-block1-eui",
     "images": [{ "src": "/src/assets/pgpr/pgpr-block1.jpg", "author": "Joey Sia Junwei, Georsia Ang Li Qi" }],
     "downloads": [
       {
