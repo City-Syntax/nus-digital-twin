@@ -599,6 +599,8 @@
     "windowLeakage": 1.5,
     "naturalVentilation": "Yes (all hours)",
     "daylightResponse": "Continuous light source in corridors and toilets, manual lighting controls in individual rooms, pantries and common areas",
+    "thermostatSetPoint": 25,
+    "coreOutsideAirFlowrate": 1.3,
     "perimeterOutsideAirFlowrate": 5,
     "coreOccupantDensity": 0.084,
     "perimeterOccupantDensity": 0.00625,
@@ -608,7 +610,11 @@
     "perimeterLightingPower": 10,
     "occupancySchedule": 85,
     "equipmentUsage": 85,
-    "lightingUsage": 50
+    "lightingUsage": 50,
+    "coreOutsideAirSchedule": "Always on",
+    "perimeterOutsideAirSchedule": "Always on",
+    "exhaustAirRecovery": "None",
+    "economizerCycle": "None"
   },
   {
     "elementId": "241265458",
