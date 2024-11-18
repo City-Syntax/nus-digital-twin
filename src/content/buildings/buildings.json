@@ -1043,7 +1043,9 @@
     "equipmentUsage": 30,
     "lightingUsage": 60,
     "coreOutsideAirSchedule": "Always on",
-    "perimeterOutsideAirSchedule": "Always on"
+    "perimeterOutsideAirSchedule": "Always on",
+    "economizerCycle": "None",
+    "exhaustAirRecovery": "None"
   },
   {
     "elementId": "139971771",
