@@ -82,19 +82,22 @@
     width: 60px;
     transition: color 150ms;
 
+    > * {
+      border: 2px solid transparent;
+      transition: border 150ms;
+    }
+
     img {
       width: 60px;
       height: 60px;
       border-radius: var(--rounded-sm);
-      border: 2px solid transparent;
-      transition: border 150ms;
     }
   }
 
   .map-picker__item--active {
     color: rgba(var(--primary-300));
 
-    img {
+    > * {
       border: 2px solid rgba(var(--primary-300));
     }
   }
