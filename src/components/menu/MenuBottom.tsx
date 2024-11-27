@@ -17,21 +17,10 @@ const MenuBottom = () => {
         <MenuLink toPage="controls" dir="bottom" isVertical isBottom label="Controls" iconName="Controls"></MenuLink>
       </div>
       <div className="menu-list show-sm">
-        <MenuLink toPage="help" dir="bottom" isVertical isBottom isLeft label="Help" iconName="Help"></MenuLink>
+        <MenuLink toPage="resources" dir="bottom" isVertical isBottom label="Resources" iconName="Resources"></MenuLink>
       </div>
-      <div className="menu-list show-sm">
-        <MenuLink
-          toPage="settings"
-          dir="bottom"
-          isVertical
-          isBottom
-          isLeft
-          label="Settings"
-          iconName="Settings"
-        ></MenuLink>
-      </div>
-      <div className="menu-list hide-sm">
-        <MenuLink toPage="menu" dir="bottom" isVertical isBottom isLeft label="Menu" iconName="Menu"></MenuLink>
+      <div className="menu-list">
+        <MenuLink toPage="menu" dir="bottom" isVertical isBottom label="Menu" iconName="Menu"></MenuLink>
       </div>
     </nav>
   );

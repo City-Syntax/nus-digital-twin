@@ -31,6 +31,7 @@ import UBEM from './UBEM';
 import AutoHeight from '../primitives/AutoHeight';
 import PointInfo from './points-of-interest/PointInfo';
 import PointsOfInterest from './points-of-interest/PointsOfInterest';
+import Resources from './Resources';
 
 const Menu = () => {
   const $activePages = useStore(activePages);
@@ -138,6 +139,7 @@ const Menu = () => {
               {$activePages.bottom === 'controls' && <Controls></Controls>}
               {$activePages.bottom === 'layers' && <Layers></Layers>}
               {$activePages.bottom === 'menu' && <MoreMenu></MoreMenu>}
+              {$activePages.bottom === 'resources' && <Resources></Resources>}
             </AutoHeight>
           </div>
         </CSSTransition>

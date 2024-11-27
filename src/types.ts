@@ -42,7 +42,8 @@ export type MenuPages =
   | 'layers'
   | 'points-of-interest'
   | 'point-info'
-  | 'menu';
+  | 'menu'
+  | 'resources';
 
 export type BuildingInfoCategories =
   | 'general'
