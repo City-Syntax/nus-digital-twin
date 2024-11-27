@@ -1,5 +1,6 @@
 import CloseButton from './CloseButton';
 import ScrollContainer from '../primitives/ScrollContainer';
+import MenuLinks from './MenuLinks';
 
 const Resources = () => {
   return (
@@ -9,7 +10,11 @@ const Resources = () => {
         <CloseButton page="resources"></CloseButton>
       </div>
       <ScrollContainer>
-        <div className="menubar-content-body">Hello</div>
+        <div className="menubar-content-body">
+          <div className="menu-list">
+            <MenuLinks.Resources></MenuLinks.Resources>
+          </div>
+        </div>
       </ScrollContainer>
     </>
   );
