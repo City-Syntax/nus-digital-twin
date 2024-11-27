@@ -1,7 +1,5 @@
-import React from 'react';
 import ScrollContainer from '../primitives/ScrollContainer';
 import MenuLinks from './MenuLinks';
-import Icons from '../Icons';
 
 const MenuRight = () => {
   return (
