@@ -158,6 +158,10 @@ const Menu = ({ dir }: MenuLinksProps) => {
 const Resources = () => {
   return (
     <>
+      <a className="menu-link" href="/tutorials">
+        <Icons.Video></Icons.Video>
+        Tutorial Videos
+      </a>
       <a className="menu-link" href="/api/v1">
         <Icons.Api></Icons.Api>
         API Reference
