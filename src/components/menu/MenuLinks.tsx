@@ -3,6 +3,7 @@ import { activeGISLayer, activeModel, buildingColorSetting, showPoints } from '.
 import MenuLink from './MenuLink';
 import { useStore } from '@nanostores/react';
 import type { MenuDir } from '../../types';
+import Icons from '../Icons';
 
 type MenuLinksProps = {
   dir: MenuDir;
@@ -154,6 +155,17 @@ const Menu = ({ dir }: MenuLinksProps) => {
   );
 };
 
+const Resources = () => {
+  return (
+    <>
+      <a className="menu-link" href="/api/v1">
+        <Icons.Api></Icons.Api>
+        API Reference
+      </a>
+    </>
+  );
+};
+
 export default {
   Points,
   GISLayers,
@@ -161,4 +173,5 @@ export default {
   UrbanScaleModels,
   Controls,
   Menu,
+  Resources,
 };

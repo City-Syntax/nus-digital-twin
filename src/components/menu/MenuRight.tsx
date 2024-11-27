@@ -14,10 +14,7 @@ const MenuRight = () => {
           </div>
           <div className="menu-list">
             <div className="menu-list-title">Resources</div>
-            <a className="menu-link" href="/api/v1">
-              <Icons.Api></Icons.Api>
-              API Reference
-            </a>
+            <MenuLinks.Resources />
           </div>
         </div>
       </ScrollContainer>
