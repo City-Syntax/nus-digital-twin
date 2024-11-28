@@ -802,15 +802,15 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.1.tgz"
   integrity sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==
 
-"@fontsource-variable/figtree@^5.0.21":
-  version "5.0.21"
-  resolved "https://registry.yarnpkg.com/@fontsource-variable/figtree/-/figtree-5.0.21.tgz#d04eabf86579178864472727d672f4af210da677"
-  integrity sha512-mK+pngVOnN5pxSVTSnCq2ml6xZEwnlVRLMjY/uImvf2Z4+Vvc7djPyFBOdR58ini3OAt8ajK2rm1QCJHI+pwXA==
+"@fontsource-variable/figtree@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/figtree/-/figtree-5.1.1.tgz#b5ec2990c89d94655c10239c5c8670c26f08c540"
+  integrity sha512-t1rc0tZ5oFzVk5xBQ88Y12gnCzQKNXs8XPaU3IAeliCYRubCqOk+8UW7b0erqgDibaJpgAcnSFWRrWIxmY5++g==
 
-"@fontsource-variable/inter@^5.0.19":
-  version "5.0.19"
-  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.0.19.tgz#7ef7bce1d65e41aefa07a3f7d5677159f5792b81"
-  integrity sha512-V5KPpF5o0sI1uNWAdFArC87NDOb/ZJDPXLomEiKmDCYMlDUCTn2flkuAZkyME2rtGOKO7vzCuDJAND0m/5PhDA==
+"@fontsource-variable/inter@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.1.0.tgz#8174c56d3a24ef20a7dd4ae3bb0c3df2ea1f5f70"
+  integrity sha512-Wj2dUGP0vUpxRGQTXQTCNJO+aLcFcQm+gUPXfj/aS877bQkEPBPv9JvZJpwdm2vzelt8NTZ+ausKlBCJjh2XIg==
 
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
