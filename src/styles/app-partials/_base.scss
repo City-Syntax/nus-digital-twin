@@ -4,19 +4,6 @@
    Colors are specified in RGB values.
    ========================================================================== */
 
-$xs: 378px;
-$sm: 448px;
-$md: 878px;
-$lg: 1252px;
-
-@mixin property($variable: variable, $syntax: '<number>', $inherits: true, $initial-value: 0) {
-  @property --#{$variable} {
-    syntax: $syntax;
-    inherits: $inherits;
-    initial-value: $initial-value;
-  }
-}
-
 :root {
   --menu-left-width: 218px;
   --bottom-bar-height: 28px;
