@@ -2351,6 +2351,7 @@
     "externalWallType": "Brick",
     "internalWalls": "Plaster",
     "fenestrationType": "Windows / glazing",
+    "fenestrationShading": "None",
     "northWindowToWallRatio": 0,
     "southWindowToWallRatio": 30,
     "eastWindowToWallRatio": 2.5,
