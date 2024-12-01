@@ -7,6 +7,7 @@ import LazyImage from '../../primitives/LazyImage';
 import DownloadButton from '../../primitives/DownloadButton';
 import type { PointsOfInterestProps } from '../../../content/config';
 import { SORT_ORDER, TITLE_MAPPINGS } from './pointsInfoUtils';
+import ScrollContainer from '../../primitives/ScrollContainer';
 
 const PointInfo = () => {
   const $pointId = useStore(pointId);
@@ -39,35 +40,37 @@ const PointInfo = () => {
         <h2>Point of Interest</h2>
         <CloseButton page="point-info"></CloseButton>
       </div>
-      <div className="menubar-content-body" ref={menubodyRef}>
-        {properties
-          .filter(([title]) => title !== 'id')
-          .sort((a, b) => {
-            const firstTitle = a[0] as keyof PointsOfInterestProps;
-            const secondTitle = b[0] as keyof PointsOfInterestProps;
-            return SORT_ORDER.indexOf(firstTitle) - SORT_ORDER.indexOf(secondTitle);
-          })
-          .map(([title, content]) => {
-            return (
-              <div key={`${title}-${$pointId}`}>
-                <PointInfoContent title={title as keyof PointsOfInterestProps} content={content} />
-              </div>
-            );
-          })}
-        {rows[0].length > 2 && (
+      <ScrollContainer>
+        <div className="menubar-content-body" ref={menubodyRef}>
+          {properties
+            .filter(([title]) => title !== 'id')
+            .sort((a, b) => {
+              const firstTitle = a[0] as keyof PointsOfInterestProps;
+              const secondTitle = b[0] as keyof PointsOfInterestProps;
+              return SORT_ORDER.indexOf(firstTitle) - SORT_ORDER.indexOf(secondTitle);
+            })
+            .map(([title, content]) => {
+              return (
+                <div key={`${title}-${$pointId}`}>
+                  <PointInfoContent title={title as keyof PointsOfInterestProps} content={content} />
+                </div>
+              );
+            })}
+          {rows[0].length > 2 && (
+            <div>
+              <h3>Download point data</h3>
+              <DownloadButton type="data" files={[{ filetype: '.csv', url: csvContent }]} />
+            </div>
+          )}
           <div>
-            <h3>Download point data</h3>
-            <DownloadButton type="data" files={[{ filetype: '.csv', url: csvContent }]} />
+            <h3>Download all points data</h3>
+            <DownloadButton
+              type="full dataset"
+              files={[{ filetype: '.csv', url: '/points-of-interest/points-data.csv' }]}
+            />
           </div>
-        )}
-        <div>
-          <h3>Download all points data</h3>
-          <DownloadButton
-            type="full dataset"
-            files={[{ filetype: '.csv', url: '/points-of-interest/points-data.csv' }]}
-          />
         </div>
-      </div>
+      </ScrollContainer>
     </>
   );
 };
