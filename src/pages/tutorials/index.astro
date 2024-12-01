@@ -12,9 +12,9 @@ import PageLayout from '../../layouts/PageLayout.astro';
     <div class="content">
       <nav class="sidebar">
         <span class="sidebar-title">Playlist</span>
-        <button class="active">Daylight Simulation</button>
-        <button>Solar Simulation</button>
-        <button>Sun Path Simulation</button>
+        <button data-id="Daylight Simulation" data-playlist-button class="active">Daylight Simulation</button>
+        <button data-id="Solar Simulation" data-playlist-button>Solar Simulation</button>
+        <button data-id="Sun Path Simulation" data-playlist-button>Sun Path Simulation</button>
       </nav>
       <div>
         <video controls>
@@ -24,6 +24,19 @@ import PageLayout from '../../layouts/PageLayout.astro';
     </div>
   </main>
 </PageLayout>
+<script>
+  const video = document.querySelector('video');
+  const videoSource = document.querySelector('source');
+  const buttons = document.querySelectorAll('[data-playlist-button]');
+  buttons.forEach((button) => {
+    button.addEventListener('click', function (this: HTMLButtonElement) {
+      buttons.forEach((btn) => btn.classList.remove('active'));
+      videoSource?.setAttribute('src', `/tutorials/${this.getAttribute('data-id')}.mp4`);
+      video?.load();
+      this.classList.add('active');
+    });
+  });
+</script>
 <style>
   main {
     max-width: 968px;
@@ -50,6 +63,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
       color: rgba(var(--text-color));
       width: 100%;
       text-align: left;
+      cursor: pointer;
     }
 
     button.active {
