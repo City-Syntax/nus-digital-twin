@@ -398,6 +398,7 @@
     "naturalVentilation": "No (closed environment)",
     "daylightResponse": "Continuous",
     "thermostatSetPoint": 20,
+    "coreOutsideAirFlowrate": 10,
     "perimeterOutsideAirFlowrate": 1.5,
     "coreOccupantDensity": 0.14285,
     "perimeterOccupantDensity": 0.14285,
