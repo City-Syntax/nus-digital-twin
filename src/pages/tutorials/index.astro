@@ -44,7 +44,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
   .content {
     display: flex;
-    gap: 2rem;
+    column-gap: 2rem;
+    row-gap: 1rem;
   }
 
   .video-container {
@@ -70,6 +71,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
       width: 100%;
       text-align: left;
       cursor: pointer;
+      transition: background-color 150ms;
     }
 
     button.active {
@@ -89,5 +91,15 @@ import PageLayout from '../../layouts/PageLayout.astro';
     font-weight: 600;
     display: block;
     margin-bottom: 0.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+
+    .sidebar {
+      width: 100%;
+    }
   }
 </style>
