@@ -2772,7 +2772,7 @@
     "roofConstruction": 0.2,
     "externalWallType": "Red brick",
     "internalWalls": "Concrete wall",
-    "fenestrationType": "Double glazing",
+    "fenestrationType": "Single glazing",
     "fenestrationShading": "None",
     "northWindowToWallRatio": 30,
     "southWindowToWallRatio": 50,
