@@ -1583,6 +1583,7 @@
     "daylightResponse": "Continuous",
     "thermostatSetPoint": 25,
     "coreOutsideAirFlowrate": 1.3,
+    "perimeterOutsideAirFlowrate": 1.3,
     "coreOccupantDensity": 1.19,
     "perimeterOccupantDensity": 7.4,
     "coreEquipmentPower": 30,
