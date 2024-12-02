@@ -1548,6 +1548,9 @@
     "postal": "117570",
     "latitude": 1.29467,
     "longitude": 103.77249,
+    "energyUse": "the-deck-eu",
+    "energyUseIntensity": "the-deck-eui",
+    "idfDownload": "the-deck.idf",
     "images": [
       { "src": "/src/assets/the-deck/the-deck-3.png", "author": "Tang Kai Jun, Lim Zhi An Dashiell" },
       { "src": "/src/assets/the-deck/the-deck-1.png", "author": "Tang Kai Jun, Lim Zhi An Dashiell" },
