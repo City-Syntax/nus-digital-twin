@@ -1,0 +1,105 @@
+---
+import PageHeader from '../../components/PageHeader.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+
+<PageLayout title="Tutorial Videos" description="Tutorial videos for building models.">
+  <main>
+    <div>
+      <PageHeader title="Tutorial Videos" />
+      <h1>Tutorial Videos</h1>
+    </div>
+    <div class="content">
+      <nav class="sidebar">
+        <span class="sidebar-title">Playlist</span>
+        <button data-id="Sun Path Simulation" data-playlist-button class="active">Sun Path Simulation</button>
+        <button data-id="Solar Simulation" data-playlist-button>Solar Simulation</button>
+        <button data-id="Daylight Simulation" data-playlist-button>Daylight Simulation</button>
+      </nav>
+      <div class="video-container">
+        <video controls>
+          <source src="/tutorials/Sun Path Simulation.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+<script>
+  const video = document.querySelector('video');
+  const videoSource = document.querySelector('source');
+  const buttons = document.querySelectorAll('[data-playlist-button]');
+  buttons.forEach((button) => {
+    button.addEventListener('click', function (this: HTMLButtonElement) {
+      buttons.forEach((btn) => btn.classList.remove('active'));
+      videoSource?.setAttribute('src', `/tutorials/${this.getAttribute('data-id')}.mp4`);
+      video?.load();
+      this.classList.add('active');
+    });
+  });
+</script>
+<style>
+  main {
+    max-width: 968px;
+  }
+
+  .content {
+    display: flex;
+    column-gap: 2rem;
+    row-gap: 1rem;
+  }
+
+  .video-container {
+    width: 100%;
+  }
+
+  video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 238px;
+
+    > button {
+      border: none;
+      border-radius: var(--rounded-xs);
+      background: none;
+      padding: 0.375rem 0.5rem;
+      color: rgba(var(--text-color));
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color 150ms;
+    }
+
+    button.active {
+      background: #ddd;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      button.active {
+        background: #333;
+      }
+    }
+  }
+
+  .sidebar-title {
+    color: rgba(169, 169, 169);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+
+    .sidebar {
+      width: 100%;
+    }
+  }
+</style>
