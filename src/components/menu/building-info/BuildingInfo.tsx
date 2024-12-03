@@ -32,7 +32,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
         <h2>{buildingProperties.name}</h2>
         <CloseButton page="building-info"></CloseButton>
       </div>
-      <ScrollContainer>
+      <ScrollContainer key={buildingId.get()}>
         <div className="menubar-content-body">
           <Select<BuildingInfoCategories>
             value={category}

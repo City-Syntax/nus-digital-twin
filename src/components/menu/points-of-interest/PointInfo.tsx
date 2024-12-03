@@ -40,7 +40,7 @@ const PointInfo = () => {
         <h2>Point of Interest</h2>
         <CloseButton page="point-info"></CloseButton>
       </div>
-      <ScrollContainer>
+      <ScrollContainer key={pointId.get()}>
         <div className="menubar-content-body" ref={menubodyRef}>
           {properties
             .filter(([title]) => title !== 'id')
