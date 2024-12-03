@@ -69,7 +69,13 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
                   {buildingProperties.name}.
                 </p>
               ) : (
-                <EnergyChart data={data} graphType={graphType}></EnergyChart>
+                <>
+                  <EnergyChart
+                    data={data}
+                    graphType={graphType}
+                    title={`Building: ${buildingProperties.name}`}
+                  ></EnergyChart>
+                </>
               )}
               {buildingProperties && buildingProperties.idfDownload && (
                 <DownloadButton
@@ -104,7 +110,7 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
 
 export default Energy;
 
-const EnergyChart = ({ data, graphType }: { data: BarDatum[]; graphType: EnergyGraphType }) => {
+const EnergyChart = ({ data, graphType, title }: { data: BarDatum[]; graphType: EnergyGraphType; title?: string }) => {
   const colors: Partial<Record<keyof EnergyProperties, string>> = {
     cooling: '#2563eb',
     lighting: '#eab308',
@@ -158,6 +164,9 @@ const EnergyChart = ({ data, graphType }: { data: BarDatum[]; graphType: EnergyG
           tickPadding: 5,
           tickRotation: 0,
           truncateTickAt: 0,
+          legend: title,
+          legendPosition: 'end',
+          legendOffset: -132,
         }}
         axisLeft={{
           tickSize: 3,
