@@ -13,7 +13,7 @@ const LazyImage = ({
   canDownload,
 }: {
   img?: ImageProps;
-  ratio?: '16/9' | '1/1';
+  ratio?: string;
   alt?: string;
   caption?: string;
   canDownload?: boolean;

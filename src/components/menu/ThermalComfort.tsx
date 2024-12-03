@@ -1,5 +1,6 @@
-import React from 'react';
 import CloseButton from './CloseButton';
+import LazyImage from '../primitives/LazyImage';
+import ScrollContainer from '../primitives/ScrollContainer';
 
 const ThermalComfort = () => {
   return (
@@ -8,9 +9,16 @@ const ThermalComfort = () => {
         <h2>Controls: Thermal Comfort</h2>
         <CloseButton page="thermal-comfort"></CloseButton>
       </div>
-      <div className="menubar-content-body">
-        <p>This feature is under construction.</p>
-      </div>
+      <ScrollContainer>
+        <div className="menubar-content-body">
+          <div>
+            <h3>Diurnal Averages</h3>
+            <div>
+              <LazyImage ratio="13/8" img={{ src: '/src/assets/thermal-comfort/DiurnalAverages.png' }} />
+            </div>
+          </div>
+        </div>
+      </ScrollContainer>
     </>
   );
 };
