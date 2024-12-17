@@ -8,7 +8,13 @@ export default defineConfig({
   integrations: [
     react(),
     starlight({
-      title: 'NUS Digital Twin Docs',
+      title: 'NUS Digital Twin',
+      sidebar: [
+        {
+          label: 'User Guide',
+          items: ['user-guide'],
+        },
+      ],
     }),
   ],
   site: 'https://www.nus-digital-twin.com',
