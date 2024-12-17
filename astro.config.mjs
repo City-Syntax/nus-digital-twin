@@ -9,6 +9,7 @@ export default defineConfig({
     react(),
     starlight({
       title: 'NUS Digital Twin',
+      lastUpdated: true,
       sidebar: [
         {
           slug: 'user-guide',
