@@ -11,8 +11,14 @@ export default defineConfig({
       title: 'NUS Digital Twin',
       sidebar: [
         {
-          label: 'User Guide',
-          items: ['user-guide'],
+          slug: 'user-guide',
+        },
+        {
+          slug: 'user-guide/getting-started',
+        },
+        {
+          label: 'Basic Controls',
+          autogenerate: { directory: 'user-guide/basic-controls' },
         },
       ],
     }),
