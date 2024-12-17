@@ -1,6 +1,6 @@
 # NUS Digital Twin
 
-This project is built with Astro and CesiumJS with Cesium Ion. This site makes use of server-side rendering (hybrid mode) to serve a live API. See [Astro's documentation](https://docs.astro.build/en/guides/server-side-rendering/#enable-on-demand-server-rendering).
+This project is built with Astro and CesiumJS with Cesium Ion. This site makes use of server-side rendering to serve a live API. See [Astro's documentation](https://docs.astro.build/en/guides/server-side-rendering/#enable-on-demand-server-rendering).
 
 ## Getting Started
 

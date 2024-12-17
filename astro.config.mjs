@@ -7,6 +7,6 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   integrations: [react()],
   site: 'https://www.nus-digital-twin.com',
-  output: 'hybrid',
+  output: 'static',
   adapter: vercel(),
 });
