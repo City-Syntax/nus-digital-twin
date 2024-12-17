@@ -116,6 +116,8 @@ const pointsSchema = (image: ImageFunction) =>
     longitude: z.number(),
     img: z.object({ src: image(), author: z.string().optional() }).optional(),
     thermalImg: z.object({ src: image(), author: z.string().optional() }).optional(),
+    originalSegImg: z.object({ src: image(), author: z.string().optional() }).optional(),
+    customSegImg: z.object({ src: image(), author: z.string().optional() }).optional(),
     redHSV: z.number().optional(),
     yellowHSV: z.number().optional(),
     greenHSV: z.number().optional(),
