@@ -1,6 +1,8 @@
 import { defineCollection, reference, z, type ImageFunction } from 'astro:content';
 import type { ImageProps } from './types';
 import { glob } from 'astro/loaders';
+import { docsLoader } from '@astrojs/starlight/loaders';
+import { docsSchema } from '@astrojs/starlight/schema';
 
 const buildingMetadataSchema = z.object({
   elementId: z.string(),
@@ -161,6 +163,7 @@ export const collections = {
   buildings: buildingsCollection,
   energy: energyCollection,
   'points-of-interest': pointsOfInterestCollection,
+  docs: defineCollection({ loader: docsLoader(), schema: docsSchema() }),
 };
 
 export type PointsOfInterestProps = z.infer<ReturnType<typeof pointsSchema>>;
