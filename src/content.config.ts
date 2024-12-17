@@ -1,5 +1,6 @@
 import { defineCollection, reference, z, type ImageFunction } from 'astro:content';
-import type { ImageProps } from '../types';
+import type { ImageProps } from './types';
+import { glob } from 'astro/loaders';
 
 const buildingMetadataSchema = z.object({
   elementId: z.string(),
@@ -76,7 +77,7 @@ const buildingSchema = z.object({
 });
 
 const buildingsCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/buildings' }),
   schema: ({ image }) =>
     z.array(
       buildingSchema
@@ -104,7 +105,7 @@ const energyUseSchema = z.object({
 });
 
 const energyCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/energy' }),
   schema: () => z.array(energyUseSchema),
 });
 
@@ -150,7 +151,7 @@ const pointsSchema = (image: ImageFunction) =>
   });
 
 const pointsOfInterestCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/points-of-interest' }),
   schema: ({ image }) => z.array(pointsSchema(image)),
 });
 

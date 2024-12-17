@@ -1,4 +1,4 @@
-import type { PointsOfInterestProps } from '../../../content/config';
+import type { PointsOfInterestProps } from '../../../content.config';
 
 export const SORT_ORDER: (keyof PointsOfInterestProps)[] = [
   'id',

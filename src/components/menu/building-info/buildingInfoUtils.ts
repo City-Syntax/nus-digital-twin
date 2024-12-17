@@ -1,4 +1,4 @@
-import type { BuildingPropertiesProps } from '../../../content/config';
+import type { BuildingPropertiesProps } from '../../../content.config';
 import type { BuildingInfoCategories } from '../../../types';
 
 export const SORT_ORDER: (keyof BuildingPropertiesProps)[] = [
