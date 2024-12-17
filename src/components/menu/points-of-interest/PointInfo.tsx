@@ -81,6 +81,8 @@ const PointInfoContent = ({ title, content }: { title: keyof PointsOfInterestPro
   switch (title) {
     case 'img':
     case 'thermalImg':
+    case 'originalSegImg':
+    case 'customSegImg':
       return (
         <div>
           <LazyImage key={content.src} img={content} caption={content.author} canDownload />
