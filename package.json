@@ -34,7 +34,7 @@
     "astro": "5.0.9",
     "cesium": "^1.119.0",
     "cmdk": "^1.0.0",
-    "embla-carousel-react": "^8.1.5",
+    "embla-carousel-react": "^8.5.1",
     "fuzzysort": "^3.0.2",
     "nanostores": "^0.9.5",
     "react": "^18.3.1",
