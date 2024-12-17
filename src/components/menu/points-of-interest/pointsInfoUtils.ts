@@ -6,6 +6,8 @@ export const SORT_ORDER: (keyof PointsOfInterestProps)[] = [
   'longitude',
   'img',
   'thermalImg',
+  'originalSegImg',
+  'customSegImg',
   'redHSV',
   'yellowHSV',
   'greenHSV',
