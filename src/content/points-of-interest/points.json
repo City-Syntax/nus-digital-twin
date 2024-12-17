@@ -44,11 +44,11 @@
     "waterFeature": false,
     "thermalRatio": 0.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-1",
+      "src": "/src/assets/points-of-interest/original-seg-1.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-1",
+      "src": "/src/assets/points-of-interest/custom-seg-1.png",
       "author": "Zhu Lujia"
     }
   },
@@ -97,11 +97,11 @@
     "waterFeature": false,
     "thermalRatio": 0.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-2",
+      "src": "/src/assets/points-of-interest/original-seg-2.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-2",
+      "src": "/src/assets/points-of-interest/custom-seg-2.png",
       "author": "Zhu Lujia"
     }
   },
@@ -150,11 +150,11 @@
     "waterFeature": false,
     "thermalRatio": 0.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-3",
+      "src": "/src/assets/points-of-interest/original-seg-3.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-3",
+      "src": "/src/assets/points-of-interest/custom-seg-3.png",
       "author": "Zhu Lujia"
     }
   },
@@ -203,11 +203,11 @@
     "waterFeature": false,
     "thermalRatio": 38.9,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-4",
+      "src": "/src/assets/points-of-interest/original-seg-4.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-4",
+      "src": "/src/assets/points-of-interest/custom-seg-4.png",
       "author": "Zhu Lujia"
     }
   },
@@ -256,11 +256,11 @@
     "waterFeature": true,
     "thermalRatio": 2.9,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-5",
+      "src": "/src/assets/points-of-interest/original-seg-5.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-5",
+      "src": "/src/assets/points-of-interest/custom-seg-5.png",
       "author": "Zhu Lujia"
     }
   },
@@ -309,11 +309,11 @@
     "waterFeature": false,
     "thermalRatio": 9.5,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-6",
+      "src": "/src/assets/points-of-interest/original-seg-6.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-6",
+      "src": "/src/assets/points-of-interest/custom-seg-6.png",
       "author": "Zhu Lujia"
     }
   },
@@ -362,11 +362,11 @@
     "waterFeature": false,
     "thermalRatio": 1.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-7",
+      "src": "/src/assets/points-of-interest/original-seg-7.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-7",
+      "src": "/src/assets/points-of-interest/custom-seg-7.png",
       "author": "Zhu Lujia"
     }
   },
@@ -415,11 +415,11 @@
     "waterFeature": false,
     "thermalRatio": 1.5,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-8",
+      "src": "/src/assets/points-of-interest/original-seg-8.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-8",
+      "src": "/src/assets/points-of-interest/custom-seg-8.png",
       "author": "Zhu Lujia"
     }
   },
@@ -468,11 +468,11 @@
     "waterFeature": false,
     "thermalRatio": 0.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-9",
+      "src": "/src/assets/points-of-interest/original-seg-9.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-9",
+      "src": "/src/assets/points-of-interest/custom-seg-9.png",
       "author": "Zhu Lujia"
     }
   },
@@ -521,11 +521,11 @@
     "waterFeature": false,
     "thermalRatio": 0.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-10",
+      "src": "/src/assets/points-of-interest/original-seg-10.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-10",
+      "src": "/src/assets/points-of-interest/custom-seg-10.png",
       "author": "Zhu Lujia"
     }
   },
@@ -574,11 +574,11 @@
     "waterFeature": false,
     "thermalRatio": 4.7,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-11",
+      "src": "/src/assets/points-of-interest/original-seg-11.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-11",
+      "src": "/src/assets/points-of-interest/custom-seg-11.png",
       "author": "Zhu Lujia"
     }
   },
@@ -627,11 +627,11 @@
     "waterFeature": false,
     "thermalRatio": 37.8,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-12",
+      "src": "/src/assets/points-of-interest/original-seg-12.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-12",
+      "src": "/src/assets/points-of-interest/custom-seg-12.png",
       "author": "Zhu Lujia"
     }
   },
@@ -680,11 +680,11 @@
     "waterFeature": false,
     "thermalRatio": 0.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-13",
+      "src": "/src/assets/points-of-interest/original-seg-13.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-13",
+      "src": "/src/assets/points-of-interest/custom-seg-13.png",
       "author": "Zhu Lujia"
     }
   },
@@ -733,11 +733,11 @@
     "waterFeature": false,
     "thermalRatio": 99.8,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-14",
+      "src": "/src/assets/points-of-interest/original-seg-14.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-14",
+      "src": "/src/assets/points-of-interest/custom-seg-14.png",
       "author": "Zhu Lujia"
     }
   },
@@ -786,11 +786,11 @@
     "waterFeature": false,
     "thermalRatio": 2.6,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-15",
+      "src": "/src/assets/points-of-interest/original-seg-15.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-15",
+      "src": "/src/assets/points-of-interest/custom-seg-15.png",
       "author": "Zhu Lujia"
     }
   },
@@ -839,11 +839,11 @@
     "waterFeature": false,
     "thermalRatio": 24.3,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-16",
+      "src": "/src/assets/points-of-interest/original-seg-16.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-16",
+      "src": "/src/assets/points-of-interest/custom-seg-16.png",
       "author": "Zhu Lujia"
     }
   },
@@ -892,11 +892,11 @@
     "waterFeature": false,
     "thermalRatio": 29.7,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-17",
+      "src": "/src/assets/points-of-interest/original-seg-17.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-17",
+      "src": "/src/assets/points-of-interest/custom-seg-17.png",
       "author": "Zhu Lujia"
     }
   },
@@ -945,11 +945,11 @@
     "waterFeature": false,
     "thermalRatio": 27.3,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-18",
+      "src": "/src/assets/points-of-interest/original-seg-18.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-18",
+      "src": "/src/assets/points-of-interest/custom-seg-18.png",
       "author": "Zhu Lujia"
     }
   },
@@ -998,11 +998,11 @@
     "waterFeature": false,
     "thermalRatio": 19.1,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-19",
+      "src": "/src/assets/points-of-interest/original-seg-19.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-19",
+      "src": "/src/assets/points-of-interest/custom-seg-19.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1051,11 +1051,11 @@
     "waterFeature": false,
     "thermalRatio": 23.5,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-20",
+      "src": "/src/assets/points-of-interest/original-seg-20.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-20",
+      "src": "/src/assets/points-of-interest/custom-seg-20.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1104,11 +1104,11 @@
     "waterFeature": false,
     "thermalRatio": 30.3,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-21",
+      "src": "/src/assets/points-of-interest/original-seg-21.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-21",
+      "src": "/src/assets/points-of-interest/custom-seg-21.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1157,11 +1157,11 @@
     "waterFeature": false,
     "thermalRatio": 48.7,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-22",
+      "src": "/src/assets/points-of-interest/original-seg-22.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-22",
+      "src": "/src/assets/points-of-interest/custom-seg-22.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1210,11 +1210,11 @@
     "waterFeature": false,
     "thermalRatio": 78.1,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-23",
+      "src": "/src/assets/points-of-interest/original-seg-23.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-23",
+      "src": "/src/assets/points-of-interest/custom-seg-23.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1263,11 +1263,11 @@
     "waterFeature": false,
     "thermalRatio": 4.9,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-24",
+      "src": "/src/assets/points-of-interest/original-seg-24.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-24",
+      "src": "/src/assets/points-of-interest/custom-seg-24.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1316,11 +1316,11 @@
     "waterFeature": false,
     "thermalRatio": 37.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-25",
+      "src": "/src/assets/points-of-interest/original-seg-25.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-25",
+      "src": "/src/assets/points-of-interest/custom-seg-25.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1369,11 +1369,11 @@
     "waterFeature": false,
     "thermalRatio": 43.1,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-26",
+      "src": "/src/assets/points-of-interest/original-seg-26.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-26",
+      "src": "/src/assets/points-of-interest/custom-seg-26.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1422,11 +1422,11 @@
     "waterFeature": false,
     "thermalRatio": 2.1,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-27",
+      "src": "/src/assets/points-of-interest/original-seg-27.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-27",
+      "src": "/src/assets/points-of-interest/custom-seg-27.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1475,11 +1475,11 @@
     "waterFeature": false,
     "thermalRatio": 52.8,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-28",
+      "src": "/src/assets/points-of-interest/original-seg-28.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-28",
+      "src": "/src/assets/points-of-interest/custom-seg-28.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1528,11 +1528,11 @@
     "waterFeature": false,
     "thermalRatio": 75.8,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-29",
+      "src": "/src/assets/points-of-interest/original-seg-29.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-29",
+      "src": "/src/assets/points-of-interest/custom-seg-29.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1581,11 +1581,11 @@
     "waterFeature": true,
     "thermalRatio": 37.4,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-30",
+      "src": "/src/assets/points-of-interest/original-seg-30.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-30",
+      "src": "/src/assets/points-of-interest/custom-seg-30.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1634,11 +1634,11 @@
     "waterFeature": false,
     "thermalRatio": 4.1,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-31",
+      "src": "/src/assets/points-of-interest/original-seg-31.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-31",
+      "src": "/src/assets/points-of-interest/custom-seg-31.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1687,11 +1687,11 @@
     "waterFeature": false,
     "thermalRatio": 40.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-32",
+      "src": "/src/assets/points-of-interest/original-seg-32.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-32",
+      "src": "/src/assets/points-of-interest/custom-seg-32.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1740,11 +1740,11 @@
     "waterFeature": false,
     "thermalRatio": 48.9,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-33",
+      "src": "/src/assets/points-of-interest/original-seg-33.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-33",
+      "src": "/src/assets/points-of-interest/custom-seg-33.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1793,11 +1793,11 @@
     "waterFeature": false,
     "thermalRatio": 48.5,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-34",
+      "src": "/src/assets/points-of-interest/original-seg-34.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-34",
+      "src": "/src/assets/points-of-interest/custom-seg-34.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1846,11 +1846,11 @@
     "waterFeature": false,
     "thermalRatio": 93.4,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-35",
+      "src": "/src/assets/points-of-interest/original-seg-35.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-35",
+      "src": "/src/assets/points-of-interest/custom-seg-35.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1899,11 +1899,11 @@
     "waterFeature": false,
     "thermalRatio": 89.8,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-36",
+      "src": "/src/assets/points-of-interest/original-seg-36.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-36",
+      "src": "/src/assets/points-of-interest/custom-seg-36.png",
       "author": "Zhu Lujia"
     }
   },
@@ -1952,11 +1952,11 @@
     "waterFeature": false,
     "thermalRatio": 37.9,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-37",
+      "src": "/src/assets/points-of-interest/original-seg-37.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-37",
+      "src": "/src/assets/points-of-interest/custom-seg-37.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2005,11 +2005,11 @@
     "waterFeature": false,
     "thermalRatio": 65.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-38",
+      "src": "/src/assets/points-of-interest/original-seg-38.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-38",
+      "src": "/src/assets/points-of-interest/custom-seg-38.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2058,11 +2058,11 @@
     "waterFeature": false,
     "thermalRatio": 13.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-39",
+      "src": "/src/assets/points-of-interest/original-seg-39.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-39",
+      "src": "/src/assets/points-of-interest/custom-seg-39.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2111,11 +2111,11 @@
     "waterFeature": false,
     "thermalRatio": 0.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-40",
+      "src": "/src/assets/points-of-interest/original-seg-40.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-40",
+      "src": "/src/assets/points-of-interest/custom-seg-40.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2164,11 +2164,11 @@
     "waterFeature": true,
     "thermalRatio": 29.1,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-41",
+      "src": "/src/assets/points-of-interest/original-seg-41.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-41",
+      "src": "/src/assets/points-of-interest/custom-seg-41.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2217,11 +2217,11 @@
     "waterFeature": false,
     "thermalRatio": 0.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-42",
+      "src": "/src/assets/points-of-interest/original-seg-42.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-42",
+      "src": "/src/assets/points-of-interest/custom-seg-42.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2270,11 +2270,11 @@
     "waterFeature": false,
     "thermalRatio": 34.9,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-43",
+      "src": "/src/assets/points-of-interest/original-seg-43.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-43",
+      "src": "/src/assets/points-of-interest/custom-seg-43.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2323,11 +2323,11 @@
     "waterFeature": false,
     "thermalRatio": 30.0,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-44",
+      "src": "/src/assets/points-of-interest/original-seg-44.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-44",
+      "src": "/src/assets/points-of-interest/custom-seg-44.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2376,11 +2376,11 @@
     "waterFeature": false,
     "thermalRatio": 56.9,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-45",
+      "src": "/src/assets/points-of-interest/original-seg-45.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-45",
+      "src": "/src/assets/points-of-interest/custom-seg-45.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2429,11 +2429,11 @@
     "waterFeature": false,
     "thermalRatio": 99.4,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-46",
+      "src": "/src/assets/points-of-interest/original-seg-46.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-46",
+      "src": "/src/assets/points-of-interest/custom-seg-46.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2482,11 +2482,11 @@
     "waterFeature": false,
     "thermalRatio": 76.7,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-47",
+      "src": "/src/assets/points-of-interest/original-seg-47.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-47",
+      "src": "/src/assets/points-of-interest/custom-seg-47.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2535,11 +2535,11 @@
     "waterFeature": false,
     "thermalRatio": 51.8,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-48",
+      "src": "/src/assets/points-of-interest/original-seg-48.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-48",
+      "src": "/src/assets/points-of-interest/custom-seg-48.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2588,11 +2588,11 @@
     "waterFeature": false,
     "thermalRatio": 87.8,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-49",
+      "src": "/src/assets/points-of-interest/original-seg-49.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-49",
+      "src": "/src/assets/points-of-interest/custom-seg-49.png",
       "author": "Zhu Lujia"
     }
   },
@@ -2641,11 +2641,11 @@
     "waterFeature": false,
     "thermalRatio": 1.1,
     "originalSegImg": {
-      "src": "/src/assets/points-of-interest/original-seg-50",
+      "src": "/src/assets/points-of-interest/original-seg-50.png",
       "author": "Zhu Lujia"
     },
     "customSegImg": {
-      "src": "/src/assets/points-of-interest/custom-seg-50",
+      "src": "/src/assets/points-of-interest/custom-seg-50.png",
       "author": "Zhu Lujia"
     }
   },
