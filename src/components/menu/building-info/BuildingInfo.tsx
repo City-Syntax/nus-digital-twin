@@ -2,7 +2,7 @@ import { activePages, buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
 import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS, SORT_ORDER } from './buildingInfoUtils';
 import type { BuildingInfoCategories, DownloadProps } from '../../../types';
-import type { BuildingPropertiesProps } from '../../../content/config';
+import type { BuildingPropertiesProps } from '../../../content.config';
 import buildingsData from '../../../content/buildings/buildings.json';
 import CloseButton from '../CloseButton';
 import DownloadButton from '../../primitives/DownloadButton';

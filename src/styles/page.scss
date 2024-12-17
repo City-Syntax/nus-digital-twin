@@ -1,7 +1,7 @@
-@import 'src/styles/partials/normalize';
-@import 'src/styles/partials/common';
-@import 'src/styles/partials/utils';
-@import 'src/styles/page-partials/base';
+@import 'partials/normalize';
+@import 'partials/common';
+@import 'partials/utils';
+@import 'page-partials/base';
 
 .page-header {
   display: flex;

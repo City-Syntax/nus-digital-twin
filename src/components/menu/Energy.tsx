@@ -9,7 +9,7 @@ import DownloadButton from '../primitives/DownloadButton';
 import type { EnergyGraphType } from '../../types';
 import ScrollContainer from '../primitives/ScrollContainer';
 import Icons from '../Icons';
-import type { EnergyProperties } from '../../content/config';
+import type { EnergyProperties } from '../../content.config';
 const energyData = import.meta.glob('../../content/energy/*.json');
 
 type EnergyProps = {

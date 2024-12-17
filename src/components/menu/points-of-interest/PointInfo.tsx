@@ -5,7 +5,7 @@ import CloseButton from '../CloseButton';
 import pointsData from '../../../content/points-of-interest/points.json';
 import LazyImage from '../../primitives/LazyImage';
 import DownloadButton from '../../primitives/DownloadButton';
-import type { PointsOfInterestProps } from '../../../content/config';
+import type { PointsOfInterestProps } from '../../../content.config';
 import { SORT_ORDER, TITLE_MAPPINGS } from './pointsInfoUtils';
 import ScrollContainer from '../../primitives/ScrollContainer';
 
