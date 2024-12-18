@@ -1,0 +1,71 @@
+---
+title: Getting Started
+description: Getting started with NUS Digital Twin
+---
+import { Badge } from '@astrojs/starlight/components';
+
+NUS Digital Twin offers many features to visualise information on buildings on campus. This article briefly introduces the features available.
+
+## Basic Features
+
+NUS Digital Twin provides many of the basic features available on other mapping applications:
+
+- [Control (pan, zoom, rotate) the map](./basic-features/map-controls)
+- [Toggle between the map layers](./basic-features/map-layers)
+- [Reset to default view](./basic-features/map-controls/#reset-view)
+
+## Building Data
+
+On NUS Digital Twin, you can view information for each building on campus, including:
+
+- General information, such as the address of each building
+- Structural, enclosure and internal partitions
+- Fenestration
+- Heating, ventilation, and air-conditioning
+- Density and power
+- Schedules
+
+[Learn how to view building data](./building-data).
+
+## Building Models
+
+Our platform allows you to seamlessly switch between detailed building-level models and urban-scale models. The models available are listed below. Click on each item to find out more.
+
+**Building-level models**
+
+- [BIM models](./building-models/bim)
+- [Rhino models](./building-models/rhino-building)
+
+**Urban-scale models**
+
+- [Rhino models](./building-models/rhino-urban)
+- [OpenStreetMap models](./building-models/osm)
+
+## Points Of Interest
+
+You can view data for some points of interest across the campus, some of which include images captured by thermal cameras. This feature is disabled by default, [learn how to turn it on](./points-of-interest).
+
+## Controls
+
+You can find additional information about the buildings or campus in the controls section:
+
+- [Energy](./controls/energy): View energy simulation results for each building. Information is only available for selected buildings.
+- [Thermal Comfort](./controls/thermal-comfort)
+- [Wind](./controls/wind)
+- [Solar](./controls/solar)
+- [Distance](./controls/distance)
+
+## Tutorial Videos
+
+You can find bite-sized [tutorial videos](/tutorials) designed to help you reinforce your learning on building performance simulation concepts.
+
+<div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '3.28125rem' }}>
+## API
+<Badge text="Beta" variant="caution" size="medium" />
+</div>
+
+:::caution
+This feature is in <Badge text="Beta" variant="caution" size="small" />, and is subject to breaking changes.
+:::
+
+We provide an API containing data used for our platform. This API allows other developers and researchers to integrate and interact with the same data used to power NUS Digital Twin. [Learn how to use the API](./api), or [view the API Reference](/api/v1).
