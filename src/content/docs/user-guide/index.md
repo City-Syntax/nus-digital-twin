@@ -9,7 +9,7 @@ Welcome to the NUS Digital Twin User Guide! This is a guide for users trying to 
 
 NUS Digital Twin is a crowdsourced digital twin of the National University of Singapore campus, developed by [City Syntax Lab](https://www.citysyntax.io) at the [National University of Singapore](https://nus.edu.sg). The platform hosts multiple 3D models and building data for over 200 buildings on campus.
 
-:::note
+:::caution
 The platform is primarily designed for educational and research purposes and the data may contain inaccuracies. The data should not be relied upon for decision-making.
 :::
 

@@ -50,6 +50,10 @@ export default defineConfig({
           label: 'Basic Features',
           autogenerate: { directory: 'user-guide/basic-features' },
         },
+        {
+          label: 'Building Data',
+          autogenerate: { directory: 'user-guide/building-data' },
+        },
       ],
     }),
   ],
