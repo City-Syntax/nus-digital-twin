@@ -10,6 +10,9 @@ export default defineConfig({
     starlight({
       title: 'NUS Digital Twin',
       lastUpdated: true,
+      components: {
+        SiteTitle: './src/components/docs/SiteTitle.astro',
+      },
       sidebar: [
         {
           slug: 'user-guide',

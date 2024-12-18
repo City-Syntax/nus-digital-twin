@@ -1,0 +1,49 @@
+---
+import Icons from '../Icons';
+
+const { siteTitle, siteTitleHref } = Astro.props;
+console.log(Astro.props.slug);
+---
+
+<div class="site-title sl-flex">
+  <a href={siteTitleHref}>
+    <Icons.Logo height="1.75rem" width="1.75rem" />
+  </a>
+  <svg xmlns="http://www.w3.org/2000/svg" height="1.25rem" width="1.25rem" viewBox="0 0 15 15">
+    <path
+      opacity="0.35"
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M4.109 14L9.466 1h1.352L5.46 14z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+  <span>
+    {siteTitle}
+  </span>
+</div>
+
+<style>
+  .site-title {
+    align-items: center;
+    display: flex;
+    gap: 4px;
+    font-size: var(--sl-text-h6);
+    color: var(--sl-color-text-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Figtree Variable', system-ui, sans-serif;
+
+    a {
+      display: flex;
+    }
+  }
+  img {
+    height: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: 0 50%;
+  }
+</style>
