@@ -70,6 +70,9 @@ export default defineConfig({
           label: 'API',
           autogenerate: { directory: 'user-guide/api' },
         },
+        {
+          slug: 'user-guide/contact',
+        },
       ],
     }),
   ],
