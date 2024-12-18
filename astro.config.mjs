@@ -13,6 +13,7 @@ export default defineConfig({
       components: {
         SiteTitle: './src/components/docs/SiteTitle.astro',
       },
+      customCss: ['@fontsource-variable/inter', '@fontsource-variable/figtree'],
       sidebar: [
         {
           slug: 'user-guide',
