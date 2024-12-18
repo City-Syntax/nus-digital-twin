@@ -54,6 +54,10 @@ export default defineConfig({
           label: 'Building Data',
           autogenerate: { directory: 'user-guide/building-data' },
         },
+        {
+          label: 'Building Models',
+          autogenerate: { directory: 'user-guide/building-models' },
+        },
       ],
     }),
   ],
