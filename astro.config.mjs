@@ -15,7 +15,7 @@ export default defineConfig({
       components: {
         SiteTitle: './src/components/docs/SiteTitle.astro',
       },
-      customCss: ['@fontsource-variable/inter', '@fontsource-variable/figtree'],
+      customCss: ['@fontsource-variable/inter', '@fontsource-variable/figtree', './src/styles/docs.css'],
       head: [
         {
           tag: 'link',
