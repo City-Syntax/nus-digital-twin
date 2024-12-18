@@ -58,6 +58,10 @@ export default defineConfig({
           label: 'Building Models',
           autogenerate: { directory: 'user-guide/building-models' },
         },
+        {
+          label: 'Points Of Interest',
+          autogenerate: { directory: 'user-guide/points-of-interest' },
+        },
       ],
     }),
   ],
