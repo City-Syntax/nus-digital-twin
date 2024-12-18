@@ -1,8 +1,8 @@
 ---
 import Icons from '../Icons';
 
-const { siteTitle, siteTitleHref } = Astro.props;
-console.log(Astro.props.slug);
+const { id, siteTitle, siteTitleHref } = Astro.props;
+const isUserGuide = id.startsWith('user-guide');
 ---
 
 <div class="site-title sl-flex">
@@ -19,9 +19,9 @@ console.log(Astro.props.slug);
     >
     </path>
   </svg>
-  <span>
-    {siteTitle}
-  </span>
+  <a href={isUserGuide ? '/user-guide' : ''}>
+    {isUserGuide ? 'User Guide' : siteTitle}
+  </a>
 </div>
 
 <style>
@@ -37,6 +37,7 @@ console.log(Astro.props.slug);
 
     a {
       display: flex;
+      text-decoration: none;
     }
   }
   img {
