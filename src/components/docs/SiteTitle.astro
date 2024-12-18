@@ -38,6 +38,11 @@ const isUserGuide = id.startsWith('user-guide');
       display: flex;
       text-decoration: none;
       color: var(--sl-color-white);
+      transition: transform 150ms;
+    }
+
+    a:hover {
+      transform: translateY(-4px);
     }
   }
   img {
