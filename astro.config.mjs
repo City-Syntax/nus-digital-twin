@@ -66,6 +66,10 @@ export default defineConfig({
           label: 'Controls',
           autogenerate: { directory: 'user-guide/controls' },
         },
+        {
+          label: 'API',
+          autogenerate: { directory: 'user-guide/api' },
+        },
       ],
     }),
   ],
