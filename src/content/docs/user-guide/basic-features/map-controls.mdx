@@ -1,0 +1,45 @@
+---
+title: Map Controls
+description: Learn how to control and navigate the map on NUS Digital Twin
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import Icons from './src/components/Icons'
+
+Navigating the map on NUS Digital Twin is simple and intuitive. This article explains the various controls available on the platform to help you explore and interact with the map efficiently.
+
+## Pan
+
+You can move and pan across the map to explore different areas of the campus.
+
+<Tabs syncKey='controlType'>
+  <TabItem label="Mouse">Left click and drag</TabItem>
+  <TabItem label="Touch">Drag with one finger</TabItem>
+</Tabs>
+
+## Zoom
+
+You can zoom in on the map to see more detailed views of the buildings.
+
+<Tabs syncKey='controlType'>
+  <TabItem label="Mouse">
+    - Right click and drag
+    - Scroll with mouse wheel 
+  </TabItem>
+  <TabItem label="Touch">Pinch with two fingers</TabItem>
+</Tabs>
+
+## Rotate
+
+You can rotate the map to view different sections of each buildings.
+
+<Tabs syncKey='controlType'>
+  <TabItem label="Mouse">
+    - Middle click and drag
+    - <kbd>CTRL</kbd>, left click and drag
+  </TabItem>
+  <TabItem label="Touch">Two finger drag in the opposite direction</TabItem>
+</Tabs>
+
+## Reset View
+
+You can reset to the default camera position by clicking the <span style={{ display: 'inline-block' }}><Icons.Home height="1.125rem" width="1.125rem" /></span> button at the bottom right of the screen.

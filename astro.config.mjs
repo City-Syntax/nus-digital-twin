@@ -47,8 +47,8 @@ export default defineConfig({
           slug: 'user-guide/getting-started',
         },
         {
-          label: 'Basic Controls',
-          autogenerate: { directory: 'user-guide/basic-controls' },
+          label: 'Basic Features',
+          autogenerate: { directory: 'user-guide/basic-features' },
         },
       ],
     }),
