@@ -62,6 +62,10 @@ export default defineConfig({
           label: 'Points Of Interest',
           autogenerate: { directory: 'user-guide/points-of-interest' },
         },
+        {
+          label: 'Controls',
+          autogenerate: { directory: 'user-guide/controls' },
+        },
       ],
     }),
   ],
