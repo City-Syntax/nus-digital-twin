@@ -15,30 +15,9 @@ export default defineConfig({
       disable404Route: true,
       components: {
         SiteTitle: './src/components/docs/SiteTitle.astro',
+        Head: './src/components/docs/Head.astro',
       },
       customCss: ['@fontsource-variable/inter', '@fontsource-variable/figtree', './src/styles/docs.css'],
-      head: [
-        {
-          tag: 'link',
-          attrs: {
-            rel: 'preload',
-            as: 'font',
-            type: 'font/woff2',
-            href: figtreeWoff2,
-            crossOrigin: 'anonymous',
-          },
-        },
-        {
-          tag: 'link',
-          attrs: {
-            rel: 'preload',
-            as: 'font',
-            type: 'font/woff2',
-            href: interWoff2,
-            crossOrigin: 'anonymous',
-          },
-        },
-      ],
       sidebar: [
         {
           slug: 'user-guide',
