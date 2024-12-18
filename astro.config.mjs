@@ -2,8 +2,6 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import starlight from '@astrojs/starlight';
 import vercel from '@astrojs/vercel/serverless';
-import figtreeWoff2 from '@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2?url';
-import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +11,7 @@ export default defineConfig({
       title: 'NUS Digital Twin',
       lastUpdated: true,
       disable404Route: true,
+      pagefind: false,
       components: {
         SiteTitle: './src/components/docs/SiteTitle.astro',
         Head: './src/components/docs/Head.astro',
