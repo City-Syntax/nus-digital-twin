@@ -1,5 +1,6 @@
 ---
 import Icons from '../Icons';
+import GuideDropdown from './GuideDropdown';
 
 const { siteTitle, siteTitleHref } = Astro.props;
 const match = Astro.url.pathname.match(/^\/[^/]+/);
@@ -38,7 +39,35 @@ switch (pageHref) {
   <a href={pageHref}>
     {pageTitle}
   </a>
+  <GuideDropdown client:load />
 </div>
+<style is:inline>
+  .dropdown-content {
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
+    padding: 0.625rem 1.125rem;
+    gap: 0.5rem;
+    background: var(--sl-color-black);
+    border-radius: 0.5rem;
+    border: 1px solid var(--sl-color-gray-5);
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      outline: none;
+      color: var(--sl-color-white);
+    }
+  }
+
+  .dropdown-trigger {
+    display: flex;
+    background: none;
+    border: none;
+  }
+</style>
 
 <style>
   .site-title {
