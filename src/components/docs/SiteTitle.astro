@@ -2,16 +2,15 @@
 import Icons from '../Icons';
 
 const { id, siteTitle, siteTitleHref } = Astro.props;
-let pageHref = siteTitleHref;
+const match = Astro.url.pathname.match(/^\/[^/]+/);
+const pageHref = match ? match[0] : '';
 let pageTitle = siteTitle;
 
-switch (true) {
-  case id.startsWith('user-guide'):
-    pageHref = '/user-guide';
+switch (pageHref) {
+  case '/user-guide':
     pageTitle = 'User Guide';
     break;
-  case id.startsWith('tutorials'):
-    pageHref = '/tutorials';
+  case '/tutorials':
     pageTitle = 'Tutorial Videos';
     break;
   default:
