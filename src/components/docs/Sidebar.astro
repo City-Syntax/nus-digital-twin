@@ -1,0 +1,17 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Sidebar.astro';
+
+const match = Astro.url.pathname.match(/^\/[^/]+/);
+const basePath = match ? match[0] : '';
+
+Astro.props.sidebar = Astro.props.sidebar.filter((entry) => {
+  if (entry.type === 'link') {
+    return entry.href.startsWith(basePath);
+  } else {
+    return entry.entries.some((subEntry) => subEntry.type === 'link' && subEntry.href.startsWith(basePath));
+  }
+});
+---
+
+<Default {...Astro.props}><slot /></Default>

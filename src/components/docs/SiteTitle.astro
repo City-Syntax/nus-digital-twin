@@ -2,7 +2,20 @@
 import Icons from '../Icons';
 
 const { id, siteTitle, siteTitleHref } = Astro.props;
-const isUserGuide = id.startsWith('user-guide');
+const match = Astro.url.pathname.match(/^\/[^/]+/);
+const pageHref = match ? match[0] : '';
+let pageTitle = siteTitle;
+
+switch (pageHref) {
+  case '/user-guide':
+    pageTitle = 'User Guide';
+    break;
+  case '/tutorials':
+    pageTitle = 'Tutorial Videos';
+    break;
+  default:
+    break;
+}
 ---
 
 <div class="site-title sl-flex">
@@ -19,8 +32,8 @@ const isUserGuide = id.startsWith('user-guide');
     >
     </path>
   </svg>
-  <a href={isUserGuide ? '/user-guide' : ''}>
-    {isUserGuide ? 'User Guide' : siteTitle}
+  <a href={pageHref}>
+    {pageTitle}
   </a>
 </div>
 
