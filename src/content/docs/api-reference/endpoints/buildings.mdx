@@ -1,0 +1,53 @@
+---
+title: Buildings
+description: NUS Digital Twin API Reference for Buildings
+---
+
+This endpoint returns an array of objects representing each building at the National University of Singapore.
+
+```http
+GET https://www.nus-digital-twin.com/api/v1/buildings
+```
+
+```json title="Sample Response" frame="terminal"
+[
+    {
+        "elementId": "732229053",
+        "name": "Cendana College",
+        "address": "28 College Avenue West",
+        "postal": "138533",
+        "latitude": 1.30814,
+        "longitude": 103.77248
+    },
+    {
+        "elementId": "732229037",
+        "name": "Cendana College",
+        "address": "28 College Avenue West",
+        "postal": "138533",
+        "latitude": 1.30812,
+        "longitude": 103.77221
+    },
+    {
+        "elementId": "732229054",
+        "name": "Cendana College",
+        "address": "28 College Avenue West",
+        "postal": "138533",
+        "latitude": 1.30783,
+        "longitude": 103.77207
+    }
+    ...
+]
+```
+
+## The `building` object
+
+Each object in the array is comprised of several attributes as outlined below.
+
+| Attribute          | Description                              |
+| ------------------ | ---------------------------------------- |
+| elementId `string` | The OpenStreetMap elementId.             |
+| name `string`      | The name of the building.                |
+| address `string`   | The address of the building.             |
+| postal `string`    | The 6-digit postal code of the building. |
+| latitude `number`  | The latitude of the building.            |
+| longitude `number` | THe longitude of the building.           |

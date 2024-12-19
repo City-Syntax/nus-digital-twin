@@ -59,6 +59,10 @@ export default defineConfig({
         {
           slug: 'api-reference',
         },
+        {
+          label: 'Endpoints',
+          autogenerate: { directory: 'api-reference/endpoints' },
+        },
       ],
     }),
   ],
