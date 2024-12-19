@@ -1,6 +1,7 @@
 ---
 title: Daylight Simulation
 tableOfContents: false
+lastUpdated: false
 ---
 
 <video controls>

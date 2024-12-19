@@ -1,6 +1,7 @@
 ---
 title: Sun Path Simulation
 tableOfContents: false
+lastUpdated: false
 ---
 
 <video controls>

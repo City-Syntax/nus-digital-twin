@@ -1,6 +1,7 @@
 ---
 title: Solar Simulation
 tableOfContents: false
+lastUpdated: false
 ---
 
 <video controls>
