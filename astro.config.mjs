@@ -15,6 +15,8 @@ export default defineConfig({
       components: {
         SiteTitle: './src/components/docs/SiteTitle.astro',
         Head: './src/components/docs/Head.astro',
+        Sidebar: './src/components/docs/Sidebar.astro',
+        Pagination: './src/components/docs/Pagination.astro',
       },
       customCss: ['@fontsource-variable/inter', '@fontsource-variable/figtree', './src/styles/docs.css'],
       sidebar: [

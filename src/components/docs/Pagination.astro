@@ -1,0 +1,16 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Pagination.astro';
+
+const match = Astro.url.pathname.match(/^\/[^/]+/);
+const basePath = match ? match[0] : '';
+
+if (Astro.props.pagination.prev && !Astro.props.pagination.prev.href.startsWith(basePath)) {
+  Astro.props.pagination.prev = undefined;
+}
+if (Astro.props.pagination.next && !Astro.props.pagination.next.href.startsWith(basePath)) {
+  Astro.props.pagination.next = undefined;
+}
+---
+
+<Default {...Astro.props}><slot /></Default>
