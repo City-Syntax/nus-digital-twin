@@ -4,4 +4,24 @@ title: API Reference
 
 import { Badge } from '@astrojs/starlight/components';
 
-The NUS Digital Twin API is currently in <Badge text="Beta" variant="caution" size="small" />. The NUS Digital Twin API contains building data used for [https://www.nus-digital-twin.com/](https://www.nus-digital-twin.com/).
+The NUS Digital Twin API provides the backbone of the building data that powers the platform. It includes data on over 200 buildings on NUS campus sourced from publicly available data on OpenStreetMap and Google Maps by our researchers at City Syntax Lab.
+
+:::caution
+The NUS Digital Twin API is in <Badge text="Beta" variant="caution" size="small" />, and is subject to breaking changes.
+:::
+
+## Usage Limits
+
+The NUS Digital Twin API is completely free to use, and we do not impose any usage limits or restrictions. This allows you to freely integrate it with your applications without worrying about hitting any caps.
+
+However, we kindly ask that you use the API responsibly and avoid excessive or inefficient usage that could impact the performance for other users.
+
+## Fetching Data
+
+The NUS Digital Twin API can be used with any HTTP client, such as [Postman](https://www.postman.com/) or [cURL](https://curl.se/).
+
+## Data
+
+Currently, the NUS Digital Twin API provides the following routes:
+
+- `GET` /buildings

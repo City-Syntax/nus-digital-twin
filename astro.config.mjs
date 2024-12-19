@@ -5,6 +5,9 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
+  redirects: {
+    '/api': '/api/v1',
+  },
   integrations: [
     react(),
     starlight({
@@ -45,10 +48,6 @@ export default defineConfig({
         {
           label: 'Controls',
           autogenerate: { directory: 'user-guide/controls' },
-        },
-        {
-          label: 'API',
-          autogenerate: { directory: 'user-guide/api' },
         },
         {
           slug: 'user-guide/contact',
