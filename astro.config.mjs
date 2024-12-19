@@ -53,6 +53,13 @@ export default defineConfig({
         {
           slug: 'user-guide/contact',
         },
+        {
+          slug: 'tutorials',
+        },
+        {
+          label: 'Videos',
+          autogenerate: { directory: 'tutorials/videos' },
+        },
       ],
     }),
   ],
