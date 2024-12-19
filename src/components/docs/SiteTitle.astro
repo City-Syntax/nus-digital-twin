@@ -1,7 +1,7 @@
 ---
 import Icons from '../Icons';
 
-const { id, siteTitle, siteTitleHref } = Astro.props;
+const { siteTitle, siteTitleHref } = Astro.props;
 const match = Astro.url.pathname.match(/^\/[^/]+/);
 const pageHref = match ? match[0] : '';
 let pageTitle = siteTitle;
