@@ -47,10 +47,6 @@ export default defineConfig({
           autogenerate: { directory: 'user-guide/controls' },
         },
         {
-          label: 'API',
-          autogenerate: { directory: 'user-guide/api' },
-        },
-        {
           slug: 'user-guide/contact',
         },
         {
@@ -59,6 +55,13 @@ export default defineConfig({
         {
           label: 'Videos',
           autogenerate: { directory: 'tutorials/videos' },
+        },
+        {
+          slug: 'api-reference',
+        },
+        {
+          label: 'Endpoints',
+          autogenerate: { directory: 'api-reference/endpoints' },
         },
       ],
     }),

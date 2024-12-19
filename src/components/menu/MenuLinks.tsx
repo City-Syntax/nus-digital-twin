@@ -166,7 +166,7 @@ const Resources = () => {
         <Icons.Video />
         Tutorial Videos
       </a>
-      <a className="menu-link" href="/api/v1" target="_blank">
+      <a className="menu-link" href="/api-reference" target="_blank">
         <Icons.Api />
         API Reference
       </a>

@@ -1,9 +1,9 @@
 ---
 import Icons from '../Icons';
 
-const { id, siteTitle, siteTitleHref } = Astro.props;
+const { siteTitle, siteTitleHref } = Astro.props;
 const match = Astro.url.pathname.match(/^\/[^/]+/);
-const pageHref = match ? match[0] : '';
+let pageHref = match ? match[0] : '';
 let pageTitle = siteTitle;
 
 switch (pageHref) {
@@ -12,6 +12,9 @@ switch (pageHref) {
     break;
   case '/tutorials':
     pageTitle = 'Tutorial Videos';
+    break;
+  case '/api-reference':
+    pageTitle = 'API Reference';
     break;
   default:
     break;
