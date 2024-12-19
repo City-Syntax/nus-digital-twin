@@ -5,9 +5,6 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  redirects: {
-    '/api': '/api/v1',
-  },
   integrations: [
     react(),
     starlight({
@@ -60,7 +57,7 @@ export default defineConfig({
           autogenerate: { directory: 'tutorials/videos' },
         },
         {
-          slug: 'api/v1',
+          slug: 'api-reference',
         },
       ],
     }),
