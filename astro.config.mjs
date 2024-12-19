@@ -60,6 +60,9 @@ export default defineConfig({
           label: 'Videos',
           autogenerate: { directory: 'tutorials/videos' },
         },
+        {
+          slug: 'api/v1',
+        },
       ],
     }),
   ],
