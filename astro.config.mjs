@@ -67,6 +67,30 @@ export default defineConfig({
           slug: 'dev-guide/getting-started',
         },
         {
+          label: 'Buildings',
+          autogenerate: { directory: 'dev-guide/buildings' },
+        },
+        {
+          label: 'Points of Interest',
+          autogenerate: { directory: 'dev-guide/points-of-interest' },
+        },
+        {
+          label: 'Controls',
+          autogenerate: { directory: 'dev-guide/controls' },
+        },
+        {
+          label: 'Environment Variables',
+          autogenerate: { directory: 'dev-guide/environment-variables' },
+        },
+        {
+          label: 'API',
+          autogenerate: { directory: 'dev-guide/api' },
+        },
+        {
+          label: 'Documentation',
+          autogenerate: { directory: 'dev-guide/documentation' },
+        },
+        {
           label: 'Design',
           autogenerate: { directory: 'dev-guide/design' },
         },
