@@ -47,9 +47,6 @@ export default defineConfig({
           autogenerate: { directory: 'user-guide/controls' },
         },
         {
-          slug: 'user-guide/contact',
-        },
-        {
           slug: 'tutorials',
         },
         {
