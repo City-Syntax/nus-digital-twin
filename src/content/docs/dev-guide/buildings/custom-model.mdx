@@ -7,7 +7,13 @@ sidebar:
 
 import { Steps } from '@astrojs/starlight/components';
 
-NUS Digital Twin is based on [CesiumJS](https://cesium.com/platform/cesiumjs/), which supports a variety of 3D models. There are several ways to add a custom building model into the application.
+NUS Digital Twin is built on [CesiumJS](https://cesium.com/platform/cesiumjs/), which supports a variety of 3D models. There are several ways to add a custom building model into the application.
+
+:::tip
+
+Add the building data into `src/content/buildings/buildings.json` before adding a custom model to ensure picking works correctly. See [Update Building Data](../update-building-data) for instructions.
+
+:::
 
 ## Using Cesium ion
 
@@ -35,13 +41,79 @@ Models uploaded to [Cesium ion](https://cesium.com/platform/cesium-ion/) can be 
 
 3.  Add the `newModel` to the correct array to ensure it is attached to the correct group of models. This ensures that the model will be toggled on and off correctly.
 
-        For example, when adding a building level rhino model, add the `newModel` to the `rhinoBuildingModels` array.
+    For example, when adding a building level rhino model, add the `newModel` to the `rhinoBuildingModels` array.
 
-        ```diff lang="ts"
-        const rhinoBuildingModels: Array<Model | Cesium3DTileset> = [
-          ...
-        +  newModel,
-        ]
-        ```
+    ```diff lang="ts"
+    const rhinoBuildingModels: Array<Model | Cesium3DTileset> = [
+      ...
+    +  newModel,
+    ]
+    ```
 
 </Steps>
+
+## Using Local or Remote Files
+
+Model files stored locally within the repository or on remote storage such as AWS S3, Cloudflare R2 can also be loaded in the application, using the [`Model.fromGltfAsync`](https://cesium.com/learn/ion-sdk/ref-doc/Model.html#.fromGltfAsync) method in Cesium.
+
+For model files stored within the repository, it is recommended to store them in the `public/` directory. See the [`public/` directory documentation](/dev-guide/design/project-structure/#the-public-directory) for more details.
+
+<Steps>
+
+1. Ensure the model is provided in `.glTF` format. Otherwise, convert the model file into a `.gltf` file. Refer to [the section below](#convert-from-other-file-types-to-gltf) for the conversion steps.
+
+2. Add the code to retrieve the model from the repository and position it correctly on the map.
+
+   ```ts
+   // src/components/cesium/CesiumScene.astro
+   const newModel = await Model.fromGltfAsync({
+     modelMatrix: Transforms.headingPitchRollToFixedFrame(
+       Cartesian3.fromDegrees(<longitude>, <latitude>, <height>),
+       new HeadingPitchRoll(
+         CesiumMath.toRadians(<heading in degrees>),
+         CesiumMath.toRadians(<pitch in degrees>),
+         CesiumMath.toRadians(<roll in degrees>)
+       ),
+     ),
+     show: false,
+     url: <url to gltf file>, // example: '/rvrc/rvrc-g-rhino.gltf'
+     featureIdLabel: <element id>,
+   });
+   ```
+
+3. Add the `newModel` to the correct array to ensure it is attached to the correct group of models. This ensures that the model will be toggled on and off correctly.
+
+   For example, when adding a building level rhino model, add the `newModel` to the `rhinoBuildingModels` array.
+
+   ```diff lang="ts"
+   const rhinoBuildingModels: Array<Model | Cesium3DTileset> = [
+     ...
+   +  newModel,
+   ]
+   ```
+
+</Steps>
+
+## Convert from Other File Types to `.gltf`
+
+To use local or remote model files, they have to be converted to `.gltf` format first.
+
+### Wavefront Files (`.obj`, `.mtl`)
+
+The recommend method is to use [`obj2gltf`](https://github.com/CesiumGS/obj2gltf).
+
+```sh title="Example conversion"
+obj2gltf -i model.obj
+```
+
+### COLLANDA Files (`.dae`)
+
+The recommended method is to use [`COLLADA2GLTF`](https://github.com/KhronosGroup/COLLADA2GLTF).
+
+```sh title="Example conversion"
+./COLLADA2GTF-bin model.dae
+```
+
+### Rhino3D Files (`.3dm`)
+
+The recommended method is to open the model in Rhino3D, and re-export it as a `.gltf` file.
