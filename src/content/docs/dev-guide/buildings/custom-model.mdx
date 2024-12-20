@@ -1,0 +1,47 @@
+---
+title: Using Custom Building Models
+description: Learn how to add a custom model to NUS Digital Twin
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+NUS Digital Twin is based on [CesiumJS](https://cesium.com/platform/cesiumjs/), which supports a variety of 3D models. There are several ways to add a custom building model into the application.
+
+## Using Cesium ion
+
+Models uploaded to [Cesium ion](https://cesium.com/platform/cesium-ion/) can be added into the platform. Use the [`Cesium3DTileset.fromIonAssetId`](https://cesium.com/learn/cesiumjs/ref-doc/Cesium3DTileset.html#.fromIonAssetId) method in Cesium to include a model hosted in Cesium ion.
+
+<Steps>
+
+1.  Upload the model to Cesium ion. Refer to the [Cesium ion 3D Tiling Documentation](https://cesium.com/learn/3d-tiling/ion-tile-3d-models/) for the steps to upload the model.
+
+    :::tip
+
+    Under 'What kind of data is this?' in Cesium ion, it is recommended to select '3D Model (tile as 3D Tiles)' to ensure the best performance.
+
+    :::
+
+2.  Add the code to retrieve the model from Cesium ion. A `featureIdLabel` which corresponds to the `elementId` in `src/content/buildings/buildings.json` should be included to allow building selection to function properly.
+
+    ```ts
+    // src/components/cesium/CesiumScene.astro
+    const newModel = await Cesium3DTileset.fromIonAssetId(2686261, {
+      show: false,
+      featureIdLabel: <elementId>,
+    });
+    ```
+
+3.  Add the `newModel` to the correct array to ensure it is attached to the correct group of models. This ensures that the model will be toggled on and off correctly.
+
+        For example, when adding a building level rhino model, add the `newModel` to the `rhinoBuildingModels` array.
+
+        ```diff lang="ts"
+        const rhinoBuildingModels: Array<Model | Cesium3DTileset> = [
+          ...
+        +  newModel,
+        ]
+        ```
+
+</Steps>
