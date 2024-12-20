@@ -5,6 +5,18 @@ description: Learn about the deployment options for NUS Digital Twin
 
 NUS Digital Twin is deployed on [Vercel](https://vercel.com/). A deployment preview is created for every branch and pull request created in the [main repository](https://github.com/City-Syntax/nus-digital-twin).
 
+## Deployment Configuration
+
+Some configuration is required before the application can be deployed.
+
+### Set Up Environment Variables
+
+Ensure the required environment variables are entered into the deployment configuration. The two required environment variables are `PUBLIC_CESIUM_TOKEN` and `PUBLIC_MAPBOX_TOKEN`. See [Environment Variables](/dev-guide/environment-variables) for full details.
+
+### Build Command
+
+The application uses `yarn v1` as its package manager. The build command used is `yarn run build`, and the build folder is `dist`.
+
 ## Other Deployment Options
 
 You can also deploy your own copy of NUS Digital Twin on your preferred deployment service, as long as server-side rendering<sup>+</sup> is supported. Refer to the [Astro Deployment Guide](https://docs.astro.build/en/guides/deploy/) for complete details.
