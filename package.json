@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
-    "@astrojs/react": "4.1.1",
-    "@astrojs/starlight": "^0.30.2",
+    "@astrojs/react": "4.1.2",
+    "@astrojs/starlight": "0.30.3",
     "@astrojs/vercel": "8.0.1",
     "@fontsource-variable/figtree": "^5.1.1",
     "@fontsource-variable/inter": "^5.1.0",
@@ -32,7 +32,7 @@
     "@radix-ui/react-scroll-area": "^1.2.1",
     "@radix-ui/react-select": "^2.1.2",
     "@tippyjs/react": "^4.2.6",
-    "astro": "5.0.9",
+    "astro": "5.1.1",
     "cesium": "^1.119.0",
     "cmdk": "^1.0.0",
     "embla-carousel-react": "^8.5.1",
@@ -43,6 +43,7 @@
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
     "react-transition-group": "^4.4.5",
+    "rehype-external-links": "^3.0.0",
     "sass": "^1.70.0",
     "tippy.js": "^6.3.7",
     "typescript": "^5.5.3"

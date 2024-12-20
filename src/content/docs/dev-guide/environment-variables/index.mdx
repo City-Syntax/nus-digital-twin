@@ -1,0 +1,39 @@
+---
+title: Environment Variables Reference
+description: Learn about environment variables in NUS Digital Twin
+---
+
+import { Badge } from '@astrojs/starlight/components';
+
+The full list of environment variables are provided below.
+
+## `PUBLIC_CESIUM_TOKEN`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+The Cesium Ion API token, obtained from [Cesium Ion Tokens](https://ion.cesium.com/tokens), typically a base64-encoded JWT token. This token is used to enable Cesium Ion features on the application.
+
+```
+// .env
+PUBLIC_CESIUM_TOKEN='eyXXXXXXXXXXXXX'
+```
+
+## `PUBLIC_MAPBOX_TOKEN`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+The Mapbox Access Tokens, obtained from the [Mapbox Access Token Page](https://console.mapbox.com/account/access-tokens/). This access token is used to access Mapbox Static Tiles for the map.
+
+```
+// .env
+PUBLIC_MAPBOX_TOKEN='pk.eyXXXXXXXXXXXXX'
+```
+
+## `PUBLIC_SHOW_MAPBOX`
+
+Enables Mapbox tiles in development. By default, Mapbox tiles are disabled in development mode to save on bandwidth. Set this environment variable to `true` to enable Mapbox tiles in development. All other values are ignored.
+
+```
+// .env
+PUBLIC_SHOW_MAPBOX="true"
+```

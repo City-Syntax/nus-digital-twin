@@ -1,0 +1,77 @@
+---
+title: Using OpenStreetMap Building Models
+description: Learn how to add or remove an OpenStreetMap model from NUS Digital Twin
+sidebar:
+  order: 1
+---
+
+NUS Digital Twin provides a urban-scale OpenStreetMap model, powered by [Cesium OSM Buildings](https://cesium.com/platform/cesium-ion/content/cesium-osm-buildings/).
+
+## Add OpenStreetMap Building
+
+The visibility of each building displayed for the OpenStreetMap urban-scale model can be controlled via the `src/content/buildings/buildings.json` file.
+
+To add an OpenStreetMap building, add a `building` object with an `elementId` that matches the OSM `elementId` into the `buildings.json` file.
+
+:::caution
+
+This shares the same process as updating the building data. Updating the building data may have other side effects, such as adding an entry into the search results. See [Updating Building Data](/dev-guide/buildings/update-building-data) for complete details.
+
+:::
+
+```diff lang="json"
+// src/content/buildings/buildings.json
+[
+  ...,
+  {
+    "elementId": "732229050",
+    "name": "Yale-NUS College",
+    "address": "20 College Ave East",
+    "postal": "138529",
+    "latitude": 1.30739,
+    "longitude": 103.77257
+-  }
++  }, {
++    "elementId": <OSM Element ID>,
++    "name": <building-name>,
++    "address": <address>,
++    "postal": <postal>,
++    "latitude": <latitude>,
++    "longitude": <longitude>
++  }
+]
+```
+
+## Remove OpenStreetMap Building
+
+To remove an OpenStreetMap building from display, find the matching `building` object in the `src/content/buildngs/buildings.json` file, and remove the entry.
+
+:::caution
+
+This shares the same process as updating the building data. Updating the building data may have other side effects, such as removing an entry from the search results. See [Updating Building Data](/dev-guide/buildings/update-building-data) for complete details.
+
+:::
+
+```diff lang="json"
+// src/content/buildings/buildings.json
+[
+  ...,
+  {
+    "elementId": "732229052",
+    "name": "Cendana College",
+    "address": "28 College Avenue West",
+    "postal": "138533",
+    "latitude": 1.30775,
+    "longitude": 103.77239
+  },
+-  {
+-    "elementId": "732229050",
+-    "name": "Yale-NUS College",
+-    "address": "20 College Ave East",
+-    "postal": "138529",
+-    "latitude": 1.30739,
+-    "longitude": 103.77257
+-  }
+  ...
+]
+```

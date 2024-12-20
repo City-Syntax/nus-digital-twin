@@ -29,3 +29,15 @@
   --sl-color-gray-7: #f6f6f6;
   --sl-color-black: #ffffff;
 }
+
+a.external::after {
+  content: ' ↗';
+  display: inline-block;
+  margin-left: 3px;
+  color: var(--sl-color-gray-3);
+  font-size: 0.875rem;
+}
+
+a.external:hover::after {
+  transform: translate(1px, -1px);
+}
