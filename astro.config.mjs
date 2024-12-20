@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import starlight from '@astrojs/starlight';
 import vercel from '@astrojs/vercel';
+import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 export default defineConfig({
@@ -101,6 +102,19 @@ export default defineConfig({
       ],
     }),
   ],
+  markdown: {
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          properties: {
+            class: 'external',
+          },
+          target: '_blank',
+        },
+      ],
+    ],
+  },
   site: 'https://www.nus-digital-twin.com',
   output: 'static',
   adapter: vercel(),

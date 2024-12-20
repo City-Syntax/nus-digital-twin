@@ -43,6 +43,7 @@
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
     "react-transition-group": "^4.4.5",
+    "rehype-external-links": "^3.0.0",
     "sass": "^1.70.0",
     "tippy.js": "^6.3.7",
     "typescript": "^5.5.3"
