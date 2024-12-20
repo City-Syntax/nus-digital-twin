@@ -88,3 +88,55 @@ The `public/` directory is organised such that assets for each building is store
     - data/ Cesium 3DTiles
 
 </FileTree>
+
+## The `src/` directory
+
+The `src/` directory contains the main source code that powers NUS Digital Twin.
+
+<FileTree>
+
+- ...
+- public/
+- **src/**
+- ...
+
+</FileTree>
+
+### The `assets/` directory
+
+The `assets/` directory contain assets that are processed by Astro, such as images.
+
+<FileTree>
+
+- src
+  - **assets/**
+  - components/
+  - ...
+
+</FileTree>
+
+The `assets/` directory is organised such that assets for each building is stored in its respective sub-directories. Global assets are stored within the `assets/` directory.
+
+<FileTree>
+
+- src/assets
+  - \<building-name\> For building images
+    - image.png
+    - image.jpg
+    - ...
+  - global-asset.png For global images
+  - ...
+
+</FileTree>
+
+Refer to Astro's [image documentation](https://docs.astro.build/en/guides/images) for more details.
+
+### The `components/` directory
+
+### The `content/` directory and content config File
+
+### The `layouts/` directory
+
+### The `pages/` directory
+
+### The `styles/` directory
