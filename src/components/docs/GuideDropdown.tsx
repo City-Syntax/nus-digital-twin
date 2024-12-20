@@ -3,6 +3,7 @@ import Icons from '../Icons';
 
 const guides = [
   { label: 'User Guide', href: '/user-guide' },
+  { label: 'Developer Guide', href: '/dev-guide' },
   { label: 'Tutorial Videos', href: '/tutorials' },
   { label: 'API Reference', href: '/api-reference' },
 ];
