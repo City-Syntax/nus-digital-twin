@@ -1,0 +1,90 @@
+---
+title: Project Structure
+description: Learn about the project structure of NUS Digital Twin's code base.
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+This article provides an overview of the NUS Digital Twin code base.
+
+## General Structure
+
+<FileTree>
+
+- astro.config.mjs
+- package.json
+- README.md
+- tsconfig.json
+- .husky/
+- public/
+- src
+  - assets/
+  - components/
+  - content/
+  - layouts/
+  - pages/
+  - styles/
+  - content.config.ts
+  - store.ts
+  - types.ts
+
+</FileTree>
+
+## The Astro config File
+
+The Astro config file at the root of the repository contains the configuration for the whole Astro project.
+
+<FileTree>
+
+- **astro.config.mjs**
+- public/
+- src/
+- ...
+
+</FileTree>
+
+Read Astro's [configuration reference](https://docs.astro.build/en/reference/configuration-reference/) for a full overview of all supported configuration options.
+
+## The `public/` directory
+
+The `public/` directory contains assets that are directly added to the application without being processed by Astro.
+
+<FileTree>
+
+- ...
+- **public/**
+- src/
+- ...
+
+</FileTree>
+
+The `public/` directory includes the following files:
+
+- 3D Models files, such as `.glTF`, `.dae`, and `.3dm` files
+- GIS Shapefiles and its accompanying files
+- EnergyPlus `.idf` files
+- Tutorial videos
+- Other downloadable assets, such as `.zip` files
+
+The `public/` directory is organised such that assets for each building is stored in its respective sub-directories. The sub-directories are as follows:
+
+<FileTree>
+
+- public
+  - \<building-name\> For building-level models and EnergyPlus
+    - \<building-name\>.idf
+    - \<building-name\>.glTF
+    - \<building-name\>.3dm
+  - shapefiles For GIS shapefiles
+    - \<shapefile-type\>
+      - \<name\>.shp
+      - \<name\>.zip
+      - ...
+  - tutorials For tutorial videos
+    - \<name\>.mp4
+    - ...
+  - urban For Urban Scale Rhino model
+    - rhino-urban.glTF
+    - data/ Cesium 3DTiles
+
+</FileTree>
