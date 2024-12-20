@@ -66,6 +66,10 @@ export default defineConfig({
         {
           slug: 'dev-guide/getting-started',
         },
+        {
+          label: 'Deployment',
+          autogenerate: { directory: 'dev-guide/deployment' },
+        },
       ],
     }),
   ],
