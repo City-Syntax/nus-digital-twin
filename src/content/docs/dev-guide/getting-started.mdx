@@ -1,0 +1,49 @@
+---
+title: Getting Started
+description: Getting started with developing NUS Digital Twin
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+NUS Digital Twin is an open-source project by the [City Syntax Lab](https://citysyntax.io). The NUS Digital Twin source code is hosted on GitHub.
+
+## Prerequisites
+
+- **Node.js**: `v18.17.1` or `v20.3.0`, `v22.0.0` or higher. (`v19` and `v21` are not supported.)
+- **yarn**: The package manager used in the project, `v1`.
+- **Git**: The source control tool used in the project.
+- **Text editor**: We recommend [VS Code](https://code.visualstudio.com/) for working on NUS Digital Twin.
+
+## Project Setup
+
+<Steps>
+1. Fork the [NUS Digital Twin repository](https://github.com/City-Syntax/nus-digital-twin) to your GitHub account and get the source code.
+
+    ```sh frame="none"
+    git clone git@github.com:City-Syntax/nus-digital-twin.git
+    cd nus-digital-twin
+    ```
+
+2. Install dependencies
+
+   ```sh frame="none"
+   yarn install
+   ```
+
+3. Create a `.env` file. There are two mandatory environment variables to run the application. See [Environment Variables](/dev-guide/environment-variables) for the full list of environment variables.
+
+   ```
+   // .env
+   PUBLIC_CESIUM_TOKEN='YOUR_CESIUM_ION_TOKEN'
+   PUBLIC_MAPBOX_TOKEN='YOUR_MAPBOX_ACCESS_TOKEN'
+   ```
+
+4. Start the local development server.
+
+   ```sh frame="none"
+   yarn dev
+   ```
+
+5. Congratulations! You are now ready to work on NUS Digital Twin.
+
+</Steps>

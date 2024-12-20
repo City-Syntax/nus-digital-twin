@@ -63,6 +63,9 @@ export default defineConfig({
         {
           slug: 'dev-guide',
         },
+        {
+          slug: 'dev-guide/getting-started',
+        },
       ],
     }),
   ],
