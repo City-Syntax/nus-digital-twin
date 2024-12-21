@@ -68,6 +68,10 @@ export default defineConfig({
           slug: 'dev-guide/getting-started',
         },
         {
+          label: 'Design',
+          autogenerate: { directory: 'dev-guide/design' },
+        },
+        {
           label: 'Buildings',
           autogenerate: { directory: 'dev-guide/buildings' },
         },
@@ -94,10 +98,6 @@ export default defineConfig({
         {
           label: 'Documentation',
           autogenerate: { directory: 'dev-guide/documentation' },
-        },
-        {
-          label: 'Design',
-          autogenerate: { directory: 'dev-guide/design' },
         },
         {
           label: 'Deployment',
