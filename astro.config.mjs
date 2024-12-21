@@ -88,6 +88,10 @@ export default defineConfig({
           autogenerate: { directory: 'dev-guide/api' },
         },
         {
+          label: 'Tutorials',
+          autogenerate: { directory: 'dev-guide/tutorials' },
+        },
+        {
           label: 'Documentation',
           autogenerate: { directory: 'dev-guide/documentation' },
         },
