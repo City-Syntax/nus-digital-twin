@@ -1,5 +1,6 @@
 ---
 title: Solar Simulation
+description: Learn about how to do solar simulations in ClimateStudio
 tableOfContents: false
 lastUpdated: false
 ---

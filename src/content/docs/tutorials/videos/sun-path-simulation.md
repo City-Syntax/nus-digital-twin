@@ -1,5 +1,6 @@
 ---
 title: Sun Path Simulation
+description: Learn about how to do sun path simulations in ClimateStudio
 tableOfContents: false
 lastUpdated: false
 ---

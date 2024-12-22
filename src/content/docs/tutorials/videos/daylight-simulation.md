@@ -1,5 +1,6 @@
 ---
 title: Daylight Simulation
+description: Learn about how to do daylight simulations in ClimateStudio
 tableOfContents: false
 lastUpdated: false
 ---
