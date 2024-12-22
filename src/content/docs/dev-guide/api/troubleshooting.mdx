@@ -1,0 +1,20 @@
+---
+title: Troubleshooting API
+description: Learn how to troubleshoot issues with API
+---
+
+NUS Digital Twin offers a public API for its data, found at [nus-digital-twin.com/api/v1](/api/v1).
+
+Looking to learn how to use the API? Go to the [API Reference](/api-reference).
+
+## Common Issues
+
+### The API returns a plain text response instead of JSON
+
+Ensure that the endpoint file in `src/pages/api/v1/*.ts` is excluded from pre-rendering.
+
+```diff lang=ts
+// src/pages/api/v1/example.ts
++export const prerender = false;
+...
+```

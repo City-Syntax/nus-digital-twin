@@ -1,7 +1,8 @@
 ---
 title: Project Structure
 description: Learn about the project structure of NUS Digital Twin's code base.
-draft: true
+sidebar:
+  order: 1
 ---
 
 import { FileTree } from '@astrojs/starlight/components';
@@ -105,7 +106,7 @@ The `src/` directory contains the main source code that powers NUS Digital Twin.
 
 ### The `assets/` directory
 
-The `assets/` directory contain assets that are processed by Astro, such as images.
+The `assets/` directory contains assets that are processed by Astro, such as images.
 
 <FileTree>
 
@@ -134,10 +135,82 @@ Refer to Astro's [image documentation](https://docs.astro.build/en/guides/images
 
 ### The `components/` directory
 
+The `components/` directory contains Astro and React components used across the application.
+
+<FileTree>
+
+- src
+  - assets/
+  - **components/**
+  - ...
+
+</FileTree>
+
+There are several sub-directories and files contained within the `components/` directory:
+
+- `bottom-bar/`: The bottom bar on the main application.
+- `cesium/`: The cesium view on the main application.
+- `docs/`: Custom components used for the documentation site. See [Writing Documentation](/dev-guide/documentation).
+- `menu/`: The left, right and bottom menus on the main application.
+- `notifications/`: The notification system (toast) on the main application.
+- `primitives/`: Reusable UI components.
+- `toolbar/`: The toolbar found at the bottom of the screen, such as the Reset View button.
+
 ### The `content/` directory and content config File
+
+The `content/` directory contains the `json`, `md` and `mdx` files for [Content Collections](https://docs.astro.build/en/guides/content-collections/) in Astro. This includes the content files for the [documentation site](/dev-guide/documentation), building and point data used across the application.
+
+The `content.config.ts` file specify the shape of the content. See [The collection config file](https://docs.astro.build/en/guides/content-collections/#the-collection-config-file) in Astro's documentation for more details.
+
+<FileTree>
+
+- src
+  - assets/
+  - **content/**
+  - **content.config.ts**
+  - ...
+
+</FileTree>
 
 ### The `layouts/` directory
 
+The `layouts/` directory contains reusable page templates used for the application. See [Layouts](https://docs.astro.build/en/basics/layouts/) in Astro's documentation.
+
+<FileTree>
+
+- src
+  - assets/
+  - content/
+  - **layouts/**
+  - ...
+
+</FileTree>
+
 ### The `pages/` directory
 
+The `pages/` directory contains the pages for the application. Astro utilises a file-based routing strategy. See [Pages](https://docs.astro.build/en/basics/astro-pages/) in Astro's documentation for more information.
+
+<FileTree>
+
+- src
+  - assets/
+  - content/
+  - **pages/**
+  - ...
+
+</FileTree>
+
 ### The `styles/` directory
+
+The `styles/` directory contains the styles used across the application, mostly in `.scss` and `.css` files.
+
+<FileTree>
+
+- src
+  - assets/
+  - content/
+  - pages/
+  - **styles/**
+  - ...
+
+</FileTree>

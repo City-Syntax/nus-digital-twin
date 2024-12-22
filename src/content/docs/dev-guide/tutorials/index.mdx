@@ -1,0 +1,29 @@
+---
+title: Update Tutorial Videos
+description: Learn how to update tutorial videos in NUS Digital Twin.
+---
+
+NUS Digital Twin offers a set of tutorial videos to reinforce students' learning on the [tutorials page](/tutorials).
+
+## Update Tutorial Videos
+
+The tutorial videos are considered to be part of the documentation site, and is updated similarly to the documentation. The content for the tutorial videos is stored in `src/content/docs/tutorials`. To update the tutorial videos, edit the MDX/Markdown files within the directory.
+
+A sample of a tutorial page is shown below. It is recommended for the `tableOfContents` and `lastUpdated` to be set to `false`, since they are not useful for the tutorial videos.
+
+```mdx
+// src/content/docs/tutorials/solar-simulation.mdx
+
+---
+
+title: Solar Simulation
+description: Learn about solar simulations
+tableOfContents: false
+lastUpdated: false
+
+---
+
+<video controls>
+  <source src="/tutorials/Solar Simulation.mp4" type="video/mp4" />
+</video>
+```

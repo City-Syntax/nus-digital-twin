@@ -170,6 +170,10 @@ const Resources = () => {
         <Icons.Api />
         API Reference
       </a>
+      <a className="menu-link" href="/dev-guide" target="_blank">
+        <Icons.Code />
+        Developer Guide
+      </a>
     </>
   );
 };
