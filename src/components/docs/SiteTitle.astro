@@ -23,6 +23,10 @@ switch (pageHref) {
   default:
     break;
 }
+
+if (Astro.response.status === 404) {
+  (pageTitle = siteTitle), (pageHref = siteTitleHref);
+}
 ---
 
 <div class="site-title sl-flex">
