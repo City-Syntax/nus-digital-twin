@@ -43,6 +43,7 @@
   @include menu-x-container;
   right: var(--container-x-offset);
   height: fit-content;
+  max-height: 408px;
   min-height: 348px;
 }
 
