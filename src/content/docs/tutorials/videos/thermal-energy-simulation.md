@@ -1,5 +1,5 @@
 ---
-title: Thermal / Energy Simulations
+title: Thermal / Energy Simulation
 description: Learn about how to do thermal / energy simulations in ClimateStudio
 tableOfContents: false
 lastUpdated: false
