@@ -3,3 +3,97 @@ title: Buildings Data Reference
 description: Learn about the attributes for the building data in NUS Digital Twin
 draft: true
 ---
+
+import { Badge } from '@astrojs/starlight/components';
+
+The full list of properties for each building are provided below. The Zod schema is defined in `src/content.config.ts` as `buildingSchema`.
+
+## `elementId`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `string`
+
+The `elementId` is a unique identifier for each building. In general, the `elementId` corresponds to the OpenStreetMap `elementId`.
+
+```json title=Example frame="terminal"
+{
+  "elementId": "732229053",
+  ...
+}
+```
+
+## `name`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `string`
+
+The `name` refers to the name of the building. This `name` is also used for the search feature on NUS Digital Twin.
+
+```json title=Example frame="terminal"
+{
+  "name": "University Sports Centre",
+  ...
+}
+```
+
+## `address`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `string`
+
+The `address` refers to the address of the building.
+
+```json title=Example frame="terminal"
+{
+  "address": "2 Sports Drive 1",
+  ...
+}
+```
+
+## `postal`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `string`
+
+The `postal` refers to the 6-digit postal code of the building.
+
+```json title=Example frame="terminal"
+{
+  "postal": "117561",
+  ...
+}
+```
+
+## latitude
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `number`
+
+The `latitude` refers to the latitude of the building. It is also used to move the camera whenever a search result is selected.
+
+```json title=Example frame="terminal"
+{
+  "latitude": 1.29971,
+  ...
+}
+```
+
+## longitude
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `number`
+
+The `longitude` refers to the longitude of the building. It is also used to move the camera whenever a search result is selected.
+
+```json title=Example frame="terminal"
+{
+  "longitude": 103.77546,
+  ...
+}
+```

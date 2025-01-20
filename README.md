@@ -24,7 +24,7 @@ The data for the buildings displayed can be found in `src/content/buildings/buil
 | address                     | The location of the building                                                             |
 | postal                      | The 6-digit postal code for the building                                                 |
 | latitude                    | A number representing the latitude of the building, used to set the camera on search     |
-| latitude                    | A number representing the longitude of the building, used to set the camera on search    |
+| longitude                   | A number representing the longitude of the building, used to set the camera on search    |
 | energyUse                   | The JSON file containing the energy use data                                             |
 | energyUseIntensity          | The JSON file containing the energy use intensity data                                   |
 | idfDownload                 | Link to where the IDF file is hosted                                                     |
