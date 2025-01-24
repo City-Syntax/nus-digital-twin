@@ -18,8 +18,7 @@ The `elementId` is a unique identifier for each building. In general, the `eleme
 
 ```json title=Example frame="terminal"
 {
-  "elementId": "732229053",
-  ...
+  "elementId": "732229053"
 }
 ```
 
@@ -29,12 +28,11 @@ The `elementId` is a unique identifier for each building. In general, the `eleme
 
 Type: `string`
 
-The `name` refers to the name of the building. This `name` is also used for the search feature on NUS Digital Twin.
+The name of the building. The `name` is also used for the search feature on NUS Digital Twin.
 
 ```json title=Example frame="terminal"
 {
-  "name": "University Sports Centre",
-  ...
+  "name": "University Sports Centre"
 }
 ```
 
@@ -44,12 +42,11 @@ The `name` refers to the name of the building. This `name` is also used for the 
 
 Type: `string`
 
-The `address` refers to the address of the building.
+The address of the building.
 
 ```json title=Example frame="terminal"
 {
-  "address": "2 Sports Drive 1",
-  ...
+  "address": "2 Sports Drive 1"
 }
 ```
 
@@ -59,12 +56,11 @@ The `address` refers to the address of the building.
 
 Type: `string`
 
-The `postal` refers to the 6-digit postal code of the building.
+The 6-digit postal code of the building.
 
 ```json title=Example frame="terminal"
 {
-  "postal": "117561",
-  ...
+  "postal": "117561"
 }
 ```
 
@@ -74,12 +70,11 @@ The `postal` refers to the 6-digit postal code of the building.
 
 Type: `number`
 
-The `latitude` refers to the latitude of the building. It is also used to move the camera whenever a search result is selected.
+The latitude of the building. It is also used to move the camera whenever a search result is selected.
 
 ```json title=Example frame="terminal"
 {
-  "latitude": 1.29971,
-  ...
+  "latitude": 1.29971
 }
 ```
 
@@ -89,11 +84,46 @@ The `latitude` refers to the latitude of the building. It is also used to move t
 
 Type: `number`
 
-The `longitude` refers to the longitude of the building. It is also used to move the camera whenever a search result is selected.
+The longitude of the building. It is also used to move the camera whenever a search result is selected.
 
 ```json title=Example frame="terminal"
 {
-  "longitude": 103.77546,
-  ...
+  "longitude": 103.77546
+}
+```
+
+## `energyUse`
+
+Type: `string`
+
+The JSON file name for the energy use data. See [Energy Controls](/dev-guide/controls/energy) for more information.
+
+```json title=Example frame="terminal"
+{
+  "energyUse": "usc-eu"
+}
+```
+
+## `energyUseIntensity`
+
+Type: `string`
+
+The JSON file name for the energy use intensity data. See [Energy Controls](/dev-guide/controls/energy) for more information.
+
+```json title=Example frame="terminal"
+{
+  "energyUseIntensity": "usc-eui"
+}
+```
+
+## `idfDownload`
+
+Type: `string`
+
+The file path to the EnergyPlus `.idf` file stored in the `public` directory.
+
+```json title=Example frame="terminal"
+{
+  "idfDownload": "usc/usc.idf"
 }
 ```
