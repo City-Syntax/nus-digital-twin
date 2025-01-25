@@ -13,7 +13,6 @@ export default defineConfig({
       title: 'NUS Digital Twin',
       lastUpdated: true,
       disable404Route: true,
-      pagefind: false,
       components: {
         SiteTitle: './src/components/docs/SiteTitle.astro',
         Head: './src/components/docs/Head.astro',
