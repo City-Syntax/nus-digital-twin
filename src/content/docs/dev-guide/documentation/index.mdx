@@ -35,6 +35,20 @@ A custom `SiteTitle.astro` component is implemented to override the default site
 
 More custom components can be added via the Starlight configuration in `astro.config.mjs`. See [Overriding Components](https://starlight.astro.build/guides/overriding-components/) in Starlight's documentation for the steps.
 
+### Route Data
+
+NUS Digital Twin uses the [Route Data](https://starlight.astro.build/guides/route-data/) functionality provided by Astro Starlight to override the default behaviour of the sidebar and pagination. The route data is found in `/src/routeData.ts`.
+
+#### Pagination behaviour
+
+Starlight does not support a multi-instance structure out-of-the-box, hence, the default pagination behaviour is overridden to ensure that the documentation sites do not link to one another.
+
+#### Sidebar behaviour
+
+The default sidebar content is overridden, ensuring that only the relevant sections are displayed for each specific set of documentation, rather than displaying all sections.
+
+This customization groups the sections based on their URL structure, where any section matching the first path segment after the initial slash is grouped together within the same sidebar group.
+
 ### Markdown Snippets
 
 Reusable markdown snippets are stored in `src/content/docs-partials` to share content between different documentation pages.
