@@ -27,16 +27,6 @@ NUS Digital Twin's documentation utilises several custom components. The custom 
 
 A custom `Head` component is used to preload the fonts used in the documentation site. This approach is used instead of using the [`head` configuration](https://starlight.astro.build/reference/configuration/#head) as imported fontsource URLs are not properly processed in the `head` configuration during production, leading to issues with preloading the fonts.
 
-#### `Pagination.astro`
-
-A custom `Pagination` component is used to override the default pagination behaviour. Starlight does not support a multi-instance structure out-of-the-box, hence, a custom pagination component is required to ensure that the documentation sites do not link to one another.
-
-#### `Sidebar.astro`
-
-A custom `Sidebar` component is used to replace the default sidebar, ensuring that only the relevant sections are displayed for each specific set of documentation.
-
-This customization groups the sections based on their URL structure, where any section matching the first path segment after the initial slash is grouped together within the same sidebar group.
-
 #### `SiteTitle.astro`
 
 A custom `SiteTitle.astro` component is implemented to override the default site title, to allow a different title to be displayed for each set of documentation.
@@ -44,6 +34,20 @@ A custom `SiteTitle.astro` component is implemented to override the default site
 #### Add Custom Components
 
 More custom components can be added via the Starlight configuration in `astro.config.mjs`. See [Overriding Components](https://starlight.astro.build/guides/overriding-components/) in Starlight's documentation for the steps.
+
+### Route Data
+
+NUS Digital Twin uses the [Route Data](https://starlight.astro.build/guides/route-data/) functionality provided by Astro Starlight to override the default behaviour of the sidebar and pagination. The route data is found in `/src/routeData.ts`.
+
+#### Pagination behaviour
+
+Starlight does not support a multi-instance structure out-of-the-box, hence, the default pagination behaviour is overridden to ensure that the documentation sites do not link to one another.
+
+#### Sidebar behaviour
+
+The default sidebar content is overridden, ensuring that only the relevant sections are displayed for each specific set of documentation, rather than displaying all sections.
+
+This customization groups the sections based on their URL structure, where any section matching the first path segment after the initial slash is grouped together within the same sidebar group.
 
 ### Markdown Snippets
 

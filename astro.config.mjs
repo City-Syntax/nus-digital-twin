@@ -11,13 +11,12 @@ export default defineConfig({
     react(),
     starlight({
       title: 'NUS Digital Twin',
+      routeMiddleware: './src/routeData.ts',
       lastUpdated: true,
       disable404Route: true,
       components: {
         SiteTitle: './src/components/docs/SiteTitle.astro',
         Head: './src/components/docs/Head.astro',
-        Sidebar: './src/components/docs/Sidebar.astro',
-        Pagination: './src/components/docs/Pagination.astro',
       },
       customCss: ['@fontsource-variable/inter', '@fontsource-variable/figtree', './src/styles/docs.css'],
       sidebar: [
