@@ -2,7 +2,7 @@
 import Icons from '../Icons';
 import GuideDropdown from './GuideDropdown';
 
-const { siteTitle, siteTitleHref } = Astro.props;
+const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute;
 const match = Astro.url.pathname.match(/^\/[^/]+/);
 let pageHref = match ? match[0] : '';
 let pageTitle = siteTitle;
