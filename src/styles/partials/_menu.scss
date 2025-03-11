@@ -42,8 +42,7 @@
 .menu-right {
   @include menu-x-container;
   right: var(--container-x-offset);
-  height: fit-content;
-  max-height: 448px;
+  max-height: 438px;
   min-height: 348px;
 }
 

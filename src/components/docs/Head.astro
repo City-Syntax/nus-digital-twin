@@ -1,5 +1,4 @@
 ---
-import type { Props } from '@astrojs/starlight/props';
 import Default from '@astrojs/starlight/components/Head.astro';
 import figtreeWoff2 from '@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2?url';
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
@@ -8,4 +7,4 @@ import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal
 <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin="anonymous" />
 <link rel="preload" as="font" type="font/woff2" href={figtreeWoff2} crossorigin="anonymous" />
 <link rel="sitemap" href="/sitemap-index.xml" />
-<Default {...Astro.props}><slot /></Default>
+<Default><slot /></Default>

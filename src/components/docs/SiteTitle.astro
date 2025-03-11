@@ -2,7 +2,7 @@
 import Icons from '../Icons';
 import GuideDropdown from './GuideDropdown';
 
-const { siteTitle, siteTitleHref } = Astro.props;
+const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute;
 const match = Astro.url.pathname.match(/^\/[^/]+/);
 let pageHref = match ? match[0] : '';
 let pageTitle = siteTitle;
@@ -43,10 +43,7 @@ if (Astro.response.status === 404) {
     >
     </path>
   </svg>
-  <a href={pageHref}>
-    {pageTitle}
-  </a>
-  <GuideDropdown client:load />
+  <GuideDropdown label={pageTitle} client:load />
 </div>
 <style is:inline>
   .dropdown-content {
@@ -75,7 +72,9 @@ if (Astro.response.status === 404) {
     display: flex;
     background: none;
     border: none;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
+    align-items: center;
+    gap: 0.5rem;
 
     svg {
       color: var(--sl-color-white);
