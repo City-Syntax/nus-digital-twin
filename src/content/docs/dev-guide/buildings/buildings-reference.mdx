@@ -127,3 +127,62 @@ The file path to the EnergyPlus `.idf` file stored in the `public` directory.
   "idfDownload": "usc/usc.idf"
 }
 ```
+
+## `buildingDataCredits`
+
+Type: `string`
+
+Specifies the data source or provider responsible for the building data. This string will be displayed to users whenever the building data panel is opened, such as when a building is selected.
+
+```json title=Example frame="terminal"
+{
+  "buildingDataCredits": "City Syntax Lab"
+}
+```
+
+## `downloads`
+
+Type: `array` of `object`s
+
+Provides information about the building models available for download. Each object within the array represents a specific type of model, and will be displayed as a button.
+
+An `object` within the array has the following properties:
+
+- `type`: A `string`, which represents the category of models, for example, Rhino.
+- `credits`: A `string` (optional), which represents the creator of the model.
+- `files`: An `array` of `object`s, which specifies the file type and file path. Multiple download files can be specified for each type of model. An object within this array contains 2 mandatory properties:
+  - `filetype`: A `string` specifying the file type, e.g. `.3dm`.
+  - `url`: A `string` specifying the file path. Both relative and absolute paths are supported.
+
+The following example results in 2 buttons. The first button contains 2 downloadable files, and the second button contains 1 downloadable file.
+
+```json title="Example" frame=terminal
+{
+  "downloads": [
+    {
+      "type": "Rhino",
+      "credits": "City Syntax Lab",
+      "files": [
+        {
+          "filetype": ".3dm",
+          "url": "/rhino-model.3dm"
+        },
+        {
+          "filetype": ".gltf",
+          "url": "/rhino-model.gltf"
+        }
+      ]
+    },
+    {
+      "type": "BIM",
+      "credits": "City Syntax Lab",
+      "files": [
+        {
+          "filetype": ".gltf",
+          "url": "/bim-model.gltf"
+        }
+      ]
+    }
+  ]
+}
+```
