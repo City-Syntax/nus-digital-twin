@@ -8,10 +8,15 @@ const guides = [
   { label: 'API Reference', href: '/api-reference' },
 ];
 
-const GuideDropdown = () => {
+type GuideDropdownProps = {
+  label: String;
+};
+
+const GuideDropdown = ({ label }: GuideDropdownProps) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className="dropdown-trigger">
+        <div>{label}</div>
         <Icons.ChevronDown height="1rem"></Icons.ChevronDown>
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
