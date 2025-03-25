@@ -5,6 +5,8 @@ import vercel from '@astrojs/vercel';
 import rehypeExternalLinks from 'rehype-external-links';
 import sitemap from '@astrojs/sitemap';
 
+import tailwindcss from '@tailwindcss/vite';
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -106,6 +108,7 @@ export default defineConfig({
     }),
     sitemap(),
   ],
+
   markdown: {
     rehypePlugins: [
       [
@@ -119,7 +122,12 @@ export default defineConfig({
       ],
     ],
   },
+
   site: 'https://www.nus-digital-twin.com',
   output: 'static',
   adapter: vercel(),
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
