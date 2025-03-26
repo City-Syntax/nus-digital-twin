@@ -218,8 +218,38 @@ Type: `number`
 
 The perimeter zone depth of the building, specified in metres. This information is displayed when the building data panel is open in the 'Structural, Enclosure and Internal Partitions' tab.
 
+The following example defines a perimeter zone depth of 3.0 metres.
+
 ```json title=Example frame="terminal"
 {
   "perimeterZoneDepth": 3.0
+}
+```
+
+## `wallConstruction`
+
+Type: `number`
+
+The wall construction of the building, specified in terms of U-value, measured in Watts per square meter per Kelvin (W/m<sup>2</sup>K). This information is displayed when the building data panel is open in the 'Structural, Enclosure and Internal Partitions' tab.
+
+The following example defines a wall construction of 2.0 W/m<sup>2</sup>K.
+
+```json title=Example frame="terminal"
+{
+  "wallConstruction": 2.0
+}
+```
+
+## `roofConstruction`
+
+Type: `number`
+
+The roof construction of the building, specified in terms of U-value, measured in Watts per square meter per Kelvin (W/m<sup>2</sup>K). This information is displayed when the building data panel is open in the 'Structural, Enclosure and Internal Partitions' tab.
+
+The following example defines a roof construction of 0.8 W/m<sup>2</sup>K.
+
+```json title=Example frame="terminal"
+{
+  "roofConstruction": 0.8
 }
 ```
