@@ -186,3 +186,28 @@ The following example results in 2 buttons. The first button contains 2 download
   ]
 }
 ```
+
+## `floorToFloorHeight`
+
+Type: `number` or `Array<{ label: string, value: number }>`
+
+The floor to floor height of the building, specified in metres. You can specify both a single value for the whole building, or multiple values using an array of objects.
+
+The following example shows how you can define a fixed floor to floor height of 3.0 meters for each level of the building.
+
+```json title="Single Value Example" frame=terminal
+{
+  "floorToFloorHeight": 3.0
+}
+```
+
+Different values can also be defined for each level of the building as shown in the example below. Each label will be displayed with its corresponding values on a single row.
+
+```json title="Multiple Values Example" frame=terminal
+{
+  "floorToFloorHeight": [
+    { "label": "Level 1", "value": 4.4 },
+    { "label": "Level 2", "value": 4.8 }
+  ]
+}
+```
