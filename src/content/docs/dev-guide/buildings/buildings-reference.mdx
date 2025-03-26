@@ -8,6 +8,12 @@ import { Badge } from '@astrojs/starlight/components';
 
 The full list of properties for each building are provided below. The Zod schema is defined in `src/content.config.ts` as `buildingSchema`.
 
+Building data will be displayed to users whenever the buildings data panel is open (either when a building is selected, or through the search bar), with the exception of [energy use](#energyuse) and [energy use intensity](#energyuseintensity), which will be displayed in the energy controls.
+
+:::note
+Properties without a category will not be displayed to users.
+:::
+
 ## `elementId`
 
 <Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
@@ -28,6 +34,8 @@ The `elementId` is a unique identifier for each building. In general, the `eleme
 
 Type: `string`
 
+Category: <Badge text="General" />
+
 The name of the building. The `name` is also used for the search feature on NUS Digital Twin.
 
 ```json title=Example frame="terminal"
@@ -42,6 +50,8 @@ The name of the building. The `name` is also used for the search feature on NUS 
 
 Type: `string`
 
+Category: <Badge text="General" />
+
 The address of the building.
 
 ```json title=Example frame="terminal"
@@ -55,6 +65,8 @@ The address of the building.
 <Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
 
 Type: `string`
+
+Category: <Badge text="General" />
 
 The 6-digit postal code of the building.
 
@@ -96,6 +108,8 @@ The longitude of the building. It is also used to move the camera whenever a sea
 
 Type: `string`
 
+Category: <Badge text="Energy Use" /> in Energy controls.
+
 The JSON file name for the energy use data. See [Energy Controls](/dev-guide/controls/energy) for more information.
 
 ```json title=Example frame="terminal"
@@ -107,6 +121,8 @@ The JSON file name for the energy use data. See [Energy Controls](/dev-guide/con
 ## `energyUseIntensity`
 
 Type: `string`
+
+Category: <Badge text="Energy Use Intensity" /> in Energy controls.
 
 The JSON file name for the energy use intensity data. See [Energy Controls](/dev-guide/controls/energy) for more information.
 
@@ -120,6 +136,8 @@ The JSON file name for the energy use intensity data. See [Energy Controls](/dev
 
 Type: `string`
 
+Category: <Badge text="General" />
+
 The file path to the EnergyPlus `.idf` file stored in the `public` directory.
 
 ```json title=Example frame="terminal"
@@ -132,7 +150,9 @@ The file path to the EnergyPlus `.idf` file stored in the `public` directory.
 
 Type: `string`
 
-Specifies the data source or provider responsible for the building data. This string will be displayed to users whenever the building data panel is opened in the 'General' tab.
+Category: <Badge text="General" />
+
+Specifies the data source or provider responsible for the building data.
 
 ```json title=Example frame="terminal"
 {
@@ -144,7 +164,9 @@ Specifies the data source or provider responsible for the building data. This st
 
 Type: `Array` of `object`s
 
-Provides information about the building models available for download. Each object within the array represents a specific type of model, and will be displayed as a button in the 'General' tab.
+Category: <Badge text="General" />
+
+Provides information about the building models available for download. Each object within the array represents a specific type of model, and will be displayed as a button.
 
 An `object` within the array has the following properties:
 
@@ -191,7 +213,9 @@ The following example results in 2 buttons. The first button contains 2 download
 
 Type: `number` or `Array<{ label: string, value: number }>`
 
-The floor to floor height of the building, specified in metres. You can specify both a single value for the whole building, or multiple values using an array of objects. This information is displayed when the building data panel is open in the 'Structural, Enclosure and Internal Partitions' tab.
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
+The floor to floor height of the building, specified in metres. You can specify both a single value for the whole building, or multiple values using an array of objects.
 
 The following example shows how you can define a fixed floor to floor height of 3.0 meters for each level of the building.
 
@@ -216,7 +240,9 @@ Different values can also be defined for each level of the building as shown in 
 
 Type: `number`
 
-The perimeter zone depth of the building, specified in metres. This information is displayed when the building data panel is open in the 'Structural, Enclosure and Internal Partitions' tab.
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
+The perimeter zone depth of the building, specified in metres.
 
 The following example defines a perimeter zone depth of 3.0 metres.
 
@@ -230,7 +256,9 @@ The following example defines a perimeter zone depth of 3.0 metres.
 
 Type: `number`
 
-The wall construction of the building, specified in terms of U-value, measured in Watts per square meter per Kelvin (W/m<sup>2</sup>K). This information is displayed when the building data panel is open in the 'Structural, Enclosure and Internal Partitions' tab.
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
+The wall construction of the building, specified in terms of U-value, measured in Watts per square meter per Kelvin (W/m<sup>2</sup>K).
 
 The following example defines a wall construction of 2.0 W/m<sup>2</sup>K.
 
@@ -244,6 +272,8 @@ The following example defines a wall construction of 2.0 W/m<sup>2</sup>K.
 
 Type: `number`
 
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
 The roof construction of the building, specified in terms of U-value, measured in Watts per square meter per Kelvin (W/m<sup>2</sup>K). This information is displayed when the building data panel is open in the 'Structural, Enclosure and Internal Partitions' tab.
 
 The following example defines a roof construction of 0.8 W/m<sup>2</sup>K.
@@ -251,5 +281,33 @@ The following example defines a roof construction of 0.8 W/m<sup>2</sup>K.
 ```json title=Example frame="terminal"
 {
   "roofConstruction": 0.8
+}
+```
+
+## `externalWallType`
+
+Type: `string`
+
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
+Specifies the external wall type of the building. This string will be displayed as it is to users.
+
+```json title=Example frame="terminal"
+{
+  "externalWallType": "Concrete walls"
+}
+```
+
+## `internalWalls`
+
+Type: `string`
+
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
+Specifies the internal wall type of the building. This string will be displayed as it is to users.
+
+```json title=Example frame="terminal"
+{
+  "externalWallType": "Soundproof walls"
 }
 ```
