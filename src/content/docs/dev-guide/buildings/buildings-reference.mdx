@@ -132,7 +132,7 @@ The file path to the EnergyPlus `.idf` file stored in the `public` directory.
 
 Type: `string`
 
-Specifies the data source or provider responsible for the building data. This string will be displayed to users whenever the building data panel is opened, such as when a building is selected.
+Specifies the data source or provider responsible for the building data. This string will be displayed to users whenever the building data panel is opened in the 'General' tab.
 
 ```json title=Example frame="terminal"
 {
@@ -142,9 +142,9 @@ Specifies the data source or provider responsible for the building data. This st
 
 ## `downloads`
 
-Type: `array` of `object`s
+Type: `Array` of `object`s
 
-Provides information about the building models available for download. Each object within the array represents a specific type of model, and will be displayed as a button.
+Provides information about the building models available for download. Each object within the array represents a specific type of model, and will be displayed as a button in the 'General' tab.
 
 An `object` within the array has the following properties:
 
@@ -191,7 +191,7 @@ The following example results in 2 buttons. The first button contains 2 download
 
 Type: `number` or `Array<{ label: string, value: number }>`
 
-The floor to floor height of the building, specified in metres. You can specify both a single value for the whole building, or multiple values using an array of objects.
+The floor to floor height of the building, specified in metres. You can specify both a single value for the whole building, or multiple values using an array of objects. This information is displayed when the building data panel is open in the 'Structural, Enclosure and Internal Partitions' tab.
 
 The following example shows how you can define a fixed floor to floor height of 3.0 meters for each level of the building.
 
@@ -209,5 +209,17 @@ Different values can also be defined for each level of the building as shown in 
     { "label": "Level 1", "value": 4.4 },
     { "label": "Level 2", "value": 4.8 }
   ]
+}
+```
+
+## `perimeterZoneDepth`
+
+Type: `number`
+
+The perimeter zone depth of the building, specified in metres. This information is displayed when the building data panel is open in the 'Structural, Enclosure and Internal Partitions' tab.
+
+```json title=Example frame="terminal"
+{
+  "perimeterZoneDepth": 3.0
 }
 ```
