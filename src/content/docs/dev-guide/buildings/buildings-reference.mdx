@@ -274,7 +274,7 @@ Type: `number`
 
 Category: <Badge text="Structural, Enclosure and Internal Partitions" />
 
-The roof construction of the building, specified in terms of U-value, measured in Watts per square meter per Kelvin (W/m<sup>2</sup>K). This information is displayed when the building data panel is open in the 'Structural, Enclosure and Internal Partitions' tab.
+The roof construction of the building, specified in terms of U-value, measured in Watts per square meter per Kelvin (W/m<sup>2</sup>K).
 
 The following example defines a roof construction of 0.8 W/m<sup>2</sup>K.
 
@@ -393,5 +393,21 @@ The window to wall ratio facing for the east orientation, specified in percentag
 ```json title=Example frame="terminal"
 {
   "eastWindowToWallRatio": 50
+}
+```
+
+## `windowFrameConductance`
+
+Type: `number`
+
+Category: <Badge text="Fenestration" />
+
+The window frame conductance of the building, specified in terms of U-value, measured in Watts per square meter per Kelvin (W/m<sup>2</sup>K).
+
+The following example defines a window frame conductance of 4.8 W/m<sup>2</sup>K.
+
+```json title=Example frame="terminal"
+{
+  "windowFrameConductance": 4.8
 }
 ```
