@@ -411,3 +411,61 @@ The following example defines a window frame conductance of 4.8 W/m<sup>2</sup>K
   "windowFrameConductance": 4.8
 }
 ```
+
+## `glazingType`
+
+Type: `string`
+
+Category: <Badge text="Fenestration" />
+
+The glazing type of building windows. Will be displayed as it is to users.
+
+```json title=Example frame="terminal"
+{
+  "glazingType": "Single pane"
+}
+```
+
+## `windowLeakage`
+
+Type: `number`
+
+Category: <Badge text="Fenestration" />
+
+The window leakage, specified in air changes per hour (ACH).
+
+The following example defines a building with a window leakage of 1.0 ACH.
+
+```json title=Example frame="terminal"
+{
+  "windowLeakage": 1.0
+}
+```
+
+## `naturalVentilation`
+
+Type: `string`
+
+Category: <Badge text="Fenestration" />
+
+Specifies whether there is the presence of natural ventilation. Will be displayed as it is to users.
+
+```json title=Example frame="terminal"
+{
+  "naturalVentilation": "Yes (all hours)"
+}
+```
+
+## `daylightResponse`
+
+Type: `string`
+
+Category: <Badge text="Fenestration" />
+
+Specifies the type of daylight response.
+
+```json title=Example frame="terminal"
+{
+  "daylightResponse": "Continuous"
+}
+```
