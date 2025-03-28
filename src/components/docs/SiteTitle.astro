@@ -75,9 +75,19 @@ if (Astro.response.status === 404) {
     align-items: center;
     gap: 0.5rem;
     color: var(--sl-color-white);
+    cursor: pointer;
 
     svg {
       color: var(--sl-color-white);
+    }
+
+    &:hover,
+    &[data-state='open'] {
+      color: var(--sl-color-gray-2);
+
+      svg {
+        color: var(--sl-color-gray-2);
+      }
     }
   }
 </style>
