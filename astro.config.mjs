@@ -3,6 +3,7 @@ import react from '@astrojs/react';
 import starlight from '@astrojs/starlight';
 import vercel from '@astrojs/vercel';
 import rehypeExternalLinks from 'rehype-external-links';
+import rehypeMermaid from 'rehype-mermaid';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -107,7 +108,12 @@ export default defineConfig({
     sitemap(),
   ],
   markdown: {
+    syntaxHighlight: {
+      type: 'shiki',
+      excludeLangs: ['mermaid', 'math'],
+    },
     rehypePlugins: [
+      rehypeMermaid,
       [
         rehypeExternalLinks,
         {
