@@ -469,3 +469,255 @@ Specifies the type of daylight response.
   "daylightResponse": "Continuous"
 }
 ```
+
+## `thermostatSetPoint`
+
+Type: `number`
+
+Category: <Badge text="Heating, Ventilation and Air-conditioning" />
+
+Specifies the thermostat set point of the building in degrees Celcius (&deg;C).
+
+The following example defines a building with a thermostat set point of 25&deg;C.
+
+```json title=Example frame=terminal
+{
+  "thermostatSetPoint": 25
+}
+```
+
+## `coreOutsideAirFlowrate`
+
+Type: `number`
+
+Category: <Badge text="Heating, Ventilation and Air-conditioning" />
+
+Specifies the core outside air flowrate in litres per second per person (L/s/Person).
+
+The following example defines a building with a core outside airflow rate of 0.15 L/s/Person.
+
+```json title=Example frame=terminal
+{
+  "coreOutsideAirFlowrate": 0.15
+}
+```
+
+## `perimeterOutsideAirFlowrate`
+
+Type: `number`
+
+Category: <Badge text="Heating, Ventilation and Air-conditioning" />
+
+Specifies the perimeter outside air flowrate in air changes per hour (ACH).
+
+:::caution
+This specification is subject to change, to keep it consistent with core outside air flowrate.
+:::
+
+The following example defines a building with a perimeter outside airflow rate of 1.2 ACH.
+
+```json title=Example frame=terminal
+{
+  "perimeterOutsideAirFlowrate": 1.2
+}
+```
+
+## `coreOccupantDensity`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the core occupant density of the building in people per square metre (pp/m<sup>2</sup>).
+
+The following example defines a building with a core occupant density of 0.43 people per square metre.
+
+```json title=Example frame=terminal
+{
+  "coreOccupantDensity": 0.43
+}
+```
+
+## `perimeterOccupantDensity`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the perimeter occupant density of the building in people per square metre (pp/m<sup>2</sup>).
+
+The following example defines a building with a perimeter occupant density of 0.3 people per square metre.
+
+```json title=Example frame=terminal
+{
+  "perimeterOccupantDensity": 0.3
+}
+```
+
+## `coreEquipmentPower`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the core equipment power of the building in Watts per square metre (W/m<sup>2</sup>).
+
+The following example defines a core equipment power of 50 Watts per square metre.
+
+```json title=Example frame=terminal
+{
+  "coreEquipmentPower": 50
+}
+```
+
+## `perimeterEquipmentPower`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the perimeter equipment power of the building in Watts per square metre (W/m<sup>2</sup>).
+
+The following example defines a perimeter equipment power of 32.5 Watts per square metre.
+
+```json title=Example frame=terminal
+{
+  "perimeterEquipmentPower": 32.5
+}
+```
+
+## `coreLightingPower`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the core lighting power of the building in Watts per square metre (W/m<sup>2</sup>).
+
+The following example defines the core lighting power of 42.2 Watts per square metre.
+
+```json title=Example frame=terminal
+{
+  "coreLightingPower": 42.2
+}
+```
+
+## `perimeterLightingPower`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the perimeter lighting power of the building in Watts per square metre (W/m<sup>2</sup>).
+
+The following example defines the perimeter lighting power of 88.3 Watts per square metre.
+
+```json title=Example frame=terminal
+{
+  "perimeterLightingPower": 88.3
+}
+```
+
+## `occupancySchedule`
+
+Type: `number`
+
+Category: <Badge text="Schedules" />
+
+Specifies the occupancy schedule of the building in hours per week (h/wk).
+
+The following example defines the occupancy schedule of 44 hours per week.
+
+```json title=Example frame=terminal
+{
+  "occupancySchedule": 44
+}
+```
+
+## `equipmentUsage`
+
+Type: `number`
+
+Category: <Badge text="Schedules" />
+
+Specifies the equipment usage of the building in hours per week (h/wk).
+
+The following example defines the equipment usage of 30 hours per week.
+
+```json title=Example frame=terminal
+{
+  "equipmentUsage": 30
+}
+```
+
+## `lightingUsage`
+
+Type: `number`
+
+Category: <Badge text="Schedules" />
+
+Specifies the lighting usage of the building in hours per week (h/wk).
+
+The following example defines the lighting usage of 40 hours per week.
+
+```json title=Example frame=terminal
+{
+  "lightingUsage": 40
+}
+```
+
+## `coreOutsideAirSchedule`
+
+Type: `string`
+
+Category: <Badge text="Schedules" />
+
+Specifies the presence of core outside air schedule of the building. Displays as it is.
+
+```json title=Example frame=terminal
+{
+  "coreOutsideAirSchedule": "Always on"
+}
+```
+
+## `perimeterOutsideAirSchedule`
+
+Type: `string`
+
+Category: <Badge text="Schedules" />
+
+Specifies the presence of perimeter outside air schedule of the building. Displays as it is.
+
+```json title=Example frame=terminal
+{
+  "perimeterOutsideAirSchedule": "Always on"
+}
+```
+
+## `exhaustAirRecovery`
+
+Type: `string`
+
+Category: <Badge text="Others" />
+
+Specifies the presence of exhaust air recovery of the building. Displays as it is.
+
+```json title=Example frame=terminal
+{
+  "exhaustAirRecovery": "None"
+}
+```
+
+## `economizerCycle`
+
+Type: `string`
+
+Category: <Badge text="Others" />
+
+Specifies the presence of an economizer cycle of the building. Displays as it is.
+
+```json title=Example frame=terminal
+{
+  "economizerCycle": "None"
+}
+```
