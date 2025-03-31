@@ -1,90 +1,15 @@
 # NUS Digital Twin
 
-This project is built with Astro and CesiumJS with Cesium Ion. This site makes use of server-side rendering to serve a live API. See [Astro's documentation](https://docs.astro.build/en/guides/server-side-rendering/#enable-on-demand-server-rendering).
+This project is built with Astro and CesiumJS with Cesium Ion. This site makes use of on-demand rendering to serve a live API. See [Astro's documentation](https://docs.astro.build/en/guides/on-demand-rendering/#enabling-on-demand-rendering).
 
 ## Getting Started
 
-1. Clone this repository
-2. Install dependencies using `yarn install`
-3. Create a `.env` file, set `PUBLIC_CESIUM_TOKEN='YOUR_CESIUM_ION_TOKEN'` and `PUBLIC_MAPBOX_TOKEN='YOUR_MAPBOX_ACCESS_TOKEN'`
-   - The Cesium Ion token can be obtained from [ion.cesium.com/tokens](https://ion.cesium.com/tokens)
-   - The Mapbox access token can be obtained from [https://account.mapbox.com/access-tokens/](https://account.mapbox.com/access-tokens/)
-4. Run the application locally using `yarn dev`
+See [Getting Started in the Developer Guide](https://www.nus-digital-twin.com/dev-guide/getting-started/).
 
 ## Documentation
 
-### Building Data
-
-The data for the buildings displayed can be found in `src/content/buildings/buildings.json`, and its schema can be found by referring to `buildingsCollection` in `src/content/config.ts`.
-
-| Key                         | Value                                                                                    |
-| --------------------------- | ---------------------------------------------------------------------------------------- |
-| elementId                   | A unique identifier for the building, corresponds to the OSM elementId                   |
-| name                        | The name of the building                                                                 |
-| address                     | The location of the building                                                             |
-| postal                      | The 6-digit postal code for the building                                                 |
-| latitude                    | A number representing the latitude of the building, used to set the camera on search     |
-| longitude                   | A number representing the longitude of the building, used to set the camera on search    |
-| energyUse                   | The JSON file containing the energy use data                                             |
-| energyUseIntensity          | The JSON file containing the energy use intensity data                                   |
-| idfDownload                 | Link to where the IDF file is hosted                                                     |
-| buildingDataCredits         | The provider of the building data                                                        |
-| downloads                   | The files available for this building, see the table below                               |
-| floorToFloorHeight          | Specified in meters, can be either a number or an array of objects (keys: label, value). |
-| perimeterZoneDepth          | Specified in meters                                                                      |
-| wallConstruction            | Specified in U value                                                                     |
-| roofConstruction            | Specified in U value                                                                     |
-| externalWallType            |                                                                                          |
-| internalWalls               |                                                                                          |
-| fenestrationType            |                                                                                          |
-| fenestrationShading         |                                                                                          |
-| northWindowToWallRatio      | Specified in percentage                                                                  |
-| southWindowToWallRatio      | Specified in percentage                                                                  |
-| eastWindowToWallRatio       | Specified in percentage                                                                  |
-| westWindowToWallRatio       | Specified in percentage                                                                  |
-| windowFrameConductance      | Specified in U value                                                                     |
-| glazingType                 |                                                                                          |
-| windowLeakage               | Specified in air changes per hour (ACH)                                                  |
-| naturalVentilation          |                                                                                          |
-| daylightResponse            |                                                                                          |
-| thermostatSetPoint          | Specified in degrees Celcius                                                             |
-| coreOutsideAirFlowrate      | Specified in litres per second per person (L/s/Person)                                   |
-| perimeterOutsideAirFlowrate | Specified in air changes per hour (ACH)                                                  |
-| coreOccupantDensity         | Specified in people per square meter                                                     |
-| perimeterOccupantDensity    | Specified in people per square meter                                                     |
-| coreEquipmentPower          | Specified in Watts per square meter                                                      |
-| perimeterEquipmentPower     | Specified in Watts per square meter                                                      |
-| coreLightingPower           | Specified in Watts per square meter                                                      |
-| perimeterLightingPower      | Specified in Watts per square meter                                                      |
-| occupancySchedule           | Specified in hours per week                                                              |
-| equipmentUsage              | Specified in hours per week                                                              |
-| lightingUsage               | Specified in hours per week                                                              |
-| coreOutsideAirSchedule      |                                                                                          |
-| perimeterOutsideAirSchedule |                                                                                          |
-| exhaustAirRecovery          |                                                                                          |
-| economizerCycle             |                                                                                          |
-
-| Key      | Value                            |
-| -------- | -------------------------------- |
-| filetype | The file type for download       |
-| url      | Link to where the file is hosted |
-
-### Energy Use Data
-
-The data for energy use displayed can be found in `src/content/energy/*.json`, and its schema can be found by referring to `energyCollection` in `src/content/config.ts`.
-
-| Key        | Value               |
-| ---------- | ------------------- |
-| month      | A string e.g. `Jan` |
-| equipment  | A number            |
-| fans       | A number            |
-| pumps      | A number            |
-| humid      | A number            |
-| heatReject | A number            |
-| lighting   | A number            |
-| hotWater   | A number            |
-| heating    | A number            |
-| cooling    | A number            |
+> [!IMPORTANT]
+> The documentation is in the process of being moved to an Astro Starlight site at [nus-digital-twin.com/dev-guide](https://nus-digital-twin.com/dev-guide). The documentation shown below in this README.md consists of the content that has not yet been transferred completely.
 
 ### Adding Models
 
