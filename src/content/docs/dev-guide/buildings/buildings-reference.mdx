@@ -1,7 +1,6 @@
 ---
 title: Buildings Data Reference
 description: Learn about the attributes for the building data in NUS Digital Twin
-draft: true
 ---
 
 import { Badge } from '@astrojs/starlight/components';
@@ -76,7 +75,7 @@ The 6-digit postal code of the building.
 }
 ```
 
-## latitude
+## `latitude`
 
 <Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
 
@@ -90,7 +89,7 @@ The latitude of the building. It is also used to move the camera whenever a sear
 }
 ```
 
-## longitude
+## `longitude`
 
 <Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
 
@@ -110,7 +109,7 @@ Type: `string`
 
 Category: <Badge text="Energy Use" /> in Energy controls.
 
-The JSON file name for the energy use data. See [Energy Controls](/dev-guide/controls/energy) for more information.
+The JSON file name for the energy use data. For the format of the JSON data, see [Energy Use Reference](/dev-guide/controls/energy-use-reference). For other details, see [Energy Controls](/dev-guide/controls/energy) for more information.
 
 ```json title=Example frame="terminal"
 {
@@ -124,7 +123,7 @@ Type: `string`
 
 Category: <Badge text="Energy Use Intensity" /> in Energy controls.
 
-The JSON file name for the energy use intensity data. See [Energy Controls](/dev-guide/controls/energy) for more information.
+The JSON file name for the energy use intensity data. For the format of the JSON data, see [Energy Use Reference](/dev-guide/controls/energy-use-reference). For other details, see [Energy Controls](/dev-guide/controls/energy) for more information.
 
 ```json title=Example frame="terminal"
 {
