@@ -1,0 +1,179 @@
+---
+title: Energy Use Data Reference
+description: Learn about the attributes for the energy use data in NUS Digital Twin
+---
+
+import { Badge } from '@astrojs/starlight/components';
+
+The full list of properties for [energy use](/dev-guide/buildings/buildings-reference#energyuse) and [energy use intensity](/dev-guide/buildings/buildings-reference#energyuseintensity) are provided below. The Zod schema is found in `src/content.config.ts` as `energyUseSchema`.
+
+All the energy use and energy use intensity files are found in `src/content/energy/*.json`. Each energy use file is a JSON file on its own, and is an array consisting of 12 objects with the following key-value pairs.
+
+## Properties
+
+### `month`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `string`
+
+Specifies the month of the data in `MMM` format e.g. Jan.
+
+:::note
+This field is displayed as it is, and the format is not validated.
+:::
+
+### `equipment`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `number`
+
+Specifies the equipment energy usage in kWh.
+
+### `lighting`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `number`
+
+Specifies the lighting energy usage in kWh.
+
+### `heating`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `number`
+
+Specifies the heating energy usage in kWh.
+
+### `cooling`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `number`
+
+Specifies the cooling energy usage in kWh.
+
+### `fans`
+
+Type: `number`
+
+Specifies the fans energy usage in kWh.
+
+### `pumps`
+
+Type: `number`
+
+Specifies the pumps energy usage in kWh.
+
+### `humid`
+
+Type: `number`
+
+Specifies the humidity energy usage in kWh.
+
+### `heatReject`
+
+Type: `number`
+
+Specifies the heat rejection energy usage in kWh.
+
+### `hotWater`
+
+Type: `number`
+
+Specifies the hot water energy usage in kWh.
+
+## Example
+
+This example shows how the contents of the energy use data file may be structured.
+
+```json
+[
+  {
+    "month": "Jan",
+    "equipment": 12352.06,
+    "lighting": 16406.14,
+    "heating": 0.0,
+    "cooling": 45621.59
+  },
+  {
+    "month": "Feb",
+    "equipment": 11199.56,
+    "lighting": 14914.67,
+    "heating": 0.0,
+    "cooling": 45128.93
+  },
+  {
+    "month": "Mar",
+    "equipment": 12684.25,
+    "lighting": 17151.87,
+    "heating": 0.0,
+    "cooling": 55137.41
+  },
+  {
+    "month": "Apr",
+    "equipment": 11524.97,
+    "lighting": 14914.67,
+    "heating": 0.0,
+    "cooling": 53582.65
+  },
+  {
+    "month": "May",
+    "equipment": 12684.25,
+    "lighting": 17151.87,
+    "heating": 0.0,
+    "cooling": 58806.69
+  },
+  {
+    "month": "Jun",
+    "equipment": 12189.35,
+    "lighting": 16406.14,
+    "heating": 0.0,
+    "cooling": 56632.01
+  },
+  {
+    "month": "Jul",
+    "equipment": 12019.87,
+    "lighting": 15660.4,
+    "heating": 0.0,
+    "cooling": 53311.51
+  },
+  {
+    "month": "Aug",
+    "equipment": 12684.25,
+    "lighting": 17151.87,
+    "heating": 0.0,
+    "cooling": 52840.14
+  },
+  {
+    "month": "Sep",
+    "equipment": 11857.16,
+    "lighting": 15660.4,
+    "heating": 0.0,
+    "cooling": 48548.3
+  },
+  {
+    "month": "Oct",
+    "equipment": 12352.06,
+    "lighting": 16406.14,
+    "heating": 0.0,
+    "cooling": 53243.76
+  },
+  {
+    "month": "Nov",
+    "equipment": 12189.35,
+    "lighting": 16406.14,
+    "heating": 0.0,
+    "cooling": 50257.2
+  },
+  {
+    "month": "Dec",
+    "equipment": 12019.87,
+    "lighting": 15660.4,
+    "heating": 0.0,
+    "cooling": 45249.42
+  }
+]
+```

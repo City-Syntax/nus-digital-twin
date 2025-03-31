@@ -1,5 +1,722 @@
 ---
 title: Buildings Data Reference
 description: Learn about the attributes for the building data in NUS Digital Twin
-draft: true
 ---
+
+import { Badge } from '@astrojs/starlight/components';
+
+The full list of properties for each building are provided below. The Zod schema is defined in `src/content.config.ts` as `buildingSchema`.
+
+Building data will be displayed to users whenever the buildings data panel is open (either when a building is selected, or through the search bar), with the exception of [energy use](#energyuse) and [energy use intensity](#energyuseintensity), which will be displayed in the energy controls.
+
+:::note
+Properties without a category will not be displayed to users.
+:::
+
+## `elementId`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `string`
+
+The `elementId` is a unique identifier for each building. In general, the `elementId` corresponds to the OpenStreetMap `elementId`.
+
+```json title=Example frame="terminal"
+{
+  "elementId": "732229053"
+}
+```
+
+## `name`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `string`
+
+Category: <Badge text="General" />
+
+The name of the building. The `name` is also used for the search feature on NUS Digital Twin.
+
+```json title=Example frame="terminal"
+{
+  "name": "University Sports Centre"
+}
+```
+
+## `address`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `string`
+
+Category: <Badge text="General" />
+
+The address of the building.
+
+```json title=Example frame="terminal"
+{
+  "address": "2 Sports Drive 1"
+}
+```
+
+## `postal`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `string`
+
+Category: <Badge text="General" />
+
+The 6-digit postal code of the building.
+
+```json title=Example frame="terminal"
+{
+  "postal": "117561"
+}
+```
+
+## `latitude`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `number`
+
+The latitude of the building. It is also used to move the camera whenever a search result is selected.
+
+```json title=Example frame="terminal"
+{
+  "latitude": 1.29971
+}
+```
+
+## `longitude`
+
+<Badge text="Required" variant="danger" size="large" style={{ marginTop: '0.5rem', marginBottom: '1rem' }} />
+
+Type: `number`
+
+The longitude of the building. It is also used to move the camera whenever a search result is selected.
+
+```json title=Example frame="terminal"
+{
+  "longitude": 103.77546
+}
+```
+
+## `energyUse`
+
+Type: `string`
+
+Category: <Badge text="Energy Use" /> in Energy controls.
+
+The JSON file name for the energy use data. For the format of the JSON data, see [Energy Use Reference](/dev-guide/controls/energy-use-reference). For other details, see [Energy Controls](/dev-guide/controls/energy) for more information.
+
+```json title=Example frame="terminal"
+{
+  "energyUse": "usc-eu"
+}
+```
+
+## `energyUseIntensity`
+
+Type: `string`
+
+Category: <Badge text="Energy Use Intensity" /> in Energy controls.
+
+The JSON file name for the energy use intensity data. For the format of the JSON data, see [Energy Use Reference](/dev-guide/controls/energy-use-reference). For other details, see [Energy Controls](/dev-guide/controls/energy) for more information.
+
+```json title=Example frame="terminal"
+{
+  "energyUseIntensity": "usc-eui"
+}
+```
+
+## `idfDownload`
+
+Type: `string`
+
+Category: <Badge text="General" />
+
+The file path to the EnergyPlus `.idf` file stored in the `public` directory.
+
+```json title=Example frame="terminal"
+{
+  "idfDownload": "usc/usc.idf"
+}
+```
+
+## `buildingDataCredits`
+
+Type: `string`
+
+Category: <Badge text="General" />
+
+Specifies the data source or provider responsible for the building data.
+
+```json title=Example frame="terminal"
+{
+  "buildingDataCredits": "City Syntax Lab"
+}
+```
+
+## `downloads`
+
+Type: `Array` of `object`s
+
+Category: <Badge text="General" />
+
+Provides information about the building models available for download. Each object within the array represents a specific type of model, and will be displayed as a button.
+
+An `object` within the array has the following properties:
+
+- `type`: A `string`, which represents the category of models, for example, Rhino.
+- `credits`: A `string` (optional), which represents the creator of the model.
+- `files`: An `array` of `object`s, which specifies the file type and file path. Multiple download files can be specified for each type of model. An object within this array contains 2 mandatory properties:
+  - `filetype`: A `string` specifying the file type, e.g. `.3dm`.
+  - `url`: A `string` specifying the file path. Both relative and absolute paths are supported.
+
+The following example results in 2 buttons. The first button contains 2 downloadable files, and the second button contains 1 downloadable file.
+
+```json title="Example" frame=terminal
+{
+  "downloads": [
+    {
+      "type": "Rhino",
+      "credits": "City Syntax Lab",
+      "files": [
+        {
+          "filetype": ".3dm",
+          "url": "/rhino-model.3dm"
+        },
+        {
+          "filetype": ".gltf",
+          "url": "/rhino-model.gltf"
+        }
+      ]
+    },
+    {
+      "type": "BIM",
+      "credits": "City Syntax Lab",
+      "files": [
+        {
+          "filetype": ".gltf",
+          "url": "/bim-model.gltf"
+        }
+      ]
+    }
+  ]
+}
+```
+
+## `floorToFloorHeight`
+
+Type: `number` or `Array<{ label: string, value: number }>`
+
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
+The floor to floor height of the building, specified in metres. You can specify both a single value for the whole building, or multiple values using an array of objects.
+
+The following example shows how you can define a fixed floor to floor height of 3.0 meters for each level of the building.
+
+```json title="Single Value Example" frame=terminal
+{
+  "floorToFloorHeight": 3.0
+}
+```
+
+Different values can also be defined for each level of the building as shown in the example below. Each label will be displayed with its corresponding values on a single row.
+
+```json title="Multiple Values Example" frame=terminal
+{
+  "floorToFloorHeight": [
+    { "label": "Level 1", "value": 4.4 },
+    { "label": "Level 2", "value": 4.8 }
+  ]
+}
+```
+
+## `perimeterZoneDepth`
+
+Type: `number`
+
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
+The perimeter zone depth of the building, specified in metres.
+
+The following example defines a perimeter zone depth of 3.0 metres.
+
+```json title=Example frame="terminal"
+{
+  "perimeterZoneDepth": 3.0
+}
+```
+
+## `wallConstruction`
+
+Type: `number`
+
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
+The wall construction of the building, specified in terms of U-value, measured in Watts per square meter per Kelvin (W/m<sup>2</sup>K).
+
+The following example defines a wall construction of 2.0 W/m<sup>2</sup>K.
+
+```json title=Example frame="terminal"
+{
+  "wallConstruction": 2.0
+}
+```
+
+## `roofConstruction`
+
+Type: `number`
+
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
+The roof construction of the building, specified in terms of U-value, measured in Watts per square meter per Kelvin (W/m<sup>2</sup>K).
+
+The following example defines a roof construction of 0.8 W/m<sup>2</sup>K.
+
+```json title=Example frame="terminal"
+{
+  "roofConstruction": 0.8
+}
+```
+
+## `externalWallType`
+
+Type: `string`
+
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
+Specifies the external wall type of the building. This string will be displayed as it is to users.
+
+```json title=Example frame="terminal"
+{
+  "externalWallType": "Concrete walls"
+}
+```
+
+## `internalWalls`
+
+Type: `string`
+
+Category: <Badge text="Structural, Enclosure and Internal Partitions" />
+
+Specifies the internal wall type of the building. This string will be displayed as it is to users.
+
+```json title=Example frame="terminal"
+{
+  "externalWallType": "Soundproof walls"
+}
+```
+
+## `fenestrationType`
+
+Type: `string`
+
+Category: <Badge text="Fenestration" />
+
+Specifies the fenestration type of the building, which refers to the openings in the building's exterior, such as windows and doors.
+
+```json title=Example frame="terminal"
+{
+  "fenestrationType": "Fixed windows, Jalousie windows"
+}
+```
+
+## `fenestrationShading`
+
+Type: `string`
+
+Category: <Badge text="Fenestration" />
+
+Specifies the fenestration shading of the building, which refers to devices which help reduce solar heat gain, such as blinds.
+
+```json title=Example frame="terminal"
+{
+  "fenestrationShading": "Interior fixed shutters"
+}
+```
+
+## `northWindowToWallRatio`
+
+Type: `number`
+
+Category: <Badge text="Fenestration" />
+
+The window to wall ratio facing for the north orientation, specified in percentage.
+
+```json title=Example frame="terminal"
+{
+  "northWindowToWallRatio": 20
+}
+```
+
+## `southWindowToWallRatio`
+
+Type: `number`
+
+Category: <Badge text="Fenestration" />
+
+The window to wall ratio facing for the south orientation, specified in percentage.
+
+```json title=Example frame="terminal"
+{
+  "southWindowToWallRatio": 80
+}
+```
+
+## `westWindowToWallRatio`
+
+Type: `number`
+
+Category: <Badge text="Fenestration" />
+
+The window to wall ratio facing for the west orientation, specified in percentage.
+
+```json title=Example frame="terminal"
+{
+  "westWindowToWallRatio": 30
+}
+```
+
+## `eastWindowToWallRatio`
+
+Type: `number`
+
+Category: <Badge text="Fenestration" />
+
+The window to wall ratio facing for the east orientation, specified in percentage.
+
+```json title=Example frame="terminal"
+{
+  "eastWindowToWallRatio": 50
+}
+```
+
+## `windowFrameConductance`
+
+Type: `number`
+
+Category: <Badge text="Fenestration" />
+
+The window frame conductance of the building, specified in terms of U-value, measured in Watts per square meter per Kelvin (W/m<sup>2</sup>K).
+
+The following example defines a window frame conductance of 4.8 W/m<sup>2</sup>K.
+
+```json title=Example frame="terminal"
+{
+  "windowFrameConductance": 4.8
+}
+```
+
+## `glazingType`
+
+Type: `string`
+
+Category: <Badge text="Fenestration" />
+
+The glazing type of building windows. Will be displayed as it is to users.
+
+```json title=Example frame="terminal"
+{
+  "glazingType": "Single pane"
+}
+```
+
+## `windowLeakage`
+
+Type: `number`
+
+Category: <Badge text="Fenestration" />
+
+The window leakage, specified in air changes per hour (ACH).
+
+The following example defines a building with a window leakage of 1.0 ACH.
+
+```json title=Example frame="terminal"
+{
+  "windowLeakage": 1.0
+}
+```
+
+## `naturalVentilation`
+
+Type: `string`
+
+Category: <Badge text="Fenestration" />
+
+Specifies whether there is the presence of natural ventilation. Will be displayed as it is to users.
+
+```json title=Example frame="terminal"
+{
+  "naturalVentilation": "Yes (all hours)"
+}
+```
+
+## `daylightResponse`
+
+Type: `string`
+
+Category: <Badge text="Fenestration" />
+
+Specifies the type of daylight response.
+
+```json title=Example frame="terminal"
+{
+  "daylightResponse": "Continuous"
+}
+```
+
+## `thermostatSetPoint`
+
+Type: `number`
+
+Category: <Badge text="Heating, Ventilation and Air-conditioning" />
+
+Specifies the thermostat set point of the building in degrees Celcius (&deg;C).
+
+The following example defines a building with a thermostat set point of 25&deg;C.
+
+```json title=Example frame=terminal
+{
+  "thermostatSetPoint": 25
+}
+```
+
+## `coreOutsideAirFlowrate`
+
+Type: `number`
+
+Category: <Badge text="Heating, Ventilation and Air-conditioning" />
+
+Specifies the core outside air flowrate in litres per second per person (L/s/Person).
+
+The following example defines a building with a core outside airflow rate of 0.15 L/s/Person.
+
+```json title=Example frame=terminal
+{
+  "coreOutsideAirFlowrate": 0.15
+}
+```
+
+## `perimeterOutsideAirFlowrate`
+
+Type: `number`
+
+Category: <Badge text="Heating, Ventilation and Air-conditioning" />
+
+Specifies the perimeter outside air flowrate in air changes per hour (ACH).
+
+:::caution
+This specification is subject to change, to keep it consistent with core outside air flowrate.
+:::
+
+The following example defines a building with a perimeter outside airflow rate of 1.2 ACH.
+
+```json title=Example frame=terminal
+{
+  "perimeterOutsideAirFlowrate": 1.2
+}
+```
+
+## `coreOccupantDensity`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the core occupant density of the building in people per square metre (pp/m<sup>2</sup>).
+
+The following example defines a building with a core occupant density of 0.43 people per square metre.
+
+```json title=Example frame=terminal
+{
+  "coreOccupantDensity": 0.43
+}
+```
+
+## `perimeterOccupantDensity`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the perimeter occupant density of the building in people per square metre (pp/m<sup>2</sup>).
+
+The following example defines a building with a perimeter occupant density of 0.3 people per square metre.
+
+```json title=Example frame=terminal
+{
+  "perimeterOccupantDensity": 0.3
+}
+```
+
+## `coreEquipmentPower`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the core equipment power of the building in Watts per square metre (W/m<sup>2</sup>).
+
+The following example defines a core equipment power of 50 Watts per square metre.
+
+```json title=Example frame=terminal
+{
+  "coreEquipmentPower": 50
+}
+```
+
+## `perimeterEquipmentPower`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the perimeter equipment power of the building in Watts per square metre (W/m<sup>2</sup>).
+
+The following example defines a perimeter equipment power of 32.5 Watts per square metre.
+
+```json title=Example frame=terminal
+{
+  "perimeterEquipmentPower": 32.5
+}
+```
+
+## `coreLightingPower`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the core lighting power of the building in Watts per square metre (W/m<sup>2</sup>).
+
+The following example defines the core lighting power of 42.2 Watts per square metre.
+
+```json title=Example frame=terminal
+{
+  "coreLightingPower": 42.2
+}
+```
+
+## `perimeterLightingPower`
+
+Type: `number`
+
+Category: <Badge text="Density and Power" />
+
+Specifies the perimeter lighting power of the building in Watts per square metre (W/m<sup>2</sup>).
+
+The following example defines the perimeter lighting power of 88.3 Watts per square metre.
+
+```json title=Example frame=terminal
+{
+  "perimeterLightingPower": 88.3
+}
+```
+
+## `occupancySchedule`
+
+Type: `number`
+
+Category: <Badge text="Schedules" />
+
+Specifies the occupancy schedule of the building in hours per week (h/wk).
+
+The following example defines the occupancy schedule of 44 hours per week.
+
+```json title=Example frame=terminal
+{
+  "occupancySchedule": 44
+}
+```
+
+## `equipmentUsage`
+
+Type: `number`
+
+Category: <Badge text="Schedules" />
+
+Specifies the equipment usage of the building in hours per week (h/wk).
+
+The following example defines the equipment usage of 30 hours per week.
+
+```json title=Example frame=terminal
+{
+  "equipmentUsage": 30
+}
+```
+
+## `lightingUsage`
+
+Type: `number`
+
+Category: <Badge text="Schedules" />
+
+Specifies the lighting usage of the building in hours per week (h/wk).
+
+The following example defines the lighting usage of 40 hours per week.
+
+```json title=Example frame=terminal
+{
+  "lightingUsage": 40
+}
+```
+
+## `coreOutsideAirSchedule`
+
+Type: `string`
+
+Category: <Badge text="Schedules" />
+
+Specifies the presence of core outside air schedule of the building. Displays as it is.
+
+```json title=Example frame=terminal
+{
+  "coreOutsideAirSchedule": "Always on"
+}
+```
+
+## `perimeterOutsideAirSchedule`
+
+Type: `string`
+
+Category: <Badge text="Schedules" />
+
+Specifies the presence of perimeter outside air schedule of the building. Displays as it is.
+
+```json title=Example frame=terminal
+{
+  "perimeterOutsideAirSchedule": "Always on"
+}
+```
+
+## `exhaustAirRecovery`
+
+Type: `string`
+
+Category: <Badge text="Others" />
+
+Specifies the presence of exhaust air recovery of the building. Displays as it is.
+
+```json title=Example frame=terminal
+{
+  "exhaustAirRecovery": "None"
+}
+```
+
+## `economizerCycle`
+
+Type: `string`
+
+Category: <Badge text="Others" />
+
+Specifies the presence of an economizer cycle of the building. Displays as it is.
+
+```json title=Example frame=terminal
+{
+  "economizerCycle": "None"
+}
+```
