@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Icons from '../Icons';
 import type { ImageProps } from '../../types';
 import DownloadButton from './DownloadButton';
+import ExifReader from 'exifreader';
 
 const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
@@ -20,6 +21,7 @@ const LazyImage = ({
 }) => {
   const [hasLoaded, setHasLoaded] = useState(!img);
   const [src, setSrc] = useState('');
+  const [dateTime, setDateTime] = useState('');
 
   useEffect(() => {
     const fetchAstroImages = async () => {
@@ -28,6 +30,10 @@ const LazyImage = ({
       }
 
       const data = (await astroImages[img.src]()).default.src;
+      const response = await fetch(data);
+      const buffer = await response.arrayBuffer();
+      const exifData = ExifReader.load(buffer);
+      setDateTime(exifData['DateTimeOriginal']?.description || '');
       setSrc(data);
     };
     fetchAstroImages();

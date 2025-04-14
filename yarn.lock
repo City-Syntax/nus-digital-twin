@@ -2435,6 +2435,11 @@
   resolved "https://registry.npmjs.org/@vscode/l10n/-/l10n-0.0.18.tgz"
   integrity sha512-KYSIHVmslkaCDyw013pphY+d7x1qV8IZupYfeIfzNA+nsaWHbn5uPuQRvdRFsa9zFzGeudPuoGoZ1Op4jrJXIQ==
 
+"@xmldom/xmldom@^0.9.4":
+  version "0.9.8"
+  resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.9.8.tgz#1471e82bdff9e8f20ee8bbe60d4ffa8a516e78d8"
+  integrity sha512-p96FSY54r+WJ50FIOsCOjyj/wavs8921hG5+kVMmZgKcvIKxMXHTrjNJvRgWa/zuX3B6t2lijLNFaOyuxUH+2A==
+
 "@zip.js/zip.js@^2.7.34":
   version "2.7.34"
   resolved "https://registry.npmjs.org/@zip.js/zip.js/-/zip.js-2.7.34.tgz"
@@ -3837,6 +3842,13 @@ execa@~8.0.1:
     onetime "^6.0.0"
     signal-exit "^4.1.0"
     strip-final-newline "^3.0.0"
+
+exifreader@^4.28.1:
+  version "4.28.1"
+  resolved "https://registry.yarnpkg.com/exifreader/-/exifreader-4.28.1.tgz#1a1a020a4ef7f5517ef8eba083249c0c59f8a1d8"
+  integrity sha512-+rvA+fR1u1lKlLCrr5JnvtmWHUBU+fgkaCv0Sn/okWwzeJ0edjyeP0Hz4IXxnJkKky9B8pF597G6tNi5HIEAfQ==
+  optionalDependencies:
+    "@xmldom/xmldom" "^0.9.4"
 
 expressive-code@^0.40.2:
   version "0.40.2"
