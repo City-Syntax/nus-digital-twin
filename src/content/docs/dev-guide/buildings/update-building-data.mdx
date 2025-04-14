@@ -3,5 +3,116 @@ title: Update Building Data
 description: Learn about how to update the building data content collection
 sidebar:
   order: 3
-draft: true
 ---
+
+import buildingData from '/src/content/buildings/buildings.json';
+
+NUS Digital Twin provides detailed information for each campus building, including geographical data, fenestration details, and schedules. Currently, data is available for {buildingData.length} buildings.
+
+The building data serves several purposes:
+
+1. Displaying information to users upon building clicks
+2. Powering the [Buildings API](/api-reference/endpoints/buildings)
+3. Supporting the search bar functionality
+4. Determining which OpenStreetMap buildings are shown
+
+This guide covers how the information for each building can be updated.
+
+## Update Building Data
+
+The data for each building displayed on NUS Digital Twin is stored within a JSON file found at `src/content/buildings/buildings.json`. To add or update building information, simply edit this JSON file. Changes made here will be reflected in the application wherever building data is used.
+
+The `building.json` file contains an array of objects. The complete schema for building data can be found in [Building Data Reference](../buildings-reference).
+
+:::note
+If there are multiple buildings with the same name, only the first occurrence is searchable, i.e. only the first occurrence will be displayed in the search bar.
+:::
+
+A sample of a `buildings.json` file is shown below, containing data for 4 buildings. As there are two occurrences of Cendana College, only the Cendana College with the `elementId` of `732229051` can be found in the search bar.
+
+```json
+// src/content/buildings/buildings.json
+
+[
+  {
+    "elementId": "732229051",
+    "name": "Cendana College",
+    "address": "28 College Avenue West",
+    "postal": "138533",
+    "latitude": 1.30791,
+    "longitude": 103.77249
+  },
+  {
+    "elementId": "732229052",
+    "name": "Cendana College",
+    "address": "28 College Avenue West",
+    "postal": "138533",
+    "latitude": 1.30775,
+    "longitude": 103.77239
+  },
+  {
+    "elementId": "732229050",
+    "name": "Yale-NUS College",
+    "address": "20 College Ave East",
+    "postal": "138529",
+    "latitude": 1.30739,
+    "longitude": 103.77257
+  },
+  {
+    "elementId": "139959760",
+    "name": "E6",
+    "address": "5 Engineering Drive 1",
+    "postal": "117608",
+    "latitude": 1.29916,
+    "longitude": 103.77304,
+    "energyUse": "e6-eu",
+    "energyUseIntensity": "e6-eui",
+    "idfDownload": "/e6/e6.idf",
+    "buildingDataCredits": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan",
+    "floorToFloorHeight": 3.005,
+    "perimeterZoneDepth": 4,
+    "wallConstruction": 2.0,
+    "roofConstruction": 0.4,
+    "externalWallType": "Precast concrete wall",
+    "internalWalls": "Precast concrete wall",
+    "fenestrationType": "Windows and doors",
+    "fenestrationShading": "Horizontal panel",
+    "northWindowToWallRatio": 60,
+    "southWindowToWallRatio": 40,
+    "eastWindowToWallRatio": 50,
+    "westWindowToWallRatio": 50,
+    "windowFrameConductance": 15,
+    "glazingType": "Double pane",
+    "windowLeakage": 1.0,
+    "naturalVentilation": "No (closed environment)",
+    "daylightResponse": "Continuous",
+    "thermostatSetPoint": 25,
+    "perimeterOutsideAirFlowrate": 0.5,
+    "coreOccupantDensity": 0.2,
+    "perimeterOccupantDensity": 0.2,
+    "coreEquipmentPower": 30,
+    "perimeterEquipmentPower": 30,
+    "coreLightingPower": 30,
+    "perimeterLightingPower": 30,
+    "occupancySchedule": 50,
+    "equipmentUsage": 50,
+    "lightingUsage": 50,
+    "coreOutsideAirFlowrate": 10,
+    "coreOutsideAirSchedule": "Always on",
+    "perimeterOutsideAirSchedule": "Always on",
+    "exhaustAirRecovery": "None",
+    "economizerCycle": "None",
+    "images": [
+      { "src": "/src/assets/e6/e6-1.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" },
+      { "src": "/src/assets/e6/e6-2.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" }
+    ],
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan",
+        "files": [{ "filetype": ".3dm", "url": "/e6/e6-rhino.3dm" }]
+      }
+    ]
+  }
+]
+```
