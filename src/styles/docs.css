@@ -30,6 +30,10 @@
   --sl-color-black: #ffffff;
 }
 
+a {
+  transition: 100ms color;
+}
+
 a.external::after {
   content: ' ↗';
   display: inline-block;
@@ -40,4 +44,27 @@ a.external::after {
 
 a.external:hover::after {
   transform: translate(1px, -1px);
+}
+
+.right-sidebar {
+  border: none;
+}
+
+.main-pane div.content-panel {
+  border-top: none;
+}
+
+.social-icons::after {
+  border: none;
+}
+
+.starlight-aside {
+  border: 1px solid var(--sl-color-asides-border);
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.header,
+.sidebar-pane {
+  border: none;
 }
