@@ -80,9 +80,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90vw;
-  max-width: 450px;
+  max-width: 480px;
   max-height: 85vh;
   padding: var(--padding-xl);
+
+  p {
+    line-height: 1.325rem;
+  }
 
   > * + * {
     margin-top: 12px;
@@ -102,6 +106,14 @@
     body.reduce-motion & {
       animation: none;
     }
+  }
+
+  h3 {
+    margin-top: 20px;
+  }
+
+  > p div {
+    margin-top: 4px;
   }
 }
 
