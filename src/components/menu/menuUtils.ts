@@ -2,7 +2,7 @@ import type { MenuPages } from '../../types';
 
 const LEFT_MENU_PAGES: MenuPages[] = [
   'osm',
-  'about',
+  'about-nus-campus',
   'citations',
   'street-centerlines',
   'building-footprints',
@@ -21,7 +21,7 @@ const LEFT_MENU_PAGES: MenuPages[] = [
 const RIGHT_MENU_PAGES: MenuPages[] = ['buildings', 'energy', 'thermal-comfort', 'wind', 'solar', 'distance'];
 
 const BOTTOM_MENU_PAGES: MenuPages[] = [
-  'about',
+  'about-nus-campus',
   'citations',
   'building-info',
   'points-of-interest',

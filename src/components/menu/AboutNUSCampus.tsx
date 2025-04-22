@@ -6,7 +6,7 @@ const AboutNUSCampus = () => {
     <>
       <div className="menubar-content-header">
         <h2>About NUS Campus</h2>
-        <CloseButton page="about"></CloseButton>
+        <CloseButton page="about-nus-campus"></CloseButton>
       </div>
       <div className="menubar-content-body">
         <p>
