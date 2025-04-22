@@ -21,6 +21,7 @@ const LEFT_MENU_PAGES: MenuPages[] = [
 const RIGHT_MENU_PAGES: MenuPages[] = ['buildings', 'energy', 'thermal-comfort', 'wind', 'solar', 'distance'];
 
 const BOTTOM_MENU_PAGES: MenuPages[] = [
+  'about',
   'about-nus-campus',
   'citations',
   'building-info',

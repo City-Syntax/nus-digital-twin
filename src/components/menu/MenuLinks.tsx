@@ -9,6 +9,22 @@ type MenuLinksProps = {
   dir: MenuDir;
 };
 
+const About = ({ dir }: MenuLinksProps) => {
+  return (
+    <>
+      <MenuLink
+        toPage="about-nus-campus"
+        label="About NUS Campus"
+        iconName="About"
+        dir={dir}
+        isLeft
+        isBottom
+      ></MenuLink>
+      <MenuLink toPage="citations" label="Citations" iconName="About" dir={dir} isLeft isBottom></MenuLink>
+    </>
+  );
+};
+
 const Points = ({ dir }: MenuLinksProps) => {
   const $showPoints = useStore(showPoints);
   return (
@@ -179,6 +195,7 @@ const Resources = () => {
 };
 
 export default {
+  About,
   Points,
   GISLayers,
   BuildingScaleModels,

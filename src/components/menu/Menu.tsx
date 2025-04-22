@@ -33,6 +33,7 @@ import PointInfo from './points-of-interest/PointInfo';
 import PointsOfInterest from './points-of-interest/PointsOfInterest';
 import Resources from './Resources';
 import Citations from './Citations';
+import About from './About';
 
 const Menu = () => {
   const $activePages = useStore(activePages);
@@ -115,6 +116,7 @@ const Menu = () => {
         >
           <div className="menubar-content" ref={menuBottomRef}>
             <AutoHeight>
+              {$activePages.bottom === 'about' && <About></About>}
               {$activePages.bottom === 'about-nus-campus' && <AboutNUSCampus></AboutNUSCampus>}
               {$activePages.bottom === 'citations' && <Citations></Citations>}
               {$activePages.bottom === 'building-info' && (
