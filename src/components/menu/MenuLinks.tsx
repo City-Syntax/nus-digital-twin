@@ -84,8 +84,8 @@ const BuildingScaleModels = ({ dir }: MenuLinksProps) => {
     <>
       <MenuLink
         toPage="bim"
-        label="BIM Models"
-        iconName="BIMModels"
+        label="BIM"
+        iconName="BIM"
         dir={dir}
         isActive={$activeModel === 'bim'}
         isLeft

@@ -3,12 +3,12 @@ import CloseButton from './CloseButton';
 import { activeModel } from '../../store';
 import { useStore } from '@nanostores/react';
 
-const BIMModels = () => {
+const BIM = () => {
   const $activeModel = useStore(activeModel);
   return (
     <>
       <div className="menubar-content-header">
-        <h2>Layers: BIM Models</h2>
+        <h2>Layers: BIM</h2>
         <CloseButton page="bim"></CloseButton>
       </div>
       <div className="menubar-content-body">
@@ -32,4 +32,4 @@ const BIMModels = () => {
   );
 };
 
-export default BIMModels;
+export default BIM;

@@ -9,7 +9,7 @@ import StreetCenterlines from './StreetCenterlines';
 import BuildingFootprints from './BuildingFootprints';
 import GreenSpaces from './GreenSpaces';
 import OSMBuildings from './OSMBuildings';
-import BIMModels from './BIMModels';
+import BIM from './BIM';
 import Help from './Help';
 import Settings from './Settings';
 import Buildings from './Buildings';
@@ -75,7 +75,7 @@ const Menu = () => {
             {$activePages.left === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
             {$activePages.left === 'rhino-urban' && <RhinoUrban></RhinoUrban>}
             {$activePages.left === 'ubem' && <UBEM></UBEM>}
-            {$activePages.left === 'bim' && <BIMModels></BIMModels>}
+            {$activePages.left === 'bim' && <BIM></BIM>}
             {$activePages.left === 'settings' && <Settings></Settings>}
             {$activePages.left === 'point-info' && <PointInfo />}
             {$activePages.left === 'points-of-interest' && <PointsOfInterest />}
@@ -127,7 +127,7 @@ const Menu = () => {
               {$activePages.bottom === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
               {$activePages.bottom === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
               {$activePages.bottom === 'green-spaces' && <GreenSpaces></GreenSpaces>}
-              {$activePages.bottom === 'bim' && <BIMModels></BIMModels>}
+              {$activePages.bottom === 'bim' && <BIM></BIM>}
               {$activePages.bottom === 'rhino-building' && <RhinoBuildings></RhinoBuildings>}
               {$activePages.bottom === 'osm' && <OSMBuildings></OSMBuildings>}
               {$activePages.bottom === 'ubem' && <UBEM></UBEM>}
