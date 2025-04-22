@@ -21,6 +21,7 @@ export type EnergyGraphType = 'eu' | 'eui';
 export type MenuPages =
   | 'osm'
   | 'about'
+  | 'citations'
   | 'help'
   | 'settings'
   | 'street-centerlines'
