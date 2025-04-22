@@ -45,7 +45,13 @@
     "address": "20 College Ave East",
     "postal": "138529",
     "latitude": 1.30739,
-    "longitude": 103.77257
+    "longitude": 103.77257,
+    "downloads": [
+      {
+        "type": "BIM",
+        "credits": "NUS, available on request"
+      }
+    ]
   },
   {
     "elementId": "732229049",
