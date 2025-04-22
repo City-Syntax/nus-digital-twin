@@ -32,6 +32,8 @@ import AutoHeight from '../primitives/AutoHeight';
 import PointInfo from './points-of-interest/PointInfo';
 import PointsOfInterest from './points-of-interest/PointsOfInterest';
 import Resources from './Resources';
+import Citations from './Citations';
+import About from './About';
 
 const Menu = () => {
   const $activePages = useStore(activePages);
@@ -64,7 +66,8 @@ const Menu = () => {
         >
           <div className="menubar-content" ref={menuLeftRef}>
             {$activePages.left === 'osm' && <OSMBuildings></OSMBuildings>}
-            {$activePages.left === 'about' && <AboutNUSCampus></AboutNUSCampus>}
+            {$activePages.left === 'about-nus-campus' && <AboutNUSCampus></AboutNUSCampus>}
+            {$activePages.left === 'citations' && <Citations></Citations>}
             {$activePages.left === 'help' && <Help navType={helpNavType} setNavType={setHelpNavType}></Help>}
             {$activePages.left === 'street-centerlines' && <StreetCenterlines></StreetCenterlines>}
             {$activePages.left === 'building-footprints' && <BuildingFootprints></BuildingFootprints>}
@@ -113,7 +116,9 @@ const Menu = () => {
         >
           <div className="menubar-content" ref={menuBottomRef}>
             <AutoHeight>
-              {$activePages.bottom === 'about' && <AboutNUSCampus></AboutNUSCampus>}
+              {$activePages.bottom === 'about' && <About></About>}
+              {$activePages.bottom === 'about-nus-campus' && <AboutNUSCampus></AboutNUSCampus>}
+              {$activePages.bottom === 'citations' && <Citations></Citations>}
               {$activePages.bottom === 'building-info' && (
                 <BuildingInfo category={category} setCategory={setCategory}></BuildingInfo>
               )}

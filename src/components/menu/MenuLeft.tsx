@@ -4,6 +4,7 @@ import Searchbar from './Searchbar';
 import Icons from '../Icons';
 import ScrollContainer from '../primitives/ScrollContainer';
 import MenuLinks from './MenuLinks';
+import AboutModal from '@components/bottom-bar/AboutModal';
 
 const MenuLeft = () => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +36,7 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLink toPage="about" label="About NUS Campus" iconName="About" dir="left" isLeft isBottom></MenuLink>
+              <MenuLinks.About dir="left" />
             </div>
           </div>
           <div className="menu-list">

@@ -21,6 +21,8 @@ export type EnergyGraphType = 'eu' | 'eui';
 export type MenuPages =
   | 'osm'
   | 'about'
+  | 'about-nus-campus'
+  | 'citations'
   | 'help'
   | 'settings'
   | 'street-centerlines'
