@@ -24,12 +24,14 @@ const buildingSchema = z.object({
       z.object({
         type: z.string(),
         credits: z.string().optional(),
-        files: z.array(
-          z.object({
-            filetype: z.string(),
-            url: z.string(),
-          }),
-        ),
+        files: z
+          .array(
+            z.object({
+              filetype: z.string(),
+              url: z.string(),
+            }),
+          )
+          .optional(),
       }),
     )
     .optional(),

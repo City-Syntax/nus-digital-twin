@@ -918,11 +918,7 @@
     "downloads": [
       {
         "type": "BIM",
-        "credits": "NUS",
-        "files": [
-          { "filetype": ".glTF", "url": "/sde4/sde4.gltf" },
-          { "filetype": ".obj, .mtl", "url": "/sde4/sde4.zip" }
-        ]
+        "credits": "NUS, available on request"
       },
       {
         "type": "Rhino",

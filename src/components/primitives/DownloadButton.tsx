@@ -11,21 +11,27 @@ const handleClick = () => {
 const DownloadButton = ({ type, credits, files }: DownloadProps) => {
   return (
     <div>
-      {credits && <div className="hint">Provided by {credits}.</div>}
-      <div key={type} className="download-btn">
-        {files.length === 1 ? (
-          <a href={files[0].url} target="_blank" download onClick={handleClick}>
-            Download {type} ({files[0].filetype})
-          </a>
-        ) : (
-          <>
+      {credits && (
+        <div className="hint">
+          {type} provided by {credits}.
+        </div>
+      )}
+      {files && (
+        <div key={type} className="download-btn">
+          {files.length === 1 ? (
             <a href={files[0].url} target="_blank" download onClick={handleClick}>
-              Download {type}
+              Download {type} ({files[0].filetype})
             </a>
-            <DownloadDropdown files={files}></DownloadDropdown>
-          </>
-        )}
-      </div>
+          ) : (
+            <>
+              <a href={files[0].url} target="_blank" download onClick={handleClick}>
+                Download {type}
+              </a>
+              <DownloadDropdown files={files}></DownloadDropdown>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 };
