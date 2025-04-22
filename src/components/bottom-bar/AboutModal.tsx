@@ -13,7 +13,7 @@ const AboutModal = () => {
           <Dialog.Title>About NUS Digital Twin</Dialog.Title>
           <div className="modal__content__description">
             NUS Digital Twin is an{' '}
-            <a className="link" href="http://github.com/city-Syntax/nus-digital-twin" target="_blank" rel="noreferrer">
+            <a className="link" href="http://github.com/City-Syntax/nus-digital-twin" target="_blank" rel="noreferrer">
               open-source project
             </a>{' '}
             developed by{' '}

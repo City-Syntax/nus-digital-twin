@@ -10,7 +10,7 @@ const Citations = () => {
       <div className="menubar-content-body">
         <div>
           NUS Digital Twin is an{' '}
-          <a className="link" href="http://github.com/city-Syntax/nus-digital-twin" target="_blank" rel="noreferrer">
+          <a className="link" href="http://github.com/City-Syntax/nus-digital-twin" target="_blank" rel="noreferrer">
             open-source project
           </a>{' '}
           developed by{' '}
