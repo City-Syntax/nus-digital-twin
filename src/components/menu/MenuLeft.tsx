@@ -36,15 +36,7 @@ const MenuLeft = () => {
               <Icons.ChevronDown></Icons.ChevronDown>
             </label>
             <div className="menu-list-content">
-              <MenuLink
-                toPage="about-nus-campus"
-                label="About NUS Campus"
-                iconName="About"
-                dir="left"
-                isLeft
-                isBottom
-              ></MenuLink>
-              <MenuLink toPage="citations" label="Citations" iconName="About" dir="left" isLeft isBottom></MenuLink>
+              <MenuLinks.About dir="left" />
             </div>
           </div>
           <div className="menu-list">

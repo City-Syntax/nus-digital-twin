@@ -20,7 +20,7 @@ const About = ({ dir }: MenuLinksProps) => {
         isLeft
         isBottom
       ></MenuLink>
-      <MenuLink toPage="citations" label="Citations" iconName="About" dir={dir} isLeft isBottom></MenuLink>
+      <MenuLink toPage="citations" label="Citations" iconName="Quote" dir={dir} isLeft isBottom></MenuLink>
     </>
   );
 };
