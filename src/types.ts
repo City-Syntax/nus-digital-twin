@@ -64,7 +64,7 @@ export type DownloadFileProps = {
 export type DownloadProps = {
   type: string;
   credits?: string;
-  files: DownloadFileProps[];
+  files?: DownloadFileProps[];
 };
 
 export type ImageProps = {

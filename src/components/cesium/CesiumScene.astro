@@ -318,7 +318,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    if (bimModels.includes(pickedFeature.primitive)) {
+    if (buildingInformationModels.includes(pickedFeature.primitive)) {
       const resourceUrl = pickedFeature.primitive.resource.url;
 
       if (resourceUrl.includes(yncId)) {
@@ -388,21 +388,21 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   const yncId = 2463878;
   const sde4 = await Cesium3DTileset.fromIonAssetId(sde4Id);
   const ync = await Cesium3DTileset.fromIonAssetId(yncId);
-  const bimModels = [sde4, ync];
-  for (let i = 0; i < bimModels.length; i++) {
-    viewer.scene.primitives.add(bimModels[i]);
-    bimModels[i].show = false;
+  const buildingInformationModels = [sde4, ync];
+  for (let i = 0; i < buildingInformationModels.length; i++) {
+    viewer.scene.primitives.add(buildingInformationModels[i]);
+    buildingInformationModels[i].show = false;
   }
 
   function showAllBIM() {
-    for (let i = 0; i < bimModels.length; i++) {
-      bimModels[i].show = true;
+    for (let i = 0; i < buildingInformationModels.length; i++) {
+      buildingInformationModels[i].show = true;
     }
   }
 
   function hideAllBIM() {
-    for (let i = 0; i < bimModels.length; i++) {
-      bimModels[i].show = false;
+    for (let i = 0; i < buildingInformationModels.length; i++) {
+      buildingInformationModels[i].show = false;
     }
   }
 
