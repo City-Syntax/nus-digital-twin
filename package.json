@@ -36,7 +36,7 @@
     "@tailwindcss/vite": "^4.1.4",
     "@tippyjs/react": "^4.2.6",
     "astro": "5.7.4",
-    "cesium": "^1.119.0",
+    "cesium": "^1.128.0",
     "cmdk": "^1.0.0",
     "embla-carousel-react": "^8.5.1",
     "fuzzysort": "^3.0.2",
