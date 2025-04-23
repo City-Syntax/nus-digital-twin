@@ -33,17 +33,8 @@
   --color-gray-950: var(--color-neutral-950);
 }
 
-@custom-variant open {
-  &:where([data-state='open'] *) {
-    @slot;
-  }
-}
-
-@custom-variant close {
-  &:where([data-state='closed'] *) {
-    @slot;
-  }
-}
+@custom-variant data-open (&[data-state~="open"]);
+@custom-variant data-closed (&[data-state~="closed"]);
 
 @layer base {
   a {

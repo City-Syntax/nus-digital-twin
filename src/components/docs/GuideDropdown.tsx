@@ -15,9 +15,9 @@ type GuideDropdownProps = {
 const GuideDropdown = ({ label }: GuideDropdownProps) => {
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger className="dropdown-trigger">
+      <DropdownMenu.Trigger className="group flex items-center gap-2 cursor-pointer color-(--sl-color-white) bg-transparent px-0 py-2 transition-colors duration-100 text-(--sl-color-white) hover:text-(--sl-color-gray-2) data-open:text-(--sl-color-gray-2)">
         <div>{label}</div>
-        <Icons.ChevronDown height="1rem"></Icons.ChevronDown>
+        <Icons.ChevronDown className="h-4"></Icons.ChevronDown>
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
         <DropdownMenu.Content
@@ -26,13 +26,12 @@ const GuideDropdown = ({ label }: GuideDropdownProps) => {
         >
           {guides.map((guide) => {
             return (
-              <DropdownMenu.Item asChild key={guide.href}>
-                <a
-                  className="no-underline text-(--sl-color-gray-2) hover:text-(--sl-color-white) hover:outline-none"
-                  href={guide.href}
-                >
-                  {guide.label}
-                </a>
+              <DropdownMenu.Item
+                className="no-underline text-(--sl-color-gray-2) hover:text-(--sl-color-white) hover:outline-none"
+                asChild
+                key={guide.href}
+              >
+                <a href={guide.href}>{guide.label}</a>
               </DropdownMenu.Item>
             );
           })}
