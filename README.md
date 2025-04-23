@@ -4,7 +4,7 @@ NUS Digital Twin is an crowd-sourced campus digital twin of the National Univers
 
 ## Publications
 
-Ang, Y. Q., Ong, L., Teo, J., Gan, J. V., & Han, J. (2025). Advancing building performance simulation education through a crowdsourced campus digital twin. Journal of Building Performance Simulation, 1–25. [https://doi.org/10.1080/19401493.2025.2493866](https://doi.org/10.1080/19401493.2025.2493866)
+Ang, Y. Q., Ong, L., Teo, J., Gan, J. V., & Han, J. (2025). Advancing building performance simulation education through a crowdsourced campus digital twin. _Journal of Building Performance Simulation, 1–25_. [https://doi.org/10.1080/19401493.2025.2493866](https://doi.org/10.1080/19401493.2025.2493866)
 
 ## Getting Started
 
