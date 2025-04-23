@@ -1,6 +1,10 @@
 # NUS Digital Twin
 
-This project is built with Astro and CesiumJS with Cesium Ion. This site makes use of on-demand rendering to serve a live API. See [Astro's documentation](https://docs.astro.build/en/guides/on-demand-rendering/#enabling-on-demand-rendering).
+NUS Digital Twin is an crowd-sourced campus digital twin of the National University of Singapore developed by [City Syntax Lab](https://www.citysyntax.io/).
+
+## Publications
+
+Ang, Y. Q., Ong, L., Teo, J., Gan, J. V., & Han, J. (2025). Advancing building performance simulation education through a crowdsourced campus digital twin. Journal of Building Performance Simulation, 1–25. [https://doi.org/10.1080/19401493.2025.2493866](https://doi.org/10.1080/19401493.2025.2493866)
 
 ## Getting Started
 
