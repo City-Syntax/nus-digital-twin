@@ -1,6 +1,6 @@
 # NUS Digital Twin
 
-NUS Digital Twin is an crowd-sourced campus digital twin of the National University of Singapore developed by [City Syntax Lab](https://www.citysyntax.io/).
+NUS Digital Twin is a crowd-sourced campus digital twin of the National University of Singapore developed by [City Syntax Lab](https://www.citysyntax.io/).
 
 ## Publications
 
