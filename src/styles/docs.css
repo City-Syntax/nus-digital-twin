@@ -33,6 +33,18 @@
   --color-gray-950: var(--color-neutral-950);
 }
 
+@custom-variant open {
+  &:where([data-state='open'] *) {
+    @slot;
+  }
+}
+
+@custom-variant close {
+  &:where([data-state='closed'] *) {
+    @slot;
+  }
+}
+
 @layer base {
   a {
     transition-property: color;

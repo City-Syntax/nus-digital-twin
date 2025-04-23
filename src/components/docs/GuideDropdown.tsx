@@ -20,11 +20,19 @@ const GuideDropdown = ({ label }: GuideDropdownProps) => {
         <Icons.ChevronDown height="1rem"></Icons.ChevronDown>
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
-        <DropdownMenu.Content align="start" className="dropdown-content">
+        <DropdownMenu.Content
+          align="start"
+          className="z-10 flex flex-col gap-2 rounded-lg bg-(--sl-color-black) border border-(--sl-color-gray-5) px-4 py-3"
+        >
           {guides.map((guide) => {
             return (
-              <DropdownMenu.Item className="dropdown-item" asChild key={guide.href}>
-                <a href={guide.href}>{guide.label}</a>
+              <DropdownMenu.Item asChild key={guide.href}>
+                <a
+                  className="no-underline text-(--sl-color-gray-2) hover:text-(--sl-color-white) hover:outline-none"
+                  href={guide.href}
+                >
+                  {guide.label}
+                </a>
               </DropdownMenu.Item>
             );
           })}
