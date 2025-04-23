@@ -1,10 +1,8 @@
 import React from 'react';
-import MenuLink from './MenuLink';
 import Searchbar from './Searchbar';
 import Icons from '../Icons';
 import ScrollContainer from '../primitives/ScrollContainer';
 import MenuLinks from './MenuLinks';
-import AboutModal from '@components/bottom-bar/AboutModal';
 
 const MenuLeft = () => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
