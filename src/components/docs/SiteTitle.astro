@@ -29,9 +29,13 @@ if (Astro.response.status === 404) {
 }
 ---
 
-<div class="site-title sl-flex">
-  <a href={siteTitleHref} aria-label="NUS Digital Twin">
-    <Icons.Logo height="1.75rem" width="1.75rem" />
+<div class:list={['flex', 'gap-1', 'items-center', 'font-bold', 'font-title']}>
+  <a
+    href={siteTitleHref}
+    aria-label="NUS Digital Twin"
+    class:list={['flex', 'transition-transform', 'hover:-translate-y-1']}
+  >
+    <Icons.Logo className="size-7" />
   </a>
   <svg xmlns="http://www.w3.org/2000/svg" height="1.25rem" width="1.25rem" viewBox="0 0 15 15">
     <path
@@ -89,35 +93,5 @@ if (Astro.response.status === 404) {
         color: var(--sl-color-gray-2);
       }
     }
-  }
-</style>
-
-<style>
-  .site-title {
-    align-items: center;
-    display: flex;
-    gap: 4px;
-    font-size: var(--sl-text-h6);
-    text-decoration: none;
-    font-weight: 700;
-    font-family: 'Figtree Variable', system-ui, sans-serif;
-
-    a {
-      display: flex;
-      text-decoration: none;
-      color: var(--sl-color-white);
-      transition: transform 150ms;
-    }
-
-    a:hover {
-      transform: translateY(-4px);
-    }
-  }
-  img {
-    height: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
-    object-position: 0 50%;
   }
 </style>
