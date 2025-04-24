@@ -40,33 +40,31 @@ export async function load() {
     featureIdLabel: '238932774',
   });
 
-  const rhinoCOM2 = await Model.fromGltfAsync({
-    modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7743124495, 1.2939952856, 37.2996820597),
-      new HeadingPitchRoll(CesiumMath.toRadians(-204), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-    ),
-    show: false,
-    scale: 0.43,
+  const rhinoCOM2 = await getModelFromGltf({
+    longitude: 103.7743124495,
+    latitude: 1.2939952856,
+    height: 37.2996820597,
+    heading: -204,
     url: '/com2/com2-rhino.gltf',
     featureIdLabel: '54619699',
+    scale: 0.43,
   });
 
-  const rhinoPgprBlock1 = await Model.fromGltfAsync({
-    modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7829198753, 1.291489802, 51.2208270602),
-      new HeadingPitchRoll(CesiumMath.toRadians(-40), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-    ),
-    show: false,
-    scale: 0.48,
+  const rhinoPgprBlock1 = await getModelFromGltf({
+    longitude: 103.7829198753,
+    latitude: 1.291489802,
+    height: 51.2208270602,
+    heading: -40,
     url: '/pgpr/pgpr-block1-rhino.gltf',
     featureIdLabel: '238932786',
+    scale: 0.48,
   });
-  const rhinoAS8 = await Model.fromGltfAsync({
-    modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7722692363, 1.296027148, 55.2598169315),
-      new HeadingPitchRoll(CesiumMath.toRadians(109.9), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-    ),
-    show: false,
+
+  const rhinoAS8 = await getModelFromGltf({
+    longitude: 103.7722692363,
+    latitude: 1.296027148,
+    height: 55.2598169315,
+    heading: 109.9,
     url: '/as8/as8-rhino.gltf',
     featureIdLabel: '54583485',
   });
