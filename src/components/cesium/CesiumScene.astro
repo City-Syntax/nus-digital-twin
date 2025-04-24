@@ -52,6 +52,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     Camera,
     BillboardCollection,
     DistanceDisplayCondition,
+    ClockStep,
+    ClockRange,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
   import type { MapLayers } from '../../types';
@@ -97,6 +99,16 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     return dateFormatter.format(date);
   };
+
+  const now = new Date();
+  const start = JulianDate.fromDate(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0));
+  const end = JulianDate.fromDate(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999));
+  viewer.clock.startTime = start.clone();
+  viewer.clock.stopTime = end.clone();
+  viewer.clock.currentTime = start.clone();
+  viewer.clock.clockRange = ClockRange.LOOP_STOP;
+  viewer.clock.clockStep = ClockStep.SYSTEM_CLOCK;
+  viewer.timeline.zoomTo(start, end);
 
   // Limit amount to zoom in and out to
   viewer.scene.screenSpaceCameraController.minimumZoomDistance = 100.0;
