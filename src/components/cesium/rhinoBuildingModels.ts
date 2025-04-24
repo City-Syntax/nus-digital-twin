@@ -222,16 +222,14 @@ export async function load() {
   });
 
   return [
-    rhinoE6,
     rhinoE2A,
     rhinoE6,
+    rhinoCELC,
     rhinoPioneerHouse,
     rhinoNUSMuseum,
     rhinoCOM2,
     rhinoPgprBlock1,
     rhinoAS8,
-    rhinoCELC,
-    rhinoSDE2,
     rhinoSDE2,
     rhinoSDE3,
     rhinoSDE4,
