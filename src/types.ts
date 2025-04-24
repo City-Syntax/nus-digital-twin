@@ -56,8 +56,6 @@ export type BuildingInfoCategories =
   | 'schedules'
   | 'others';
 
-export type MapLayers = 'satellite' | 'dark' | 'street';
-
 export type DownloadFileProps = {
   filetype: string;
   url: string;

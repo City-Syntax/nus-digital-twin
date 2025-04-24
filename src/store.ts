@@ -1,6 +1,7 @@
 import { atom, map } from 'nanostores';
 import { persistentAtom, persistentMap } from '@nanostores/persistent';
-import type { GISLayers, MapLayers, MenuPages, Models, Position, UserSettings } from './types';
+import type { GISLayers, MenuPages, Models, Position, UserSettings } from './types';
+import type { MapLayers } from '@components/cesium/mapLayers';
 
 export const activePages = map<{
   left: MenuPages | '';
