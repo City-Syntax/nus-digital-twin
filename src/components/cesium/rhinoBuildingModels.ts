@@ -1,44 +1,48 @@
 import { Model, Transforms, Cartesian3, HeadingPitchRoll, Math as CesiumMath, Cesium3DTileset } from 'cesium';
 
 export async function load() {
-  const rhinoE6 = await Model.fromGltfAsync({
-    modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7730368432, 1.2991728525, 52.20497546),
-      new HeadingPitchRoll(CesiumMath.toRadians(155.6), CesiumMath.toRadians(90), CesiumMath.toRadians(0)),
-    ),
-    show: false,
-    scale: 1.05,
+  const rhinoE6 = await getModelMatrix({
+    longitude: 103.7730368432,
+    latitude: 1.2991728525,
+    height: 52.20497546,
+    heading: 155.6,
+    pitch: 90,
+    roll: 0,
     url: '/e6/e6-rhino.gltf',
     featureIdLabel: '139959760',
+    scale: 1.05,
   });
 
-  const rhinoE2A = await Model.fromGltfAsync({
-    modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7713864135, 1.2987547954, 71.4093914346),
-      new HeadingPitchRoll(CesiumMath.toRadians(67), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-    ),
-    show: false,
+  const rhinoE2A = await getModelMatrix({
+    longitude: 103.7713864135,
+    latitude: 1.2987547954,
+    height: 71.4093914346,
+    heading: 67,
+    pitch: 0,
+    roll: 0,
     url: '/e2a/e2a-rhino.gltf',
     featureIdLabel: '628777635',
   });
 
-  const rhinoCELC = await Model.fromGltfAsync({
-    modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7713937579, 1.2969843253, 44.9642791517),
-      new HeadingPitchRoll(CesiumMath.toRadians(18.5), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-    ),
-    show: false,
-    scale: 0.52,
+  const rhinoCELC = await getModelMatrix({
+    longitude: 103.7713937579,
+    latitude: 1.2969843253,
+    height: 44.9642791517,
+    heading: 18.5,
+    pitch: 0,
+    roll: 0,
     url: '/celc/celc-rhino.gltf',
     featureIdLabel: '140084916',
+    scale: 0.52,
   });
 
-  const rhinoPioneerHouse = await Model.fromGltfAsync({
-    modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(103.7804112385, 1.2902299393, 26.1901156884),
-      new HeadingPitchRoll(CesiumMath.toRadians(99.4), CesiumMath.toRadians(0), CesiumMath.toRadians(0)),
-    ),
-    show: false,
+  const rhinoPioneerHouse = await getModelMatrix({
+    longitude: 103.7804112385,
+    latitude: 1.2902299393,
+    height: 26.1901156884,
+    heading: 99.4,
+    pitch: 0,
+    roll: 0,
     url: '/pioneer-house/pioneer-house-22-25-rhino.gltf',
     featureIdLabel: '238932774',
   });
@@ -245,4 +249,31 @@ export async function load() {
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
   ];
+}
+
+type ModelOptions = {
+  longitude: number;
+  latitude: number;
+  height: number;
+  heading: number;
+  pitch: number;
+  roll: number;
+  url: string;
+  featureIdLabel: string;
+  scale?: number;
+  show?: boolean;
+};
+
+function getModelMatrix(params: ModelOptions) {
+  const { longitude, latitude, height, heading, pitch, roll, url, featureIdLabel, scale = 1, show = true } = params;
+  return Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(longitude, latitude, height),
+      new HeadingPitchRoll(CesiumMath.toRadians(heading), CesiumMath.toRadians(pitch), CesiumMath.toRadians(roll)),
+    ),
+    show: show,
+    scale: scale,
+    url: url,
+    featureIdLabel: featureIdLabel,
+  });
 }
