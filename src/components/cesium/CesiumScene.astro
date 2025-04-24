@@ -6,7 +6,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   window.CESIUM_BASE_URL = '/cesium';
   Ion.defaultAccessToken = import.meta.env.PUBLIC_CESIUM_TOKEN;
 
-  import pointsData from '../../content/points-of-interest/points.json';
+  import pointsData from '@content/points-of-interest/points.json';
   import {
     activePages,
     activeModel,
@@ -21,7 +21,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     toastMessage,
     pointId,
     showPoints,
-  } from '../../store';
+  } from '@store';
+
   import {
     Cartesian2,
     Cartesian3,
@@ -33,7 +34,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     Cesium3DTileStyle,
     ScreenSpaceEventType,
     defined,
-    MapboxStyleImageryProvider,
     JulianDate,
     Cesium3DTileset,
     ClippingPlaneCollection,
@@ -56,7 +56,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     ClockRange,
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumSceneUtils';
-  import type { MapLayers } from '../../types';
+  import { mapboxSatellite, mapboxDark, mapboxStreet, type MapLayers } from './mapLayers';
 
   (function initReducedMotion() {
     const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
@@ -133,19 +133,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       addLoadPercentUntilOffset();
     }, 100);
   })();
-
-  const mapboxSatellite = new MapboxStyleImageryProvider({
-    styleId: 'satellite-v9',
-    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
-  });
-  const mapboxDark = new MapboxStyleImageryProvider({
-    styleId: 'dark-v11',
-    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
-  });
-  const mapboxStreet = new MapboxStyleImageryProvider({
-    styleId: 'streets-v12',
-    accessToken: import.meta.env.PUBLIC_MAPBOX_TOKEN,
-  });
 
   // The displayed map layer is the last layer
   let mapLayerOrder: MapLayers[] = [];

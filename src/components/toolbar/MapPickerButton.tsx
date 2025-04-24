@@ -2,7 +2,8 @@ import Icons from '../Icons';
 import * as Popover from '@radix-ui/react-popover';
 import { activeMapLayer } from '../../store';
 import { useStore } from '@nanostores/react';
-import type { ImageProps, MapLayers } from '../../types';
+import type { ImageProps } from '../../types';
+import type { MapLayers } from '@components/cesium/mapLayers';
 import LazyImage from '../primitives/LazyImage';
 
 const MapPickerButton = () => {
