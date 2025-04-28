@@ -253,7 +253,7 @@ function getModelFromGltf(params: ModelOptions) {
     url,
     featureIdLabel,
     scale = 1,
-    show = true,
+    show = false,
   } = params;
   return Model.fromGltfAsync({
     modelMatrix: Transforms.headingPitchRollToFixedFrame(
