@@ -1,4 +1,4 @@
-import { Model, Transforms, Cartesian3, HeadingPitchRoll, Math as CesiumMath, Cesium3DTileset } from 'cesium';
+import { getModelFromCesiumIon, getModelFromGltf } from './cesiumUtils';
 
 export async function load() {
   const rhinoE6 = await getModelFromGltf({
@@ -193,13 +193,13 @@ export async function load() {
     featureIdLabel: '546382548',
   });
 
-  const rhinoLKCMuseum = await Cesium3DTileset.fromIonAssetId(2685876, {
-    show: false,
+  const rhinoLKCMuseum = await getModelFromCesiumIon({
+    assetId: 2685876,
     featureIdLabel: '54619794',
   });
 
-  const rhinoYNCArtsCenter = await Cesium3DTileset.fromIonAssetId(2686261, {
-    show: false,
+  const rhinoYNCArtsCenter = await getModelFromCesiumIon({
+    assetId: 2686261,
     featureIdLabel: '732229049',
   });
 
@@ -227,42 +227,4 @@ export async function load() {
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
   ];
-}
-
-type ModelOptions = {
-  longitude: number;
-  latitude: number;
-  height: number;
-  heading?: number;
-  pitch?: number;
-  roll?: number;
-  url: string;
-  featureIdLabel: string;
-  scale?: number;
-  show?: boolean;
-};
-
-function getModelFromGltf(params: ModelOptions) {
-  const {
-    longitude,
-    latitude,
-    height,
-    heading = 0,
-    pitch = 0,
-    roll = 0,
-    url,
-    featureIdLabel,
-    scale = 1,
-    show = false,
-  } = params;
-  return Model.fromGltfAsync({
-    modelMatrix: Transforms.headingPitchRollToFixedFrame(
-      Cartesian3.fromDegrees(longitude, latitude, height),
-      new HeadingPitchRoll(CesiumMath.toRadians(heading), CesiumMath.toRadians(pitch), CesiumMath.toRadians(roll)),
-    ),
-    show: show,
-    scale: scale,
-    url: url,
-    featureIdLabel: featureIdLabel,
-  });
 }

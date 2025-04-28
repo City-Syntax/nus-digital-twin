@@ -1,3 +1,4 @@
+import { Model, Transforms, Cartesian3, HeadingPitchRoll, Math as CesiumMath, Cesium3DTileset } from 'cesium';
 import buildingsData from '../../content/buildings/buildings.json';
 
 const buildingsToShow = buildingsData
@@ -39,3 +40,55 @@ export const OSM_DISTANCE_COLORS = [
   ['${distance} > 0.001', "color('#e6f6e1')"],
   ['${distance} > 0.0005', "color('#ecf8e6')"],
 ];
+
+type GltfModelOptions = {
+  longitude: number;
+  latitude: number;
+  height: number;
+  heading?: number;
+  pitch?: number;
+  roll?: number;
+  url: string;
+  featureIdLabel: string;
+  scale?: number;
+  show?: boolean;
+};
+
+export function getModelFromGltf(params: GltfModelOptions) {
+  const {
+    longitude,
+    latitude,
+    height,
+    heading = 0,
+    pitch = 0,
+    roll = 0,
+    url,
+    featureIdLabel,
+    scale = 1,
+    show = false,
+  } = params;
+  return Model.fromGltfAsync({
+    modelMatrix: Transforms.headingPitchRollToFixedFrame(
+      Cartesian3.fromDegrees(longitude, latitude, height),
+      new HeadingPitchRoll(CesiumMath.toRadians(heading), CesiumMath.toRadians(pitch), CesiumMath.toRadians(roll)),
+    ),
+    show: show,
+    scale: scale,
+    url: url,
+    featureIdLabel: featureIdLabel,
+  });
+}
+
+type Cesium3DTilesetOptions = {
+  assetId: number;
+  featureIdLabel: string;
+  show?: boolean;
+};
+
+export function getModelFromCesiumIon(params: Cesium3DTilesetOptions) {
+  const { assetId, featureIdLabel, show = false } = params;
+  return Cesium3DTileset.fromIonAssetId(assetId, {
+    show: show,
+    featureIdLabel: featureIdLabel,
+  });
+}

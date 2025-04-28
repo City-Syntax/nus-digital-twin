@@ -29,12 +29,12 @@ Models uploaded to [Cesium ion](https://cesium.com/platform/cesium-ion/) can be 
 
     :::
 
-2.  Add the code to retrieve the model from Cesium ion. A `featureIdLabel` which corresponds to the `elementId` in `src/content/buildings/buildings.json` should be included to allow building selection to function properly.
+2.  Add the code to retrieve the model from Cesium ion. A `featureIdLabel` which corresponds to the `elementId` in `src/content/buildings/buildings.json` should be included to allow building selection to function properly. The helper function `getModelFromCesiumIon()` is used to retrieve the model and is provided in `src/components/cesium/cesiumUtils.ts`.
 
     ```ts
     // src/components/cesium/CesiumScene.astro
-    const newModel = await Cesium3DTileset.fromIonAssetId(2686261, {
-      show: false,
+    const newModel = getModelFromCesium3DTileset({
+      assetId: <assetId>, // example: 2686261
       featureIdLabel: <elementId>,
     });
     ```
@@ -62,23 +62,20 @@ For model files stored within the repository, it is recommended to store them in
 
 1. Ensure the model is provided in `.glTF` format. Otherwise, convert the model file into a `.gltf` file. Refer to [the section below](#convert-from-other-file-types-to-gltf) for the conversion steps.
 
-2. Add the code to retrieve the model from the repository and position it correctly on the map.
+2. Add the code to retrieve the model from the repository and position it correctly on the map. The helper function `getModelFromGltf()` is used to retrieve the model and is provided in `src/components/cesium/cesiumUtils.ts`.
 
    ```ts
    // src/components/cesium/CesiumScene.astro
-   const newModel = await Model.fromGltfAsync({
-     modelMatrix: Transforms.headingPitchRollToFixedFrame(
-       Cartesian3.fromDegrees(<longitude>, <latitude>, <height>),
-       new HeadingPitchRoll(
-         CesiumMath.toRadians(<heading in degrees>),
-         CesiumMath.toRadians(<pitch in degrees>),
-         CesiumMath.toRadians(<roll in degrees>)
-       ),
-     ),
-     show: false,
-     url: <url to gltf file>, // example: '/rvrc/rvrc-g-rhino.gltf'
-     featureIdLabel: <element id>,
-   });
+   const newModel = await getModelFromGltf({
+    longitude: <longitude>,
+    latitude: <latitude>,
+    height: <height>,
+    heading: <heading in degrees>,
+    pitch: <pitch in degrees>,
+    roll: <roll in degrees>,
+    url: <url to gltf file>, // example: '/rvrc/rvrc-g-rhino.gltf'
+    featureIdLabel: <element id>,
+   })
    ```
 
 3. Add the `newModel` to the correct array to ensure it is attached to the correct group of models. This ensures that the model will be toggled on and off correctly.
