@@ -145,7 +145,7 @@ export async function load() {
     featureIdLabel: '54619730',
   });
 
-  const rhinoKuokFoundationHouse = getModelFromGltf({
+  const rhinoKuokFoundationHouse = await getModelFromGltf({
     longitude: 103.7736119902,
     latitude: 1.3003336117,
     height: 51.8346518242,
