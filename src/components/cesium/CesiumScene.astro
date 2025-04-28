@@ -56,6 +56,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   } from 'cesium';
   import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumUtils';
   import { load as loadRhinoModels } from './rhinoBuildingModels';
+  import { load as loadBuildingInformationModels } from './buildingInformationModels';
   import { mapboxSatellite, mapboxDark, mapboxStreet, type MapLayers } from './mapLayers';
 
   (function initReducedMotion() {
@@ -65,9 +66,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   })();
 
   let rhinoBuildingModels: Array<Model | Cesium3DTileset> = [];
-  async function initRhinoBuildingModels() {
-    rhinoBuildingModels = await loadRhinoModels();
-  }
+  let buildingInformationModels: Array<Model | Cesium3DTileset> = [];
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
@@ -322,20 +321,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    if (buildingInformationModels.includes(pickedFeature.primitive)) {
-      const resourceUrl = pickedFeature.primitive.resource.url;
-
-      if (resourceUrl.includes(yncId)) {
-        buildingId.set('732229050');
-      }
-
-      if (resourceUrl.includes(sde4Id)) {
-        buildingId.set('628774809');
-      }
-
-      return;
-    }
-
     buildingId.set(pickedFeature.getProperty('elementId'));
   }, ScreenSpaceEventType.LEFT_CLICK);
 
@@ -388,15 +373,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   }
 
-  const sde4Id = 2464285;
-  const yncId = 2463878;
-  const sde4 = await Cesium3DTileset.fromIonAssetId(sde4Id);
-  const ync = await Cesium3DTileset.fromIonAssetId(yncId);
-  const buildingInformationModels = [sde4, ync];
-  for (let i = 0; i < buildingInformationModels.length; i++) {
-    viewer.scene.primitives.add(buildingInformationModels[i]);
-    buildingInformationModels[i].show = false;
-  }
+  loadBuildingInformationModels().then((models) => {
+    buildingInformationModels = models;
+    for (const model of buildingInformationModels) {
+      viewer.scene.primitives.add(model);
+      model.show = false;
+    }
+  });
 
   function showAllBIM() {
     for (let i = 0; i < buildingInformationModels.length; i++) {
@@ -416,7 +399,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
   viewer.scene.primitives.add(rhinoUrbanModel);
 
-  initRhinoBuildingModels().then(() => {
+  loadRhinoModels().then((models) => {
+    rhinoBuildingModels = models;
     for (const model of rhinoBuildingModels) {
       viewer.scene.primitives.add(model);
     }
