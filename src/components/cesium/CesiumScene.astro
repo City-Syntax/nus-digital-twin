@@ -373,13 +373,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     }
   }
 
-  loadBuildingInformationModels().then((models) => {
-    buildingInformationModels = models;
-    for (const model of buildingInformationModels) {
-      viewer.scene.primitives.add(model);
-      model.show = false;
-    }
-  });
+  // loadBuildingInformationModels().then((models) => {
+  //   buildingInformationModels = models;
+  //   for (const model of buildingInformationModels) {
+  //     viewer.scene.primitives.add(model);
+  //     model.show = false;
+  //   }
+  // });
 
   function showAllBIM() {
     for (let i = 0; i < buildingInformationModels.length; i++) {
@@ -399,12 +399,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
   viewer.scene.primitives.add(rhinoUrbanModel);
 
-  loadRhinoModels().then((models) => {
-    rhinoBuildingModels = models;
-    for (const model of rhinoBuildingModels) {
-      viewer.scene.primitives.add(model);
-    }
-  });
+  // loadRhinoModels().then((models) => {
+  //   rhinoBuildingModels = models;
+  //   for (const model of rhinoBuildingModels) {
+  //     viewer.scene.primitives.add(model);
+  //   }
+  // });
 
   function showRhinoBuildings() {
     for (const model of rhinoBuildingModels) {
