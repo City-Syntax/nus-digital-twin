@@ -58,6 +58,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   import { load as loadRhinoModels } from './rhinoBuildingModels';
   import { load as loadBuildingInformationModels } from './buildingInformationModels';
   import { mapboxSatellite, mapboxDark, mapboxStreet, type MapLayers } from './mapLayers';
+  import { loadBuildingFootprints, loadGreenSpaces, loadStreetCenterlines } from './gisLayers';
 
   (function initReducedMotion() {
     const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
@@ -457,41 +458,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   showPoints.listen((isShow) => (pointsOfInterest.show = isShow));
 
-  const buildingFootprintsData = await GeoJsonDataSource.load('/shapefiles/footprints/buildings.json', {
-    stroke: Color.fromCssColorString('#0e7490ff'),
-    fill: Color.fromCssColorString('#06b6d4cc'),
-  });
-  const streetCenterlinesData = await GeoJsonDataSource.load('/shapefiles/centerlines/roads.json', {
-    stroke: Color.fromCssColorString('#ca8a04ff'),
-    clampToGround: true,
-  });
-  const greenSpacesData = await GeoJsonDataSource.load('/shapefiles/green-spaces/natural.json', {
-    stroke: Color.fromCssColorString('#15803dff'),
-    fill: Color.fromCssColorString('#22c55ecc'),
-  });
+  const buildingFootprintsData = await loadBuildingFootprints();
+  const streetCenterlinesData = await loadStreetCenterlines();
+  const greenSpacesData = await loadGreenSpaces();
 
   viewer.dataSources.add(buildingFootprintsData);
   viewer.dataSources.add(streetCenterlinesData);
   viewer.dataSources.add(greenSpacesData);
-
-  // Prevent the lines from overlaying on top of 3D tiles
-  streetCenterlinesData.entities.values.forEach((entity) => {
-    if (entity.polyline) {
-      entity.polyline.classificationType = new ConstantProperty(ClassificationType.TERRAIN);
-    }
-  });
-
-  buildingFootprintsData.entities.values.forEach((entity) => {
-    if (entity.polygon) {
-      entity.polygon.heightReference = new ConstantProperty(HeightReference.CLAMP_TO_TERRAIN);
-    }
-  });
-
-  greenSpacesData.entities.values.forEach((entity) => {
-    if (entity.polygon) {
-      entity.polygon.heightReference = new ConstantProperty(HeightReference.CLAMP_TO_TERRAIN);
-    }
-  });
 
   activeGISLayer.subscribe((val) => {
     buildingFootprintsData.show = val.has('building-footprints');
