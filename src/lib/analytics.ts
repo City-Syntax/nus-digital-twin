@@ -10,13 +10,30 @@ const initialiser = {
   },
 };
 
-export const getActiveVisitors = async () => {
+type VisitorsResponse = {
+  visitors: number;
+};
+
+type Metric = {
+  value: number;
+  prev: number;
+};
+
+type StatsResponse = {
+  pageviews: Metric;
+  visitors: Metric;
+  visits: Metric;
+  bounces: Metric;
+  totaltime: Metric;
+};
+
+export const getActiveVisitors = async (): Promise<VisitorsResponse> => {
   const request = fetch(`${baseUrl}/websites/${websiteId}/active`, initialiser);
   const response = await request;
   return await response.json();
 };
 
-export const getAllStats = async () => {
+export const getAllStats = async (): Promise<StatsResponse> => {
   const startTime = new Date(0).getTime();
   const endTime = Date.now();
   const request = fetch(`${baseUrl}/websites/${websiteId}/stats?startAt=${startTime}&endAt=${endTime}`, initialiser);

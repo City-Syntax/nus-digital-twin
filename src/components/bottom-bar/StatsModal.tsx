@@ -1,15 +1,19 @@
 import { useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { getActiveVisitors } from 'lib/analytics';
+import { getAllStats } from 'lib/analytics';
 
 const StatsModal = () => {
-  const [activeVisitors, setActiveVisitors] = useState(0);
+  const [lifetimeVisitors, setLifetimeVisitors] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <Dialog.Root
       onOpenChange={(open) => {
         if (open) {
-          getActiveVisitors().then((data) => {
-            setActiveVisitors(data.visitors);
+          setIsLoading(true);
+          getAllStats().then((data) => {
+            setLifetimeVisitors(data.visitors.value);
+            setIsLoading(false);
           });
         }
       }}
@@ -22,7 +26,9 @@ const StatsModal = () => {
         <Dialog.Content className="modal__content">
           <Dialog.Title>Statistics</Dialog.Title>
           <Dialog.Description className="sr-only">Statistics for NUS Digital Twin</Dialog.Description>
-          <div className="modal__content__description">Visitors: {activeVisitors}</div>
+          <div className="modal__content__description">
+            Visitors (from 8 May 2025): {isLoading ? 'Loading...' : lifetimeVisitors}
+          </div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
