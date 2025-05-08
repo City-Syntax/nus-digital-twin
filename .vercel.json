@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/analytics-api/:match*",
+      "destination": "https://api.umami.is/v1/:match*"
+    },
+    {
+      "source": "/analytics.js",
+      "destination": "https://cloud.umami.is/script.js"
+    }
+  ]
+}
