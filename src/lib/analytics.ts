@@ -1,15 +1,3 @@
-const baseUrl = import.meta.env.PUBLIC_UMAMI_API_ENDPOINT;
-const apiKey = import.meta.env.PUBLIC_UMAMI_API_KEY;
-const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
-
-const initialiser = {
-  method: 'GET',
-  headers: {
-    Accept: 'application/json',
-    'x-umami-api-key': apiKey,
-  },
-};
-
 type VisitorsResponse = {
   visitors: number;
 };
@@ -28,15 +16,13 @@ type StatsResponse = {
 };
 
 export const getActiveVisitors = async (): Promise<VisitorsResponse> => {
-  const request = fetch(`${baseUrl}/websites/${websiteId}/active`, initialiser);
-  const response = await request;
-  return await response.json();
+  const req = fetch('/api/analytics/active');
+  const res = await req;
+  return await res.json();
 };
 
 export const getAllStats = async (): Promise<StatsResponse> => {
-  const startTime = new Date(0).getTime();
-  const endTime = Date.now();
-  const request = fetch(`${baseUrl}/websites/${websiteId}/stats?startAt=${startTime}&endAt=${endTime}`, initialiser);
-  const response = await request;
-  return await response.json();
+  const req = fetch('/api/analytics/stats');
+  const res = await req;
+  return await res.json();
 };
