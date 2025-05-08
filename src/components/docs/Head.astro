@@ -2,9 +2,13 @@
 import Default from '@astrojs/starlight/components/Head.astro';
 import figtreeWoff2 from '@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2?url';
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+
+const isDev = import.meta.env.DEV;
 ---
 
 <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin="anonymous" />
 <link rel="preload" as="font" type="font/woff2" href={figtreeWoff2} crossorigin="anonymous" />
 <link rel="sitemap" href="/sitemap-index.xml" />
+<script is:inline defer src="/api/analytics/script" data-website-id="4e64fb7a-db4b-49de-9157-953c35bb384d"></script>
+{isDev && <script is:inline>localStorage.setItem('umami.disabled', 1)</script>}
 <Default><slot /></Default>
