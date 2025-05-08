@@ -13,6 +13,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description } = Astro.props;
 
 const formattedTitle = `${title ? title + ' | ' : ''}NUS Digital Twin`;
+const isDev = import.meta.env.DEV;
 ---
 
 <!doctype html>
@@ -42,6 +43,7 @@ const formattedTitle = `${title ? title + ' | ' : ''}NUS Digital Twin`;
       defer
       src="https://cloud.umami.is/script.js"
       data-website-id="4e64fb7a-db4b-49de-9157-953c35bb384d"></script>
+    {isDev && <script is:inline>localStorage.setItem('umami.disabled', 1)</script>}
     <title>{formattedTitle}</title>
   </head>
   <body>
