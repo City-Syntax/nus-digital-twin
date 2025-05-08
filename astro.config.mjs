@@ -151,7 +151,7 @@ export default defineConfig({
         '/analytics.js': {
           target: 'https://cloud.umami.is',
           changeOrigin: true,
-          rewrite: (path) => '/script.js',
+          rewrite: (path) => path.replace(/^\/analytics.js/, '/script.js'),
         },
       },
     },
