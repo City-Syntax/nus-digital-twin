@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 
+export const prerender = false;
 const baseUrl = import.meta.env.PUBLIC_UMAMI_API_ENDPOINT;
 const apiKey = import.meta.env.PUBLIC_UMAMI_API_KEY;
 const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
