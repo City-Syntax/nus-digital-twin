@@ -1,4 +1,4 @@
-const baseUrl = import.meta.env.PUBLIC_UMAMI_API_ENDPOINT;
+const baseUrl = '/analytics-api';
 const apiKey = import.meta.env.PUBLIC_UMAMI_API_KEY;
 const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
 

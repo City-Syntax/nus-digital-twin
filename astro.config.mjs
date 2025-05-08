@@ -129,5 +129,31 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      proxy: {
+        '/analytics-api': {
+          target: 'https://api.umami.is',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/analytics-api/, '/v1'),
+          configure: (proxy, _options) => {
+            proxy.on('error', (err, _req, _res) => {
+              console.log('proxy error', err);
+            });
+            proxy.on('proxyReq', (proxyReq, req, _res) => {
+              if (req.body) {
+                const bodyData = JSON.stringify(req.body);
+                proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
+                proxyReq.write(bodyData);
+              }
+            });
+          },
+        },
+        '/analytics.js': {
+          target: 'https://cloud.umami.is',
+          changeOrigin: true,
+          rewrite: (path) => '/script.js',
+        },
+      },
+    },
   },
 });
