@@ -400,6 +400,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoBuildingModels = models;
     for (const model of rhinoBuildingModels) {
       viewer.scene.primitives.add(model);
+      model.show = false;
     }
   });
 

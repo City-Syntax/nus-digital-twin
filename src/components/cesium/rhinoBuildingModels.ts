@@ -1,4 +1,4 @@
-import { getModelFromCesiumIon, getModelFromGltf, getModelFromUrl } from './cesiumUtils';
+import { getModelFromGltf, getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
   const rhinoE6 = await getModelFromGltf({
@@ -12,12 +12,8 @@ export async function load() {
     scale: 1.05,
   });
 
-  const rhinoE2A = await getModelFromGltf({
-    longitude: 103.7713864135,
-    latitude: 1.2987547954,
-    height: 71.4093914346,
-    heading: 67,
-    url: '/e2a/e2a-rhino.gltf',
+  const rhinoE2A = await getModelFromUrl({
+    url: '/e2a/e2a-rhino-ion/tileset.json',
     featureIdLabel: '628777635',
   });
 
@@ -69,14 +65,9 @@ export async function load() {
     featureIdLabel: '54583485',
   });
 
-  const rhinoNUSMuseum = await getModelFromGltf({
-    longitude: 103.7724974951,
-    latitude: 1.3014554191,
-    height: 38.705815314,
-    heading: 19.5,
-    url: '/nus-museum/nus-museum-rhino.gltf',
+  const rhinoNUSMuseum = await getModelFromUrl({
+    url: '/nus-museum/nus-museum-rhino-ion/tileset.json',
     featureIdLabel: '54583930',
-    scale: 1.1,
   });
 
   const rhinoSDE2 = await getModelFromGltf({
@@ -174,13 +165,8 @@ export async function load() {
     featureIdLabel: '639258228',
   });
 
-  const rhinoShearesA = await getModelFromGltf({
-    longitude: 103.775214582,
-    latitude: 1.2914901374,
-    height: 30.437453453,
-    heading: 111.3,
-    scale: 0.4,
-    url: '/sheares-hall/sheares-a-rhino.gltf',
+  const rhinoShearesA = await getModelFromUrl({
+    url: '/sheares-hall/sheares-a-rhino-ion/tileset.json',
     featureIdLabel: '455250294',
   });
 
@@ -193,8 +179,8 @@ export async function load() {
     featureIdLabel: '546382548',
   });
 
-  const rhinoLKCMuseum = await getModelFromCesiumIon({
-    assetId: 2685876,
+  const rhinoLKCMuseum = await getModelFromUrl({
+    url: '/lkc-museum/lkc-museum-rhino-ion/tileset.json',
     featureIdLabel: '54619794',
   });
 
