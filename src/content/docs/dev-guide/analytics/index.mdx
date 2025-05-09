@@ -1,0 +1,26 @@
+---
+title: Analytics
+description: Learn about NUS Digital Twin's analytics
+---
+
+NUS Digital Twin uses web analytics to track user interactions and improve the user experience. The site uses [Umami Analytics](https://umami.is/) to collect data on user behavior, such as page views, clicks, and other interactions.
+
+:::note
+Umami Analytics is disabled in the development environment.
+:::
+
+## Managing Analytics
+
+To manage analytics, you can use the `src/lib/analytics.ts` file. This file contains the available analytics events and the functions to track them. You can add or remove events as needed.
+
+## API Routes
+
+To bypass ad blockers, NUS Digital Twin uses multiple proxy API routes to send analytics data, located at `src/pages/api/analytics/*.ts`. These routes handles the request and forwards it to the Umami Analytics server.
+
+### `script.ts`
+
+This route fetches the Umami Analytics script and returns it as a response. This allows the analytics data to be sent without being blocked.
+
+### `[path].ts`
+
+This route handles the calling of the Umami API. It forwards the request to the Umami server and returns the response. This allows the analytics data to be received without being blocked.

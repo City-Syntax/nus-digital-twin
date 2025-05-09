@@ -101,6 +101,10 @@ export default defineConfig({
           autogenerate: { directory: 'dev-guide/documentation' },
         },
         {
+          label: 'Analytics',
+          autogenerate: { directory: 'dev-guide/analytics' },
+        },
+        {
           label: 'Deployment',
           autogenerate: { directory: 'dev-guide/deployment' },
         },
