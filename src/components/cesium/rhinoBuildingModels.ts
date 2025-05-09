@@ -25,14 +25,9 @@ export async function load() {
     featureIdLabel: '238932774',
   });
 
-  const rhinoCOM2 = await getModelFromGltf({
-    longitude: 103.7743124495,
-    latitude: 1.2939952856,
-    height: 37.2996820597,
-    heading: -204,
-    url: '/com2/com2-rhino.gltf',
+  const rhinoCOM2 = await getModelFromUrl({
+    url: '/com2/com2-rhino-ion/tileset.json',
     featureIdLabel: '54619699',
-    scale: 0.43,
   });
 
   const rhinoPgprBlock1 = await getModelFromUrl({
@@ -64,15 +59,6 @@ export async function load() {
     url: '/sde4/sde4-rhino-ion/tileset.json',
     featureIdLabel: '628774809',
   });
-
-  // const rhinoSDE4 = await getModelFromGltf({
-  //   longitude: 103.7703672003,
-  //   latitude: 1.2968668531,
-  //   height: 45.0226349587,
-  //   heading: 108.8,
-  //   url: '/sde4/sde4-rhino.gltf',
-  //   featureIdLabel: '628774809',
-  // });
 
   const rhinoTechnoEdge = await getModelFromGltf({
     longitude: 103.7714223457,
