@@ -55,13 +55,8 @@ export async function load() {
     featureIdLabel: '140078560',
   });
 
-  const rhinoSDE3 = await getModelFromGltf({
-    longitude: 103.7703213411,
-    latitude: 1.2981575567,
-    height: 72.1150038858,
-    heading: 154.7,
-    scale: 1.2,
-    url: '/sde3/sde3-rhino.gltf',
+  const rhinoSDE3 = await getModelFromUrl({
+    url: '/sde3/sde3-rhino-ion/tileset.json',
     featureIdLabel: '140079084',
   });
 
