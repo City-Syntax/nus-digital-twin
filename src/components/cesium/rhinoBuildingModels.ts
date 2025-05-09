@@ -1,15 +1,9 @@
 import { getModelFromGltf, getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
-  const rhinoE6 = await getModelFromGltf({
-    longitude: 103.7730368432,
-    latitude: 1.2991728525,
-    height: 52.20497546,
-    heading: 155.6,
-    pitch: 90,
-    url: '/e6/e6-rhino.gltf',
+  const rhinoE6 = await getModelFromUrl({
+    url: '/e6/e6-rhino-ion/tileset.json',
     featureIdLabel: '139959760',
-    scale: 1.05,
   });
 
   const rhinoE2A = await getModelFromUrl({
