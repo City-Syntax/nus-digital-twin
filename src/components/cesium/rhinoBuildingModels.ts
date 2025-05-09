@@ -65,14 +65,9 @@ export async function load() {
     featureIdLabel: '54583485',
   });
 
-  const rhinoNUSMuseum = await getModelFromGltf({
-    longitude: 103.7724974951,
-    latitude: 1.3014554191,
-    height: 38.705815314,
-    heading: 19.5,
-    url: '/nus-museum/nus-museum-rhino.gltf',
+  const rhinoNUSMuseum = await getModelFromUrl({
+    url: '/nus-museum/nus-museum-rhino-ion/tileset.json',
     featureIdLabel: '54583930',
-    scale: 1.1,
   });
 
   const rhinoSDE2 = await getModelFromGltf({
