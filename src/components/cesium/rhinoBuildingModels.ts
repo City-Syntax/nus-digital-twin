@@ -46,14 +46,9 @@ export async function load() {
     scale: 0.43,
   });
 
-  const rhinoPgprBlock1 = await getModelFromGltf({
-    longitude: 103.7829198753,
-    latitude: 1.291489802,
-    height: 51.2208270602,
-    heading: -40,
-    url: '/pgpr/pgpr-block1-rhino.gltf',
+  const rhinoPgprBlock1 = await getModelFromUrl({
+    url: '/pgpr/pgpr-block1-rhino-ion/tileset.json',
     featureIdLabel: '238932786',
-    scale: 0.48,
   });
 
   const rhinoAS8 = await getModelFromGltf({
