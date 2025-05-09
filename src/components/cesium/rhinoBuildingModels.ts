@@ -199,7 +199,7 @@ export async function load() {
   });
 
   const rhinoYNCArtsCenter = await getModelFromUrl({
-    url: '/ync/ync-rhino-ion/tileset.json',
+    url: '/ync/ync-arts-center-rhino-ion/tileset.json',
     featureIdLabel: '732229049',
   });
 
