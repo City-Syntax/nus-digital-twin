@@ -40,12 +40,8 @@ export async function load() {
     featureIdLabel: '238932786',
   });
 
-  const rhinoAS8 = await getModelFromGltf({
-    longitude: 103.7722692363,
-    latitude: 1.296027148,
-    height: 55.2598169315,
-    heading: 109.9,
-    url: '/as8/as8-rhino.gltf',
+  const rhinoAS8 = await getModelFromUrl({
+    url: '/as8/as8-rhino-ion/tileset.json',
     featureIdLabel: '54583485',
   });
 
