@@ -37,3 +37,30 @@ Enables Mapbox tiles in development. By default, Mapbox tiles are disabled in de
 // .env
 PUBLIC_SHOW_MAPBOX="true"
 ```
+
+## `PUBLIC_UMAMI_WEBSITE_ID`
+
+NUS Digital Twin uses Umami Cloud to track website analytics. This variable is the website ID for the NUS Digital Twin Umami instance. This environment variable is used to retrieve the analytics statistics for this site for display in the statistics modal. The website id can be obtained from the Umami dashboard on the websites tab.
+
+```
+// .env
+PUBLIC_UMAMI_WEBSITE_ID="XXXXXX-XXXX-XXXX-XXXX-XXXXXXX"
+```
+
+## `PUBLIC_UMAMI_API_KEY`
+
+NUS Digital Twin uses Umami Cloud to track website analytics. An API key is used to authenticate requests to the Umami API to retrieve statistics. The API key can be obtained from the Umami dashboard on the API keys tab. See [Umami's documentation](https://umami.is/docs/cloud/api-key) for more information.
+
+```
+//.env
+PUBLIC_UMAMI_API_KEY="api_XXXXXXXXXXXXXXX"
+```
+
+## `PUBLIC_UMAMI_API_ENDPOINT`
+
+This is the Umami API endpoint. If using Umami Cloud, it should be set to the Umami Cloud API endpoint. This variable is used to retrieve the analytics statistics for this site for display in the statistics modal.
+
+```
+// .env
+PUBLIC_UMAMI_API_ENDPOINT="https://api.umami.is/v1"
+```
