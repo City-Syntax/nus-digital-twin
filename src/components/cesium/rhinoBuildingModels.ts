@@ -60,14 +60,19 @@ export async function load() {
     featureIdLabel: '140079084',
   });
 
-  const rhinoSDE4 = await getModelFromGltf({
-    longitude: 103.7703672003,
-    latitude: 1.2968668531,
-    height: 45.0226349587,
-    heading: 108.8,
-    url: '/sde4/sde4-rhino.gltf',
+  const rhinoSDE4 = await getModelFromUrl({
+    url: '/sde4/sde4-rhino-ion/tileset.json',
     featureIdLabel: '628774809',
   });
+
+  // const rhinoSDE4 = await getModelFromGltf({
+  //   longitude: 103.7703672003,
+  //   latitude: 1.2968668531,
+  //   height: 45.0226349587,
+  //   heading: 108.8,
+  //   url: '/sde4/sde4-rhino.gltf',
+  //   featureIdLabel: '628774809',
+  // });
 
   const rhinoTechnoEdge = await getModelFromGltf({
     longitude: 103.7714223457,
