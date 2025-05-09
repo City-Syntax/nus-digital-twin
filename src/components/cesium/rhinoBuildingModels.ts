@@ -184,8 +184,8 @@ export async function load() {
     featureIdLabel: '546382548',
   });
 
-  const rhinoLKCMuseum = await getModelFromCesiumIon({
-    assetId: 2685876,
+  const rhinoLKCMuseum = await getModelFromUrl({
+    url: '/lkc-museum/lkc-museum-rhino-ion/tileset.json',
     featureIdLabel: '54619794',
   });
 
