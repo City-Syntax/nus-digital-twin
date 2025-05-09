@@ -12,12 +12,8 @@ export async function load() {
     scale: 1.05,
   });
 
-  const rhinoE2A = await getModelFromGltf({
-    longitude: 103.7713864135,
-    latitude: 1.2987547954,
-    height: 71.4093914346,
-    heading: 67,
-    url: '/e2a/e2a-rhino.gltf',
+  const rhinoE2A = await getModelFromUrl({
+    url: '/e2a/e2a-rhino-ion/tileset.json',
     featureIdLabel: '628777635',
   });
 
