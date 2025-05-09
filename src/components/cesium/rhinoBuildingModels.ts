@@ -56,12 +56,8 @@ export async function load() {
     featureIdLabel: '628774809',
   });
 
-  const rhinoTechnoEdge = await getModelFromGltf({
-    longitude: 103.7714223457,
-    latitude: 1.2979071911,
-    height: 58.3863356009,
-    heading: 233.1,
-    url: '/techno-edge/techno-edge-rhino.gltf',
+  const rhinoTechnoEdge = await getModelFromUrl({
+    url: '/techno-edge/techno-edge-rhino-ion/tileset.json',
     featureIdLabel: '730959512',
   });
 
