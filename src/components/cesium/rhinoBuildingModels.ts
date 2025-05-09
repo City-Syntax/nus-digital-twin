@@ -11,14 +11,9 @@ export async function load() {
     featureIdLabel: '628777635',
   });
 
-  const rhinoCELC = await getModelFromGltf({
-    longitude: 103.7713937579,
-    latitude: 1.2969843253,
-    height: 44.9642791517,
-    heading: 18.5,
-    url: '/celc/celc-rhino.gltf',
+  const rhinoCELC = await getModelFromUrl({
+    url: '/celc/celc-rhino-ion/tileset.json',
     featureIdLabel: '140084916',
-    scale: 0.52,
   });
 
   const rhinoPioneerHouse = await getModelFromGltf({
