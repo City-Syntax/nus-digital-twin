@@ -16,12 +16,8 @@ export async function load() {
     featureIdLabel: '140084916',
   });
 
-  const rhinoPioneerHouse = await getModelFromGltf({
-    longitude: 103.7804112385,
-    latitude: 1.2902299393,
-    height: 26.1901156884,
-    heading: 99.4,
-    url: '/pioneer-house/pioneer-house-22-25-rhino.gltf',
+  const rhinoPioneerHouse2225 = await getModelFromUrl({
+    url: '/pioneer-house/pioneer-house-22-25-rhino-ion/tileset.json',
     featureIdLabel: '238932774',
   });
 
@@ -151,7 +147,7 @@ export async function load() {
     rhinoE2A,
     rhinoE6,
     rhinoCELC,
-    rhinoPioneerHouse,
+    rhinoPioneerHouse2225,
     rhinoNUSMuseum,
     rhinoCOM2,
     rhinoPgprBlock1,
