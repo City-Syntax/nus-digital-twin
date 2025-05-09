@@ -79,16 +79,28 @@ export function getModelFromGltf(params: GltfModelOptions) {
   });
 }
 
-type Cesium3DTilesetOptions = {
+type Cesium3DTilesetIonOptions = {
   assetId: number;
   featureIdLabel: string;
   show?: boolean;
 };
 
-export function getModelFromCesiumIon(params: Cesium3DTilesetOptions) {
+export function getModelFromCesiumIon(params: Cesium3DTilesetIonOptions) {
   const { assetId, featureIdLabel, show = false } = params;
   return Cesium3DTileset.fromIonAssetId(assetId, {
     show: show,
     featureIdLabel: featureIdLabel,
+  });
+}
+
+type Cesium3DTilesetUrlOptions = {
+  url: string;
+  featureIdLabel: string;
+  show?: boolean;
+};
+
+export function getModelFromUrl(params: Cesium3DTilesetUrlOptions) {
+  return Cesium3DTileset.fromUrl(params.url, {
+    ...params,
   });
 }

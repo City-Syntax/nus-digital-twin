@@ -1,4 +1,4 @@
-import { getModelFromCesiumIon, getModelFromGltf } from './cesiumUtils';
+import { getModelFromCesiumIon, getModelFromGltf, getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
   const rhinoE6 = await getModelFromGltf({
@@ -198,8 +198,8 @@ export async function load() {
     featureIdLabel: '54619794',
   });
 
-  const rhinoYNCArtsCenter = await getModelFromCesiumIon({
-    assetId: 2686261,
+  const rhinoYNCArtsCenter = await getModelFromUrl({
+    url: '/ync/ync-arts-center-rhino-ion/tileset.json',
     featureIdLabel: '732229049',
   });
 
