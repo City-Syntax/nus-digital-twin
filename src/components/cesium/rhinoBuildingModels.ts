@@ -146,12 +146,8 @@ export async function load() {
     featureIdLabel: '241265457',
   });
 
-  const rhinoMedicineScienceLibrary = await getModelFromGltf({
-    longitude: 103.7817655955,
-    latitude: 1.2969427365,
-    height: 39.6354038487,
-    heading: -69.8,
-    url: '/msl/msl-rhino.gltf',
+  const rhinoMedicineScienceLibrary = await getModelFromUrl({
+    url: '/msl/msl-rhino-ion/tileset.json',
     featureIdLabel: '141913116',
   });
 
