@@ -7,7 +7,7 @@ export async function GET() {
       status: 200,
       headers: {
         'Content-Type': 'application/javascript',
-        'Cache-Control': 'public, max-age=3600', // Optional caching
+        'Cache-Control': 'public, max-age=3600',
       },
     });
   } catch (error) {

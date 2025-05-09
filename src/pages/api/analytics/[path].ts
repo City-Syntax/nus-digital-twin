@@ -25,7 +25,11 @@ const routeMap: Record<string, () => string> = {
 export const GET: APIRoute = async ({ params }) => {
   const path = params.path;
 
-  const buildUrl = path && routeMap[path];
+  if (!path) {
+    return new Response(JSON.stringify({ error: 'Invalid path' }), { status: 404 });
+  }
+
+  const buildUrl = routeMap[path];
   if (!buildUrl) {
     return new Response(JSON.stringify({ error: 'Invalid path' }), { status: 404 });
   }
