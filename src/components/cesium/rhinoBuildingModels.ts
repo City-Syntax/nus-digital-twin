@@ -86,13 +86,8 @@ export async function load() {
     featureIdLabel: '141913116',
   });
 
-  const rhinoShearesMain = await getModelFromGltf({
-    longitude: 103.7758329693,
-    latitude: 1.2914051269,
-    height: 44.1314822062,
-    heading: 28.7,
-    scale: 1.2,
-    url: '/sheares-hall/sheares-main-rhino.gltf',
+  const rhinoShearesMain = await getModelFromUrl({
+    url: '/sheares-hall/sheares-main-rhino-ion/tileset.json',
     featureIdLabel: '639258228',
   });
 
