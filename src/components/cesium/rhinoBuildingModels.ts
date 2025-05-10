@@ -66,13 +66,8 @@ export async function load() {
     featureIdLabel: '730956214',
   });
 
-  const rhinoTheDeck = await getModelFromGltf({
-    longitude: 103.7724884969,
-    latitude: 1.2946662859,
-    height: 65.8838104518,
-    heading: -28,
-    scale: 1.4,
-    url: '/the-deck/the-deck-rhino.gltf',
+  const rhinoTheDeck = await getModelFromUrl({
+    url: '/the-deck/the-deck-rhino-ion/tileset.json',
     featureIdLabel: '140087193',
   });
 
