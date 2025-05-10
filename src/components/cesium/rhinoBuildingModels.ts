@@ -1,4 +1,4 @@
-import { getModelFromGltf, getModelFromUrl } from './cesiumUtils';
+import { getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
   const rhinoE6 = await getModelFromUrl({
@@ -61,42 +61,23 @@ export async function load() {
     featureIdLabel: '730959512',
   });
 
-  const rhinoUSC = await getModelFromGltf({
-    longitude: 103.775544178,
-    latitude: 1.2997341879,
-    height: 27.7347173989,
-    heading: -2.5,
-    scale: 0.9,
-    url: '/usc/usc-rhino.gltf',
+  const rhinoUSC = await getModelFromUrl({
+    url: '/usc/usc-rhino-ion/tileset.json',
     featureIdLabel: '730956214',
   });
 
-  const rhinoTheDeck = await getModelFromGltf({
-    longitude: 103.7724884969,
-    latitude: 1.2946662859,
-    height: 65.8838104518,
-    heading: -28,
-    scale: 1.4,
-    url: '/the-deck/the-deck-rhino.gltf',
+  const rhinoTheDeck = await getModelFromUrl({
+    url: '/the-deck/the-deck-rhino-ion/tileset.json',
     featureIdLabel: '140087193',
   });
 
-  const rhinoSSLS = await getModelFromGltf({
-    longitude: 103.7750945264,
-    latitude: 1.295625549,
-    height: 45.8205900698,
-    heading: 55.6,
-    url: '/ssls/ssls-rhino.gltf',
+  const rhinoSSLS = await getModelFromUrl({
+    url: '/ssls/ssls-rhino-ion/tileset.json',
     featureIdLabel: '54619730',
   });
 
-  const rhinoKuokFoundationHouse = await getModelFromGltf({
-    longitude: 103.7736119902,
-    latitude: 1.3003336117,
-    height: 51.8346518242,
-    heading: -25.5,
-    scale: 1.52,
-    url: '/raffles-hall/kuok-foundation-house-rhino.gltf',
+  const rhinoKuokFoundationHouse = await getModelFromUrl({
+    url: '/raffles-hall/kuok-foundation-house-rhino-ion/tileset.json',
     featureIdLabel: '241265457',
   });
 
@@ -105,13 +86,8 @@ export async function load() {
     featureIdLabel: '141913116',
   });
 
-  const rhinoShearesMain = await getModelFromGltf({
-    longitude: 103.7758329693,
-    latitude: 1.2914051269,
-    height: 44.1314822062,
-    heading: 28.7,
-    scale: 1.2,
-    url: '/sheares-hall/sheares-main-rhino.gltf',
+  const rhinoShearesMain = await getModelFromUrl({
+    url: '/sheares-hall/sheares-main-rhino-ion/tileset.json',
     featureIdLabel: '639258228',
   });
 
@@ -120,12 +96,8 @@ export async function load() {
     featureIdLabel: '455250294',
   });
 
-  const rhinoRvrcG = await getModelFromGltf({
-    longitude: 103.7767993479,
-    latitude: 1.2974922895,
-    height: 44.840297406,
-    heading: -70.1,
-    url: '/rvrc/rvrc-g-rhino.gltf',
+  const rhinoRvrcG = await getModelFromUrl({
+    url: '/rvrc/rvrc-g-rhino-ion/tileset.json',
     featureIdLabel: '546382548',
   });
 
