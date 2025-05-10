@@ -71,12 +71,8 @@ export async function load() {
     featureIdLabel: '140087193',
   });
 
-  const rhinoSSLS = await getModelFromGltf({
-    longitude: 103.7750945264,
-    latitude: 1.295625549,
-    height: 45.8205900698,
-    heading: 55.6,
-    url: '/ssls/ssls-rhino.gltf',
+  const rhinoSSLS = await getModelFromUrl({
+    url: '/ssls/ssls-rhino-ion/tileset.json',
     featureIdLabel: '54619730',
   });
 
