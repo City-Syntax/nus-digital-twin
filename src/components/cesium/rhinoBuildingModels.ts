@@ -76,13 +76,8 @@ export async function load() {
     featureIdLabel: '54619730',
   });
 
-  const rhinoKuokFoundationHouse = await getModelFromGltf({
-    longitude: 103.7736119902,
-    latitude: 1.3003336117,
-    height: 51.8346518242,
-    heading: -25.5,
-    scale: 1.52,
-    url: '/raffles-hall/kuok-foundation-house-rhino.gltf',
+  const rhinoKuokFoundationHouse = await getModelFromUrl({
+    url: '/raffles-hall/kuok-foundation-house-rhino-ion/tileset.json',
     featureIdLabel: '241265457',
   });
 
