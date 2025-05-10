@@ -1,4 +1,4 @@
-import { getModelFromGltf, getModelFromUrl } from './cesiumUtils';
+import { getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
   const rhinoE6 = await getModelFromUrl({
