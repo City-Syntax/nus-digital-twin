@@ -21,6 +21,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     toastMessage,
     pointId,
     showPoints,
+    isModelsAdded,
   } from '@store';
 
   import {
@@ -216,6 +217,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   osmBuildingsTileset.maximumScreenSpaceError = 0;
   osmBuildingsTileset.preloadWhenHidden = true;
   viewer.scene.primitives.add(osmBuildingsTileset);
+  isModelsAdded.setKey('osm', true);
 
   let totalTiles = 0;
   function tileLoadProgressListener(queuedTiles: number) {
@@ -376,6 +378,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       viewer.scene.primitives.add(model);
       model.show = false;
     }
+    isModelsAdded.setKey('bim', true);
   });
 
   function showAllBIM() {
@@ -395,6 +398,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     featureIdLabel: 'rhino-urban-model',
   });
   viewer.scene.primitives.add(rhinoUrbanModel);
+  isModelsAdded.setKey('rhino-urban', true);
 
   loadRhinoModels().then((models) => {
     rhinoBuildingModels = models;
@@ -402,6 +406,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       viewer.scene.primitives.add(model);
       model.show = false;
     }
+    isModelsAdded.setKey('rhino-building', true);
   });
 
   function showRhinoBuildings() {

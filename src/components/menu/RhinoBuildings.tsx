@@ -1,10 +1,11 @@
-import React from 'react';
 import CloseButton from './CloseButton';
-import { activeModel } from '../../store';
+import { activeModel, isModelsAdded } from '../../store';
 import { useStore } from '@nanostores/react';
 
 const RhinoBuildings = () => {
   const $activeModel = useStore(activeModel);
+  const isLoaded = useStore(isModelsAdded)['rhino-building'];
+
   return (
     <>
       <div className="menubar-content-header">
@@ -18,10 +19,15 @@ const RhinoBuildings = () => {
             <button
               onClick={() => activeModel.set('rhino-building')}
               className={$activeModel === 'rhino-building' ? 'active' : ''}
+              disabled={!isLoaded}
             >
               On
             </button>
-            <button onClick={() => activeModel.set('')} className={$activeModel !== 'rhino-building' ? 'active' : ''}>
+            <button
+              onClick={() => activeModel.set('')}
+              className={$activeModel !== 'rhino-building' ? 'active' : ''}
+              disabled={!isLoaded}
+            >
               Off
             </button>
           </div>
