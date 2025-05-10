@@ -102,6 +102,7 @@
     backdrop-filter: none;
     border-radius: 0;
     font-size: var(--text-base);
+    box-shadow: none;
 
     &.hide {
       height: 240px;
