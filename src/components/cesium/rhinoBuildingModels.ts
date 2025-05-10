@@ -96,12 +96,8 @@ export async function load() {
     featureIdLabel: '455250294',
   });
 
-  const rhinoRvrcG = await getModelFromGltf({
-    longitude: 103.7767993479,
-    latitude: 1.2974922895,
-    height: 44.840297406,
-    heading: -70.1,
-    url: '/rvrc/rvrc-g-rhino.gltf',
+  const rhinoRvrcG = await getModelFromUrl({
+    url: '/rvrc/rvrc-g-rhino-ion/tileset.json',
     featureIdLabel: '546382548',
   });
 
