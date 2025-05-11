@@ -239,7 +239,17 @@
     "address": "8 College Avenue East",
     "postal": "138615",
     "latitude": 1.3076,
-    "longitude": 103.77315
+    "longitude": 103.77315,
+    "images": [
+      {
+        "src": "/src/assets/capt/capt-1.jpg",
+        "author": "Clara Ng Kai Jie, Muhammad Firdaus Bin Hidayat, Wong Kia Yi Jasmine"
+      },
+      {
+        "src": "/src/assets/capt/capt-2.jpg",
+        "author": "Clara Ng Kai Jie, Muhammad Firdaus Bin Hidayat, Wong Kia Yi Jasmine"
+      }
+    ]
   },
   {
     "elementId": "124543528",
@@ -364,8 +374,14 @@
     "energyUse": "lkc-museum-eu",
     "energyUseIntensity": "lkc-museum-eui",
     "images": [
-      { "src": "/src/assets/lkc-museum/lkc-museum-1.png", "author": "Samantha Peh, Toh Yu En" },
-      { "src": "/src/assets/lkc-museum/lkc-museum-2.png", "author": "Samantha Peh, Toh Yu En" }
+      {
+        "src": "/src/assets/lkc-museum/lkc-museum-1.png",
+        "author": "Samantha Peh, Toh Yu En"
+      },
+      {
+        "src": "/src/assets/lkc-museum/lkc-museum-2.png",
+        "author": "Samantha Peh, Toh Yu En"
+      }
     ],
     "downloads": [
       {
