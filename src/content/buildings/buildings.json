@@ -2639,7 +2639,17 @@
     "address": "15 Kent Ridge Drive",
     "postal": "119245",
     "latitude": 1.2925,
-    "longitude": 103.77415
+    "longitude": 103.77415,
+    "images": [
+      {
+        "src": "/src/assets/biz1/biz1-1.jpg",
+        "author": "Tan Jiayi, Wang Shihui, Ng Kai Lin Audrey"
+      },
+      {
+        "src": "/src/assets/biz1/biz1-2.jpg",
+        "author": "Tan Jiayi, Wang Shihui, Ng Kai Lin Audrey"
+      }
+    ]
   },
   {
     "elementId": "54619697",
@@ -2847,12 +2857,22 @@
     "idfDownload": "/pgpr/pgpr-block1.idf",
     "energyUse": "pgpr-block1-eu",
     "energyUseIntensity": "pgpr-block1-eui",
-    "images": [{ "src": "/src/assets/pgpr/pgpr-block1.jpg", "author": "Joey Sia Junwei, Georsia Ang Li Qi" }],
+    "images": [
+      {
+        "src": "/src/assets/pgpr/pgpr-block1.jpg",
+        "author": "Joey Sia Junwei, Georsia Ang Li Qi"
+      }
+    ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Joey Sia Junwei, Georsia Ang Li Qi",
-        "files": [{ "filetype": ".3dm", "url": "/pgpr/pgpr-block1-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/pgpr/pgpr-block1-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Joey Sia Junwei, Georsia Ang Li Qi",
