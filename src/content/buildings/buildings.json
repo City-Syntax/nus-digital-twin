@@ -2483,7 +2483,21 @@
     "address": "1 Hon Sui Sen Drive",
     "postal": "117588",
     "latitude": 1.29302,
-    "longitude": 103.77444
+    "longitude": 103.77444,
+    "images": [
+      {
+        "src": "/src/assets/hssml/hssml-1.jpg",
+        "author": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi"
+      },
+      {
+        "src": "/src/assets/hssml/hssml-2.jpg",
+        "author": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi"
+      },
+      {
+        "src": "/src/assets/hssml/hssml-3.jpg",
+        "author": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi"
+      }
+    ]
   },
   {
     "elementId": "503403831",
@@ -2644,7 +2658,10 @@
         "src": "/src/assets/techno-edge/techno-edge-1.jpg",
         "author": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey"
       },
-      { "src": "/src/assets/techno-edge/techno-edge-2.jpg", "author": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey" }
+      {
+        "src": "/src/assets/techno-edge/techno-edge-2.jpg",
+        "author": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey"
+      }
     ],
     "downloads": [
       {
