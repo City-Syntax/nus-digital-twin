@@ -1163,7 +1163,21 @@
     "address": "15 Kent Ridge Crescent",
     "postal": "119276",
     "latitude": 1.2986,
-    "longitude": 103.77335
+    "longitude": 103.77335,
+    "images": [
+      {
+        "src": "/src/assets/e7/e7-1.jpg",
+        "author": "Eddison Chung Mun Kit, Goh Ying Xuan, Vera Heng"
+      },
+      {
+        "src": "/src/assets/e7/e7-2.jpg",
+        "author": "Eddison Chung Mun Kit, Goh Ying Xuan, Vera Heng"
+      },
+      {
+        "src": "/src/assets/e7/e7-3.jpg",
+        "author": "Eddison Chung Mun Kit, Goh Ying Xuan, Vera Heng"
+      }
+    ]
   },
   {
     "elementId": "139959807",
