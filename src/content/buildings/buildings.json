@@ -2615,7 +2615,17 @@
     "address": "12 Kent Ridge Drive",
     "postal": "119243",
     "latitude": 1.29265,
-    "longitude": 103.77221
+    "longitude": 103.77221,
+    "images": [
+      {
+        "src": "/src/assets/temasek-hall/temasek-hall-e-1.jpg",
+        "author": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe"
+      },
+      {
+        "src": "/src/assets/temasek-hall/temasek-hall-e-2.jpg",
+        "author": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe"
+      }
+    ]
   },
   {
     "elementId": "125774787",
