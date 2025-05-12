@@ -1733,7 +1733,21 @@
     "address": "3 Research Link",
     "postal": "117602",
     "latitude": 1.29458,
-    "longitude": 103.77569
+    "longitude": 103.77569,
+    "images": [
+      {
+        "src": "/src/assets/i4/i4-1.png",
+        "author": "Elyne Chua Hui Wen, Kris Yap Sim Wei, Ong Jing Yee"
+      },
+      {
+        "src": "/src/assets/i4/i4-2.png",
+        "author": "Elyne Chua Hui Wen, Kris Yap Sim Wei, Ong Jing Yee"
+      },
+      {
+        "src": "/src/assets/i4/i4-3.png",
+        "author": "Elyne Chua Hui Wen, Kris Yap Sim Wei, Ong Jing Yee"
+      }
+    ]
   },
   {
     "elementId": "84517831",
@@ -2177,7 +2191,12 @@
     "idfDownload": "/sheares-hall/sheares-a.idf",
     "energyUse": "sheares-a-eu",
     "energyUseIntensity": "sheares-a-eui",
-    "images": [{ "src": "/src/assets/sheares-hall/sheares-a.jpg", "author": "Jesmine Pang Sheau Xuan" }],
+    "images": [
+      {
+        "src": "/src/assets/sheares-hall/sheares-a.jpg",
+        "author": "Jesmine Pang Sheau Xuan"
+      }
+    ],
     "downloads": [
       {
         "type": "Rhino",
