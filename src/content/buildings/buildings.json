@@ -2625,7 +2625,21 @@
     "address": "3 Conservatory Drive",
     "postal": "117376",
     "latitude": 1.30218,
-    "longitude": 103.77265
+    "longitude": 103.77265,
+    "images": [
+      {
+        "src": "/src/assets/ystcm/ystcm-1.jpg",
+        "author": "Charmaine Toh Yuwei, Glenda Tay, Noraisyah Binte Mohammad Rais"
+      },
+      {
+        "src": "/src/assets/ystcm/ystcm-2.jpg",
+        "author": "Charmaine Toh Yuwei, Glenda Tay, Noraisyah Binte Mohammad Rais"
+      },
+      {
+        "src": "/src/assets/ystcm/ystcm-3.jpg",
+        "author": "Charmaine Toh Yuwei, Glenda Tay, Noraisyah Binte Mohammad Rais"
+      }
+    ]
   },
   {
     "elementId": "54583491",
