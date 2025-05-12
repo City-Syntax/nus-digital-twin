@@ -697,7 +697,21 @@
     "address": "19 Kent Ridge Crescent",
     "postal": "119278",
     "latitude": 1.30029,
-    "longitude": 103.77265
+    "longitude": 103.77265,
+    "images": [
+      {
+        "src": "/src/assets/raffles-hall/raffles-hall-6-1.jpg",
+        "author": "Ng Jing Wen, Tan Yu Xin"
+      },
+      {
+        "src": "/src/assets/raffles-hall/raffles-hall-6-2.jpg",
+        "author": "Ng Jing Wen, Tan Yu Xin"
+      },
+      {
+        "src": "/src/assets/raffles-hall/raffles-hall-6-3.jpg",
+        "author": "Ng Jing Wen, Tan Yu Xin"
+      }
+    ]
   },
   {
     "elementId": "142077688",
