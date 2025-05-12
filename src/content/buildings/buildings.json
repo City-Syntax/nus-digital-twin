@@ -1274,7 +1274,17 @@
     "address": "1 Engineering Drive 3",
     "postal": "117580",
     "latitude": 1.29914,
-    "longitude": 103.77252
+    "longitude": 103.77252,
+    "images": [
+      {
+        "src": "/src/assets/e8/e8-1.jpg",
+        "author": "Toh Zi Lin, Jansen Lee Yong Hui, Rena Ng Jing Ru"
+      },
+      {
+        "src": "/src/assets/e8/e8-2.jpg",
+        "author": "Toh Zi Lin, Jansen Lee Yong Hui, Rena Ng Jing Ru"
+      }
+    ]
   },
   {
     "elementId": "139978993",
