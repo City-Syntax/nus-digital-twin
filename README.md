@@ -8,7 +8,8 @@ Ang, Y. Q., Ong, L., Teo, J., Gan, J. V., & Han, J. (2025). Advancing building p
 
 ## Getting Started
 
-See [Getting Started in the Developer Guide](https://www.nus-digital-twin.com/dev-guide/getting-started/).
+- [Developer Guide](https://www.nus-digital-twin.com/dev-guide/)
+- [User Guide](https://www.nus-digital-twin.com/user-guide/)
 
 ## Documentation
 
@@ -19,13 +20,6 @@ See [Getting Started in the Developer Guide](https://www.nus-digital-twin.com/de
 
 Models in `.glTF` format can be loaded into Cesium using [`Model.fromGltfAsync`](https://cesium.com/learn/ion-sdk/ref-doc/Model.html#.fromGltfAsync).
 
-Models in other formats have to be converted into `.glTF` format.
-
-| File format                | Recommended tool                                                                                |
-| -------------------------- | ----------------------------------------------------------------------------------------------- |
-| Wavefront (`.obj`, `.mtl`) | [`obj2gltf`](https://github.com/CesiumGS/obj2gltf)<br>`obj2gltf -i model.obj`                   |
-| COLLADA (`.dae`)           | [`COLLADA2GLTF`](https://github.com/KhronosGroup/COLLADA2GLTF)<br>`./COLLADA2GTF-bin model.dae` |
-
 For larger models (over a few hundred MBs), it is recommended to use Cesium ion Archives instead and load it into Cesium using [`Cesium3DTileset.fromUrl`](https://cesium.com/learn/ion-sdk/ref-doc/Cesium3DTileset.html#.fromUrl). See how to create a Cesium ion Archive [here](https://cesium.com/learn/ion/cesium-ion-archives-and-exports/).
 
 ### Adding Shapefiles
@@ -35,10 +29,6 @@ Shapefiles have to be converted to GeoJSON format before they can be loaded into
 ```bash
 ogr2ogr -f "GeoJSON" output.json input.shp
 ```
-
-### Optional Environment Variables
-
-- `PUBLIC_SHOW_MAPBOX` is used to enable Mapbox tiles in development mode. By default, Mapbox tiles are disabled in development to save on bandwidth. The loading screen is also disabled when Mapbox tiles are disabled. The only valid value is `"true"`, all other values are ignored.
 
 ### Known Issues
 
