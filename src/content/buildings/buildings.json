@@ -1229,8 +1229,14 @@
     "exhaustAirRecovery": "None",
     "economizerCycle": "None",
     "images": [
-      { "src": "/src/assets/e6/e6-1.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" },
-      { "src": "/src/assets/e6/e6-2.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" }
+      {
+        "src": "/src/assets/e6/e6-1.jpg",
+        "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan"
+      },
+      {
+        "src": "/src/assets/e6/e6-2.jpg",
+        "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan"
+      }
     ],
     "downloads": [
       {
@@ -1278,8 +1284,26 @@
     "latitude": 1.30055,
     "longitude": 103.77077,
     "images": [
-      { "src": "/src/assets/ea/ea.jpg", "author": "Lujia Zhu" },
-      { "src": "/src/assets/ea/ea-thermal.jpg", "author": "Lujia Zhu" }
+      {
+        "src": "/src/assets/ea/ea-1.png",
+        "author": "Choo Xue Min Charmayne, Ferlin Ng Jing Ru, Jamie Liang Man Ling"
+      },
+      {
+        "src": "/src/assets/ea/ea-2.png",
+        "author": "Choo Xue Min Charmayne, Ferlin Ng Jing Ru, Jamie Liang Man Ling"
+      },
+      {
+        "src": "/src/assets/ea/ea-3.png",
+        "author": "Choo Xue Min Charmayne, Ferlin Ng Jing Ru, Jamie Liang Man Ling"
+      },
+      {
+        "src": "/src/assets/ea/ea.jpg",
+        "author": "Lujia Zhu"
+      },
+      {
+        "src": "/src/assets/ea/ea-thermal.jpg",
+        "author": "Lujia Zhu"
+      }
     ]
   },
   {
