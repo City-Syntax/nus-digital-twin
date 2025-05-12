@@ -586,7 +586,7 @@
   },
   {
     "elementId": "241265457",
-    "name": "Kuok Foundation House",
+    "name": "Kuok Foundation House (Block 7 & 8)",
     "address": "21 Kent Ridge Crescent",
     "postal": "119280",
     "latitude": 1.30034,
@@ -595,14 +595,25 @@
     "energyUse": "kuok-foundation-house-eu",
     "energyUseIntensity": "kuok-foundation-house-eui",
     "images": [
-      { "src": "/src/assets/raffles-hall/kuok-foundation-house-1.jpg", "author": "Li Ziming, Caleb Tan Chong Sheng" },
-      { "src": "/src/assets/raffles-hall/kuok-foundation-house-2.jpg", "author": "Li Ziming, Caleb Tan Chong Sheng" }
+      {
+        "src": "/src/assets/raffles-hall/kuok-foundation-house-1.jpg",
+        "author": "Li Ziming, Caleb Tan Chong Sheng"
+      },
+      {
+        "src": "/src/assets/raffles-hall/kuok-foundation-house-2.jpg",
+        "author": "Li Ziming, Caleb Tan Chong Sheng"
+      }
     ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Li Ziming, Caleb Tan Chong Sheng",
-        "files": [{ "filetype": ".3dm", "url": "/raffles-hall/kuok-foundation-house-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/raffles-hall/kuok-foundation-house-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Li Ziming, Caleb Tan Chong Sheng",
@@ -642,43 +653,51 @@
   },
   {
     "elementId": "241265458",
-    "name": "Raffles Hall",
+    "name": "Raffles Hall (Block 1 / Communal Hall)",
     "address": "19 Kent Ridge Crescent",
     "postal": "119278",
     "latitude": 1.29989,
     "longitude": 103.77389
   },
   {
+    "elementId": "241265455",
+    "name": "Raffles Hall Block 2",
+    "address": "19 Kent Ridge Crescent",
+    "postal": "119278",
+    "latitude": 1.29952,
+    "longitude": 103.77333
+  },
+  {
     "elementId": "241265453",
-    "name": "Raffles Hall",
+    "name": "Raffles Hall Block 3",
     "address": "19 Kent Ridge Crescent",
     "postal": "119278",
     "latitude": 1.30032,
     "longitude": 103.77317
   },
   {
-    "elementId": "241265456",
-    "name": "Raffles Hall",
-    "address": "19 Kent Ridge Crescent",
-    "postal": "119278",
-    "latitude": 1.30029,
-    "longitude": 103.77265
-  },
-  {
     "elementId": "241265454",
-    "name": "Raffles Hall",
+    "name": "Raffles Hall Block 4",
     "address": "19 Kent Ridge Crescent",
     "postal": "119278",
     "latitude": 1.2999,
     "longitude": 103.77299
   },
   {
-    "elementId": "241265455",
-    "name": "Raffles Hall",
+    "elementId": "1309257814",
+    "name": "Raffles Hall Block 5",
     "address": "19 Kent Ridge Crescent",
     "postal": "119278",
-    "latitude": 1.29952,
-    "longitude": 103.77333
+    "latitude": 1.300509,
+    "longitude": 103.773017
+  },
+  {
+    "elementId": "241265456",
+    "name": "Raffles Hall Block 6",
+    "address": "19 Kent Ridge Crescent",
+    "postal": "119278",
+    "latitude": 1.30029,
+    "longitude": 103.77265
   },
   {
     "elementId": "142077688",
