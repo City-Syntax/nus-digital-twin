@@ -2308,7 +2308,7 @@
   },
   {
     "elementId": "455250293",
-    "name": "Kent Ridge Hall",
+    "name": "Kent Ridge Hall Block A",
     "address": "10 Heng Mui Keng Ter",
     "postal": "119617",
     "latitude": 1.29163,
@@ -2316,11 +2316,35 @@
   },
   {
     "elementId": "455250298",
-    "name": "Kent Ridge Hall",
+    "name": "Kent Ridge Hall Block B",
     "address": "10 Heng Mui Keng Ter",
     "postal": "119617",
     "latitude": 1.29132,
     "longitude": 103.7749
+  },
+  {
+    "elementId": "455250297",
+    "name": "Kent Ridge Hall Block C",
+    "address": "10 Heng Mui Keng Ter",
+    "postal": "119617",
+    "latitude": 1.29148,
+    "longitude": 103.77471
+  },
+  {
+    "elementId": "455250296",
+    "name": "Kent Ridge Hall Block D",
+    "address": "10 Heng Mui Keng Ter",
+    "postal": "1196187",
+    "latitude": 1.29154,
+    "longitude": 103.77437
+  },
+  {
+    "elementId": "455250295",
+    "name": "Kent Ridge Hall Block E",
+    "address": "10 Heng Mui Keng Ter",
+    "postal": "1196187",
+    "latitude": 1.29172,
+    "longitude": 103.77412
   },
   {
     "elementId": "627395978",
@@ -2329,30 +2353,6 @@
     "postal": "119617",
     "latitude": 1.29178,
     "longitude": 103.77451
-  },
-  {
-    "elementId": "455250295",
-    "name": "Kent Ridge Hall",
-    "address": "10 Heng Mui Keng Ter",
-    "postal": "1196187",
-    "latitude": 1.29172,
-    "longitude": 103.77412
-  },
-  {
-    "elementId": "455250296",
-    "name": "Kent Ridge Hall",
-    "address": "10 Heng Mui Keng Ter",
-    "postal": "1196187",
-    "latitude": 1.29154,
-    "longitude": 103.77437
-  },
-  {
-    "elementId": "455250297",
-    "name": "Kent Ridge Hall",
-    "address": "10 Heng Mui Keng Ter",
-    "postal": "119617",
-    "latitude": 1.29148,
-    "longitude": 103.77471
   },
   {
     "elementId": "546374635",
