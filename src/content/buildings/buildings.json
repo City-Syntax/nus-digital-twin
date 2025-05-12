@@ -767,7 +767,21 @@
     "address": "5 Arts Link",
     "postal": "117570",
     "latitude": 1.29432,
-    "longitude": 103.77111
+    "longitude": 103.77111,
+    "images": [
+      {
+        "src": "/src/assets/as7/as7-1.jpg",
+        "author": "Soh Jun Wei, Sun Siting"
+      },
+      {
+        "src": "/src/assets/as7/as7-2.jpg",
+        "author": "Soh Jun Wei, Sun Siting"
+      },
+      {
+        "src": "/src/assets/as7/as7-3.jpg",
+        "author": "Soh Jun Wei, Sun Siting"
+      }
+    ]
   },
   {
     "elementId": "54583485",
