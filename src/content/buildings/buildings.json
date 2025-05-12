@@ -1160,7 +1160,21 @@
     "address": "9 Engineering Drive 1",
     "postal": "117575",
     "latitude": 1.29801,
-    "longitude": 103.77244
+    "longitude": 103.77244,
+    "images": [
+      {
+        "src": "/src/assets/e5/e5-1.jpg",
+        "author": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi"
+      },
+      {
+        "src": "/src/assets/e5/e5-2.jpg",
+        "author": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi"
+      },
+      {
+        "src": "/src/assets/e5/e5-3.jpg",
+        "author": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi"
+      }
+    ]
   },
   {
     "elementId": "139957953",
