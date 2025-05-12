@@ -1030,7 +1030,17 @@
     "address": "9 Engineering Drive 1",
     "postal": "117575",
     "latitude": 1.29871,
-    "longitude": 103.7711
+    "longitude": 103.7711,
+    "images": [
+      {
+        "src": "/src/assets/e1a/e1a-1.png",
+        "author": "Natasha Arisqa Putri Binte Shaiful Bahri, Dennis Lim, Chan Csen Csen"
+      },
+      {
+        "src": "/src/assets/e1a/e1a-1.png",
+        "author": "Natasha Arisqa Putri Binte Shaiful Bahri, Dennis Lim, Chan Csen Csen"
+      }
+    ]
   },
   {
     "elementId": "139974570",
