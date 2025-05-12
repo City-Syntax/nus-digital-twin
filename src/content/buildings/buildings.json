@@ -1124,7 +1124,17 @@
     "address": "9 Engineering Drive 1",
     "postal": "117575",
     "latitude": 1.29871,
-    "longitude": 103.77219
+    "longitude": 103.77219,
+    "images": [
+      {
+        "src": "/src/assets/e4/e4-1.jpg",
+        "author": "Ivan Teo, Siow Shi Jin Kevis, Wong Zi Yin"
+      },
+      {
+        "src": "/src/assets/e4/e4-2.jpg",
+        "author": "Ivan Teo, Siow Shi Jin Kevis, Wong Zi Yin"
+      }
+    ]
   },
   {
     "elementId": "139960333",
