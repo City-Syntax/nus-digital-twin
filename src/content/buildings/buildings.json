@@ -842,7 +842,17 @@
     "address": "4 Architecture Drive",
     "postal": "117566",
     "latitude": 1.29732,
-    "longitude": 103.77068
+    "longitude": 103.77068,
+    "images": [
+      {
+        "src": "/src/assets/sde1/sde1-1.png",
+        "author": "Chew Jia Jing, Rinns Sim Wei Ling, Daniel Chia Teck En"
+      },
+      {
+        "src": "/src/assets/sde1/sde1-2.png",
+        "author": "Chew Jia Jing, Rinns Sim Wei Ling, Daniel Chia Teck En"
+      }
+    ]
   },
   {
     "elementId": "140078560",
@@ -855,8 +865,14 @@
     "energyUse": "sde2-eu",
     "energyUseIntensity": "sde2-eui",
     "images": [
-      { "src": "/src/assets/sde2/sde2-1.png", "author": "Steffi Seah, Tay Hui Xin" },
-      { "src": "/src/assets/sde2/sde2-2.png", "author": "Steffi Seah, Tay Hui Xin" }
+      {
+        "src": "/src/assets/sde2/sde2-1.png",
+        "author": "Steffi Seah, Tay Hui Xin"
+      },
+      {
+        "src": "/src/assets/sde2/sde2-2.png",
+        "author": "Steffi Seah, Tay Hui Xin"
+      }
     ],
     "downloads": [
       {
