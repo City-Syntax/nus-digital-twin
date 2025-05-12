@@ -273,7 +273,17 @@
     "address": "22 College Ave East",
     "postal": "138593",
     "latitude": 1.30669,
-    "longitude": 103.77347
+    "longitude": 103.77347,
+    "images": [
+      {
+        "src": "/src/assets/cinnamon-college/cinnamon-college-1.png",
+        "author": "Najib Mikail Ang Shi Chong, Yeo Zedong, Wellington Ho Yu De"
+      },
+      {
+        "src": "/src/assets/cinnamon-college/cinnamon-college-2.png",
+        "author": "Najib Mikail Ang Shi Chong, Yeo Zedong, Wellington Ho Yu De"
+      }
+    ]
   },
   {
     "elementId": "124549211",
