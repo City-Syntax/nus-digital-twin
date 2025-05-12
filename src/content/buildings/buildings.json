@@ -273,7 +273,17 @@
     "address": "22 College Ave East",
     "postal": "138593",
     "latitude": 1.30669,
-    "longitude": 103.77347
+    "longitude": 103.77347,
+    "images": [
+      {
+        "src": "/src/assets/cinnamon-college/cinnamon-college-1.png",
+        "author": "Najib Mikail Ang Shi Chong, Yeo Zedong, Wellington Ho Yu De"
+      },
+      {
+        "src": "/src/assets/cinnamon-college/cinnamon-college-2.png",
+        "author": "Najib Mikail Ang Shi Chong, Yeo Zedong, Wellington Ho Yu De"
+      }
+    ]
   },
   {
     "elementId": "124549211",
@@ -697,7 +707,21 @@
     "address": "19 Kent Ridge Crescent",
     "postal": "119278",
     "latitude": 1.30029,
-    "longitude": 103.77265
+    "longitude": 103.77265,
+    "images": [
+      {
+        "src": "/src/assets/raffles-hall/raffles-hall-6-1.jpg",
+        "author": "Ng Jing Wen, Tan Yu Xin"
+      },
+      {
+        "src": "/src/assets/raffles-hall/raffles-hall-6-2.jpg",
+        "author": "Ng Jing Wen, Tan Yu Xin"
+      },
+      {
+        "src": "/src/assets/raffles-hall/raffles-hall-6-3.jpg",
+        "author": "Ng Jing Wen, Tan Yu Xin"
+      }
+    ]
   },
   {
     "elementId": "142077688",
@@ -753,7 +777,21 @@
     "address": "5 Arts Link",
     "postal": "117570",
     "latitude": 1.29432,
-    "longitude": 103.77111
+    "longitude": 103.77111,
+    "images": [
+      {
+        "src": "/src/assets/as7/as7-1.jpg",
+        "author": "Soh Jun Wei, Sun Siting"
+      },
+      {
+        "src": "/src/assets/as7/as7-2.jpg",
+        "author": "Soh Jun Wei, Sun Siting"
+      },
+      {
+        "src": "/src/assets/as7/as7-3.jpg",
+        "author": "Soh Jun Wei, Sun Siting"
+      }
+    ]
   },
   {
     "elementId": "54583485",
@@ -828,7 +866,17 @@
     "address": "4 Architecture Drive",
     "postal": "117566",
     "latitude": 1.29732,
-    "longitude": 103.77068
+    "longitude": 103.77068,
+    "images": [
+      {
+        "src": "/src/assets/sde1/sde1-1.png",
+        "author": "Chew Jia Jing, Rinns Sim Wei Ling, Daniel Chia Teck En"
+      },
+      {
+        "src": "/src/assets/sde1/sde1-2.png",
+        "author": "Chew Jia Jing, Rinns Sim Wei Ling, Daniel Chia Teck En"
+      }
+    ]
   },
   {
     "elementId": "140078560",
@@ -841,8 +889,14 @@
     "energyUse": "sde2-eu",
     "energyUseIntensity": "sde2-eui",
     "images": [
-      { "src": "/src/assets/sde2/sde2-1.png", "author": "Steffi Seah, Tay Hui Xin" },
-      { "src": "/src/assets/sde2/sde2-2.png", "author": "Steffi Seah, Tay Hui Xin" }
+      {
+        "src": "/src/assets/sde2/sde2-1.png",
+        "author": "Steffi Seah, Tay Hui Xin"
+      },
+      {
+        "src": "/src/assets/sde2/sde2-2.png",
+        "author": "Steffi Seah, Tay Hui Xin"
+      }
     ],
     "downloads": [
       {
@@ -1016,7 +1070,17 @@
     "address": "9 Engineering Drive 1",
     "postal": "117575",
     "latitude": 1.29871,
-    "longitude": 103.7711
+    "longitude": 103.7711,
+    "images": [
+      {
+        "src": "/src/assets/e1a/e1a-1.png",
+        "author": "Natasha Arisqa Putri Binte Shaiful Bahri, Dennis Lim, Chan Csen Csen"
+      },
+      {
+        "src": "/src/assets/e1a/e1a-1.png",
+        "author": "Natasha Arisqa Putri Binte Shaiful Bahri, Dennis Lim, Chan Csen Csen"
+      }
+    ]
   },
   {
     "elementId": "139974570",
@@ -1110,7 +1174,17 @@
     "address": "9 Engineering Drive 1",
     "postal": "117575",
     "latitude": 1.29871,
-    "longitude": 103.77219
+    "longitude": 103.77219,
+    "images": [
+      {
+        "src": "/src/assets/e4/e4-1.jpg",
+        "author": "Ivan Teo, Siow Shi Jin Kevis, Wong Zi Yin"
+      },
+      {
+        "src": "/src/assets/e4/e4-2.jpg",
+        "author": "Ivan Teo, Siow Shi Jin Kevis, Wong Zi Yin"
+      }
+    ]
   },
   {
     "elementId": "139960333",
@@ -1126,7 +1200,21 @@
     "address": "9 Engineering Drive 1",
     "postal": "117575",
     "latitude": 1.29801,
-    "longitude": 103.77244
+    "longitude": 103.77244,
+    "images": [
+      {
+        "src": "/src/assets/e5/e5-1.jpg",
+        "author": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi"
+      },
+      {
+        "src": "/src/assets/e5/e5-2.jpg",
+        "author": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi"
+      },
+      {
+        "src": "/src/assets/e5/e5-3.jpg",
+        "author": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi"
+      }
+    ]
   },
   {
     "elementId": "139957953",
@@ -1181,8 +1269,14 @@
     "exhaustAirRecovery": "None",
     "economizerCycle": "None",
     "images": [
-      { "src": "/src/assets/e6/e6-1.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" },
-      { "src": "/src/assets/e6/e6-2.jpg", "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan" }
+      {
+        "src": "/src/assets/e6/e6-1.jpg",
+        "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan"
+      },
+      {
+        "src": "/src/assets/e6/e6-2.jpg",
+        "author": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan"
+      }
     ],
     "downloads": [
       {
@@ -1220,7 +1314,17 @@
     "address": "1 Engineering Drive 3",
     "postal": "117580",
     "latitude": 1.29914,
-    "longitude": 103.77252
+    "longitude": 103.77252,
+    "images": [
+      {
+        "src": "/src/assets/e8/e8-1.jpg",
+        "author": "Toh Zi Lin, Jansen Lee Yong Hui, Rena Ng Jing Ru"
+      },
+      {
+        "src": "/src/assets/e8/e8-2.jpg",
+        "author": "Toh Zi Lin, Jansen Lee Yong Hui, Rena Ng Jing Ru"
+      }
+    ]
   },
   {
     "elementId": "139978993",
@@ -1230,8 +1334,26 @@
     "latitude": 1.30055,
     "longitude": 103.77077,
     "images": [
-      { "src": "/src/assets/ea/ea.jpg", "author": "Lujia Zhu" },
-      { "src": "/src/assets/ea/ea-thermal.jpg", "author": "Lujia Zhu" }
+      {
+        "src": "/src/assets/ea/ea-1.png",
+        "author": "Choo Xue Min Charmayne, Ferlin Ng Jing Ru, Jamie Liang Man Ling"
+      },
+      {
+        "src": "/src/assets/ea/ea-2.png",
+        "author": "Choo Xue Min Charmayne, Ferlin Ng Jing Ru, Jamie Liang Man Ling"
+      },
+      {
+        "src": "/src/assets/ea/ea-3.png",
+        "author": "Choo Xue Min Charmayne, Ferlin Ng Jing Ru, Jamie Liang Man Ling"
+      },
+      {
+        "src": "/src/assets/ea/ea.jpg",
+        "author": "Lujia Zhu"
+      },
+      {
+        "src": "/src/assets/ea/ea-thermal.jpg",
+        "author": "Lujia Zhu"
+      }
     ]
   },
   {
@@ -1272,7 +1394,17 @@
     "address": "12 Kent Ridge Crescent",
     "postal": "119275",
     "latitude": 1.29662,
-    "longitude": 103.77308
+    "longitude": 103.77308,
+    "images": [
+      {
+        "src": "/src/assets/central-library/central-library-1.png",
+        "author": "Evan Chong Ian Han, Mohamed Nazim Irfan bin Mohamed Nizam"
+      },
+      {
+        "src": "/src/assets/central-library/central-library-2.png",
+        "author": "Evan Chong Ian Han, Mohamed Nazim Irfan bin Mohamed Nizam"
+      }
+    ]
   },
   {
     "elementId": "140087398",
@@ -1719,7 +1851,21 @@
     "address": "3 Research Link",
     "postal": "117602",
     "latitude": 1.29458,
-    "longitude": 103.77569
+    "longitude": 103.77569,
+    "images": [
+      {
+        "src": "/src/assets/i4/i4-1.png",
+        "author": "Elyne Chua Hui Wen, Kris Yap Sim Wei, Ong Jing Yee"
+      },
+      {
+        "src": "/src/assets/i4/i4-2.png",
+        "author": "Elyne Chua Hui Wen, Kris Yap Sim Wei, Ong Jing Yee"
+      },
+      {
+        "src": "/src/assets/i4/i4-3.png",
+        "author": "Elyne Chua Hui Wen, Kris Yap Sim Wei, Ong Jing Yee"
+      }
+    ]
   },
   {
     "elementId": "84517831",
@@ -2071,7 +2217,21 @@
     "address": "12 Science Drive 2",
     "postal": "117549",
     "latitude": 1.29536,
-    "longitude": 103.78051
+    "longitude": 103.78051,
+    "images": [
+      {
+        "src": "/src/assets/md1/md1-1.png",
+        "author": "Intan Nur Aaliyah Binte Azman, Aaron Tan Kah Hoe, Ng Chuan Kim Callista"
+      },
+      {
+        "src": "/src/assets/md1/md1-2.png",
+        "author": "Intan Nur Aaliyah Binte Azman, Aaron Tan Kah Hoe, Ng Chuan Kim Callista"
+      },
+      {
+        "src": "/src/assets/md1/md1-3.png",
+        "author": "Intan Nur Aaliyah Binte Azman, Aaron Tan Kah Hoe, Ng Chuan Kim Callista"
+      }
+    ]
   },
   {
     "elementId": "141912951",
@@ -2163,7 +2323,12 @@
     "idfDownload": "/sheares-hall/sheares-a.idf",
     "energyUse": "sheares-a-eu",
     "energyUseIntensity": "sheares-a-eui",
-    "images": [{ "src": "/src/assets/sheares-hall/sheares-a.jpg", "author": "Jesmine Pang Sheau Xuan" }],
+    "images": [
+      {
+        "src": "/src/assets/sheares-hall/sheares-a.jpg",
+        "author": "Jesmine Pang Sheau Xuan"
+      }
+    ],
     "downloads": [
       {
         "type": "Rhino",
@@ -2500,7 +2665,21 @@
     "address": "3 Conservatory Drive",
     "postal": "117376",
     "latitude": 1.30218,
-    "longitude": 103.77265
+    "longitude": 103.77265,
+    "images": [
+      {
+        "src": "/src/assets/ystcm/ystcm-1.jpg",
+        "author": "Charmaine Toh Yuwei, Glenda Tay, Noraisyah Binte Mohammad Rais"
+      },
+      {
+        "src": "/src/assets/ystcm/ystcm-2.jpg",
+        "author": "Charmaine Toh Yuwei, Glenda Tay, Noraisyah Binte Mohammad Rais"
+      },
+      {
+        "src": "/src/assets/ystcm/ystcm-3.jpg",
+        "author": "Charmaine Toh Yuwei, Glenda Tay, Noraisyah Binte Mohammad Rais"
+      }
+    ]
   },
   {
     "elementId": "54583491",
