@@ -1344,7 +1344,17 @@
     "address": "12 Kent Ridge Crescent",
     "postal": "119275",
     "latitude": 1.29662,
-    "longitude": 103.77308
+    "longitude": 103.77308,
+    "images": [
+      {
+        "src": "/src/assets/central-library/central-library-1.png",
+        "author": "Evan Chong Ian Han, Mohamed Nazim Irfan bin Mohamed Nizam"
+      },
+      {
+        "src": "/src/assets/central-library/central-library-2.png",
+        "author": "Evan Chong Ian Han, Mohamed Nazim Irfan bin Mohamed Nizam"
+      }
+    ]
   },
   {
     "elementId": "140087398",
