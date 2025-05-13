@@ -4,8 +4,8 @@ import ShareModal from './ShareModal';
 import StatsModal from './StatsModal';
 ---
 
-<div id="bottom-bar">
-  <div>
+<div class="absolute bottom-0 left-0 w-full flex items-center justify-between text-xs" id="bottom-bar">
+  <div class="flex items-center gap-1.5">
     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="32" height="32" rx="11" fill="#F5F5F5"></rect>
       <path d="M7.01729 10.6059L7.00146 27.8399L10.6027 30V12.7566L7.01729 10.6059Z" fill="#003D7C"></path>
@@ -22,7 +22,7 @@ import StatsModal from './StatsModal';
     <ShareModal client:load />
     <StatsModal client:load />
   </div>
-  <div id="scale-container">
+  <div class="flex items-center gap-1.5" id="scale-container">
     <div id="scale-label"></div>
     <div id="scale-bar"></div>
   </div>
