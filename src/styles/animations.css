@@ -62,15 +62,15 @@
 
 @keyframes ping {
   0% {
-    box-shadow: 0 0 0 0 rgba(var(--green), 0.75);
+    box-shadow: 0 0 0 0 --alpha(var(--color-green-700) / 75%);
   }
 
   70% {
-    box-shadow: 0 0 0 8px rgba(var(--green), 0);
+    box-shadow: 0 0 0 8px --alpha(var(--color-green-700) / 0%);
   }
 
   100% {
-    box-shadow: 0 0 0 0 rgba(var(--green), 0);
+    box-shadow: 0 0 0 0 --alpha(var(--color-green-700) / 0%);
   }
 }
 

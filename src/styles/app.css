@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@source "./partials/*.scss"; /* TODO: Remove this when migration is complete */
 @import './animations.css';
 @import './radix/popover.css';
 
