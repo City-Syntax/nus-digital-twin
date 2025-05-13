@@ -2,7 +2,7 @@
    BUTTONS
    Include a base style and an optional sizing for the button.
 
-   Base styles: btn, btn-primary or btn-secondary
+   Base styles: btn or btn-secondary
    Sizing (optional): btn-xs, btn-xs-square,
                       btn-sm, btn-sm-square,
                       btn-lg, btn-lg-square,
@@ -27,16 +27,6 @@
   > svg {
     height: 1.25rem;
     width: 1.25rem;
-  }
-}
-
-@mixin btn-primary {
-  @include btn;
-  background-color: rgba(var(--primary-200));
-  transition: background-color 150ms;
-
-  &:hover {
-    background-color: rgba(var(--primary-100));
   }
 }
 
