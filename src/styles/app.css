@@ -4,7 +4,7 @@
 @import './radix/popover.css';
 
 @theme {
-  --font-body: 'Inter Variable', system-ui, sans-serif;
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
   --font-title: 'Figtree Variable', system-ui, sans-serif;
 
   --text-2_5xl: 1.375rem;
@@ -22,7 +22,7 @@
 
 @layer base {
   * {
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
   }
 
   h1,
