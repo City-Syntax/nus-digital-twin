@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './animations.css';
 
 @theme {
   --font-body: 'Inter Variable', system-ui, sans-serif;
