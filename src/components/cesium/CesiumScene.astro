@@ -248,7 +248,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
       // Outer timeout is required for the translate animation to complete
       setTimeout(() => {
-        document.getElementById('loading-modal')?.classList.add('close');
+        document.getElementById('loading-modal')?.classList.add('opacity-0');
         setTimeout(() => {
           document.getElementById('loading-modal')?.remove();
         }, 200);
