@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import './animations.css';
+@import './radix/popover.css';
 
 @theme {
   --font-body: 'Inter Variable', system-ui, sans-serif;
@@ -12,6 +13,9 @@
   --breakpoint-sm: 448px;
   --breakpoint-md: 878px;
   --breakpoint-lg: 1252px;
+
+  --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 @layer base {
