@@ -10,8 +10,6 @@
    ========================================================================== */
 
 @mixin btn {
-  background: none;
-  border: none;
   border-radius: var(--rounded-sm);
   color: rgba(var(--base-content));
   font-size: var(--text-base);
