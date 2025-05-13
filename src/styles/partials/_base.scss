@@ -76,12 +76,6 @@ a:focus-visible {
   outline: rgba(var(--primary-300)) 2px solid;
 }
 
-mark {
-  font-weight: 700;
-  color: currentColor;
-  background-color: transparent;
-}
-
 @mixin bg-base {
   background-color: rgba(var(--base-100), 0.8);
   backdrop-filter: saturate(140%) blur(4px);
