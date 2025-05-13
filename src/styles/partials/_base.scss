@@ -36,12 +36,6 @@ html {
   color: rgba(var(--base-content));
 }
 
-sup {
-  vertical-align: baseline;
-  position: relative;
-  top: -0.5em;
-}
-
 .list--bullet {
   > li::before {
     content: '•';
