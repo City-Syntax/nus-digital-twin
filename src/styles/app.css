@@ -8,6 +8,7 @@
   --font-title: 'Figtree Variable', system-ui, sans-serif;
 
   --text-2_5xl: 1.375rem;
+  --radius-2_5xl: 1.25rem;
 
   --breakpoint-*: initial;
   --breakpoint-xs: 378px;
