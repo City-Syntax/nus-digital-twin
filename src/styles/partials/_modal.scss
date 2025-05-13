@@ -32,7 +32,7 @@
 }
 
 .modal__overlay {
-  backdrop-filter: saturate(120%) blur(6px);
+  backdrop-filter: saturate(120%) blur(8px);
   position: fixed;
   inset: 0;
   z-index: 99999;
