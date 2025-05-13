@@ -3,6 +3,8 @@
 @theme {
   --font-body: 'Inter Variable', system-ui, sans-serif;
   --font-title: 'Figtree Variable', system-ui, sans-serif;
+
+  --text-2_5xl: 1.375rem;
 }
 
 @layer base {
@@ -22,6 +24,14 @@
   h1,
   h2 {
     font-family: var(--font-title);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+  }
+
+  h2 {
+    font-size: var(--text-2_5xl);
   }
 
   mark {
