@@ -24,7 +24,8 @@ div.cesium-credit-lightbox.cesium-credit-lightbox-mobile {
   max-height: 85vh;
 
   ul {
-    padding: 0 0 0 var(--padding-base);
+    padding: 0;
+    font-size: var(--text-sm);
   }
 }
 

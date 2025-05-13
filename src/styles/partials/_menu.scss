@@ -225,15 +225,15 @@
   }
 
   .footer-link--energy--active {
-    color: rgba(var(--yellow));
+    color: var(--color-yellow-500);
 
     &:hover {
-      color: rgba(var(--yellow));
+      color: var(--color-yellow-500);
     }
   }
 
   .footer-link--report:hover {
-    color: rgba(var(--amber));
+    color: var(--color-amber-600);
   }
 
   .footer-section {
