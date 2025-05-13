@@ -34,23 +34,6 @@
 body,
 html {
   color: rgba(var(--base-content));
-  font-size: var(--text-base);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-  font-weight: 600;
-}
-
-h1,
-h2 {
-  font-family: 'Figtree Variable', system-ui, sans-serif;
 }
 
 h1 {
