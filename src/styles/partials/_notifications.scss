@@ -22,7 +22,7 @@ div.notification {
   @include bg-base;
   color: inherit;
   padding: var(--padding-xs) var(--padding-sm);
-  border-radius: var(--rounded-xs);
+  border-radius: var(--radius-lg);
   font-size: var(--text-sm);
   gap: 6px;
 
@@ -48,7 +48,7 @@ div.notification.notification--danger {
   @include bg-base;
   color: inherit;
   padding: var(--padding-xs) var(--padding-sm);
-  border-radius: var(--rounded-xs);
+  border-radius: var(--radius-lg);
   font-size: var(--text-sm);
   gap: 6px;
   text-decoration: none;
