@@ -623,7 +623,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 </script>
 
 <div id="cesiumContainer" class="max-h-full h-dvh"></div>
-<div id="loading-modal">
+<div
+  class:list={[
+    'h-dvh w-dvw absolute top-0 left-0 flex items-center justify-center flex-col gap-4 transition-opacity duration-200',
+  ]}
+  id="loading-modal"
+>
   <h1>NUS Digital Twin</h1>
   <div>
     <div id="loading-bar">
