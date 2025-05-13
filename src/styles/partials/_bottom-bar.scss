@@ -2,17 +2,4 @@
   @include bg-base;
   padding: 0 var(--padding-sm);
   height: var(--bottom-bar-height);
-
-  svg {
-    height: 1.125rem;
-    width: 1.125rem;
-  }
-}
-
-#scale-bar {
-  height: 8px;
-  width: 0;
-  border: 1px solid currentColor;
-  border-top: none;
-  transition: width 100ms;
 }
