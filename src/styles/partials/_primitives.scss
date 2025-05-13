@@ -185,7 +185,7 @@
     }
 
     &.active {
-      background-color: rgba(var(--primary-200));
+      background-color: var(--color-blue-600);
     }
   }
 }
