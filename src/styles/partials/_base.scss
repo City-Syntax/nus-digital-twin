@@ -18,8 +18,6 @@
   --base-200: 84, 84, 84;
   --base-300: 169, 169, 169;
   --base-content: 245, 245, 245;
-
-  --primary-300: 96, 165, 250;
 }
 
 body,
@@ -46,7 +44,7 @@ kbd {
 }
 
 a:focus-visible {
-  outline: rgba(var(--primary-300)) 2px solid;
+  outline: var(--color-blue-400) 2px solid;
 }
 
 @mixin bg-base {

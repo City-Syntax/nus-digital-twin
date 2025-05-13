@@ -270,7 +270,7 @@
     &:hover,
     &:active,
     &.active {
-      color: rgba(var(--primary-300));
+      color: var(--color-blue-400);
     }
 
     &::before {
@@ -282,7 +282,7 @@
       transform: translateY(-50%) scaleY(0);
       transform-origin: left;
       height: 20px;
-      background-color: rgba(var(--primary-300));
+      background-color: var(--color-blue-400);
       border-radius: 0 var(--radius-2_5xl) var(--radius-2_5xl) 0;
       transition:
         opacity 200ms,
@@ -367,7 +367,7 @@
   }
 
   .toggle:focus-visible + .toggle-label {
-    box-shadow: inset 0 0 0 2px rgba(var(--primary-300));
+    box-shadow: inset 0 0 0 2px var(--color-blue-400);
   }
 
   .toggle-label {
