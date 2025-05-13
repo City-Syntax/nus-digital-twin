@@ -16,7 +16,7 @@ div.cesium-credit-lightbox.cesium-credit-lightbox-mobile {
   backdrop-filter: saturate(140%) blur(4px);
   box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
   border: none;
-  border-radius: var(--rounded-base);
+  border-radius: var(--radius-2xl);
   padding: var(--padding-xl);
   animation: scaleIn 150ms var(--ease-in-out-sine);
   width: 90vw;

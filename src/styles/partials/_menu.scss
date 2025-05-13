@@ -55,7 +55,7 @@
 
 @mixin menu-base {
   @include bg-base;
-  border-radius: var(--rounded-base);
+  border-radius: var(--radius-2xl);
   display: flex;
 }
 
@@ -375,7 +375,7 @@
     transition: color 150ms ease-out;
     display: flex;
     justify-content: space-between;
-    border-radius: var(--rounded-base);
+    border-radius: var(--radius-2xl);
 
     &:hover {
       color: rgba(var(--base-300), 0.6);
@@ -416,7 +416,7 @@
 
 .active-indicator {
   margin-left: auto;
-  border-radius: var(--rounded-base);
+  border-radius: var(--radius-2xl);
   height: 0.5rem;
   width: 0.5rem;
   background-color: var(--color-green-700);
@@ -549,13 +549,13 @@
     padding: 0 var(--padding-sm);
 
     &:first-child {
-      border-top-left-radius: var(--rounded-base);
-      border-bottom-left-radius: var(--rounded-base);
+      border-top-left-radius: var(--radius-2xl);
+      border-bottom-left-radius: var(--radius-2xl);
     }
 
     &:last-child {
-      border-top-right-radius: var(--rounded-base);
-      border-bottom-right-radius: var(--rounded-base);
+      border-top-right-radius: var(--radius-2xl);
+      border-bottom-right-radius: var(--radius-2xl);
     }
 
     &:not(:first-child) {
