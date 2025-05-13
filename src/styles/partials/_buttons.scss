@@ -10,7 +10,7 @@
    ========================================================================== */
 
 @mixin btn {
-  border-radius: var(--rounded-sm);
+  border-radius: var(--radius-xl);
   color: rgba(var(--base-content));
   font-size: var(--text-base);
   cursor: pointer;
