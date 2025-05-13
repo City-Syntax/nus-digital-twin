@@ -54,15 +54,6 @@ sup {
   top: -0.5em;
 }
 
-ul {
-  margin: 0;
-  padding-left: 0;
-
-  > li + li {
-    margin-top: 4px;
-  }
-}
-
 .list--bullet {
   > li::before {
     content: '•';
