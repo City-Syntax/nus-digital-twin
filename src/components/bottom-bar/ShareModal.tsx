@@ -21,7 +21,7 @@ const ShareModal = () => {
         <Dialog.Content className="modal__content">
           <Dialog.Title>Share NUS Digital Twin</Dialog.Title>
           <Dialog.Description className="sr-only">Share NUS Digital Twin</Dialog.Description>
-          <div className="share-container">
+          <div className="share-container grid grid-cols-1 gap-2 sm:grid-cols-3">
             <a href={`mailto:?body=${SHARE_TEXT}`}>
               <Icons.Mail />
               Email
