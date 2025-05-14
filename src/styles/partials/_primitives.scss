@@ -234,16 +234,3 @@
     animation: spin 1s linear infinite;
   }
 }
-
-.img-container__caption {
-  line-height: 1rem;
-  padding: 0 6px 2px 6px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-size: var(--text-xs);
-  color: var(--color-foreground);
-  font-family: 'Figtree Variable', system-ui, sans-serif;
-  font-weight: 600;
-  text-shadow: rgba(0, 0, 0, 0.82) 1px 1px 4px;
-}

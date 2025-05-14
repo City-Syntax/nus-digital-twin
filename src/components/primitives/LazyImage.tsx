@@ -50,7 +50,11 @@ const LazyImage = ({
             src={src ? src : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'}
             alt={alt || ''}
           />
-          {hasLoaded && caption && <div className="img-container__caption">{caption}</div>}
+          {hasLoaded && caption && (
+            <div className="img-container__caption font-title text-xs font-semibold text-foreground absolute bottom-0 left-0 py-0.5 px-2 text-shadow-lg">
+              {caption}
+            </div>
+          )}
         </div>
       </div>
       {canDownload && src && <DownloadButton type="image" files={[{ filetype: filetype, url: src }]} />}
