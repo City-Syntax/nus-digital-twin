@@ -26,6 +26,10 @@
   --color-foreground: oklch(0.97 0 0);
 }
 
+:root {
+  --bottom-bar-height: 28px;
+}
+
 @layer base {
   * {
     font-family: var(--font-sans);
