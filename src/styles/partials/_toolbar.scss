@@ -22,7 +22,6 @@
 
   .toolbar-btn {
     @include btn;
-    @include bg-base;
     @include btn-xl-square;
     transition: background-color 150ms;
     pointer-events: auto;
@@ -59,7 +58,6 @@
 }
 
 #map-picker {
-  @include bg-base;
   padding: var(--padding-base);
   border-radius: var(--radius-2xl);
   display: flex;

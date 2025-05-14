@@ -21,14 +21,14 @@ const MapPickerButton = () => {
   return (
     <Popover.Root modal>
       <Popover.Trigger asChild>
-        <button className="toolbar-btn" id="map-picker-btn" type="button">
+        <button className="toolbar-btn bg-base" id="map-picker-btn" type="button">
           <Icons.Picker></Icons.Picker>
           <span className="sr-only">Map Picker</span>
         </button>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content className="popover-content" align="end" onCloseAutoFocus={(e) => e.preventDefault()}>
-          <div id="map-picker">
+          <div className="bg-base" id="map-picker">
             {mapLayers.map((layer) => {
               return (
                 <button
