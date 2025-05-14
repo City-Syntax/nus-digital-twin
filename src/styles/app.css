@@ -3,6 +3,7 @@
 @import './animations.css';
 @import './radix/popover.css';
 @import './partials/tooltip.css';
+@import './partials/notifications.css';
 
 @theme {
   --font-sans: 'Inter Variable', system-ui, sans-serif;

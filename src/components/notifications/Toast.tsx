@@ -55,7 +55,7 @@ const Toast = () => {
         width: '100%',
       }}
       toastOptions={{
-        className: 'notification',
+        className: 'notification bg-base!',
       }}
     />
   );

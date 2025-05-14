@@ -4,7 +4,6 @@
    ========================================================================== */
 
 div.notification {
-  @include bg-base;
   color: inherit;
   padding: var(--padding-xs) var(--padding-sm);
   border-radius: var(--radius-lg);
@@ -30,7 +29,6 @@ div.notification.notification--danger {
 }
 
 #construction {
-  @include bg-base;
   color: inherit;
   padding: var(--padding-xs) var(--padding-sm);
   border-radius: var(--radius-lg);
