@@ -2,12 +2,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from '../Icons';
-import buildingsData from '../../content/buildings/buildings.json';
-import { activePages, buildingId, flyToPosition } from '../../store';
-import styles from '../../styles/exports.module.scss';
+import buildingsData from '@content/buildings/buildings.json';
+import { activePages, buildingId, flyToPosition } from '@store';
 
 const Searchbar = () => {
-  const breakpoint = Number(styles.breakpointLg.substring(0, styles.breakpointLg.length - 2));
   const [open, setOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
@@ -35,6 +33,13 @@ const Searchbar = () => {
         listRef.current.scrollTo({ top: 0 });
       }
     });
+  }, []);
+
+  const breakpoint = useMemo(() => {
+    const root = document.documentElement;
+    const styles = getComputedStyle(root);
+    const breakpointLg = styles.getPropertyValue('--breakpoint-lg');
+    return breakpointLg.match(/[\d.]+/g)?.map(Number)[0] || 0;
   }, []);
 
   const focusOnInput = useCallback(() => {
