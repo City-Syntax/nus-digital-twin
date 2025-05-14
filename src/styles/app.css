@@ -5,6 +5,7 @@
 @import './partials/tooltip.css';
 @import './partials/notifications.css';
 @import './partials/cesium.css';
+@import './partials/modal.css';
 
 @theme {
   --font-sans: 'Inter Variable', system-ui, sans-serif;
