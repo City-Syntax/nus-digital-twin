@@ -1,10 +1,10 @@
 div.tippy-box {
-  @include bg-base;
+  @apply bg-base;
   border-radius: var(--radius-lg);
 }
 
 .tooltip {
-  @include bg-base;
+  @apply bg-base;
   font-size: var(--text-sm);
   border-radius: var(--radius-lg);
   padding: 4px var(--padding-xs);

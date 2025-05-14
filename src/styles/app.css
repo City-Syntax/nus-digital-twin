@@ -2,6 +2,7 @@
 @source "./partials/*.scss"; /* TODO: Remove this when migration is complete */
 @import './animations.css';
 @import './radix/popover.css';
+@import './partials/tooltip.css';
 
 @theme {
   --font-sans: 'Inter Variable', system-ui, sans-serif;

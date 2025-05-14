@@ -64,7 +64,7 @@ const Menu = () => {
           classNames="menu-left"
           nodeRef={menuLeftRef}
         >
-          <div className="menubar-content" ref={menuLeftRef}>
+          <div className="menubar-content bg-base" ref={menuLeftRef}>
             {$activePages.left === 'osm' && <OSMBuildings></OSMBuildings>}
             {$activePages.left === 'about-nus-campus' && <AboutNUSCampus></AboutNUSCampus>}
             {$activePages.left === 'citations' && <Citations></Citations>}
@@ -94,7 +94,7 @@ const Menu = () => {
           classNames="menu-right"
           nodeRef={menuRightRef}
         >
-          <div className="menubar-content" ref={menuRightRef}>
+          <div className="menubar-content bg-base" ref={menuRightRef}>
             {$activePages.right === 'buildings' && <Buildings></Buildings>}
             {$activePages.right === 'energy' && <Energy graphType={graphType} setGraphType={setGraphType}></Energy>}
             {$activePages.right === 'thermal-comfort' && <ThermalComfort></ThermalComfort>}
@@ -114,7 +114,7 @@ const Menu = () => {
           classNames="menu-bottom"
           nodeRef={menuBottomRef}
         >
-          <div className="menubar-content" ref={menuBottomRef}>
+          <div className="menubar-content bg-base" ref={menuBottomRef}>
             <AutoHeight>
               {$activePages.bottom === 'about' && <About></About>}
               {$activePages.bottom === 'about-nus-campus' && <AboutNUSCampus></AboutNUSCampus>}
