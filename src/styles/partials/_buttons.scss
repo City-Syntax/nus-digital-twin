@@ -11,7 +11,7 @@
 
 @mixin btn {
   border-radius: var(--radius-xl);
-  color: rgba(var(--base-content));
+  color: var(--foreground);
   font-size: var(--text-base);
   cursor: pointer;
   height: var(--btn-md);

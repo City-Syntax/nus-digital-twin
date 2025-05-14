@@ -226,7 +226,7 @@
   justify-content: center;
   top: 50%;
   transform: translateY(-50%);
-  color: rgba(var(--base-content));
+  color: var(--foreground);
 
   > svg {
     height: 2rem;
@@ -242,7 +242,7 @@
   bottom: 0;
   left: 0;
   font-size: var(--text-xs);
-  color: rgba(var(--base-content));
+  color: var(--foreground);
   font-family: 'Figtree Variable', system-ui, sans-serif;
   font-weight: 600;
   text-shadow: rgba(0, 0, 0, 0.82) 1px 1px 4px;

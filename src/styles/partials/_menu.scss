@@ -203,7 +203,7 @@
     cursor: pointer;
 
     &:hover {
-      color: rgba(var(--base-content));
+      color: var(--foreground);
     }
 
     > svg {
