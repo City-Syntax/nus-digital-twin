@@ -3,14 +3,8 @@
    ========================================================================== */
 
 .search {
-  position: relative;
-
   > input {
-    outline: none;
     color: inherit;
-    font-size: var(--text-sm);
-    border-radius: var(--radius-lg);
-    padding: var(--padding-sm);
 
     &::placeholder {
       color: rgba(var(--base-300));
@@ -35,10 +29,6 @@
         align-items: center;
         justify-content: center;
       }
-    }
-
-    @media screen and (max-width: $lg) {
-      font-size: var(--text-base);
     }
   }
 
