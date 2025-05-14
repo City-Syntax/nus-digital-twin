@@ -2,24 +2,21 @@
    INPUTS
    ========================================================================== */
 
-@mixin input {
-  outline: none;
-  color: inherit;
-  font-size: var(--text-sm);
-  border-radius: var(--radius-lg);
-  padding: var(--padding-sm);
-
-  &::placeholder {
-    color: rgba(var(--base-300));
-    opacity: 1;
-  }
-}
-
 .search {
   position: relative;
 
   > input {
-    @include input;
+    outline: none;
+    color: inherit;
+    font-size: var(--text-sm);
+    border-radius: var(--radius-lg);
+    padding: var(--padding-sm);
+
+    &::placeholder {
+      color: rgba(var(--base-300));
+      opacity: 1;
+    }
+
     width: 100%;
     transition: box-shadow 100ms;
     text-overflow: ellipsis;
