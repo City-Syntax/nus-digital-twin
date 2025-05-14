@@ -3,7 +3,7 @@ import MenuLinks from './MenuLinks';
 
 const MenuRight = () => {
   return (
-    <nav className="menubar-right">
+    <nav className="menubar-right bg-base">
       <ScrollContainer>
         <div className="menubar-body">
           <div className="menu-list">

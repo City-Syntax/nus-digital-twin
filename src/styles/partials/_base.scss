@@ -26,10 +26,6 @@
   }
 }
 
-a:focus-visible {
-  outline: var(--color-blue-400) 2px solid;
-}
-
 @mixin bg-base {
   background-color: rgba(var(--base-100), 0.8);
   backdrop-filter: saturate(140%) blur(4px);

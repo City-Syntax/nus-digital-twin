@@ -21,7 +21,7 @@ const MenuLeft = () => {
   };
 
   return (
-    <nav className="menubar-left">
+    <nav className="menubar-left bg-base">
       <div className="menubar-header">
         <Searchbar />
       </div>

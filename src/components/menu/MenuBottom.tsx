@@ -3,7 +3,7 @@ import MenuLink from './MenuLink';
 
 const MenuBottom = () => {
   return (
-    <nav className="menubar-bottom">
+    <nav className="menubar-bottom bg-base">
       <div className="menu-list">
         <MenuLink toPage="search" dir="bottom" isVertical isBottom label="Search" iconName="Search"></MenuLink>
       </div>

@@ -72,3 +72,9 @@
     text-align: center;
   }
 }
+
+@utility bg-base {
+  background-color: --alpha(var(--color-background) / 80%);
+  backdrop-filter: saturate(140%) blur(4px);
+  box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
+}

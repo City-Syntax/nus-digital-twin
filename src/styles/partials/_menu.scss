@@ -54,7 +54,6 @@
 }
 
 @mixin menu-base {
-  @include bg-base;
   border-radius: var(--radius-2xl);
   display: flex;
 }
