@@ -5,6 +5,7 @@ import { useStore } from '@nanostores/react';
 import type { ImageProps } from '../../types';
 import type { MapLayers } from '@components/cesium/mapLayers';
 import LazyImage from '../primitives/LazyImage';
+import { cn } from '@lib/utils';
 
 const MapPickerButton = () => {
   const $activeMapLayer = useStore(activeMapLayer);
@@ -29,19 +30,22 @@ const MapPickerButton = () => {
       <Popover.Portal>
         <Popover.Content className="popover-content" align="end" onCloseAutoFocus={(e) => e.preventDefault()}>
           <div className="bg-base p-4 rounded-2xl flex gap-4 mb-4" id="map-picker">
-            {mapLayers.map((layer) => {
-              return (
-                <button
-                  key={layer.id}
-                  className={`map-picker__item ${$activeMapLayer === layer.id ? 'map-picker__item--active' : ''}`}
-                  type="button"
-                  onClick={() => activeMapLayer.set(layer.id)}
-                >
-                  <LazyImage ratio="1/1" img={layer.img} alt={layer.name}></LazyImage>
-                  {layer.name}
-                </button>
-              );
-            })}
+            {mapLayers.map((layer) => (
+              <button
+                key={layer.id}
+                className={cn(
+                  'map-picker__item w-16 font-semibold text-xs/3.5 text-center cursor-pointer flex flex-col justify-center items-center gap-1 transition-colors',
+                  {
+                    'map-picker__item--active': $activeMapLayer === layer.id,
+                  },
+                )}
+                type="button"
+                onClick={() => activeMapLayer.set(layer.id)}
+              >
+                <LazyImage ratio="1/1" img={layer.img} alt={layer.name}></LazyImage>
+                {layer.name}
+              </button>
+            ))}
           </div>
         </Popover.Content>
       </Popover.Portal>
