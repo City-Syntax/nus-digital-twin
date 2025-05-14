@@ -26,17 +26,6 @@
   }
 }
 
-kbd {
-  font-size: var(--text-sm);
-  background: rgba(var(--base-100), 0.8);
-  margin: 1px 4px;
-  box-shadow: 0 0 0 1px rgba(var(--base-300), 0.6);
-  padding: 0 var(--padding-xs);
-  border-radius: 4px;
-  display: inline-block;
-  text-align: center;
-}
-
 a:focus-visible {
   outline: var(--color-blue-400) 2px solid;
 }

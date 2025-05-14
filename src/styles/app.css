@@ -19,7 +19,8 @@
   --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 
-  --foreground: oklch(0.97 0 0);
+  --color-background: oklch(0.23 0.0019 286.25);
+  --color-foreground: oklch(0.97 0 0);
 }
 
 @layer base {
@@ -29,7 +30,7 @@
 
   body,
   html {
-    color: var(--foreground);
+    color: var(--color-foreground);
   }
 
   h1,
@@ -58,5 +59,16 @@
     font-weight: var(--font-weight-bold);
     color: currentColor;
     background-color: transparent;
+  }
+
+  kbd {
+    font-size: var(--text-sm);
+    background: --alpha(var(--color-background) / 80%);
+    margin: 1px 4px;
+    box-shadow: 0 0 0 1px rgba(var(--base-300), 0.6);
+    padding: 0 var(--padding-xs);
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
   }
 }
