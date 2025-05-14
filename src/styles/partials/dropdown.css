@@ -14,7 +14,7 @@
 }
 
 .dropdown-content {
-  @include dropdown-base;
+  @apply dropdown-base;
 
   overflow: hidden;
   min-width: 120px;

@@ -81,3 +81,12 @@
   backdrop-filter: saturate(140%) blur(4px);
   box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
 }
+
+@utility dropdown-base {
+  border: 1px solid rgba(var(--base-200), 0.4);
+  border-radius: var(--radius-lg);
+  backdrop-filter: saturate(120%) blur(8px);
+  background-color: --alpha(var(--color-background) / 70%);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  z-index: 10;
+}
