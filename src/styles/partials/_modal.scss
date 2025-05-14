@@ -8,11 +8,7 @@
 }
 
 #loading-bar {
-  width: 300px;
-  height: 14px;
-  border-radius: var(--radius-4xl);
   background-color: rgba(var(--base-300));
-  overflow: clip;
 
   > #loading-progress {
     width: 0;
