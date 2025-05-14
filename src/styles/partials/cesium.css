@@ -1,13 +1,47 @@
-/* ==========================================================================
-   CESIUM
-   Contains the styles for Cesium default elements such as the
-   timeline and toolbar.
-   ========================================================================== */
+div.cesium-viewer-timelineContainer {
+  width: 100%;
+  top: 0;
+}
+
+div.cesium-timeline-bar {
+  @apply bg-base;
+  background: rgba(28, 28, 28, 0.8);
+}
+
+div.cesium-timeline-main {
+  border: none;
+}
+
+div.cesium-viewer-toolbar {
+  top: 32px;
+}
+
+div.cesium-viewer-bottom {
+  top: 32px !important;
+  left: 8px !important;
+  bottom: unset !important;
+
+  img {
+    width: 100px;
+  }
+}
 
 div.cesium-credit-lightbox-overlay {
   background-color: transparent;
   backdrop-filter: saturate(120%) blur(8px);
   animation: fadeIn 150ms var(--ease-in-out-sine);
+}
+
+div.cesium-credit-lightbox-title {
+  font-family: var(--font-title);
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 12px;
+  font-size: var(--text-2_5xl);
+}
+
+.cesium-credit-lightbox-close {
+  display: none;
 }
 
 div.cesium-credit-lightbox.cesium-credit-lightbox-expanded,
@@ -41,48 +75,8 @@ div.cesium-credit-lightbox.cesium-credit-lightbox-mobile {
   animation: none;
 }
 
-.cesium-credit-lightbox-close {
-  display: none;
-}
-
-div.cesium-credit-lightbox-title {
-  font-family: var(--font-title);
-  font-weight: 625;
-  padding: 0;
-  margin-bottom: 12px;
-  font-size: var(--text-2_5xl);
-}
-
-div.cesium-viewer-timelineContainer {
-  width: 100%;
-  top: 0;
-}
-
-div.cesium-timeline-bar {
-  background: none;
-  @include bg-base;
-}
-
-div.cesium-viewer-toolbar {
-  top: 32px;
-}
-
-div.cesium-viewer-bottom {
-  top: 32px !important;
-  left: 8px !important;
-  bottom: unset !important;
-
-  img {
-    width: 100px;
-  }
-}
-
 .cesium-viewer div.cesium-widget-credits {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-div.cesium-timeline-main {
-  border: none;
 }
