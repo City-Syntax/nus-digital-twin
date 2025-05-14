@@ -3,8 +3,7 @@
    Include a base style and an optional sizing for the button.
 
    Base styles: btn or btn-secondary
-   Sizing (optional): btn-xs, btn-xs-square,
-                      btn-sm, btn-sm-square,
+   Sizing (optional): btn-sm, btn-sm-square,
                       btn-lg, btn-lg-square,
                       btn-xl, btn-xl-square
    ========================================================================== */
@@ -39,20 +38,6 @@
   &:hover {
     background-color: rgba(var(--base-200), 1);
   }
-}
-
-@mixin btn-xs {
-  height: var(--btn-xs);
-
-  > svg {
-    height: 1rem;
-    width: 1rem;
-  }
-}
-
-@mixin btn-xs-square {
-  @include btn-xs;
-  width: var(--btn-xs);
 }
 
 @mixin btn-sm {
