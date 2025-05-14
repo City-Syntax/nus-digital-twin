@@ -11,7 +11,8 @@
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"],
-      "@store": ["store.ts"]
+      "@store": ["store.ts"],
+      "@lib/*": ["lib/*"]
     }
   },
   "extends": "astro/tsconfigs/strict",
