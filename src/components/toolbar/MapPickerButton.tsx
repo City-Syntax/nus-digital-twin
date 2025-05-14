@@ -28,7 +28,7 @@ const MapPickerButton = () => {
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content className="popover-content" align="end" onCloseAutoFocus={(e) => e.preventDefault()}>
-          <div className="bg-base" id="map-picker">
+          <div className="bg-base p-4 rounded-2xl flex gap-4 mb-4" id="map-picker">
             {mapLayers.map((layer) => {
               return (
                 <button

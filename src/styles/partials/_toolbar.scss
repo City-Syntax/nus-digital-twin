@@ -58,15 +58,7 @@
 }
 
 #map-picker {
-  padding: var(--padding-base);
-  border-radius: var(--radius-2xl);
-  display: flex;
-  gap: 16px;
-  margin-bottom: 4px;
-
   > .map-picker__item {
-    border: none;
-    background: none;
     color: inherit;
     cursor: pointer;
     display: flex;
