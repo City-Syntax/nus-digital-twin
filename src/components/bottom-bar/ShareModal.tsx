@@ -5,6 +5,25 @@ import Icons from '../Icons';
 const ShareModal = () => {
   const SHARE_TEXT = 'View NUS Digital Twin at https://www.nus-digital-twin.com';
   const [isCopied, setIsCopied] = useState(false);
+
+  const links = [
+    {
+      icon: Icons.Mail,
+      label: 'Email',
+      url: `mailto:?body=${SHARE_TEXT}`,
+    },
+    {
+      icon: Icons.Telegram,
+      label: 'Telegram',
+      url: `https://t.me/share/url?url=https://www.nus-digital-twin.com&text=View NUS Digital Twin`,
+    },
+    {
+      icon: Icons.WhatsApp,
+      label: 'WhatsApp',
+      url: `https://api.whatsapp.com/send?text=${SHARE_TEXT}`,
+    },
+  ];
+
   return (
     <Dialog.Root
       onOpenChange={(open) => {
@@ -22,21 +41,12 @@ const ShareModal = () => {
           <Dialog.Title>Share NUS Digital Twin</Dialog.Title>
           <Dialog.Description className="sr-only">Share NUS Digital Twin</Dialog.Description>
           <div className="share-container grid grid-cols-1 gap-2 sm:grid-cols-3">
-            <a href={`mailto:?body=${SHARE_TEXT}`}>
-              <Icons.Mail />
-              Email
-            </a>
-            <a
-              target="_blank"
-              href={`https://t.me/share/url?url=https://www.nus-digital-twin.com&text=View NUS Digital Twin`}
-            >
-              <Icons.Telegram />
-              Telegram
-            </a>
-            <a target="_blank" href={`https://api.whatsapp.com/send?text=${SHARE_TEXT}`}>
-              <Icons.WhatsApp />
-              WhatsApp
-            </a>
+            {links.map((link, index) => (
+              <a key={index} target="_blank" href={link.url}>
+                <link.icon className="size-5" />
+                {link.label}
+              </a>
+            ))}
           </div>
           <div className="divider">OR</div>
           <div className="input-group">
