@@ -42,7 +42,12 @@ const ShareModal = () => {
           <Dialog.Description className="sr-only">Share NUS Digital Twin</Dialog.Description>
           <div className="share-container grid grid-cols-1 gap-2 sm:grid-cols-3">
             {links.map((link, index) => (
-              <a key={index} target="_blank" href={link.url}>
+              <a
+                className="text-sm flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-3"
+                key={index}
+                target="_blank"
+                href={link.url}
+              >
                 <link.icon className="size-5" />
                 {link.label}
               </a>
