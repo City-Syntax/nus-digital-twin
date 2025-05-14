@@ -40,7 +40,7 @@ const ShareModal = () => {
           </div>
           <div className="divider">OR</div>
           <div className="input-group">
-            <input disabled className="input input--full" type="text" defaultValue="www.nus-digital-twin.com" />
+            <input disabled className="input w-full" type="text" defaultValue="www.nus-digital-twin.com" />
             <button
               onClick={() => {
                 setIsCopied(true);
