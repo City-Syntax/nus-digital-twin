@@ -4,8 +4,7 @@
 
    Base styles: btn or btn-secondary
    Sizing (optional): btn-sm, btn-sm-square,
-                      btn-lg, btn-lg-square,
-                      btn-xl, btn-xl-square
+                      btn-lg, btn-xl, btn-xl-square
    ========================================================================== */
 
 @mixin btn {
@@ -60,15 +59,6 @@
 @mixin btn-sm-square {
   @include btn-sm;
   width: var(--btn-sm);
-}
-
-@mixin btn-square {
-  width: var(--btn-md);
-}
-
-@mixin btn-lg-square {
-  @include btn-lg;
-  width: var(--btn-lg);
 }
 
 @mixin btn-xl-square {
