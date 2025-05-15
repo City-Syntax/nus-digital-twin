@@ -190,7 +190,7 @@
 
 @utility btn-secondary {
   backdrop-filter: saturate(120%) blur(4px);
-  --btn-bg: rgba(var(--base-200), 0.5);
+  --btn-bg: --alpha(var(--color-background-light) / 60%);
 
   &:hover {
     background-color: var(--color-background-light);
