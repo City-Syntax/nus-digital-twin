@@ -205,7 +205,7 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  background: rgba(var(--base-200), 0.5);
+  background: --alpha(var(--color-background-light) / 50%);
   border-radius: 8px;
   padding: 4px;
   gap: 4px;
@@ -224,7 +224,7 @@
   }
 
   button:hover {
-    background-color: rgba(var(--base-200));
+    background-color: var(--color-background-light);
   }
 
   button.active {
