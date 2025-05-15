@@ -2,20 +2,8 @@
    UTILITIES
    ========================================================================== */
 
-@media screen and (min-width: calc($sm + 1px)) {
-  .hide-sm {
-    display: none !important;
-  }
-}
-
 @media screen and (min-width: calc($lg + 1px)) {
   .hide-md {
-    display: none !important;
-  }
-}
-
-@media screen and (max-width: $sm) {
-  .show-sm {
     display: none !important;
   }
 }

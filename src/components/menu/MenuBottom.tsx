@@ -16,7 +16,8 @@ const MenuBottom = () => {
       <div className="menu-list">
         <MenuLink toPage="controls" dir="bottom" isVertical isBottom label="Controls" iconName="Controls"></MenuLink>
       </div>
-      <div className="menu-list show-sm">
+      {/* TODO: Fix the important */}
+      <div className="menu-list hidden! sm:flex!">
         <MenuLink toPage="resources" dir="bottom" isVertical isBottom label="Resources" iconName="Resources"></MenuLink>
       </div>
       <div className="menu-list">
