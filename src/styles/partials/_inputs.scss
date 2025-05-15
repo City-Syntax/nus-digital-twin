@@ -170,31 +170,3 @@
 .select-item[data-highlighted] {
   background-color: rgba(var(--base-200), 0.8);
 }
-
-.input-group {
-  display: flex;
-
-  > * {
-    border-radius: 0;
-  }
-
-  > *:first-child {
-    border-top-left-radius: var(--radius-lg);
-    border-bottom-left-radius: var(--radius-lg);
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  > *:last-child {
-    border-top-right-radius: var(--radius-lg);
-    border-bottom-right-radius: var(--radius-lg);
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  > button {
-    @include btn-secondary;
-    height: unset;
-    padding: var(--padding-sm);
-  }
-}

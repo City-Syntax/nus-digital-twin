@@ -162,6 +162,7 @@
   font-size: var(--btn-fontsize, var(--text-base));
   padding: 0 var(--btn-padding, var(--padding-base));
   height: var(--btn-height, var(--btn-md));
+  transition: background-color 150ms;
 
   &:focus-visible {
     outline: none;
@@ -182,6 +183,15 @@
 @utility btn-primary {
   --btn-bg: var(--color-primary);
   --btn-color: var(--color-primary-foreground);
+}
+
+@utility btn-secondary {
+  backdrop-filter: saturate(120%) blur(4px);
+  --btn-bg: rgba(var(--base-200), 0.5);
+
+  &:hover {
+    background-color: var(--color-background-light);
+  }
 }
 
 @utility btn-xs {
@@ -253,6 +263,34 @@
     button.active {
       background-color: --alpha(var(--color-primary) / 50%);
     }
+  }
+}
+
+@utility input-group {
+  display: flex;
+
+  > * {
+    border-radius: 0;
+  }
+
+  > *:first-child {
+    border-top-left-radius: var(--radius-lg);
+    border-bottom-left-radius: var(--radius-lg);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  > *:last-child {
+    border-top-right-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  > button {
+    @apply btn btn-xl btn-secondary;
+    font-size: var(--text-base);
+    padding: 0 var(--padding-sm);
   }
 }
 
