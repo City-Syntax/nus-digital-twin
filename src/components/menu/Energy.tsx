@@ -130,20 +130,20 @@ const EnergyChart = ({ data, graphType, title }: { data: BarDatum[]; graphType: 
           legends: {
             text: {
               fontFamily: 'inherit',
-              fill: 'rgba(var(--base-content))',
+              fill: 'var(--color-foreground)',
             },
           },
           axis: {
             ticks: {
               text: {
                 fontFamily: 'inherit',
-                fill: 'rgba(var(--base-content))',
+                fill: 'var(--color-foreground)',
               },
             },
             legend: {
               text: {
                 fontFamily: 'inherit',
-                fill: 'rgba(var(--base-content))',
+                fill: 'var(--color-foreground)',
               },
             },
           },
