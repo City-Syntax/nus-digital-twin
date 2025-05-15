@@ -73,6 +73,8 @@
 
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
+
+  --modal-z: 99999;
 }
 
 @layer base {

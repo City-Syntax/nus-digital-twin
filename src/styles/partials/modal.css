@@ -2,7 +2,7 @@
   backdrop-filter: saturate(120%) blur(8px);
   position: fixed;
   inset: 0;
-  z-index: 99999;
+  z-index: var(--modal-z);
 
   &[data-state='open'] {
     animation: fadeIn 150ms var(--ease-in-out-sine);
@@ -23,7 +23,7 @@
 
 .modal__content {
   @apply bg-base;
-  z-index: 99999;
+  z-index: var(--modal-z);
   border-radius: var(--radius-2xl);
   position: fixed;
   top: 50%;
