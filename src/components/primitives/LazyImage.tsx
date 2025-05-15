@@ -41,8 +41,8 @@ const LazyImage = ({
       <div className="img-wrapper" style={{ marginBottom: '4px', aspectRatio: ratio }}>
         <div className={`img-container ${hasLoaded ? 'img-container--loaded' : ''}`}>
           {!hasLoaded && (
-            <div className="img-container__spinner">
-              <Icons.Spinner />
+            <div className="text-foreground w-full absolute flex justify-center top-1/2 -translate-y-1/2">
+              <Icons.Spinner className="size-8 animate-spin" />
             </div>
           )}
           <img

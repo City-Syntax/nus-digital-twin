@@ -50,19 +50,3 @@
     opacity: 1;
   }
 }
-
-.img-container__spinner {
-  position: absolute;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--color-foreground);
-
-  > svg {
-    height: 2rem;
-    width: 2rem;
-    animation: spin 1s linear infinite;
-  }
-}
