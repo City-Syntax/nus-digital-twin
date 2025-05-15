@@ -75,10 +75,18 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
         </div>
         {images.length > 1 && (
           <div className="absolute flex justify-between w-full top-1/2 left-0 -translate-y-1/2 px-1">
-            <button onClick={() => emblaApi?.scrollPrev()} disabled={prevBtnDisabled}>
+            <button
+              className="btn btn-sm btn-square transition-colors bg-background/70 rounded-4xl shrink-0 saturate-[120%] backdrop-blur-[1px] hover:bg-background/80 disabled:opacity-50 hover:disabled:bg-background/70"
+              onClick={() => emblaApi?.scrollPrev()}
+              disabled={prevBtnDisabled}
+            >
               <Icons.ChevronLeft></Icons.ChevronLeft>
             </button>
-            <button onClick={() => emblaApi?.scrollNext()} disabled={nextBtnDisabled}>
+            <button
+              className="btn btn-sm btn-square transition-colors bg-background/70 rounded-4xl shrink-0 saturate-[120%] backdrop-blur-[2px] hover:bg-background/80 disabled:opacity-50 hover:disabled:bg-background/70"
+              onClick={() => emblaApi?.scrollNext()}
+              disabled={nextBtnDisabled}
+            >
               <Icons.ChevronRight></Icons.ChevronRight>
             </button>
           </div>

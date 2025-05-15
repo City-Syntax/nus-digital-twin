@@ -35,25 +35,6 @@
   }
 }
 
-.carousel button {
-  @include btn;
-  @include btn-sm-square;
-  backdrop-filter: saturate(120%) blur(1px);
-  background-color: rgba(var(--base-100), 0.6);
-  border-radius: 100%;
-  flex-shrink: 0;
-  transition: background-color 150ms;
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: default;
-  }
-
-  &:hover:not(:disabled) {
-    background-color: rgba(var(--base-100), 0.7);
-  }
-}
-
 .img-wrapper {
   overflow: hidden;
   border-radius: var(--radius-2xl);
