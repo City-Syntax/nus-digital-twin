@@ -1,4 +1,4 @@
-.dropdown-trigger {
+@utility dropdown-trigger {
   &[data-state='open'] .dropdown-icon {
     transform: rotate(-180deg);
   }
@@ -13,7 +13,7 @@
   }
 }
 
-.dropdown-content {
+@utility dropdown-content {
   @apply dropdown-base;
 
   overflow: hidden;
@@ -22,22 +22,18 @@
 
   &[data-state='open'] {
     animation: scaleIn 150ms var(--ease-in-out-cubic);
-
-    body.reduce-motion & {
-      animation: none;
-    }
   }
 
   &[data-state='closed'] {
     animation: scaleOut 150ms var(--ease-in-out-cubic);
+  }
 
-    body.reduce-motion & {
-      animation: none;
-    }
+  body.reduce-motion & {
+    animation: none;
   }
 }
 
-.dropdown-item {
+@utility dropdown-item {
   font-size: var(--text-sm);
   padding: var(--padding-xs);
   user-select: none;
