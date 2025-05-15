@@ -82,7 +82,7 @@
   transition: background 150ms ease-out;
 
   &:hover {
-    background: rgba(var(--base-100));
+    background: var(--color-background);
   }
 
   &[data-orientation='vertical'] {

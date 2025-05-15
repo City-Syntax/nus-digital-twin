@@ -27,7 +27,7 @@
     pointer-events: auto;
 
     &:hover {
-      background-color: rgba(var(--base-100), 1);
+      background-color: var(--color-background);
     }
   }
 }
