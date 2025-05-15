@@ -22,7 +22,7 @@ const MenuLeft = () => {
 
   return (
     <nav className="menubar-left bg-base">
-      <div className="menubar-header">
+      <div className="px-4">
         <Searchbar />
       </div>
       <ScrollContainer>
