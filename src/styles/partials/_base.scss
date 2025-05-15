@@ -28,13 +28,6 @@ $lg: 1252px;
   --base-300: 169, 169, 169;
 }
 
-.list--bullet {
-  > li::before {
-    content: '•';
-    font-size: var(--text-xs);
-  }
-}
-
 @mixin dropdown-base {
   border: 1px solid rgba(var(--base-200), 0.4);
   border-radius: var(--radius-lg);
