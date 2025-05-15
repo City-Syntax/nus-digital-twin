@@ -11,6 +11,7 @@
   cursor: pointer;
   transition: color 150ms ease-out;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   border-radius: var(--radius-2xl);
 
