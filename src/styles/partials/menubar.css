@@ -94,6 +94,19 @@
   }
 }
 
+.menubar-content {
+  @apply w-full lg:w-[388px];
+  border-radius: var(--radius-2xl);
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--padding-base);
+  padding-bottom: var(--padding-base);
+
+  > * + * {
+    margin-top: var(--content-gap);
+  }
+}
+
 .menubar-footer {
   padding-top: var(--padding-sm);
   margin-top: auto;

@@ -2,23 +2,6 @@
    MENU
    ========================================================================== */
 
-.menubar-content {
-  border-radius: var(--radius-2xl);
-  display: flex;
-  flex-direction: column;
-  padding-top: var(--padding-base);
-  padding-bottom: var(--padding-base);
-  width: 388px;
-
-  > * + * {
-    margin-top: var(--content-gap);
-  }
-
-  @media screen and (max-width: $lg) {
-    width: 100%;
-  }
-}
-
 @media screen and (max-width: $lg) {
   .scroll-area-viewport:has(.menubar-content-body) {
     .menu-bottom & {
