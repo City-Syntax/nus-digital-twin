@@ -1,5 +1,4 @@
 $xs: 378px;
-$sm: 448px;
 $lg: 1252px;
 
 @mixin property($variable: variable, $syntax: '<number>', $inherits: true, $initial-value: 0) {
