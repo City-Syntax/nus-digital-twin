@@ -124,7 +124,7 @@ const Searchbar = () => {
     <Command shouldFilter={false} label="Search buildings" loop>
       <div className="search relative">
         <Command.Input
-          className="outline-none text-base p-3 rounded-lg lg:text-sm"
+          className="outline-none text-base p-3 rounded-lg w-full lg:text-sm"
           onFocus={() => {
             setOpen(true);
             scrollUpOnChange();
@@ -150,7 +150,7 @@ const Searchbar = () => {
         ></Command.Input>
         <button
           ref={clearBtnRef}
-          className="clear-btn"
+          className="clear-btn hover:[&>svg]:opacity-70"
           type="button"
           onFocus={() => document.addEventListener('keydown', clearSearchOnEnter)}
           onBlur={() => document.removeEventListener('keydown', clearSearchOnEnter)}
@@ -160,7 +160,7 @@ const Searchbar = () => {
             focusOnInput();
           }}
         >
-          <Icons.Close></Icons.Close>
+          <Icons.Close className="size-4 transition-opacity"></Icons.Close>
         </button>
       </div>
       <Command.List className={open ? '' : 'hide'} ref={listRef} tabIndex={-1}>
