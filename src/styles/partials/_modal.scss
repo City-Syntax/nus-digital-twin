@@ -27,8 +27,6 @@
 
 .share-container {
   > a {
-    color: inherit;
-    border: none;
     box-shadow: inset 0 0 0 1px rgba(var(--base-300));
     transition: background-color 150ms;
 
