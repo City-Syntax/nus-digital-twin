@@ -54,7 +54,7 @@ const Menu = () => {
 
   return (
     <div>
-      <div className="menu-left show-md">
+      <div className="menu-left hidden lg:flex">
         <MenuLeft></MenuLeft>
         <CSSTransition
           mountOnEnter
@@ -85,7 +85,7 @@ const Menu = () => {
           </div>
         </CSSTransition>
       </div>
-      <div className="menu-right show-md">
+      <div className="menu-right hidden lg:flex">
         <CSSTransition
           mountOnEnter
           unmountOnExit
@@ -105,7 +105,7 @@ const Menu = () => {
         </CSSTransition>
         <MenuRight></MenuRight>
       </div>
-      <div className="menu-bottom hide-md">
+      <div className="menu-bottom flex lg:hidden">
         <CSSTransition
           mountOnEnter
           unmountOnExit

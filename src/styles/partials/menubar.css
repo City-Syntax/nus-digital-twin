@@ -1,4 +1,4 @@
-.menu-left {
+@utility menu-left {
   position: absolute;
   z-index: 1;
   display: flex;
@@ -15,7 +15,7 @@
   max-height: 668px;
 }
 
-.menu-right {
+@utility menu-right {
   position: absolute;
   z-index: 1;
   display: flex;
@@ -32,7 +32,7 @@
   min-height: 348px;
 }
 
-.menu-bottom {
+@utility menu-bottom {
   position: absolute;
   z-index: 1;
   display: flex;
@@ -132,7 +132,7 @@
   flex-direction: column;
 }
 
-.menubar-content-footer {
+@utility menubar-content-footer {
   padding-top: var(--padding-sm);
   margin-top: auto;
   padding-left: var(--padding-base);

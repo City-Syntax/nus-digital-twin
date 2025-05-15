@@ -88,7 +88,7 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
         </div>
       </ScrollContainer>
       {buildingProperties && (
-        <div className="menubar-content-footer hide-md">
+        <div className="menubar-content-footer flex lg:hidden">
           <button
             className="footer-link"
             onClick={() => {
