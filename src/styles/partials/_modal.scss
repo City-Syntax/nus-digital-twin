@@ -7,22 +7,12 @@
   z-index: 99999;
 }
 
-#loading-bar {
-  background-color: rgba(var(--base-300));
-
-  > #loading-progress {
-    width: 0;
-    height: 100%;
-    background-color: var(--color-primary);
-    transition: width 100ms cubic-bezier(0.65, 0, 0.35, 1);
-    will-change: width;
-  }
-}
-
-#loading-text {
-  margin-top: 6px;
-  text-align: center;
-  color: rgba(var(--base-300));
+#loading-progress {
+  width: 0;
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: width 100ms cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: width;
 }
 
 .share-container {

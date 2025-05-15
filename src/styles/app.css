@@ -32,6 +32,9 @@
   --color-primary-light: var(--primary-light);
   --color-primary-foreground: var(--primary-foreground);
 
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
   --radius-xs: calc(var(--radius) - 12px);
   --radius-sm: calc(var(--radius) - 8px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -67,6 +70,9 @@
   --padding-base: 16px;
   --padding-lg: 20px;
   --padding-xl: 24px;
+
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
 }
 
 @layer base {
