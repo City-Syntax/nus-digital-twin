@@ -25,6 +25,10 @@
 
   --color-background: oklch(0.23 0.0019 286.25);
   --color-foreground: oklch(0.97 0 0);
+
+  --color-primary: oklch(54.6% 0.245 262.881);
+  --color-primary-muted: oklch(70.7% 0.165 254.624);
+  --color-primary-foreground: oklch(97% 0.014 254.604);
 }
 
 :root {

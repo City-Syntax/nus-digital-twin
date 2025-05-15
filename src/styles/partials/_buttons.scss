@@ -19,7 +19,7 @@
 
   &:focus-visible {
     outline: none;
-    box-shadow: inset 0 0 0 2px var(--color-blue-400);
+    box-shadow: inset 0 0 0 2px var(--color-primary-muted);
   }
 
   > svg {
@@ -94,7 +94,7 @@
   }
 
   button.active {
-    background-color: var(--color-blue-600);
+    background-color: var(--color-primary);
   }
 }
 
@@ -105,6 +105,6 @@
   }
 
   button.active {
-    background-color: --alpha(var(--color-blue-600) / 50%);
+    background-color: --alpha(var(--color-primary) / 50%);
   }
 }

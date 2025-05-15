@@ -66,10 +66,10 @@
   }
 
   .map-picker__item--active {
-    color: var(--color-blue-400);
+    color: var(--color-primary-muted);
 
     > * {
-      border: 2px solid var(--color-blue-400);
+      border: 2px solid var(--color-primary-muted);
     }
   }
 }
