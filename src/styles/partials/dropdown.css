@@ -53,6 +53,6 @@
   }
 
   &[data-highlighted] {
-    background-color: rgba(var(--base-200), 0.8);
+    background-color: --alpha(var(--color-background-muted) / 80%);
   }
 }

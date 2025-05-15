@@ -4,6 +4,7 @@
 @import './radix/popover.css';
 @import './partials/tooltip.css';
 @import './partials/notifications.css';
+@import './partials/dropdown.css';
 @import './partials/cesium.css';
 @import './partials/modal.css';
 
@@ -24,6 +25,7 @@
   --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 
   --color-background: oklch(0.23 0.0019 286.25);
+  --color-background-muted: oklch(0.45 0.0016 286.33);
   --color-foreground: oklch(0.97 0 0);
 
   --color-primary: oklch(54.6% 0.245 262.881);
