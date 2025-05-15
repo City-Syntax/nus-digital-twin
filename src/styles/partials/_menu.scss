@@ -55,13 +55,9 @@
   padding-right: var(--padding-xs);
 }
 
-@mixin menu-base {
+@mixin menu-x-base {
   border-radius: var(--radius-2xl);
   display: flex;
-}
-
-@mixin menu-x-base {
-  @include menu-base;
   flex-direction: column;
   padding-top: var(--padding-base);
   padding-bottom: var(--padding-base);
@@ -82,7 +78,8 @@
 }
 
 .menubar-bottom {
-  @include menu-base;
+  border-radius: var(--radius-2xl);
+  display: flex;
   padding-left: var(--padding-lg);
   padding-right: var(--padding-lg);
   justify-content: space-between;
