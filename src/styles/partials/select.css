@@ -30,7 +30,7 @@
 }
 
 .select-trigger-content {
-  @apply min-w-0 py-2 px-0 w-full xs:min-w-max xs:px-3 xs:w-auto;
+  @apply min-w-0 py-2 px-0 w-full xs:min-w-max xs:pl-3 xs:pr-2.5 xs:w-auto;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
