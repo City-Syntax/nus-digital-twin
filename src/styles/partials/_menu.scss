@@ -127,20 +127,11 @@
   font-size: var(--text-sm);
   color: var(--color-muted-foreground);
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
   button {
-    background: none;
-    border: none;
     transition: color 150ms;
-    color: inherit;
     display: flex;
     align-items: center;
     gap: 4px;
-    cursor: pointer;
 
     &:hover {
       color: var(--color-foreground);
@@ -153,10 +144,8 @@
   }
 
   .footer-link {
-    color: inherit;
     display: flex;
     text-align: left;
-    font-size: var(--text-sm);
 
     > svg {
       flex-shrink: 0;
