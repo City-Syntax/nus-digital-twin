@@ -50,20 +50,3 @@
     }
   }
 }
-
-#map-picker {
-  > .map-picker__item {
-    > * {
-      border: 2px solid transparent;
-      transition: border 150ms;
-    }
-  }
-
-  .map-picker__item--active {
-    color: var(--color-primary-light);
-
-    > * {
-      border: 2px solid var(--color-primary-light);
-    }
-  }
-}
