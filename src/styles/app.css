@@ -11,6 +11,7 @@
 @import './partials/scrollarea.css';
 @import './partials/menubar.css';
 @import './partials/cmdk.css';
+@import './partials/select.css';
 
 @theme inline {
   --font-sans: 'Inter Variable', system-ui, sans-serif;

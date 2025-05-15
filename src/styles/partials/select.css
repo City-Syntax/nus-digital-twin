@@ -1,14 +1,7 @@
-/* ==========================================================================
-   INPUTS
-   ========================================================================== */
-
 .select-trigger {
-  @include btn;
-  font-size: var(--text-sm);
+  @apply btn btn-sm min-w-full xs:min-w-0;
+  border: 1px solid var(--color-muted-foreground);
   background: transparent;
-  color: inherit;
-  outline: none;
-  box-shadow: inset 0 0 0 1px rgba(var(--base-300));
   border-radius: var(--radius-lg);
   transition:
     width 200ms,
@@ -35,11 +28,6 @@
     transition: box-shadow 100ms;
   }
 
-  @media screen and (max-width: $xs) {
-    min-width: 100%;
-    max-width: 100%;
-  }
-
   &:focus,
   &:hover {
     box-shadow: inset 0 0 0 2px var(--color-primary-light);
@@ -47,17 +35,11 @@
 }
 
 .select-trigger-content {
+  @apply min-w-0 py-2 px-0 w-full xs:min-w-max xs:px-3 xs:w-auto;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  min-width: max-content;
   text-align: left;
-  padding: var(--padding-xs) var(--padding-xs) var(--padding-xs) var(--padding-sm);
-
-  @media screen and (max-width: $xs) {
-    min-width: 0;
-    width: 100%;
-  }
 
   > * + * {
     flex-shrink: 0;
@@ -65,15 +47,11 @@
 }
 
 .select-content {
-  @include dropdown-base;
+  @apply dropdown-base w-(--radix-select-trigger-width) xs:w-auto;
 
   font-size: var(--text-sm);
   overflow: hidden;
   transform-origin: var(--radix-select-content-transform-origin);
-
-  @media screen and (max-width: $xs) {
-    width: var(--radix-select-trigger-width);
-  }
 }
 
 .select-content[data-state='open'] {
