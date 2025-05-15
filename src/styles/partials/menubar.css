@@ -32,6 +32,16 @@
   }
 }
 
+.menu-list-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 250ms ease-in-out;
+
+  body.reduce-motion & {
+    transition: none;
+  }
+}
+
 .menu-toggle:checked {
   & ~ .menu-list-content {
     max-height: 100vh;
