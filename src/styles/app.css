@@ -259,3 +259,40 @@
     color: var(--color-primary-light);
   }
 }
+
+@utility divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  height: 1rem;
+  white-space: nowrap;
+
+  &::before,
+  &::after {
+    height: 1px;
+    width: 100%;
+    flex-grow: 1;
+    background-color: --alpha(var(--color-muted-foreground) / 60%);
+    content: '';
+  }
+
+  &:not(:empty) {
+    gap: 0.5rem;
+  }
+}
+
+@utility divider-horizontal {
+  @apply divider;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: auto;
+  width: 1rem;
+  flex-direction: column;
+
+  &::before,
+  &::after {
+    height: 100%;
+    width: 1px;
+  }
+}
