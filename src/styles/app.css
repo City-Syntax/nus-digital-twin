@@ -156,6 +156,7 @@
 }
 
 @utility btn {
+  @apply focus-visible:ring focus-visible:ring-primary-light;
   border-radius: var(--btn-radius, var(--radius-lg));
   display: flex;
   align-items: center;
@@ -166,10 +167,13 @@
   padding: 0 var(--btn-padding, var(--padding-base));
   height: var(--btn-height, var(--btn-md));
   transition: background-color 150ms;
+  border: 1px solid transparent;
+  margin-top: 1px;
+  margin-bottom: 1px;
 
   &:focus-visible {
     outline: none;
-    box-shadow: inset 0 0 0 2px var(--color-primary-light);
+    border-color: var(--color-primary-light);
   }
 
   > svg {

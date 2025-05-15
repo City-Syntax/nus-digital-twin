@@ -27,11 +27,6 @@
   body.reduce-motion & {
     transition: box-shadow 100ms;
   }
-
-  &:focus,
-  &:hover {
-    box-shadow: inset 0 0 0 2px var(--color-primary-light);
-  }
 }
 
 .select-trigger-content {
