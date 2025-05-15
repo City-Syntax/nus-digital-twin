@@ -199,6 +199,50 @@
   --btn-height: var(--btn-xl);
 }
 
+@utility btn-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background: rgba(var(--base-200), 0.5);
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+
+  input[type='radio'] {
+    display: none;
+  }
+
+  button {
+    @apply btn;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 8px;
+    background: transparent;
+    transition: background-color 150ms;
+  }
+
+  button:hover {
+    background-color: rgba(var(--base-200));
+  }
+
+  button.active {
+    background-color: var(--color-primary);
+  }
+
+  &:has(button[disabled]) {
+    button {
+      background: transparent;
+      color: rgba(var(--base-300));
+    }
+
+    button.active {
+      background-color: --alpha(var(--color-primary) / 50%);
+    }
+  }
+}
+
 @utility link {
   text-decoration: underline;
   transition: color 150ms;
