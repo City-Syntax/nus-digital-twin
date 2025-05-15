@@ -6,7 +6,9 @@ Astro.response.status = 404;
 ---
 
 <StarlightPage frontmatter={{ title: 'Page Not Found', template: 'splash' }}>
-  This page you're looking for cannot be found. Why not check out <span
-    style={{ display: 'inline-block', marginRight: '4px' }}><Icons.Logo height="1rem" width="1rem" /></span
-  ><a href="/">NUS Digital Twin</a>?
+  The page you're looking for cannot be found. Why not check out
+  <span class="mr-0.5 ml-0.5 inline-block">
+    <Icons.Logo className="size-4.5" />
+  </span>
+  <a href="/">NUS Digital Twin</a>?
 </StarlightPage>
