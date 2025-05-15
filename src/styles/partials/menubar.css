@@ -112,6 +112,14 @@
   margin-top: auto;
 }
 
+.menu-list-title {
+  padding-left: var(--padding-base);
+  padding-right: var(--padding-base);
+  color: var(--color-muted-foreground);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
 .menu-toggle {
   appearance: none;
   outline: none;
