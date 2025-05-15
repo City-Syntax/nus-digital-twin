@@ -68,7 +68,8 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           target="_blank"
           rel="noreferrer"
         >
-          <button className="footer-link footer-link--report">
+          {/* TODO: Remove the important */}
+          <button className="footer-link hover:text-amber-600!">
             <Icons.Flag></Icons.Flag>
             Report issue
           </button>
