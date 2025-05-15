@@ -11,6 +11,7 @@ import Icons from '../../Icons';
 import ScrollContainer from '../../primitives/ScrollContainer';
 import Tippy from '@tippyjs/react';
 import Select from '../../primitives/Select';
+import { cn } from '@lib/utils';
 
 type BuildingInfoProps = {
   category: BuildingInfoCategories;
@@ -79,8 +80,11 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
               arrow={false}
               placement="top-end"
             >
+              {/* TODO: Remove the important when migration complete */}
               <button
-                className={$activePages.right === 'energy' ? 'footer-link--energy--active' : ''}
+                className={cn({
+                  'text-yellow-500! hover:text-yellow-500!': $activePages.right === 'energy',
+                })}
                 onClick={() => {
                   if ($activePages.right === 'energy') {
                     activePages.set({
