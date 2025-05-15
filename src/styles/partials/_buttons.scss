@@ -46,22 +46,9 @@
   }
 }
 
-@mixin btn-lg {
-  height: var(--btn-lg);
-}
-
-@mixin btn-xl {
-  height: var(--btn-xl);
-}
-
 @mixin btn-sm-square {
   @include btn-sm;
   width: var(--btn-sm);
-}
-
-@mixin btn-xl-square {
-  @include btn-xl;
-  width: var(--btn-xl);
 }
 
 .btn-group {
