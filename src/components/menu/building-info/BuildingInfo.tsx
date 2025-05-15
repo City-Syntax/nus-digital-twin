@@ -74,7 +74,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
             Report issue
           </button>
         </a>
-        <span className="footer-section">
+        <span className="flex gap-2 justify-start">
           {(buildingProperties.energyUse || buildingProperties.energyUseIntensity) && (
             <Tippy
               content={`${$activePages.right === 'energy' ? 'Close' : 'View'} energy use data`}
