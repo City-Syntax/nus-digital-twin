@@ -127,7 +127,7 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>
-          <div className="download-btn-container">
+          <div className="flex flex-col gap-2">
             {content.map((c: DownloadProps) => (
               <DownloadButton key={c.type} {...c}></DownloadButton>
             ))}
