@@ -632,7 +632,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   <h1>NUS Digital Twin</h1>
   <div>
     <div class="w-[300px] h-3.5 rounded-4xl overflow-clip bg-muted-foreground/90">
-      <div id="loading-progress"></div>
+      <div
+        class="w-0 h-full bg-primary transition-[width] duration-100 ease-[cubic-bezier(0.65, 0, 0.35, 1)] will-change-[width]"
+        id="loading-progress"
+      >
+      </div>
     </div>
     <div class="mt-2 text-center text-muted-foreground">
       Loading...<span id="loading-percentage">0</span>%
