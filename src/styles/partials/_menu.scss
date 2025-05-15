@@ -579,15 +579,3 @@
     display: none;
   }
 }
-
-.help__content {
-  > * + * {
-    margin-top: 4px;
-  }
-
-  > li {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-  }
-}
