@@ -22,15 +22,6 @@
   }
 }
 
-.carousel {
-  position: relative;
-}
-
-.carousel-content {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-}
-
 .carousel-content-container {
   display: flex;
 }
@@ -83,23 +74,6 @@
   justify-content: center;
   gap: 4px;
   margin-top: 8px;
-
-  > button {
-    @include btn;
-    background-color: rgba(var(--base-300), 0.3);
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 100%;
-    transition: background-color 150ms;
-
-    &:hover {
-      background-color: rgba(var(--base-300), 0.4);
-    }
-
-    &.active {
-      background-color: var(--color-primary);
-    }
-  }
 }
 
 .img-wrapper {

@@ -4,6 +4,7 @@ import type { EmblaCarouselType } from 'embla-carousel';
 import Icons from '../Icons';
 import LazyImage from './LazyImage';
 import type { ImageProps } from '../../types';
+import { cn } from '@lib/utils';
 
 const Carousel = ({ images }: { images: ImageProps[] }) => {
   if (!images || images.length === 0) {
@@ -57,8 +58,8 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
 
   return (
     <>
-      <div className="carousel">
-        <div className="carousel-content" ref={emblaRef}>
+      <div className="carousel relative">
+        <div className="rounded-xl overflow-hidden" ref={emblaRef}>
           <div className="carousel-content-container">
             {images.length === 0 && (
               <div className="carousel-item">
@@ -88,7 +89,9 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
         {scrollSnaps.map((_, index) => (
           <button
             key={index}
-            className={selectedIndex === index ? 'active' : ''}
+            className={cn('size-2 rounded-4xl transition-colors bg-muted-foreground/30 hover:bg-muted-foreground/40', {
+              'bg-primary hover:bg-primary': selectedIndex === index,
+            })}
             onClick={() => onDotButtonClick(index)}
           ></button>
         ))}
