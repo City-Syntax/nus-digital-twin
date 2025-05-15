@@ -150,7 +150,7 @@ const Searchbar = () => {
         ></Command.Input>
         <button
           ref={clearBtnRef}
-          className="clear-btn hover:[&>svg]:opacity-70"
+          className="clear-btn absolute right-0 top-1/2 -translate-y-1/2 btn btn-sm btn-square rounded-4xl bg-transparent [&>svg]:stroke-muted-foreground hover:[&>svg]:opacity-70"
           type="button"
           onFocus={() => document.addEventListener('keydown', clearSearchOnEnter)}
           onBlur={() => document.removeEventListener('keydown', clearSearchOnEnter)}

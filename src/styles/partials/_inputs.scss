@@ -16,19 +16,6 @@
   }
 
   > .clear-btn {
-    @include btn;
-
-    > svg {
-      stroke: rgba(var(--base-300));
-    }
-
-    height: 2rem;
-    width: 2rem;
-    border-radius: 100%;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
     display: none;
   }
 }
