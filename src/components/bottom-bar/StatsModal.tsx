@@ -26,9 +26,7 @@ const StatsModal = () => {
         <Dialog.Content className="modal__content">
           <Dialog.Title>Statistics</Dialog.Title>
           <Dialog.Description className="sr-only">Statistics for NUS Digital Twin</Dialog.Description>
-          <div className="modal__content__description">
-            Visits (from 8 May 2025): {isLoading ? 'Loading...' : lifetimeVisits}
-          </div>
+          <div>Visits (from 8 May 2025): {isLoading ? 'Loading...' : lifetimeVisits}</div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

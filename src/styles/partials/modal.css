@@ -1,4 +1,4 @@
-.modal__overlay {
+@utility modal__overlay {
   backdrop-filter: saturate(120%) blur(8px);
   position: fixed;
   inset: 0;
@@ -6,22 +6,18 @@
 
   &[data-state='open'] {
     animation: fadeIn 150ms var(--ease-in-out-sine);
-
-    body.reduce-motion & {
-      animation: none;
-    }
   }
 
   &[data-state='closed'] {
     animation: fadeOut 150ms var(--ease-in-out-sine);
+  }
 
-    body.reduce-motion & {
-      animation: none;
-    }
+  body.reduce-motion & {
+    animation: none;
   }
 }
 
-.modal__content {
+@utility modal__content {
   @apply bg-base;
   z-index: var(--modal-z);
   border-radius: var(--radius-2xl);
@@ -34,37 +30,27 @@
   max-height: 85vh;
   padding: var(--padding-xl);
 
-  .modal__content__description {
-    div {
-      margin-top: 4px;
-    }
-  }
-
   > * + * {
     margin-top: 12px;
   }
 
   &[data-state='open'] {
     animation: contentShow 150ms var(--ease-in-out-sine);
-
-    body.reduce-motion & {
-      animation: none;
-    }
   }
 
   &[data-state='closed'] {
     animation: contentHide 150ms var(--ease-in-out-sine);
+  }
 
-    body.reduce-motion & {
-      animation: none;
-    }
+  body.reduce-motion & {
+    animation: none;
   }
 
   h3 {
     margin-top: 20px;
   }
-}
 
-.modal__content:focus {
-  outline: none;
+  &:focus {
+    outline: none;
+  }
 }
