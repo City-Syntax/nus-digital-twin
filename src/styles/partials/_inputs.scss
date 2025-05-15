@@ -4,19 +4,6 @@
 
 .search {
   > input {
-    &::placeholder {
-      opacity: 1;
-    }
-
-    transition: box-shadow 100ms;
-    text-overflow: ellipsis;
-    box-shadow: inset 0 0 0 1px rgba(var(--base-300));
-
-    &:focus,
-    &:hover {
-      box-shadow: inset 0 0 0 2px var(--color-primary-light);
-    }
-
     &:not(:placeholder-shown) {
       padding-right: 32px;
 
@@ -57,6 +44,7 @@
   overflow-y: auto;
   width: calc(var(--menu-left-width) - var(--padding-base) * 2);
   border: none;
+  margin-top: 2px;
 
   body.reduce-motion & {
     transition: none;

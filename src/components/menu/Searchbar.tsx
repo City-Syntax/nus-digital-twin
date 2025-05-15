@@ -124,7 +124,7 @@ const Searchbar = () => {
     <Command shouldFilter={false} label="Search buildings" loop>
       <div className="search relative">
         <Command.Input
-          className="outline-none text-base p-3 rounded-lg w-full lg:text-sm placeholder:text-muted-foreground"
+          className="outline-none overflow-ellipsis text-base p-3 rounded-lg w-full transition-all duration-100 border border-muted-foreground focus:ring focus:ring-primary-light focus:border-primary-light hover:ring hover:ring-primary-light hover:border-primary-light lg:text-sm placeholder:text-muted-foreground mt-[1px]"
           onFocus={() => {
             setOpen(true);
             scrollUpOnChange();
