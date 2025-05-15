@@ -6,6 +6,7 @@
 @import './partials/notifications.css';
 @import './partials/dropdown.css';
 @import './partials/cesium.css';
+@import './partials/toolbar.css';
 @import './partials/modal.css';
 
 @theme inline {

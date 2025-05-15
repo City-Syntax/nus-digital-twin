@@ -16,13 +16,13 @@
   pointer-events: none;
 
   > .toolbar__section {
+    @apply flex-col lg:flex-row;
     display: flex;
     gap: 6px;
   }
 
   .toolbar-btn {
-    @include btn;
-    @include btn-xl-square;
+    @apply btn btn-xl btn-square bg-base;
     transition: background-color 150ms;
     pointer-events: auto;
 
@@ -35,12 +35,6 @@
 @media screen and (max-height: 578px) and (min-width: 879px) {
   #screenshot-btn {
     display: none;
-  }
-}
-
-@media screen and (max-width: $lg) {
-  .toolbar > .toolbar__section {
-    flex-direction: column;
   }
 }
 
