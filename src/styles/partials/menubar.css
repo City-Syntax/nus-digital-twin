@@ -132,6 +132,44 @@
   flex-direction: column;
 }
 
+.menubar-content-footer {
+  padding-top: var(--padding-sm);
+  margin-top: auto;
+  padding-left: var(--padding-base);
+  padding-right: var(--padding-base);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-sm);
+  color: var(--color-muted-foreground);
+
+  button {
+    transition: color 150ms;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &:hover {
+      color: var(--color-foreground);
+    }
+
+    > svg {
+      height: 1.25rem;
+      width: auto;
+    }
+  }
+
+  .footer-link {
+    display: flex;
+    text-align: left;
+
+    > svg {
+      flex-shrink: 0;
+      height: 1rem;
+    }
+  }
+}
+
 .menu-toggle {
   appearance: none;
   outline: none;
