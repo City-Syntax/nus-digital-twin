@@ -62,12 +62,12 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
         <div className="rounded-xl overflow-hidden" ref={emblaRef}>
           <div className="flex">
             {images.length === 0 && (
-              <div className="carousel-item">
+              <div className="flex-[0_0_100%] min-w-0 aspect-video min-h-[100px]">
                 <LazyImage></LazyImage>
               </div>
             )}
             {images.map((img) => (
-              <div className="carousel-item" key={img.src}>
+              <div className="flex-[0_0_100%] min-w-0 aspect-video min-h-[100px]" key={img.src}>
                 <LazyImage img={img} caption={img.author}></LazyImage>
               </div>
             ))}
