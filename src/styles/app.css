@@ -10,6 +10,7 @@
 @import './partials/modal.css';
 @import './partials/scrollarea.css';
 @import './partials/menubar.css';
+@import './partials/cmdk.css';
 
 @theme inline {
   --font-sans: 'Inter Variable', system-ui, sans-serif;
