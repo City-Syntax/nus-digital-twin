@@ -171,16 +171,6 @@
   background-color: rgba(var(--base-200), 0.8);
 }
 
-.input {
-  background-color: transparent;
-  color: inherit;
-  font-size: var(--text-base);
-  padding: var(--padding-sm);
-  outline: none;
-  border-radius: var(--radius-lg);
-  box-shadow: inset 0 0 0 1px rgba(var(--base-300));
-}
-
 .input-group {
   display: flex;
 
