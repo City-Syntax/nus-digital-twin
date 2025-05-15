@@ -2,14 +2,10 @@
    MENU
    ========================================================================== */
 
-@mixin menu-container {
+.menu-left {
   position: absolute;
   z-index: 1;
   display: flex;
-}
-
-.menu-left {
-  @include menu-container;
   top: 0;
   bottom: 0;
   margin: auto 0;
@@ -24,7 +20,9 @@
 }
 
 .menu-right {
-  @include menu-container;
+  position: absolute;
+  z-index: 1;
+  display: flex;
   top: 0;
   bottom: 0;
   margin: auto 0;
@@ -39,7 +37,9 @@
 }
 
 .menu-bottom {
-  @include menu-container;
+  position: absolute;
+  z-index: 1;
+  display: flex;
   margin: 0 auto;
   left: 0;
   right: 0;
