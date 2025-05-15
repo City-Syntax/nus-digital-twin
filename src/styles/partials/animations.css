@@ -60,7 +60,7 @@
   }
 }
 
-@keyframes ping {
+@keyframes greenPing {
   0% {
     box-shadow: 0 0 0 0 --alpha(var(--color-green-700) / 75%);
   }

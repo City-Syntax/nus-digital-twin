@@ -297,6 +297,28 @@
   }
 }
 
+.active-indicator {
+  @apply mr-2 lg:mr-1;
+  margin-left: auto;
+  border-radius: var(--radius-2xl);
+  height: 0.5rem;
+  width: 0.5rem;
+  background-color: var(--color-green-700);
+  transform: scale(0);
+  opacity: 0;
+  transition: all 150ms cubic-bezier(0.65, 0, 0.35, 1);
+
+  body.reduce-motion & {
+    transform: scale(1);
+  }
+
+  &.show {
+    transform: scale(1);
+    opacity: 1;
+    animation: greenPing 1s cubic-bezier(0, 0, 0.2, 1) 1;
+  }
+}
+
 .menu-list-content {
   max-height: 0;
   overflow: hidden;
