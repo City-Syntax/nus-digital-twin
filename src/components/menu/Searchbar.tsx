@@ -122,9 +122,9 @@ const Searchbar = () => {
 
   return (
     <Command shouldFilter={false} label="Search buildings" loop>
-      <div className="search relative">
+      <div className="relative">
         <Command.Input
-          className="outline-none overflow-ellipsis text-base p-3 rounded-lg w-full transition-all duration-100 border border-muted-foreground focus:ring focus:ring-primary-light focus:border-primary-light hover:ring hover:ring-primary-light hover:border-primary-light lg:text-sm placeholder:text-muted-foreground mt-[1px]"
+          className="outline-none overflow-ellipsis text-base p-3 rounded-lg w-full transition-all duration-100 border border-muted-foreground focus:ring focus:ring-primary-light focus:border-primary-light hover:ring hover:ring-primary-light hover:border-primary-light lg:text-sm placeholder:text-muted-foreground mt-[1px] not-placeholder-shown:pr-8 not-placeholder-shown:[&_~_.clear-btn]:flex"
           onFocus={() => {
             setOpen(true);
             scrollUpOnChange();
@@ -150,7 +150,7 @@ const Searchbar = () => {
         ></Command.Input>
         <button
           ref={clearBtnRef}
-          className="clear-btn absolute right-0 top-1/2 -translate-y-1/2 btn btn-sm btn-square rounded-4xl bg-transparent [&>svg]:stroke-muted-foreground hover:[&>svg]:opacity-70"
+          className="clear-btn hidden absolute right-0 top-1/2 -translate-y-1/2 btn btn-sm btn-square rounded-4xl bg-transparent [&>svg]:stroke-muted-foreground hover:[&>svg]:opacity-70"
           type="button"
           onFocus={() => document.addEventListener('keydown', clearSearchOnEnter)}
           onBlur={() => document.removeEventListener('keydown', clearSearchOnEnter)}

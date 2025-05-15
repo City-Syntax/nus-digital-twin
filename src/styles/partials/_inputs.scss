@@ -2,24 +2,6 @@
    INPUTS
    ========================================================================== */
 
-.search {
-  > input {
-    &:not(:placeholder-shown) {
-      padding-right: 32px;
-
-      & ~ .clear-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-  }
-
-  > .clear-btn {
-    display: none;
-  }
-}
-
 [cmdk-list] {
   @include dropdown-base;
 
