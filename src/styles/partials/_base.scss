@@ -27,12 +27,3 @@ $lg: 1252px;
   --base-200: 84, 84, 84;
   --base-300: 169, 169, 169;
 }
-
-@mixin dropdown-base {
-  border: 1px solid rgba(var(--base-200), 0.4);
-  border-radius: var(--radius-lg);
-  backdrop-filter: saturate(120%) blur(8px);
-  background-color: rgba(var(--base-100), 0.7);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  z-index: 10;
-}
