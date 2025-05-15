@@ -84,7 +84,10 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
           </div>
         )}
       </div>
-      <div className="carousel-dots" style={{ visibility: `${images.length === 0 ? 'hidden' : 'visible'}` }}>
+      <div
+        className="flex justify-center gap-1 mt-2"
+        style={{ visibility: `${images.length === 0 ? 'hidden' : 'visible'}` }}
+      >
         {images.length === 0 && <button></button>}
         {scrollSnaps.map((_, index) => (
           <button
