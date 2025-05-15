@@ -116,27 +116,6 @@
   }
 }
 
-.menubar-content-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-left: var(--padding-base);
-  padding-right: var(--padding-base);
-
-  h2 {
-    line-height: 1.75rem;
-  }
-
-  > button {
-    @include btn-secondary;
-    @include btn-sm-square;
-    border-radius: 100%;
-    flex-shrink: 0;
-    margin-left: 8px;
-    align-self: self-start;
-  }
-}
-
 @media screen and (max-width: $lg) {
   .scroll-area-viewport:has(.menubar-content-body) {
     .menu-bottom & {

@@ -9,6 +9,7 @@
 @import './partials/toolbar.css';
 @import './partials/modal.css';
 @import './partials/scrollarea.css';
+@import './partials/menubar.css';
 
 @theme inline {
   --font-sans: 'Inter Variable', system-ui, sans-serif;
