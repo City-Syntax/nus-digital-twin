@@ -131,6 +131,10 @@
   [role='button']:not(:disabled) {
     cursor: pointer;
   }
+
+  a:focus-visible {
+    outline: none;
+  }
 }
 
 @utility bg-base {
@@ -243,7 +247,7 @@
   &:has(button[disabled]) {
     button {
       background: transparent;
-      color: rgba(var(--base-300));
+      color: var(--color-muted-foreground);
     }
 
     button.active {

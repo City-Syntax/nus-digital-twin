@@ -40,10 +40,10 @@ const ShareModal = () => {
         <Dialog.Content className="modal__content">
           <Dialog.Title>Share NUS Digital Twin</Dialog.Title>
           <Dialog.Description className="sr-only">Share NUS Digital Twin</Dialog.Description>
-          <div className="share-container grid grid-cols-1 gap-2 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
             {links.map((link, index) => (
               <a
-                className="text-sm flex items-center justify-center gap-1.5 transition-colors rounded-lg px-3.5 py-3 hover:bg-background-light"
+                className="text-sm flex items-center justify-center gap-1.5 transition-colors rounded-lg px-3.5 py-3 hover:bg-background-light border border-muted-foreground focus-visible:border-primary-light focus-visible:ring focus-visible:ring-primary-light"
                 key={index}
                 target="_blank"
                 href={link.url}
