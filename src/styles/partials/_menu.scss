@@ -2,14 +2,6 @@
    MENU
    ========================================================================== */
 
-@media screen and (max-width: $lg) {
-  .scroll-area-viewport:has(.menubar-content-body) {
-    .menu-bottom & {
-      max-height: 46vh;
-    }
-  }
-}
-
 .menubar-content-footer {
   padding-top: var(--padding-sm);
   margin-top: auto;

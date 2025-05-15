@@ -120,6 +120,12 @@
   font-weight: var(--font-weight-semibold);
 }
 
+.scroll-area-viewport:has(.menubar-content-body) {
+  .menu-bottom & {
+    @apply max-h-[46vh] lg:max-h-none;
+  }
+}
+
 .menu-toggle {
   appearance: none;
   outline: none;
