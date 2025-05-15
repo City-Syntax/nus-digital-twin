@@ -8,7 +8,7 @@
 @import './partials/cesium.css';
 @import './partials/modal.css';
 
-@theme {
+@theme inline {
   --font-sans: 'Inter Variable', system-ui, sans-serif;
   --font-title: 'Figtree Variable', system-ui, sans-serif;
 
@@ -24,16 +24,36 @@
   --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 
-  --color-background: oklch(0.23 0.0019 286.25);
-  --color-background-light: oklch(0.45 0.0016 286.33);
-  --color-foreground: oklch(0.97 0 0);
+  --color-background: var(--background);
+  --color-background-light: var(--background-light);
+  --color-foreground: var(--foreground);
 
-  --color-primary: oklch(54.6% 0.245 262.881);
-  --color-primary-light: oklch(70.7% 0.165 254.624);
-  --color-primary-foreground: oklch(97% 0.014 254.604);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --radius-xs: calc(var(--radius) - 12px);
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+  --radius-4xl: calc(var(--radius) + 24px);
 }
 
 :root {
+  --radius: 0.5rem;
+
+  --background: oklch(0.23 0.0019 286.25);
+  --background-light: oklch(0.45 0.0016 286.33);
+  --foreground: oklch(0.97 0 0);
+
+  --primary: oklch(54.6% 0.245 262.881);
+  --primary-light: oklch(70.7% 0.165 254.624);
+  --primary-foreground: oklch(97% 0.014 254.604);
+
   --bottom-bar-height: 28px;
 }
 
