@@ -40,23 +40,6 @@
   }
 }
 
-.menu-list {
-  display: flex;
-  flex-direction: column;
-
-  @media screen and (max-width: $lg) {
-    > button:not(:first-child) {
-      @include btn-lg;
-    }
-
-    .menu-link,
-    > .menu-list-title {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-}
-
 .menu-link {
   @include btn;
 

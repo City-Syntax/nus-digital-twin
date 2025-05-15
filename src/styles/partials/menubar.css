@@ -126,6 +126,12 @@
   }
 }
 
+.menu-list {
+  @apply [&_.menu-link]:p-0 lg:[&_.menu-link]:px-4 [&_.menu-list-title]:p-0 lg:[&_.menu-list-title]:px-4;
+  display: flex;
+  flex-direction: column;
+}
+
 .menu-toggle {
   appearance: none;
   outline: none;
