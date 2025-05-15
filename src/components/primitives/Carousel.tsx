@@ -74,7 +74,7 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
           </div>
         </div>
         {images.length > 1 && (
-          <div className="carousel-actions">
+          <div className="absolute flex justify-between w-full top-1/2 left-0 -translate-y-1/2 px-1">
             <button onClick={() => emblaApi?.scrollPrev()} disabled={prevBtnDisabled}>
               <Icons.ChevronLeft></Icons.ChevronLeft>
             </button>
