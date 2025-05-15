@@ -80,6 +80,14 @@
   --muted-foreground: oklch(0.708 0 0);
 
   --modal-z: 99999;
+
+  --menu-left-width: 218px;
+
+  --content-gap: 8px;
+  --container-gap: 2px;
+  --container-y-offset: 8px;
+  --container-x-offset: 24px;
+  --menu-left-height: 72vh;
 }
 
 @layer base {
