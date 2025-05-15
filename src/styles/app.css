@@ -8,6 +8,7 @@
 @import './partials/cesium.css';
 @import './partials/toolbar.css';
 @import './partials/modal.css';
+@import './partials/scrollarea.css';
 
 @theme inline {
   --font-sans: 'Inter Variable', system-ui, sans-serif;
