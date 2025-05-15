@@ -8,7 +8,7 @@ const NotificationsBox = () => {
         target="_blank"
         rel="noreferrer"
         id="construction"
-        className="bg-base"
+        className="bg-base py-2 px-3 rounded-lg text-sm transition-colors text-[#fadf63] hover:bg-background"
       >
         This application is under construction. Report any issues or feedback here.
       </a>

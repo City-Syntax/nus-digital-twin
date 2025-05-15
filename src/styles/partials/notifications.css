@@ -27,23 +27,3 @@ div.notification {
 div.notification.notification--danger {
   background-color: rgba(129, 27, 27, 0.84);
 }
-
-#construction {
-  color: inherit;
-  padding: var(--padding-xs) var(--padding-sm);
-  border-radius: var(--radius-lg);
-  font-size: var(--text-sm);
-  gap: 6px;
-  text-decoration: none;
-  color: #fadf63;
-  transition: background-color 150ms;
-
-  svg {
-    height: 1rem;
-    width: 1rem;
-  }
-
-  &:hover {
-    background-color: var(--color-background);
-  }
-}
