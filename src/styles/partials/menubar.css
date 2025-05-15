@@ -15,8 +15,9 @@
   justify-content: space-between;
   border-radius: var(--radius-2xl);
 
+  /* TODO: Remove the important */
   &:hover {
-    color: rgba(var(--base-300), 0.6);
+    color: --alpha(var(--color-muted-foreground) / 70%) !important;
   }
 
   > svg {
