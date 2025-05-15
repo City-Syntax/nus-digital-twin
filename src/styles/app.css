@@ -94,7 +94,7 @@
 }
 
 @utility dropdown-base {
-  border: 1px solid rgba(var(--base-200), 0.4);
+  border: 1px solid --alpha(var(--color-background-light) / 40%);
   border-radius: var(--radius-lg);
   backdrop-filter: saturate(120%) blur(8px);
   background-color: --alpha(var(--color-background) / 70%);

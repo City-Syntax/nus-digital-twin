@@ -33,7 +33,7 @@
     transition: background-color 150ms;
 
     &:hover {
-      background-color: rgba(var(--base-200), 1);
+      background-color: var(--color-background-light);
     }
 
     &:focus-visible {
