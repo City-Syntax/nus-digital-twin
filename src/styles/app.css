@@ -12,6 +12,7 @@
 @import './partials/menubar.css';
 @import './partials/cmdk.css';
 @import './partials/select.css';
+@import './partials/primitives.css';
 
 @theme inline {
   --font-sans: 'Inter Variable', system-ui, sans-serif;

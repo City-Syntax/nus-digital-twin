@@ -1,11 +1,7 @@
-/* ==========================================================================
-   PRIMITIVES
-   Contain styles for components in the primitive folder, such as
-   AutoHeight and ScrollContainer
-   ========================================================================== */
-
-// Force react-animate-height to animate unless
-// reduced motion setting is toggled on
+/* 
+  Force react-animate-height to animate unless 
+  reduced motion setting is toggled on 
+*/
 .rah-animating {
   body.reduce-motion & {
     transition: none !important;
