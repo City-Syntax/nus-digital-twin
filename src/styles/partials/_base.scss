@@ -1,9 +1,3 @@
-/* ==========================================================================
-   BASE
-   Contains the variables, breakpoints and styles for some elements.
-   Colors are specified in RGB values.
-   ========================================================================== */
-$xs: 378px;
 $lg: 1252px;
 
 @mixin property($variable: variable, $syntax: '<number>', $inherits: true, $initial-value: 0) {
