@@ -60,7 +60,7 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
     <>
       <div className="carousel relative">
         <div className="rounded-xl overflow-hidden" ref={emblaRef}>
-          <div className="carousel-content-container">
+          <div className="flex">
             {images.length === 0 && (
               <div className="carousel-item">
                 <LazyImage></LazyImage>
