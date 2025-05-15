@@ -128,7 +128,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: var(--text-sm);
-  color: rgba(var(--base-300));
+  color: var(--color-muted-foreground);
 
   a {
     text-decoration: none;
@@ -181,7 +181,7 @@
   > .menu-list-title {
     padding-left: var(--padding-base);
     padding-right: var(--padding-base);
-    color: rgba(var(--base-300));
+    color: var(--color-muted-foreground);
     font-size: var(--text-sm);
     font-weight: 600;
   }

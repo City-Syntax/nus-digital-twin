@@ -33,5 +33,5 @@
   @apply px-0 py-1 lg:py-1.5 lg:px-2;
   font-size: var(--text-xs);
   font-weight: 600;
-  color: rgba(var(--base-300));
+  color: var(--color-muted-foreground);
 }
