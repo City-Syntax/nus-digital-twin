@@ -43,7 +43,7 @@ const ShareModal = () => {
           <div className="share-container grid grid-cols-1 gap-2 sm:grid-cols-3">
             {links.map((link, index) => (
               <a
-                className="text-sm flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-3"
+                className="text-sm flex items-center justify-center gap-1.5 transition-colors rounded-lg px-3.5 py-3 hover:bg-background-light"
                 key={index}
                 target="_blank"
                 href={link.url}

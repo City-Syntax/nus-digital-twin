@@ -18,11 +18,6 @@
 .share-container {
   > a {
     box-shadow: inset 0 0 0 1px rgba(var(--base-300));
-    transition: background-color 150ms;
-
-    &:hover {
-      background-color: var(--color-background-light);
-    }
 
     &:focus-visible {
       box-shadow: inset 0 0 0 2px var(--color-primary-light);
