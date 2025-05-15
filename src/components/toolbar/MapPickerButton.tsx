@@ -34,7 +34,7 @@ const MapPickerButton = () => {
               <button
                 key={layer.id}
                 className={cn(
-                  'map-picker__item w-16 font-semibold text-xs/3.5 text-center cursor-pointer flex flex-col justify-center items-center gap-1 transition-colors',
+                  'map-picker__item w-16 font-semibold text-xs/3.5 text-center cursor-pointer flex flex-col justify-center items-center gap-1 transition-colors [&_img]:min-h-16 [&_img]:min-w-16',
                   {
                     'map-picker__item--active': $activeMapLayer === layer.id,
                   },
