@@ -2,59 +2,6 @@
    MENU
    ========================================================================== */
 
-.menu-left {
-  position: absolute;
-  z-index: 1;
-  display: flex;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-
-  > * + * {
-    margin-left: var(--container-gap);
-  }
-
-  left: var(--container-x-offset);
-  height: var(--menu-left-height);
-  max-height: 668px;
-}
-
-.menu-right {
-  position: absolute;
-  z-index: 1;
-  display: flex;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-
-  > * + * {
-    margin-left: var(--container-gap);
-  }
-
-  right: var(--container-x-offset);
-  max-height: 438px;
-  min-height: 348px;
-}
-
-.menu-bottom {
-  position: absolute;
-  z-index: 1;
-  display: flex;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  bottom: calc(var(--container-y-offset) + var(--bottom-bar-height));
-  flex-direction: column;
-
-  > * + * {
-    margin-top: var(--container-gap);
-  }
-
-  max-width: 500px;
-  padding-left: var(--padding-xs);
-  padding-right: var(--padding-xs);
-}
-
 @mixin menu-x-base {
   border-radius: var(--radius-2xl);
   display: flex;
