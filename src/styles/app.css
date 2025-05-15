@@ -25,11 +25,11 @@
   --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 
   --color-background: oklch(0.23 0.0019 286.25);
-  --color-background-muted: oklch(0.45 0.0016 286.33);
+  --color-background-light: oklch(0.45 0.0016 286.33);
   --color-foreground: oklch(0.97 0 0);
 
   --color-primary: oklch(54.6% 0.245 262.881);
-  --color-primary-muted: oklch(70.7% 0.165 254.624);
+  --color-primary-light: oklch(70.7% 0.165 254.624);
   --color-primary-foreground: oklch(97% 0.014 254.604);
 }
 

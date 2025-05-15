@@ -53,6 +53,6 @@
   }
 
   &[data-highlighted] {
-    background-color: --alpha(var(--color-background-muted) / 80%);
+    background-color: --alpha(var(--color-background-light) / 80%);
   }
 }

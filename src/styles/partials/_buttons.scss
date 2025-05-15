@@ -19,7 +19,7 @@
 
   &:focus-visible {
     outline: none;
-    box-shadow: inset 0 0 0 2px var(--color-primary-muted);
+    box-shadow: inset 0 0 0 2px var(--color-primary-light);
   }
 
   > svg {
