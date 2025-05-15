@@ -17,3 +17,33 @@
     align-self: self-start;
   }
 }
+
+.menubar-content-body {
+  overflow: auto;
+  height: 100%;
+  padding-left: var(--padding-base);
+  padding-right: var(--padding-base);
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  .hint {
+    color: var(--color-muted-foreground);
+    font-size: var(--text-sm);
+    line-height: 1.125rem;
+    padding-bottom: 4px;
+  }
+
+  > * + * {
+    margin-top: var(--content-gap);
+  }
+}
+
+.menu-bottom .menubar-content-body {
+  max-height: 46vh;
+}
+
+.scroll-area-viewport .menubar-content-body {
+  max-height: none;
+}
