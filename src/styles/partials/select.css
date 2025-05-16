@@ -1,4 +1,4 @@
-.select-trigger {
+@utility select-trigger {
   @apply btn btn-sm min-w-full xs:min-w-0;
   border: 1px solid var(--color-muted-foreground);
   background: transparent;
@@ -29,7 +29,7 @@
   }
 }
 
-.select-trigger-content {
+@utility select-trigger-content {
   @apply min-w-0 py-2 px-0 w-full xs:min-w-max xs:pl-3 xs:pr-2.5 xs:w-auto;
   display: inline-flex;
   align-items: center;
@@ -41,37 +41,33 @@
   }
 }
 
-.select-content {
+@utility select-content {
   @apply dropdown-base w-(--radix-select-trigger-width) xs:w-auto;
 
   font-size: var(--text-sm);
   overflow: hidden;
   transform-origin: var(--radix-select-content-transform-origin);
-}
 
-.select-content[data-state='open'] {
-  animation: scaleIn 150ms var(--ease-in-out-cubic);
+  &[data-state='open'] {
+    animation: scaleIn 150ms var(--ease-in-out-cubic);
+  }
+
+  &[data-state='closed'] {
+    animation: scaleOut 150ms var(--ease-in-out-cubic);
+  }
 
   body.reduce-motion & {
     animation: none;
   }
 }
 
-.select-content[data-state='closed'] {
-  animation: scaleOut 150ms var(--ease-in-out-cubic);
-
-  body.reduce-motion & {
-    animation: none;
-  }
-}
-
-.select-item {
+@utility select-item {
   padding: var(--padding-xs);
   outline: none;
   user-select: none;
   transition: background-color 150ms;
-}
 
-.select-item[data-highlighted] {
-  background-color: --alpha(var(--color-background-light) / 80%);
+  &[data-highlighted] {
+    background-color: --alpha(var(--color-background-light) / 80%);
+  }
 }
