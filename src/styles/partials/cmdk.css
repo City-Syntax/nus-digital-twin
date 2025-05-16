@@ -1,0 +1,36 @@
+[cmdk-list] {
+  @apply relative text-base w-full h-[240px] [&.hide]:h-[240px] mt-1 rounded-none lg:mt-0.5 lg:absolute lg:text-sm lg:w-(--list-width) lg:h-(--list-height) lg:[&.hide]:h-0 lg:rounded-lg lg:dropdown-base;
+
+  transition: height 200ms ease;
+  --list-height: min(min(520px, calc(var(--menu-left-height) - 78px)), calc(var(--cmdk-list-height)));
+  max-height: min(520px, calc(var(--menu-left-height) - 78px));
+  overflow-y: auto;
+  --list-width: calc(var(--menu-left-width) - var(--padding-base) * 2);
+  border: none;
+
+  body.reduce-motion & {
+    transition: none;
+  }
+}
+
+[cmdk-item] {
+  @apply rounded-lg lg:rounded-none;
+  padding: var(--padding-xs);
+  outline: none;
+  transition: background-color 150ms;
+
+  &[data-selected='true'] {
+    background-color: --alpha(var(--color-background-light) / 80%);
+  }
+}
+
+[cmdk-empty] {
+  padding: var(--padding-xs);
+}
+
+[cmdk-group-heading] {
+  @apply px-0 py-1 lg:py-1.5 lg:px-2;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-muted-foreground);
+}

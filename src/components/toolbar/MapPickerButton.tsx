@@ -5,6 +5,7 @@ import { useStore } from '@nanostores/react';
 import type { ImageProps } from '../../types';
 import type { MapLayers } from '@components/cesium/mapLayers';
 import LazyImage from '../primitives/LazyImage';
+import { cn } from '@lib/utils';
 
 const MapPickerButton = () => {
   const $activeMapLayer = useStore(activeMapLayer);
@@ -21,27 +22,30 @@ const MapPickerButton = () => {
   return (
     <Popover.Root modal>
       <Popover.Trigger asChild>
-        <button className="toolbar-btn" id="map-picker-btn" type="button">
+        <button className="toolbar-btn bg-base" id="map-picker-btn" type="button">
           <Icons.Picker></Icons.Picker>
           <span className="sr-only">Map Picker</span>
         </button>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content className="popover-content" align="end" onCloseAutoFocus={(e) => e.preventDefault()}>
-          <div id="map-picker">
-            {mapLayers.map((layer) => {
-              return (
-                <button
-                  key={layer.id}
-                  className={`map-picker__item ${$activeMapLayer === layer.id ? 'map-picker__item--active' : ''}`}
-                  type="button"
-                  onClick={() => activeMapLayer.set(layer.id)}
-                >
-                  <LazyImage ratio="1/1" img={layer.img} alt={layer.name}></LazyImage>
-                  {layer.name}
-                </button>
-              );
-            })}
+          <div className="bg-base p-4 rounded-2xl flex gap-4 mb-1" id="map-picker">
+            {mapLayers.map((layer) => (
+              <button
+                key={layer.id}
+                className={cn(
+                  'w-16 font-semibold text-xs/3.5 text-center cursor-pointer flex flex-col justify-center items-center gap-1 transition-colors [&_img]:min-h-16 [&_img]:min-w-16 [&>*]:border-2 [&>*]:border-transparent [&>*]:transition-[border]',
+                  {
+                    'text-primary-light [&>*]:border-primary-light': $activeMapLayer === layer.id,
+                  },
+                )}
+                type="button"
+                onClick={() => activeMapLayer.set(layer.id)}
+              >
+                <LazyImage ratio="1/1" img={layer.img} alt={layer.name}></LazyImage>
+                {layer.name}
+              </button>
+            ))}
           </div>
         </Popover.Content>
       </Popover.Portal>

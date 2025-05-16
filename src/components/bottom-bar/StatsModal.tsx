@@ -1,20 +1,25 @@
 import { useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { getAllStats } from 'lib/analytics';
+import Icons from '@components/Icons';
 
 const StatsModal = () => {
   const [lifetimeVisits, setLifetimeVisits] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const [fetchStatus, setFetchStatus] = useState<'fetching' | 'fetched' | 'err'>('fetching');
 
   return (
     <Dialog.Root
       onOpenChange={(open) => {
         if (open) {
-          setIsLoading(true);
-          getAllStats().then((data) => {
-            setLifetimeVisits(data.visits.value);
-            setIsLoading(false);
-          });
+          setFetchStatus('fetching');
+          getAllStats()
+            .then((data) => {
+              setLifetimeVisits(data.visits.value);
+              setFetchStatus('fetched');
+            })
+            .catch(() => {
+              setFetchStatus('err');
+            });
         }
       }}
     >
@@ -26,8 +31,11 @@ const StatsModal = () => {
         <Dialog.Content className="modal__content">
           <Dialog.Title>Statistics</Dialog.Title>
           <Dialog.Description className="sr-only">Statistics for NUS Digital Twin</Dialog.Description>
-          <div className="modal__content__description">
-            Visits (from 8 May 2025): {isLoading ? 'Loading...' : lifetimeVisits}
+          <div className="flex items-center gap-1">
+            Visits (from 8 May 2025):
+            {fetchStatus === 'fetching' && <Icons.Spinner className="animate-spin size-5 inline-flex" />}
+            {fetchStatus === 'fetched' && <span>{lifetimeVisits}</span>}
+            {fetchStatus === 'err' && <span>Error.</span>}
           </div>
         </Dialog.Content>
       </Dialog.Portal>

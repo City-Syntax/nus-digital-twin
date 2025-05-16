@@ -35,7 +35,9 @@ const Help = ({ navType, setNavType }: HelpProps) => {
               Touch
             </button>
           </div>
-          {navType === 'mouse' ? <MouseControls /> : <TouchControls />}
+          <div className="[&_svg]:size-5 [&_svg]:shrink-0">
+            {navType === 'mouse' ? <MouseControls /> : <TouchControls />}
+          </div>
         </div>
       </ScrollContainer>
     </>
@@ -46,78 +48,68 @@ export default Help;
 
 const MouseControls = () => {
   return (
-    <>
+    <div className="space-y-2">
       <div>
         <h3>Pan</h3>
-        <ul className="help__content list--bullet">
-          <li>
-            <Icons.LeftClick /> Left Click + <Icons.Drag /> Drag
-          </li>
-        </ul>
+        <div className="flex gap-1 items-center before:content-['•'] before:mr-0.5">
+          <Icons.LeftClick /> Left Click + <Icons.Drag /> Drag
+        </div>
       </div>
       <div>
         <h3>Zoom</h3>
-        <ul className="help__content list--bullet">
-          <li>
+        <div className="space-y-1">
+          <div className="flex gap-1 items-center before:content-['•'] before:mr-0.5">
             <Icons.RightClick /> Right Click + <Icons.Drag /> Drag
-          </li>
-          <li>
+          </div>
+          <div className="flex gap-1 items-center before:content-['•'] before:mr-0.5">
             <Icons.Scroll /> Scroll
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
       <div>
         <h3>Rotate</h3>
-        <ul className="help__content list--bullet">
-          <li>
+        <div className="space-y-1">
+          <div className="flex gap-1 items-center before:content-['•'] before:mr-0.5">
             <Icons.MiddleClick /> Middle Click + <Icons.Drag /> Drag
-          </li>
-          <li>
+          </div>
+          <div className="flex gap-1 items-center before:content-['•'] before:mr-0.5">
             <kbd>CTRL</kbd> +
             <Icons.LeftClick /> Left Click +
             <Icons.Drag /> Drag
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
 const TouchControls = () => {
   return (
-    <>
+    <div className="space-y-2">
       <div>
         <h3>Pan</h3>
-        <ul className="help__content list--bullet">
-          <li>
-            <Icons.DragOneFinger /> One finger drag
-          </li>
-        </ul>
+        <div className="flex gap-1 items-center before:content-['•'] before:mr-0.5">
+          <Icons.DragOneFinger /> One finger drag
+        </div>
       </div>
       <div>
         <h3>Zoom</h3>
-        <ul className="help__content list--bullet">
-          <li>
-            <Icons.Pinch /> Pinch with two fingers
-          </li>
-        </ul>
+        <div className="flex gap-1 items-center before:content-['•'] before:mr-0.5">
+          <Icons.Pinch /> Pinch with two fingers
+        </div>
       </div>
       <div>
         <h3>Tilt</h3>
-        <ul className="help__content list--bullet">
-          <li>
-            <Icons.TapTwoFinger /> Two finger drag in the same direction
-          </li>
-        </ul>
+        <div className="flex gap-1 items-center before:content-['•'] before:mr-0.5">
+          <Icons.TapTwoFinger /> Two finger drag in the same direction
+        </div>
       </div>
       <div>
         <h3>Rotate</h3>
-        <ul className="help__content list--bullet">
-          <li>
-            <Icons.RotateTwoFinger /> Two finger drag in the opposite direction
-          </li>
-        </ul>
+        <div className="flex gap-1 items-center before:content-['•'] before:mr-0.5">
+          <Icons.RotateTwoFinger /> Two finger drag in the opposite direction
+        </div>
       </div>
-    </>
+    </div>
   );
 };

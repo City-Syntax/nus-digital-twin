@@ -4,9 +4,11 @@ import ShareModal from './ShareModal';
 import StatsModal from './StatsModal';
 ---
 
-<div id="bottom-bar">
-  <div>
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<div
+  class="absolute bottom-0 left-0 w-full flex items-center justify-between text-xs bg-base px-3 py-0 h-(--bottom-bar-height)"
+>
+  <div class="flex items-center gap-1.5">
+    <svg class="size-4.5" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="32" height="32" rx="11" fill="#F5F5F5"></rect>
       <path d="M7.01729 10.6059L7.00146 27.8399L10.6027 30V12.7566L7.01729 10.6059Z" fill="#003D7C"></path>
       <path d="M21.4012 2L15.2691 5.66205L7 10.6049L10.5983 12.7633L24.9968 4.15668L21.4012 2Z" fill="#003D7C"></path>
@@ -16,14 +18,14 @@ import StatsModal from './StatsModal';
       <path d="M21.3987 10.6171L18.8684 12.1327L17.8209 12.7595L17.813 21.3625L21.3987 23.5132V10.6171Z" fill="#003D7C"
       ></path>
     </svg>
-    <span class="show-sm">NUS Digital Twin</span>
-    <span style="color: rgba(var(--base-300), 0.6); user-select: none;">|</span>
+    <span class="hidden sm:block">NUS Digital Twin</span>
+    <span class="text-muted-foreground/60 select-none">|</span>
     <AboutModal client:load />
     <ShareModal client:load />
     <StatsModal client:load />
   </div>
-  <div id="scale-container">
+  <div class="flex items-center gap-1.5" id="scale-container">
     <div id="scale-label"></div>
-    <div id="scale-bar"></div>
+    <div class="h-2 w-0 border border-current border-t-0 transition-[width] duration-100" id="scale-bar"></div>
   </div>
 </div>

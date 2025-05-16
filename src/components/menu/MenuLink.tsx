@@ -3,6 +3,7 @@ import Icons from '../Icons';
 import { activePages, buildingId, isSelectColorByDistance } from '../../store';
 import { useStore } from '@nanostores/react';
 import type { MenuDir, MenuPages } from '../../types';
+import { cn } from '@lib/utils';
 
 interface MenuLinkProps {
   label: string;
@@ -47,7 +48,7 @@ const MenuLink = ({ label, toPage, iconName, dir, isVertical, isActive, isLeft, 
     >
       {Icon && <Icon></Icon>}
       <span>{label}</span>
-      <span className={`active-indicator ${isActive ? 'show' : ''}`}></span>
+      <span className={cn('active-indicator', { show: isActive })}></span>
     </button>
   );
 };

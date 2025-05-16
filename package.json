@@ -39,6 +39,7 @@
     "cesium": "^1.128.0",
     "cmdk": "^1.0.0",
     "embla-carousel-react": "^8.5.1",
+    "exifreader": "^4.30.1",
     "fuzzysort": "^3.0.2",
     "nanostores": "^0.9.5",
     "react": "^18.3.1",
@@ -47,7 +48,7 @@
     "react-hot-toast": "^2.4.1",
     "react-transition-group": "^4.4.5",
     "rehype-external-links": "^3.0.0",
-    "sass": "^1.70.0",
+    "tailwind-merge": "^3.3.0",
     "tailwindcss": "^4.1.4",
     "tippy.js": "^6.3.7",
     "typescript": "^5.5.3"
@@ -69,6 +70,6 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,astro}": "eslint --fix",
-    "*.{js,jsx,ts,tsx,astro,css,scss,md,mdx,json,mjs,cjs}": "prettier --write"
+    "*.{js,jsx,ts,tsx,astro,css,md,mdx,json,mjs,cjs}": "prettier --write"
   }
 }
