@@ -5,6 +5,7 @@ import DownloadButton from './DownloadButton';
 import { cn, parseDateToLocaleString } from '@lib/utils';
 import ExifReader from 'exifreader';
 import Tippy from '@tippyjs/react';
+import { parse } from 'postcss';
 
 const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
@@ -14,7 +15,7 @@ const LazyImage = ({
   alt,
   caption,
   canDownload,
-  showDateTime = true,
+  showDateTime,
 }: {
   img?: ImageProps;
   ratio?: string;
@@ -45,6 +46,7 @@ const LazyImage = ({
 
   const srcArr = src.split('/');
   const filetype = '.' + srcArr[srcArr.length - 1].split('?')[0].split('.').pop();
+  const tooltipContent = showDateTime && dateTime ? [caption, parseDateToLocaleString(dateTime)] : [caption];
 
   return (
     <>
@@ -70,9 +72,8 @@ const LazyImage = ({
           />
           {hasLoaded && (caption || (showDateTime && dateTime)) && (
             <Tippy
-              content={
-                <div>{[caption, parseDateToLocaleString(dateTime)].filter((str) => Boolean(str)).join(', ')}</div>
-              }
+              offset={[0, 4]}
+              content={<div className="text-xs">{tooltipContent.filter((str) => Boolean(str)).join(', ')}</div>}
               arrow={false}
               placement="bottom-end"
             >
