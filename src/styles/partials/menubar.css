@@ -225,7 +225,7 @@
     position: absolute;
     top: 50%;
     bottom: 0;
-    left: 0;
+    left: -2px;
     transform: translateY(-50%) scaleY(0);
     transform-origin: left;
     height: 20px;
@@ -268,7 +268,7 @@
   &.vertical::before {
     top: unset;
     left: unset;
-    bottom: -2px;
+    bottom: -4px;
     height: 4px;
     width: 32px;
     transform: translateY(-50%) scaleX(0);
