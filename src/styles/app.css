@@ -132,8 +132,6 @@
   --primary-light: oklch(70.7% 0.165 254.624);
   --primary-foreground: oklch(97% 0.014 254.604);
 
-  --bottom-bar-height: 28px;
-
   --btn-xs: 1.75rem;
   --btn-sm: 2rem;
   --btn-md: 2.25rem;
@@ -151,13 +149,18 @@
 
   --modal-z: 99999;
 
+  --menu-bottom-height: 46vh;
+  --menu-left-height: 72vh;
   --menu-left-width: 218px;
+  --menu-right-height: 464px;
+  --menu-right-width: 192px;
+
+  --bottom-bar-height: 28px;
 
   --content-gap: 8px;
   --container-gap: 2px;
   --container-y-offset: 8px;
   --container-x-offset: 24px;
-  --menu-left-height: 72vh;
 }
 
 @layer base {
