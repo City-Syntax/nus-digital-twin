@@ -6,7 +6,6 @@
 @import './partials/scrollarea.css';
 @import './partials/menubar.css';
 @import './partials/cmdk.css';
-@import './partials/select.css';
 @import './partials/primitives.css';
 
 @theme inline {
