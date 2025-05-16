@@ -256,8 +256,6 @@
   height: var(--btn-height, var(--btn-md));
   transition: background-color 150ms;
   border: 1px solid transparent;
-  margin-top: 1px;
-  margin-bottom: 1px;
 
   &:focus-visible {
     outline: none;

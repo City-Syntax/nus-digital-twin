@@ -5,7 +5,6 @@ import DownloadButton from './DownloadButton';
 import { cn, parseDateToLocaleString } from '@lib/utils';
 import ExifReader from 'exifreader';
 import Tippy from '@tippyjs/react';
-import { parse } from 'postcss';
 
 const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
@@ -77,7 +76,7 @@ const LazyImage = ({
               arrow={false}
               placement="bottom-end"
             >
-              <div className="img-info absolute top-0 right-0 rounded-none rounded-bl-xl btn btn-secondary btn-square btn-sm -mt-[1px] -ml-[1px]">
+              <div className="img-info absolute top-0 right-0 rounded-none rounded-bl-2xl rounded-tr-2xl btn btn-secondary btn-square btn-sm border-none">
                 <Icons.About className="size-5" />
               </div>
             </Tippy>
