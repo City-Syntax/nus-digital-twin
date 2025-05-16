@@ -625,13 +625,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 <div id="cesiumContainer" class="max-h-full h-dvh"></div>
 <div
   class:list={[
-    'h-dvh w-dvw absolute top-0 left-0 flex items-center justify-center flex-col gap-4 transition-opacity duration-200 bg-black/90 text-sm z-(--modal-z)',
+    'h-dvh w-dvw absolute top-0 left-0 flex items-center justify-center flex-col gap-4 transition-opacity duration-200 bg-black/90 backdrop-blur-xs text-sm z-(--modal-z)',
   ]}
   id="loading-modal"
 >
-  <h1>NUS Digital Twin</h1>
+  <h1 class="text-3xl">NUS Digital Twin</h1>
   <div>
-    <div class="w-[300px] h-3.5 rounded-4xl overflow-clip bg-muted-foreground/90">
+    <div class="w-[300px] h-3.5 rounded-4xl overflow-clip bg-muted-foreground/30">
       <div
         class="w-0 h-full bg-primary transition-[width] duration-100 ease-[cubic-bezier(0.65, 0, 0.35, 1)] will-change-[width]"
         id="loading-progress"
