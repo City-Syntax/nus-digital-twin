@@ -1,6 +1,5 @@
-/* Safari doesn't apply backdrop filter correctly on height 0, hence a height of 0.5px is used */
 [cmdk-list] {
-  @apply relative text-base w-full h-[240px] [&.hide]:h-[240px] mt-1 rounded-none lg:mt-0.5 lg:absolute lg:text-sm lg:w-(--list-width) lg:h-(--list-height) lg:[&.hide]:h-[0.5px] lg:rounded-lg lg:dropdown-base;
+  @apply relative text-base w-full h-[240px] [&.hide]:h-[240px] mt-1 rounded-none lg:mt-0.5 lg:absolute lg:text-sm lg:w-(--list-width) lg:h-(--list-height) lg:[&.hide]:h-0 lg:rounded-lg lg:dropdown-base;
 
   transition: height 200ms ease;
   --list-height: min(min(520px, calc(var(--menu-left-height) - 78px)), calc(var(--cmdk-list-height)));

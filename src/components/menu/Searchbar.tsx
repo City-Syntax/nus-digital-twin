@@ -4,6 +4,7 @@ import { Command } from 'cmdk';
 import Icons from '../Icons';
 import buildingsData from '@content/buildings/buildings.json';
 import { activePages, buildingId, flyToPosition } from '@store';
+import { cn } from '@lib/utils';
 
 const Searchbar = () => {
   const [open, setOpen] = useState(true);
@@ -163,7 +164,7 @@ const Searchbar = () => {
           <Icons.Close className="size-4 transition-opacity"></Icons.Close>
         </button>
       </div>
-      <Command.List className={open ? '' : 'hide'} ref={listRef} tabIndex={-1}>
+      <Command.List className={cn({ hide: !open })} ref={listRef} tabIndex={-1}>
         <Command.Group heading={`Search results (${buildingsDataToShow.length})`}>
           <Command.Empty>No results found.</Command.Empty>
           {buildingsDataToShow.map((building, i) => {
