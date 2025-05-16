@@ -68,7 +68,7 @@ const Carousel = ({ images }: { images: ImageProps[] }) => {
             )}
             {images.map((img) => (
               <div className="flex-[0_0_100%] min-w-0 aspect-video min-h-[100px]" key={img.src}>
-                <LazyImage img={img} caption={img.author}></LazyImage>
+                <LazyImage img={img} caption={img.author ? `Photo by ${img.author}` : ''}></LazyImage>
               </div>
             ))}
           </div>

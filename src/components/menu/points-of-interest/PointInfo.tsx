@@ -84,20 +84,36 @@ const PointInfoContent = ({ title, content }: { title: keyof PointsOfInterestPro
       return (
         <div>
           <h3>{TITLE_MAPPINGS[title]}</h3>
-          <LazyImage key={content.src} img={content} caption={content.author} canDownload showDateTime />
+          <LazyImage
+            key={content.src}
+            img={content}
+            caption={content.author ? `Photo by ${content.author}` : ''}
+            canDownload
+            showDateTime
+          />
         </div>
       );
     case 'originalSegImg':
       return (
         <div>
           <h3>{TITLE_MAPPINGS[title]}</h3>
-          <LazyImage key={content.src} img={content} caption={content.author} canDownload />
+          <LazyImage
+            key={content.src}
+            img={content}
+            caption={content.author ? `Photo by ${content.author}` : ''}
+            canDownload
+          />
         </div>
       );
     case 'customSegImg':
       return (
         <div>
-          <LazyImage key={content.src} img={content} caption={content.author} canDownload />
+          <LazyImage
+            key={content.src}
+            img={content}
+            caption={content.author ? `Photo by ${content.author}` : ''}
+            canDownload
+          />
         </div>
       );
     case 'concreteSurface':
