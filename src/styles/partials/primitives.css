@@ -143,8 +143,10 @@
 
 /* For select */
 @utility select-trigger {
-  @apply btn btn-sm min-w-full xs:min-w-0;
+  @apply min-w-full pl-2 pr-1.5 xs:px-0 xs:min-w-0 focus-visible:ring focus-visible:ring-primary-light;
   border: 1px solid var(--color-muted-foreground);
+  font-size: var(--text-sm);
+  outline: none;
   background: transparent;
   border-radius: var(--radius-lg);
   transition:
