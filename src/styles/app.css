@@ -401,6 +401,7 @@
 }
 
 @utility divider {
+  @apply before:bg-muted-foreground/60 after:bg-muted-foreground/60;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -413,7 +414,6 @@
     height: 1px;
     width: 100%;
     flex-grow: 1;
-    background-color: --alpha(var(--color-muted-foreground) / 60%);
     content: '';
   }
 

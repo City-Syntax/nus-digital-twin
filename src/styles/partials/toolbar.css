@@ -43,7 +43,7 @@
     max-width: 500px;
     margin: 0 auto;
     padding: 0 var(--padding-xs);
-    bottom: calc(72px + var(--bottom-bar-height));
+    bottom: calc(76px + var(--bottom-bar-height));
 
     > .toolbar__section {
       flex-direction: row;

@@ -163,10 +163,6 @@
       opacity 200ms,
       transform 200ms;
     opacity: 0;
-
-    body.reduce-motion & {
-      transform: translateY(-50%) scaleY(1);
-    }
   }
 
   &.active::before {
@@ -202,10 +198,6 @@
     transform: translateY(-50%) scaleX(0);
     transform-origin: bottom;
     border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
-
-    body.reduce-motion & {
-      transform: translateY(-50%) scaleX(1);
-    }
   }
 
   &.vertical > svg {
