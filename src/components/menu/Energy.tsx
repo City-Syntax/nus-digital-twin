@@ -90,7 +90,7 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
       {buildingProperties && (
         <div className="menubar-content-footer flex lg:hidden">
           <button
-            className="footer-link"
+            className="flex text-left "
             onClick={() => {
               activePages.set({
                 left: 'building-info',
@@ -99,7 +99,7 @@ const Energy = ({ graphType, setGraphType }: EnergyProps) => {
               });
             }}
           >
-            <Icons.Data></Icons.Data>
+            <Icons.Data className="size-4 shrink-0" />
             View data about {buildingProperties.name}
           </button>
         </div>

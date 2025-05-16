@@ -69,8 +69,8 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           rel="noreferrer"
         >
           {/* TODO: Remove the important */}
-          <button className="footer-link hover:text-amber-600!">
-            <Icons.Flag></Icons.Flag>
+          <button className="flex text-left hover:text-amber-600!">
+            <Icons.Flag clasName="size-4 shrink-0"></Icons.Flag>
             Report issue
           </button>
         </a>

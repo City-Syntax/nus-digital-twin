@@ -334,16 +334,6 @@
       width: auto;
     }
   }
-
-  .footer-link {
-    display: flex;
-    text-align: left;
-
-    > svg {
-      flex-shrink: 0;
-      height: 1rem;
-    }
-  }
 }
 
 .menu-bottom .menubar-content-body {
