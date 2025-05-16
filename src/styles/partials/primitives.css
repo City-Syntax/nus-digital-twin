@@ -122,3 +122,21 @@
     background-color: --alpha(var(--color-background-light) / 80%);
   }
 }
+
+/* For popover */
+@utility popover-content {
+  z-index: 2;
+  transform-origin: var(--radix-popover-content-transform-origin);
+
+  &[data-state='open'] {
+    animation: scaleIn 150ms var(--ease-in-out-cubic);
+  }
+
+  &[data-state='closed'] {
+    animation: scaleOut 150ms var(--ease-in-out-cubic);
+  }
+
+  body.reduce-motion & {
+    animation: none;
+  }
+}

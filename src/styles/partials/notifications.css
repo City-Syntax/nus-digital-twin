@@ -1,8 +1,3 @@
-/* ==========================================================================
-   NOTIFICATIONS
-   Contain styles for notifications.
-   ========================================================================== */
-
 div.notification {
   color: inherit;
   padding: var(--padding-xs) var(--padding-sm);
