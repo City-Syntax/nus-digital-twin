@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import Icons from '../Icons';
 import type { ImageProps } from '../../types';
 import DownloadButton from './DownloadButton';
-import { cn } from '@lib/utils';
+import { cn, parseDateToLocaleString } from '@lib/utils';
+import ExifReader from 'exifreader';
+import Tippy from '@tippyjs/react';
 
 const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
@@ -12,15 +14,18 @@ const LazyImage = ({
   alt,
   caption,
   canDownload,
+  showDateTime,
 }: {
   img?: ImageProps;
   ratio?: string;
   alt?: string;
   caption?: string;
   canDownload?: boolean;
+  showDateTime?: boolean;
 }) => {
   const [hasLoaded, setHasLoaded] = useState(!img);
   const [src, setSrc] = useState('');
+  const [dateTime, setDateTime] = useState('');
 
   useEffect(() => {
     const fetchAstroImages = async () => {
@@ -29,6 +34,10 @@ const LazyImage = ({
       }
 
       const data = (await astroImages[img.src]()).default.src;
+      const response = await fetch(data);
+      const buffer = await response.arrayBuffer();
+      const exifData = ExifReader.load(buffer);
+      setDateTime(exifData['DateTimeOriginal']?.description || '');
       setSrc(data);
     };
     fetchAstroImages();
@@ -36,6 +45,7 @@ const LazyImage = ({
 
   const srcArr = src.split('/');
   const filetype = '.' + srcArr[srcArr.length - 1].split('?')[0].split('.').pop();
+  const tooltipContent = showDateTime && dateTime ? [caption, parseDateToLocaleString(dateTime)] : [caption];
 
   return (
     <>
@@ -44,8 +54,8 @@ const LazyImage = ({
         style={{ aspectRatio: ratio }}
       >
         <div
-          className={cn('relative h-full [&_img]:opacity-0 [&_.img-caption]:opacity-0', {
-            '[&_img]:opacity-100 [&_.img-caption]:opacity-100': hasLoaded,
+          className={cn('relative h-full [&_img]:opacity-0 [&_.img-info]:opacity-0', {
+            '[&_img]:opacity-100 [&_.img-info]:opacity-100': hasLoaded,
           })}
         >
           {!hasLoaded && (
@@ -59,10 +69,17 @@ const LazyImage = ({
             src={src ? src : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'}
             alt={alt || ''}
           />
-          {hasLoaded && caption && (
-            <div className="img-caption font-title text-xs font-semibold text-foreground absolute bottom-0 left-0 py-0.5 px-2 text-shadow-lg transition-opacity">
-              {caption}
-            </div>
+          {hasLoaded && (caption || (showDateTime && dateTime)) && (
+            <Tippy
+              offset={[0, 4]}
+              content={<div className="text-xs">{tooltipContent.filter((str) => Boolean(str)).join(', ')}</div>}
+              arrow={false}
+              placement="bottom-end"
+            >
+              <div className="img-info absolute top-0 right-0 rounded-none rounded-bl-2xl rounded-tr-2xl btn btn-secondary btn-square btn-sm border-none">
+                <Icons.About className="size-5" />
+              </div>
+            </Tippy>
           )}
         </div>
       </div>

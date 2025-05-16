@@ -256,8 +256,6 @@
   height: var(--btn-height, var(--btn-md));
   transition: background-color 150ms;
   border: 1px solid transparent;
-  margin-top: 1px;
-  margin-bottom: 1px;
 
   &:focus-visible {
     outline: none;
@@ -282,7 +280,7 @@
 
 @utility btn-secondary {
   backdrop-filter: saturate(120%) blur(4px);
-  --btn-bg: --alpha(var(--color-background-light) / 50%);
+  --btn-bg: --alpha(var(--color-background-light) / 60%);
 
   &:hover {
     background-color: --alpha(var(--color-background-light) / 90%);
