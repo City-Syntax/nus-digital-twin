@@ -1,11 +1,14 @@
-import React from 'react';
 import CloseButton from './CloseButton';
 import { useStore } from '@nanostores/react';
-import { activeModel } from '../../store';
+import { activeModel, isModelsAdded } from '@store';
 import DownloadButton from '../primitives/DownloadButton';
+import { cn } from '@lib/utils';
+import Icons from '@components/Icons';
 
 const RhinoUrban = () => {
   const $activeModel = useStore(activeModel);
+  const isLoaded = useStore(isModelsAdded)['rhino-urban'];
+
   return (
     <>
       <div className="menubar-content-header">
@@ -14,17 +17,33 @@ const RhinoUrban = () => {
       </div>
       <div className="menubar-content-body">
         <div>Displays Rhino Urban Scale models. Selecting individual buildings is not available.</div>
-        <div>
+        <div className="relative">
           <div className="btn-group">
             <button
               onClick={() => activeModel.set('rhino-urban')}
-              className={$activeModel === 'rhino-urban' ? 'active' : ''}
+              className={cn({ active: $activeModel === 'rhino-urban' })}
+              disabled={!isLoaded}
             >
               On
             </button>
-            <button onClick={() => activeModel.set('')} className={$activeModel !== 'rhino-urban' ? 'active' : ''}>
+            <button
+              onClick={() => activeModel.set('')}
+              className={cn({ active: $activeModel !== 'rhino-urban' })}
+              disabled={!isLoaded}
+            >
               Off
             </button>
+          </div>
+          <div
+            className={cn(
+              'mt-1 absolute right-0 flex gap-1.5 items-center text-sm text-muted-foreground transition-opacity',
+              {
+                'opacity-0': isLoaded,
+              },
+            )}
+          >
+            <Icons.Spinner className="animate-spin size-3.5" />
+            Rhino model is loading...
           </div>
         </div>
         <div>

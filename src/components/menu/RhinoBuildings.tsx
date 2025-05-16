@@ -16,7 +16,7 @@ const RhinoBuildings = () => {
       </div>
       <div className="menubar-content-body">
         <div>Displays Rhino Building Scale models.</div>
-        <div>
+        <div className="relative">
           <div className="btn-group">
             <button
               onClick={() => activeModel.set('rhino-building')}
@@ -34,9 +34,12 @@ const RhinoBuildings = () => {
             </button>
           </div>
           <div
-            className={cn('mt-1.5 flex gap-1.5 items-center text-sm text-muted-foreground transition-opacity', {
-              'opacity-0': isLoaded,
-            })}
+            className={cn(
+              'mt-1 absolute right-0 flex gap-1.5 items-center text-sm text-muted-foreground transition-opacity',
+              {
+                'opacity-0': isLoaded,
+              },
+            )}
           >
             <Icons.Spinner className="animate-spin size-3.5" />
             Rhino models are loading...
