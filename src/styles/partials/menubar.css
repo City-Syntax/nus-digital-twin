@@ -77,14 +77,6 @@
   }
 }
 
-.menubar-bottom {
-  border-radius: var(--radius-2xl);
-  display: flex;
-  padding-left: var(--padding-lg);
-  padding-right: var(--padding-lg);
-  justify-content: space-between;
-}
-
 .menubar-body {
   overflow-y: auto;
   --overlay-size: 2.5rem;
