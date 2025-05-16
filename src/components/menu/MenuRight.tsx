@@ -3,7 +3,7 @@ import MenuLinks from './MenuLinks';
 
 const MenuRight = () => {
   return (
-    <nav className="menubar-right bg-base">
+    <nav className="bg-base flex flex-col py-4 rounded-menu gap-(--content-gap) w-(--menu-right-width)">
       <ScrollContainer>
         <div className="menubar-body">
           <div className="menu-list">

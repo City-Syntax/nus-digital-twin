@@ -51,19 +51,6 @@
   padding-right: var(--padding-xs);
 }
 
-.menubar-right {
-  border-radius: var(--radius-2xl);
-  display: flex;
-  flex-direction: column;
-  padding-top: var(--padding-base);
-  padding-bottom: var(--padding-base);
-  width: var(--menu-right-width);
-
-  > * + * {
-    margin-top: var(--content-gap);
-  }
-}
-
 .menubar-body {
   overflow-y: auto;
   --overlay-size: 2.5rem;
