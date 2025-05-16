@@ -2,12 +2,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import fuzzysort from 'fuzzysort';
 import { Command } from 'cmdk';
 import Icons from '../Icons';
-import buildingsData from '../../content/buildings/buildings.json';
-import { activePages, buildingId, flyToPosition } from '../../store';
-import styles from '../../styles/exports.module.scss';
+import buildingsData from '@content/buildings/buildings.json';
+import { activePages, buildingId, flyToPosition } from '@store';
 
 const Searchbar = () => {
-  const breakpoint = Number(styles.breakpointLg.substring(0, styles.breakpointLg.length - 2));
   const [open, setOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
@@ -35,6 +33,13 @@ const Searchbar = () => {
         listRef.current.scrollTo({ top: 0 });
       }
     });
+  }, []);
+
+  const breakpoint = useMemo(() => {
+    const root = document.documentElement;
+    const styles = getComputedStyle(root);
+    const breakpointLg = styles.getPropertyValue('--breakpoint-lg');
+    return breakpointLg.match(/[\d.]+/g)?.map(Number)[0] || 0;
   }, []);
 
   const focusOnInput = useCallback(() => {
@@ -117,8 +122,9 @@ const Searchbar = () => {
 
   return (
     <Command shouldFilter={false} label="Search buildings" loop>
-      <div className="search">
+      <div className="relative">
         <Command.Input
+          className="outline-none overflow-ellipsis text-base p-3 rounded-lg w-full transition-all duration-100 border border-muted-foreground focus:ring focus:ring-primary-light focus:border-primary-light hover:ring hover:ring-primary-light hover:border-primary-light lg:text-sm placeholder:text-muted-foreground mt-[1px] not-placeholder-shown:pr-8 not-placeholder-shown:[&_~_.clear-btn]:flex"
           onFocus={() => {
             setOpen(true);
             scrollUpOnChange();
@@ -144,7 +150,7 @@ const Searchbar = () => {
         ></Command.Input>
         <button
           ref={clearBtnRef}
-          className="clear-btn"
+          className="clear-btn hidden absolute right-0 top-1/2 -translate-y-1/2 btn btn-sm btn-square rounded-4xl bg-transparent [&>svg]:stroke-muted-foreground hover:[&>svg]:opacity-70"
           type="button"
           onFocus={() => document.addEventListener('keydown', clearSearchOnEnter)}
           onBlur={() => document.removeEventListener('keydown', clearSearchOnEnter)}
@@ -154,7 +160,7 @@ const Searchbar = () => {
             focusOnInput();
           }}
         >
-          <Icons.Close></Icons.Close>
+          <Icons.Close className="size-4 transition-opacity"></Icons.Close>
         </button>
       </div>
       <Command.List className={open ? '' : 'hide'} ref={listRef} tabIndex={-1}>

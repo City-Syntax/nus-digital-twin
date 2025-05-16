@@ -11,6 +11,7 @@ import Icons from '../../Icons';
 import ScrollContainer from '../../primitives/ScrollContainer';
 import Tippy from '@tippyjs/react';
 import Select from '../../primitives/Select';
+import { cn } from '@lib/utils';
 
 type BuildingInfoProps = {
   category: BuildingInfoCategories;
@@ -67,20 +68,24 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           target="_blank"
           rel="noreferrer"
         >
-          <button className="footer-link footer-link--report">
-            <Icons.Flag></Icons.Flag>
+          {/* TODO: Remove the important */}
+          <button className="flex text-left hover:text-amber-600!">
+            <Icons.Flag clasName="size-4 shrink-0"></Icons.Flag>
             Report issue
           </button>
         </a>
-        <span className="footer-section">
+        <span className="flex gap-2 justify-start">
           {(buildingProperties.energyUse || buildingProperties.energyUseIntensity) && (
             <Tippy
               content={`${$activePages.right === 'energy' ? 'Close' : 'View'} energy use data`}
               arrow={false}
               placement="top-end"
             >
+              {/* TODO: Remove the important when migration complete */}
               <button
-                className={$activePages.right === 'energy' ? 'footer-link--energy--active' : ''}
+                className={cn({
+                  'text-yellow-500! hover:text-yellow-500!': $activePages.right === 'energy',
+                })}
                 onClick={() => {
                   if ($activePages.right === 'energy') {
                     activePages.set({
@@ -127,7 +132,7 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>
-          <div className="download-btn-container">
+          <div className="flex flex-col gap-2">
             {content.map((c: DownloadProps) => (
               <DownloadButton key={c.type} {...c}></DownloadButton>
             ))}

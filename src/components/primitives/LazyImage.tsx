@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Icons from '../Icons';
 import type { ImageProps } from '../../types';
 import DownloadButton from './DownloadButton';
+import { cn } from '@lib/utils';
 
 const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
 
@@ -38,19 +39,31 @@ const LazyImage = ({
 
   return (
     <>
-      <div className="img-wrapper" style={{ marginBottom: '4px', aspectRatio: ratio }}>
-        <div className={`img-container ${hasLoaded ? 'img-container--loaded' : ''}`}>
+      <div
+        className="overflow-hidden rounded-2xl mb-1 [&_img]:size-full [&_img]:object-cover"
+        style={{ aspectRatio: ratio }}
+      >
+        <div
+          className={cn('relative h-full [&_img]:opacity-0 [&_.img-caption]:opacity-0', {
+            '[&_img]:opacity-100 [&_.img-caption]:opacity-100': hasLoaded,
+          })}
+        >
           {!hasLoaded && (
-            <div className="img-container__spinner">
-              <Icons.Spinner />
+            <div className="text-foreground w-full absolute flex justify-center top-1/2 -translate-y-1/2">
+              <Icons.Spinner className="size-8 animate-spin" />
             </div>
           )}
           <img
+            className="transition-opacity"
             onLoad={() => src && setHasLoaded(true)}
             src={src ? src : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'}
             alt={alt || ''}
           />
-          {hasLoaded && caption && <div className="img-container__caption">{caption}</div>}
+          {hasLoaded && caption && (
+            <div className="img-caption font-title text-xs font-semibold text-foreground absolute bottom-0 left-0 py-0.5 px-2 text-shadow-lg transition-opacity">
+              {caption}
+            </div>
+          )}
         </div>
       </div>
       {canDownload && src && <DownloadButton type="image" files={[{ filetype: filetype, url: src }]} />}

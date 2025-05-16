@@ -1,0 +1,52 @@
+/* ==========================================================================
+   TOOLBAR
+   ========================================================================== */
+
+.toolbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: calc(8px + var(--bottom-bar-height));
+  padding: 0 var(--container-x-offset);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-end;
+  pointer-events: none;
+
+  > .toolbar__section {
+    @apply flex-col lg:flex-row;
+    display: flex;
+    gap: 6px;
+  }
+
+  .toolbar-btn {
+    @apply btn btn-xl btn-square bg-base;
+    transition: background-color 150ms;
+    pointer-events: auto;
+
+    &:hover {
+      background-color: var(--color-background);
+    }
+  }
+}
+
+@media screen and (max-height: 578px) and (min-width: 879px) {
+  #screenshot-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 656px) {
+  .toolbar {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 var(--padding-xs);
+    bottom: calc(76px + var(--bottom-bar-height));
+
+    > .toolbar__section {
+      flex-direction: row;
+    }
+  }
+}

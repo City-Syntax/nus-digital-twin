@@ -1,0 +1,217 @@
+/* 
+  Force react-animate-height to animate unless 
+  reduced motion setting is toggled on 
+*/
+.rah-animating {
+  body.reduce-motion & {
+    transition: none !important;
+  }
+  transition: height 300ms ease !important;
+}
+
+/* For modals */
+@utility modal__overlay {
+  backdrop-filter: saturate(120%) blur(8px);
+  position: fixed;
+  inset: 0;
+  z-index: var(--modal-z);
+
+  &[data-state='open'] {
+    animation: fadeIn 150ms var(--ease-in-out-sine);
+  }
+
+  &[data-state='closed'] {
+    animation: fadeOut 150ms var(--ease-in-out-sine);
+  }
+
+  body.reduce-motion & {
+    animation: none;
+  }
+}
+
+@utility modal__content {
+  @apply bg-base;
+  z-index: var(--modal-z);
+  border-radius: var(--radius-2xl);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 480px;
+  max-height: 85vh;
+  padding: var(--padding-xl);
+
+  > * + * {
+    margin-top: 12px;
+  }
+
+  &[data-state='open'] {
+    animation: contentShow 150ms var(--ease-in-out-sine);
+  }
+
+  &[data-state='closed'] {
+    animation: contentHide 150ms var(--ease-in-out-sine);
+  }
+
+  body.reduce-motion & {
+    animation: none;
+  }
+
+  h3 {
+    margin-top: 20px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* For dropdowns */
+@utility dropdown-trigger {
+  &[data-state='open'] .dropdown-icon {
+    transform: rotate(-180deg);
+  }
+
+  .dropdown-icon {
+    margin-left: 4px;
+    transition: transform 150ms var(--ease-in-out-sine);
+
+    body.reduce-motion & {
+      transition: none;
+    }
+  }
+}
+
+@utility dropdown-content {
+  @apply dropdown-base;
+
+  overflow: hidden;
+  min-width: 120px;
+  transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+
+  &[data-state='open'] {
+    animation: scaleIn 150ms var(--ease-in-out-cubic);
+  }
+
+  &[data-state='closed'] {
+    animation: scaleOut 150ms var(--ease-in-out-cubic);
+  }
+
+  body.reduce-motion & {
+    animation: none;
+  }
+}
+
+@utility dropdown-item {
+  font-size: var(--text-sm);
+  padding: var(--padding-xs);
+  user-select: none;
+  outline: none;
+  display: block;
+  transition: background-color 150ms;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &[data-highlighted] {
+    background-color: --alpha(var(--color-background-light) / 80%);
+  }
+}
+
+/* For popover */
+@utility popover-content {
+  z-index: 2;
+  transform-origin: var(--radix-popover-content-transform-origin);
+
+  &[data-state='open'] {
+    animation: scaleIn 150ms var(--ease-in-out-cubic);
+  }
+
+  &[data-state='closed'] {
+    animation: scaleOut 150ms var(--ease-in-out-cubic);
+  }
+
+  body.reduce-motion & {
+    animation: none;
+  }
+}
+
+/* For select */
+@utility select-trigger {
+  @apply btn btn-sm min-w-full xs:min-w-0;
+  border: 1px solid var(--color-muted-foreground);
+  background: transparent;
+  border-radius: var(--radius-lg);
+  transition:
+    width 200ms,
+    box-shadow 100ms;
+  overflow: clip;
+  height: max-content;
+
+  &[data-state='open'] .select-icon {
+    transform: rotate(-180deg);
+  }
+
+  .select-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-left: 6px;
+    transition: transform 150ms var(--ease-in-out-sine);
+
+    body.reduce-motion & {
+      transition: none;
+    }
+  }
+
+  body.reduce-motion & {
+    transition: box-shadow 100ms;
+  }
+}
+
+@utility select-trigger-content {
+  @apply min-w-0 py-2 px-0 w-full xs:min-w-max xs:pl-3 xs:pr-2.5 xs:w-auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+
+  > * + * {
+    flex-shrink: 0;
+  }
+}
+
+@utility select-content {
+  @apply dropdown-base w-(--radix-select-trigger-width) xs:w-auto;
+
+  font-size: var(--text-sm);
+  overflow: hidden;
+  transform-origin: var(--radix-select-content-transform-origin);
+
+  &[data-state='open'] {
+    animation: scaleIn 150ms var(--ease-in-out-cubic);
+  }
+
+  &[data-state='closed'] {
+    animation: scaleOut 150ms var(--ease-in-out-cubic);
+  }
+
+  body.reduce-motion & {
+    animation: none;
+  }
+}
+
+@utility select-item {
+  padding: var(--padding-xs);
+  outline: none;
+  user-select: none;
+  transition: background-color 150ms;
+
+  &[data-highlighted] {
+    background-color: --alpha(var(--color-background-light) / 80%);
+  }
+}

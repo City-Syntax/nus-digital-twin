@@ -1,0 +1,20 @@
+div.notification {
+  color: inherit;
+  padding: var(--padding-xs) var(--padding-sm);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  gap: 6px;
+
+  svg {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  > div[role='status'] {
+    margin: 0 2px;
+  }
+
+  body.reduce-motion & {
+    animation: none !important;
+  }
+}

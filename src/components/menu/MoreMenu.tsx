@@ -14,7 +14,7 @@ const MoreMenu = () => {
       <ScrollContainer>
         <div className="menubar-content-body">
           <div className="menu-list">
-            <div className="hide-sm">
+            <div className="block sm:hidden">
               <MenuLink toPage="resources" label="Resources" iconName="Resources" dir="bottom" isBottom></MenuLink>
             </div>
             <MenuLinks.Menu dir="bottom"></MenuLinks.Menu>

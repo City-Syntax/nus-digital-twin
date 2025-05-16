@@ -3,6 +3,7 @@ import CloseButton from './CloseButton';
 import { useStore } from '@nanostores/react';
 import { activeGISLayer } from '../../store';
 import DownloadButton from '../primitives/DownloadButton';
+import { cn } from '@lib/utils';
 
 const StreetCenterlines = () => {
   const $activeGISLayer = useStore(activeGISLayer);
@@ -39,7 +40,12 @@ const StreetCenterlines = () => {
           <button
             onClick={() => activeGISLayer.set(new Set())}
             type="button"
-            className={`clear-gis-btn ${$activeGISLayer.size === 0 ? 'hide' : ''}`}
+            className={cn(
+              'absolute right-4 text-sm text-muted-foreground transition-colors mt-2 hover:text-muted-foreground/75',
+              {
+                hidden: $activeGISLayer.size === 0,
+              },
+            )}
           >
             Clear all GIS layers
           </button>
