@@ -21,7 +21,7 @@ const MenuLeft = () => {
   };
 
   return (
-    <nav className="menubar-left bg-base">
+    <nav className="bg-base flex flex-col py-4 rounded-menu gap-(--content-gap) w-(--menu-left-width)">
       <div className="px-4">
         <Searchbar />
       </div>
