@@ -2,6 +2,7 @@ import { atom, map } from 'nanostores';
 import { persistentAtom, persistentMap } from '@nanostores/persistent';
 import type { GISLayers, MenuPages, Models, Position, UserSettings } from './types';
 import type { MapLayers } from '@components/cesium/mapLayers';
+import type { Model } from 'cesium';
 
 export const activePages = map<{
   left: MenuPages | '';
@@ -47,4 +48,11 @@ export const flyToPosition = atom<Position | null>(null);
 export const toastMessage = map<{ msg: string; type: 'loading' | 'loaded' | 'default' }>({
   msg: '',
   type: 'default',
+});
+
+export const isModelsAdded = map<Record<Models, boolean>>({
+  osm: false,
+  bim: false,
+  'rhino-urban': false,
+  'rhino-building': false,
 });
