@@ -314,6 +314,10 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       }
 
       if (!urbanModelId) {
+        toastMessage.set({
+          msg: 'No building information found.',
+          type: 'default',
+        });
         return;
       }
     }
