@@ -38,7 +38,10 @@ const LazyImage = ({
 
   return (
     <>
-      <div className="img-wrapper mb-1" style={{ aspectRatio: ratio }}>
+      <div
+        className="overflow-hidden rounded-2xl mb-1 [&_img]:size-full [&_img]:object-cover"
+        style={{ aspectRatio: ratio }}
+      >
         <div className={`img-container ${hasLoaded ? 'img-container--loaded' : ''}`}>
           {!hasLoaded && (
             <div className="text-foreground w-full absolute flex justify-center top-1/2 -translate-y-1/2">
