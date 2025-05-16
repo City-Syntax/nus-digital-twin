@@ -70,7 +70,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
         >
           {/* TODO: Remove the important */}
           <button className="flex text-left hover:text-amber-600!">
-            <Icons.Flag clasName="size-4 shrink-0"></Icons.Flag>
+            <Icons.Flag className="size-4 shrink-0"></Icons.Flag>
             Report issue
           </button>
         </a>
