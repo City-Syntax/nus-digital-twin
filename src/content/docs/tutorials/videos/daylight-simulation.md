@@ -5,6 +5,10 @@ tableOfContents: false
 lastUpdated: false
 ---
 
-<video controls>
-  <source src="/tutorials/Daylight Simulation.mp4" type="video/mp4" />
-</video>
+<iframe 
+  class="w-full aspect-[16/10]"
+  allowfullscreen
+  src="https://drive.google.com/file/d/1Gp2AhpGrtCt_xsx2HDSws4KHYO7v_adv/preview" 
+  allow="autoplay"
+>
+</iframe>

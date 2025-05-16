@@ -5,6 +5,10 @@ tableOfContents: false
 lastUpdated: false
 ---
 
-<video controls>
-  <source src="/tutorials/Thermal Energy Simulation.mp4" type="video/mp4" />
-</video>
+<iframe 
+  class="w-full aspect-[16/10]"
+  allowfullscreen
+  src="https://drive.google.com/file/d/14pqnMa2ZabcSZbe7B05mi-pesINfu_WM/preview" 
+  allow="autoplay"
+>
+</iframe>

@@ -5,6 +5,10 @@ tableOfContents: false
 lastUpdated: false
 ---
 
-<video controls>
-  <source src="/tutorials/Sun Path Simulation.mp4" type="video/mp4" />
-</video>
+<iframe 
+  class="w-full aspect-[16/10]"
+  allowfullscreen
+  src="https://drive.google.com/file/d/1xErnIcqdN52ml7qfTLIPi7GgDmylgbQO/preview" 
+  allow="autoplay"
+>
+</iframe>

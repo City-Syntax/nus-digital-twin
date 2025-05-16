@@ -5,6 +5,10 @@ tableOfContents: false
 lastUpdated: false
 ---
 
-<video controls>
-  <source src="/tutorials/Solar Simulation.mp4" type="video/mp4" />
-</video>
+<iframe 
+  class="w-full aspect-[16/10]"
+  allowfullscreen
+  src="https://drive.google.com/file/d/1MltvTbtDl5OWW2jny6J6Iy5h8UJhxvuM/preview" 
+  allow="autoplay"
+>
+</iframe>
