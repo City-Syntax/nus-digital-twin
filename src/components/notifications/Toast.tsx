@@ -1,4 +1,3 @@
-import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { activeModel, toastMessage } from '../../store';
 import Icons from '../Icons';
@@ -6,7 +5,7 @@ import Icons from '../Icons';
 activeModel.listen((model) => {
   if (model === '') {
     toast('No building models selected', {
-      className: 'notification notification--danger',
+      className: 'notification bg-warning!',
       duration: Infinity,
       id: 'building-models',
       icon: <Icons.Warning></Icons.Warning>,

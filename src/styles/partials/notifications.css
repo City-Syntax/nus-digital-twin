@@ -18,7 +18,3 @@ div.notification {
     animation: none !important;
   }
 }
-
-div.notification.notification--danger {
-  background-color: rgba(129, 27, 27, 0.84);
-}

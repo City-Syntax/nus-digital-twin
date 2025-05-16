@@ -34,6 +34,8 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
 
+  --color-warning: var(--warning);
+
   --radius-xs: calc(var(--radius) - 12px);
   --radius-sm: calc(var(--radius) - 8px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -133,6 +135,8 @@
   --primary: oklch(54.6% 0.245 262.881);
   --primary-light: oklch(70.7% 0.165 254.624);
   --primary-foreground: oklch(97% 0.014 254.604);
+
+  --warning: oklch(0.444 0.177 26.899);
 
   --btn-xs: 1.75rem;
   --btn-sm: 2rem;
