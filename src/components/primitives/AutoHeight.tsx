@@ -21,7 +21,7 @@ const AutoHeight = ({ duration = 300, children, ...props }: { duration?: number;
     <AnimateHeight
       {...props}
       height={height}
-      contentClassName="auto-height-container"
+      contentClassName="flex flex-col space-y-(--content-gap)"
       contentRef={contentDiv}
       disableDisplayNone
       duration={duration}

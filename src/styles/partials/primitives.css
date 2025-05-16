@@ -8,12 +8,3 @@
   }
   transition: height 300ms ease !important;
 }
-
-.auto-height-container {
-  display: flex;
-  flex-direction: column;
-
-  > * + * {
-    margin-top: var(--content-gap);
-  }
-}
