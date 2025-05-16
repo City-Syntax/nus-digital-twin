@@ -50,8 +50,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     DistanceDisplayCondition,
     ClockStep,
     ClockRange,
+    Cartographic,
   } from 'cesium';
-  import { OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumUtils';
+  import { getNearestBuildingId, OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumUtils';
   import { load as loadRhinoModels } from './rhinoBuildingModels';
   import { load as loadBuildingInformationModels } from './buildingInformationModels';
   import { mapboxSatellite, mapboxDark, mapboxStreet, type MapLayers } from './mapLayers';
@@ -295,13 +296,26 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       return;
     }
 
-    // Disable picking for Rhino Urban Model
+    let urbanModelId;
     if (pickedFeature.primitive && pickedFeature.primitive.featureIdLabel === 'rhino-urban-model') {
-      toastMessage.set({
-        msg: 'Selecting individual buildings is unavailable for Rhino (Urban) models',
-        type: 'default',
-      });
-      return;
+      const ray = viewer.camera.getPickRay(movement.position);
+
+      if (!ray) {
+        return;
+      }
+
+      const position = viewer.scene.globe.pick(ray, viewer.scene);
+
+      if (defined(position)) {
+        const cartographic = Cartographic.fromCartesian(position);
+        const longitude = CesiumMath.toDegrees(cartographic.longitude);
+        const latitude = CesiumMath.toDegrees(cartographic.latitude);
+        urbanModelId = getNearestBuildingId(longitude, latitude);
+      }
+
+      if (!urbanModelId) {
+        return;
+      }
     }
 
     activePages.set({
@@ -310,6 +324,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
       bottom: activePages.get().bottom === 'energy' ? 'energy' : 'building-info',
     });
     buildingId.set(''); // Force the listener on buildingId to trigger
+
+    if (urbanModelId) {
+      buildingId.set(urbanModelId);
+      return;
+    }
 
     if (
       pickedFeature.primitive &&
