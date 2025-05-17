@@ -17,7 +17,11 @@ const DownloadButton = ({ type, credits, files }: DownloadProps) => {
         </div>
       )}
       {files && (
-        <div key={type} className="download-btn">
+        <div
+          key={type}
+          className="flex [&>*]:btn [&>*]:btn-secondary [&>*]:btn-sm [&>*]:rounded-none [&>*:first-child]:rounded-l-(--btn-radius)
+        [&>*:last-child]:rounded-r-(--btn-radius) [&>*:not(:first-child)]:ml-[1px]"
+        >
           {files.length === 1 ? (
             <a href={files[0].url} target="_blank" download onClick={handleClick}>
               Download {type} ({files[0].filetype})

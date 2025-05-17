@@ -338,28 +338,6 @@
   max-height: none;
 }
 
-.download-btn {
-  display: flex;
-
-  > * {
-    @apply btn btn-secondary btn-sm;
-
-    &:first-child {
-      border-top-left-radius: var(--radius-2xl);
-      border-bottom-left-radius: var(--radius-2xl);
-    }
-
-    &:last-child {
-      border-top-right-radius: var(--radius-2xl);
-      border-bottom-right-radius: var(--radius-2xl);
-    }
-
-    &:not(:first-child) {
-      margin-left: 1px;
-    }
-  }
-}
-
 /* Menu Entrance and Exit Animations */
 .menu-bottom-enter {
   opacity: 0;
