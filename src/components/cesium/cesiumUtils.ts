@@ -104,3 +104,29 @@ export function getModelFromUrl(params: Cesium3DTilesetUrlOptions) {
     ...params,
   });
 }
+
+export function getNearestBuildingId(longitude: number, latitude: number): string | null {
+  const threshold = 0.0005; // 50 meters
+
+  const nearbyBuildings = buildingsData.filter((building) => {
+    const longitudeDiff = Math.abs(building.longitude - longitude);
+    const latitudeDiff = Math.abs(building.latitude - latitude);
+    return longitudeDiff < threshold && latitudeDiff < threshold;
+  });
+
+  if (nearbyBuildings.length === 0) {
+    return null;
+  }
+
+  // Euclidean Distance
+  if (nearbyBuildings.length > 1) {
+    nearbyBuildings.sort((a, b) => {
+      const distA = Math.sqrt(Math.pow(a.longitude - longitude, 2) + Math.pow(a.latitude - latitude, 2));
+      const distB = Math.sqrt(Math.pow(b.longitude - longitude, 2) + Math.pow(b.latitude - latitude, 2));
+      return distA - distB;
+    });
+  }
+
+  const closestBuilding = nearbyBuildings[0];
+  return closestBuilding.elementId;
+}
