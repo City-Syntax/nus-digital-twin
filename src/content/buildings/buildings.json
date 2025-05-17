@@ -3380,5 +3380,13 @@
     "postal": "118425",
     "latitude": 1.29078,
     "longitude": 103.78215
+  },
+  {
+    "elementId": "163560748",
+    "name": "Central Water Tank",
+    "address": "7 Kent Ridge Road",
+    "postal": "119216",
+    "latitude": 1.295509,
+    "longitude": 103.776727
   }
 ]
