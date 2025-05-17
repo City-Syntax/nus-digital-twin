@@ -276,6 +276,10 @@
 @utility btn-primary {
   --btn-bg: var(--color-primary);
   --btn-color: var(--color-primary-foreground);
+
+  &:hover {
+    background-color: --alpha(var(--color-primary) / 80%);
+  }
 }
 
 @utility btn-secondary {
