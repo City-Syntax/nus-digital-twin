@@ -2544,6 +2544,14 @@
     "longitude": 103.77744
   },
   {
+    "elementId": "54583930",
+    "name": "University Cultural Centre / NUS Museum",
+    "address": "50 Kent Ridge Crescent",
+    "postal": "119279",
+    "latitude": 1.30176,
+    "longitude": 103.77229
+  },
+  {
     "elementId": "NUS_MUSEUM",
     "name": "NUS Museum",
     "address": "50 Kent Ridge Crescent",
@@ -2608,14 +2616,6 @@
   {
     "elementId": "UNIVERSITY_CULTURAL_CENTRE",
     "name": "University Cultural Centre",
-    "address": "50 Kent Ridge Crescent",
-    "postal": "119279",
-    "latitude": 1.30176,
-    "longitude": 103.77229
-  },
-  {
-    "elementId": "54583930",
-    "name": "University Cultural Centre / NUS Museum",
     "address": "50 Kent Ridge Crescent",
     "postal": "119279",
     "latitude": 1.30176,
