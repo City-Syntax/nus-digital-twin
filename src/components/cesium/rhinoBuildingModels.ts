@@ -38,7 +38,7 @@ export async function load() {
 
   const rhinoNUSMuseum = await getModelFromUrl({
     url: '/nus-museum/nus-museum-rhino-ion/tileset.json',
-    featureIdLabel: '54583930',
+    featureIdLabel: 'NUS_MUSEUM',
   });
 
   const rhinoSDE2 = await getModelFromUrl({
