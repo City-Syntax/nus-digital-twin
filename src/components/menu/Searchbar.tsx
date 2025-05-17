@@ -13,13 +13,15 @@ const Searchbar = () => {
   const clearBtnRef = useRef<HTMLButtonElement>(null);
   const uniqueBuildingData = useMemo(() => {
     const seenNames = new Set();
-    return buildingsData.filter((building) => {
-      if (!seenNames.has(building.name)) {
-        seenNames.add(building.name);
-        return true;
-      }
-      return false;
-    });
+    return buildingsData
+      .filter((building) => {
+        if (!seenNames.has(building.name)) {
+          seenNames.add(building.name);
+          return true;
+        }
+        return false;
+      })
+      .filter((building) => building.elementId !== '54583930'); // filter out the combined UCC and NUS Museum
   }, [buildingsData]);
 
   // Force the component to render once first, else the group label is not included

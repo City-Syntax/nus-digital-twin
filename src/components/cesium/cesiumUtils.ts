@@ -3,6 +3,7 @@ import buildingsData from '../../content/buildings/buildings.json';
 
 const buildingsToShow = buildingsData
   .map((building) => building.elementId)
+  .filter((id) => Boolean(Number(id))) // filter out ids that are not numbers
   .map((id) => ["${feature['elementId']} === " + id, true]);
 
 export const OSM_SHOW_CONDITIONS = [...buildingsToShow, [true, false]];

@@ -2549,13 +2549,27 @@
     "address": "50 Kent Ridge Crescent",
     "postal": "119279",
     "latitude": 1.30176,
+    "longitude": 103.77229
+  },
+  {
+    "elementId": "NUS_MUSEUM",
+    "name": "NUS Museum",
+    "address": "50 Kent Ridge Crescent",
+    "postal": "119279",
+    "latitude": 1.30176,
     "longitude": 103.77229,
     "energyUse": "nus-museum-eu",
     "energyUseIntensity": "nus-museum-eui",
     "idfDownload": "/nus-museum/nus-museum.idf",
     "images": [
-      { "src": "/src/assets/nus-museum/nus-museum-1.jpg", "author": "Angel Zhou An Ting, Vivian Yeo" },
-      { "src": "/src/assets/nus-museum/nus-museum-2.jpg", "author": "Angel Zhou An Ting, Vivian Yeo" }
+      {
+        "src": "/src/assets/nus-museum/nus-museum-1.jpg",
+        "author": "Angel Zhou An Ting, Vivian Yeo"
+      },
+      {
+        "src": "/src/assets/nus-museum/nus-museum-2.jpg",
+        "author": "Angel Zhou An Ting, Vivian Yeo"
+      }
     ],
     "downloads": [
       {
@@ -2598,6 +2612,14 @@
     "perimeterOutsideAirSchedule": "Always on",
     "exhaustAirRecovery": "None",
     "economizerCycle": "None"
+  },
+  {
+    "elementId": "UNIVERSITY_CULTURAL_CENTRE",
+    "name": "University Cultural Centre",
+    "address": "50 Kent Ridge Crescent",
+    "postal": "119279",
+    "latitude": 1.30176,
+    "longitude": 103.77229
   },
   {
     "elementId": "54583487",

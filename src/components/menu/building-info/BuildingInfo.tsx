@@ -27,6 +27,31 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
   );
   buildingId.listen(() => setCategory('general'));
 
+  if (buildingId.get() == '54583930') {
+    return (
+      <>
+        <div className="menubar-content-header">
+          <h2>{buildingProperties.name}</h2>
+          <CloseButton page="building-info"></CloseButton>
+        </div>
+        <div className="menubar-content-body">
+          <div>
+            This selection contains 2 buildings. Click on any button below to view specific building-level data.
+          </div>
+          <button
+            className="btn btn-secondary btn-sm w-full"
+            onClick={() => buildingId.set('UNIVERSITY_CULTURAL_CENTRE')}
+          >
+            View data for University Cultural Centre
+          </button>
+          <button className="btn btn-secondary btn-sm w-full" onClick={() => buildingId.set('NUS_MUSEUM')}>
+            View data for NUS Museum
+          </button>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <div className="menubar-content-header">
