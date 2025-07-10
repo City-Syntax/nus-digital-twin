@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import * as RadixSelect from '@radix-ui/react-select';
+import { Select as RadixSelect } from 'radix-ui';
 import Icons from '../Icons';
 
 interface SelectProps<T extends string> {
