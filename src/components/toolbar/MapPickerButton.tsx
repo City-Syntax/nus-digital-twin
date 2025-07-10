@@ -1,5 +1,5 @@
 import Icons from '../Icons';
-import * as Popover from '@radix-ui/react-popover';
+import { Popover } from 'radix-ui';
 import { activeMapLayer } from '../../store';
 import { useStore } from '@nanostores/react';
 import type { ImageProps } from '../../types';

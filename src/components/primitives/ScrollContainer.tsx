@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import * as ScrollArea from '@radix-ui/react-scroll-area';
+import { ScrollArea } from 'radix-ui';
 
 const ScrollContainer = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef<HTMLDivElement | null>(null);

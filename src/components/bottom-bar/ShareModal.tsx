@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as Dialog from '@radix-ui/react-dialog';
+import { Dialog } from 'radix-ui';
 import Icons from '../Icons';
 
 const ShareModal = () => {

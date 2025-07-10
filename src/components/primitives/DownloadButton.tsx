@@ -1,6 +1,5 @@
-import React from 'react';
 import type { DownloadFileProps, DownloadProps } from '../../types';
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { DropdownMenu } from 'radix-ui';
 import Icons from '../Icons';
 import { toastMessage } from '../../store';
 

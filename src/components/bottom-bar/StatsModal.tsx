@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import * as Dialog from '@radix-ui/react-dialog';
+import { Dialog } from 'radix-ui';
 import { getAllStats } from 'lib/analytics';
 import Icons from '@components/Icons';
 
