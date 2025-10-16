@@ -2,17 +2,12 @@ type VisitorsResponse = {
   visitors: number;
 };
 
-type Metric = {
-  value: number;
-  prev: number;
-};
-
 type StatsResponse = {
-  pageviews: Metric;
-  visitors: Metric;
-  visits: Metric;
-  bounces: Metric;
-  totaltime: Metric;
+  pageviews: number;
+  visitors: number;
+  visits: number;
+  bounces: number;
+  totaltime: number;
 };
 
 export const getActiveVisitors = async (): Promise<VisitorsResponse> => {

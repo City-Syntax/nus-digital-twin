@@ -14,7 +14,7 @@ const StatsModal = () => {
           setFetchStatus('fetching');
           getAllStats()
             .then((data) => {
-              setLifetimeVisits(data.visits.value);
+              setLifetimeVisits(data.visits);
               setFetchStatus('fetched');
             })
             .catch(() => {
