@@ -11,7 +11,7 @@ import AppLayout from '../layouts/AppLayout.astro';
   <Menu client:only="react" />
   <CesiumScene />
   <Toolbar />
-  <NotificationsBox client:load />
+  <NotificationsBox client:only="react" />
   <BottomBar />
 </AppLayout>
 <script>
