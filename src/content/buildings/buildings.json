@@ -791,6 +791,14 @@
         "src": "/src/assets/as7/as7-3.jpg",
         "author": "Soh Jun Wei, Sun Siting"
       }
+    ],
+    "buildingDataCredits": "Soh Jun Wei, Sun Siting",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Soh Jun Wei, Sun Siting",
+        "files": [{ "filetype": ".3dm", "url": "/as7/as7-rhino.3dm" }]
+      }
     ]
   },
   {

@@ -1,4 +1,4 @@
-import { getModelFromUrl } from './cesiumUtils';
+import { getModelFromCesiumIon, getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
   const rhinoE6 = await getModelFromUrl({
@@ -111,6 +111,11 @@ export async function load() {
     featureIdLabel: '732229049',
   });
 
+  const rhinoAS7 = await getModelFromUrl({
+    url: '/as7/as7-rhino-ion/tileset.json',
+    featureIdLabel: '142079835',
+  });
+
   return [
     rhinoE2A,
     rhinoE6,
@@ -134,5 +139,6 @@ export async function load() {
     rhinoRvrcG,
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
+    rhinoAS7,
   ];
 }
