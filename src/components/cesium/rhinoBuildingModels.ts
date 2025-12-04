@@ -41,6 +41,11 @@ export async function load() {
     featureIdLabel: 'NUS_MUSEUM',
   });
 
+  const rhinoSDE1 = await getModelFromUrl({
+    url: '/sde1/sde1-rhino-ion/tileset.json',
+    featureIdLabel: '140078777',
+  });
+
   const rhinoSDE2 = await getModelFromUrl({
     url: '/sde2/sde2-rhino-ion/tileset.json',
     featureIdLabel: '140078560',
@@ -125,6 +130,7 @@ export async function load() {
     rhinoCOM2,
     rhinoPgprBlock1,
     rhinoAS8,
+    rhinoSDE1,
     rhinoSDE2,
     rhinoSDE3,
     rhinoSDE4,
