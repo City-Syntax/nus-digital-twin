@@ -55,3 +55,5 @@ export const isModelsAdded = map<Record<Models, boolean>>({
   'rhino-urban': false,
   'rhino-building': false,
 });
+
+export const isRhinoTimeout = atom(false);
