@@ -1303,6 +1303,7 @@
     "longitude": 103.77335,
     "energyUse": "e7-eu",
     "energyUseIntensity": "e7-eui",
+    "idfDownload": "/e7/e7.idf",
     "images": [
       {
         "src": "/src/assets/e7/e7-1.jpg",
