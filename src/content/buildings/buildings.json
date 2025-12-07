@@ -875,6 +875,19 @@
     "postal": "117566",
     "latitude": 1.29732,
     "longitude": 103.77068,
+    "buildingDataCredits": "Chew Jia Jing, Rinns Sim Wei Ling, Daniel Chia Teck En",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Chew Jia Jing, Rinns Sim Wei Ling, Daniel Chia Teck En",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/sde1/sde1-rhino.3dm"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/sde1/sde1-1.png",
@@ -1304,6 +1317,7 @@
     "energyUse": "e7-eu",
     "energyUseIntensity": "e7-eui",
     "idfDownload": "/e7/e7.idf",
+    "buildingDataCredits": "Eddison Chung Mun Kit, Goh Ying Xuan, Vera Heng",
     "downloads": [
       {
         "type": "Rhino",
@@ -1311,7 +1325,7 @@
         "files": [
           {
             "filetype": ".3dm",
-            "url": "https://drive.google.com/file/d/1Ca6JO4tgFY8OV6Q5PQmFI7FlQDrWpSx-/view?usp=sharing"
+            "url": "https://drive.usercontent.google.com/download?id=1Ca6JO4tgFY8OV6Q5PQmFI7FlQDrWpSx&export=download"
           }
         ]
       }
