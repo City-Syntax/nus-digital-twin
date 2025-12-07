@@ -1301,6 +1301,8 @@
     "postal": "119276",
     "latitude": 1.2986,
     "longitude": 103.77335,
+    "energyUse": "e7-eu",
+    "energyUseIntensity": "e7-eui",
     "images": [
       {
         "src": "/src/assets/e7/e7-1.jpg",
