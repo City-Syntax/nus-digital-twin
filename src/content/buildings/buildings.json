@@ -1304,6 +1304,18 @@
     "energyUse": "e7-eu",
     "energyUseIntensity": "e7-eui",
     "idfDownload": "/e7/e7.idf",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Eddison Chung Mun Kit, Goh Ying Xuan, Vera Heng",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.google.com/file/d/1Ca6JO4tgFY8OV6Q5PQmFI7FlQDrWpSx-/view?usp=sharing"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/e7/e7-1.jpg",
