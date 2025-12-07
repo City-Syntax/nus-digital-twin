@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import CloseButton from './CloseButton';
 import { activeModel, isModelsAdded } from '@store';
 import { useStore } from '@nanostores/react';
@@ -7,6 +8,15 @@ import { cn } from '@lib/utils';
 const RhinoBuildings = () => {
   const $activeModel = useStore(activeModel);
   const isLoaded = useStore(isModelsAdded)['rhino-building'];
+  const [isLongLoading, setIsLongLoading] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLongLoading(true);
+    }, 8000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <>
@@ -21,14 +31,14 @@ const RhinoBuildings = () => {
             <button
               onClick={() => activeModel.set('rhino-building')}
               className={cn({ active: $activeModel === 'rhino-building' })}
-              disabled={!isLoaded}
+              disabled={!isLoaded && !isLongLoading}
             >
               On
             </button>
             <button
               onClick={() => activeModel.set('')}
               className={cn({ active: $activeModel !== 'rhino-building' })}
-              disabled={!isLoaded}
+              disabled={!isLoaded && !isLongLoading}
             >
               Off
             </button>
@@ -42,7 +52,7 @@ const RhinoBuildings = () => {
             )}
           >
             <Icons.Spinner className="animate-spin size-3.5" />
-            Rhino models are loading...
+            {isLongLoading ? 'Some rhino models are still loading...' : 'Rhino models are loading...'}
           </div>
         </div>
       </div>
