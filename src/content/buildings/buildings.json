@@ -791,6 +791,14 @@
         "src": "/src/assets/as7/as7-3.jpg",
         "author": "Soh Jun Wei, Sun Siting"
       }
+    ],
+    "buildingDataCredits": "Soh Jun Wei, Sun Siting",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Soh Jun Wei, Sun Siting",
+        "files": [{ "filetype": ".3dm", "url": "/as7/as7-rhino.3dm" }]
+      }
     ]
   },
   {
@@ -867,6 +875,19 @@
     "postal": "117566",
     "latitude": 1.29732,
     "longitude": 103.77068,
+    "buildingDataCredits": "Chew Jia Jing, Rinns Sim Wei Ling, Daniel Chia Teck En",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Chew Jia Jing, Rinns Sim Wei Ling, Daniel Chia Teck En",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/sde1/sde1-rhino.3dm"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/sde1/sde1-1.png",
@@ -1293,6 +1314,22 @@
     "postal": "119276",
     "latitude": 1.2986,
     "longitude": 103.77335,
+    "energyUse": "e7-eu",
+    "energyUseIntensity": "e7-eui",
+    "idfDownload": "/e7/e7.idf",
+    "buildingDataCredits": "Eddison Chung Mun Kit, Goh Ying Xuan, Vera Heng",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Eddison Chung Mun Kit, Goh Ying Xuan, Vera Heng",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1Ca6JO4tgFY8OV6Q5PQmFI7FlQDrWpSx&export=download"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/e7/e7-1.jpg",

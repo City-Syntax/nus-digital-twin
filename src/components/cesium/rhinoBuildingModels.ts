@@ -1,4 +1,4 @@
-import { getModelFromUrl } from './cesiumUtils';
+import { getModelFromCesiumIon, getModelFromGltf, getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
   const rhinoE6 = await getModelFromUrl({
@@ -9,6 +9,15 @@ export async function load() {
   const rhinoE2A = await getModelFromUrl({
     url: '/e2a/e2a-rhino-ion/tileset.json',
     featureIdLabel: '628777635',
+  });
+
+  const rhinoE7 = await getModelFromGltf({
+    latitude: 1.298697,
+    longitude: 103.77293,
+    height: 30,
+    heading: 153,
+    url: '/e7/e7-rhino.glb',
+    featureIdLabel: '1060426986',
   });
 
   const rhinoCELC = await getModelFromUrl({
@@ -39,6 +48,11 @@ export async function load() {
   const rhinoNUSMuseum = await getModelFromUrl({
     url: '/nus-museum/nus-museum-rhino-ion/tileset.json',
     featureIdLabel: 'NUS_MUSEUM',
+  });
+
+  const rhinoSDE1 = await getModelFromUrl({
+    url: '/sde1/sde1-rhino-ion/tileset.json',
+    featureIdLabel: '140078777',
   });
 
   const rhinoSDE2 = await getModelFromUrl({
@@ -111,15 +125,22 @@ export async function load() {
     featureIdLabel: '732229049',
   });
 
+  const rhinoAS7 = await getModelFromUrl({
+    url: '/as7/as7-rhino-ion/tileset.json',
+    featureIdLabel: '142079835',
+  });
+
   return [
     rhinoE2A,
     rhinoE6,
+    rhinoE7,
     rhinoCELC,
     rhinoPioneerHouse2225,
     rhinoNUSMuseum,
     rhinoCOM2,
     rhinoPgprBlock1,
     rhinoAS8,
+    rhinoSDE1,
     rhinoSDE2,
     rhinoSDE3,
     rhinoSDE4,
@@ -134,5 +155,6 @@ export async function load() {
     rhinoRvrcG,
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
+    rhinoAS7,
   ];
 }
