@@ -875,6 +875,9 @@
     "postal": "117566",
     "latitude": 1.29732,
     "longitude": 103.77068,
+    "energyUse": "sde1-eu",
+    "energyUseIntensity": "sde1-eui",
+    "idfDownload": "/sde1/sde1.idf",
     "buildingDataCredits": "Chew Jia Jing, Rinns Sim Wei Ling, Daniel Chia Teck En",
     "downloads": [
       {
