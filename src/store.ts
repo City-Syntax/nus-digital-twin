@@ -56,4 +56,4 @@ export const isModelsAdded = map<Record<Models, boolean>>({
   'rhino-building': false,
 });
 
-export const isRhinoTimeout = atom(false);
+export const canEnableModels = atom(false);

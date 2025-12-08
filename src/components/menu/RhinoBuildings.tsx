@@ -1,5 +1,5 @@
 import CloseButton from './CloseButton';
-import { activeModel, isModelsAdded, isRhinoTimeout, toastMessage } from '@store';
+import { activeModel, isModelsAdded, canEnableModels, toastMessage } from '@store';
 import { useStore } from '@nanostores/react';
 import Icons from '@components/Icons';
 import { cn } from '@lib/utils';
@@ -7,7 +7,7 @@ import { cn } from '@lib/utils';
 const RhinoBuildings = () => {
   const $activeModel = useStore(activeModel);
   const isLoaded = useStore(isModelsAdded)['rhino-building'];
-  const isTimeout = useStore(isRhinoTimeout);
+  const canEnable = useStore(canEnableModels);
 
   return (
     <>
@@ -30,14 +30,14 @@ const RhinoBuildings = () => {
                 activeModel.set('rhino-building');
               }}
               className={cn({ active: $activeModel === 'rhino-building' })}
-              disabled={!isLoaded && !isTimeout}
+              disabled={!isLoaded && !canEnable}
             >
               On
             </button>
             <button
               onClick={() => activeModel.set('')}
               className={cn({ active: $activeModel !== 'rhino-building' })}
-              disabled={!isLoaded && !isTimeout}
+              disabled={!isLoaded && !canEnable}
             >
               Off
             </button>
