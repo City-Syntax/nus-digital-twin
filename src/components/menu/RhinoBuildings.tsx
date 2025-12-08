@@ -7,7 +7,7 @@ import { cn } from '@lib/utils';
 const RhinoBuildings = () => {
   const $activeModel = useStore(activeModel);
   const isLoaded = useStore(isModelsAdded)['rhino-building'];
-  const canEnable = useStore(canEnableModels);
+  const canEnableModel = useStore(canEnableModels);
 
   return (
     <>
@@ -30,14 +30,14 @@ const RhinoBuildings = () => {
                 activeModel.set('rhino-building');
               }}
               className={cn({ active: $activeModel === 'rhino-building' })}
-              disabled={!isLoaded && !canEnable}
+              disabled={!isLoaded && !canEnableModel}
             >
               On
             </button>
             <button
               onClick={() => activeModel.set('')}
               className={cn({ active: $activeModel !== 'rhino-building' })}
-              disabled={!isLoaded && !canEnable}
+              disabled={!isLoaded && !canEnableModel}
             >
               Off
             </button>
@@ -46,11 +46,13 @@ const RhinoBuildings = () => {
             className={cn(
               'mt-1 absolute right-0 flex gap-1.5 items-center text-sm text-muted-foreground transition-opacity',
               {
-                'opacity-0': isLoaded,
+                'opacity-0 select-none pointer-events-none': isLoaded,
               },
             )}
+            aria-hidden={isLoaded}
           >
             <Icons.Spinner className="animate-spin size-3.5" />
+            {canEnableModel && 'Some '}
             Rhino models are loading...
           </div>
         </div>
