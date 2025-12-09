@@ -2769,6 +2769,10 @@
     "postal": "117376",
     "latitude": 1.30218,
     "longitude": 103.77265,
+    "idfDownload": "/ystcm/ystcm.idf",
+    "energyUse": "ystcm-eu",
+    "energyUseIntensity": "ystcm-eui",
+    "buildingDataCredits": "Charmaine Toh Yuwei, Glenda Tay, Noraisyah Binte Mohammad Rais",
     "images": [
       {
         "src": "/src/assets/ystcm/ystcm-1.jpg",
