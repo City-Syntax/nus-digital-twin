@@ -1207,6 +1207,10 @@
     "postal": "117575",
     "latitude": 1.29871,
     "longitude": 103.77219,
+    "idfDownload": "/e4/e4.idf",
+    "buildingDataCredits": "Ivan Teo, Siow Shi Jin Kevis, Wong Zi Yin",
+    "energyUse": "e4-eu",
+    "energyUseIntensity": "e4-eui",
     "images": [
       {
         "src": "/src/assets/e4/e4-1.jpg",
