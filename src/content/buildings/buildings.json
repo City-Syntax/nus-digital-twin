@@ -769,7 +769,10 @@
     "address": "7 Arts Link",
     "postal": "117570",
     "latitude": 1.29416,
-    "longitude": 103.77182
+    "longitude": 103.77182,
+    "idfDownload": "/as5/as5.idf",
+    "energyUse": "as5-eu",
+    "energyUseIntensity": "as5-eui"
   },
   {
     "elementId": "15347235",
