@@ -1,0 +1,110 @@
+[
+  {
+    "month": "Jan",
+    "equipment": 203.16,
+    "fans": 0.0,
+    "lighting": 455.53,
+    "hotWater": 206.33,
+    "heating": 0.0,
+    "cooling": 477.83
+  },
+  {
+    "month": "Feb",
+    "equipment": 184.21,
+    "fans": 0.0,
+    "lighting": 403.66,
+    "hotWater": 186.36,
+    "heating": 0.0,
+    "cooling": 787.01
+  },
+  {
+    "month": "Mar",
+    "equipment": 208.63,
+    "fans": 0.0,
+    "lighting": 479.35,
+    "hotWater": 206.33,
+    "heating": 0.0,
+    "cooling": 1390.96
+  },
+  {
+    "month": "Apr",
+    "equipment": 189.56,
+    "fans": 0.0,
+    "lighting": 407.57,
+    "hotWater": 199.67,
+    "heating": 0.0,
+    "cooling": 1326.15
+  },
+  {
+    "month": "May",
+    "equipment": 208.63,
+    "fans": 0.0,
+    "lighting": 473.79,
+    "hotWater": 206.33,
+    "heating": 0.0,
+    "cooling": 1196.64
+  },
+  {
+    "month": "Jun",
+    "equipment": 200.49,
+    "fans": 0.0,
+    "lighting": 448.34,
+    "hotWater": 199.67,
+    "heating": 0.0,
+    "cooling": 1293.81
+  },
+  {
+    "month": "Jul",
+    "equipment": 197.7,
+    "fans": 0.0,
+    "lighting": 427.58,
+    "hotWater": 206.33,
+    "heating": 0.0,
+    "cooling": 1130.53
+  },
+  {
+    "month": "Aug",
+    "equipment": 208.63,
+    "fans": 0.0,
+    "lighting": 487.45,
+    "hotWater": 206.33,
+    "heating": 0.0,
+    "cooling": 841.75
+  },
+  {
+    "month": "Sep",
+    "equipment": 195.02,
+    "fans": 0.0,
+    "lighting": 450.41,
+    "hotWater": 199.67,
+    "heating": 0.0,
+    "cooling": 788.36
+  },
+  {
+    "month": "Oct",
+    "equipment": 203.16,
+    "fans": 0.0,
+    "lighting": 466.41,
+    "hotWater": 206.33,
+    "heating": 0.0,
+    "cooling": 992.68
+  },
+  {
+    "month": "Nov",
+    "equipment": 200.49,
+    "fans": 0.0,
+    "lighting": 461.24,
+    "hotWater": 199.67,
+    "heating": 0.0,
+    "cooling": 981.45
+  },
+  {
+    "month": "Dec",
+    "equipment": 197.7,
+    "fans": 0.0,
+    "lighting": 442.81,
+    "hotWater": 206.33,
+    "heating": 0.0,
+    "cooling": 670.62
+  }
+]

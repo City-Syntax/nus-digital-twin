@@ -278,6 +278,10 @@
     "postal": "138593",
     "latitude": 1.30669,
     "longitude": 103.77347,
+    "idfDownload": "/cinnamon-college/cinnamon-college.idf",
+    "energyUse": "cinnamon-college-eu",
+    "energyUseIntensity": "cinnamon-college-eui",
+    "buildingDataCredits": "Najib Mikail Ang Shi Chong, Yeo Zedong, Wellington Ho Yu De",
     "images": [
       {
         "src": "/src/assets/cinnamon-college/cinnamon-college-1.png",
