@@ -1903,6 +1903,10 @@
     "postal": "117602",
     "latitude": 1.29458,
     "longitude": 103.77569,
+    "buildingDataCredits": "Elyne Chua Hui Wen, Kris Yap Sim Wei, Ong Jing Yee",
+    "energyUse": "i4-eu",
+    "energyUseIntensity": "i4-eui",
+    "idfDownload": "/i4/i4.idf",
     "images": [
       {
         "src": "/src/assets/i4/i4-1.png",
