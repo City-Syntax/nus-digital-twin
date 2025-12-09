@@ -2930,6 +2930,10 @@
     "postal": "119245",
     "latitude": 1.2925,
     "longitude": 103.77415,
+    "buildingDataCredits": "Tan Jiayi, Wang Shihui, Ng Kai Lin Audrey",
+    "idfDownload": "biz1/biz1.idf",
+    "energyUse": "biz1-eu",
+    "energyUseIntensity": "biz1-eui",
     "images": [
       {
         "src": "/src/assets/biz1/biz1-1.jpg",
