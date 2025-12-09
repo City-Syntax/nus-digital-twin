@@ -1461,6 +1461,10 @@
     "postal": "119275",
     "latitude": 1.29662,
     "longitude": 103.77308,
+    "buildingDataCredits": "Evan Chong Ian Han, Mohamed Nazim Irfan bin Mohamed Nizam",
+    "idfDownload": "/central-library/central-library.idf",
+    "energyUse": "central-library-eu",
+    "energyUseIntensity": "central-library-eui",
     "images": [
       {
         "src": "/src/assets/central-library/central-library-1.png",
