@@ -796,6 +796,9 @@
     "postal": "117570",
     "latitude": 1.29432,
     "longitude": 103.77111,
+    "idfDownload": "/as7/as7.idf",
+    "energyUse": "as7-eu",
+    "energyUseIntensity": "as7-eui",
     "images": [
       {
         "src": "/src/assets/as7/as7-1.jpg",
