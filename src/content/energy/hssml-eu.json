@@ -1,0 +1,110 @@
+[
+  {
+    "month": "Jan",
+    "equipment": 259.29,
+    "fans": 0.0,
+    "lighting": 457.66,
+    "hotWater": 260.72,
+    "heating": 0.0,
+    "cooling": 910.45
+  },
+  {
+    "month": "Feb",
+    "equipment": 235.1,
+    "fans": 0.0,
+    "lighting": 404.1,
+    "hotWater": 235.49,
+    "heating": 0.0,
+    "cooling": 1487.78
+  },
+  {
+    "month": "Mar",
+    "equipment": 266.27,
+    "fans": 0.0,
+    "lighting": 510.58,
+    "hotWater": 260.72,
+    "heating": 0.0,
+    "cooling": 2503.44
+  },
+  {
+    "month": "Apr",
+    "equipment": 241.93,
+    "fans": 0.0,
+    "lighting": 427.02,
+    "hotWater": 252.31,
+    "heating": 0.0,
+    "cooling": 2351.98
+  },
+  {
+    "month": "May",
+    "equipment": 266.27,
+    "fans": 0.0,
+    "lighting": 498.72,
+    "hotWater": 260.72,
+    "heating": 0.0,
+    "cooling": 2253.04
+  },
+  {
+    "month": "Jun",
+    "equipment": 255.88,
+    "fans": 0.0,
+    "lighting": 465.5,
+    "hotWater": 252.31,
+    "heating": 0.0,
+    "cooling": 2381.5
+  },
+  {
+    "month": "Jul",
+    "equipment": 252.32,
+    "fans": 0.0,
+    "lighting": 445.92,
+    "hotWater": 260.72,
+    "heating": 0.0,
+    "cooling": 2081.79
+  },
+  {
+    "month": "Aug",
+    "equipment": 266.27,
+    "fans": 0.0,
+    "lighting": 521.47,
+    "hotWater": 260.72,
+    "heating": 0.0,
+    "cooling": 1562.19
+  },
+  {
+    "month": "Sep",
+    "equipment": 248.91,
+    "fans": 0.0,
+    "lighting": 488.05,
+    "hotWater": 252.31,
+    "heating": 0.0,
+    "cooling": 1361.34
+  },
+  {
+    "month": "Oct",
+    "equipment": 259.29,
+    "fans": 0.0,
+    "lighting": 494.14,
+    "hotWater": 260.72,
+    "heating": 0.0,
+    "cooling": 1813.56
+  },
+  {
+    "month": "Nov",
+    "equipment": 255.88,
+    "fans": 0.0,
+    "lighting": 471.86,
+    "hotWater": 252.31,
+    "heating": 0.0,
+    "cooling": 1681.32
+  },
+  {
+    "month": "Dec",
+    "equipment": 252.32,
+    "fans": 0.0,
+    "lighting": 451.97,
+    "hotWater": 260.72,
+    "heating": 0.0,
+    "cooling": 974.43
+  }
+]

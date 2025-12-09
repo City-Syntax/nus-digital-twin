@@ -2787,7 +2787,11 @@
         "src": "/src/assets/hssml/hssml-3.jpg",
         "author": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi"
       }
-    ]
+    ],
+    "buildingDataCredits": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi",
+    "energyUse": "hssml-eu",
+    "energyUseIntensity": "hssml-eui",
+    "idfDownload": "hssml/hssml.idf"
   },
   {
     "elementId": "503403831",
