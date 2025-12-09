@@ -2908,7 +2908,11 @@
         "src": "/src/assets/temasek-hall/temasek-hall-e-2.jpg",
         "author": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe"
       }
-    ]
+    ],
+    "buildingDataCredits": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe",
+    "energyUse": "temasek-hall-e-eu",
+    "energyUseIntensity": "temasek-hall-e-eui",
+    "idfDownload": "/temasek-hall/temasek-hall-e.idf"
   },
   {
     "elementId": "125774787",
