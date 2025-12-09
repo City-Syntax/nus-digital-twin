@@ -1395,6 +1395,10 @@
     "postal": "117575",
     "latitude": 1.30055,
     "longitude": 103.77077,
+    "buildingDataCredits": "Choo Xue Min Charmayne, Ferlin Ng Jing Ru, Jamie Liang Man Ling",
+    "energyUse": "ea-eu",
+    "energyUseIntensity": "ea-eui",
+    "idfDownload": "/ea/ea.idf",
     "images": [
       {
         "src": "/src/assets/ea/ea-1.png",
