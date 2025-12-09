@@ -367,7 +367,10 @@
     "address": "1 Create Wy",
     "postal": "138602",
     "latitude": 1.30385,
-    "longitude": 103.77358
+    "longitude": 103.77358,
+    "idfDownload": "/create-tower/create-tower.idf",
+    "energyUse": "create-tower-eu",
+    "energyUseIntensity": "create-tower-eui"
   },
   {
     "elementId": "15314907",
