@@ -1243,6 +1243,10 @@
     "postal": "117575",
     "latitude": 1.29801,
     "longitude": 103.77244,
+    "idfDownload": "/e5/e5.idf",
+    "energyUse": "e5-eu",
+    "energyUseIntensity": "e5-eui",
+    "buildingDataCredits": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi",
     "images": [
       {
         "src": "/src/assets/e5/e5-1.jpg",

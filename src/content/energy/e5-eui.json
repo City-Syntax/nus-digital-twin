@@ -1,0 +1,98 @@
+[
+  {
+    "month": "Jan",
+    "equipment": 2.66,
+    "fans": 0.0,
+    "lighting": 2.43,
+    "heating": 0.0,
+    "cooling": 1.68
+  },
+  {
+    "month": "Feb",
+    "equipment": 2.39,
+    "fans": 0.0,
+    "lighting": 2.17,
+    "heating": 0.0,
+    "cooling": 2.66
+  },
+  {
+    "month": "Mar",
+    "equipment": 2.66,
+    "fans": 0.0,
+    "lighting": 2.43,
+    "heating": 0.0,
+    "cooling": 4.19
+  },
+  {
+    "month": "Apr",
+    "equipment": 2.54,
+    "fans": 0.0,
+    "lighting": 2.28,
+    "heating": 0.0,
+    "cooling": 4.04
+  },
+  {
+    "month": "May",
+    "equipment": 2.66,
+    "fans": 0.0,
+    "lighting": 2.43,
+    "heating": 0.0,
+    "cooling": 3.35
+  },
+  {
+    "month": "Jun",
+    "equipment": 2.57,
+    "fans": 0.0,
+    "lighting": 2.34,
+    "heating": 0.0,
+    "cooling": 4.09
+  },
+  {
+    "month": "Jul",
+    "equipment": 1.62,
+    "fans": 0.0,
+    "lighting": 1.4,
+    "heating": 0.0,
+    "cooling": 2.68
+  },
+  {
+    "month": "Aug",
+    "equipment": 1.63,
+    "fans": 0.0,
+    "lighting": 1.42,
+    "heating": 0.0,
+    "cooling": 2.1
+  },
+  {
+    "month": "Sep",
+    "equipment": 2.54,
+    "fans": 0.0,
+    "lighting": 2.28,
+    "heating": 0.0,
+    "cooling": 2.8
+  },
+  {
+    "month": "Oct",
+    "equipment": 2.66,
+    "fans": 0.0,
+    "lighting": 2.43,
+    "heating": 0.0,
+    "cooling": 3.11
+  },
+  {
+    "month": "Nov",
+    "equipment": 2.57,
+    "fans": 0.0,
+    "lighting": 2.34,
+    "heating": 0.0,
+    "cooling": 3.12
+  },
+  {
+    "month": "Dec",
+    "equipment": 2.63,
+    "fans": 0.0,
+    "lighting": 2.37,
+    "heating": 0.0,
+    "cooling": 2.55
+  }
+]
