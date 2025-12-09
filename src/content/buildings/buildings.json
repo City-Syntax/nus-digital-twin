@@ -1684,7 +1684,10 @@
     "address": "13 Computing Drive",
     "postal": "117417",
     "latitude": 1.29502,
-    "longitude": 103.77391
+    "longitude": 103.77391,
+    "idfDownload": "/com1/com1.idf",
+    "energyUse": "com1-eu",
+    "energyUseIntensity": "com1-eui"
   },
   {
     "elementId": "54619699",
@@ -2791,7 +2794,7 @@
     "buildingDataCredits": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi",
     "energyUse": "hssml-eu",
     "energyUseIntensity": "hssml-eui",
-    "idfDownload": "hssml/hssml.idf"
+    "idfDownload": "/hssml/hssml.idf"
   },
   {
     "elementId": "503403831",
@@ -2931,7 +2934,7 @@
     "latitude": 1.2925,
     "longitude": 103.77415,
     "buildingDataCredits": "Tan Jiayi, Wang Shihui, Ng Kai Lin Audrey",
-    "idfDownload": "biz1/biz1.idf",
+    "idfDownload": "/biz1/biz1.idf",
     "energyUse": "biz1-eu",
     "energyUseIntensity": "biz1-eui",
     "images": [
