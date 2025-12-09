@@ -712,6 +712,10 @@
     "postal": "119278",
     "latitude": 1.30029,
     "longitude": 103.77265,
+    "buildingDataCredits": "Ng Jing Wen, Tan Yu Xin",
+    "idfDownload": "/raffles-hall/raffles-hall-6.idf",
+    "energyUse": "raffles-hall-6-eu",
+    "energyUseIntensity": "raffles-hall-6-eui",
     "images": [
       {
         "src": "/src/assets/raffles-hall/raffles-hall-6-1.jpg",
