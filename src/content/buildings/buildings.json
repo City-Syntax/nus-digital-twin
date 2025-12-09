@@ -1377,6 +1377,10 @@
     "postal": "117580",
     "latitude": 1.29914,
     "longitude": 103.77252,
+    "idfDownload": "/e8/e8.idf",
+    "energyUse": "e8-eu",
+    "energyUseIntensity": "e8-eui",
+    "buildingDataCredits": "Toh Zi Lin, Jansen Lee Yong Hui, Rena Ng Jing Ru",
     "images": [
       {
         "src": "/src/assets/e8/e8-1.jpg",
