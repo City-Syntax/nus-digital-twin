@@ -240,6 +240,10 @@
     "postal": "138615",
     "latitude": 1.3076,
     "longitude": 103.77315,
+    "buildingDataCredits": "Clara Ng Kai Jie, Muhammad Firdaus Bin Hidayat, Wong Kia Yi Jasmine",
+    "idfDownload": "/capt/capt.idf",
+    "energyUse": "capt-eu",
+    "energyUseIntensity": "capt-eui",
     "images": [
       {
         "src": "/src/assets/capt/capt-1.jpg",
@@ -274,6 +278,10 @@
     "postal": "138593",
     "latitude": 1.30669,
     "longitude": 103.77347,
+    "idfDownload": "/cinnamon-college/cinnamon-college.idf",
+    "energyUse": "cinnamon-college-eu",
+    "energyUseIntensity": "cinnamon-college-eui",
+    "buildingDataCredits": "Najib Mikail Ang Shi Chong, Yeo Zedong, Wellington Ho Yu De",
     "images": [
       {
         "src": "/src/assets/cinnamon-college/cinnamon-college-1.png",
@@ -363,7 +371,10 @@
     "address": "1 Create Wy",
     "postal": "138602",
     "latitude": 1.30385,
-    "longitude": 103.77358
+    "longitude": 103.77358,
+    "idfDownload": "/create-tower/create-tower.idf",
+    "energyUse": "create-tower-eu",
+    "energyUseIntensity": "create-tower-eui"
   },
   {
     "elementId": "15314907",
@@ -708,6 +719,10 @@
     "postal": "119278",
     "latitude": 1.30029,
     "longitude": 103.77265,
+    "buildingDataCredits": "Ng Jing Wen, Tan Yu Xin",
+    "idfDownload": "/raffles-hall/raffles-hall-6.idf",
+    "energyUse": "raffles-hall-6-eu",
+    "energyUseIntensity": "raffles-hall-6-eui",
     "images": [
       {
         "src": "/src/assets/raffles-hall/raffles-hall-6-1.jpg",
@@ -761,7 +776,10 @@
     "address": "7 Arts Link",
     "postal": "117570",
     "latitude": 1.29416,
-    "longitude": 103.77182
+    "longitude": 103.77182,
+    "idfDownload": "/as5/as5.idf",
+    "energyUse": "as5-eu",
+    "energyUseIntensity": "as5-eui"
   },
   {
     "elementId": "15347235",
@@ -778,6 +796,9 @@
     "postal": "117570",
     "latitude": 1.29432,
     "longitude": 103.77111,
+    "idfDownload": "/as7/as7.idf",
+    "energyUse": "as7-eu",
+    "energyUseIntensity": "as7-eui",
     "images": [
       {
         "src": "/src/assets/as7/as7-1.jpg",
@@ -1199,6 +1220,10 @@
     "postal": "117575",
     "latitude": 1.29871,
     "longitude": 103.77219,
+    "idfDownload": "/e4/e4.idf",
+    "buildingDataCredits": "Ivan Teo, Siow Shi Jin Kevis, Wong Zi Yin",
+    "energyUse": "e4-eu",
+    "energyUseIntensity": "e4-eui",
     "images": [
       {
         "src": "/src/assets/e4/e4-1.jpg",
@@ -1225,6 +1250,10 @@
     "postal": "117575",
     "latitude": 1.29801,
     "longitude": 103.77244,
+    "idfDownload": "/e5/e5.idf",
+    "energyUse": "e5-eu",
+    "energyUseIntensity": "e5-eui",
+    "buildingDataCredits": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi",
     "images": [
       {
         "src": "/src/assets/e5/e5-1.jpg",
@@ -1355,6 +1384,10 @@
     "postal": "117580",
     "latitude": 1.29914,
     "longitude": 103.77252,
+    "idfDownload": "/e8/e8.idf",
+    "energyUse": "e8-eu",
+    "energyUseIntensity": "e8-eui",
+    "buildingDataCredits": "Toh Zi Lin, Jansen Lee Yong Hui, Rena Ng Jing Ru",
     "images": [
       {
         "src": "/src/assets/e8/e8-1.jpg",
@@ -1373,6 +1406,10 @@
     "postal": "117575",
     "latitude": 1.30055,
     "longitude": 103.77077,
+    "buildingDataCredits": "Choo Xue Min Charmayne, Ferlin Ng Jing Ru, Jamie Liang Man Ling",
+    "energyUse": "ea-eu",
+    "energyUseIntensity": "ea-eui",
+    "idfDownload": "/ea/ea.idf",
     "images": [
       {
         "src": "/src/assets/ea/ea-1.png",
@@ -1435,6 +1472,10 @@
     "postal": "119275",
     "latitude": 1.29662,
     "longitude": 103.77308,
+    "buildingDataCredits": "Evan Chong Ian Han, Mohamed Nazim Irfan bin Mohamed Nizam",
+    "idfDownload": "/central-library/central-library.idf",
+    "energyUse": "central-library-eu",
+    "energyUseIntensity": "central-library-eui",
     "images": [
       {
         "src": "/src/assets/central-library/central-library-1.png",
@@ -1684,7 +1725,10 @@
     "address": "13 Computing Drive",
     "postal": "117417",
     "latitude": 1.29502,
-    "longitude": 103.77391
+    "longitude": 103.77391,
+    "idfDownload": "/com1/com1.idf",
+    "energyUse": "com1-eu",
+    "energyUseIntensity": "com1-eui"
   },
   {
     "elementId": "54619699",
@@ -1892,6 +1936,10 @@
     "postal": "117602",
     "latitude": 1.29458,
     "longitude": 103.77569,
+    "buildingDataCredits": "Elyne Chua Hui Wen, Kris Yap Sim Wei, Ong Jing Yee",
+    "energyUse": "i4-eu",
+    "energyUseIntensity": "i4-eui",
+    "idfDownload": "/i4/i4.idf",
     "images": [
       {
         "src": "/src/assets/i4/i4-1.png",
@@ -2728,6 +2776,10 @@
     "postal": "117376",
     "latitude": 1.30218,
     "longitude": 103.77265,
+    "idfDownload": "/ystcm/ystcm.idf",
+    "energyUse": "ystcm-eu",
+    "energyUseIntensity": "ystcm-eui",
+    "buildingDataCredits": "Charmaine Toh Yuwei, Glenda Tay, Noraisyah Binte Mohammad Rais",
     "images": [
       {
         "src": "/src/assets/ystcm/ystcm-1.jpg",
@@ -2787,7 +2839,11 @@
         "src": "/src/assets/hssml/hssml-3.jpg",
         "author": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi"
       }
-    ]
+    ],
+    "buildingDataCredits": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi",
+    "energyUse": "hssml-eu",
+    "energyUseIntensity": "hssml-eui",
+    "idfDownload": "/hssml/hssml.idf"
   },
   {
     "elementId": "503403831",
@@ -2901,7 +2957,11 @@
         "src": "/src/assets/temasek-hall/temasek-hall-e-2.jpg",
         "author": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe"
       }
-    ]
+    ],
+    "buildingDataCredits": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe",
+    "energyUse": "temasek-hall-e-eu",
+    "energyUseIntensity": "temasek-hall-e-eui",
+    "idfDownload": "/temasek-hall/temasek-hall-e.idf"
   },
   {
     "elementId": "125774787",
@@ -2926,6 +2986,10 @@
     "postal": "119245",
     "latitude": 1.2925,
     "longitude": 103.77415,
+    "buildingDataCredits": "Tan Jiayi, Wang Shihui, Ng Kai Lin Audrey",
+    "idfDownload": "/biz1/biz1.idf",
+    "energyUse": "biz1-eu",
+    "energyUseIntensity": "biz1-eui",
     "images": [
       {
         "src": "/src/assets/biz1/biz1-1.jpg",

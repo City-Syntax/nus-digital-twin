@@ -1,0 +1,2528 @@
+! ----  This file was generated with Climate Studio 2.3.9455.24557
+
+Version,23.1;
+
+Site:GroundTemperature:BuildingSurface,18,18,18,18,18,18,18,18,18,18,18,18;
+
+Site:GroundReflectance,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2;
+
+Site:GroundReflectance:SnowModifier,
+  1.0,                     !- Ground Reflected Solar Modifier
+  1.0;                     !- Daylighting Ground Reflected Solar Modifier
+
+
+Site:WeatherStation, 
+10, !- Wind Sensor Height Above Ground {m} 
+0.22, !- Wind Speed Profile Exponent {} 
+370, !- Wind Speed Profile Boundary Layer Thickness {m} 
+1.5; !- Air Temperature Sensor Height Above Ground {m}
+
+
+ZoneAirContaminantBalance,
+  Yes,                       !- Carbon Dioxide Concentration
+  GlobalCO2,      !- Outdoor Carbon Dioxide Schedule Name
+  No,                       !- Generic Contaminant Concentration
+  Off; !- Outdoor Generic Contaminant Schedule Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: RUNPERIOD ===========
+
+RunPeriod,
+  Climate Studio,                 !- Name
+  1,                       !- Begin Month
+  1,                       !- Begin Day of Month
+  , !- Begin Year
+  12,                      !- End Month
+  31,                      !- End Day of Month
+  , !- End Year
+  Sunday,          !- Day of Week for Start Day
+  No,                     !- Use Weather File Holidays and Special Days
+  No,                     !- Use Weather File Daylight Saving Period
+  No,                      !- Apply Weekend Holiday Rule
+  Yes,                     !- Use Weather File Rain Indicators
+  Yes,                     !- Use Weather File Snow Indicators
+  No;                      !- Treat Weather as Actual
+
+RunPeriodControl:DaylightSavingTime,2nd Sunday in March, 1st Sunday in November; !2007
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
+
+SimulationControl,
+Yes, !- Do Zone Sizing Calculation
+Yes, !- Do System Sizing Calculation
+Yes, !- Do Plant Sizing Calculation
+No, !- Run Simulation for Sizing Periods
+Yes, !- Run Simulation for Weather File Run Periods
+No, !- Do HVAC Sizing Simulation for Sizing Periods
+2; !- Maximum Number of HVAC Sizing Simulation Passes
+
+
+!-   ===========  ALL OBJECTS IN CLASS: CONVERGENCELIMITS ===========
+
+ConvergenceLimits,
+0, !- Minimum System Timestep (0 = same as zone timestep)
+100, !- Maximum HVAC Iterations
+3, !- Minimum Plant Iterations
+10; !- Maximum Plant Iterations
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SCHEDULETYPELIMITS ===========
+
+ScheduleTypeLimits,
+  Any Number;              !- Name
+
+ScheduleTypeLimits,
+  Fraction,                !- Name
+  0.0,                     !- Lower Limit Value {A3}
+  1.0,                     !- Upper Limit Value {A3}
+  CONTINUOUS;              !- Numeric Type
+
+ScheduleTypeLimits,
+  Temperature,             !- Name
+  -60,                     !- Lower Limit Value
+  200,                     !- Upper Limit Value
+  CONTINUOUS;              !- Numeric Type
+
+ScheduleTypeLimits,
+  AnyNumber,               !- Name
+  -1E11,                   !- Lower Limit Value
+  1E11,                    !- Upper Limit Value
+  CONTINUOUS;              !- Numeric Type
+
+ScheduleTypeLimits,
+  Control Type,            !- Name
+  0,                       !- Lower Limit Value
+  4,                       !- Upper Limit Value
+  DISCRETE;                !- Numeric Type
+
+ScheduleTypeLimits,
+  On/Off,                  !- Name
+  0,                       !- Lower Limit Value
+  1,                       !- Upper Limit Value
+  DISCRETE;                !- Numeric Type
+
+Schedule:Constant,
+  On,                      !- Name
+  On/Off,                  !- Schedule Type Limits Name
+  1;                       !- Value
+
+Schedule:Constant,
+  Off,                     !- Name
+  On/Off,                  !- Schedule Type Limits Name
+  0;                       !- Value
+
+
+! -------------------------ERL SENSORS--------------------------
+
+EnergyManagementSystem:Sensor,                                             
+  OutdoorTemp, !- Name                                         
+  Environment, !- Output:Variable Index Key Name               
+  Site Outdoor Air Drybulb Temperature; !- Output:Variable Name
+
+EnergyManagementSystem:Sensor,                                             
+  OutdoorRelHumid, !- Name                                         
+  Environment, !- Output:Variable Index Key Name               
+  Site Outdoor Air Relative Humidity; !- Output:Variable Name
+
+Output:EnergyManagementSystem,
+  Verbose,                 !- Actuator Availability Dictionary Reporting
+  Verbose,                 !- Internal Variable Availability Dictionary Reporting
+  Verbose;                 !- EMS Runtime Language Debug Output Level
+
+! Output:SQLite, Simple;
+
+
+
+SizingPeriod:WeatherFileConditionType ,
+    Extreme Summer Weather Period for Design, !- Name
+    SummerExtreme , !- Period Selection
+    SummerDesignDay , !- Day Type
+    No, !- Use Weather File Daylight Saving Period
+    No; !- Use Weather File Rain and Snow Indicators
+
+SizingPeriod:WeatherFileConditionType ,
+    Extreme Winter Weather Period for Design, !- Name
+    WinterExtreme , !- Period Selection
+    WinterDesignDay , !- Day Type
+    No, !- Use Weather File Daylight Saving Period
+    No; !- Use Weather File Rain and Snow Indicators
+
+Sizing:Parameters,
+    1.5,                     !- Heating Sizing Factor
+    1.5;                     !- Cooling Sizing Factor
+
+
+
+
+GlobalGeometryRules,
+  LowerLeftCorner,         !- Starting Vertex Position
+  CounterClockWise,        !- Vertex Entry Direction
+  Relative;                !- Coordinate System
+
+ShadowCalculation,
+    PixelCounting,           !- Shading Calculation Method
+    Periodic,                !- Shading Calculation Update Frequency Method
+    20,                      !- Shading Calculation Update Frequency
+    15000,                   !- Maximum Figures in Shadow Overlap Calculations
+    ,                        !- Polygon Clipping Algorithm
+    512,                     !- Pixel Counting Resolution
+    SimpleSkyDiffuseModeling,  !- Sky Diffuse Modeling Algorithm
+    Yes,                     !- Output External Shading Calculation Results
+    No,                      !- Disable Self-Shading Within Shading Zone Groups
+    No;                      !- Disable Self-Shading From Shading Zone Groups to Other Zones
+
+Building,
+    Building,                !- Name
+    88.57,        !- North Axis {deg}
+    Suburbs,       !- Terrain
+    0.04,                    !- Loads Convergence Tolerance Value
+    0.25,                     !- Temperature Convergence Tolerance Value {deltaC}
+    FullExterior,            !- Solar Distribution
+    30,                      !- Maximum Number of Warmup Days
+    7;                       !- Minimum Number of Warmup Days
+
+
+
+!-   ===========  ALL OBJECTS IN CLASS: HEATBALANCEALGORITHM ===========
+
+HeatBalanceAlgorithm,
+    ConductionTransferFunction,  !- Algorithm
+    200,                     !- Surface Temperature Upper Limit {C}
+    0.1,                     !- Minimum Surface Convection Heat Transfer Coefficient Value {W/m2-K}
+    1000;                    !- Maximum Surface Convection Heat Transfer Coefficient Value {W/m2-K}
+
+Timestep,6;
+
+SurfaceConvectionAlgorithm:Inside,TARP;
+
+SurfaceConvectionAlgorithm:Outside,DOE-2;
+
+! ------------ CONSTRUCTIONS 
+
+! defaultConstruction Type: Facade
+Construction, defaultConstruction,
+defaultMat_0.25_defaultConstruction;
+
+Construction, defaultConstruction_FLIPPED,
+defaultMat_0.25_defaultConstruction;
+
+
+
+! Materials
+!- Material: defaultMat Type: Concrete
+Material, defaultMat_0.25_defaultConstruction ,                !- Material name 
+ Rough,                                         !- Roughness
+ 0.25,   !- @defaultConstruction:defaultMat-Thickness@ [m]
+ 2.3,   !- @defaultConstruction:defaultMat-Conductivity@ [W/m-K]
+ 2400,   !- @defaultConstruction:defaultMat-Density@ [kg/m3]
+ 840,   !- @defaultConstruction:defaultMat-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @defaultConstruction:defaultMat-ThermalEmittance@
+ 0.7,   !- @defaultConstruction:defaultMat-SolarAbsorptance@
+ 0.7;   !- @defaultConstruction:defaultMat-VisibleAbsorptance@
+
+
+
+! 90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass) Type: Facade
+Construction, 90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass),
+Stucco_0.025_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass),
+Concrete_0.203_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass),
+Mineral Wool_0.006340168156952033_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass),
+Plaster_0.013_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass);
+
+Construction, 90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass)_FLIPPED,
+Plaster_0.013_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass),
+Mineral Wool_0.006340168156952033_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass),
+Concrete_0.203_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass),
+Stucco_0.025_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass);
+
+
+
+! Materials
+!- Material: Stucco Type: Plaster
+Material, Stucco_0.025_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass) ,                !- Material name 
+ Smooth,                                         !- Roughness
+ 0.025,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Stucco-Thickness@ [m]
+ 0.72,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Stucco-Conductivity@ [W/m-K]
+ 1856,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Stucco-Density@ [kg/m3]
+ 840,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Stucco-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Stucco-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Stucco-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Stucco-VisibleAbsorptance@
+
+!- Material: Concrete Type: Concrete
+Material, Concrete_0.203_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass) ,                !- Material name 
+ Rough,                                         !- Roughness
+ 0.203,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Concrete-Thickness@ [m]
+ 2,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Concrete-Conductivity@ [W/m-K]
+ 2400,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Concrete-Density@ [kg/m3]
+ 950,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Concrete-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Concrete-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Concrete-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Concrete-VisibleAbsorptance@
+
+!- Material: Mineral Wool Type: Insulation
+Material, Mineral Wool_0.006340168156952033_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass) ,                !- Material name 
+ Rough,                                         !- Roughness
+ 0.006340168156952033,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Mineral Wool-Thickness@ [m]
+ 0.041,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Mineral Wool-Conductivity@ [W/m-K]
+ 155,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Mineral Wool-Density@ [kg/m3]
+ 1130,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Mineral Wool-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Mineral Wool-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Mineral Wool-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Mineral Wool-VisibleAbsorptance@
+
+!- Material: Plaster Type: Screed
+Material, Plaster_0.013_90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass) ,                !- Material name 
+ Rough,                                         !- Roughness
+ 0.013,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Plaster-Thickness@ [m]
+ 1,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Plaster-Conductivity@ [W/m-K]
+ 2000,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Plaster-Density@ [kg/m3]
+ 1130,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Plaster-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Plaster-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Plaster-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass):Plaster-VisibleAbsorptance@
+
+
+
+! 90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass) Type: ExteriorFloor
+Construction, 90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass),
+Stucco_0.025_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass),
+Mineral Wool_0.005244967487677573_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass),
+Concrete_0.102_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass),
+Carpet_0.02_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass);
+
+Construction, 90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass)_FLIPPED,
+Carpet_0.02_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass),
+Concrete_0.102_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass),
+Mineral Wool_0.005244967487677573_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass),
+Stucco_0.025_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass);
+
+
+
+! Materials
+!- Material: Stucco Type: Plaster
+Material, Stucco_0.025_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass) ,                !- Material name 
+ Smooth,                                         !- Roughness
+ 0.025,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Stucco-Thickness@ [m]
+ 0.72,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Stucco-Conductivity@ [W/m-K]
+ 1856,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Stucco-Density@ [kg/m3]
+ 840,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Stucco-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Stucco-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Stucco-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Stucco-VisibleAbsorptance@
+
+!- Material: Mineral Wool Type: Insulation
+Material, Mineral Wool_0.005244967487677573_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass) ,                !- Material name 
+ Rough,                                         !- Roughness
+ 0.005244967487677573,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Mineral Wool-Thickness@ [m]
+ 0.041,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Mineral Wool-Conductivity@ [W/m-K]
+ 155,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Mineral Wool-Density@ [kg/m3]
+ 1130,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Mineral Wool-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Mineral Wool-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Mineral Wool-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Mineral Wool-VisibleAbsorptance@
+
+!- Material: Concrete Type: Concrete
+Material, Concrete_0.102_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass) ,                !- Material name 
+ Rough,                                         !- Roughness
+ 0.102,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Concrete-Thickness@ [m]
+ 2,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Concrete-Conductivity@ [W/m-K]
+ 2400,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Concrete-Density@ [kg/m3]
+ 950,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Concrete-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Concrete-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Concrete-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Concrete-VisibleAbsorptance@
+
+!- Material: Carpet Type: Finishes
+Material, Carpet_0.02_90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass) ,                !- Material name 
+ MediumRough,                                         !- Roughness
+ 0.02,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Carpet-Thickness@ [m]
+ 0.06,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Carpet-Conductivity@ [W/m-K]
+ 288,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Carpet-Density@ [kg/m3]
+ 1380,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Carpet-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Carpet-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Carpet-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass):Carpet-VisibleAbsorptance@
+
+
+
+! 90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass) Type: Roof
+Construction, 90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass),
+Vaporpermeable Felt_0.003_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass),
+XPS Board_0.14713995500631277_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass),
+Concrete_0.203_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass),
+Acoustic Tile_0.005_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass);
+
+Construction, 90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass)_FLIPPED,
+Acoustic Tile_0.005_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass),
+Concrete_0.203_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass),
+XPS Board_0.14713995500631277_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass),
+Vaporpermeable Felt_0.003_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass);
+
+
+
+! Materials
+!- Material: Vaporpermeable Felt Type: Finishes
+Material, Vaporpermeable Felt_0.003_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass) ,                !- Material name 
+ Rough,                                         !- Roughness
+ 0.003,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Vaporpermeable Felt-Thickness@ [m]
+ 0.909090909,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Vaporpermeable Felt-Conductivity@ [W/m-K]
+ 0.5,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Vaporpermeable Felt-Density@ [kg/m3]
+ 1800,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Vaporpermeable Felt-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Vaporpermeable Felt-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Vaporpermeable Felt-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Vaporpermeable Felt-VisibleAbsorptance@
+
+!- Material: XPS Board Type: Insulation
+Material, XPS Board_0.14713995500631277_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass) ,                !- Material name 
+ Rough,                                         !- Roughness
+ 0.14713995500631277,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):XPS Board-Thickness@ [m]
+ 0.034,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):XPS Board-Conductivity@ [W/m-K]
+ 35,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):XPS Board-Density@ [kg/m3]
+ 1400,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):XPS Board-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):XPS Board-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):XPS Board-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):XPS Board-VisibleAbsorptance@
+
+!- Material: Concrete Type: Concrete
+Material, Concrete_0.203_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass) ,                !- Material name 
+ Rough,                                         !- Roughness
+ 0.203,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Concrete-Thickness@ [m]
+ 2,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Concrete-Conductivity@ [W/m-K]
+ 2400,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Concrete-Density@ [kg/m3]
+ 950,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Concrete-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Concrete-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Concrete-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Concrete-VisibleAbsorptance@
+
+!- Material: Acoustic Tile Type: Finishes
+Material, Acoustic Tile_0.005_90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass) ,                !- Material name 
+ MediumSmooth,                                         !- Roughness
+ 0.005,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Acoustic Tile-Thickness@ [m]
+ 0.06,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Acoustic Tile-Conductivity@ [W/m-K]
+ 368,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Acoustic Tile-Density@ [kg/m3]
+ 590,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Acoustic Tile-SpecificHeat@ [J/kg-K]
+ 0.9,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Acoustic Tile-ThermalEmittance@
+ 0.7,   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Acoustic Tile-SolarAbsorptance@
+ 0.7;   !- @90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass):Acoustic Tile-VisibleAbsorptance@
+
+
+
+
+! ------------ GLAZING  
+
+
+Construction,
+    90.1-2019 Nonresidential CZ 0 Glazing (Operable),              !- Name
+    90.1-2019 Nonresidential CZ 0 Glazing (Operable)Window;
+
+WindowMaterial:SimpleGlazingSystem,
+90.1-2019 Nonresidential CZ 0 Glazing (Operable)Window , !-Name
+3.520523271462259 ,    !- @90.1-2019 Nonresidential CZ 0 Glazing (Operable)-UValue@
+0.2 ,    !- @90.1-2019 Nonresidential CZ 0 Glazing (Operable)-SolarHeatGainCoefficient@
+0.22000000000000003;    !- @90.1-2019 Nonresidential CZ 0 Glazing (Operable)-VisibleTransmittance@
+
+
+! ------------ SCHEDULES ------------
+
+
+
+Schedule:Constant,
+  AllOn,                     !- Name
+  Fraction,                  !- Schedule Type Limits Name
+  1;                       !- Value
+
+
+
+
+Schedule:Constant,
+  AirSpeed 0,                     !- Name
+  AnyNumber,                  !- Schedule Type Limits Name
+  0;                       !- Value
+
+
+
+Schedule:Day:Hourly, 2cc48f40-f5a9-4eeb-b2bf-bef07edd657e, AnyNumber,412.77,412.77167,412.77333,412.775,412.77667,412.77833,412.78,412.78167,412.78333,412.785,412.78667,412.78833,412.79,412.79167,412.79333,412.795,412.79667,412.79833,412.8,412.80167,412.80333,412.805,412.80667,412.80833;
+
+Schedule:Day:Hourly, 42b7e1ed-7537-4ffe-b164-bc481034a158, AnyNumber,412.81,412.81125,412.8125,412.81375,412.815,412.81625,412.8175,412.81875,412.82,412.82125,412.8225,412.82375,412.825,412.82625,412.8275,412.82875,412.83,412.83125,412.8325,412.83375,412.835,412.83625,412.8375,412.83875;
+
+Schedule:Day:Hourly, dd32847d-1a82-432e-aa67-a1987cdecbe1, AnyNumber,412.84,412.84167,412.84333,412.845,412.84667,412.84833,412.85,412.85167,412.85333,412.855,412.85667,412.85833,412.86,412.86167,412.86333,412.865,412.86667,412.86833,412.87,412.87167,412.87333,412.875,412.87667,412.87833;
+
+Schedule:Day:Hourly, a87c86d9-c696-4f6c-bfee-7fe1c857ca9f, AnyNumber,412.88,412.88125,412.8825,412.88375,412.885,412.88625,412.8875,412.88875,412.89,412.89125,412.8925,412.89375,412.895,412.89625,412.8975,412.89875,412.9,412.90125,412.9025,412.90375,412.905,412.90625,412.9075,412.90875;
+
+Schedule:Day:Hourly, e7f04107-a7e5-4346-a096-6cf6b11e90e1, AnyNumber,412.91,412.91167,412.91333,412.915,412.91667,412.91833,412.92,412.92167,412.92333,412.925,412.92667,412.92833,412.93,412.93167,412.93333,412.935,412.93667,412.93833,412.94,412.94167,412.94333,412.945,412.94667,412.94833;
+
+Schedule:Day:Hourly, 94d42ca7-94ed-4749-be0c-53e830f40342, AnyNumber,412.95,412.95125,412.9525,412.95375,412.955,412.95625,412.9575,412.95875,412.96,412.96125,412.9625,412.96375,412.965,412.96625,412.9675,412.96875,412.97,412.97125,412.9725,412.97375,412.975,412.97625,412.9775,412.97875;
+
+Schedule:Day:Hourly, c70daf2f-92c3-4792-afe2-fbca75fa9ef9, AnyNumber,412.98,412.98125,412.9825,412.98375,412.985,412.98625,412.9875,412.98875,412.99,412.99125,412.9925,412.99375,412.995,412.99625,412.9975,412.99875,413,413.00125,413.0025,413.00375,413.005,413.00625,413.0075,413.00875;
+
+Schedule:Day:Hourly, fd5008b5-7507-4277-930d-c03888eac84b, AnyNumber,413.01,413.01125,413.0125,413.01375,413.015,413.01625,413.0175,413.01875,413.02,413.02125,413.0225,413.02375,413.025,413.02625,413.0275,413.02875,413.03,413.03125,413.0325,413.03375,413.035,413.03625,413.0375,413.03875;
+
+Schedule:Day:Hourly, 087591f5-7a32-472c-88a3-e8134b05d7f0, AnyNumber,413.04,413.04167,413.04333,413.045,413.04667,413.04833,413.05,413.05167,413.05333,413.055,413.05667,413.05833,413.06,413.06167,413.06333,413.065,413.06667,413.06833,413.07,413.07167,413.07333,413.075,413.07667,413.07833;
+
+Schedule:Day:Hourly, c8351179-5336-4e48-b52a-35674a6047b3, AnyNumber,413.08,413.08125,413.0825,413.08375,413.085,413.08625,413.0875,413.08875,413.09,413.09125,413.0925,413.09375,413.095,413.09625,413.0975,413.09875,413.1,413.10125,413.1025,413.10375,413.105,413.10625,413.1075,413.10875;
+
+Schedule:Day:Hourly, 3ed64247-646e-4d03-b963-3c68524498ad, AnyNumber,413.11,413.11125,413.1125,413.11375,413.115,413.11625,413.1175,413.11875,413.12,413.12125,413.1225,413.12375,413.125,413.12625,413.1275,413.12875,413.13,413.13125,413.1325,413.13375,413.135,413.13625,413.1375,413.13875;
+
+Schedule:Day:Hourly, 1d829f24-026e-40f9-8ffc-4324c1cc2cef, AnyNumber,413.14,413.14125,413.1425,413.14375,413.145,413.14625,413.1475,413.14875,413.15,413.15125,413.1525,413.15375,413.155,413.15625,413.1575,413.15875,413.16,413.16125,413.1625,413.16375,413.165,413.16625,413.1675,413.16875;
+
+Schedule:Day:Hourly, 0277deea-7b18-4f07-b5cf-261e5c39e861, AnyNumber,413.17,413.17125,413.1725,413.17375,413.175,413.17625,413.1775,413.17875,413.18,413.18125,413.1825,413.18375,413.185,413.18625,413.1875,413.18875,413.19,413.19125,413.1925,413.19375,413.195,413.19625,413.1975,413.19875;
+
+Schedule:Day:Hourly, 3adb5a9e-a981-401c-a9bd-e395dcea5b57, AnyNumber,413.2,413.20125,413.2025,413.20375,413.205,413.20625,413.2075,413.20875,413.21,413.21125,413.2125,413.21375,413.215,413.21625,413.2175,413.21875,413.22,413.22125,413.2225,413.22375,413.225,413.22625,413.2275,413.22875;
+
+Schedule:Day:Hourly, fc472b79-66ee-4078-9610-cf3b6ac1649b, AnyNumber,413.23,413.23083,413.23167,413.2325,413.23333,413.23417,413.235,413.23583,413.23667,413.2375,413.23833,413.23917,413.24,413.24083,413.24167,413.2425,413.24333,413.24417,413.245,413.24583,413.24667,413.2475,413.24833,413.24917;
+
+Schedule:Day:Hourly, 6bf07750-f667-43fc-8e07-53b45f095560, AnyNumber,413.25,413.25125,413.2525,413.25375,413.255,413.25625,413.2575,413.25875,413.26,413.26125,413.2625,413.26375,413.265,413.26625,413.2675,413.26875,413.27,413.27125,413.2725,413.27375,413.275,413.27625,413.2775,413.27875;
+
+Schedule:Day:Hourly, c51a7fcf-0c55-4a48-b667-4c31d24be0f9, AnyNumber,413.28,413.28125,413.2825,413.28375,413.285,413.28625,413.2875,413.28875,413.29,413.29125,413.2925,413.29375,413.295,413.29625,413.2975,413.29875,413.3,413.30125,413.3025,413.30375,413.305,413.30625,413.3075,413.30875;
+
+Schedule:Day:Hourly, 66b63d59-28c8-45fb-b6e6-4c059d30b750, AnyNumber,413.31,413.31083,413.31167,413.3125,413.31333,413.31417,413.315,413.31583,413.31667,413.3175,413.31833,413.31917,413.32,413.32083,413.32167,413.3225,413.32333,413.32417,413.325,413.32583,413.32667,413.3275,413.32833,413.32917;
+
+Schedule:Day:Hourly, 35370c80-e69a-4530-a4fc-188afd07ecfc, AnyNumber,413.33,413.33125,413.3325,413.33375,413.335,413.33625,413.3375,413.33875,413.34,413.34125,413.3425,413.34375,413.345,413.34625,413.3475,413.34875,413.35,413.35125,413.3525,413.35375,413.355,413.35625,413.3575,413.35875;
+
+Schedule:Day:Hourly, 411280e7-3d12-49df-a57e-f4863abeb666, AnyNumber,413.36,413.36083,413.36167,413.3625,413.36333,413.36417,413.365,413.36583,413.36667,413.3675,413.36833,413.36917,413.37,413.37083,413.37167,413.3725,413.37333,413.37417,413.375,413.37583,413.37667,413.3775,413.37833,413.37917;
+
+Schedule:Day:Hourly, 758946ad-aab3-40b0-aed2-5032d8d96fbb, AnyNumber,413.38,413.38125,413.3825,413.38375,413.385,413.38625,413.3875,413.38875,413.39,413.39125,413.3925,413.39375,413.395,413.39625,413.3975,413.39875,413.4,413.40125,413.4025,413.40375,413.405,413.40625,413.4075,413.40875;
+
+Schedule:Day:Hourly, 74d5c46f-acb8-41c2-91cd-f78a34649f72, AnyNumber,413.41,413.41083,413.41167,413.4125,413.41333,413.41417,413.415,413.41583,413.41667,413.4175,413.41833,413.41917,413.42,413.42083,413.42167,413.4225,413.42333,413.42417,413.425,413.42583,413.42667,413.4275,413.42833,413.42917;
+
+Schedule:Day:Hourly, c12bf801-5b32-4f02-9717-93a2cd18b8fc, AnyNumber,413.43,413.43083,413.43167,413.4325,413.43333,413.43417,413.435,413.43583,413.43667,413.4375,413.43833,413.43917,413.44,413.44083,413.44167,413.4425,413.44333,413.44417,413.445,413.44583,413.44667,413.4475,413.44833,413.44917;
+
+Schedule:Day:Hourly, 2891e756-4e2a-4dd7-a5a8-3074c98efcdc, AnyNumber,413.45,413.45083,413.45167,413.4525,413.45333,413.45417,413.455,413.45583,413.45667,413.4575,413.45833,413.45917,413.46,413.46083,413.46167,413.4625,413.46333,413.46417,413.465,413.46583,413.46667,413.4675,413.46833,413.46917;
+
+Schedule:Day:Hourly, 4b7ec458-65e0-431e-a27d-11f67bdc4268, AnyNumber,413.47,413.47083,413.47167,413.4725,413.47333,413.47417,413.475,413.47583,413.47667,413.4775,413.47833,413.47917,413.48,413.48083,413.48167,413.4825,413.48333,413.48417,413.485,413.48583,413.48667,413.4875,413.48833,413.48917;
+
+Schedule:Day:Hourly, f331056a-4011-4052-ad91-0e21318cbc4e, AnyNumber,413.49,413.49083,413.49167,413.4925,413.49333,413.49417,413.495,413.49583,413.49667,413.4975,413.49833,413.49917,413.5,413.50083,413.50167,413.5025,413.50333,413.50417,413.505,413.50583,413.50667,413.5075,413.50833,413.50917;
+
+Schedule:Day:Hourly, b8d8e636-f9be-41fb-be41-1cbdc4e01adc, AnyNumber,413.51,413.51042,413.51083,413.51125,413.51167,413.51208,413.5125,413.51292,413.51333,413.51375,413.51417,413.51458,413.515,413.51542,413.51583,413.51625,413.51667,413.51708,413.5175,413.51792,413.51833,413.51875,413.51917,413.51958;
+
+Schedule:Day:Hourly, 39a9aa99-db26-4569-8e41-300054ec431f, AnyNumber,413.52,413.52083,413.52167,413.5225,413.52333,413.52417,413.525,413.52583,413.52667,413.5275,413.52833,413.52917,413.53,413.53083,413.53167,413.5325,413.53333,413.53417,413.535,413.53583,413.53667,413.5375,413.53833,413.53917;
+
+Schedule:Day:Hourly, 6db03cd5-ccba-47a3-b959-2c942de389a5, AnyNumber,413.54,413.54083,413.54167,413.5425,413.54333,413.54417,413.545,413.54583,413.54667,413.5475,413.54833,413.54917,413.55,413.55083,413.55167,413.5525,413.55333,413.55417,413.555,413.55583,413.55667,413.5575,413.55833,413.55917;
+
+Schedule:Day:Hourly, 5d7776ac-2cfb-4f26-8a67-ba43ca8d48ce, AnyNumber,413.56,413.56042,413.56083,413.56125,413.56167,413.56208,413.5625,413.56292,413.56333,413.56375,413.56417,413.56458,413.565,413.56542,413.56583,413.56625,413.56667,413.56708,413.5675,413.56792,413.56833,413.56875,413.56917,413.56958;
+
+Schedule:Day:Hourly, bce0e3d4-4dd3-4e3b-afd1-453714a6916f, AnyNumber,413.57,413.57042,413.57083,413.57125,413.57167,413.57208,413.5725,413.57292,413.57333,413.57375,413.57417,413.57458,413.575,413.57542,413.57583,413.57625,413.57667,413.57708,413.5775,413.57792,413.57833,413.57875,413.57917,413.57958;
+
+Schedule:Day:Hourly, cf4b1d56-e4c6-4586-bb38-ffaa7896f83e, AnyNumber,413.58,413.58083,413.58167,413.5825,413.58333,413.58417,413.585,413.58583,413.58667,413.5875,413.58833,413.58917,413.59,413.59083,413.59167,413.5925,413.59333,413.59417,413.595,413.59583,413.59667,413.5975,413.59833,413.59917;
+
+Schedule:Day:Hourly, 18e6862b-588d-4461-90c5-d2ec074888c8, AnyNumber,413.6,413.60042,413.60083,413.60125,413.60167,413.60208,413.6025,413.60292,413.60333,413.60375,413.60417,413.60458,413.605,413.60542,413.60583,413.60625,413.60667,413.60708,413.6075,413.60792,413.60833,413.60875,413.60917,413.60958;
+
+Schedule:Day:Hourly, 554abf5d-ffca-4bab-bd02-42d9a628b644, AnyNumber,413.61,413.61042,413.61083,413.61125,413.61167,413.61208,413.6125,413.61292,413.61333,413.61375,413.61417,413.61458,413.615,413.61542,413.61583,413.61625,413.61667,413.61708,413.6175,413.61792,413.61833,413.61875,413.61917,413.61958;
+
+Schedule:Day:Hourly, b0b65595-a9c7-4f31-8948-ee3780a1020a, AnyNumber,413.62,413.62042,413.62083,413.62125,413.62167,413.62208,413.6225,413.62292,413.62333,413.62375,413.62417,413.62458,413.625,413.62542,413.62583,413.62625,413.62667,413.62708,413.6275,413.62792,413.62833,413.62875,413.62917,413.62958;
+
+Schedule:Day:Hourly, d0868773-8092-4a50-b736-1236dd7c4c3c, AnyNumber,413.63,413.63042,413.63083,413.63125,413.63167,413.63208,413.6325,413.63292,413.63333,413.63375,413.63417,413.63458,413.635,413.63542,413.63583,413.63625,413.63667,413.63708,413.6375,413.63792,413.63833,413.63875,413.63917,413.63958;
+
+Schedule:Day:Hourly, 17bf1b62-3859-4dce-848d-c118e7906e38, AnyNumber,413.64,413.64042,413.64083,413.64125,413.64167,413.64208,413.6425,413.64292,413.64333,413.64375,413.64417,413.64458,413.645,413.64542,413.64583,413.64625,413.64667,413.64708,413.6475,413.64792,413.64833,413.64875,413.64917,413.64958;
+
+Schedule:Day:Hourly, dc8892c9-40be-4e42-a996-a7b7ca6db9c5, AnyNumber,413.65,413.65042,413.65083,413.65125,413.65167,413.65208,413.6525,413.65292,413.65333,413.65375,413.65417,413.65458,413.655,413.65542,413.65583,413.65625,413.65667,413.65708,413.6575,413.65792,413.65833,413.65875,413.65917,413.65958;
+
+Schedule:Day:Hourly, 5292517c-3401-4480-9c8d-3bd1647505e2, AnyNumber,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66,413.66;
+
+Schedule:Day:Hourly, 5a0f5eba-e9f4-4846-ba28-6ee9bed6d4ac, AnyNumber,413.66,413.66042,413.66083,413.66125,413.66167,413.66208,413.6625,413.66292,413.66333,413.66375,413.66417,413.66458,413.665,413.66542,413.66583,413.66625,413.66667,413.66708,413.6675,413.66792,413.66833,413.66875,413.66917,413.66958;
+
+Schedule:Day:Hourly, a97ea0ad-c507-4fa1-ba9b-261f4986cc2d, AnyNumber,413.67,413.67042,413.67083,413.67125,413.67167,413.67208,413.6725,413.67292,413.67333,413.67375,413.67417,413.67458,413.675,413.67542,413.67583,413.67625,413.67667,413.67708,413.6775,413.67792,413.67833,413.67875,413.67917,413.67958;
+
+Schedule:Day:Hourly, 6ba6fb94-f1c9-47a1-879a-1077de384eb6, AnyNumber,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68,413.68;
+
+Schedule:Day:Hourly, 33b5a060-2bbe-43d3-ba32-13fe0c8144ad, AnyNumber,413.68,413.68042,413.68083,413.68125,413.68167,413.68208,413.6825,413.68292,413.68333,413.68375,413.68417,413.68458,413.685,413.68542,413.68583,413.68625,413.68667,413.68708,413.6875,413.68792,413.68833,413.68875,413.68917,413.68958;
+
+Schedule:Day:Hourly, ab6877b0-7eb2-4d9f-a0a4-9216a0a4fe91, AnyNumber,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69,413.69;
+
+Schedule:Day:Hourly, 8a93b4ff-b84b-4b89-85a4-8ed8c5878505, AnyNumber,413.69,413.69042,413.69083,413.69125,413.69167,413.69208,413.6925,413.69292,413.69333,413.69375,413.69417,413.69458,413.695,413.69542,413.69583,413.69625,413.69667,413.69708,413.6975,413.69792,413.69833,413.69875,413.69917,413.69958;
+
+Schedule:Day:Hourly, 29c37e99-34e1-4f84-b3ce-13cf23a95acb, AnyNumber,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7,413.7;
+
+Schedule:Day:Hourly, 73feb5bb-1b55-4162-9711-59cedeb9d6e1, AnyNumber,413.7,413.70042,413.70083,413.70125,413.70167,413.70208,413.7025,413.70292,413.70333,413.70375,413.70417,413.70458,413.705,413.70542,413.70583,413.70625,413.70667,413.70708,413.7075,413.70792,413.70833,413.70875,413.70917,413.70958;
+
+Schedule:Day:Hourly, 027dc205-db31-428e-a3fc-1bf587c342dc, AnyNumber,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71,413.71;
+
+Schedule:Day:Hourly, 409665d4-1aed-464e-aaeb-72bde327ce61, AnyNumber,413.71,413.71042,413.71083,413.71125,413.71167,413.71208,413.7125,413.71292,413.71333,413.71375,413.71417,413.71458,413.715,413.71542,413.71583,413.71625,413.71667,413.71708,413.7175,413.71792,413.71833,413.71875,413.71917,413.71958;
+
+Schedule:Day:Hourly, 521c5117-0c34-4eb1-a9df-fdb310ccd059, AnyNumber,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72,413.72;
+
+Schedule:Day:Hourly, ebb0b307-e28f-4a5e-9f52-7e3160c2fa9e, AnyNumber,413.72,413.72042,413.72083,413.72125,413.72167,413.72208,413.7225,413.72292,413.72333,413.72375,413.72417,413.72458,413.725,413.72542,413.72583,413.72625,413.72667,413.72708,413.7275,413.72792,413.72833,413.72875,413.72917,413.72958;
+
+Schedule:Day:Hourly, 081ff30e-088d-42ed-9a33-182eebacf2d6, AnyNumber,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73,413.73;
+
+Schedule:Day:Hourly, 16235673-1bd7-43d6-bed7-2de1562326a3, AnyNumber,413.73,413.73042,413.73083,413.73125,413.73167,413.73208,413.7325,413.73292,413.73333,413.73375,413.73417,413.73458,413.735,413.73542,413.73583,413.73625,413.73667,413.73708,413.7375,413.73792,413.73833,413.73875,413.73917,413.73958;
+
+Schedule:Day:Hourly, 2fa9093e-a70c-4239-9bfb-a8d78c3816b0, AnyNumber,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74,413.74;
+
+Schedule:Day:Hourly, 37add10e-67dc-4ad8-8cc2-bbafc3c1cb2a, AnyNumber,413.74,413.74042,413.74083,413.74125,413.74167,413.74208,413.7425,413.74292,413.74333,413.74375,413.74417,413.74458,413.745,413.74542,413.74583,413.74625,413.74667,413.74708,413.7475,413.74792,413.74833,413.74875,413.74917,413.74958;
+
+Schedule:Day:Hourly, f359b1a3-d648-472b-9fd4-d7316bbe1b6e, AnyNumber,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75,413.75;
+
+Schedule:Day:Hourly, 0ec5a71f-085e-4853-a752-a14814e15cd7, AnyNumber,413.75,413.75042,413.75083,413.75125,413.75167,413.75208,413.7525,413.75292,413.75333,413.75375,413.75417,413.75458,413.755,413.75542,413.75583,413.75625,413.75667,413.75708,413.7575,413.75792,413.75833,413.75875,413.75917,413.75958;
+
+Schedule:Day:Hourly, c8cfaaf9-e00c-40bd-8c78-755167b90d62, AnyNumber,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76,413.76;
+
+Schedule:Day:Hourly, 05b7b36b-030a-4242-b5d1-5ec4e02c1f16, AnyNumber,413.76,413.76042,413.76083,413.76125,413.76167,413.76208,413.7625,413.76292,413.76333,413.76375,413.76417,413.76458,413.765,413.76542,413.76583,413.76625,413.76667,413.76708,413.7675,413.76792,413.76833,413.76875,413.76917,413.76958;
+
+Schedule:Day:Hourly, 07d10320-938f-446d-930e-da80dcaa6f7e, AnyNumber,413.77,413.77042,413.77083,413.77125,413.77167,413.77208,413.7725,413.77292,413.77333,413.77375,413.77417,413.77458,413.775,413.77542,413.77583,413.77625,413.77667,413.77708,413.7775,413.77792,413.77833,413.77875,413.77917,413.77958;
+
+Schedule:Day:Hourly, 6961a2da-54af-478e-a0ad-16284c9b0cdf, AnyNumber,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78,413.78;
+
+Schedule:Day:Hourly, 3ed1fa5a-15e1-4470-b3e0-0b88cbb65c68, AnyNumber,413.78,413.78042,413.78083,413.78125,413.78167,413.78208,413.7825,413.78292,413.78333,413.78375,413.78417,413.78458,413.785,413.78542,413.78583,413.78625,413.78667,413.78708,413.7875,413.78792,413.78833,413.78875,413.78917,413.78958;
+
+Schedule:Day:Hourly, 5c3f400e-ac47-4f0e-9a36-ca3b1b8c9f94, AnyNumber,413.79,413.79042,413.79083,413.79125,413.79167,413.79208,413.7925,413.79292,413.79333,413.79375,413.79417,413.79458,413.795,413.79542,413.79583,413.79625,413.79667,413.79708,413.7975,413.79792,413.79833,413.79875,413.79917,413.79958;
+
+Schedule:Day:Hourly, 030648f6-0ca6-4edc-a4e8-faa34f30ffed, AnyNumber,413.8,413.80042,413.80083,413.80125,413.80167,413.80208,413.8025,413.80292,413.80333,413.80375,413.80417,413.80458,413.805,413.80542,413.80583,413.80625,413.80667,413.80708,413.8075,413.80792,413.80833,413.80875,413.80917,413.80958;
+
+Schedule:Day:Hourly, d73e6279-37d2-4f0b-9a9b-086b1361ce65, AnyNumber,413.81,413.81042,413.81083,413.81125,413.81167,413.81208,413.8125,413.81292,413.81333,413.81375,413.81417,413.81458,413.815,413.81542,413.81583,413.81625,413.81667,413.81708,413.8175,413.81792,413.81833,413.81875,413.81917,413.81958;
+
+Schedule:Day:Hourly, 027554a9-0aa7-43b3-ae21-3c4a5b1af654, AnyNumber,413.82,413.82042,413.82083,413.82125,413.82167,413.82208,413.8225,413.82292,413.82333,413.82375,413.82417,413.82458,413.825,413.82542,413.82583,413.82625,413.82667,413.82708,413.8275,413.82792,413.82833,413.82875,413.82917,413.82958;
+
+Schedule:Day:Hourly, c19d672b-5c7a-48b1-afca-33113ecf6284, AnyNumber,413.83,413.83042,413.83083,413.83125,413.83167,413.83208,413.8325,413.83292,413.83333,413.83375,413.83417,413.83458,413.835,413.83542,413.83583,413.83625,413.83667,413.83708,413.8375,413.83792,413.83833,413.83875,413.83917,413.83958;
+
+Schedule:Day:Hourly, 62eaceb7-57b3-4580-bf6c-300e74340bbe, AnyNumber,413.84,413.84042,413.84083,413.84125,413.84167,413.84208,413.8425,413.84292,413.84333,413.84375,413.84417,413.84458,413.845,413.84542,413.84583,413.84625,413.84667,413.84708,413.8475,413.84792,413.84833,413.84875,413.84917,413.84958;
+
+Schedule:Day:Hourly, a615f561-36b0-44a3-bbf5-7ae5b5f9e4c7, AnyNumber,413.85,413.85042,413.85083,413.85125,413.85167,413.85208,413.8525,413.85292,413.85333,413.85375,413.85417,413.85458,413.855,413.85542,413.85583,413.85625,413.85667,413.85708,413.8575,413.85792,413.85833,413.85875,413.85917,413.85958;
+
+Schedule:Day:Hourly, 548244d9-7b01-4ac3-b70c-745b1497d32a, AnyNumber,413.86,413.86042,413.86083,413.86125,413.86167,413.86208,413.8625,413.86292,413.86333,413.86375,413.86417,413.86458,413.865,413.86542,413.86583,413.86625,413.86667,413.86708,413.8675,413.86792,413.86833,413.86875,413.86917,413.86958;
+
+Schedule:Day:Hourly, 2ce4e256-32a4-4bba-86ab-ebc15a62480c, AnyNumber,413.87,413.87042,413.87083,413.87125,413.87167,413.87208,413.8725,413.87292,413.87333,413.87375,413.87417,413.87458,413.875,413.87542,413.87583,413.87625,413.87667,413.87708,413.8775,413.87792,413.87833,413.87875,413.87917,413.87958;
+
+Schedule:Day:Hourly, 1a4a6236-bc60-497d-81bf-bb76f3f5cd39, AnyNumber,413.88,413.88042,413.88083,413.88125,413.88167,413.88208,413.8825,413.88292,413.88333,413.88375,413.88417,413.88458,413.885,413.88542,413.88583,413.88625,413.88667,413.88708,413.8875,413.88792,413.88833,413.88875,413.88917,413.88958;
+
+Schedule:Day:Hourly, 252de100-8b4d-49fc-ae88-36a479cc5a74, AnyNumber,413.89,413.89083,413.89167,413.8925,413.89333,413.89417,413.895,413.89583,413.89667,413.8975,413.89833,413.89917,413.9,413.90083,413.90167,413.9025,413.90333,413.90417,413.905,413.90583,413.90667,413.9075,413.90833,413.90917;
+
+Schedule:Day:Hourly, fff34044-29dc-4b80-8837-d63e119b5894, AnyNumber,413.91,413.91042,413.91083,413.91125,413.91167,413.91208,413.9125,413.91292,413.91333,413.91375,413.91417,413.91458,413.915,413.91542,413.91583,413.91625,413.91667,413.91708,413.9175,413.91792,413.91833,413.91875,413.91917,413.91958;
+
+Schedule:Day:Hourly, 5df10dde-aef8-4d70-894c-eb76011f8b5e, AnyNumber,413.92,413.92042,413.92083,413.92125,413.92167,413.92208,413.9225,413.92292,413.92333,413.92375,413.92417,413.92458,413.925,413.92542,413.92583,413.92625,413.92667,413.92708,413.9275,413.92792,413.92833,413.92875,413.92917,413.92958;
+
+Schedule:Day:Hourly, 256727ee-a163-4da3-8407-9aaee0a811a6, AnyNumber,413.93,413.93083,413.93167,413.9325,413.93333,413.93417,413.935,413.93583,413.93667,413.9375,413.93833,413.93917,413.94,413.94083,413.94167,413.9425,413.94333,413.94417,413.945,413.94583,413.94667,413.9475,413.94833,413.94917;
+
+Schedule:Day:Hourly, f79fc4ef-b985-48b3-af44-298bb8cd0af1, AnyNumber,413.95,413.95042,413.95083,413.95125,413.95167,413.95208,413.9525,413.95292,413.95333,413.95375,413.95417,413.95458,413.955,413.95542,413.95583,413.95625,413.95667,413.95708,413.9575,413.95792,413.95833,413.95875,413.95917,413.95958;
+
+Schedule:Day:Hourly, cd6704f1-d6ba-4ea5-8f1c-513fdab3f8c8, AnyNumber,413.96,413.96083,413.96167,413.9625,413.96333,413.96417,413.965,413.96583,413.96667,413.9675,413.96833,413.96917,413.97,413.97083,413.97167,413.9725,413.97333,413.97417,413.975,413.97583,413.97667,413.9775,413.97833,413.97917;
+
+Schedule:Day:Hourly, 32b8d0c4-fa58-4f7f-8a89-720007c9315d, AnyNumber,413.98,413.98042,413.98083,413.98125,413.98167,413.98208,413.9825,413.98292,413.98333,413.98375,413.98417,413.98458,413.985,413.98542,413.98583,413.98625,413.98667,413.98708,413.9875,413.98792,413.98833,413.98875,413.98917,413.98958;
+
+Schedule:Day:Hourly, d5a0baab-9359-428e-8537-e87c705a0f09, AnyNumber,413.99,413.99083,413.99167,413.9925,413.99333,413.99417,413.995,413.99583,413.99667,413.9975,413.99833,413.99917,414,414.00083,414.00167,414.0025,414.00333,414.00417,414.005,414.00583,414.00667,414.0075,414.00833,414.00917;
+
+Schedule:Day:Hourly, dad497ad-29f3-4552-af83-e96367cb94c9, AnyNumber,414.01,414.01083,414.01167,414.0125,414.01333,414.01417,414.015,414.01583,414.01667,414.0175,414.01833,414.01917,414.02,414.02083,414.02167,414.0225,414.02333,414.02417,414.025,414.02583,414.02667,414.0275,414.02833,414.02917;
+
+Schedule:Day:Hourly, 5cc4a316-2f3d-45cc-807a-b03f674da3c6, AnyNumber,414.03,414.03042,414.03083,414.03125,414.03167,414.03208,414.0325,414.03292,414.03333,414.03375,414.03417,414.03458,414.035,414.03542,414.03583,414.03625,414.03667,414.03708,414.0375,414.03792,414.03833,414.03875,414.03917,414.03958;
+
+Schedule:Day:Hourly, f6bc2ed7-5801-4acd-a533-595417d162b5, AnyNumber,414.04,414.04083,414.04167,414.0425,414.04333,414.04417,414.045,414.04583,414.04667,414.0475,414.04833,414.04917,414.05,414.05083,414.05167,414.0525,414.05333,414.05417,414.055,414.05583,414.05667,414.0575,414.05833,414.05917;
+
+Schedule:Day:Hourly, 0a848666-130a-46d5-b41e-8295e756b3e1, AnyNumber,414.06,414.06083,414.06167,414.0625,414.06333,414.06417,414.065,414.06583,414.06667,414.0675,414.06833,414.06917,414.07,414.07083,414.07167,414.0725,414.07333,414.07417,414.075,414.07583,414.07667,414.0775,414.07833,414.07917;
+
+Schedule:Day:Hourly, 4bcc5a6e-dc92-4936-9c7f-8bab919e39f4, AnyNumber,414.08,414.08042,414.08083,414.08125,414.08167,414.08208,414.0825,414.08292,414.08333,414.08375,414.08417,414.08458,414.085,414.08542,414.08583,414.08625,414.08667,414.08708,414.0875,414.08792,414.08833,414.08875,414.08917,414.08958;
+
+Schedule:Day:Hourly, 4c602ce9-eb85-4e88-a927-e073a04d4492, AnyNumber,414.09,414.09083,414.09167,414.0925,414.09333,414.09417,414.095,414.09583,414.09667,414.0975,414.09833,414.09917,414.1,414.10083,414.10167,414.1025,414.10333,414.10417,414.105,414.10583,414.10667,414.1075,414.10833,414.10917;
+
+Schedule:Day:Hourly, 84e770fa-9725-4585-939d-bc150750dc77, AnyNumber,414.11,414.11083,414.11167,414.1125,414.11333,414.11417,414.115,414.11583,414.11667,414.1175,414.11833,414.11917,414.12,414.12083,414.12167,414.1225,414.12333,414.12417,414.125,414.12583,414.12667,414.1275,414.12833,414.12917;
+
+Schedule:Day:Hourly, f1e7ad01-7103-4516-9541-c3e430227b19, AnyNumber,414.13,414.13083,414.13167,414.1325,414.13333,414.13417,414.135,414.13583,414.13667,414.1375,414.13833,414.13917,414.14,414.14083,414.14167,414.1425,414.14333,414.14417,414.145,414.14583,414.14667,414.1475,414.14833,414.14917;
+
+Schedule:Day:Hourly, 3199f500-a2bd-4b6e-86a9-7e61d0648864, AnyNumber,414.15,414.15042,414.15083,414.15125,414.15167,414.15208,414.1525,414.15292,414.15333,414.15375,414.15417,414.15458,414.155,414.15542,414.15583,414.15625,414.15667,414.15708,414.1575,414.15792,414.15833,414.15875,414.15917,414.15958;
+
+Schedule:Day:Hourly, c2915976-587d-4766-827a-c396c8ebdf59, AnyNumber,414.16,414.16083,414.16167,414.1625,414.16333,414.16417,414.165,414.16583,414.16667,414.1675,414.16833,414.16917,414.17,414.17083,414.17167,414.1725,414.17333,414.17417,414.175,414.17583,414.17667,414.1775,414.17833,414.17917;
+
+Schedule:Day:Hourly, 82bc8851-d5fb-4542-97e7-bcd6ce7737e8, AnyNumber,414.18,414.18083,414.18167,414.1825,414.18333,414.18417,414.185,414.18583,414.18667,414.1875,414.18833,414.18917,414.19,414.19083,414.19167,414.1925,414.19333,414.19417,414.195,414.19583,414.19667,414.1975,414.19833,414.19917;
+
+Schedule:Day:Hourly, 2a6b52e0-4a82-4cf2-90ba-ef8a42fc3e33, AnyNumber,414.2,414.20083,414.20167,414.2025,414.20333,414.20417,414.205,414.20583,414.20667,414.2075,414.20833,414.20917,414.21,414.21083,414.21167,414.2125,414.21333,414.21417,414.215,414.21583,414.21667,414.2175,414.21833,414.21917;
+
+Schedule:Day:Hourly, de3a2501-13ec-4f90-a486-e943a4e15560, AnyNumber,414.22,414.22042,414.22083,414.22125,414.22167,414.22208,414.2225,414.22292,414.22333,414.22375,414.22417,414.22458,414.225,414.22542,414.22583,414.22625,414.22667,414.22708,414.2275,414.22792,414.22833,414.22875,414.22917,414.22958;
+
+Schedule:Day:Hourly, 61ec4cbe-ee5f-4673-9e30-f17859a190b4, AnyNumber,414.23,414.23083,414.23167,414.2325,414.23333,414.23417,414.235,414.23583,414.23667,414.2375,414.23833,414.23917,414.24,414.24083,414.24167,414.2425,414.24333,414.24417,414.245,414.24583,414.24667,414.2475,414.24833,414.24917;
+
+Schedule:Day:Hourly, 7d3d948c-1732-4114-b8e8-94a5c563cb8a, AnyNumber,414.25,414.25083,414.25167,414.2525,414.25333,414.25417,414.255,414.25583,414.25667,414.2575,414.25833,414.25917,414.26,414.26083,414.26167,414.2625,414.26333,414.26417,414.265,414.26583,414.26667,414.2675,414.26833,414.26917;
+
+Schedule:Day:Hourly, d1a716f3-1c29-4676-b59c-c122c90043cd, AnyNumber,414.27,414.27042,414.27083,414.27125,414.27167,414.27208,414.2725,414.27292,414.27333,414.27375,414.27417,414.27458,414.275,414.27542,414.27583,414.27625,414.27667,414.27708,414.2775,414.27792,414.27833,414.27875,414.27917,414.27958;
+
+Schedule:Day:Hourly, 26635edd-3c87-4f68-8726-1104c81f7da4, AnyNumber,414.28,414.28083,414.28167,414.2825,414.28333,414.28417,414.285,414.28583,414.28667,414.2875,414.28833,414.28917,414.29,414.29083,414.29167,414.2925,414.29333,414.29417,414.295,414.29583,414.29667,414.2975,414.29833,414.29917;
+
+Schedule:Day:Hourly, 879eebdc-36a7-4f6c-9382-274ed9e6e5ad, AnyNumber,414.3,414.30083,414.30167,414.3025,414.30333,414.30417,414.305,414.30583,414.30667,414.3075,414.30833,414.30917,414.31,414.31083,414.31167,414.3125,414.31333,414.31417,414.315,414.31583,414.31667,414.3175,414.31833,414.31917;
+
+Schedule:Day:Hourly, ebb29a12-f751-43d8-91ff-769aded4bbec, AnyNumber,414.32,414.32042,414.32083,414.32125,414.32167,414.32208,414.3225,414.32292,414.32333,414.32375,414.32417,414.32458,414.325,414.32542,414.32583,414.32625,414.32667,414.32708,414.3275,414.32792,414.32833,414.32875,414.32917,414.32958;
+
+Schedule:Day:Hourly, 265d1f11-9126-4ffa-a874-409d24a1a8af, AnyNumber,414.33,414.33083,414.33167,414.3325,414.33333,414.33417,414.335,414.33583,414.33667,414.3375,414.33833,414.33917,414.34,414.34083,414.34167,414.3425,414.34333,414.34417,414.345,414.34583,414.34667,414.3475,414.34833,414.34917;
+
+Schedule:Day:Hourly, d88e34ae-24f3-4230-83d1-7e21859541c9, AnyNumber,414.35,414.35042,414.35083,414.35125,414.35167,414.35208,414.3525,414.35292,414.35333,414.35375,414.35417,414.35458,414.355,414.35542,414.35583,414.35625,414.35667,414.35708,414.3575,414.35792,414.35833,414.35875,414.35917,414.35958;
+
+Schedule:Day:Hourly, 31dbe957-a8e6-4675-a332-66051d8da8cb, AnyNumber,414.36,414.36083,414.36167,414.3625,414.36333,414.36417,414.365,414.36583,414.36667,414.3675,414.36833,414.36917,414.37,414.37083,414.37167,414.3725,414.37333,414.37417,414.375,414.37583,414.37667,414.3775,414.37833,414.37917;
+
+Schedule:Day:Hourly, f8eabe9b-9be9-47eb-8ba1-671d1f2349b3, AnyNumber,414.38,414.38042,414.38083,414.38125,414.38167,414.38208,414.3825,414.38292,414.38333,414.38375,414.38417,414.38458,414.385,414.38542,414.38583,414.38625,414.38667,414.38708,414.3875,414.38792,414.38833,414.38875,414.38917,414.38958;
+
+Schedule:Day:Hourly, 1d1f0b01-223c-4b4a-8b14-d88fb5283e43, AnyNumber,414.39,414.39042,414.39083,414.39125,414.39167,414.39208,414.3925,414.39292,414.39333,414.39375,414.39417,414.39458,414.395,414.39542,414.39583,414.39625,414.39667,414.39708,414.3975,414.39792,414.39833,414.39875,414.39917,414.39958;
+
+Schedule:Day:Hourly, 1de46638-3696-4644-9393-7eed49473422, AnyNumber,414.4,414.40083,414.40167,414.4025,414.40333,414.40417,414.405,414.40583,414.40667,414.4075,414.40833,414.40917,414.41,414.41083,414.41167,414.4125,414.41333,414.41417,414.415,414.41583,414.41667,414.4175,414.41833,414.41917;
+
+Schedule:Day:Hourly, 99aad5ca-8e29-49d9-bc14-cd58c5d2055e, AnyNumber,414.42,414.42042,414.42083,414.42125,414.42167,414.42208,414.4225,414.42292,414.42333,414.42375,414.42417,414.42458,414.425,414.42542,414.42583,414.42625,414.42667,414.42708,414.4275,414.42792,414.42833,414.42875,414.42917,414.42958;
+
+Schedule:Day:Hourly, 8568e275-456b-45aa-a5db-b521eb3ae5a6, AnyNumber,414.43,414.43042,414.43083,414.43125,414.43167,414.43208,414.4325,414.43292,414.43333,414.43375,414.43417,414.43458,414.435,414.43542,414.43583,414.43625,414.43667,414.43708,414.4375,414.43792,414.43833,414.43875,414.43917,414.43958;
+
+Schedule:Day:Hourly, e8215030-7dea-4c36-a481-ebd118401b9e, AnyNumber,414.44,414.44042,414.44083,414.44125,414.44167,414.44208,414.4425,414.44292,414.44333,414.44375,414.44417,414.44458,414.445,414.44542,414.44583,414.44625,414.44667,414.44708,414.4475,414.44792,414.44833,414.44875,414.44917,414.44958;
+
+Schedule:Day:Hourly, 39f06a1e-07f0-4d99-836b-5f86e76af911, AnyNumber,414.45,414.45042,414.45083,414.45125,414.45167,414.45208,414.4525,414.45292,414.45333,414.45375,414.45417,414.45458,414.455,414.45542,414.45583,414.45625,414.45667,414.45708,414.4575,414.45792,414.45833,414.45875,414.45917,414.45958;
+
+Schedule:Day:Hourly, 9b6e082c-2a93-4074-8ba1-c5683378a0fc, AnyNumber,414.46,414.46042,414.46083,414.46125,414.46167,414.46208,414.4625,414.46292,414.46333,414.46375,414.46417,414.46458,414.465,414.46542,414.46583,414.46625,414.46667,414.46708,414.4675,414.46792,414.46833,414.46875,414.46917,414.46958;
+
+Schedule:Day:Hourly, c7079e41-9427-472a-a0c7-5d039eaeec8e, AnyNumber,414.47,414.47042,414.47083,414.47125,414.47167,414.47208,414.4725,414.47292,414.47333,414.47375,414.47417,414.47458,414.475,414.47542,414.47583,414.47625,414.47667,414.47708,414.4775,414.47792,414.47833,414.47875,414.47917,414.47958;
+
+Schedule:Day:Hourly, 6c457549-6b26-4187-a00f-778340866a38, AnyNumber,414.48,414.48042,414.48083,414.48125,414.48167,414.48208,414.4825,414.48292,414.48333,414.48375,414.48417,414.48458,414.485,414.48542,414.48583,414.48625,414.48667,414.48708,414.4875,414.48792,414.48833,414.48875,414.48917,414.48958;
+
+Schedule:Day:Hourly, 536a18d9-8750-4a9b-b799-8584c22263fe, AnyNumber,414.49,414.49042,414.49083,414.49125,414.49167,414.49208,414.4925,414.49292,414.49333,414.49375,414.49417,414.49458,414.495,414.49542,414.49583,414.49625,414.49667,414.49708,414.4975,414.49792,414.49833,414.49875,414.49917,414.49958;
+
+Schedule:Day:Hourly, f4e82e07-66cc-44d9-a4d4-bab3da510ec5, AnyNumber,414.5,414.50042,414.50083,414.50125,414.50167,414.50208,414.5025,414.50292,414.50333,414.50375,414.50417,414.50458,414.505,414.50542,414.50583,414.50625,414.50667,414.50708,414.5075,414.50792,414.50833,414.50875,414.50917,414.50958;
+
+Schedule:Day:Hourly, 06a30e78-3f22-45bd-b4c3-8015af8abc4a, AnyNumber,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51,414.51;
+
+Schedule:Day:Hourly, 3afd9b2d-ad9a-4cbd-835e-b8aef2790ab3, AnyNumber,414.51,414.51042,414.51083,414.51125,414.51167,414.51208,414.5125,414.51292,414.51333,414.51375,414.51417,414.51458,414.515,414.51542,414.51583,414.51625,414.51667,414.51708,414.5175,414.51792,414.51833,414.51875,414.51917,414.51958;
+
+Schedule:Day:Hourly, ccec86f9-1592-4acd-bd57-b29090760f5a, AnyNumber,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52,414.52;
+
+Schedule:Day:Hourly, 4cd5c318-635b-48ee-88d6-4b7c00bc9c75, AnyNumber,414.52,414.52042,414.52083,414.52125,414.52167,414.52208,414.5225,414.52292,414.52333,414.52375,414.52417,414.52458,414.525,414.52542,414.52583,414.52625,414.52667,414.52708,414.5275,414.52792,414.52833,414.52875,414.52917,414.52958;
+
+Schedule:Day:Hourly, 279b39fb-639b-43a4-9950-4b30bc3d2127, AnyNumber,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53,414.53;
+
+Schedule:Day:Hourly, 724402b1-bbd7-4f44-9d5a-2861bf886583, AnyNumber,414.53,414.53042,414.53083,414.53125,414.53167,414.53208,414.5325,414.53292,414.53333,414.53375,414.53417,414.53458,414.535,414.53542,414.53583,414.53625,414.53667,414.53708,414.5375,414.53792,414.53833,414.53875,414.53917,414.53958;
+
+Schedule:Day:Hourly, 1993bce1-b346-46d8-88a1-a45f70cf0461, AnyNumber,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54,414.54;
+
+Schedule:Day:Hourly, e99a257d-edf4-4d61-9ef0-d0bdb297ee30, AnyNumber,414.54,414.53958,414.53917,414.53875,414.53833,414.53792,414.5375,414.53708,414.53667,414.53625,414.53583,414.53542,414.535,414.53458,414.53417,414.53375,414.53333,414.53292,414.5325,414.53208,414.53167,414.53125,414.53083,414.53042;
+
+Schedule:Day:Hourly, 7f44e5b1-0ac2-4048-9dc4-19fb63bae680, AnyNumber,414.53,414.52958,414.52917,414.52875,414.52833,414.52792,414.5275,414.52708,414.52667,414.52625,414.52583,414.52542,414.525,414.52458,414.52417,414.52375,414.52333,414.52292,414.5225,414.52208,414.52167,414.52125,414.52083,414.52042;
+
+Schedule:Day:Hourly, 315e4ee9-438e-461e-b834-1894be013e52, AnyNumber,414.52,414.51958,414.51917,414.51875,414.51833,414.51792,414.5175,414.51708,414.51667,414.51625,414.51583,414.51542,414.515,414.51458,414.51417,414.51375,414.51333,414.51292,414.5125,414.51208,414.51167,414.51125,414.51083,414.51042;
+
+Schedule:Day:Hourly, 7395410b-4ee6-42d8-8881-de450ee5a3e2, AnyNumber,414.51,414.50958,414.50917,414.50875,414.50833,414.50792,414.5075,414.50708,414.50667,414.50625,414.50583,414.50542,414.505,414.50458,414.50417,414.50375,414.50333,414.50292,414.5025,414.50208,414.50167,414.50125,414.50083,414.50042;
+
+Schedule:Day:Hourly, c1b07c1a-3687-47f2-bae9-56986c6aeb60, AnyNumber,414.5,414.49958,414.49917,414.49875,414.49833,414.49792,414.4975,414.49708,414.49667,414.49625,414.49583,414.49542,414.495,414.49458,414.49417,414.49375,414.49333,414.49292,414.4925,414.49208,414.49167,414.49125,414.49083,414.49042;
+
+Schedule:Day:Hourly, 610ed20c-ae34-40c9-b63c-61394f0fb3c4, AnyNumber,414.49,414.48958,414.48917,414.48875,414.48833,414.48792,414.4875,414.48708,414.48667,414.48625,414.48583,414.48542,414.485,414.48458,414.48417,414.48375,414.48333,414.48292,414.4825,414.48208,414.48167,414.48125,414.48083,414.48042;
+
+Schedule:Day:Hourly, ef4e0747-d1ca-4b8c-9717-d4d6c622ec9a, AnyNumber,414.48,414.47958,414.47917,414.47875,414.47833,414.47792,414.4775,414.47708,414.47667,414.47625,414.47583,414.47542,414.475,414.47458,414.47417,414.47375,414.47333,414.47292,414.4725,414.47208,414.47167,414.47125,414.47083,414.47042;
+
+Schedule:Day:Hourly, 2a48234c-0ab1-4f0b-833b-8b09c3118866, AnyNumber,414.47,414.46917,414.46833,414.4675,414.46667,414.46583,414.465,414.46417,414.46333,414.4625,414.46167,414.46083,414.46,414.45917,414.45833,414.4575,414.45667,414.45583,414.455,414.45417,414.45333,414.4525,414.45167,414.45083;
+
+Schedule:Day:Hourly, ea65364b-cc96-4992-96f3-fdb338879930, AnyNumber,414.45,414.44958,414.44917,414.44875,414.44833,414.44792,414.4475,414.44708,414.44667,414.44625,414.44583,414.44542,414.445,414.44458,414.44417,414.44375,414.44333,414.44292,414.4425,414.44208,414.44167,414.44125,414.44083,414.44042;
+
+Schedule:Day:Hourly, b59651f3-23c8-4e6f-a133-4864b195174f, AnyNumber,414.44,414.43917,414.43833,414.4375,414.43667,414.43583,414.435,414.43417,414.43333,414.4325,414.43167,414.43083,414.43,414.42917,414.42833,414.4275,414.42667,414.42583,414.425,414.42417,414.42333,414.4225,414.42167,414.42083;
+
+Schedule:Day:Hourly, 3cc95a45-507f-4183-ba70-9f5396d5e341, AnyNumber,414.42,414.41958,414.41917,414.41875,414.41833,414.41792,414.4175,414.41708,414.41667,414.41625,414.41583,414.41542,414.415,414.41458,414.41417,414.41375,414.41333,414.41292,414.4125,414.41208,414.41167,414.41125,414.41083,414.41042;
+
+Schedule:Day:Hourly, 54db9529-54e2-4427-8694-61011687cf64, AnyNumber,414.41,414.40917,414.40833,414.4075,414.40667,414.40583,414.405,414.40417,414.40333,414.4025,414.40167,414.40083,414.4,414.39917,414.39833,414.3975,414.39667,414.39583,414.395,414.39417,414.39333,414.3925,414.39167,414.39083;
+
+Schedule:Day:Hourly, 0c71aea0-8c61-4a5d-b548-eab2bea2d89f, AnyNumber,414.39,414.38917,414.38833,414.3875,414.38667,414.38583,414.385,414.38417,414.38333,414.3825,414.38167,414.38083,414.38,414.37917,414.37833,414.3775,414.37667,414.37583,414.375,414.37417,414.37333,414.3725,414.37167,414.37083;
+
+Schedule:Day:Hourly, 212beab9-592e-40d9-98f2-0b66865a5f71, AnyNumber,414.37,414.36917,414.36833,414.3675,414.36667,414.36583,414.365,414.36417,414.36333,414.3625,414.36167,414.36083,414.36,414.35917,414.35833,414.3575,414.35667,414.35583,414.355,414.35417,414.35333,414.3525,414.35167,414.35083;
+
+Schedule:Day:Hourly, 1eff017f-7155-42be-add6-fb7a2838a711, AnyNumber,414.35,414.34917,414.34833,414.3475,414.34667,414.34583,414.345,414.34417,414.34333,414.3425,414.34167,414.34083,414.34,414.33917,414.33833,414.3375,414.33667,414.33583,414.335,414.33417,414.33333,414.3325,414.33167,414.33083;
+
+Schedule:Day:Hourly, dd27cf62-3aa7-4e5e-8268-5a3352f070c5, AnyNumber,414.33,414.32875,414.3275,414.32625,414.325,414.32375,414.3225,414.32125,414.32,414.31875,414.3175,414.31625,414.315,414.31375,414.3125,414.31125,414.31,414.30875,414.3075,414.30625,414.305,414.30375,414.3025,414.30125;
+
+Schedule:Day:Hourly, f393087c-a5f9-42d8-9c01-233af56e21fe, AnyNumber,414.3,414.29917,414.29833,414.2975,414.29667,414.29583,414.295,414.29417,414.29333,414.2925,414.29167,414.29083,414.29,414.28917,414.28833,414.2875,414.28667,414.28583,414.285,414.28417,414.28333,414.2825,414.28167,414.28083;
+
+Schedule:Day:Hourly, 8c35348e-0077-4d9a-8a21-fa81244e2234, AnyNumber,414.28,414.27875,414.2775,414.27625,414.275,414.27375,414.2725,414.27125,414.27,414.26875,414.2675,414.26625,414.265,414.26375,414.2625,414.26125,414.26,414.25875,414.2575,414.25625,414.255,414.25375,414.2525,414.25125;
+
+Schedule:Day:Hourly, 26031cb8-7762-457f-b3d8-87def4575cec, AnyNumber,414.25,414.24875,414.2475,414.24625,414.245,414.24375,414.2425,414.24125,414.24,414.23875,414.2375,414.23625,414.235,414.23375,414.2325,414.23125,414.23,414.22875,414.2275,414.22625,414.225,414.22375,414.2225,414.22125;
+
+Schedule:Day:Hourly, 0fef2235-75be-4612-99e3-0bbb2a138ac7, AnyNumber,414.22,414.21875,414.2175,414.21625,414.215,414.21375,414.2125,414.21125,414.21,414.20875,414.2075,414.20625,414.205,414.20375,414.2025,414.20125,414.2,414.19875,414.1975,414.19625,414.195,414.19375,414.1925,414.19125;
+
+Schedule:Day:Hourly, b992e7ba-093a-436c-87f1-a51c0740edf7, AnyNumber,414.19,414.18875,414.1875,414.18625,414.185,414.18375,414.1825,414.18125,414.18,414.17875,414.1775,414.17625,414.175,414.17375,414.1725,414.17125,414.17,414.16875,414.1675,414.16625,414.165,414.16375,414.1625,414.16125;
+
+Schedule:Day:Hourly, cdd3bfb1-6c57-445e-8381-b1d4fc85c771, AnyNumber,414.16,414.15875,414.1575,414.15625,414.155,414.15375,414.1525,414.15125,414.15,414.14875,414.1475,414.14625,414.145,414.14375,414.1425,414.14125,414.14,414.13875,414.1375,414.13625,414.135,414.13375,414.1325,414.13125;
+
+Schedule:Day:Hourly, d10cb2d5-9dbb-45ff-9a0c-cac4c953777a, AnyNumber,414.13,414.12833,414.12667,414.125,414.12333,414.12167,414.12,414.11833,414.11667,414.115,414.11333,414.11167,414.11,414.10833,414.10667,414.105,414.10333,414.10167,414.1,414.09833,414.09667,414.095,414.09333,414.09167;
+
+Schedule:Day:Hourly, 838587ce-8403-4c22-bf35-658d87487644, AnyNumber,414.09,414.08875,414.0875,414.08625,414.085,414.08375,414.0825,414.08125,414.08,414.07875,414.0775,414.07625,414.075,414.07375,414.0725,414.07125,414.07,414.06875,414.0675,414.06625,414.065,414.06375,414.0625,414.06125;
+
+Schedule:Day:Hourly, ab4dfde9-f061-4c61-b715-b40375c98a92, AnyNumber,414.06,414.05833,414.05667,414.055,414.05333,414.05167,414.05,414.04833,414.04667,414.045,414.04333,414.04167,414.04,414.03833,414.03667,414.035,414.03333,414.03167,414.03,414.02833,414.02667,414.025,414.02333,414.02167;
+
+Schedule:Day:Hourly, 65280d27-b495-4df2-ac80-3c9ba0e6c1eb, AnyNumber,414.02,414.01833,414.01667,414.015,414.01333,414.01167,414.01,414.00833,414.00667,414.005,414.00333,414.00167,414,413.99833,413.99667,413.995,413.99333,413.99167,413.99,413.98833,413.98667,413.985,413.98333,413.98167;
+
+Schedule:Day:Hourly, 22da210f-fcf5-4e92-908c-70098fb6af41, AnyNumber,413.98,413.97833,413.97667,413.975,413.97333,413.97167,413.97,413.96833,413.96667,413.965,413.96333,413.96167,413.96,413.95833,413.95667,413.955,413.95333,413.95167,413.95,413.94833,413.94667,413.945,413.94333,413.94167;
+
+Schedule:Day:Hourly, e561181e-9004-4e12-8fe9-3b0d14e1507f, AnyNumber,413.94,413.93792,413.93583,413.93375,413.93167,413.92958,413.9275,413.92542,413.92333,413.92125,413.91917,413.91708,413.915,413.91292,413.91083,413.90875,413.90667,413.90458,413.9025,413.90042,413.89833,413.89625,413.89417,413.89208;
+
+Schedule:Day:Hourly, 64ce2553-9707-4b1c-bab9-5e0be038822e, AnyNumber,413.89,413.88833,413.88667,413.885,413.88333,413.88167,413.88,413.87833,413.87667,413.875,413.87333,413.87167,413.87,413.86833,413.86667,413.865,413.86333,413.86167,413.86,413.85833,413.85667,413.855,413.85333,413.85167;
+
+Schedule:Day:Hourly, 937692a5-9370-4982-9678-cb5b34287285, AnyNumber,413.85,413.84792,413.84583,413.84375,413.84167,413.83958,413.8375,413.83542,413.83333,413.83125,413.82917,413.82708,413.825,413.82292,413.82083,413.81875,413.81667,413.81458,413.8125,413.81042,413.80833,413.80625,413.80417,413.80208;
+
+Schedule:Day:Hourly, 9b191bb9-bfa8-4848-8577-ac0859256bf9, AnyNumber,413.8,413.79792,413.79583,413.79375,413.79167,413.78958,413.7875,413.78542,413.78333,413.78125,413.77917,413.77708,413.775,413.77292,413.77083,413.76875,413.76667,413.76458,413.7625,413.76042,413.75833,413.75625,413.75417,413.75208;
+
+Schedule:Day:Hourly, 30d0cbe8-5c10-479f-9970-fd9d37cd495e, AnyNumber,413.75,413.74792,413.74583,413.74375,413.74167,413.73958,413.7375,413.73542,413.73333,413.73125,413.72917,413.72708,413.725,413.72292,413.72083,413.71875,413.71667,413.71458,413.7125,413.71042,413.70833,413.70625,413.70417,413.70208;
+
+Schedule:Day:Hourly, 17374856-15a3-43e3-8b27-4cedca09ea03, AnyNumber,413.7,413.69792,413.69583,413.69375,413.69167,413.68958,413.6875,413.68542,413.68333,413.68125,413.67917,413.67708,413.675,413.67292,413.67083,413.66875,413.66667,413.66458,413.6625,413.66042,413.65833,413.65625,413.65417,413.65208;
+
+Schedule:Day:Hourly, 1f3d03ea-22e3-47c8-8a82-5171fe01b922, AnyNumber,413.65,413.6475,413.645,413.6425,413.64,413.6375,413.635,413.6325,413.63,413.6275,413.625,413.6225,413.62,413.6175,413.615,413.6125,413.61,413.6075,413.605,413.6025,413.6,413.5975,413.595,413.5925;
+
+Schedule:Day:Hourly, 8db1f2a2-58f4-4a9d-b631-ad49fe12dea6, AnyNumber,413.59,413.58792,413.58583,413.58375,413.58167,413.57958,413.5775,413.57542,413.57333,413.57125,413.56917,413.56708,413.565,413.56292,413.56083,413.55875,413.55667,413.55458,413.5525,413.55042,413.54833,413.54625,413.54417,413.54208;
+
+Schedule:Day:Hourly, 3e666271-5383-4d86-a9e2-b7c660011611, AnyNumber,413.54,413.5375,413.535,413.5325,413.53,413.5275,413.525,413.5225,413.52,413.5175,413.515,413.5125,413.51,413.5075,413.505,413.5025,413.5,413.4975,413.495,413.4925,413.49,413.4875,413.485,413.4825;
+
+Schedule:Day:Hourly, ebd955c1-90b4-41ae-b4d7-2fc9908ce08e, AnyNumber,413.48,413.4775,413.475,413.4725,413.47,413.4675,413.465,413.4625,413.46,413.4575,413.455,413.4525,413.45,413.4475,413.445,413.4425,413.44,413.4375,413.435,413.4325,413.43,413.4275,413.425,413.4225;
+
+Schedule:Day:Hourly, 76c04d88-0075-4a36-a3d5-4429061d2741, AnyNumber,413.42,413.4175,413.415,413.4125,413.41,413.4075,413.405,413.4025,413.4,413.3975,413.395,413.3925,413.39,413.3875,413.385,413.3825,413.38,413.3775,413.375,413.3725,413.37,413.3675,413.365,413.3625;
+
+Schedule:Day:Hourly, b9dbe302-c374-4915-9caa-b5645312ee76, AnyNumber,413.36,413.35708,413.35417,413.35125,413.34833,413.34542,413.3425,413.33958,413.33667,413.33375,413.33083,413.32792,413.325,413.32208,413.31917,413.31625,413.31333,413.31042,413.3075,413.30458,413.30167,413.29875,413.29583,413.29292;
+
+Schedule:Day:Hourly, 105d9a0d-2f24-4d93-b5f5-25775c49edee, AnyNumber,413.29,413.2875,413.285,413.2825,413.28,413.2775,413.275,413.2725,413.27,413.2675,413.265,413.2625,413.26,413.2575,413.255,413.2525,413.25,413.2475,413.245,413.2425,413.24,413.2375,413.235,413.2325;
+
+Schedule:Day:Hourly, d108ed7a-9f1c-421f-9cbb-43363c0db990, AnyNumber,413.23,413.22708,413.22417,413.22125,413.21833,413.21542,413.2125,413.20958,413.20667,413.20375,413.20083,413.19792,413.195,413.19208,413.18917,413.18625,413.18333,413.18042,413.1775,413.17458,413.17167,413.16875,413.16583,413.16292;
+
+Schedule:Day:Hourly, 83a225f8-62ad-4ce0-909f-246c69d7b443, AnyNumber,413.16,413.15708,413.15417,413.15125,413.14833,413.14542,413.1425,413.13958,413.13667,413.13375,413.13083,413.12792,413.125,413.12208,413.11917,413.11625,413.11333,413.11042,413.1075,413.10458,413.10167,413.09875,413.09583,413.09292;
+
+Schedule:Day:Hourly, 04ce1548-f38f-4a43-bae5-a5c0d34b6e60, AnyNumber,413.09,413.08708,413.08417,413.08125,413.07833,413.07542,413.0725,413.06958,413.06667,413.06375,413.06083,413.05792,413.055,413.05208,413.04917,413.04625,413.04333,413.04042,413.0375,413.03458,413.03167,413.02875,413.02583,413.02292;
+
+Schedule:Day:Hourly, c8639d04-fc57-4745-94be-df7b39469c28, AnyNumber,413.02,413.01708,413.01417,413.01125,413.00833,413.00542,413.0025,412.99958,412.99667,412.99375,412.99083,412.98792,412.985,412.98208,412.97917,412.97625,412.97333,412.97042,412.9675,412.96458,412.96167,412.95875,412.95583,412.95292;
+
+Schedule:Day:Hourly, 5af398e5-6a9c-409a-b246-a66723925977, AnyNumber,412.95,412.94708,412.94417,412.94125,412.93833,412.93542,412.9325,412.92958,412.92667,412.92375,412.92083,412.91792,412.915,412.91208,412.90917,412.90625,412.90333,412.90042,412.8975,412.89458,412.89167,412.88875,412.88583,412.88292;
+
+Schedule:Day:Hourly, baee118f-46bb-4ff4-aa2d-e6a54d852e91, AnyNumber,412.88,412.87667,412.87333,412.87,412.86667,412.86333,412.86,412.85667,412.85333,412.85,412.84667,412.84333,412.84,412.83667,412.83333,412.83,412.82667,412.82333,412.82,412.81667,412.81333,412.81,412.80667,412.80333;
+
+Schedule:Day:Hourly, b8330f1d-1abf-4d54-a23f-c1077abfb2d0, AnyNumber,412.8,412.79667,412.79333,412.79,412.78667,412.78333,412.78,412.77667,412.77333,412.77,412.76667,412.76333,412.76,412.75667,412.75333,412.75,412.74667,412.74333,412.74,412.73667,412.73333,412.73,412.72667,412.72333;
+
+Schedule:Day:Hourly, 4699f758-7ada-4cdf-8d5e-a618380b111b, AnyNumber,412.72,412.71708,412.71417,412.71125,412.70833,412.70542,412.7025,412.69958,412.69667,412.69375,412.69083,412.68792,412.685,412.68208,412.67917,412.67625,412.67333,412.67042,412.6675,412.66458,412.66167,412.65875,412.65583,412.65292;
+
+Schedule:Day:Hourly, bb21f3cc-465d-489b-84a6-80476547bb8b, AnyNumber,412.65,412.64667,412.64333,412.64,412.63667,412.63333,412.63,412.62667,412.62333,412.62,412.61667,412.61333,412.61,412.60667,412.60333,412.6,412.59667,412.59333,412.59,412.58667,412.58333,412.58,412.57667,412.57333;
+
+Schedule:Day:Hourly, 9ee8cca3-013a-4b19-85b2-f206c5456cf3, AnyNumber,412.57,412.56667,412.56333,412.56,412.55667,412.55333,412.55,412.54667,412.54333,412.54,412.53667,412.53333,412.53,412.52667,412.52333,412.52,412.51667,412.51333,412.51,412.50667,412.50333,412.5,412.49667,412.49333;
+
+Schedule:Day:Hourly, 46f214b3-d086-447d-86b8-7fb111914a3a, AnyNumber,412.49,412.48667,412.48333,412.48,412.47667,412.47333,412.47,412.46667,412.46333,412.46,412.45667,412.45333,412.45,412.44667,412.44333,412.44,412.43667,412.43333,412.43,412.42667,412.42333,412.42,412.41667,412.41333;
+
+Schedule:Day:Hourly, d2d2a364-4558-492e-9265-70e54a872388, AnyNumber,412.41,412.40625,412.4025,412.39875,412.395,412.39125,412.3875,412.38375,412.38,412.37625,412.3725,412.36875,412.365,412.36125,412.3575,412.35375,412.35,412.34625,412.3425,412.33875,412.335,412.33125,412.3275,412.32375;
+
+Schedule:Day:Hourly, 0127a66e-c6cb-4ccf-af2f-c5441c9eecc8, AnyNumber,412.32,412.31667,412.31333,412.31,412.30667,412.30333,412.3,412.29667,412.29333,412.29,412.28667,412.28333,412.28,412.27667,412.27333,412.27,412.26667,412.26333,412.26,412.25667,412.25333,412.25,412.24667,412.24333;
+
+Schedule:Day:Hourly, 043aaf07-d493-44fa-b3ed-f5b961067edb, AnyNumber,412.24,412.23625,412.2325,412.22875,412.225,412.22125,412.2175,412.21375,412.21,412.20625,412.2025,412.19875,412.195,412.19125,412.1875,412.18375,412.18,412.17625,412.1725,412.16875,412.165,412.16125,412.1575,412.15375;
+
+Schedule:Day:Hourly, 18f132f4-cb2f-46ef-8a11-4635e01e5c62, AnyNumber,412.15,412.14667,412.14333,412.14,412.13667,412.13333,412.13,412.12667,412.12333,412.12,412.11667,412.11333,412.11,412.10667,412.10333,412.1,412.09667,412.09333,412.09,412.08667,412.08333,412.08,412.07667,412.07333;
+
+Schedule:Day:Hourly, c4999c97-0db6-41ab-99a6-befd606d6d48, AnyNumber,412.07,412.06625,412.0625,412.05875,412.055,412.05125,412.0475,412.04375,412.04,412.03625,412.0325,412.02875,412.025,412.02125,412.0175,412.01375,412.01,412.00625,412.0025,411.99875,411.995,411.99125,411.9875,411.98375;
+
+Schedule:Day:Hourly, 345849b8-23a6-4856-b441-1d4be24afd7b, AnyNumber,411.98,411.97667,411.97333,411.97,411.96667,411.96333,411.96,411.95667,411.95333,411.95,411.94667,411.94333,411.94,411.93667,411.93333,411.93,411.92667,411.92333,411.92,411.91667,411.91333,411.91,411.90667,411.90333;
+
+Schedule:Day:Hourly, 0bdabe45-9a13-4b56-b551-eac39790aaaa, AnyNumber,411.9,411.89625,411.8925,411.88875,411.885,411.88125,411.8775,411.87375,411.87,411.86625,411.8625,411.85875,411.855,411.85125,411.8475,411.84375,411.84,411.83625,411.8325,411.82875,411.825,411.82125,411.8175,411.81375;
+
+Schedule:Day:Hourly, dce15409-3004-4ab4-ba10-52307d7c57b7, AnyNumber,411.81,411.80625,411.8025,411.79875,411.795,411.79125,411.7875,411.78375,411.78,411.77625,411.7725,411.76875,411.765,411.76125,411.7575,411.75375,411.75,411.74625,411.7425,411.73875,411.735,411.73125,411.7275,411.72375;
+
+Schedule:Day:Hourly, 093e2b05-68a6-4f15-acbc-26c7e6e1e069, AnyNumber,411.72,411.71625,411.7125,411.70875,411.705,411.70125,411.6975,411.69375,411.69,411.68625,411.6825,411.67875,411.675,411.67125,411.6675,411.66375,411.66,411.65625,411.6525,411.64875,411.645,411.64125,411.6375,411.63375;
+
+Schedule:Day:Hourly, ad6a0f14-f341-4dce-92d6-9144cd780ef3, AnyNumber,411.63,411.62667,411.62333,411.62,411.61667,411.61333,411.61,411.60667,411.60333,411.6,411.59667,411.59333,411.59,411.58667,411.58333,411.58,411.57667,411.57333,411.57,411.56667,411.56333,411.56,411.55667,411.55333;
+
+Schedule:Day:Hourly, b9aa69f2-85bc-44a1-b954-e0fbe161b65e, AnyNumber,411.55,411.54625,411.5425,411.53875,411.535,411.53125,411.5275,411.52375,411.52,411.51625,411.5125,411.50875,411.505,411.50125,411.4975,411.49375,411.49,411.48625,411.4825,411.47875,411.475,411.47125,411.4675,411.46375;
+
+Schedule:Day:Hourly, 5ac1abc5-d543-41e0-980c-80cb834ee20e, AnyNumber,411.46,411.45625,411.4525,411.44875,411.445,411.44125,411.4375,411.43375,411.43,411.42625,411.4225,411.41875,411.415,411.41125,411.4075,411.40375,411.4,411.39625,411.3925,411.38875,411.385,411.38125,411.3775,411.37375;
+
+Schedule:Day:Hourly, 76332f12-ce68-47f9-a429-da35ad5db154, AnyNumber,411.37,411.36625,411.3625,411.35875,411.355,411.35125,411.3475,411.34375,411.34,411.33625,411.3325,411.32875,411.325,411.32125,411.3175,411.31375,411.31,411.30625,411.3025,411.29875,411.295,411.29125,411.2875,411.28375;
+
+Schedule:Day:Hourly, 51b874da-b029-44d3-bc6d-8a31394cf13a, AnyNumber,411.28,411.27625,411.2725,411.26875,411.265,411.26125,411.2575,411.25375,411.25,411.24625,411.2425,411.23875,411.235,411.23125,411.2275,411.22375,411.22,411.21625,411.2125,411.20875,411.205,411.20125,411.1975,411.19375;
+
+Schedule:Day:Hourly, 02b9d441-7c96-4037-9fe2-7b7bec8e72a6, AnyNumber,411.19,411.18667,411.18333,411.18,411.17667,411.17333,411.17,411.16667,411.16333,411.16,411.15667,411.15333,411.15,411.14667,411.14333,411.14,411.13667,411.13333,411.13,411.12667,411.12333,411.12,411.11667,411.11333;
+
+Schedule:Day:Hourly, 13594a9e-9808-427b-aed0-6d51e25775b5, AnyNumber,411.11,411.10625,411.1025,411.09875,411.095,411.09125,411.0875,411.08375,411.08,411.07625,411.0725,411.06875,411.065,411.06125,411.0575,411.05375,411.05,411.04625,411.0425,411.03875,411.035,411.03125,411.0275,411.02375;
+
+Schedule:Day:Hourly, d3667c4b-3c05-4aec-9aac-6b82d481a271, AnyNumber,411.02,411.01625,411.0125,411.00875,411.005,411.00125,410.9975,410.99375,410.99,410.98625,410.9825,410.97875,410.975,410.97125,410.9675,410.96375,410.96,410.95625,410.9525,410.94875,410.945,410.94125,410.9375,410.93375;
+
+Schedule:Day:Hourly, 6c23a0cd-f61c-4af8-9aa2-270c978b3806, AnyNumber,410.93,410.92667,410.92333,410.92,410.91667,410.91333,410.91,410.90667,410.90333,410.9,410.89667,410.89333,410.89,410.88667,410.88333,410.88,410.87667,410.87333,410.87,410.86667,410.86333,410.86,410.85667,410.85333;
+
+Schedule:Day:Hourly, ed3fc0a8-3cb9-442f-8114-3294769e0dd5, AnyNumber,410.85,410.84625,410.8425,410.83875,410.835,410.83125,410.8275,410.82375,410.82,410.81625,410.8125,410.80875,410.805,410.80125,410.7975,410.79375,410.79,410.78625,410.7825,410.77875,410.775,410.77125,410.7675,410.76375;
+
+Schedule:Day:Hourly, ded9cba0-fb0f-4069-a286-20fff67aa2e1, AnyNumber,410.76,410.75667,410.75333,410.75,410.74667,410.74333,410.74,410.73667,410.73333,410.73,410.72667,410.72333,410.72,410.71667,410.71333,410.71,410.70667,410.70333,410.7,410.69667,410.69333,410.69,410.68667,410.68333;
+
+Schedule:Day:Hourly, a72bccfb-ae44-4f5b-b50f-c37f2bb3257e, AnyNumber,410.68,410.67667,410.67333,410.67,410.66667,410.66333,410.66,410.65667,410.65333,410.65,410.64667,410.64333,410.64,410.63667,410.63333,410.63,410.62667,410.62333,410.62,410.61667,410.61333,410.61,410.60667,410.60333;
+
+Schedule:Day:Hourly, 05d4b743-0f31-4bdb-904c-5d45f68ad29f, AnyNumber,410.6,410.59625,410.5925,410.58875,410.585,410.58125,410.5775,410.57375,410.57,410.56625,410.5625,410.55875,410.555,410.55125,410.5475,410.54375,410.54,410.53625,410.5325,410.52875,410.525,410.52125,410.5175,410.51375;
+
+Schedule:Day:Hourly, f5d2c1a8-27c9-4222-90aa-6621881bf851, AnyNumber,410.51,410.50667,410.50333,410.5,410.49667,410.49333,410.49,410.48667,410.48333,410.48,410.47667,410.47333,410.47,410.46667,410.46333,410.46,410.45667,410.45333,410.45,410.44667,410.44333,410.44,410.43667,410.43333;
+
+Schedule:Day:Hourly, c5b937e4-ffd6-46fe-8b1e-6a37026d562b, AnyNumber,410.43,410.42667,410.42333,410.42,410.41667,410.41333,410.41,410.40667,410.40333,410.4,410.39667,410.39333,410.39,410.38667,410.38333,410.38,410.37667,410.37333,410.37,410.36667,410.36333,410.36,410.35667,410.35333;
+
+Schedule:Day:Hourly, 5f07d91b-926c-420a-91f5-876198d021ab, AnyNumber,410.35,410.34708,410.34417,410.34125,410.33833,410.33542,410.3325,410.32958,410.32667,410.32375,410.32083,410.31792,410.315,410.31208,410.30917,410.30625,410.30333,410.30042,410.2975,410.29458,410.29167,410.28875,410.28583,410.28292;
+
+Schedule:Day:Hourly, b2d9855a-dc00-427f-9765-d0360304ca3f, AnyNumber,410.28,410.27667,410.27333,410.27,410.26667,410.26333,410.26,410.25667,410.25333,410.25,410.24667,410.24333,410.24,410.23667,410.23333,410.23,410.22667,410.22333,410.22,410.21667,410.21333,410.21,410.20667,410.20333;
+
+Schedule:Day:Hourly, 7c3877ef-3009-4095-b8b4-c71761068dcc, AnyNumber,410.2,410.19708,410.19417,410.19125,410.18833,410.18542,410.1825,410.17958,410.17667,410.17375,410.17083,410.16792,410.165,410.16208,410.15917,410.15625,410.15333,410.15042,410.1475,410.14458,410.14167,410.13875,410.13583,410.13292;
+
+Schedule:Day:Hourly, 4419b273-e9b3-4205-9a4c-ed9714297656, AnyNumber,410.13,410.12708,410.12417,410.12125,410.11833,410.11542,410.1125,410.10958,410.10667,410.10375,410.10083,410.09792,410.095,410.09208,410.08917,410.08625,410.08333,410.08042,410.0775,410.07458,410.07167,410.06875,410.06583,410.06292;
+
+Schedule:Day:Hourly, 2ad7814e-6276-4991-ada9-6d08f24e97f5, AnyNumber,410.06,410.05667,410.05333,410.05,410.04667,410.04333,410.04,410.03667,410.03333,410.03,410.02667,410.02333,410.02,410.01667,410.01333,410.01,410.00667,410.00333,410,409.99667,409.99333,409.99,409.98667,409.98333;
+
+Schedule:Day:Hourly, cb731357-cce5-4368-ae10-8e8fc5bb1757, AnyNumber,409.98,409.9775,409.975,409.9725,409.97,409.9675,409.965,409.9625,409.96,409.9575,409.955,409.9525,409.95,409.9475,409.945,409.9425,409.94,409.9375,409.935,409.9325,409.93,409.9275,409.925,409.9225;
+
+Schedule:Day:Hourly, 107293de-6b5c-48bf-859d-5572d4b8595e, AnyNumber,409.92,409.91708,409.91417,409.91125,409.90833,409.90542,409.9025,409.89958,409.89667,409.89375,409.89083,409.88792,409.885,409.88208,409.87917,409.87625,409.87333,409.87042,409.8675,409.86458,409.86167,409.85875,409.85583,409.85292;
+
+Schedule:Day:Hourly, 31dc0983-0550-4955-816a-8d3dfb7946d7, AnyNumber,409.85,409.8475,409.845,409.8425,409.84,409.8375,409.835,409.8325,409.83,409.8275,409.825,409.8225,409.82,409.8175,409.815,409.8125,409.81,409.8075,409.805,409.8025,409.8,409.7975,409.795,409.7925;
+
+Schedule:Day:Hourly, b2c62ee3-bdab-425a-a68f-efa6a031d601, AnyNumber,409.79,409.7875,409.785,409.7825,409.78,409.7775,409.775,409.7725,409.77,409.7675,409.765,409.7625,409.76,409.7575,409.755,409.7525,409.75,409.7475,409.745,409.7425,409.74,409.7375,409.735,409.7325;
+
+Schedule:Day:Hourly, fef22d83-e2a3-4903-87e5-f45e766a0357, AnyNumber,409.73,409.7275,409.725,409.7225,409.72,409.7175,409.715,409.7125,409.71,409.7075,409.705,409.7025,409.7,409.6975,409.695,409.6925,409.69,409.6875,409.685,409.6825,409.68,409.6775,409.675,409.6725;
+
+Schedule:Day:Hourly, 23da4141-749b-4bde-bae4-ac28df6bf6bf, AnyNumber,409.67,409.6675,409.665,409.6625,409.66,409.6575,409.655,409.6525,409.65,409.6475,409.645,409.6425,409.64,409.6375,409.635,409.6325,409.63,409.6275,409.625,409.6225,409.62,409.6175,409.615,409.6125;
+
+Schedule:Day:Hourly, 62043c01-2bde-49ae-851f-ec3689071444, AnyNumber,409.61,409.60792,409.60583,409.60375,409.60167,409.59958,409.5975,409.59542,409.59333,409.59125,409.58917,409.58708,409.585,409.58292,409.58083,409.57875,409.57667,409.57458,409.5725,409.57042,409.56833,409.56625,409.56417,409.56208;
+
+Schedule:Day:Hourly, 734d5a63-9ad8-4fd1-b14d-161f8f38e473, AnyNumber,409.56,409.5575,409.555,409.5525,409.55,409.5475,409.545,409.5425,409.54,409.5375,409.535,409.5325,409.53,409.5275,409.525,409.5225,409.52,409.5175,409.515,409.5125,409.51,409.5075,409.505,409.5025;
+
+Schedule:Day:Hourly, 4ec59b03-70b3-4f0b-a5cf-33be2f96b709, AnyNumber,409.5,409.49833,409.49667,409.495,409.49333,409.49167,409.49,409.48833,409.48667,409.485,409.48333,409.48167,409.48,409.47833,409.47667,409.475,409.47333,409.47167,409.47,409.46833,409.46667,409.465,409.46333,409.46167;
+
+Schedule:Day:Hourly, 258672fc-bb26-43f7-9129-83453a01e000, AnyNumber,409.46,409.45792,409.45583,409.45375,409.45167,409.44958,409.4475,409.44542,409.44333,409.44125,409.43917,409.43708,409.435,409.43292,409.43083,409.42875,409.42667,409.42458,409.4225,409.42042,409.41833,409.41625,409.41417,409.41208;
+
+Schedule:Day:Hourly, b94ac795-6845-427a-9758-2949805c1a73, AnyNumber,409.41,409.40833,409.40667,409.405,409.40333,409.40167,409.4,409.39833,409.39667,409.395,409.39333,409.39167,409.39,409.38833,409.38667,409.385,409.38333,409.38167,409.38,409.37833,409.37667,409.375,409.37333,409.37167;
+
+Schedule:Day:Hourly, a188e761-fd5d-4de1-a6ae-4fdb9131c2b5, AnyNumber,409.37,409.36833,409.36667,409.365,409.36333,409.36167,409.36,409.35833,409.35667,409.355,409.35333,409.35167,409.35,409.34833,409.34667,409.345,409.34333,409.34167,409.34,409.33833,409.33667,409.335,409.33333,409.33167;
+
+Schedule:Day:Hourly, c1254279-fd9c-4bef-9486-20bc11008fbd, AnyNumber,409.33,409.32833,409.32667,409.325,409.32333,409.32167,409.32,409.31833,409.31667,409.315,409.31333,409.31167,409.31,409.30833,409.30667,409.305,409.30333,409.30167,409.3,409.29833,409.29667,409.295,409.29333,409.29167;
+
+Schedule:Day:Hourly, 77b59262-e82f-4322-ab96-01a775b70148, AnyNumber,409.29,409.28833,409.28667,409.285,409.28333,409.28167,409.28,409.27833,409.27667,409.275,409.27333,409.27167,409.27,409.26833,409.26667,409.265,409.26333,409.26167,409.26,409.25833,409.25667,409.255,409.25333,409.25167;
+
+Schedule:Day:Hourly, 19e11b08-3213-43c4-9005-e4f402ec7cb4, AnyNumber,409.25,409.24875,409.2475,409.24625,409.245,409.24375,409.2425,409.24125,409.24,409.23875,409.2375,409.23625,409.235,409.23375,409.2325,409.23125,409.23,409.22875,409.2275,409.22625,409.225,409.22375,409.2225,409.22125;
+
+Schedule:Day:Hourly, 867f4e86-cba2-41b0-9a25-bee12976e7a5, AnyNumber,409.22,409.21917,409.21833,409.2175,409.21667,409.21583,409.215,409.21417,409.21333,409.2125,409.21167,409.21083,409.21,409.20917,409.20833,409.2075,409.20667,409.20583,409.205,409.20417,409.20333,409.2025,409.20167,409.20083;
+
+Schedule:Day:Hourly, 53a3ec63-3c4a-40d1-8d6c-6230180efa43, AnyNumber,409.2,409.19875,409.1975,409.19625,409.195,409.19375,409.1925,409.19125,409.19,409.18875,409.1875,409.18625,409.185,409.18375,409.1825,409.18125,409.18,409.17875,409.1775,409.17625,409.175,409.17375,409.1725,409.17125;
+
+Schedule:Day:Hourly, 3d3fd92d-c3ec-40ce-af23-fa18e4c40cdb, AnyNumber,409.17,409.16917,409.16833,409.1675,409.16667,409.16583,409.165,409.16417,409.16333,409.1625,409.16167,409.16083,409.16,409.15917,409.15833,409.1575,409.15667,409.15583,409.155,409.15417,409.15333,409.1525,409.15167,409.15083;
+
+Schedule:Day:Hourly, a7bc852c-076e-4fe2-b148-cff65190f425, AnyNumber,409.15,409.14917,409.14833,409.1475,409.14667,409.14583,409.145,409.14417,409.14333,409.1425,409.14167,409.14083,409.14,409.13917,409.13833,409.1375,409.13667,409.13583,409.135,409.13417,409.13333,409.1325,409.13167,409.13083;
+
+Schedule:Day:Hourly, a97a64a6-6fec-4611-88c1-69501485f22b, AnyNumber,409.13,409.12917,409.12833,409.1275,409.12667,409.12583,409.125,409.12417,409.12333,409.1225,409.12167,409.12083,409.12,409.11917,409.11833,409.1175,409.11667,409.11583,409.115,409.11417,409.11333,409.1125,409.11167,409.11083;
+
+Schedule:Day:Hourly, a8ba1a6f-01fc-486f-9821-116ae6b68d3e, AnyNumber,409.11,409.10958,409.10917,409.10875,409.10833,409.10792,409.1075,409.10708,409.10667,409.10625,409.10583,409.10542,409.105,409.10458,409.10417,409.10375,409.10333,409.10292,409.1025,409.10208,409.10167,409.10125,409.10083,409.10042;
+
+Schedule:Day:Hourly, 6d49eb90-01e8-4094-a937-bf8ba0842ec2, AnyNumber,409.1,409.09958,409.09917,409.09875,409.09833,409.09792,409.0975,409.09708,409.09667,409.09625,409.09583,409.09542,409.095,409.09458,409.09417,409.09375,409.09333,409.09292,409.0925,409.09208,409.09167,409.09125,409.09083,409.09042;
+
+Schedule:Day:Hourly, 4fc8d0e0-67b2-4a17-aa70-f755dd86a647, AnyNumber,409.09,409.08958,409.08917,409.08875,409.08833,409.08792,409.0875,409.08708,409.08667,409.08625,409.08583,409.08542,409.085,409.08458,409.08417,409.08375,409.08333,409.08292,409.0825,409.08208,409.08167,409.08125,409.08083,409.08042;
+
+Schedule:Day:Hourly, 1b7c3cc5-7aee-472c-9fd8-1a205878bd73, AnyNumber,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08,409.08;
+
+Schedule:Day:Hourly, a50e0fbf-c840-4b18-bb0a-f0d9cfce2377, AnyNumber,409.08,409.08042,409.08083,409.08125,409.08167,409.08208,409.0825,409.08292,409.08333,409.08375,409.08417,409.08458,409.085,409.08542,409.08583,409.08625,409.08667,409.08708,409.0875,409.08792,409.08833,409.08875,409.08917,409.08958;
+
+Schedule:Day:Hourly, 7e958042-2aa2-40fe-978e-3531be6af3a9, AnyNumber,409.09,409.09042,409.09083,409.09125,409.09167,409.09208,409.0925,409.09292,409.09333,409.09375,409.09417,409.09458,409.095,409.09542,409.09583,409.09625,409.09667,409.09708,409.0975,409.09792,409.09833,409.09875,409.09917,409.09958;
+
+Schedule:Day:Hourly, d9f550f8-5b12-4c3d-9b1b-27fd8ab2c8e7, AnyNumber,409.1,409.10042,409.10083,409.10125,409.10167,409.10208,409.1025,409.10292,409.10333,409.10375,409.10417,409.10458,409.105,409.10542,409.10583,409.10625,409.10667,409.10708,409.1075,409.10792,409.10833,409.10875,409.10917,409.10958;
+
+Schedule:Day:Hourly, 77ec03af-a9d3-4f4b-9fd5-89d40f2a04c7, AnyNumber,409.11,409.11042,409.11083,409.11125,409.11167,409.11208,409.1125,409.11292,409.11333,409.11375,409.11417,409.11458,409.115,409.11542,409.11583,409.11625,409.11667,409.11708,409.1175,409.11792,409.11833,409.11875,409.11917,409.11958;
+
+Schedule:Day:Hourly, 62fec2fc-051b-47ab-ba97-4faaa72279a2, AnyNumber,409.12,409.12083,409.12167,409.1225,409.12333,409.12417,409.125,409.12583,409.12667,409.1275,409.12833,409.12917,409.13,409.13083,409.13167,409.1325,409.13333,409.13417,409.135,409.13583,409.13667,409.1375,409.13833,409.13917;
+
+Schedule:Day:Hourly, a7177e96-92be-4a97-bdfa-0135c6ceae3b, AnyNumber,409.14,409.14083,409.14167,409.1425,409.14333,409.14417,409.145,409.14583,409.14667,409.1475,409.14833,409.14917,409.15,409.15083,409.15167,409.1525,409.15333,409.15417,409.155,409.15583,409.15667,409.1575,409.15833,409.15917;
+
+Schedule:Day:Hourly, dfecf52f-049a-41f4-97ab-006b15bd220e, AnyNumber,409.16,409.16125,409.1625,409.16375,409.165,409.16625,409.1675,409.16875,409.17,409.17125,409.1725,409.17375,409.175,409.17625,409.1775,409.17875,409.18,409.18125,409.1825,409.18375,409.185,409.18625,409.1875,409.18875;
+
+Schedule:Day:Hourly, beafa670-33c1-4090-bf21-921769d74586, AnyNumber,409.19,409.19083,409.19167,409.1925,409.19333,409.19417,409.195,409.19583,409.19667,409.1975,409.19833,409.19917,409.2,409.20083,409.20167,409.2025,409.20333,409.20417,409.205,409.20583,409.20667,409.2075,409.20833,409.20917;
+
+Schedule:Day:Hourly, 096ac2eb-7f96-40c0-a490-1f684f2226b8, AnyNumber,409.21,409.21125,409.2125,409.21375,409.215,409.21625,409.2175,409.21875,409.22,409.22125,409.2225,409.22375,409.225,409.22625,409.2275,409.22875,409.23,409.23125,409.2325,409.23375,409.235,409.23625,409.2375,409.23875;
+
+Schedule:Day:Hourly, 2aca75ea-5d36-426b-954d-deccd7190f16, AnyNumber,409.24,409.24125,409.2425,409.24375,409.245,409.24625,409.2475,409.24875,409.25,409.25125,409.2525,409.25375,409.255,409.25625,409.2575,409.25875,409.26,409.26125,409.2625,409.26375,409.265,409.26625,409.2675,409.26875;
+
+Schedule:Day:Hourly, ebb3bd8e-642d-4bee-a695-d6b3568058f4, AnyNumber,409.27,409.27167,409.27333,409.275,409.27667,409.27833,409.28,409.28167,409.28333,409.285,409.28667,409.28833,409.29,409.29167,409.29333,409.295,409.29667,409.29833,409.3,409.30167,409.30333,409.305,409.30667,409.30833;
+
+Schedule:Day:Hourly, 5feb4699-56af-4e1c-b410-2cd72cfec4c7, AnyNumber,409.31,409.31167,409.31333,409.315,409.31667,409.31833,409.32,409.32167,409.32333,409.325,409.32667,409.32833,409.33,409.33167,409.33333,409.335,409.33667,409.33833,409.34,409.34167,409.34333,409.345,409.34667,409.34833;
+
+Schedule:Day:Hourly, dcf36f76-dd28-45e9-b078-a479d5e6ee6d, AnyNumber,409.35,409.35167,409.35333,409.355,409.35667,409.35833,409.36,409.36167,409.36333,409.365,409.36667,409.36833,409.37,409.37167,409.37333,409.375,409.37667,409.37833,409.38,409.38167,409.38333,409.385,409.38667,409.38833;
+
+Schedule:Day:Hourly, 29b8214e-de56-4ee7-b694-cf2807bb40f7, AnyNumber,409.39,409.39167,409.39333,409.395,409.39667,409.39833,409.4,409.40167,409.40333,409.405,409.40667,409.40833,409.41,409.41167,409.41333,409.415,409.41667,409.41833,409.42,409.42167,409.42333,409.425,409.42667,409.42833;
+
+Schedule:Day:Hourly, 1437f816-2580-4d91-8121-5a3ba091f693, AnyNumber,409.43,409.43167,409.43333,409.435,409.43667,409.43833,409.44,409.44167,409.44333,409.445,409.44667,409.44833,409.45,409.45167,409.45333,409.455,409.45667,409.45833,409.46,409.46167,409.46333,409.465,409.46667,409.46833;
+
+Schedule:Day:Hourly, e0bf39da-2706-4b5c-b8b4-7c73b78c4c5c, AnyNumber,409.47,409.47208,409.47417,409.47625,409.47833,409.48042,409.4825,409.48458,409.48667,409.48875,409.49083,409.49292,409.495,409.49708,409.49917,409.50125,409.50333,409.50542,409.5075,409.50958,409.51167,409.51375,409.51583,409.51792;
+
+Schedule:Day:Hourly, 49569e05-45ab-4693-ae5b-065122550d22, AnyNumber,409.52,409.52208,409.52417,409.52625,409.52833,409.53042,409.5325,409.53458,409.53667,409.53875,409.54083,409.54292,409.545,409.54708,409.54917,409.55125,409.55333,409.55542,409.5575,409.55958,409.56167,409.56375,409.56583,409.56792;
+
+Schedule:Day:Hourly, 8e80fda7-6ab3-4baf-9b5c-5a75ec426a00, AnyNumber,409.57,409.57208,409.57417,409.57625,409.57833,409.58042,409.5825,409.58458,409.58667,409.58875,409.59083,409.59292,409.595,409.59708,409.59917,409.60125,409.60333,409.60542,409.6075,409.60958,409.61167,409.61375,409.61583,409.61792;
+
+Schedule:Day:Hourly, 5486dc08-4238-4b39-b4bc-89ab09711aee, AnyNumber,409.62,409.62208,409.62417,409.62625,409.62833,409.63042,409.6325,409.63458,409.63667,409.63875,409.64083,409.64292,409.645,409.64708,409.64917,409.65125,409.65333,409.65542,409.6575,409.65958,409.66167,409.66375,409.66583,409.66792;
+
+Schedule:Day:Hourly, be42cbba-2d47-4ca8-bbba-92481afa5f46, AnyNumber,409.67,409.6725,409.675,409.6775,409.68,409.6825,409.685,409.6875,409.69,409.6925,409.695,409.6975,409.7,409.7025,409.705,409.7075,409.71,409.7125,409.715,409.7175,409.72,409.7225,409.725,409.7275;
+
+Schedule:Day:Hourly, b22c28fc-ebc8-4b61-a768-f8e2d0f9dc1d, AnyNumber,409.73,409.73208,409.73417,409.73625,409.73833,409.74042,409.7425,409.74458,409.74667,409.74875,409.75083,409.75292,409.755,409.75708,409.75917,409.76125,409.76333,409.76542,409.7675,409.76958,409.77167,409.77375,409.77583,409.77792;
+
+Schedule:Day:Hourly, 4955c7d0-604f-4162-9cd0-c35ae573160d, AnyNumber,409.78,409.7825,409.785,409.7875,409.79,409.7925,409.795,409.7975,409.8,409.8025,409.805,409.8075,409.81,409.8125,409.815,409.8175,409.82,409.8225,409.825,409.8275,409.83,409.8325,409.835,409.8375;
+
+Schedule:Day:Hourly, d5c6e9e3-6615-43c8-b7ea-460ca2a1e383, AnyNumber,409.84,409.8425,409.845,409.8475,409.85,409.8525,409.855,409.8575,409.86,409.8625,409.865,409.8675,409.87,409.8725,409.875,409.8775,409.88,409.8825,409.885,409.8875,409.89,409.8925,409.895,409.8975;
+
+Schedule:Day:Hourly, 7d839767-4faf-4375-a548-905f85a294b3, AnyNumber,409.9,409.9025,409.905,409.9075,409.91,409.9125,409.915,409.9175,409.92,409.9225,409.925,409.9275,409.93,409.9325,409.935,409.9375,409.94,409.9425,409.945,409.9475,409.95,409.9525,409.955,409.9575;
+
+Schedule:Day:Hourly, cb9a4691-81ae-4515-9daa-b73e06129999, AnyNumber,409.96,409.96292,409.96583,409.96875,409.97167,409.97458,409.9775,409.98042,409.98333,409.98625,409.98917,409.99208,409.995,409.99792,410.00083,410.00375,410.00667,410.00958,410.0125,410.01542,410.01833,410.02125,410.02417,410.02708;
+
+Schedule:Day:Hourly, 4a9cac76-2876-41a9-9569-58659bfe4811, AnyNumber,410.03,410.0325,410.035,410.0375,410.04,410.0425,410.045,410.0475,410.05,410.0525,410.055,410.0575,410.06,410.0625,410.065,410.0675,410.07,410.0725,410.075,410.0775,410.08,410.0825,410.085,410.0875;
+
+Schedule:Day:Hourly, 0bec646d-d2a2-4e91-b0c0-08bf3a59f4e3, AnyNumber,410.09,410.09292,410.09583,410.09875,410.10167,410.10458,410.1075,410.11042,410.11333,410.11625,410.11917,410.12208,410.125,410.12792,410.13083,410.13375,410.13667,410.13958,410.1425,410.14542,410.14833,410.15125,410.15417,410.15708;
+
+Schedule:Day:Hourly, 699b288a-bc91-4330-942d-a19289795c2d, AnyNumber,410.16,410.16292,410.16583,410.16875,410.17167,410.17458,410.1775,410.18042,410.18333,410.18625,410.18917,410.19208,410.195,410.19792,410.20083,410.20375,410.20667,410.20958,410.2125,410.21542,410.21833,410.22125,410.22417,410.22708;
+
+Schedule:Day:Hourly, dc749704-cec9-4416-a0a3-69d72ba884d5, AnyNumber,410.23,410.2325,410.235,410.2375,410.24,410.2425,410.245,410.2475,410.25,410.2525,410.255,410.2575,410.26,410.2625,410.265,410.2675,410.27,410.2725,410.275,410.2775,410.28,410.2825,410.285,410.2875;
+
+Schedule:Day:Hourly, 7ffa59fb-9afd-47da-bb57-86796609f9f1, AnyNumber,410.29,410.29292,410.29583,410.29875,410.30167,410.30458,410.3075,410.31042,410.31333,410.31625,410.31917,410.32208,410.325,410.32792,410.33083,410.33375,410.33667,410.33958,410.3425,410.34542,410.34833,410.35125,410.35417,410.35708;
+
+Schedule:Day:Hourly, f1e1f14d-808e-4817-9ce0-dcf2deda8e1d, AnyNumber,410.36,410.36333,410.36667,410.37,410.37333,410.37667,410.38,410.38333,410.38667,410.39,410.39333,410.39667,410.4,410.40333,410.40667,410.41,410.41333,410.41667,410.42,410.42333,410.42667,410.43,410.43333,410.43667;
+
+Schedule:Day:Hourly, 6569db5f-f490-4530-b873-5696a095d7cf, AnyNumber,410.44,410.44292,410.44583,410.44875,410.45167,410.45458,410.4575,410.46042,410.46333,410.46625,410.46917,410.47208,410.475,410.47792,410.48083,410.48375,410.48667,410.48958,410.4925,410.49542,410.49833,410.50125,410.50417,410.50708;
+
+Schedule:Day:Hourly, 516c6c27-aa8a-4d07-8833-531faf3ed512, AnyNumber,410.51,410.51292,410.51583,410.51875,410.52167,410.52458,410.5275,410.53042,410.53333,410.53625,410.53917,410.54208,410.545,410.54792,410.55083,410.55375,410.55667,410.55958,410.5625,410.56542,410.56833,410.57125,410.57417,410.57708;
+
+Schedule:Day:Hourly, 01d982e7-3594-4691-8402-88ee4dbe0b10, AnyNumber,410.58,410.58292,410.58583,410.58875,410.59167,410.59458,410.5975,410.60042,410.60333,410.60625,410.60917,410.61208,410.615,410.61792,410.62083,410.62375,410.62667,410.62958,410.6325,410.63542,410.63833,410.64125,410.64417,410.64708;
+
+Schedule:Day:Hourly, 312fe7bd-3e27-4275-9a25-9f4355a83b0f, AnyNumber,410.65,410.65333,410.65667,410.66,410.66333,410.66667,410.67,410.67333,410.67667,410.68,410.68333,410.68667,410.69,410.69333,410.69667,410.7,410.70333,410.70667,410.71,410.71333,410.71667,410.72,410.72333,410.72667;
+
+Schedule:Day:Hourly, 1d272c1d-024f-4734-942c-7eef584beffa, AnyNumber,410.73,410.73292,410.73583,410.73875,410.74167,410.74458,410.7475,410.75042,410.75333,410.75625,410.75917,410.76208,410.765,410.76792,410.77083,410.77375,410.77667,410.77958,410.7825,410.78542,410.78833,410.79125,410.79417,410.79708;
+
+Schedule:Day:Hourly, d00ac277-5ad3-4859-92ca-24a464354cf6, AnyNumber,410.8,410.80333,410.80667,410.81,410.81333,410.81667,410.82,410.82333,410.82667,410.83,410.83333,410.83667,410.84,410.84333,410.84667,410.85,410.85333,410.85667,410.86,410.86333,410.86667,410.87,410.87333,410.87667;
+
+Schedule:Day:Hourly, 26175840-5a13-483c-99a7-a9ed4292b1b3, AnyNumber,410.88,410.88292,410.88583,410.88875,410.89167,410.89458,410.8975,410.90042,410.90333,410.90625,410.90917,410.91208,410.915,410.91792,410.92083,410.92375,410.92667,410.92958,410.9325,410.93542,410.93833,410.94125,410.94417,410.94708;
+
+Schedule:Day:Hourly, b568bc33-7d69-4340-ade0-5fcde3965eea, AnyNumber,410.95,410.95333,410.95667,410.96,410.96333,410.96667,410.97,410.97333,410.97667,410.98,410.98333,410.98667,410.99,410.99333,410.99667,411,411.00333,411.00667,411.01,411.01333,411.01667,411.02,411.02333,411.02667;
+
+Schedule:Day:Hourly, 75bca0d2-bf3e-4d7f-ad1a-da9ddd134edd, AnyNumber,411.03,411.03292,411.03583,411.03875,411.04167,411.04458,411.0475,411.05042,411.05333,411.05625,411.05917,411.06208,411.065,411.06792,411.07083,411.07375,411.07667,411.07958,411.0825,411.08542,411.08833,411.09125,411.09417,411.09708;
+
+Schedule:Day:Hourly, 0eef675d-05d1-4749-98b6-2a0b7f74138c, AnyNumber,411.1,411.10333,411.10667,411.11,411.11333,411.11667,411.12,411.12333,411.12667,411.13,411.13333,411.13667,411.14,411.14333,411.14667,411.15,411.15333,411.15667,411.16,411.16333,411.16667,411.17,411.17333,411.17667;
+
+Schedule:Day:Hourly, d7decc9f-e492-46d8-89ee-4093ec31299b, AnyNumber,411.18,411.18333,411.18667,411.19,411.19333,411.19667,411.2,411.20333,411.20667,411.21,411.21333,411.21667,411.22,411.22333,411.22667,411.23,411.23333,411.23667,411.24,411.24333,411.24667,411.25,411.25333,411.25667;
+
+Schedule:Day:Hourly, 67ba507d-d58d-4a33-a148-1cbf66114479, AnyNumber,411.26,411.26292,411.26583,411.26875,411.27167,411.27458,411.2775,411.28042,411.28333,411.28625,411.28917,411.29208,411.295,411.29792,411.30083,411.30375,411.30667,411.30958,411.3125,411.31542,411.31833,411.32125,411.32417,411.32708;
+
+Schedule:Day:Hourly, 6560b193-e84e-4351-a241-5003a3a5fbaf, AnyNumber,411.33,411.33333,411.33667,411.34,411.34333,411.34667,411.35,411.35333,411.35667,411.36,411.36333,411.36667,411.37,411.37333,411.37667,411.38,411.38333,411.38667,411.39,411.39333,411.39667,411.4,411.40333,411.40667;
+
+Schedule:Day:Hourly, 2f37bd60-19ce-4730-b950-0cbe8612cf92, AnyNumber,411.41,411.41333,411.41667,411.42,411.42333,411.42667,411.43,411.43333,411.43667,411.44,411.44333,411.44667,411.45,411.45333,411.45667,411.46,411.46333,411.46667,411.47,411.47333,411.47667,411.48,411.48333,411.48667;
+
+Schedule:Day:Hourly, 9892a4f4-f6da-4708-8b22-a093a856406a, AnyNumber,411.49,411.49292,411.49583,411.49875,411.50167,411.50458,411.5075,411.51042,411.51333,411.51625,411.51917,411.52208,411.525,411.52792,411.53083,411.53375,411.53667,411.53958,411.5425,411.54542,411.54833,411.55125,411.55417,411.55708;
+
+Schedule:Day:Hourly, 2651b4fd-9da2-492e-830a-9c723d2fa041, AnyNumber,411.56,411.56333,411.56667,411.57,411.57333,411.57667,411.58,411.58333,411.58667,411.59,411.59333,411.59667,411.6,411.60333,411.60667,411.61,411.61333,411.61667,411.62,411.62333,411.62667,411.63,411.63333,411.63667;
+
+Schedule:Day:Hourly, b34a0fe0-f875-43cd-a8f0-77bdb1dcd72d, AnyNumber,411.64,411.64292,411.64583,411.64875,411.65167,411.65458,411.6575,411.66042,411.66333,411.66625,411.66917,411.67208,411.675,411.67792,411.68083,411.68375,411.68667,411.68958,411.6925,411.69542,411.69833,411.70125,411.70417,411.70708;
+
+Schedule:Day:Hourly, 29d5d5f0-dafa-4c1c-b697-68ec87bb0021, AnyNumber,411.71,411.71333,411.71667,411.72,411.72333,411.72667,411.73,411.73333,411.73667,411.74,411.74333,411.74667,411.75,411.75333,411.75667,411.76,411.76333,411.76667,411.77,411.77333,411.77667,411.78,411.78333,411.78667;
+
+Schedule:Day:Hourly, 5cd7aa57-f868-480a-b785-7dcf4965290b, AnyNumber,411.79,411.79292,411.79583,411.79875,411.80167,411.80458,411.8075,411.81042,411.81333,411.81625,411.81917,411.82208,411.825,411.82792,411.83083,411.83375,411.83667,411.83958,411.8425,411.84542,411.84833,411.85125,411.85417,411.85708;
+
+Schedule:Day:Hourly, 2fa2b08e-b07e-4a3b-bb02-f0326b85f7b6, AnyNumber,411.86,411.86292,411.86583,411.86875,411.87167,411.87458,411.8775,411.88042,411.88333,411.88625,411.88917,411.89208,411.895,411.89792,411.90083,411.90375,411.90667,411.90958,411.9125,411.91542,411.91833,411.92125,411.92417,411.92708;
+
+Schedule:Day:Hourly, c1bac147-6f61-462a-a83f-707d89d9f9f1, AnyNumber,411.93,411.93333,411.93667,411.94,411.94333,411.94667,411.95,411.95333,411.95667,411.96,411.96333,411.96667,411.97,411.97333,411.97667,411.98,411.98333,411.98667,411.99,411.99333,411.99667,412,412.00333,412.00667;
+
+Schedule:Day:Hourly, a7f8604c-cf7b-4a3f-b200-a69a28ba076b, AnyNumber,412.01,412.01292,412.01583,412.01875,412.02167,412.02458,412.0275,412.03042,412.03333,412.03625,412.03917,412.04208,412.045,412.04792,412.05083,412.05375,412.05667,412.05958,412.0625,412.06542,412.06833,412.07125,412.07417,412.07708;
+
+Schedule:Day:Hourly, 5bec8b00-e8f9-41b7-86eb-4572fbf9f977, AnyNumber,412.08,412.08292,412.08583,412.08875,412.09167,412.09458,412.0975,412.10042,412.10333,412.10625,412.10917,412.11208,412.115,412.11792,412.12083,412.12375,412.12667,412.12958,412.1325,412.13542,412.13833,412.14125,412.14417,412.14708;
+
+Schedule:Day:Hourly, 29424f8f-1457-4292-b10a-7ea354c360c8, AnyNumber,412.15,412.15292,412.15583,412.15875,412.16167,412.16458,412.1675,412.17042,412.17333,412.17625,412.17917,412.18208,412.185,412.18792,412.19083,412.19375,412.19667,412.19958,412.2025,412.20542,412.20833,412.21125,412.21417,412.21708;
+
+Schedule:Day:Hourly, f0cdbbdb-f055-47a3-919b-e3248a9a7a19, AnyNumber,412.22,412.22292,412.22583,412.22875,412.23167,412.23458,412.2375,412.24042,412.24333,412.24625,412.24917,412.25208,412.255,412.25792,412.26083,412.26375,412.26667,412.26958,412.2725,412.27542,412.27833,412.28125,412.28417,412.28708;
+
+Schedule:Day:Hourly, 240eb34e-ad2c-41e4-87d9-72b525152122, AnyNumber,412.29,412.29292,412.29583,412.29875,412.30167,412.30458,412.3075,412.31042,412.31333,412.31625,412.31917,412.32208,412.325,412.32792,412.33083,412.33375,412.33667,412.33958,412.3425,412.34542,412.34833,412.35125,412.35417,412.35708;
+
+Schedule:Day:Hourly, 3c3b3301-72be-45fe-8ea0-3ef315dea011, AnyNumber,412.36,412.36292,412.36583,412.36875,412.37167,412.37458,412.3775,412.38042,412.38333,412.38625,412.38917,412.39208,412.395,412.39792,412.40083,412.40375,412.40667,412.40958,412.4125,412.41542,412.41833,412.42125,412.42417,412.42708;
+
+Schedule:Day:Hourly, 9f87ef89-34c2-4584-9118-003f676f35e1, AnyNumber,412.43,412.43292,412.43583,412.43875,412.44167,412.44458,412.4475,412.45042,412.45333,412.45625,412.45917,412.46208,412.465,412.46792,412.47083,412.47375,412.47667,412.47958,412.4825,412.48542,412.48833,412.49125,412.49417,412.49708;
+
+Schedule:Day:Hourly, d9c4fab9-a208-4b9d-b423-ea1393cc2a5a, AnyNumber,412.5,412.5025,412.505,412.5075,412.51,412.5125,412.515,412.5175,412.52,412.5225,412.525,412.5275,412.53,412.5325,412.535,412.5375,412.54,412.5425,412.545,412.5475,412.55,412.5525,412.555,412.5575;
+
+Schedule:Day:Hourly, 1778a6b0-15bf-4f6f-ae71-d21ffd680e50, AnyNumber,412.56,412.56292,412.56583,412.56875,412.57167,412.57458,412.5775,412.58042,412.58333,412.58625,412.58917,412.59208,412.595,412.59792,412.60083,412.60375,412.60667,412.60958,412.6125,412.61542,412.61833,412.62125,412.62417,412.62708;
+
+Schedule:Day:Hourly, 56a5af9e-8c4e-4acb-80b5-51acc355a5fe, AnyNumber,412.63,412.6325,412.635,412.6375,412.64,412.6425,412.645,412.6475,412.65,412.6525,412.655,412.6575,412.66,412.6625,412.665,412.6675,412.67,412.6725,412.675,412.6775,412.68,412.6825,412.685,412.6875;
+
+Schedule:Day:Hourly, f58425da-1bef-483a-8d19-e679a49f3a7d, AnyNumber,412.69,412.69292,412.69583,412.69875,412.70167,412.70458,412.7075,412.71042,412.71333,412.71625,412.71917,412.72208,412.725,412.72792,412.73083,412.73375,412.73667,412.73958,412.7425,412.74542,412.74833,412.75125,412.75417,412.75708;
+
+Schedule:Day:Hourly, 99efaaff-58a5-469a-a209-257c42073b87, AnyNumber,412.76,412.7625,412.765,412.7675,412.77,412.7725,412.775,412.7775,412.78,412.7825,412.785,412.7875,412.79,412.7925,412.795,412.7975,412.8,412.8025,412.805,412.8075,412.81,412.8125,412.815,412.8175;
+
+Schedule:Day:Hourly, ac798c11-271a-4a5e-b9f7-d7614d97e7fb, AnyNumber,412.82,412.8225,412.825,412.8275,412.83,412.8325,412.835,412.8375,412.84,412.8425,412.845,412.8475,412.85,412.8525,412.855,412.8575,412.86,412.8625,412.865,412.8675,412.87,412.8725,412.875,412.8775;
+
+Schedule:Day:Hourly, b33ddbe3-5fe0-4374-9381-ac873b8126fd, AnyNumber,412.88,412.8825,412.885,412.8875,412.89,412.8925,412.895,412.8975,412.9,412.9025,412.905,412.9075,412.91,412.9125,412.915,412.9175,412.92,412.9225,412.925,412.9275,412.93,412.9325,412.935,412.9375;
+
+Schedule:Day:Hourly, fb3f5645-8a42-43e9-ad92-ef71cdad6081, AnyNumber,412.94,412.9425,412.945,412.9475,412.95,412.9525,412.955,412.9575,412.96,412.9625,412.965,412.9675,412.97,412.9725,412.975,412.9775,412.98,412.9825,412.985,412.9875,412.99,412.9925,412.995,412.9975;
+
+Schedule:Day:Hourly, 27440bea-00d9-4b52-a206-c252448c4d1f, AnyNumber,413,413.00208,413.00417,413.00625,413.00833,413.01042,413.0125,413.01458,413.01667,413.01875,413.02083,413.02292,413.025,413.02708,413.02917,413.03125,413.03333,413.03542,413.0375,413.03958,413.04167,413.04375,413.04583,413.04792;
+
+Schedule:Day:Hourly, 2495f234-5b9e-4be2-a923-1b62b461db93, AnyNumber,413.05,413.0525,413.055,413.0575,413.06,413.0625,413.065,413.0675,413.07,413.0725,413.075,413.0775,413.08,413.0825,413.085,413.0875,413.09,413.0925,413.095,413.0975,413.1,413.1025,413.105,413.1075;
+
+Schedule:Day:Hourly, d7238a6a-1915-4344-9797-52560645d02e, AnyNumber,413.11,413.1125,413.115,413.1175,413.12,413.1225,413.125,413.1275,413.13,413.1325,413.135,413.1375,413.14,413.1425,413.145,413.1475,413.15,413.1525,413.155,413.1575,413.16,413.1625,413.165,413.1675;
+
+Schedule:Day:Hourly, 238be612-c1c8-4150-8079-ba967e8c76dd, AnyNumber,413.17,413.17208,413.17417,413.17625,413.17833,413.18042,413.1825,413.18458,413.18667,413.18875,413.19083,413.19292,413.195,413.19708,413.19917,413.20125,413.20333,413.20542,413.2075,413.20958,413.21167,413.21375,413.21583,413.21792;
+
+Schedule:Day:Hourly, 40723d9e-b639-4ff9-b7d7-a18c41808fb4, AnyNumber,413.22,413.22208,413.22417,413.22625,413.22833,413.23042,413.2325,413.23458,413.23667,413.23875,413.24083,413.24292,413.245,413.24708,413.24917,413.25125,413.25333,413.25542,413.2575,413.25958,413.26167,413.26375,413.26583,413.26792;
+
+Schedule:Day:Hourly, a5969ffa-480a-40ea-86d6-a7921ca4c814, AnyNumber,413.27,413.27208,413.27417,413.27625,413.27833,413.28042,413.2825,413.28458,413.28667,413.28875,413.29083,413.29292,413.295,413.29708,413.29917,413.30125,413.30333,413.30542,413.3075,413.30958,413.31167,413.31375,413.31583,413.31792;
+
+Schedule:Day:Hourly, 6691f29d-08b8-4166-9de6-90ae48bad3cd, AnyNumber,413.32,413.32208,413.32417,413.32625,413.32833,413.33042,413.3325,413.33458,413.33667,413.33875,413.34083,413.34292,413.345,413.34708,413.34917,413.35125,413.35333,413.35542,413.3575,413.35958,413.36167,413.36375,413.36583,413.36792;
+
+Schedule:Day:Hourly, a1c117fa-17dd-4d9c-82e8-230f0071ea20, AnyNumber,413.37,413.37208,413.37417,413.37625,413.37833,413.38042,413.3825,413.38458,413.38667,413.38875,413.39083,413.39292,413.395,413.39708,413.39917,413.40125,413.40333,413.40542,413.4075,413.40958,413.41167,413.41375,413.41583,413.41792;
+
+Schedule:Day:Hourly, 4afc3208-12dc-4ae9-a5d7-c416f916b700, AnyNumber,413.42,413.42208,413.42417,413.42625,413.42833,413.43042,413.4325,413.43458,413.43667,413.43875,413.44083,413.44292,413.445,413.44708,413.44917,413.45125,413.45333,413.45542,413.4575,413.45958,413.46167,413.46375,413.46583,413.46792;
+
+Schedule:Day:Hourly, 54215814-0548-4ef6-b5f3-ff98f45c9662, AnyNumber,413.47,413.47167,413.47333,413.475,413.47667,413.47833,413.48,413.48167,413.48333,413.485,413.48667,413.48833,413.49,413.49167,413.49333,413.495,413.49667,413.49833,413.5,413.50167,413.50333,413.505,413.50667,413.50833;
+
+Schedule:Day:Hourly, 8e32ef59-4b56-408f-93a8-288b6685341b, AnyNumber,413.51,413.51208,413.51417,413.51625,413.51833,413.52042,413.5225,413.52458,413.52667,413.52875,413.53083,413.53292,413.535,413.53708,413.53917,413.54125,413.54333,413.54542,413.5475,413.54958,413.55167,413.55375,413.55583,413.55792;
+
+Schedule:Day:Hourly, 7ee3c301-67d3-4dde-9aa5-ea5fcbda5f26, AnyNumber,413.56,413.56167,413.56333,413.565,413.56667,413.56833,413.57,413.57167,413.57333,413.575,413.57667,413.57833,413.58,413.58167,413.58333,413.585,413.58667,413.58833,413.59,413.59167,413.59333,413.595,413.59667,413.59833;
+
+Schedule:Day:Hourly, 1b648ca1-e69d-4d43-9fe1-a1894203e66b, AnyNumber,413.6,413.60167,413.60333,413.605,413.60667,413.60833,413.61,413.61167,413.61333,413.615,413.61667,413.61833,413.62,413.62167,413.62333,413.625,413.62667,413.62833,413.63,413.63167,413.63333,413.635,413.63667,413.63833;
+
+Schedule:Day:Hourly, 4bac183e-aba5-460f-9a49-672ef530f8f2, AnyNumber,413.64,413.64167,413.64333,413.645,413.64667,413.64833,413.65,413.65167,413.65333,413.655,413.65667,413.65833,413.66,413.66167,413.66333,413.665,413.66667,413.66833,413.67,413.67167,413.67333,413.675,413.67667,413.67833;
+
+Schedule:Day:Hourly, 98f8166b-58fd-46b0-9d42-39edb0188881, AnyNumber,413.68,413.68167,413.68333,413.685,413.68667,413.68833,413.69,413.69167,413.69333,413.695,413.69667,413.69833,413.7,413.70167,413.70333,413.705,413.70667,413.70833,413.71,413.71167,413.71333,413.715,413.71667,413.71833;
+
+Schedule:Day:Hourly, b425c1de-71c0-4695-9b90-577d2ff6caef, AnyNumber,413.72,413.72167,413.72333,413.725,413.72667,413.72833,413.73,413.73167,413.73333,413.735,413.73667,413.73833,413.74,413.74167,413.74333,413.745,413.74667,413.74833,413.75,413.75167,413.75333,413.755,413.75667,413.75833;
+
+Schedule:Day:Hourly, 7c162277-3bf2-42b7-a11c-059a8800a040, AnyNumber,413.76,413.76167,413.76333,413.765,413.76667,413.76833,413.77,413.77167,413.77333,413.775,413.77667,413.77833,413.78,413.78167,413.78333,413.785,413.78667,413.78833,413.79,413.79167,413.79333,413.795,413.79667,413.79833;
+
+Schedule:Day:Hourly, fd51185b-d385-4f11-abd5-a360fbaf9841, AnyNumber,413.8,413.80125,413.8025,413.80375,413.805,413.80625,413.8075,413.80875,413.81,413.81125,413.8125,413.81375,413.815,413.81625,413.8175,413.81875,413.82,413.82125,413.8225,413.82375,413.825,413.82625,413.8275,413.82875;
+
+Schedule:Day:Hourly, 7f166e46-411a-41dc-99be-71bff1ca010b, AnyNumber,413.83,413.83167,413.83333,413.835,413.83667,413.83833,413.84,413.84167,413.84333,413.845,413.84667,413.84833,413.85,413.85167,413.85333,413.855,413.85667,413.85833,413.86,413.86167,413.86333,413.865,413.86667,413.86833;
+
+Schedule:Day:Hourly, 095430a0-4e3c-493a-bf3f-900be75e4e3d, AnyNumber,413.87,413.87125,413.8725,413.87375,413.875,413.87625,413.8775,413.87875,413.88,413.88125,413.8825,413.88375,413.885,413.88625,413.8875,413.88875,413.89,413.89125,413.8925,413.89375,413.895,413.89625,413.8975,413.89875;
+
+Schedule:Day:Hourly, 8605e643-3e0c-4e76-bb02-e76ee9b2ef44, AnyNumber,413.9,413.90125,413.9025,413.90375,413.905,413.90625,413.9075,413.90875,413.91,413.91125,413.9125,413.91375,413.915,413.91625,413.9175,413.91875,413.92,413.92125,413.9225,413.92375,413.925,413.92625,413.9275,413.92875;
+
+Schedule:Day:Hourly, 74d62038-0a39-49cc-99f2-df4c6c49c97e, AnyNumber,413.93,413.93167,413.93333,413.935,413.93667,413.93833,413.94,413.94167,413.94333,413.945,413.94667,413.94833,413.95,413.95167,413.95333,413.955,413.95667,413.95833,413.96,413.96167,413.96333,413.965,413.96667,413.96833;
+
+Schedule:Day:Hourly, 3ff92dcf-f4e1-4592-bf36-583e7e7213a6, AnyNumber,413.97,413.97125,413.9725,413.97375,413.975,413.97625,413.9775,413.97875,413.98,413.98125,413.9825,413.98375,413.985,413.98625,413.9875,413.98875,413.99,413.99125,413.9925,413.99375,413.995,413.99625,413.9975,413.99875;
+
+Schedule:Day:Hourly, e5f30010-9b3f-4b0c-9e7f-22aedf2add40, AnyNumber,414,414.00083,414.00167,414.0025,414.00333,414.00417,414.005,414.00583,414.00667,414.0075,414.00833,414.00917,414.01,414.01083,414.01167,414.0125,414.01333,414.01417,414.015,414.01583,414.01667,414.0175,414.01833,414.01917;
+
+Schedule:Day:Hourly, 00c88e1f-2c64-4984-be36-b11b28fc0259, AnyNumber,414.02,414.02125,414.0225,414.02375,414.025,414.02625,414.0275,414.02875,414.03,414.03125,414.0325,414.03375,414.035,414.03625,414.0375,414.03875,414.04,414.04125,414.0425,414.04375,414.045,414.04625,414.0475,414.04875;
+
+Schedule:Day:Hourly, b08cdbdb-0c03-4674-9524-4b144492f703, AnyNumber,414.05,414.05125,414.0525,414.05375,414.055,414.05625,414.0575,414.05875,414.06,414.06125,414.0625,414.06375,414.065,414.06625,414.0675,414.06875,414.07,414.07125,414.0725,414.07375,414.075,414.07625,414.0775,414.07875;
+
+Schedule:Day:Hourly, a79e21e3-b5dd-446e-9a15-1efe49089d34, AnyNumber,414.08,414.08125,414.0825,414.08375,414.085,414.08625,414.0875,414.08875,414.09,414.09125,414.0925,414.09375,414.095,414.09625,414.0975,414.09875,414.1,414.10125,414.1025,414.10375,414.105,414.10625,414.1075,414.10875;
+
+Schedule:Day:Hourly, f29c795e-d433-4668-824f-7471c3f9f65f, AnyNumber,414.13,414.13125,414.1325,414.13375,414.135,414.13625,414.1375,414.13875,414.14,414.14125,414.1425,414.14375,414.145,414.14625,414.1475,414.14875,414.15,414.15125,414.1525,414.15375,414.155,414.15625,414.1575,414.15875;
+
+Schedule:Day:Hourly, 117ca1e7-3b68-4549-b3e1-9ecdd8e31c99, AnyNumber,414.22,414.22125,414.2225,414.22375,414.225,414.22625,414.2275,414.22875,414.23,414.23125,414.2325,414.23375,414.235,414.23625,414.2375,414.23875,414.24,414.24125,414.2425,414.24375,414.245,414.24625,414.2475,414.24875;
+
+Schedule:Day:Hourly, 6e1d8781-303f-4fb1-b68e-5eb9d79e0e52, AnyNumber,414.27,414.27083,414.27167,414.2725,414.27333,414.27417,414.275,414.27583,414.27667,414.2775,414.27833,414.27917,414.28,414.28083,414.28167,414.2825,414.28333,414.28417,414.285,414.28583,414.28667,414.2875,414.28833,414.28917;
+
+Schedule:Day:Hourly, 57b6bf68-3800-4cd1-95ca-d3c112b4f970, AnyNumber,414.29,414.29042,414.29083,414.29125,414.29167,414.29208,414.2925,414.29292,414.29333,414.29375,414.29417,414.29458,414.295,414.29542,414.29583,414.29625,414.29667,414.29708,414.2975,414.29792,414.29833,414.29875,414.29917,414.29958;
+
+Schedule:Day:Hourly, 649f8654-e473-4a91-9d89-211d15b29350, AnyNumber,414.32,414.32083,414.32167,414.3225,414.32333,414.32417,414.325,414.32583,414.32667,414.3275,414.32833,414.32917,414.33,414.33083,414.33167,414.3325,414.33333,414.33417,414.335,414.33583,414.33667,414.3375,414.33833,414.33917;
+
+Schedule:Day:Hourly, fba66b88-594f-478d-9407-2f5ad12caba0, AnyNumber,414.34,414.34083,414.34167,414.3425,414.34333,414.34417,414.345,414.34583,414.34667,414.3475,414.34833,414.34917,414.35,414.35083,414.35167,414.3525,414.35333,414.35417,414.355,414.35583,414.35667,414.3575,414.35833,414.35917;
+
+Schedule:Day:Hourly, bbf4848a-1ceb-4b09-8ec8-7da1a9dd41b5, AnyNumber,414.39,414.39083,414.39167,414.3925,414.39333,414.39417,414.395,414.39583,414.39667,414.3975,414.39833,414.39917,414.4,414.40083,414.40167,414.4025,414.40333,414.40417,414.405,414.40583,414.40667,414.4075,414.40833,414.40917;
+
+Schedule:Day:Hourly, d40439f8-4474-4ab8-ba42-a1c88a3ef8ce, AnyNumber,414.41,414.41083,414.41167,414.4125,414.41333,414.41417,414.415,414.41583,414.41667,414.4175,414.41833,414.41917,414.42,414.42083,414.42167,414.4225,414.42333,414.42417,414.425,414.42583,414.42667,414.4275,414.42833,414.42917;
+
+Schedule:Day:Hourly, 9da8f853-8a4d-4ab7-8d78-1983624f4c1a, AnyNumber,414.44,414.44083,414.44167,414.4425,414.44333,414.44417,414.445,414.44583,414.44667,414.4475,414.44833,414.44917,414.45,414.45083,414.45167,414.4525,414.45333,414.45417,414.455,414.45583,414.45667,414.4575,414.45833,414.45917;
+
+Schedule:Day:Hourly, 1e365492-c6d7-4189-8206-9f747ba6d704, AnyNumber,414.47,414.47083,414.47167,414.4725,414.47333,414.47417,414.475,414.47583,414.47667,414.4775,414.47833,414.47917,414.48,414.48083,414.48167,414.4825,414.48333,414.48417,414.485,414.48583,414.48667,414.4875,414.48833,414.48917;
+
+Schedule:Day:Hourly, df8cad19-e00b-4681-b52d-4541a4c74b0f, AnyNumber,414.5,414.50083,414.50167,414.5025,414.50333,414.50417,414.505,414.50583,414.50667,414.5075,414.50833,414.50917,414.51,414.51083,414.51167,414.5125,414.51333,414.51417,414.515,414.51583,414.51667,414.5175,414.51833,414.51917;
+
+Schedule:Day:Hourly, af5c5b88-fc25-4f5f-b66c-4b582ee63617, AnyNumber,414.53,414.53083,414.53167,414.5325,414.53333,414.53417,414.535,414.53583,414.53667,414.5375,414.53833,414.53917,414.54,414.54083,414.54167,414.5425,414.54333,414.54417,414.545,414.54583,414.54667,414.5475,414.54833,414.54917;
+
+Schedule:Day:Hourly, e1d94eff-928c-450d-a976-b63defe394b4, AnyNumber,414.55,414.55042,414.55083,414.55125,414.55167,414.55208,414.5525,414.55292,414.55333,414.55375,414.55417,414.55458,414.555,414.55542,414.55583,414.55625,414.55667,414.55708,414.5575,414.55792,414.55833,414.55875,414.55917,414.55958;
+
+Schedule:Day:Hourly, b93bae6f-e469-451a-b878-11a202c4229f, AnyNumber,414.56,414.56083,414.56167,414.5625,414.56333,414.56417,414.565,414.56583,414.56667,414.5675,414.56833,414.56917,414.57,414.57083,414.57167,414.5725,414.57333,414.57417,414.575,414.57583,414.57667,414.5775,414.57833,414.57917;
+
+Schedule:Day:Hourly, e7b70664-f7b7-4c1d-8c6b-3cd6813d8439, AnyNumber,414.58,414.58042,414.58083,414.58125,414.58167,414.58208,414.5825,414.58292,414.58333,414.58375,414.58417,414.58458,414.585,414.58542,414.58583,414.58625,414.58667,414.58708,414.5875,414.58792,414.58833,414.58875,414.58917,414.58958;
+
+Schedule:Day:Hourly, 3928c914-c210-4501-89fe-2a354330a83e, AnyNumber,414.59,414.59083,414.59167,414.5925,414.59333,414.59417,414.595,414.59583,414.59667,414.5975,414.59833,414.59917,414.6,414.60083,414.60167,414.6025,414.60333,414.60417,414.605,414.60583,414.60667,414.6075,414.60833,414.60917;
+
+Schedule:Day:Hourly, bab6421e-3ca7-4a93-99ee-9867053e72dc, AnyNumber,414.61,414.61042,414.61083,414.61125,414.61167,414.61208,414.6125,414.61292,414.61333,414.61375,414.61417,414.61458,414.615,414.61542,414.61583,414.61625,414.61667,414.61708,414.6175,414.61792,414.61833,414.61875,414.61917,414.61958;
+
+Schedule:Day:Hourly, 71f9c23f-51be-4823-93b3-6f59ed069789, AnyNumber,414.62,414.62083,414.62167,414.6225,414.62333,414.62417,414.625,414.62583,414.62667,414.6275,414.62833,414.62917,414.63,414.63083,414.63167,414.6325,414.63333,414.63417,414.635,414.63583,414.63667,414.6375,414.63833,414.63917;
+
+Schedule:Day:Hourly, 1ac206c2-15c7-48ef-94c6-79e88a6bcf99, AnyNumber,414.64,414.64083,414.64167,414.6425,414.64333,414.64417,414.645,414.64583,414.64667,414.6475,414.64833,414.64917,414.65,414.65083,414.65167,414.6525,414.65333,414.65417,414.655,414.65583,414.65667,414.6575,414.65833,414.65917;
+
+Schedule:Day:Hourly, 63d6a3d3-0745-450d-9846-8b3ac1a125f5, AnyNumber,414.66,414.66042,414.66083,414.66125,414.66167,414.66208,414.6625,414.66292,414.66333,414.66375,414.66417,414.66458,414.665,414.66542,414.66583,414.66625,414.66667,414.66708,414.6675,414.66792,414.66833,414.66875,414.66917,414.66958;
+
+Schedule:Day:Hourly, 56e35119-70bd-4a52-a7f4-091a401fd4aa, AnyNumber,414.67,414.67083,414.67167,414.6725,414.67333,414.67417,414.675,414.67583,414.67667,414.6775,414.67833,414.67917,414.68,414.68083,414.68167,414.6825,414.68333,414.68417,414.685,414.68583,414.68667,414.6875,414.68833,414.68917;
+
+Schedule:Day:Hourly, 6e1f55da-de9d-4916-92fc-f1ede4d8d56d, AnyNumber,414.69,414.69042,414.69083,414.69125,414.69167,414.69208,414.6925,414.69292,414.69333,414.69375,414.69417,414.69458,414.695,414.69542,414.69583,414.69625,414.69667,414.69708,414.6975,414.69792,414.69833,414.69875,414.69917,414.69958;
+
+Schedule:Day:Hourly, 025e8bf6-8908-4bcf-9f2b-5d56a4e41084, Fraction,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+
+Schedule:Day:Hourly, 9906a9d3-ffbc-46dc-8c80-8fdffde58480, Fraction,0,0,0,0,0,0,0,0.2,0.4,0.6,0.8,0.8,0.4,0.6,0.8,0.8,0.4,0.2,0,0,0,0,0,0;
+
+Schedule:Day:Hourly, 36d4566d-caf3-463c-bed5-eac00469bc3c, Fraction,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0;
+
+Schedule:Day:Hourly, f1cd745a-8b4f-4c19-b434-5c87a13f3dcc, Fraction,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1;
+
+Schedule:Day:Hourly, 02ca8b2d-b45e-43ba-b03a-7b0b20c219d6, Fraction,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.2,0.4,0.6,0.8,0.8,0.4,0.6,0.8,0.8,0.4,0.2,0.1,0.1,0.1,0.1,0.1,0.1;
+
+
+Schedule:Year,GlobalCO2,
+AnyNumber,
+GlobalCO2_0,1,1,1,7, 
+GlobalCO2_1,1,8,1,14, 
+GlobalCO2_2,1,15,1,21, 
+GlobalCO2_3,1,22,1,28, 
+GlobalCO2_4,1,29,2,4, 
+GlobalCO2_5,2,5,2,11, 
+GlobalCO2_6,2,12,2,18, 
+GlobalCO2_7,2,19,2,25, 
+GlobalCO2_8,2,26,3,4, 
+GlobalCO2_9,3,5,3,11, 
+GlobalCO2_10,3,12,3,18, 
+GlobalCO2_11,3,19,3,25, 
+GlobalCO2_12,3,26,4,1, 
+GlobalCO2_13,4,2,4,8, 
+GlobalCO2_14,4,9,4,15, 
+GlobalCO2_15,4,16,4,22, 
+GlobalCO2_16,4,23,4,29, 
+GlobalCO2_17,4,30,5,6, 
+GlobalCO2_18,5,7,5,13, 
+GlobalCO2_19,5,14,5,20, 
+GlobalCO2_20,5,21,5,27, 
+GlobalCO2_21,5,28,6,3, 
+GlobalCO2_22,6,4,6,10, 
+GlobalCO2_23,6,11,6,17, 
+GlobalCO2_24,6,18,6,24, 
+GlobalCO2_25,6,25,7,1, 
+GlobalCO2_26,7,2,7,8, 
+GlobalCO2_27,7,9,7,15, 
+GlobalCO2_28,7,16,7,22, 
+GlobalCO2_29,7,23,7,29, 
+GlobalCO2_30,7,30,8,5, 
+GlobalCO2_31,8,6,8,12, 
+GlobalCO2_32,8,13,8,19, 
+GlobalCO2_33,8,20,8,26, 
+GlobalCO2_34,8,27,9,2, 
+GlobalCO2_35,9,3,9,9, 
+GlobalCO2_36,9,10,9,16, 
+GlobalCO2_37,9,17,9,23, 
+GlobalCO2_38,9,24,9,30, 
+GlobalCO2_39,10,1,10,7, 
+GlobalCO2_40,10,8,10,14, 
+GlobalCO2_41,10,15,10,21, 
+GlobalCO2_42,10,22,10,28, 
+GlobalCO2_43,10,29,11,4, 
+GlobalCO2_44,11,5,11,11, 
+GlobalCO2_45,11,12,11,18, 
+GlobalCO2_46,11,19,11,25, 
+GlobalCO2_47,11,26,12,2, 
+GlobalCO2_48,12,3,12,9, 
+GlobalCO2_49,12,10,12,16, 
+GlobalCO2_50,12,17,12,23, 
+GlobalCO2_51,12,24,12,30, 
+GlobalCO2_52,12,31,12,31;
+
+Schedule:Week:Daily, GlobalCO2_0,
+  2cc48f40-f5a9-4eeb-b2bf-bef07edd657e, !- Sunday Schedule:Day Name
+  42b7e1ed-7537-4ffe-b164-bc481034a158, !- Monday Schedule:Day Name
+  dd32847d-1a82-432e-aa67-a1987cdecbe1, !- Tuesday Schedule:Day Name
+  a87c86d9-c696-4f6c-bfee-7fe1c857ca9f, !- Wednesday Schedule:Day Name
+  e7f04107-a7e5-4346-a096-6cf6b11e90e1, !- Thursday Schedule:Day Name
+  94d42ca7-94ed-4749-be0c-53e830f40342, !- Friday Schedule:Day Name
+  c70daf2f-92c3-4792-afe2-fbca75fa9ef9, !- Saturday Schedule:Day Name
+  2cc48f40-f5a9-4eeb-b2bf-bef07edd657e, !- Holiday Schedule:Day Name
+  2cc48f40-f5a9-4eeb-b2bf-bef07edd657e, !- SummerDesignDay Schedule:Day Name
+  2cc48f40-f5a9-4eeb-b2bf-bef07edd657e, !- WinterDesignDay Schedule:Day Name
+  2cc48f40-f5a9-4eeb-b2bf-bef07edd657e, !- CustomDay1 Schedule:Day Name
+  2cc48f40-f5a9-4eeb-b2bf-bef07edd657e; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_1,
+  fd5008b5-7507-4277-930d-c03888eac84b, !- Sunday Schedule:Day Name
+  087591f5-7a32-472c-88a3-e8134b05d7f0, !- Monday Schedule:Day Name
+  c8351179-5336-4e48-b52a-35674a6047b3, !- Tuesday Schedule:Day Name
+  3ed64247-646e-4d03-b963-3c68524498ad, !- Wednesday Schedule:Day Name
+  1d829f24-026e-40f9-8ffc-4324c1cc2cef, !- Thursday Schedule:Day Name
+  0277deea-7b18-4f07-b5cf-261e5c39e861, !- Friday Schedule:Day Name
+  3adb5a9e-a981-401c-a9bd-e395dcea5b57, !- Saturday Schedule:Day Name
+  fd5008b5-7507-4277-930d-c03888eac84b, !- Holiday Schedule:Day Name
+  fd5008b5-7507-4277-930d-c03888eac84b, !- SummerDesignDay Schedule:Day Name
+  fd5008b5-7507-4277-930d-c03888eac84b, !- WinterDesignDay Schedule:Day Name
+  fd5008b5-7507-4277-930d-c03888eac84b, !- CustomDay1 Schedule:Day Name
+  fd5008b5-7507-4277-930d-c03888eac84b; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_2,
+  fc472b79-66ee-4078-9610-cf3b6ac1649b, !- Sunday Schedule:Day Name
+  6bf07750-f667-43fc-8e07-53b45f095560, !- Monday Schedule:Day Name
+  c51a7fcf-0c55-4a48-b667-4c31d24be0f9, !- Tuesday Schedule:Day Name
+  66b63d59-28c8-45fb-b6e6-4c059d30b750, !- Wednesday Schedule:Day Name
+  35370c80-e69a-4530-a4fc-188afd07ecfc, !- Thursday Schedule:Day Name
+  411280e7-3d12-49df-a57e-f4863abeb666, !- Friday Schedule:Day Name
+  758946ad-aab3-40b0-aed2-5032d8d96fbb, !- Saturday Schedule:Day Name
+  fc472b79-66ee-4078-9610-cf3b6ac1649b, !- Holiday Schedule:Day Name
+  fc472b79-66ee-4078-9610-cf3b6ac1649b, !- SummerDesignDay Schedule:Day Name
+  fc472b79-66ee-4078-9610-cf3b6ac1649b, !- WinterDesignDay Schedule:Day Name
+  fc472b79-66ee-4078-9610-cf3b6ac1649b, !- CustomDay1 Schedule:Day Name
+  fc472b79-66ee-4078-9610-cf3b6ac1649b; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_3,
+  74d5c46f-acb8-41c2-91cd-f78a34649f72, !- Sunday Schedule:Day Name
+  c12bf801-5b32-4f02-9717-93a2cd18b8fc, !- Monday Schedule:Day Name
+  2891e756-4e2a-4dd7-a5a8-3074c98efcdc, !- Tuesday Schedule:Day Name
+  4b7ec458-65e0-431e-a27d-11f67bdc4268, !- Wednesday Schedule:Day Name
+  f331056a-4011-4052-ad91-0e21318cbc4e, !- Thursday Schedule:Day Name
+  b8d8e636-f9be-41fb-be41-1cbdc4e01adc, !- Friday Schedule:Day Name
+  39a9aa99-db26-4569-8e41-300054ec431f, !- Saturday Schedule:Day Name
+  74d5c46f-acb8-41c2-91cd-f78a34649f72, !- Holiday Schedule:Day Name
+  74d5c46f-acb8-41c2-91cd-f78a34649f72, !- SummerDesignDay Schedule:Day Name
+  74d5c46f-acb8-41c2-91cd-f78a34649f72, !- WinterDesignDay Schedule:Day Name
+  74d5c46f-acb8-41c2-91cd-f78a34649f72, !- CustomDay1 Schedule:Day Name
+  74d5c46f-acb8-41c2-91cd-f78a34649f72; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_4,
+  6db03cd5-ccba-47a3-b959-2c942de389a5, !- Sunday Schedule:Day Name
+  5d7776ac-2cfb-4f26-8a67-ba43ca8d48ce, !- Monday Schedule:Day Name
+  bce0e3d4-4dd3-4e3b-afd1-453714a6916f, !- Tuesday Schedule:Day Name
+  cf4b1d56-e4c6-4586-bb38-ffaa7896f83e, !- Wednesday Schedule:Day Name
+  18e6862b-588d-4461-90c5-d2ec074888c8, !- Thursday Schedule:Day Name
+  554abf5d-ffca-4bab-bd02-42d9a628b644, !- Friday Schedule:Day Name
+  b0b65595-a9c7-4f31-8948-ee3780a1020a, !- Saturday Schedule:Day Name
+  6db03cd5-ccba-47a3-b959-2c942de389a5, !- Holiday Schedule:Day Name
+  6db03cd5-ccba-47a3-b959-2c942de389a5, !- SummerDesignDay Schedule:Day Name
+  6db03cd5-ccba-47a3-b959-2c942de389a5, !- WinterDesignDay Schedule:Day Name
+  6db03cd5-ccba-47a3-b959-2c942de389a5, !- CustomDay1 Schedule:Day Name
+  6db03cd5-ccba-47a3-b959-2c942de389a5; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_5,
+  d0868773-8092-4a50-b736-1236dd7c4c3c, !- Sunday Schedule:Day Name
+  17bf1b62-3859-4dce-848d-c118e7906e38, !- Monday Schedule:Day Name
+  dc8892c9-40be-4e42-a996-a7b7ca6db9c5, !- Tuesday Schedule:Day Name
+  5292517c-3401-4480-9c8d-3bd1647505e2, !- Wednesday Schedule:Day Name
+  5a0f5eba-e9f4-4846-ba28-6ee9bed6d4ac, !- Thursday Schedule:Day Name
+  a97ea0ad-c507-4fa1-ba9b-261f4986cc2d, !- Friday Schedule:Day Name
+  6ba6fb94-f1c9-47a1-879a-1077de384eb6, !- Saturday Schedule:Day Name
+  d0868773-8092-4a50-b736-1236dd7c4c3c, !- Holiday Schedule:Day Name
+  d0868773-8092-4a50-b736-1236dd7c4c3c, !- SummerDesignDay Schedule:Day Name
+  d0868773-8092-4a50-b736-1236dd7c4c3c, !- WinterDesignDay Schedule:Day Name
+  d0868773-8092-4a50-b736-1236dd7c4c3c, !- CustomDay1 Schedule:Day Name
+  d0868773-8092-4a50-b736-1236dd7c4c3c; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_6,
+  33b5a060-2bbe-43d3-ba32-13fe0c8144ad, !- Sunday Schedule:Day Name
+  ab6877b0-7eb2-4d9f-a0a4-9216a0a4fe91, !- Monday Schedule:Day Name
+  8a93b4ff-b84b-4b89-85a4-8ed8c5878505, !- Tuesday Schedule:Day Name
+  29c37e99-34e1-4f84-b3ce-13cf23a95acb, !- Wednesday Schedule:Day Name
+  73feb5bb-1b55-4162-9711-59cedeb9d6e1, !- Thursday Schedule:Day Name
+  027dc205-db31-428e-a3fc-1bf587c342dc, !- Friday Schedule:Day Name
+  027dc205-db31-428e-a3fc-1bf587c342dc, !- Saturday Schedule:Day Name
+  33b5a060-2bbe-43d3-ba32-13fe0c8144ad, !- Holiday Schedule:Day Name
+  33b5a060-2bbe-43d3-ba32-13fe0c8144ad, !- SummerDesignDay Schedule:Day Name
+  33b5a060-2bbe-43d3-ba32-13fe0c8144ad, !- WinterDesignDay Schedule:Day Name
+  33b5a060-2bbe-43d3-ba32-13fe0c8144ad, !- CustomDay1 Schedule:Day Name
+  33b5a060-2bbe-43d3-ba32-13fe0c8144ad; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_7,
+  409665d4-1aed-464e-aaeb-72bde327ce61, !- Sunday Schedule:Day Name
+  521c5117-0c34-4eb1-a9df-fdb310ccd059, !- Monday Schedule:Day Name
+  ebb0b307-e28f-4a5e-9f52-7e3160c2fa9e, !- Tuesday Schedule:Day Name
+  081ff30e-088d-42ed-9a33-182eebacf2d6, !- Wednesday Schedule:Day Name
+  081ff30e-088d-42ed-9a33-182eebacf2d6, !- Thursday Schedule:Day Name
+  16235673-1bd7-43d6-bed7-2de1562326a3, !- Friday Schedule:Day Name
+  2fa9093e-a70c-4239-9bfb-a8d78c3816b0, !- Saturday Schedule:Day Name
+  409665d4-1aed-464e-aaeb-72bde327ce61, !- Holiday Schedule:Day Name
+  409665d4-1aed-464e-aaeb-72bde327ce61, !- SummerDesignDay Schedule:Day Name
+  409665d4-1aed-464e-aaeb-72bde327ce61, !- WinterDesignDay Schedule:Day Name
+  409665d4-1aed-464e-aaeb-72bde327ce61, !- CustomDay1 Schedule:Day Name
+  409665d4-1aed-464e-aaeb-72bde327ce61; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_8,
+  2fa9093e-a70c-4239-9bfb-a8d78c3816b0, !- Sunday Schedule:Day Name
+  37add10e-67dc-4ad8-8cc2-bbafc3c1cb2a, !- Monday Schedule:Day Name
+  f359b1a3-d648-472b-9fd4-d7316bbe1b6e, !- Tuesday Schedule:Day Name
+  0ec5a71f-085e-4853-a752-a14814e15cd7, !- Wednesday Schedule:Day Name
+  c8cfaaf9-e00c-40bd-8c78-755167b90d62, !- Thursday Schedule:Day Name
+  05b7b36b-030a-4242-b5d1-5ec4e02c1f16, !- Friday Schedule:Day Name
+  07d10320-938f-446d-930e-da80dcaa6f7e, !- Saturday Schedule:Day Name
+  2fa9093e-a70c-4239-9bfb-a8d78c3816b0, !- Holiday Schedule:Day Name
+  2fa9093e-a70c-4239-9bfb-a8d78c3816b0, !- SummerDesignDay Schedule:Day Name
+  2fa9093e-a70c-4239-9bfb-a8d78c3816b0, !- WinterDesignDay Schedule:Day Name
+  2fa9093e-a70c-4239-9bfb-a8d78c3816b0, !- CustomDay1 Schedule:Day Name
+  2fa9093e-a70c-4239-9bfb-a8d78c3816b0; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_9,
+  6961a2da-54af-478e-a0ad-16284c9b0cdf, !- Sunday Schedule:Day Name
+  3ed1fa5a-15e1-4470-b3e0-0b88cbb65c68, !- Monday Schedule:Day Name
+  5c3f400e-ac47-4f0e-9a36-ca3b1b8c9f94, !- Tuesday Schedule:Day Name
+  030648f6-0ca6-4edc-a4e8-faa34f30ffed, !- Wednesday Schedule:Day Name
+  d73e6279-37d2-4f0b-9a9b-086b1361ce65, !- Thursday Schedule:Day Name
+  027554a9-0aa7-43b3-ae21-3c4a5b1af654, !- Friday Schedule:Day Name
+  c19d672b-5c7a-48b1-afca-33113ecf6284, !- Saturday Schedule:Day Name
+  6961a2da-54af-478e-a0ad-16284c9b0cdf, !- Holiday Schedule:Day Name
+  6961a2da-54af-478e-a0ad-16284c9b0cdf, !- SummerDesignDay Schedule:Day Name
+  6961a2da-54af-478e-a0ad-16284c9b0cdf, !- WinterDesignDay Schedule:Day Name
+  6961a2da-54af-478e-a0ad-16284c9b0cdf, !- CustomDay1 Schedule:Day Name
+  6961a2da-54af-478e-a0ad-16284c9b0cdf; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_10,
+  62eaceb7-57b3-4580-bf6c-300e74340bbe, !- Sunday Schedule:Day Name
+  a615f561-36b0-44a3-bbf5-7ae5b5f9e4c7, !- Monday Schedule:Day Name
+  548244d9-7b01-4ac3-b70c-745b1497d32a, !- Tuesday Schedule:Day Name
+  2ce4e256-32a4-4bba-86ab-ebc15a62480c, !- Wednesday Schedule:Day Name
+  1a4a6236-bc60-497d-81bf-bb76f3f5cd39, !- Thursday Schedule:Day Name
+  252de100-8b4d-49fc-ae88-36a479cc5a74, !- Friday Schedule:Day Name
+  fff34044-29dc-4b80-8837-d63e119b5894, !- Saturday Schedule:Day Name
+  62eaceb7-57b3-4580-bf6c-300e74340bbe, !- Holiday Schedule:Day Name
+  62eaceb7-57b3-4580-bf6c-300e74340bbe, !- SummerDesignDay Schedule:Day Name
+  62eaceb7-57b3-4580-bf6c-300e74340bbe, !- WinterDesignDay Schedule:Day Name
+  62eaceb7-57b3-4580-bf6c-300e74340bbe, !- CustomDay1 Schedule:Day Name
+  62eaceb7-57b3-4580-bf6c-300e74340bbe; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_11,
+  5df10dde-aef8-4d70-894c-eb76011f8b5e, !- Sunday Schedule:Day Name
+  256727ee-a163-4da3-8407-9aaee0a811a6, !- Monday Schedule:Day Name
+  f79fc4ef-b985-48b3-af44-298bb8cd0af1, !- Tuesday Schedule:Day Name
+  cd6704f1-d6ba-4ea5-8f1c-513fdab3f8c8, !- Wednesday Schedule:Day Name
+  32b8d0c4-fa58-4f7f-8a89-720007c9315d, !- Thursday Schedule:Day Name
+  d5a0baab-9359-428e-8537-e87c705a0f09, !- Friday Schedule:Day Name
+  dad497ad-29f3-4552-af83-e96367cb94c9, !- Saturday Schedule:Day Name
+  5df10dde-aef8-4d70-894c-eb76011f8b5e, !- Holiday Schedule:Day Name
+  5df10dde-aef8-4d70-894c-eb76011f8b5e, !- SummerDesignDay Schedule:Day Name
+  5df10dde-aef8-4d70-894c-eb76011f8b5e, !- WinterDesignDay Schedule:Day Name
+  5df10dde-aef8-4d70-894c-eb76011f8b5e, !- CustomDay1 Schedule:Day Name
+  5df10dde-aef8-4d70-894c-eb76011f8b5e; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_12,
+  5cc4a316-2f3d-45cc-807a-b03f674da3c6, !- Sunday Schedule:Day Name
+  f6bc2ed7-5801-4acd-a533-595417d162b5, !- Monday Schedule:Day Name
+  0a848666-130a-46d5-b41e-8295e756b3e1, !- Tuesday Schedule:Day Name
+  4bcc5a6e-dc92-4936-9c7f-8bab919e39f4, !- Wednesday Schedule:Day Name
+  4c602ce9-eb85-4e88-a927-e073a04d4492, !- Thursday Schedule:Day Name
+  84e770fa-9725-4585-939d-bc150750dc77, !- Friday Schedule:Day Name
+  f1e7ad01-7103-4516-9541-c3e430227b19, !- Saturday Schedule:Day Name
+  5cc4a316-2f3d-45cc-807a-b03f674da3c6, !- Holiday Schedule:Day Name
+  5cc4a316-2f3d-45cc-807a-b03f674da3c6, !- SummerDesignDay Schedule:Day Name
+  5cc4a316-2f3d-45cc-807a-b03f674da3c6, !- WinterDesignDay Schedule:Day Name
+  5cc4a316-2f3d-45cc-807a-b03f674da3c6, !- CustomDay1 Schedule:Day Name
+  5cc4a316-2f3d-45cc-807a-b03f674da3c6; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_13,
+  3199f500-a2bd-4b6e-86a9-7e61d0648864, !- Sunday Schedule:Day Name
+  c2915976-587d-4766-827a-c396c8ebdf59, !- Monday Schedule:Day Name
+  82bc8851-d5fb-4542-97e7-bcd6ce7737e8, !- Tuesday Schedule:Day Name
+  2a6b52e0-4a82-4cf2-90ba-ef8a42fc3e33, !- Wednesday Schedule:Day Name
+  de3a2501-13ec-4f90-a486-e943a4e15560, !- Thursday Schedule:Day Name
+  61ec4cbe-ee5f-4673-9e30-f17859a190b4, !- Friday Schedule:Day Name
+  7d3d948c-1732-4114-b8e8-94a5c563cb8a, !- Saturday Schedule:Day Name
+  3199f500-a2bd-4b6e-86a9-7e61d0648864, !- Holiday Schedule:Day Name
+  3199f500-a2bd-4b6e-86a9-7e61d0648864, !- SummerDesignDay Schedule:Day Name
+  3199f500-a2bd-4b6e-86a9-7e61d0648864, !- WinterDesignDay Schedule:Day Name
+  3199f500-a2bd-4b6e-86a9-7e61d0648864, !- CustomDay1 Schedule:Day Name
+  3199f500-a2bd-4b6e-86a9-7e61d0648864; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_14,
+  d1a716f3-1c29-4676-b59c-c122c90043cd, !- Sunday Schedule:Day Name
+  26635edd-3c87-4f68-8726-1104c81f7da4, !- Monday Schedule:Day Name
+  879eebdc-36a7-4f6c-9382-274ed9e6e5ad, !- Tuesday Schedule:Day Name
+  ebb29a12-f751-43d8-91ff-769aded4bbec, !- Wednesday Schedule:Day Name
+  265d1f11-9126-4ffa-a874-409d24a1a8af, !- Thursday Schedule:Day Name
+  d88e34ae-24f3-4230-83d1-7e21859541c9, !- Friday Schedule:Day Name
+  31dbe957-a8e6-4675-a332-66051d8da8cb, !- Saturday Schedule:Day Name
+  d1a716f3-1c29-4676-b59c-c122c90043cd, !- Holiday Schedule:Day Name
+  d1a716f3-1c29-4676-b59c-c122c90043cd, !- SummerDesignDay Schedule:Day Name
+  d1a716f3-1c29-4676-b59c-c122c90043cd, !- WinterDesignDay Schedule:Day Name
+  d1a716f3-1c29-4676-b59c-c122c90043cd, !- CustomDay1 Schedule:Day Name
+  d1a716f3-1c29-4676-b59c-c122c90043cd; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_15,
+  f8eabe9b-9be9-47eb-8ba1-671d1f2349b3, !- Sunday Schedule:Day Name
+  1d1f0b01-223c-4b4a-8b14-d88fb5283e43, !- Monday Schedule:Day Name
+  1de46638-3696-4644-9393-7eed49473422, !- Tuesday Schedule:Day Name
+  99aad5ca-8e29-49d9-bc14-cd58c5d2055e, !- Wednesday Schedule:Day Name
+  8568e275-456b-45aa-a5db-b521eb3ae5a6, !- Thursday Schedule:Day Name
+  e8215030-7dea-4c36-a481-ebd118401b9e, !- Friday Schedule:Day Name
+  39f06a1e-07f0-4d99-836b-5f86e76af911, !- Saturday Schedule:Day Name
+  f8eabe9b-9be9-47eb-8ba1-671d1f2349b3, !- Holiday Schedule:Day Name
+  f8eabe9b-9be9-47eb-8ba1-671d1f2349b3, !- SummerDesignDay Schedule:Day Name
+  f8eabe9b-9be9-47eb-8ba1-671d1f2349b3, !- WinterDesignDay Schedule:Day Name
+  f8eabe9b-9be9-47eb-8ba1-671d1f2349b3, !- CustomDay1 Schedule:Day Name
+  f8eabe9b-9be9-47eb-8ba1-671d1f2349b3; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_16,
+  9b6e082c-2a93-4074-8ba1-c5683378a0fc, !- Sunday Schedule:Day Name
+  c7079e41-9427-472a-a0c7-5d039eaeec8e, !- Monday Schedule:Day Name
+  6c457549-6b26-4187-a00f-778340866a38, !- Tuesday Schedule:Day Name
+  536a18d9-8750-4a9b-b799-8584c22263fe, !- Wednesday Schedule:Day Name
+  f4e82e07-66cc-44d9-a4d4-bab3da510ec5, !- Thursday Schedule:Day Name
+  06a30e78-3f22-45bd-b4c3-8015af8abc4a, !- Friday Schedule:Day Name
+  3afd9b2d-ad9a-4cbd-835e-b8aef2790ab3, !- Saturday Schedule:Day Name
+  9b6e082c-2a93-4074-8ba1-c5683378a0fc, !- Holiday Schedule:Day Name
+  9b6e082c-2a93-4074-8ba1-c5683378a0fc, !- SummerDesignDay Schedule:Day Name
+  9b6e082c-2a93-4074-8ba1-c5683378a0fc, !- WinterDesignDay Schedule:Day Name
+  9b6e082c-2a93-4074-8ba1-c5683378a0fc, !- CustomDay1 Schedule:Day Name
+  9b6e082c-2a93-4074-8ba1-c5683378a0fc; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_17,
+  ccec86f9-1592-4acd-bd57-b29090760f5a, !- Sunday Schedule:Day Name
+  4cd5c318-635b-48ee-88d6-4b7c00bc9c75, !- Monday Schedule:Day Name
+  279b39fb-639b-43a4-9950-4b30bc3d2127, !- Tuesday Schedule:Day Name
+  724402b1-bbd7-4f44-9d5a-2861bf886583, !- Wednesday Schedule:Day Name
+  1993bce1-b346-46d8-88a1-a45f70cf0461, !- Thursday Schedule:Day Name
+  1993bce1-b346-46d8-88a1-a45f70cf0461, !- Friday Schedule:Day Name
+  1993bce1-b346-46d8-88a1-a45f70cf0461, !- Saturday Schedule:Day Name
+  ccec86f9-1592-4acd-bd57-b29090760f5a, !- Holiday Schedule:Day Name
+  ccec86f9-1592-4acd-bd57-b29090760f5a, !- SummerDesignDay Schedule:Day Name
+  ccec86f9-1592-4acd-bd57-b29090760f5a, !- WinterDesignDay Schedule:Day Name
+  ccec86f9-1592-4acd-bd57-b29090760f5a, !- CustomDay1 Schedule:Day Name
+  ccec86f9-1592-4acd-bd57-b29090760f5a; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_18,
+  1993bce1-b346-46d8-88a1-a45f70cf0461, !- Sunday Schedule:Day Name
+  1993bce1-b346-46d8-88a1-a45f70cf0461, !- Monday Schedule:Day Name
+  e99a257d-edf4-4d61-9ef0-d0bdb297ee30, !- Tuesday Schedule:Day Name
+  279b39fb-639b-43a4-9950-4b30bc3d2127, !- Wednesday Schedule:Day Name
+  279b39fb-639b-43a4-9950-4b30bc3d2127, !- Thursday Schedule:Day Name
+  7f44e5b1-0ac2-4048-9dc4-19fb63bae680, !- Friday Schedule:Day Name
+  315e4ee9-438e-461e-b834-1894be013e52, !- Saturday Schedule:Day Name
+  1993bce1-b346-46d8-88a1-a45f70cf0461, !- Holiday Schedule:Day Name
+  1993bce1-b346-46d8-88a1-a45f70cf0461, !- SummerDesignDay Schedule:Day Name
+  1993bce1-b346-46d8-88a1-a45f70cf0461, !- WinterDesignDay Schedule:Day Name
+  1993bce1-b346-46d8-88a1-a45f70cf0461, !- CustomDay1 Schedule:Day Name
+  1993bce1-b346-46d8-88a1-a45f70cf0461; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_19,
+  06a30e78-3f22-45bd-b4c3-8015af8abc4a, !- Sunday Schedule:Day Name
+  7395410b-4ee6-42d8-8881-de450ee5a3e2, !- Monday Schedule:Day Name
+  c1b07c1a-3687-47f2-bae9-56986c6aeb60, !- Tuesday Schedule:Day Name
+  610ed20c-ae34-40c9-b63c-61394f0fb3c4, !- Wednesday Schedule:Day Name
+  ef4e0747-d1ca-4b8c-9717-d4d6c622ec9a, !- Thursday Schedule:Day Name
+  2a48234c-0ab1-4f0b-833b-8b09c3118866, !- Friday Schedule:Day Name
+  ea65364b-cc96-4992-96f3-fdb338879930, !- Saturday Schedule:Day Name
+  06a30e78-3f22-45bd-b4c3-8015af8abc4a, !- Holiday Schedule:Day Name
+  06a30e78-3f22-45bd-b4c3-8015af8abc4a, !- SummerDesignDay Schedule:Day Name
+  06a30e78-3f22-45bd-b4c3-8015af8abc4a, !- WinterDesignDay Schedule:Day Name
+  06a30e78-3f22-45bd-b4c3-8015af8abc4a, !- CustomDay1 Schedule:Day Name
+  06a30e78-3f22-45bd-b4c3-8015af8abc4a; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_20,
+  b59651f3-23c8-4e6f-a133-4864b195174f, !- Sunday Schedule:Day Name
+  3cc95a45-507f-4183-ba70-9f5396d5e341, !- Monday Schedule:Day Name
+  54db9529-54e2-4427-8694-61011687cf64, !- Tuesday Schedule:Day Name
+  0c71aea0-8c61-4a5d-b548-eab2bea2d89f, !- Wednesday Schedule:Day Name
+  212beab9-592e-40d9-98f2-0b66865a5f71, !- Thursday Schedule:Day Name
+  1eff017f-7155-42be-add6-fb7a2838a711, !- Friday Schedule:Day Name
+  dd27cf62-3aa7-4e5e-8268-5a3352f070c5, !- Saturday Schedule:Day Name
+  b59651f3-23c8-4e6f-a133-4864b195174f, !- Holiday Schedule:Day Name
+  b59651f3-23c8-4e6f-a133-4864b195174f, !- SummerDesignDay Schedule:Day Name
+  b59651f3-23c8-4e6f-a133-4864b195174f, !- WinterDesignDay Schedule:Day Name
+  b59651f3-23c8-4e6f-a133-4864b195174f, !- CustomDay1 Schedule:Day Name
+  b59651f3-23c8-4e6f-a133-4864b195174f; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_21,
+  f393087c-a5f9-42d8-9c01-233af56e21fe, !- Sunday Schedule:Day Name
+  8c35348e-0077-4d9a-8a21-fa81244e2234, !- Monday Schedule:Day Name
+  26031cb8-7762-457f-b3d8-87def4575cec, !- Tuesday Schedule:Day Name
+  0fef2235-75be-4612-99e3-0bbb2a138ac7, !- Wednesday Schedule:Day Name
+  b992e7ba-093a-436c-87f1-a51c0740edf7, !- Thursday Schedule:Day Name
+  cdd3bfb1-6c57-445e-8381-b1d4fc85c771, !- Friday Schedule:Day Name
+  d10cb2d5-9dbb-45ff-9a0c-cac4c953777a, !- Saturday Schedule:Day Name
+  f393087c-a5f9-42d8-9c01-233af56e21fe, !- Holiday Schedule:Day Name
+  f393087c-a5f9-42d8-9c01-233af56e21fe, !- SummerDesignDay Schedule:Day Name
+  f393087c-a5f9-42d8-9c01-233af56e21fe, !- WinterDesignDay Schedule:Day Name
+  f393087c-a5f9-42d8-9c01-233af56e21fe, !- CustomDay1 Schedule:Day Name
+  f393087c-a5f9-42d8-9c01-233af56e21fe; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_22,
+  838587ce-8403-4c22-bf35-658d87487644, !- Sunday Schedule:Day Name
+  ab4dfde9-f061-4c61-b715-b40375c98a92, !- Monday Schedule:Day Name
+  65280d27-b495-4df2-ac80-3c9ba0e6c1eb, !- Tuesday Schedule:Day Name
+  22da210f-fcf5-4e92-908c-70098fb6af41, !- Wednesday Schedule:Day Name
+  e561181e-9004-4e12-8fe9-3b0d14e1507f, !- Thursday Schedule:Day Name
+  64ce2553-9707-4b1c-bab9-5e0be038822e, !- Friday Schedule:Day Name
+  937692a5-9370-4982-9678-cb5b34287285, !- Saturday Schedule:Day Name
+  838587ce-8403-4c22-bf35-658d87487644, !- Holiday Schedule:Day Name
+  838587ce-8403-4c22-bf35-658d87487644, !- SummerDesignDay Schedule:Day Name
+  838587ce-8403-4c22-bf35-658d87487644, !- WinterDesignDay Schedule:Day Name
+  838587ce-8403-4c22-bf35-658d87487644, !- CustomDay1 Schedule:Day Name
+  838587ce-8403-4c22-bf35-658d87487644; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_23,
+  9b191bb9-bfa8-4848-8577-ac0859256bf9, !- Sunday Schedule:Day Name
+  30d0cbe8-5c10-479f-9970-fd9d37cd495e, !- Monday Schedule:Day Name
+  17374856-15a3-43e3-8b27-4cedca09ea03, !- Tuesday Schedule:Day Name
+  1f3d03ea-22e3-47c8-8a82-5171fe01b922, !- Wednesday Schedule:Day Name
+  8db1f2a2-58f4-4a9d-b631-ad49fe12dea6, !- Thursday Schedule:Day Name
+  3e666271-5383-4d86-a9e2-b7c660011611, !- Friday Schedule:Day Name
+  ebd955c1-90b4-41ae-b4d7-2fc9908ce08e, !- Saturday Schedule:Day Name
+  9b191bb9-bfa8-4848-8577-ac0859256bf9, !- Holiday Schedule:Day Name
+  9b191bb9-bfa8-4848-8577-ac0859256bf9, !- SummerDesignDay Schedule:Day Name
+  9b191bb9-bfa8-4848-8577-ac0859256bf9, !- WinterDesignDay Schedule:Day Name
+  9b191bb9-bfa8-4848-8577-ac0859256bf9, !- CustomDay1 Schedule:Day Name
+  9b191bb9-bfa8-4848-8577-ac0859256bf9; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_24,
+  76c04d88-0075-4a36-a3d5-4429061d2741, !- Sunday Schedule:Day Name
+  b9dbe302-c374-4915-9caa-b5645312ee76, !- Monday Schedule:Day Name
+  105d9a0d-2f24-4d93-b5f5-25775c49edee, !- Tuesday Schedule:Day Name
+  d108ed7a-9f1c-421f-9cbb-43363c0db990, !- Wednesday Schedule:Day Name
+  83a225f8-62ad-4ce0-909f-246c69d7b443, !- Thursday Schedule:Day Name
+  04ce1548-f38f-4a43-bae5-a5c0d34b6e60, !- Friday Schedule:Day Name
+  c8639d04-fc57-4745-94be-df7b39469c28, !- Saturday Schedule:Day Name
+  76c04d88-0075-4a36-a3d5-4429061d2741, !- Holiday Schedule:Day Name
+  76c04d88-0075-4a36-a3d5-4429061d2741, !- SummerDesignDay Schedule:Day Name
+  76c04d88-0075-4a36-a3d5-4429061d2741, !- WinterDesignDay Schedule:Day Name
+  76c04d88-0075-4a36-a3d5-4429061d2741, !- CustomDay1 Schedule:Day Name
+  76c04d88-0075-4a36-a3d5-4429061d2741; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_25,
+  5af398e5-6a9c-409a-b246-a66723925977, !- Sunday Schedule:Day Name
+  baee118f-46bb-4ff4-aa2d-e6a54d852e91, !- Monday Schedule:Day Name
+  b8330f1d-1abf-4d54-a23f-c1077abfb2d0, !- Tuesday Schedule:Day Name
+  4699f758-7ada-4cdf-8d5e-a618380b111b, !- Wednesday Schedule:Day Name
+  bb21f3cc-465d-489b-84a6-80476547bb8b, !- Thursday Schedule:Day Name
+  9ee8cca3-013a-4b19-85b2-f206c5456cf3, !- Friday Schedule:Day Name
+  46f214b3-d086-447d-86b8-7fb111914a3a, !- Saturday Schedule:Day Name
+  5af398e5-6a9c-409a-b246-a66723925977, !- Holiday Schedule:Day Name
+  5af398e5-6a9c-409a-b246-a66723925977, !- SummerDesignDay Schedule:Day Name
+  5af398e5-6a9c-409a-b246-a66723925977, !- WinterDesignDay Schedule:Day Name
+  5af398e5-6a9c-409a-b246-a66723925977, !- CustomDay1 Schedule:Day Name
+  5af398e5-6a9c-409a-b246-a66723925977; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_26,
+  d2d2a364-4558-492e-9265-70e54a872388, !- Sunday Schedule:Day Name
+  0127a66e-c6cb-4ccf-af2f-c5441c9eecc8, !- Monday Schedule:Day Name
+  043aaf07-d493-44fa-b3ed-f5b961067edb, !- Tuesday Schedule:Day Name
+  18f132f4-cb2f-46ef-8a11-4635e01e5c62, !- Wednesday Schedule:Day Name
+  c4999c97-0db6-41ab-99a6-befd606d6d48, !- Thursday Schedule:Day Name
+  345849b8-23a6-4856-b441-1d4be24afd7b, !- Friday Schedule:Day Name
+  0bdabe45-9a13-4b56-b551-eac39790aaaa, !- Saturday Schedule:Day Name
+  d2d2a364-4558-492e-9265-70e54a872388, !- Holiday Schedule:Day Name
+  d2d2a364-4558-492e-9265-70e54a872388, !- SummerDesignDay Schedule:Day Name
+  d2d2a364-4558-492e-9265-70e54a872388, !- WinterDesignDay Schedule:Day Name
+  d2d2a364-4558-492e-9265-70e54a872388, !- CustomDay1 Schedule:Day Name
+  d2d2a364-4558-492e-9265-70e54a872388; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_27,
+  dce15409-3004-4ab4-ba10-52307d7c57b7, !- Sunday Schedule:Day Name
+  093e2b05-68a6-4f15-acbc-26c7e6e1e069, !- Monday Schedule:Day Name
+  ad6a0f14-f341-4dce-92d6-9144cd780ef3, !- Tuesday Schedule:Day Name
+  b9aa69f2-85bc-44a1-b954-e0fbe161b65e, !- Wednesday Schedule:Day Name
+  5ac1abc5-d543-41e0-980c-80cb834ee20e, !- Thursday Schedule:Day Name
+  76332f12-ce68-47f9-a429-da35ad5db154, !- Friday Schedule:Day Name
+  51b874da-b029-44d3-bc6d-8a31394cf13a, !- Saturday Schedule:Day Name
+  dce15409-3004-4ab4-ba10-52307d7c57b7, !- Holiday Schedule:Day Name
+  dce15409-3004-4ab4-ba10-52307d7c57b7, !- SummerDesignDay Schedule:Day Name
+  dce15409-3004-4ab4-ba10-52307d7c57b7, !- WinterDesignDay Schedule:Day Name
+  dce15409-3004-4ab4-ba10-52307d7c57b7, !- CustomDay1 Schedule:Day Name
+  dce15409-3004-4ab4-ba10-52307d7c57b7; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_28,
+  02b9d441-7c96-4037-9fe2-7b7bec8e72a6, !- Sunday Schedule:Day Name
+  13594a9e-9808-427b-aed0-6d51e25775b5, !- Monday Schedule:Day Name
+  d3667c4b-3c05-4aec-9aac-6b82d481a271, !- Tuesday Schedule:Day Name
+  6c23a0cd-f61c-4af8-9aa2-270c978b3806, !- Wednesday Schedule:Day Name
+  ed3fc0a8-3cb9-442f-8114-3294769e0dd5, !- Thursday Schedule:Day Name
+  ded9cba0-fb0f-4069-a286-20fff67aa2e1, !- Friday Schedule:Day Name
+  a72bccfb-ae44-4f5b-b50f-c37f2bb3257e, !- Saturday Schedule:Day Name
+  02b9d441-7c96-4037-9fe2-7b7bec8e72a6, !- Holiday Schedule:Day Name
+  02b9d441-7c96-4037-9fe2-7b7bec8e72a6, !- SummerDesignDay Schedule:Day Name
+  02b9d441-7c96-4037-9fe2-7b7bec8e72a6, !- WinterDesignDay Schedule:Day Name
+  02b9d441-7c96-4037-9fe2-7b7bec8e72a6, !- CustomDay1 Schedule:Day Name
+  02b9d441-7c96-4037-9fe2-7b7bec8e72a6; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_29,
+  05d4b743-0f31-4bdb-904c-5d45f68ad29f, !- Sunday Schedule:Day Name
+  f5d2c1a8-27c9-4222-90aa-6621881bf851, !- Monday Schedule:Day Name
+  c5b937e4-ffd6-46fe-8b1e-6a37026d562b, !- Tuesday Schedule:Day Name
+  5f07d91b-926c-420a-91f5-876198d021ab, !- Wednesday Schedule:Day Name
+  b2d9855a-dc00-427f-9765-d0360304ca3f, !- Thursday Schedule:Day Name
+  7c3877ef-3009-4095-b8b4-c71761068dcc, !- Friday Schedule:Day Name
+  4419b273-e9b3-4205-9a4c-ed9714297656, !- Saturday Schedule:Day Name
+  05d4b743-0f31-4bdb-904c-5d45f68ad29f, !- Holiday Schedule:Day Name
+  05d4b743-0f31-4bdb-904c-5d45f68ad29f, !- SummerDesignDay Schedule:Day Name
+  05d4b743-0f31-4bdb-904c-5d45f68ad29f, !- WinterDesignDay Schedule:Day Name
+  05d4b743-0f31-4bdb-904c-5d45f68ad29f, !- CustomDay1 Schedule:Day Name
+  05d4b743-0f31-4bdb-904c-5d45f68ad29f; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_30,
+  2ad7814e-6276-4991-ada9-6d08f24e97f5, !- Sunday Schedule:Day Name
+  cb731357-cce5-4368-ae10-8e8fc5bb1757, !- Monday Schedule:Day Name
+  107293de-6b5c-48bf-859d-5572d4b8595e, !- Tuesday Schedule:Day Name
+  31dc0983-0550-4955-816a-8d3dfb7946d7, !- Wednesday Schedule:Day Name
+  b2c62ee3-bdab-425a-a68f-efa6a031d601, !- Thursday Schedule:Day Name
+  fef22d83-e2a3-4903-87e5-f45e766a0357, !- Friday Schedule:Day Name
+  23da4141-749b-4bde-bae4-ac28df6bf6bf, !- Saturday Schedule:Day Name
+  2ad7814e-6276-4991-ada9-6d08f24e97f5, !- Holiday Schedule:Day Name
+  2ad7814e-6276-4991-ada9-6d08f24e97f5, !- SummerDesignDay Schedule:Day Name
+  2ad7814e-6276-4991-ada9-6d08f24e97f5, !- WinterDesignDay Schedule:Day Name
+  2ad7814e-6276-4991-ada9-6d08f24e97f5, !- CustomDay1 Schedule:Day Name
+  2ad7814e-6276-4991-ada9-6d08f24e97f5; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_31,
+  62043c01-2bde-49ae-851f-ec3689071444, !- Sunday Schedule:Day Name
+  734d5a63-9ad8-4fd1-b14d-161f8f38e473, !- Monday Schedule:Day Name
+  4ec59b03-70b3-4f0b-a5cf-33be2f96b709, !- Tuesday Schedule:Day Name
+  258672fc-bb26-43f7-9129-83453a01e000, !- Wednesday Schedule:Day Name
+  b94ac795-6845-427a-9758-2949805c1a73, !- Thursday Schedule:Day Name
+  a188e761-fd5d-4de1-a6ae-4fdb9131c2b5, !- Friday Schedule:Day Name
+  c1254279-fd9c-4bef-9486-20bc11008fbd, !- Saturday Schedule:Day Name
+  62043c01-2bde-49ae-851f-ec3689071444, !- Holiday Schedule:Day Name
+  62043c01-2bde-49ae-851f-ec3689071444, !- SummerDesignDay Schedule:Day Name
+  62043c01-2bde-49ae-851f-ec3689071444, !- WinterDesignDay Schedule:Day Name
+  62043c01-2bde-49ae-851f-ec3689071444, !- CustomDay1 Schedule:Day Name
+  62043c01-2bde-49ae-851f-ec3689071444; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_32,
+  77b59262-e82f-4322-ab96-01a775b70148, !- Sunday Schedule:Day Name
+  19e11b08-3213-43c4-9005-e4f402ec7cb4, !- Monday Schedule:Day Name
+  867f4e86-cba2-41b0-9a25-bee12976e7a5, !- Tuesday Schedule:Day Name
+  53a3ec63-3c4a-40d1-8d6c-6230180efa43, !- Wednesday Schedule:Day Name
+  3d3fd92d-c3ec-40ce-af23-fa18e4c40cdb, !- Thursday Schedule:Day Name
+  a7bc852c-076e-4fe2-b148-cff65190f425, !- Friday Schedule:Day Name
+  a97a64a6-6fec-4611-88c1-69501485f22b, !- Saturday Schedule:Day Name
+  77b59262-e82f-4322-ab96-01a775b70148, !- Holiday Schedule:Day Name
+  77b59262-e82f-4322-ab96-01a775b70148, !- SummerDesignDay Schedule:Day Name
+  77b59262-e82f-4322-ab96-01a775b70148, !- WinterDesignDay Schedule:Day Name
+  77b59262-e82f-4322-ab96-01a775b70148, !- CustomDay1 Schedule:Day Name
+  77b59262-e82f-4322-ab96-01a775b70148; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_33,
+  a8ba1a6f-01fc-486f-9821-116ae6b68d3e, !- Sunday Schedule:Day Name
+  6d49eb90-01e8-4094-a937-bf8ba0842ec2, !- Monday Schedule:Day Name
+  4fc8d0e0-67b2-4a17-aa70-f755dd86a647, !- Tuesday Schedule:Day Name
+  1b7c3cc5-7aee-472c-9fd8-1a205878bd73, !- Wednesday Schedule:Day Name
+  1b7c3cc5-7aee-472c-9fd8-1a205878bd73, !- Thursday Schedule:Day Name
+  1b7c3cc5-7aee-472c-9fd8-1a205878bd73, !- Friday Schedule:Day Name
+  a50e0fbf-c840-4b18-bb0a-f0d9cfce2377, !- Saturday Schedule:Day Name
+  a8ba1a6f-01fc-486f-9821-116ae6b68d3e, !- Holiday Schedule:Day Name
+  a8ba1a6f-01fc-486f-9821-116ae6b68d3e, !- SummerDesignDay Schedule:Day Name
+  a8ba1a6f-01fc-486f-9821-116ae6b68d3e, !- WinterDesignDay Schedule:Day Name
+  a8ba1a6f-01fc-486f-9821-116ae6b68d3e, !- CustomDay1 Schedule:Day Name
+  a8ba1a6f-01fc-486f-9821-116ae6b68d3e; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_34,
+  7e958042-2aa2-40fe-978e-3531be6af3a9, !- Sunday Schedule:Day Name
+  d9f550f8-5b12-4c3d-9b1b-27fd8ab2c8e7, !- Monday Schedule:Day Name
+  77ec03af-a9d3-4f4b-9fd5-89d40f2a04c7, !- Tuesday Schedule:Day Name
+  62fec2fc-051b-47ab-ba97-4faaa72279a2, !- Wednesday Schedule:Day Name
+  a7177e96-92be-4a97-bdfa-0135c6ceae3b, !- Thursday Schedule:Day Name
+  dfecf52f-049a-41f4-97ab-006b15bd220e, !- Friday Schedule:Day Name
+  beafa670-33c1-4090-bf21-921769d74586, !- Saturday Schedule:Day Name
+  7e958042-2aa2-40fe-978e-3531be6af3a9, !- Holiday Schedule:Day Name
+  7e958042-2aa2-40fe-978e-3531be6af3a9, !- SummerDesignDay Schedule:Day Name
+  7e958042-2aa2-40fe-978e-3531be6af3a9, !- WinterDesignDay Schedule:Day Name
+  7e958042-2aa2-40fe-978e-3531be6af3a9, !- CustomDay1 Schedule:Day Name
+  7e958042-2aa2-40fe-978e-3531be6af3a9; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_35,
+  096ac2eb-7f96-40c0-a490-1f684f2226b8, !- Sunday Schedule:Day Name
+  2aca75ea-5d36-426b-954d-deccd7190f16, !- Monday Schedule:Day Name
+  ebb3bd8e-642d-4bee-a695-d6b3568058f4, !- Tuesday Schedule:Day Name
+  5feb4699-56af-4e1c-b410-2cd72cfec4c7, !- Wednesday Schedule:Day Name
+  dcf36f76-dd28-45e9-b078-a479d5e6ee6d, !- Thursday Schedule:Day Name
+  29b8214e-de56-4ee7-b694-cf2807bb40f7, !- Friday Schedule:Day Name
+  1437f816-2580-4d91-8121-5a3ba091f693, !- Saturday Schedule:Day Name
+  096ac2eb-7f96-40c0-a490-1f684f2226b8, !- Holiday Schedule:Day Name
+  096ac2eb-7f96-40c0-a490-1f684f2226b8, !- SummerDesignDay Schedule:Day Name
+  096ac2eb-7f96-40c0-a490-1f684f2226b8, !- WinterDesignDay Schedule:Day Name
+  096ac2eb-7f96-40c0-a490-1f684f2226b8, !- CustomDay1 Schedule:Day Name
+  096ac2eb-7f96-40c0-a490-1f684f2226b8; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_36,
+  e0bf39da-2706-4b5c-b8b4-7c73b78c4c5c, !- Sunday Schedule:Day Name
+  49569e05-45ab-4693-ae5b-065122550d22, !- Monday Schedule:Day Name
+  8e80fda7-6ab3-4baf-9b5c-5a75ec426a00, !- Tuesday Schedule:Day Name
+  5486dc08-4238-4b39-b4bc-89ab09711aee, !- Wednesday Schedule:Day Name
+  be42cbba-2d47-4ca8-bbba-92481afa5f46, !- Thursday Schedule:Day Name
+  b22c28fc-ebc8-4b61-a768-f8e2d0f9dc1d, !- Friday Schedule:Day Name
+  4955c7d0-604f-4162-9cd0-c35ae573160d, !- Saturday Schedule:Day Name
+  e0bf39da-2706-4b5c-b8b4-7c73b78c4c5c, !- Holiday Schedule:Day Name
+  e0bf39da-2706-4b5c-b8b4-7c73b78c4c5c, !- SummerDesignDay Schedule:Day Name
+  e0bf39da-2706-4b5c-b8b4-7c73b78c4c5c, !- WinterDesignDay Schedule:Day Name
+  e0bf39da-2706-4b5c-b8b4-7c73b78c4c5c, !- CustomDay1 Schedule:Day Name
+  e0bf39da-2706-4b5c-b8b4-7c73b78c4c5c; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_37,
+  d5c6e9e3-6615-43c8-b7ea-460ca2a1e383, !- Sunday Schedule:Day Name
+  7d839767-4faf-4375-a548-905f85a294b3, !- Monday Schedule:Day Name
+  cb9a4691-81ae-4515-9daa-b73e06129999, !- Tuesday Schedule:Day Name
+  4a9cac76-2876-41a9-9569-58659bfe4811, !- Wednesday Schedule:Day Name
+  0bec646d-d2a2-4e91-b0c0-08bf3a59f4e3, !- Thursday Schedule:Day Name
+  699b288a-bc91-4330-942d-a19289795c2d, !- Friday Schedule:Day Name
+  dc749704-cec9-4416-a0a3-69d72ba884d5, !- Saturday Schedule:Day Name
+  d5c6e9e3-6615-43c8-b7ea-460ca2a1e383, !- Holiday Schedule:Day Name
+  d5c6e9e3-6615-43c8-b7ea-460ca2a1e383, !- SummerDesignDay Schedule:Day Name
+  d5c6e9e3-6615-43c8-b7ea-460ca2a1e383, !- WinterDesignDay Schedule:Day Name
+  d5c6e9e3-6615-43c8-b7ea-460ca2a1e383, !- CustomDay1 Schedule:Day Name
+  d5c6e9e3-6615-43c8-b7ea-460ca2a1e383; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_38,
+  7ffa59fb-9afd-47da-bb57-86796609f9f1, !- Sunday Schedule:Day Name
+  f1e1f14d-808e-4817-9ce0-dcf2deda8e1d, !- Monday Schedule:Day Name
+  6569db5f-f490-4530-b873-5696a095d7cf, !- Tuesday Schedule:Day Name
+  516c6c27-aa8a-4d07-8833-531faf3ed512, !- Wednesday Schedule:Day Name
+  01d982e7-3594-4691-8402-88ee4dbe0b10, !- Thursday Schedule:Day Name
+  312fe7bd-3e27-4275-9a25-9f4355a83b0f, !- Friday Schedule:Day Name
+  1d272c1d-024f-4734-942c-7eef584beffa, !- Saturday Schedule:Day Name
+  7ffa59fb-9afd-47da-bb57-86796609f9f1, !- Holiday Schedule:Day Name
+  7ffa59fb-9afd-47da-bb57-86796609f9f1, !- SummerDesignDay Schedule:Day Name
+  7ffa59fb-9afd-47da-bb57-86796609f9f1, !- WinterDesignDay Schedule:Day Name
+  7ffa59fb-9afd-47da-bb57-86796609f9f1, !- CustomDay1 Schedule:Day Name
+  7ffa59fb-9afd-47da-bb57-86796609f9f1; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_39,
+  d00ac277-5ad3-4859-92ca-24a464354cf6, !- Sunday Schedule:Day Name
+  26175840-5a13-483c-99a7-a9ed4292b1b3, !- Monday Schedule:Day Name
+  b568bc33-7d69-4340-ade0-5fcde3965eea, !- Tuesday Schedule:Day Name
+  75bca0d2-bf3e-4d7f-ad1a-da9ddd134edd, !- Wednesday Schedule:Day Name
+  0eef675d-05d1-4749-98b6-2a0b7f74138c, !- Thursday Schedule:Day Name
+  d7decc9f-e492-46d8-89ee-4093ec31299b, !- Friday Schedule:Day Name
+  67ba507d-d58d-4a33-a148-1cbf66114479, !- Saturday Schedule:Day Name
+  d00ac277-5ad3-4859-92ca-24a464354cf6, !- Holiday Schedule:Day Name
+  d00ac277-5ad3-4859-92ca-24a464354cf6, !- SummerDesignDay Schedule:Day Name
+  d00ac277-5ad3-4859-92ca-24a464354cf6, !- WinterDesignDay Schedule:Day Name
+  d00ac277-5ad3-4859-92ca-24a464354cf6, !- CustomDay1 Schedule:Day Name
+  d00ac277-5ad3-4859-92ca-24a464354cf6; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_40,
+  6560b193-e84e-4351-a241-5003a3a5fbaf, !- Sunday Schedule:Day Name
+  2f37bd60-19ce-4730-b950-0cbe8612cf92, !- Monday Schedule:Day Name
+  9892a4f4-f6da-4708-8b22-a093a856406a, !- Tuesday Schedule:Day Name
+  2651b4fd-9da2-492e-830a-9c723d2fa041, !- Wednesday Schedule:Day Name
+  b34a0fe0-f875-43cd-a8f0-77bdb1dcd72d, !- Thursday Schedule:Day Name
+  29d5d5f0-dafa-4c1c-b697-68ec87bb0021, !- Friday Schedule:Day Name
+  5cd7aa57-f868-480a-b785-7dcf4965290b, !- Saturday Schedule:Day Name
+  6560b193-e84e-4351-a241-5003a3a5fbaf, !- Holiday Schedule:Day Name
+  6560b193-e84e-4351-a241-5003a3a5fbaf, !- SummerDesignDay Schedule:Day Name
+  6560b193-e84e-4351-a241-5003a3a5fbaf, !- WinterDesignDay Schedule:Day Name
+  6560b193-e84e-4351-a241-5003a3a5fbaf, !- CustomDay1 Schedule:Day Name
+  6560b193-e84e-4351-a241-5003a3a5fbaf; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_41,
+  2fa2b08e-b07e-4a3b-bb02-f0326b85f7b6, !- Sunday Schedule:Day Name
+  c1bac147-6f61-462a-a83f-707d89d9f9f1, !- Monday Schedule:Day Name
+  a7f8604c-cf7b-4a3f-b200-a69a28ba076b, !- Tuesday Schedule:Day Name
+  5bec8b00-e8f9-41b7-86eb-4572fbf9f977, !- Wednesday Schedule:Day Name
+  29424f8f-1457-4292-b10a-7ea354c360c8, !- Thursday Schedule:Day Name
+  f0cdbbdb-f055-47a3-919b-e3248a9a7a19, !- Friday Schedule:Day Name
+  240eb34e-ad2c-41e4-87d9-72b525152122, !- Saturday Schedule:Day Name
+  2fa2b08e-b07e-4a3b-bb02-f0326b85f7b6, !- Holiday Schedule:Day Name
+  2fa2b08e-b07e-4a3b-bb02-f0326b85f7b6, !- SummerDesignDay Schedule:Day Name
+  2fa2b08e-b07e-4a3b-bb02-f0326b85f7b6, !- WinterDesignDay Schedule:Day Name
+  2fa2b08e-b07e-4a3b-bb02-f0326b85f7b6, !- CustomDay1 Schedule:Day Name
+  2fa2b08e-b07e-4a3b-bb02-f0326b85f7b6; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_42,
+  3c3b3301-72be-45fe-8ea0-3ef315dea011, !- Sunday Schedule:Day Name
+  9f87ef89-34c2-4584-9118-003f676f35e1, !- Monday Schedule:Day Name
+  d9c4fab9-a208-4b9d-b423-ea1393cc2a5a, !- Tuesday Schedule:Day Name
+  1778a6b0-15bf-4f6f-ae71-d21ffd680e50, !- Wednesday Schedule:Day Name
+  56a5af9e-8c4e-4acb-80b5-51acc355a5fe, !- Thursday Schedule:Day Name
+  f58425da-1bef-483a-8d19-e679a49f3a7d, !- Friday Schedule:Day Name
+  99efaaff-58a5-469a-a209-257c42073b87, !- Saturday Schedule:Day Name
+  3c3b3301-72be-45fe-8ea0-3ef315dea011, !- Holiday Schedule:Day Name
+  3c3b3301-72be-45fe-8ea0-3ef315dea011, !- SummerDesignDay Schedule:Day Name
+  3c3b3301-72be-45fe-8ea0-3ef315dea011, !- WinterDesignDay Schedule:Day Name
+  3c3b3301-72be-45fe-8ea0-3ef315dea011, !- CustomDay1 Schedule:Day Name
+  3c3b3301-72be-45fe-8ea0-3ef315dea011; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_43,
+  ac798c11-271a-4a5e-b9f7-d7614d97e7fb, !- Sunday Schedule:Day Name
+  b33ddbe3-5fe0-4374-9381-ac873b8126fd, !- Monday Schedule:Day Name
+  fb3f5645-8a42-43e9-ad92-ef71cdad6081, !- Tuesday Schedule:Day Name
+  27440bea-00d9-4b52-a206-c252448c4d1f, !- Wednesday Schedule:Day Name
+  2495f234-5b9e-4be2-a923-1b62b461db93, !- Thursday Schedule:Day Name
+  d7238a6a-1915-4344-9797-52560645d02e, !- Friday Schedule:Day Name
+  238be612-c1c8-4150-8079-ba967e8c76dd, !- Saturday Schedule:Day Name
+  ac798c11-271a-4a5e-b9f7-d7614d97e7fb, !- Holiday Schedule:Day Name
+  ac798c11-271a-4a5e-b9f7-d7614d97e7fb, !- SummerDesignDay Schedule:Day Name
+  ac798c11-271a-4a5e-b9f7-d7614d97e7fb, !- WinterDesignDay Schedule:Day Name
+  ac798c11-271a-4a5e-b9f7-d7614d97e7fb, !- CustomDay1 Schedule:Day Name
+  ac798c11-271a-4a5e-b9f7-d7614d97e7fb; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_44,
+  40723d9e-b639-4ff9-b7d7-a18c41808fb4, !- Sunday Schedule:Day Name
+  a5969ffa-480a-40ea-86d6-a7921ca4c814, !- Monday Schedule:Day Name
+  6691f29d-08b8-4166-9de6-90ae48bad3cd, !- Tuesday Schedule:Day Name
+  a1c117fa-17dd-4d9c-82e8-230f0071ea20, !- Wednesday Schedule:Day Name
+  4afc3208-12dc-4ae9-a5d7-c416f916b700, !- Thursday Schedule:Day Name
+  54215814-0548-4ef6-b5f3-ff98f45c9662, !- Friday Schedule:Day Name
+  8e32ef59-4b56-408f-93a8-288b6685341b, !- Saturday Schedule:Day Name
+  40723d9e-b639-4ff9-b7d7-a18c41808fb4, !- Holiday Schedule:Day Name
+  40723d9e-b639-4ff9-b7d7-a18c41808fb4, !- SummerDesignDay Schedule:Day Name
+  40723d9e-b639-4ff9-b7d7-a18c41808fb4, !- WinterDesignDay Schedule:Day Name
+  40723d9e-b639-4ff9-b7d7-a18c41808fb4, !- CustomDay1 Schedule:Day Name
+  40723d9e-b639-4ff9-b7d7-a18c41808fb4; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_45,
+  7ee3c301-67d3-4dde-9aa5-ea5fcbda5f26, !- Sunday Schedule:Day Name
+  1b648ca1-e69d-4d43-9fe1-a1894203e66b, !- Monday Schedule:Day Name
+  4bac183e-aba5-460f-9a49-672ef530f8f2, !- Tuesday Schedule:Day Name
+  98f8166b-58fd-46b0-9d42-39edb0188881, !- Wednesday Schedule:Day Name
+  b425c1de-71c0-4695-9b90-577d2ff6caef, !- Thursday Schedule:Day Name
+  7c162277-3bf2-42b7-a11c-059a8800a040, !- Friday Schedule:Day Name
+  fd51185b-d385-4f11-abd5-a360fbaf9841, !- Saturday Schedule:Day Name
+  7ee3c301-67d3-4dde-9aa5-ea5fcbda5f26, !- Holiday Schedule:Day Name
+  7ee3c301-67d3-4dde-9aa5-ea5fcbda5f26, !- SummerDesignDay Schedule:Day Name
+  7ee3c301-67d3-4dde-9aa5-ea5fcbda5f26, !- WinterDesignDay Schedule:Day Name
+  7ee3c301-67d3-4dde-9aa5-ea5fcbda5f26, !- CustomDay1 Schedule:Day Name
+  7ee3c301-67d3-4dde-9aa5-ea5fcbda5f26; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_46,
+  7f166e46-411a-41dc-99be-71bff1ca010b, !- Sunday Schedule:Day Name
+  095430a0-4e3c-493a-bf3f-900be75e4e3d, !- Monday Schedule:Day Name
+  8605e643-3e0c-4e76-bb02-e76ee9b2ef44, !- Tuesday Schedule:Day Name
+  74d62038-0a39-49cc-99f2-df4c6c49c97e, !- Wednesday Schedule:Day Name
+  3ff92dcf-f4e1-4592-bf36-583e7e7213a6, !- Thursday Schedule:Day Name
+  e5f30010-9b3f-4b0c-9e7f-22aedf2add40, !- Friday Schedule:Day Name
+  00c88e1f-2c64-4984-be36-b11b28fc0259, !- Saturday Schedule:Day Name
+  7f166e46-411a-41dc-99be-71bff1ca010b, !- Holiday Schedule:Day Name
+  7f166e46-411a-41dc-99be-71bff1ca010b, !- SummerDesignDay Schedule:Day Name
+  7f166e46-411a-41dc-99be-71bff1ca010b, !- WinterDesignDay Schedule:Day Name
+  7f166e46-411a-41dc-99be-71bff1ca010b, !- CustomDay1 Schedule:Day Name
+  7f166e46-411a-41dc-99be-71bff1ca010b; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_47,
+  b08cdbdb-0c03-4674-9524-4b144492f703, !- Sunday Schedule:Day Name
+  a79e21e3-b5dd-446e-9a15-1efe49089d34, !- Monday Schedule:Day Name
+  84e770fa-9725-4585-939d-bc150750dc77, !- Tuesday Schedule:Day Name
+  f29c795e-d433-4668-824f-7471c3f9f65f, !- Wednesday Schedule:Day Name
+  c2915976-587d-4766-827a-c396c8ebdf59, !- Thursday Schedule:Day Name
+  82bc8851-d5fb-4542-97e7-bcd6ce7737e8, !- Friday Schedule:Day Name
+  2a6b52e0-4a82-4cf2-90ba-ef8a42fc3e33, !- Saturday Schedule:Day Name
+  b08cdbdb-0c03-4674-9524-4b144492f703, !- Holiday Schedule:Day Name
+  b08cdbdb-0c03-4674-9524-4b144492f703, !- SummerDesignDay Schedule:Day Name
+  b08cdbdb-0c03-4674-9524-4b144492f703, !- WinterDesignDay Schedule:Day Name
+  b08cdbdb-0c03-4674-9524-4b144492f703, !- CustomDay1 Schedule:Day Name
+  b08cdbdb-0c03-4674-9524-4b144492f703; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_48,
+  117ca1e7-3b68-4549-b3e1-9ecdd8e31c99, !- Sunday Schedule:Day Name
+  7d3d948c-1732-4114-b8e8-94a5c563cb8a, !- Monday Schedule:Day Name
+  6e1d8781-303f-4fb1-b68e-5eb9d79e0e52, !- Tuesday Schedule:Day Name
+  57b6bf68-3800-4cd1-95ca-d3c112b4f970, !- Wednesday Schedule:Day Name
+  879eebdc-36a7-4f6c-9382-274ed9e6e5ad, !- Thursday Schedule:Day Name
+  649f8654-e473-4a91-9d89-211d15b29350, !- Friday Schedule:Day Name
+  fba66b88-594f-478d-9407-2f5ad12caba0, !- Saturday Schedule:Day Name
+  117ca1e7-3b68-4549-b3e1-9ecdd8e31c99, !- Holiday Schedule:Day Name
+  117ca1e7-3b68-4549-b3e1-9ecdd8e31c99, !- SummerDesignDay Schedule:Day Name
+  117ca1e7-3b68-4549-b3e1-9ecdd8e31c99, !- WinterDesignDay Schedule:Day Name
+  117ca1e7-3b68-4549-b3e1-9ecdd8e31c99, !- CustomDay1 Schedule:Day Name
+  117ca1e7-3b68-4549-b3e1-9ecdd8e31c99; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_49,
+  31dbe957-a8e6-4675-a332-66051d8da8cb, !- Sunday Schedule:Day Name
+  f8eabe9b-9be9-47eb-8ba1-671d1f2349b3, !- Monday Schedule:Day Name
+  bbf4848a-1ceb-4b09-8ec8-7da1a9dd41b5, !- Tuesday Schedule:Day Name
+  d40439f8-4474-4ab8-ba42-a1c88a3ef8ce, !- Wednesday Schedule:Day Name
+  8568e275-456b-45aa-a5db-b521eb3ae5a6, !- Thursday Schedule:Day Name
+  9da8f853-8a4d-4ab7-8d78-1983624f4c1a, !- Friday Schedule:Day Name
+  9b6e082c-2a93-4074-8ba1-c5683378a0fc, !- Saturday Schedule:Day Name
+  31dbe957-a8e6-4675-a332-66051d8da8cb, !- Holiday Schedule:Day Name
+  31dbe957-a8e6-4675-a332-66051d8da8cb, !- SummerDesignDay Schedule:Day Name
+  31dbe957-a8e6-4675-a332-66051d8da8cb, !- WinterDesignDay Schedule:Day Name
+  31dbe957-a8e6-4675-a332-66051d8da8cb, !- CustomDay1 Schedule:Day Name
+  31dbe957-a8e6-4675-a332-66051d8da8cb; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_50,
+  1e365492-c6d7-4189-8206-9f747ba6d704, !- Sunday Schedule:Day Name
+  536a18d9-8750-4a9b-b799-8584c22263fe, !- Monday Schedule:Day Name
+  df8cad19-e00b-4681-b52d-4541a4c74b0f, !- Tuesday Schedule:Day Name
+  4cd5c318-635b-48ee-88d6-4b7c00bc9c75, !- Wednesday Schedule:Day Name
+  af5c5b88-fc25-4f5f-b66c-4b582ee63617, !- Thursday Schedule:Day Name
+  e1d94eff-928c-450d-a976-b63defe394b4, !- Friday Schedule:Day Name
+  b93bae6f-e469-451a-b878-11a202c4229f, !- Saturday Schedule:Day Name
+  1e365492-c6d7-4189-8206-9f747ba6d704, !- Holiday Schedule:Day Name
+  1e365492-c6d7-4189-8206-9f747ba6d704, !- SummerDesignDay Schedule:Day Name
+  1e365492-c6d7-4189-8206-9f747ba6d704, !- WinterDesignDay Schedule:Day Name
+  1e365492-c6d7-4189-8206-9f747ba6d704, !- CustomDay1 Schedule:Day Name
+  1e365492-c6d7-4189-8206-9f747ba6d704; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_51,
+  e7b70664-f7b7-4c1d-8c6b-3cd6813d8439, !- Sunday Schedule:Day Name
+  3928c914-c210-4501-89fe-2a354330a83e, !- Monday Schedule:Day Name
+  bab6421e-3ca7-4a93-99ee-9867053e72dc, !- Tuesday Schedule:Day Name
+  71f9c23f-51be-4823-93b3-6f59ed069789, !- Wednesday Schedule:Day Name
+  1ac206c2-15c7-48ef-94c6-79e88a6bcf99, !- Thursday Schedule:Day Name
+  63d6a3d3-0745-450d-9846-8b3ac1a125f5, !- Friday Schedule:Day Name
+  56e35119-70bd-4a52-a7f4-091a401fd4aa, !- Saturday Schedule:Day Name
+  e7b70664-f7b7-4c1d-8c6b-3cd6813d8439, !- Holiday Schedule:Day Name
+  e7b70664-f7b7-4c1d-8c6b-3cd6813d8439, !- SummerDesignDay Schedule:Day Name
+  e7b70664-f7b7-4c1d-8c6b-3cd6813d8439, !- WinterDesignDay Schedule:Day Name
+  e7b70664-f7b7-4c1d-8c6b-3cd6813d8439, !- CustomDay1 Schedule:Day Name
+  e7b70664-f7b7-4c1d-8c6b-3cd6813d8439; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily, GlobalCO2_52,
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d, !- Sunday Schedule:Day Name
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d, !- Monday Schedule:Day Name
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d, !- Tuesday Schedule:Day Name
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d, !- Wednesday Schedule:Day Name
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d, !- Thursday Schedule:Day Name
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d, !- Friday Schedule:Day Name
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d, !- Saturday Schedule:Day Name
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d, !- Holiday Schedule:Day Name
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d, !- SummerDesignDay Schedule:Day Name
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d, !- WinterDesignDay Schedule:Day Name
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d, !- CustomDay1 Schedule:Day Name
+  6e1f55da-de9d-4916-92fc-f1ede4d8d56d; !- CustomDay2 Schedule:Day Name
+
+
+Schedule:Year,occOffice,
+Fraction,
+occOffice_0,1,1,12,31;
+
+Schedule:Week:Daily, occOffice_0,
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- Sunday Schedule:Day Name
+  9906a9d3-ffbc-46dc-8c80-8fdffde58480, !- Monday Schedule:Day Name
+  9906a9d3-ffbc-46dc-8c80-8fdffde58480, !- Tuesday Schedule:Day Name
+  9906a9d3-ffbc-46dc-8c80-8fdffde58480, !- Wednesday Schedule:Day Name
+  9906a9d3-ffbc-46dc-8c80-8fdffde58480, !- Thursday Schedule:Day Name
+  9906a9d3-ffbc-46dc-8c80-8fdffde58480, !- Friday Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- Saturday Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- Holiday Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- SummerDesignDay Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- WinterDesignDay Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- CustomDay1 Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084; !- CustomDay2 Schedule:Day Name
+
+
+Schedule:Year,lightsOffice,
+Fraction,
+lightsOffice_0,1,1,12,31;
+
+Schedule:Week:Daily, lightsOffice_0,
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- Sunday Schedule:Day Name
+  36d4566d-caf3-463c-bed5-eac00469bc3c, !- Monday Schedule:Day Name
+  36d4566d-caf3-463c-bed5-eac00469bc3c, !- Tuesday Schedule:Day Name
+  36d4566d-caf3-463c-bed5-eac00469bc3c, !- Wednesday Schedule:Day Name
+  36d4566d-caf3-463c-bed5-eac00469bc3c, !- Thursday Schedule:Day Name
+  36d4566d-caf3-463c-bed5-eac00469bc3c, !- Friday Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- Saturday Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- Holiday Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- SummerDesignDay Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- WinterDesignDay Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084, !- CustomDay1 Schedule:Day Name
+  025e8bf6-8908-4bcf-9f2b-5d56a4e41084; !- CustomDay2 Schedule:Day Name
+
+
+Schedule:Year,equipOffice,
+Fraction,
+equipOffice_0,1,1,12,31;
+
+Schedule:Week:Daily, equipOffice_0,
+  f1cd745a-8b4f-4c19-b434-5c87a13f3dcc, !- Sunday Schedule:Day Name
+  02ca8b2d-b45e-43ba-b03a-7b0b20c219d6, !- Monday Schedule:Day Name
+  02ca8b2d-b45e-43ba-b03a-7b0b20c219d6, !- Tuesday Schedule:Day Name
+  02ca8b2d-b45e-43ba-b03a-7b0b20c219d6, !- Wednesday Schedule:Day Name
+  02ca8b2d-b45e-43ba-b03a-7b0b20c219d6, !- Thursday Schedule:Day Name
+  02ca8b2d-b45e-43ba-b03a-7b0b20c219d6, !- Friday Schedule:Day Name
+  f1cd745a-8b4f-4c19-b434-5c87a13f3dcc, !- Saturday Schedule:Day Name
+  f1cd745a-8b4f-4c19-b434-5c87a13f3dcc, !- Holiday Schedule:Day Name
+  f1cd745a-8b4f-4c19-b434-5c87a13f3dcc, !- SummerDesignDay Schedule:Day Name
+  f1cd745a-8b4f-4c19-b434-5c87a13f3dcc, !- WinterDesignDay Schedule:Day Name
+  f1cd745a-8b4f-4c19-b434-5c87a13f3dcc, !- CustomDay1 Schedule:Day Name
+  f1cd745a-8b4f-4c19-b434-5c87a13f3dcc; !- CustomDay2 Schedule:Day Name
+
+
+
+
+!------------------------------------------------ ZONE ----------------------------------------------------
+
+Zone,
+  Zone_0,            !- Name
+  0,                       !- Rotation [deg]
+  0,                       !- X origin [m]
+  0,                       !- Y origin [m]
+  0,                       !- Z origin [m]
+  1,                       !- Type
+  1,                       !- Multiplier
+  ,                        !- CeilingHeight [m]
+  140106.16442882174,                   !- Volume [m3]
+  12258.239661722217,                   !- Area [m2]
+  TARP,                    !- Zone Inside Convection Algorithm
+  DOE-2;                   !- Zone Outside Convection Algorithm
+
+! ------------------------ PEOPLE
+People,
+    People Zone_0,   !- Name
+    Zone_0,  !- Zone or ZoneList Name
+    occOffice,    !- OccupancySchedule
+    People/Area,    !- Number of People Calculation Method
+    ,   !- Number of People
+    0.0436,    !- PeopleDensity [person/m2]
+    ,   !- Floor Area per Person [m2/person]
+    0.3,    !- Fraction Radiant
+    AUTOCALCULATE,  !- Sensible Heat Fraction
+    Zone_0PeopleActivity,    !- Activity Level Schedule Name
+    3.82E-08,   !- Carbon Dioxide Generation Rate [m3/s-W]
+    No, !- Enable ASHRAE 55 Comfort Warnings
+    ZoneAveraged,   !- Mean Radiant Temperature Calculation Type
+    ,   !- Surface Name/Angle Factor List Name
+    Zone_0WorkEfficiency,    !- Work Efficiency Schedule Name
+    DynamicClothingModelASHRAE55,   !- Clothing Insulation Calculation Method
+    ,   !- Clothing Insulation Calculation Method Schedule Name
+    ,   !- Clothing Insulation Schedule Name
+    AirSpeed 0,!- Air Velocity Schedule Name
+    AdaptiveASH55,               !- Thermal Comfort Model 1 Type
+    Pierce,               !- Thermal Comfort Model 2 Type
+    Fanger;               !- Thermal Comfort Model 3 Type
+
+
+
+
+    Schedule:Constant,
+    Zone_0PeopleActivity,
+    Any Number,
+    125.27999999999999; !- MetabolicRate [met]
+    Schedule:Constant,
+    Zone_0WorkEfficiency,
+    Any Number, 
+    0;
+
+
+! ------------------------ EQUIPMENT
+ElectricEquipment,
+  Zone_0 Equipment,!- Name
+  Zone_0,            !- Zone or ZoneList Name
+  equipOffice, !- EquipmentAvailibilitySchedule
+  Watts/Area,          !- Design Level Calculation Method
+  ,                !- Design Level [W]
+  12, !- EquipmentPowerDensity [W/m2]
+  ,                        !- Watts per Person [W/person]
+  0,                       !- Fraction Latent
+  .2,                      !- Fraction Radiant
+  0,                       !- Fraction Lost
+  ;                        !- End-Use Subcategory
+
+! ------------------------ LIGHTS
+Lights,
+  Zone_0 General lighting,   !- Name
+  Zone_0,                    !- Zone or ZoneList Name
+  lightsOffice, !- LightsAvailibilitySchedule
+  Watts/Area,              !- Design Level Calculation Method
+  ,                        !- Lighting Level [W]
+  15,   !- LightingPowerDensity [W/m2]
+  ,                        !- Watts per Person [W/person]
+  0,                       !- Return Air Fraction
+  .42,                     !- Fraction Radiant
+  .18,                     !- Fraction Visible
+  1,                       !- Fraction Replaceable
+  ;                        !- End-Use Subcategory
+
+
+! ------------------------ DAYLIGHT CONTROLS
+Daylighting:Controls,
+Zone_0_DaylCtrl, !-Name
+Zone_0,            !-Zone Name
+SplitFlux,               !-Daylighting Method
+lightsOffice, !- @Zone_0-LightsAvailibilitySchedule@ 
+Continuous,                       !-Lighting control type { 1 = continuous,2 = stepped,3 = continuous / off}
+0.1,                     !-Minimum Input Power Fraction for Continuous Dimming Control
+    0.1, !-Minimum Light Output Fraction for Continuous Dimming Control
+    3, !-Number of Stepped Control Steps
+    1, !-Probability Lighting will be Reset When Needed in Manual Stepped Control
+    ,                        !- Glare Calculation Daylighting Reference Point Name
+    ,                        !- Glare Calculation Azimuth Angle of View Direction Clockwise from Zone y-Axis [deg]
+    22,                      !- Maximum Allowable Discomfort Glare Index
+    ,                        !- DElight Gridding Resolution {m2}
+    Zone_0_DaylCtrlRefPt1,                        !- Daylighting Reference Point 1 Name
+    1,                       !- Fraction of Zone Controlled by Reference Point 1
+    500; !- @Zone_0-IlluminanceSetpoint@ [lux at Reference Point 1]
+    
+Daylighting:ReferencePoint,
+     Zone_0_DaylCtrlRefPt1,                        !-Name
+     Zone_0,                        !-Zone Name
+    -161.86839112383817,                        !-X - Coordinate of Reference Point [m]
+    116.52849259738343,                        !-Y - Coordinate of Reference Point [m]
+    15.85; !-Z - Coordinate of Reference Point [m]
+            
+! ------------------------ INFILTRATION
+ZoneInfiltration:DesignFlowRate,
+  Zone_0Infiltration,  !- Name
+  Zone_0,            !- Zone or ZoneList Name
+  On,                      !- Schedule Name
+  Flow/ExteriorArea,               !- Design Flow Rate Calculation Method
+  ,                        !- Design Flow Rate [m3/s]
+  ,                        !- Flow per Zone Floor Area [m3/s-m2]
+  0.0005689597106659634,                        !- Flow per Exterior Surface Area [m3/s-m2]
+  , !- @Zone_0-InfiltrationAch@ [Air Changes per Hour]
+  1, !- @Zone_0-InfiltrationConstantCoefficient@ 
+  0, !- @Zone_0-InfiltrationTemperatureCoefficient@ 
+  0, !- @Zone_0-InfiltrationWindVelocityCoefficient@  
+  0; !- @Zone_0-InfiltrationWindVelocitySquaredCoefficient@ 
+
+! ------------------------ GEOMETRY ------------------------
+
+! FACE NORMAL  0.1736481776669301 -0.9848077530122081 0
+BuildingSurface:Detailed,!-Type
+Zone_0:f0, !-Name
+Wall,                    !-Surface Type
+90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass),                       !-Construction Name
+Zone_0,            !-Zone Name
+,            !-Space Name
+Outdoors,                !-Outside Boundary Condition
+,                        !-Outside Boundary Condition Object
+SunExposed,              !-Sun Exposure
+WindExposed,             !-Wind Exposure
+Autocalculate,                      !-View Factor to Ground
+4,                       !-Number of Vertices
+
+-225.2999, 62.0777, 15.0000,  !- X,Y,Z ==> Vertex
+-83.6390, 87.0563, 15.0000,  !- X,Y,Z ==> Vertex
+-83.6390, 87.0563, 26.4296,  !- X,Y,Z ==> Vertex
+-225.2999, 62.0777, 26.4296;  !- X,Y,Z ==> Vertex
+
+
+FenestrationSurface:Detailed,
+Zone_0:f0:w0, !-Name
+Window,                  !- Surface Type
+90.1-2019 Nonresidential CZ 0 Glazing (Operable),   !- @Zone_0:f0:w0-Construction@
+Zone_0:f0, !- Building Surface Name
+,                        !- Outside Boundary Condition Object
+Autocalculate,                      !- View Factor to Ground
+,                       !- Frame and Divider Name
+1,                       !- Multiplier
+4,                       !-Number of Vertices
+
+-220.8726, 62.8583, 19.4956,  !- X,Y,Z ==> Vertex
+-88.0663, 86.2756, 19.4956,  !- X,Y,Z ==> Vertex
+-88.0663, 86.2756, 21.9339,  !- X,Y,Z ==> Vertex
+-220.8726, 62.8583, 21.9339;  !- X,Y,Z ==> Vertex
+
+
+! FACE NORMAL  0.9848077530122081 0.17364817766693008 -0
+BuildingSurface:Detailed,!-Type
+Zone_0:f1, !-Name
+Wall,                    !-Surface Type
+90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass),                       !-Construction Name
+Zone_0,            !-Zone Name
+,            !-Space Name
+Outdoors,                !-Outside Boundary Condition
+,                        !-Outside Boundary Condition Object
+SunExposed,              !-Sun Exposure
+WindExposed,             !-Wind Exposure
+Autocalculate,                      !-View Factor to Ground
+4,                       !-Number of Vertices
+
+-83.6390, 87.0563, 15.0000,  !- X,Y,Z ==> Vertex
+-98.4369, 170.9793, 15.0000,  !- X,Y,Z ==> Vertex
+-98.4369, 170.9793, 26.4296,  !- X,Y,Z ==> Vertex
+-83.6390, 87.0563, 26.4296;  !- X,Y,Z ==> Vertex
+
+
+FenestrationSurface:Detailed,
+Zone_0:f1:w0, !-Name
+Window,                  !- Surface Type
+90.1-2019 Nonresidential CZ 0 Glazing (Operable),   !- @Zone_0:f1:w0-Construction@
+Zone_0:f1, !- Building Surface Name
+,                        !- Outside Boundary Condition Object
+Autocalculate,                      !- View Factor to Ground
+,                       !- Frame and Divider Name
+1,                       !- Multiplier
+4,                       !-Number of Vertices
+
+-84.1021, 89.6824, 17.6666,  !- X,Y,Z ==> Vertex
+-97.9739, 168.3532, 17.6666,  !- X,Y,Z ==> Vertex
+-97.9739, 168.3532, 23.7629,  !- X,Y,Z ==> Vertex
+-84.1021, 89.6824, 23.7629;  !- X,Y,Z ==> Vertex
+
+
+! FACE NORMAL  -0.1736481776669301 0.9848077530122081 0
+BuildingSurface:Detailed,!-Type
+Zone_0:f2, !-Name
+Wall,                    !-Surface Type
+90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass),                       !-Construction Name
+Zone_0,            !-Zone Name
+,            !-Space Name
+Outdoors,                !-Outside Boundary Condition
+,                        !-Outside Boundary Condition Object
+SunExposed,              !-Sun Exposure
+WindExposed,             !-Wind Exposure
+Autocalculate,                      !-View Factor to Ground
+4,                       !-Number of Vertices
+
+-98.4369, 170.9793, 15.0000,  !- X,Y,Z ==> Vertex
+-240.0978, 146.0007, 15.0000,  !- X,Y,Z ==> Vertex
+-240.0978, 146.0007, 26.4296,  !- X,Y,Z ==> Vertex
+-98.4369, 170.9793, 26.4296;  !- X,Y,Z ==> Vertex
+
+
+FenestrationSurface:Detailed,
+Zone_0:f2:w0, !-Name
+Window,                  !- Surface Type
+90.1-2019 Nonresidential CZ 0 Glazing (Operable),   !- @Zone_0:f2:w0-Construction@
+Zone_0:f2, !- Building Surface Name
+,                        !- Outside Boundary Condition Object
+Autocalculate,                      !- View Factor to Ground
+,                       !- Frame and Divider Name
+1,                       !- Multiplier
+4,                       !-Number of Vertices
+
+-102.2796, 170.3018, 18.9020,  !- X,Y,Z ==> Vertex
+-236.2550, 146.6783, 18.9020,  !- X,Y,Z ==> Vertex
+-236.2550, 146.6783, 22.5276,  !- X,Y,Z ==> Vertex
+-102.2796, 170.3018, 22.5276;  !- X,Y,Z ==> Vertex
+
+
+! FACE NORMAL  -0.9848077530122081 -0.17364817766693014 0
+BuildingSurface:Detailed,!-Type
+Zone_0:f3, !-Name
+Wall,                    !-Surface Type
+90.1-2019 Nonresidential CZ 0 Exterior Wall (Mass),                       !-Construction Name
+Zone_0,            !-Zone Name
+,            !-Space Name
+Outdoors,                !-Outside Boundary Condition
+,                        !-Outside Boundary Condition Object
+SunExposed,              !-Sun Exposure
+WindExposed,             !-Wind Exposure
+Autocalculate,                      !-View Factor to Ground
+4,                       !-Number of Vertices
+
+-240.0978, 146.0007, 15.0000,  !- X,Y,Z ==> Vertex
+-225.2999, 62.0777, 15.0000,  !- X,Y,Z ==> Vertex
+-225.2999, 62.0777, 26.4296,  !- X,Y,Z ==> Vertex
+-240.0978, 146.0007, 26.4296;  !- X,Y,Z ==> Vertex
+
+
+FenestrationSurface:Detailed,
+Zone_0:f3:w0, !-Name
+Window,                  !- Surface Type
+90.1-2019 Nonresidential CZ 0 Glazing (Operable),   !- @Zone_0:f3:w0-Construction@
+Zone_0:f3, !- Building Surface Name
+,                        !- Outside Boundary Condition Object
+Autocalculate,                      !- View Factor to Ground
+,                       !- Frame and Divider Name
+1,                       !- Multiplier
+4,                       !-Number of Vertices
+
+-239.7318, 143.9252, 17.1075,  !- X,Y,Z ==> Vertex
+-225.6658, 64.1531, 17.1075,  !- X,Y,Z ==> Vertex
+-225.6658, 64.1531, 24.3221,  !- X,Y,Z ==> Vertex
+-239.7318, 143.9252, 24.3221;  !- X,Y,Z ==> Vertex
+
+
+! FACE NORMAL  -0 0 -1
+BuildingSurface:Detailed,!-Type
+Zone_0:f4, !-Name
+Floor,                    !-Surface Type
+90.1-2019 Nonresidential CZ 0 Exterior Floor (Mass),                       !-Construction Name
+Zone_0,            !-Zone Name
+,            !-Space Name
+Outdoors,                !-Outside Boundary Condition
+,                        !-Outside Boundary Condition Object
+NoSun,              !-Sun Exposure
+WindExposed,             !-Wind Exposure
+Autocalculate,                      !-View Factor to Ground
+4,                       !-Number of Vertices
+
+-225.2999, 62.0777, 15.0000,  !- X,Y,Z ==> Vertex
+-240.0978, 146.0007, 15.0000,  !- X,Y,Z ==> Vertex
+-98.4369, 170.9793, 15.0000,  !- X,Y,Z ==> Vertex
+-83.6390, 87.0563, 15.0000;  !- X,Y,Z ==> Vertex
+
+
+! FACE NORMAL  0 -0 1
+BuildingSurface:Detailed,!-Type
+Zone_0:f5, !-Name
+Roof,                    !-Surface Type
+90.1-2019 Nonresidential CZ 0 Exterior Roof (Mass),                       !-Construction Name
+Zone_0,            !-Zone Name
+,            !-Space Name
+Outdoors,                !-Outside Boundary Condition
+,                        !-Outside Boundary Condition Object
+SunExposed,              !-Sun Exposure
+WindExposed,             !-Wind Exposure
+0,                      !-View Factor to Ground
+4,                       !-Number of Vertices
+
+-225.2999, 62.0777, 26.4296,  !- X,Y,Z ==> Vertex
+-83.6390, 87.0563, 26.4296,  !- X,Y,Z ==> Vertex
+-98.4369, 170.9793, 26.4296,  !- X,Y,Z ==> Vertex
+-240.0978, 146.0007, 26.4296;  !- X,Y,Z ==> Vertex
+
+
+
+!------------------------Ideal Loads System Zone_0------------------------
+
+ZoneHVAC:EquipmentConnections,
+  Zone_0,            !- Zone Name
+  Zone_0 Equipment,  !- Zone Conditioning Equipment List Name
+  Zone_0 Inlets,     !- Zone Air Inlet Node or NodeList Name
+  ,                         !- Zone Air Exhaust Node or NodeList Name
+  Node Zone_0 Zone,  !- Zone Air Node Name
+  Node Zone_0 Out;   !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentList,
+  Zone_0 Equipment,       !- Name
+  UniformLoad,                   !- Load Distribution Scheme
+  ZoneHVAC:IdealLoadsAirSystem,  !- Zone Equipment 1 Object Type
+  Zone_0 Ideal Loads Air, !- Zone Equipment 1 Name
+  1,                             !- Zone Equipment 1 Cooling Sequence
+  1;                             !- Zone Equipment 1 Heating or No-Load Sequence
+
+NodeList,
+  Zone_0 Inlets,     !- Name
+  Node Zone_0 In;    !- Node 1 Name
+
+ZoneHVAC:IdealLoadsAirSystem,
+  Zone_0 Ideal Loads Air,  !- Name
+  ,                        !- Availability Schedule Name
+  Node Zone_0 In,   !- Zone Supply Air Node Name
+  ,                        !- Zone Exhaust Air Node Name
+  ,                        !- System Inlet Air Node Name
+  35,                      !- Maximum Heating Supply Air Temperature {C}
+  12,                      !- Minimum Cooling Supply Air Temperature {C}
+  0.01,                    !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.008,                   !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+  LimitFlowRateAndCapacity,                 !- Heating Limit
+  Autosize, !- MaximumHeatingAirFlowRate [m3/s]
+  Autosize, !- MaximumSensibleHeatingCapacity [W]
+  LimitFlowRateAndCapacity,                 !- Cooling Limit
+  Autosize , !- MaximumCoolingAirFlowRate [m3/s]
+  Autosize, !- MaximumTotalCoolingCapacity [W]
+  Off, !- HeatingAvailabilitySchedule
+  AllOn, !- CoolingAvailabilitySchedule
+  Humidistat,                    !- Dehumidification Control Type
+  ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+  Humidistat,                    !- Humidification Control Type
+  Zone_0MinFreshAir,                        !- Design Specification Outdoor Air Object Name
+  Zone_0OutdoorInlet,                        !- Outdoor Air Inlet Node Name
+  OccupancySchedule,                        !- Demand Controlled Ventilation Type
+  NoEconomizer,                        !- Outdoor Air Economizer Type
+  None,                        !- Heat Recovery Type
+  0.7, !-  SensibleHeatRecoveryEffectiveness
+  0.65; !-  LatentHeatRecoveryEffectiveness
+
+
+
+
+Sizing:Zone,
+  Zone_0,                   !- Zone or ZoneList Name
+  SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
+  12,                      !- Zone Cooling Design Supply Air Temperature {C}
+  ,                        !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
+  SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
+  35,                 !- Zone Heating Design Supply Air Temperature {C}
+  ,                        !- Zone Heating Design Supply Air Temperature Difference {deltaC}
+  0.009,                   !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.004,                   !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  Zone_0MinFreshAir,        !- Design Specification Outdoor Air Object Name
+  1.15,                   !- Zone Heating Sizing Factor
+  1.15,                   !- Zone Cooling Sizing Factor
+  DesignDay,               !- Cooling Design Air Flow Method
+  ,                        !- Cooling Design Air Flow Rate {m3/s}
+  ,                        !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                        !- Cooling Minimum Air Flow {m3/s}
+  ,                        !- Cooling Minimum Air Flow Fraction
+  DesignDay,               !- Heating Design Air Flow Method
+  ,                        !- Heating Design Air Flow Rate {m3/s}
+  ,                        !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                        !- Heating Maximum Air Flow {m3/s}
+  ,                        !- Heating Maximum Air Flow Fraction
+  ,                        !- Design Specification Zone Air Distribution Object Name
+  ,                        !- Account for Dedicated Outdoor Air System
+  ,                        !- Dedicated Outdoor Air System Control Strategy
+  ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
+  ;                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+
+
+!------------------------ Thermostat Zone_0------------------------
+
+Schedule:Constant,
+  Zone_0Heating_SP_Sch, !- Name
+  Temperature, !- Schedule Type Limits Name
+  20; !- HeatingSetpoint
+
+Schedule:Constant,
+  Zone_0Cooling_SP_Sch, !- Name
+  Temperature, !- Schedule Type Limits Name
+  26; !- CoolingSetpoint
+
+
+ZoneControl:Thermostat,
+  Zone_0 Thermostat, !- Name
+  Zone_0,            !- Zone or ZoneList Name
+  Zone_0_ZoneControlTypeSched, !- Control Type Schedule Name
+  ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
+  Dual Setpoint - Zone Zone_0;  !- Control 1 Name
+
+Schedule:Constant,
+  Zone_0_ZoneControlTypeSched, !- Name
+  Any Number, !- Schedule Type Limits Name
+  4; !- Hourly Value
+
+ThermostatSetpoint:DualSetpoint,
+  Dual Setpoint - Zone Zone_0,  !- Name
+  Zone_0Heating_SP_Sch,  !- Heating Setpoint Temperature Schedule Name
+  Zone_0Cooling_SP_Sch;  !- Cooling Setpoint Temperature Schedule Name
+
+
+!------------------------ Humidistat Zone_0------------------------
+
+ZoneControl:Humidistat,
+    Zone_0Humidistat,                  !-Name
+    Zone_0,                   !-Zone Name
+    Zone_0HumidMin,                !-Humidifying Relative Humidity Setpoint Schedule Name
+    Zone_0HumidMax; !-Dehumidifying Relative Humidity Setpoint Schedule Name
+
+Schedule:Constant,
+    Zone_0HumidMin,                !- Name
+    Any Number,              !- Schedule Type Limits Name
+    20; !- MinHumidity
+
+Schedule:Constant,
+    Zone_0HumidMax,                !- Name
+    Any Number,              !- Schedule Type Limits Name
+    80; !- MaxHumidity
+
+
+!------------------------ OutdoorAir Zone_0------------------------
+
+DesignSpecification:OutdoorAir,
+  Zone_0MinFreshAir,                  !- Name
+  Sum,                     !- Outdoor Air Method
+  0.01, !- @Zone_0-MinFreshAirPerson@ [m3/s-person]
+  0.001, !- @Zone_0-MinFreshAirArea@ [m3/s-m2]
+    ,                        !- Outdoor Air Flow per Zone [m3/s]
+    ,                        !- Outdoor Air Flow Air Changes per Hour [1/hr]
+    AllOn; !- MechVentSchedule
+
+
+
+! ------------------------ Fan EMS Objects
+
+
+
+
+! ------------------------ OUTPUTS
+
+Output:Meter:MeterFileOnly,Cooling:Electricity,Hourly;
+Output:Meter:MeterFileOnly,Heating:Electricity,Hourly;
+Output:Meter:MeterFileOnly,Heating:NaturalGas,Hourly;
+Output:Meter:MeterFileOnly,Heating:FuelOilNo1,Hourly;
+Output:Meter:MeterFileOnly,Heating:FuelOilNo2,Hourly;
+Output:Meter:MeterFileOnly,Heating:Coal,Hourly;
+Output:Meter:MeterFileOnly,Heating:Gasoline,Hourly;
+Output:Meter:MeterFileOnly,Heating:Propane,Hourly;
+Output:Meter:MeterFileOnly,Heating:Diesel,Hourly;
+Output:Meter:MeterFileOnly,Heating:OtherFuel1,Hourly;
+Output:Meter:MeterFileOnly,Heating:OtherFuel2,Hourly;
+Output:Meter:MeterFileOnly,Fans:Electricity,Hourly;
+Output:Meter:MeterFileOnly,Pumps:Electricity,Hourly;
+Output:Meter:MeterFileOnly,Humidifier:Electricity,Hourly;
+Output:Meter:MeterFileOnly,HeatRejection:Electricity,Hourly;
+Output:Meter:MeterFileOnly,Heating:EnergyTransfer:Zone:*,Hourly;
+Output:Meter:MeterFileOnly,Cooling:EnergyTransfer:Zone:*,Hourly;
+Output:Variable,*,Zone People Total Heating Energy,Hourly;
+Output:Variable,*,Zone Lights Electricity Energy,Hourly;
+Output:Variable,*,Electric Equipment Electricity Energy,Hourly;
+Output:Variable,*,Zone Windows Total Transmitted Solar Radiation Energy,Hourly;
+Output:Variable,*,Zone Windows Total Heat Gain Energy,Hourly;
+Output:Variable,*,Zone Windows Total Heat Loss Energy,Hourly;
+Output:Variable,*,Zone Opaque Surface Inside Faces Total Conduction Heat Gain Energy,Hourly;
+Output:Variable,*,Zone Opaque Surface Inside Faces Total Conduction Heat Loss Energy,Hourly;
+Output:Variable,*,Zone Mean Radiant Temperature,Hourly;
+Output:Variable,*,Zone Mean Air Temperature,Hourly;
+Output:Variable,*,Zone Operative Temperature,Hourly;
+Output:Variable,*,Zone Infiltration Total Heat Loss Energy,Hourly;
+Output:Variable,*,Zone Infiltration Total Heat Gain Energy,Hourly;
+Output:Variable,*,Zone Ventilation Total Heat Loss Energy,Hourly;
+Output:Variable,*,Zone Ventilation Total Heat Gain Energy,Hourly;
+Output:Variable,*,Zone Air Relative Humidity,Hourly;
+Output:Variable,*,Zone Ideal Loads Supply Air Total Heating Energy,Hourly;
+Output:Variable,*,Zone Ideal Loads Supply Air Total Cooling Energy,Hourly;
+Output:Variable,*,Zone Ideal Loads Zone Total Heating Energy,Hourly;
+Output:Variable,*,Zone Ideal Loads Zone Total Cooling Energy,Hourly;
+Output:Variable,*,Zone Ideal Loads Outdoor Air Total Heating Energy,Hourly;
+Output:Variable,*,Zone Ideal Loads Outdoor Air Total Cooling Energy,Hourly;
+Output:Variable,*,Zone Ideal Loads Heat Recovery Total Heating Energy,Hourly;
+Output:Variable,*,Zone Ideal Loads Heat Recovery Total Cooling Energy,Hourly;
+Output:Variable,*,Water Use Equipment Heating Energy,Hourly;
+
+
+Output:VariableDictionary, IDF;
+Output:Surfaces:Drawing,DXF,Triangulate3DFace;
+Output:Surfaces:List,Details;
+!Output:Constructions,Constructions;
+!Output:Diagnostics,DisplayExtraWarnings;
+!Output:Diagnostics,DisplayUnusedSchedules;
+!Output:Diagnostics,DisplayUnusedObjects;
+Output:Diagnostics,DisplayAdvancedReportVariables;
+
+Output:Table:SummaryReports,
+    EnvelopeSummary,         !- Report 
+    AnnualBuildingUtilityPerformanceSummary, !- Report 
+    InputVerificationandResultsSummary,  !- Report 
+    SourceEnergyEndUseComponentsSummary, !- Report 
+    ShadingSummary,!- Report 
+    ThermalResilienceSummary;          !- Report 
+
+
