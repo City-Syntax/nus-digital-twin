@@ -2948,6 +2948,13 @@
     "postal": "119243",
     "latitude": 1.29265,
     "longitude": 103.77221,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe",
+        "files": [{ "filetype": ".3dm", "url": "/temasek-hall/temasek-hall-e-rhino.3dm" }]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/temasek-hall/temasek-hall-e-1.jpg",

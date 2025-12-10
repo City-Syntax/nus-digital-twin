@@ -130,6 +130,11 @@ export async function load() {
     featureIdLabel: '142079835',
   });
 
+  const rhinoTemasekHallE = getModelFromUrl({
+    url: '/temasek-hall/temasek-hall-e-rhino-ion/tileset.json',
+    featureIdLabel: '142221863',
+  });
+
   return Promise.all([
     rhinoE2A,
     rhinoE6,
@@ -156,5 +161,6 @@ export async function load() {
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
     rhinoAS7,
+    rhinoTemasekHallE,
   ]);
 }
