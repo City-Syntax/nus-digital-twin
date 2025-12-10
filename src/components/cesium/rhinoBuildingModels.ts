@@ -95,6 +95,11 @@ export async function load() {
     featureIdLabel: '241265457',
   });
 
+  const rhinoRafflesHall6 = getModelFromUrl({
+    url: '/raffles-hall/raffles-hall-6-rhino-ion/tileset.json',
+    featureIdLabel: '241265456',
+  });
+
   const rhinoMedicineScienceLibrary = getModelFromUrl({
     url: '/msl/msl-rhino-ion/tileset.json',
     featureIdLabel: '141913116',
@@ -153,6 +158,7 @@ export async function load() {
     rhinoTheDeck,
     rhinoSSLS,
     rhinoTechnoEdge,
+    rhinoRafflesHall6,
     rhinoKuokFoundationHouse,
     rhinoMedicineScienceLibrary,
     rhinoShearesMain,

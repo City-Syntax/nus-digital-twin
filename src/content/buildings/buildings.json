@@ -723,6 +723,18 @@
     "idfDownload": "/raffles-hall/raffles-hall-6.idf",
     "energyUse": "raffles-hall-6-eu",
     "energyUseIntensity": "raffles-hall-6-eui",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Ng Jing Wen, Tan Yu Xin",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/raffles-hall/raffles-hall-6-rhino.3dm"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/raffles-hall/raffles-hall-6-1.jpg",
