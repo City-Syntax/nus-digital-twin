@@ -2322,6 +2322,10 @@
     "postal": "117549",
     "latitude": 1.29536,
     "longitude": 103.78051,
+    "idfDownload": "/md1/md1.idf",
+    "energyUse": "md1-eu",
+    "energyUseIntensity": "md1-eui",
+    "buildingDataCredits": "Intan Nur Aaliyah Binte Azman, Aaron Tan Kah Hoe, Ng Chuan Kim Callista",
     "images": [
       {
         "src": "/src/assets/md1/md1-1.png",
