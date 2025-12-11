@@ -2800,6 +2800,13 @@
     "energyUse": "ystcm-eu",
     "energyUseIntensity": "ystcm-eui",
     "buildingDataCredits": "Charmaine Toh Yuwei, Glenda Tay, Noraisyah Binte Mohammad Rais",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Charmaine Toh Yuwei, Glenda Tay, Noraisyah Binte Mohammad Rais",
+        "files": [{ "filetype": ".3dm", "url": "/ystcm/ystcm-rhino.3dm" }]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/ystcm/ystcm-1.jpg",

@@ -140,6 +140,11 @@ export async function load() {
     featureIdLabel: '142221863',
   });
 
+  const rhinoYongSiewTohConservatoryOfMusic = getModelFromUrl({
+    url: '/ystcm/ystcm-rhino-ion/tileset.json',
+    featureIdLabel: '111973157',
+  });
+
   return Promise.all([
     rhinoE2A,
     rhinoE6,
@@ -168,5 +173,6 @@ export async function load() {
     rhinoYNCArtsCenter,
     rhinoAS7,
     rhinoTemasekHallE,
+    rhinoYongSiewTohConservatoryOfMusic,
   ]);
 }
