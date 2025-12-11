@@ -1128,6 +1128,10 @@
     "postal": "117575",
     "latitude": 1.29871,
     "longitude": 103.7711,
+    "buildingDataCredits": "Natasha Arisqa Putri Binte Shaiful Bahri, Dennis Lim, Chan Csen Csen",
+    "energyUse": "e1a-eu",
+    "energyUseIntensity": "e1a-eui",
+    "idfDownload": "/e1a/e1a.idf",
     "images": [
       {
         "src": "/src/assets/e1a/e1a-1.png",
