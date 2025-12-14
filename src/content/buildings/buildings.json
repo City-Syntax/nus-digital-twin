@@ -1956,6 +1956,13 @@
     "energyUse": "i4-eu",
     "energyUseIntensity": "i4-eui",
     "idfDownload": "/i4/i4.idf",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Elyne Chua Hui Wen, Kris Yap Sim Wei, Ong Jing Yee",
+        "files": [{ "filetype": ".3dm", "url": "/i4/i4-rhino.3dm" }]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/i4/i4-1.png",
