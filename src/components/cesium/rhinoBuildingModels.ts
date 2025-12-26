@@ -1,14 +1,24 @@
 import { getModelFromCesiumIon, getModelFromGltf, getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
-  const rhinoE6 = getModelFromUrl({
-    url: '/e6/e6-rhino-ion/tileset.json',
-    featureIdLabel: '139959760',
+  const rhinoE1A = getModelFromUrl({
+    url: '/e1a/e1a-rhino-ion/tileset.json',
+    featureIdLabel: '139976284',
   });
 
   const rhinoE2A = getModelFromUrl({
     url: '/e2a/e2a-rhino-ion/tileset.json',
     featureIdLabel: '628777635',
+  });
+
+  const rhinoE4 = getModelFromUrl({
+    url: 'e4/e4-rhino-ion/tileset.json',
+    featureIdLabel: '139970613',
+  });
+
+  const rhinoE6 = getModelFromUrl({
+    url: '/e6/e6-rhino-ion/tileset.json',
+    featureIdLabel: '139959760',
   });
 
   const rhinoE7 = getModelFromGltf({
@@ -28,6 +38,11 @@ export async function load() {
   const rhinoPioneerHouse2225 = getModelFromUrl({
     url: '/pioneer-house/pioneer-house-22-25-rhino-ion/tileset.json',
     featureIdLabel: '238932774',
+  });
+
+  const rhinoCOM1 = getModelFromUrl({
+    url: '/com1/com1-rhino-ion/tileset.json',
+    featureIdLabel: '54619721',
   });
 
   const rhinoCOM2 = getModelFromUrl({
@@ -130,6 +145,11 @@ export async function load() {
     featureIdLabel: '732229049',
   });
 
+  const rhinoAS5 = getModelFromUrl({
+    url: '/as5/as5-rhino-ion/tileset.json',
+    featureIdLabel: '142080062',
+  });
+
   const rhinoAS7 = getModelFromUrl({
     url: '/as7/as7-rhino-ion/tileset.json',
     featureIdLabel: '142079835',
@@ -150,13 +170,31 @@ export async function load() {
     featureIdLabel: '54619703',
   });
 
+  const rhinoHSSML = getModelFromUrl({
+    url: '/hssml/hssml-rhino-ion/tileset.json',
+    featureIdLabel: '54619685',
+  });
+
+  const rhinoBiz1 = getModelFromUrl({
+    url: '/biz1/biz1-rhino-ion/tileset.json',
+    featureIdLabel: '140087160',
+  });
+
+  const rhinoCAPT = getModelFromUrl({
+    url: '/capt/capt-rhino-ion/tileset.json',
+    featureIdLabel: '124543527',
+  });
+
   return Promise.all([
+    rhinoE1A,
     rhinoE2A,
+    rhinoE4,
     rhinoE6,
     rhinoE7,
     rhinoCELC,
     rhinoPioneerHouse2225,
     rhinoNUSMuseum,
+    rhinoCOM1,
     rhinoCOM2,
     rhinoPgprBlock1,
     rhinoAS8,
@@ -176,9 +214,13 @@ export async function load() {
     rhinoRvrcG,
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
+    rhinoAS5,
     rhinoAS7,
     rhinoTemasekHallE,
     rhinoYongSiewTohConservatoryOfMusic,
     rhinoInnovation4,
+    rhinoHSSML,
+    rhinoBiz1,
+    rhinoCAPT,
   ]);
 }

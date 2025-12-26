@@ -244,6 +244,18 @@
     "idfDownload": "/capt/capt.idf",
     "energyUse": "capt-eu",
     "energyUseIntensity": "capt-eui",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Clara Ng Kai Jie, Muhammad Firdaus Bin Hidayat, Wong Kia Yi Jasmine",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1GxiggFU5WbQYSglZhFbh5jAT0DzOove6&export=download"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/capt/capt-1.jpg",
@@ -791,7 +803,20 @@
     "longitude": 103.77182,
     "idfDownload": "/as5/as5.idf",
     "energyUse": "as5-eu",
-    "energyUseIntensity": "as5-eui"
+    "energyUseIntensity": "as5-eui",
+    "buildingDataCredits": "Charlize, Valencia, Sherlyn",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Charlize, Valencia, Sherlyn",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/as5/as5-rhino.3dm"
+          }
+        ]
+      }
+    ]
   },
   {
     "elementId": "15347235",
@@ -1141,6 +1166,18 @@
         "src": "/src/assets/e1a/e1a-1.png",
         "author": "Natasha Arisqa Putri Binte Shaiful Bahri, Dennis Lim, Chan Csen Csen"
       }
+    ],
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Natasha Arisqa Putri Binte Shaiful Bahri, Dennis Lim, Chan Csen Csen",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1prS6y6gDO-FDVIlC1sowiTgTzB5LAK75&export=download"
+          }
+        ]
+      }
     ]
   },
   {
@@ -1248,6 +1285,18 @@
       {
         "src": "/src/assets/e4/e4-2.jpg",
         "author": "Ivan Teo, Siow Shi Jin Kevis, Wong Zi Yin"
+      }
+    ],
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Ivan Teo, Siow Shi Jin Kevis, Wong Zi Yin",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=17QTkER7i69lrt60ReQ1nmyPLfKUio2LB&export=download"
+          }
+        ]
       }
     ]
   },
@@ -1744,7 +1793,20 @@
     "longitude": 103.77391,
     "idfDownload": "/com1/com1.idf",
     "energyUse": "com1-eu",
-    "energyUseIntensity": "com1-eui"
+    "energyUseIntensity": "com1-eui",
+    "buildingDataCredits": "Anthea Chan Phuay Xuan, Chan Jun Xian, Winnie Liew Wen Mei",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Anthea Chan Phuay Xuan, Chan Jun Xian, Winnie Liew Wen Mei",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1YE471uBSs6EZY7C6LrSq-H25q8q8cZdV&export=download"
+          }
+        ]
+      }
+    ]
   },
   {
     "elementId": "54619699",
@@ -2874,6 +2936,18 @@
         "author": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi"
       }
     ],
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1QDzIruLM_84NZHd88VTSaWtnBKuHAyBs&export=download"
+          }
+        ]
+      }
+    ],
     "buildingDataCredits": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi",
     "energyUse": "hssml-eu",
     "energyUseIntensity": "hssml-eui",
@@ -3031,6 +3105,18 @@
     "idfDownload": "/biz1/biz1.idf",
     "energyUse": "biz1-eu",
     "energyUseIntensity": "biz1-eui",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Tan Jiayi, Wang Shihui, Ng Kai Lin Audrey",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1NJvaS_lTuOf45rl6tDgXKY3aUuvJxygO&export=download"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/biz1/biz1-1.jpg",
