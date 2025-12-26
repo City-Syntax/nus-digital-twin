@@ -244,6 +244,18 @@
     "idfDownload": "/capt/capt.idf",
     "energyUse": "capt-eu",
     "energyUseIntensity": "capt-eui",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Samantha Peh, Toh Yu En",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1GxiggFU5WbQYSglZhFbh5jAT0DzOove6&export=download"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/capt/capt-1.jpg",

@@ -165,6 +165,11 @@ export async function load() {
     featureIdLabel: '140087160',
   });
 
+  const rhinoCAPT = getModelFromUrl({
+    url: '/capt/capt-rhino-ion/tileset.json',
+    featureIdLabel: '124543527',
+  });
+
   return Promise.all([
     rhinoE2A,
     rhinoE6,
@@ -172,6 +177,7 @@ export async function load() {
     rhinoCELC,
     rhinoPioneerHouse2225,
     rhinoNUSMuseum,
+    rhinoCOM1,
     rhinoCOM2,
     rhinoPgprBlock1,
     rhinoAS8,
@@ -197,5 +203,6 @@ export async function load() {
     rhinoInnovation4,
     rhinoHSSML,
     rhinoBiz1,
+    rhinoCAPT,
   ]);
 }
