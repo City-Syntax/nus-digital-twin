@@ -145,6 +145,11 @@ export async function load() {
     featureIdLabel: '732229049',
   });
 
+  const rhinoAS5 = getModelFromUrl({
+    url: '/as5/as5-rhino-ion/tileset.json',
+    featureIdLabel: '142080062',
+  });
+
   const rhinoAS7 = getModelFromUrl({
     url: '/as7/as7-rhino-ion/tileset.json',
     featureIdLabel: '142079835',
@@ -209,6 +214,7 @@ export async function load() {
     rhinoRvrcG,
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
+    rhinoAS5,
     rhinoAS7,
     rhinoTemasekHallE,
     rhinoYongSiewTohConservatoryOfMusic,

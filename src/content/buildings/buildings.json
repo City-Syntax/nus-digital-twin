@@ -803,7 +803,20 @@
     "longitude": 103.77182,
     "idfDownload": "/as5/as5.idf",
     "energyUse": "as5-eu",
-    "energyUseIntensity": "as5-eui"
+    "energyUseIntensity": "as5-eui",
+    "buildingDataCredits": "Charlize, Valencia, Sherlyn",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Charlize, Valencia, Sherlyn",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/as5/as5-rhino.3dm"
+          }
+        ]
+      }
+    ]
   },
   {
     "elementId": "15347235",
