@@ -155,6 +155,11 @@ export async function load() {
     featureIdLabel: '54619685',
   });
 
+  const rhinoBiz1 = getModelFromUrl({
+    url: '/biz1/biz1-rhino-ion/tileset.json',
+    featureIdLabel: '140087160',
+  });
+
   return Promise.all([
     rhinoE2A,
     rhinoE6,
@@ -186,5 +191,6 @@ export async function load() {
     rhinoYongSiewTohConservatoryOfMusic,
     rhinoInnovation4,
     rhinoHSSML,
+    rhinoBiz1,
   ]);
 }

@@ -3043,6 +3043,18 @@
     "idfDownload": "/biz1/biz1.idf",
     "energyUse": "biz1-eu",
     "energyUseIntensity": "biz1-eui",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Tan Jiayi, Wang Shihui, Ng Kai Lin Audrey",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1NJvaS_lTuOf45rl6tDgXKY3aUuvJxygO&export=download"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/biz1/biz1-1.jpg",
