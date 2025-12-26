@@ -2874,6 +2874,18 @@
         "author": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi"
       }
     ],
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1QDzIruLM_84NZHd88VTSaWtnBKuHAyBs&export=download"
+          }
+        ]
+      }
+    ],
     "buildingDataCredits": "Sean Lim Yong De, Ling Xing Tze, Loh Yi Qi",
     "energyUse": "hssml-eu",
     "energyUseIntensity": "hssml-eui",

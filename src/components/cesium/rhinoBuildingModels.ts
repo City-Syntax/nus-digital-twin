@@ -150,6 +150,11 @@ export async function load() {
     featureIdLabel: '54619703',
   });
 
+  const rhinoHSSML = getModelFromUrl({
+    url: '/hssml/hssml-rhino-ion/tileset.json',
+    featureIdLabel: '54619685',
+  });
+
   return Promise.all([
     rhinoE2A,
     rhinoE6,
@@ -180,5 +185,6 @@ export async function load() {
     rhinoTemasekHallE,
     rhinoYongSiewTohConservatoryOfMusic,
     rhinoInnovation4,
+    rhinoHSSML,
   ]);
 }
