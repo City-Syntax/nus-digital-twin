@@ -185,6 +185,11 @@ export async function load() {
     featureIdLabel: '124543527',
   });
 
+  const rhinoCreateTower = getModelFromUrl({
+    url: '/create-tower/create-tower-rhino-ion/tileset.json',
+    featureIdLabel: '125842215',
+  });
+
   return Promise.all([
     rhinoE1A,
     rhinoE2A,
@@ -222,5 +227,6 @@ export async function load() {
     rhinoHSSML,
     rhinoBiz1,
     rhinoCAPT,
+    rhinoCreateTower,
   ]);
 }

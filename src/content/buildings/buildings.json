@@ -386,7 +386,20 @@
     "longitude": 103.77358,
     "idfDownload": "/create-tower/create-tower.idf",
     "energyUse": "create-tower-eu",
-    "energyUseIntensity": "create-tower-eui"
+    "energyUseIntensity": "create-tower-eui",
+    "buildingDataCredits": "Hu Ying Xuan Reese, Vernye Lai",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Hu Ying Xuan Reese, Vernye Lai",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/create-tower/create-tower-rhino.3dm"
+          }
+        ]
+      }
+    ]
   },
   {
     "elementId": "15314907",
