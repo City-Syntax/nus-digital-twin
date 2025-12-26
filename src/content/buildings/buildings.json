@@ -1744,7 +1744,20 @@
     "longitude": 103.77391,
     "idfDownload": "/com1/com1.idf",
     "energyUse": "com1-eu",
-    "energyUseIntensity": "com1-eui"
+    "energyUseIntensity": "com1-eui",
+    "buildingDataCredits": "Anthea Chan Phuay Xuan, Chan Jun Xian, Winnie Liew Wen Mei",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Anthea Chan Phuay Xuan, Chan Jun Xian, Winnie Liew Wen Mei",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1YE471uBSs6EZY7C6LrSq-H25q8q8cZdV&export=download"
+          }
+        ]
+      }
+    ]
   },
   {
     "elementId": "54619699",

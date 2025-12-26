@@ -30,6 +30,11 @@ export async function load() {
     featureIdLabel: '238932774',
   });
 
+  const rhinoCOM1 = getModelFromUrl({
+    url: '/com1/com1-rhino-ion/tileset.json',
+    featureIdLabel: '54619721',
+  });
+
   const rhinoCOM2 = getModelFromUrl({
     url: '/com2/com2-rhino-ion/tileset.json',
     featureIdLabel: '54619699',
