@@ -1345,6 +1345,18 @@
         "src": "/src/assets/e5/e5-3.jpg",
         "author": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi"
       }
+    ],
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/e5/e5-rhino.3dm"
+          }
+        ]
+      }
     ]
   },
   {

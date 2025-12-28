@@ -1,4 +1,4 @@
-import { getModelFromCesiumIon, getModelFromGltf, getModelFromUrl } from './cesiumUtils';
+import { getModelFromGltf, getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
   const rhinoE1A = getModelFromUrl({
@@ -12,8 +12,13 @@ export async function load() {
   });
 
   const rhinoE4 = getModelFromUrl({
-    url: 'e4/e4-rhino-ion/tileset.json',
+    url: '/e4/e4-rhino-ion/tileset.json',
     featureIdLabel: '139970613',
+  });
+
+  const rhinoE5 = getModelFromUrl({
+    url: '/e5/e5-rhino-ion/tileset.json',
+    featureIdLabel: '54583929',
   });
 
   const rhinoE6 = getModelFromUrl({
@@ -195,6 +200,7 @@ export async function load() {
     rhinoE2A,
     rhinoE4,
     rhinoE6,
+    rhinoE5,
     rhinoE7,
     rhinoCELC,
     rhinoPioneerHouse2225,
