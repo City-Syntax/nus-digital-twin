@@ -386,7 +386,20 @@
     "longitude": 103.77358,
     "idfDownload": "/create-tower/create-tower.idf",
     "energyUse": "create-tower-eu",
-    "energyUseIntensity": "create-tower-eui"
+    "energyUseIntensity": "create-tower-eui",
+    "buildingDataCredits": "Hu Ying Xuan Reese, Vernye Lai",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Hu Ying Xuan Reese, Vernye Lai",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/create-tower/create-tower-rhino.3dm"
+          }
+        ]
+      }
+    ]
   },
   {
     "elementId": "15314907",
@@ -1332,6 +1345,18 @@
         "src": "/src/assets/e5/e5-3.jpg",
         "author": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi"
       }
+    ],
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Nurul Diyanah Binte Haizad, Pang Qian Rui Renee, Ang Jia Yi",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/e5/e5-rhino.3dm"
+          }
+        ]
+      }
     ]
   },
   {
@@ -1453,6 +1478,18 @@
     "energyUse": "e8-eu",
     "energyUseIntensity": "e8-eui",
     "buildingDataCredits": "Toh Zi Lin, Jansen Lee Yong Hui, Rena Ng Jing Ru",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Toh Zi Lin, Jansen Lee Yong Hui, Rena Ng Jing Ru",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1uLjQpZdLh-hmEZVRnWth4MW3X5ExgdjP&export=download"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/e8/e8-1.jpg",
@@ -1495,6 +1532,13 @@
       {
         "src": "/src/assets/ea/ea-thermal.jpg",
         "author": "Lujia Zhu"
+      }
+    ],
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Choo Xue Min Charmayne, Ferlin Ng Jing Ru, Jamie Liang Man Ling",
+        "files": [{ "filetype": ".3dm", "url": "/ea/ea-rhino.3dm" }]
       }
     ]
   },
@@ -1541,6 +1585,18 @@
     "idfDownload": "/central-library/central-library.idf",
     "energyUse": "central-library-eu",
     "energyUseIntensity": "central-library-eui",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Evan Chong Ian Han, Mohamed Nazim Irfan bin Mohamed Nizam",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/central-library/central-library-rhino.3dm"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/central-library/central-library-1.png",
