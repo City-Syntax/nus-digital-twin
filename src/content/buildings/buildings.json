@@ -1573,6 +1573,18 @@
     "idfDownload": "/central-library/central-library.idf",
     "energyUse": "central-library-eu",
     "energyUseIntensity": "central-library-eui",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Evan Chong Ian Han, Mohamed Nazim Irfan bin Mohamed Nizam",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/central-library/central-library-rhino.3dm"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/central-library/central-library-1.png",

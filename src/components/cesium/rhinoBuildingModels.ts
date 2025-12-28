@@ -200,6 +200,11 @@ export async function load() {
     featureIdLabel: '125842215',
   });
 
+  const rhinoCentralLibrary = getModelFromUrl({
+    url: '/central-library/central-library-rhino-ion/tileset.json',
+    featureIdLabel: '54583490',
+  });
+
   return Promise.all([
     rhinoEA,
     rhinoE1A,
@@ -240,5 +245,6 @@ export async function load() {
     rhinoBiz1,
     rhinoCAPT,
     rhinoCreateTower,
+    rhinoCentralLibrary,
   ]);
 }
