@@ -1,6 +1,11 @@
 import { getModelFromGltf, getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
+  const rhinoEA = getModelFromUrl({
+    url: '/ea/ea-rhino-ion/tileset.json',
+    featureIdLabel: '139978993',
+  });
+
   const rhinoE1A = getModelFromUrl({
     url: '/e1a/e1a-rhino-ion/tileset.json',
     featureIdLabel: '139976284',
@@ -196,6 +201,7 @@ export async function load() {
   });
 
   return Promise.all([
+    rhinoEA,
     rhinoE1A,
     rhinoE2A,
     rhinoE4,

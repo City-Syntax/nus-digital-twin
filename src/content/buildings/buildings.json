@@ -1521,6 +1521,13 @@
         "src": "/src/assets/ea/ea-thermal.jpg",
         "author": "Lujia Zhu"
       }
+    ],
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Choo Xue Min Charmayne, Ferlin Ng Jing Ru, Jamie Liang Man Ling",
+        "files": [{ "filetype": ".3dm", "url": "/ea/ea-rhino.3dm" }]
+      }
     ]
   },
   {
