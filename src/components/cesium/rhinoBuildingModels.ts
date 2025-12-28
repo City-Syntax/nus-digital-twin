@@ -40,6 +40,11 @@ export async function load() {
     featureIdLabel: '1060426986',
   });
 
+  const rhinoE8 = getModelFromUrl({
+    url: '/e8/e8-rhino-ion/tileset.json',
+    featureIdLabel: '139959807',
+  });
+
   const rhinoCELC = getModelFromUrl({
     url: '/celc/celc-rhino-ion/tileset.json',
     featureIdLabel: '140084916',
@@ -213,6 +218,7 @@ export async function load() {
     rhinoE6,
     rhinoE5,
     rhinoE7,
+    rhinoE8,
     rhinoCELC,
     rhinoPioneerHouse2225,
     rhinoNUSMuseum,

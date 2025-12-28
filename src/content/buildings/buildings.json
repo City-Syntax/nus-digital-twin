@@ -1478,6 +1478,18 @@
     "energyUse": "e8-eu",
     "energyUseIntensity": "e8-eui",
     "buildingDataCredits": "Toh Zi Lin, Jansen Lee Yong Hui, Rena Ng Jing Ru",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Toh Zi Lin, Jansen Lee Yong Hui, Rena Ng Jing Ru",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1uLjQpZdLh-hmEZVRnWth4MW3X5ExgdjP&export=download"
+          }
+        ]
+      }
+    ],
     "images": [
       {
         "src": "/src/assets/e8/e8-1.jpg",
