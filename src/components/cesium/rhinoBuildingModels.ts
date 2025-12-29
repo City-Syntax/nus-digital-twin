@@ -210,6 +210,11 @@ export async function load() {
     featureIdLabel: '54583490',
   });
 
+  const rhinoHelixHouse = getModelFromUrl({
+    url: '/helix-house/helix-house-rhino-ion/tileset.json',
+    featureIdLabel: 'HELIX_HOUSE',
+  });
+
   return Promise.all([
     rhinoEA,
     rhinoE1A,
@@ -252,5 +257,6 @@ export async function load() {
     rhinoCAPT,
     rhinoCreateTower,
     rhinoCentralLibrary,
+    rhinoHelixHouse,
   ]);
 }

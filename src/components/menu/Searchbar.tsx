@@ -6,6 +6,12 @@ import buildingsData from '@content/buildings/buildings.json';
 import { activePages, buildingId, flyToPosition } from '@store';
 import { cn } from '@lib/utils';
 
+const BUILDINGS_TO_FILTER = [
+  '54583930', // Combined UCC and NUS Museum
+  '238932766', // Helix House Blk 15 - 17
+  '238932773', // Helix House Blk 18 and 19
+];
+
 const Searchbar = () => {
   const [open, setOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
@@ -21,7 +27,7 @@ const Searchbar = () => {
         }
         return false;
       })
-      .filter((building) => building.elementId !== '54583930'); // filter out the combined UCC and NUS Museum
+      .filter((building) => !BUILDINGS_TO_FILTER.includes(building.elementId));
   }, [buildingsData]);
 
   // Force the component to render once first, else the group label is not included
