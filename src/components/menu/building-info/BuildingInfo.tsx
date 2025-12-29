@@ -52,6 +52,23 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
     );
   }
 
+  if (['238932766', '238932773'].includes(buildingId.get().toString())) {
+    return (
+      <>
+        <div className="menubar-content-header">
+          <h2>{buildingProperties.name}</h2>
+          <CloseButton page="building-info"></CloseButton>
+        </div>
+        <div className="menubar-content-body">
+          <div>This selection forms part of the Helix House building.</div>
+          <button className="btn btn-secondary btn-sm w-full" onClick={() => buildingId.set('HELIX_HOUSE')}>
+            View data for Helix House
+          </button>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <div className="menubar-content-header">

@@ -3579,6 +3579,30 @@
     "longitude": 103.77989
   },
   {
+    "elementId": "HELIX_HOUSE",
+    "name": "Helix House",
+    "address": "37 Prince George's Park",
+    "postal": "118430",
+    "latitude": 1.2913216161148813,
+    "longitude": 103.7795422532624,
+    "buildingDataCredits": "Angel Mah Shi Qi, Ho Min Xuan",
+    "idfDownload": "/helix-house/helix-house.idf",
+    "energyUse": "helix-house-eu",
+    "energyUseIntensity": "helix-house-eui",
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Angel Mah Shi Qi, Ho Min Xuan",
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "https://drive.usercontent.google.com/download?id=1Jq1zyKdoCNN15iJvJv0xpYPxwYIr39CF&export=download"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "elementId": "238932772",
     "name": "Pioneer House Block 20 and 21",
     "address": "35 Prince George's Park",
