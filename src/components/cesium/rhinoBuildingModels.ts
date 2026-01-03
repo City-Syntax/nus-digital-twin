@@ -215,6 +215,11 @@ export async function load() {
     featureIdLabel: 'HELIX_HOUSE',
   });
 
+  const rhinoMD1 = getModelFromUrl({
+    url: '/md1/md1-rhino-ion/tileset.json',
+    featureIdLabel: '141912739',
+  });
+
   return Promise.all([
     rhinoEA,
     rhinoE1A,
@@ -258,5 +263,6 @@ export async function load() {
     rhinoCreateTower,
     rhinoCentralLibrary,
     rhinoHelixHouse,
+    rhinoMD1,
   ]);
 }
