@@ -220,6 +220,11 @@ export async function load() {
     featureIdLabel: '141912739',
   });
 
+  const rhinoCinnamonCollege = getModelFromUrl({
+    url: '/cinnamon-college/cinnamon-college-rhino-ion/tileset.json',
+    featureIdLabel: '124542228',
+  });
+
   return Promise.all([
     rhinoEA,
     rhinoE1A,
@@ -264,5 +269,6 @@ export async function load() {
     rhinoCentralLibrary,
     rhinoHelixHouse,
     rhinoMD1,
+    rhinoCinnamonCollege,
   ]);
 }
