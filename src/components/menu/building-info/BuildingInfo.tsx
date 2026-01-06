@@ -27,6 +27,11 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
   );
   buildingId.listen(() => setCategory('general'));
 
+  // TODO: Refactor to all use ACH
+  const isCoreOutsideAirFlowRateInACH = ['54619685'].includes($buildingId);
+
+  console.log(isCoreOutsideAirFlowRateInACH);
+
   if (buildingId.get() == '54583930') {
     return (
       <>
@@ -98,6 +103,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
                   <BuildingInfoContent
                     title={data[0] as keyof BuildingPropertiesProps}
                     content={data[1]}
+                    isACH={isCoreOutsideAirFlowRateInACH}
                   ></BuildingInfoContent>
                 </div>
               );
@@ -168,7 +174,15 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
 
 export default BuildingInfo;
 
-const BuildingInfoContent = ({ title, content }: { title: keyof BuildingPropertiesProps; content: any }) => {
+const BuildingInfoContent = ({
+  title,
+  content,
+  isACH,
+}: {
+  title: keyof BuildingPropertiesProps;
+  content: any;
+  isACH: boolean;
+}) => {
   switch (title) {
     case 'downloads':
       return (
@@ -238,7 +252,9 @@ const BuildingInfoContent = ({ title, content }: { title: keyof BuildingProperti
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>
-          <p>{Number.isInteger(content) ? content + '.0' : content} L/s/Person</p>
+          <p>
+            {Number.isInteger(content) ? content + '.0' : content} {isACH ? 'ACH' : 'L/s/Person'}
+          </p>
         </>
       );
     case 'windowLeakage':
