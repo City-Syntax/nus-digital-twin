@@ -266,6 +266,18 @@ const BuildingInfoContent = ({
         </>
       );
     case 'thermostatSetPoint':
+      if (Array.isArray(content)) {
+        return (
+          <>
+            <h3>{TITLE_MAPPINGS[title]}</h3>
+            {content.map((c) => (
+              <p key={c.label}>
+                {c.label}: {c.value}&deg;C
+              </p>
+            ))}
+          </>
+        );
+      }
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>

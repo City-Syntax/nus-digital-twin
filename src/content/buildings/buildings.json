@@ -1498,7 +1498,10 @@
     "windowLeakage": 1,
     "naturalVentilation": "Mixed concept",
     "daylightResponse": "Continuous",
-    "thermostatSetPoint": 24,
+    "thermostatSetPoint": [
+      { "label": "Heating", "value": 23 },
+      { "label": "Cooling", "value": 24 }
+    ],
     "coreOutsideAirFlowrate": 0.5,
     "perimeterOutsideAirFlowrate": 1.5,
     "coreOccupantDensity": 0.07,
@@ -3275,7 +3278,41 @@
         "src": "/src/assets/biz1/biz1-2.jpg",
         "author": "Tan Jiayi, Wang Shihui, Ng Kai Lin Audrey"
       }
-    ]
+    ],
+    "floorToFloorHeight": 4.5,
+    "perimeterZoneDepth": 4.5,
+    "wallConstruction": 0.7,
+    "roofConstruction": 0.45,
+    "externalWallType": "Concrete glass",
+    "internalWalls": "Reinforced concrete",
+    "fenestrationType": "Curtain wall",
+    "fenestrationShading": "None",
+    "northWindowToWallRatio": 80,
+    "southWindowToWallRatio": 85,
+    "eastWindowToWallRatio": 70,
+    "westWindowToWallRatio": 60,
+    "windowFrameConductance": 2.1,
+    "glazingType": "Double pane, low-E",
+    "windowLeakage": 1,
+    "naturalVentilation": "No (closed environment)",
+    "daylightResponse": "No",
+    "thermostatSetPoint": [
+      { "label": "Heating", "value": 22.5 },
+      { "label": "Cooling", "value": 25.5 }
+    ],
+    "coreOutsideAirFlowrate": 0.8,
+    "perimeterOutsideAirFlowrate": 2,
+    "coreEquipmentPower": 15,
+    "perimeterEquipmentPower": 15,
+    "coreLightingPower": 11,
+    "perimeterLightingPower": 11,
+    "occupancySchedule": 47.5,
+    "equipmentUsage": 43,
+    "lightingUsage": 31,
+    "coreOutsideAirSchedule": "Always on",
+    "perimeterOutsideAirSchedule": "Always on",
+    "exhaustAirRecovery": "None",
+    "economizerCycle": "None"
   },
   {
     "elementId": "54619697",

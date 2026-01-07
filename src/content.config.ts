@@ -62,7 +62,15 @@ const buildingSchema = z.object({
   windowLeakage: z.number().optional(),
   naturalVentilation: z.string().optional(),
   daylightResponse: z.string().optional(),
-  thermostatSetPoint: z.number().optional(),
+  thermostatSetPoint: z
+    .array(
+      z.object({
+        label: z.enum(['Heating', 'Cooling']),
+        value: z.number(),
+      }),
+    )
+    .or(z.number())
+    .optional(),
   coreOutsideAirFlowrate: z.number().optional(),
   perimeterOutsideAirFlowrate: z.number().optional(),
   coreOccupantDensity: z.number().optional(),
