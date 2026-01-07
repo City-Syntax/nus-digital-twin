@@ -3211,7 +3211,28 @@
     "address": "12 Kent Ridge Drive",
     "postal": "119243",
     "latitude": 1.29304,
-    "longitude": 103.77079
+    "longitude": 103.77079,
+    "downloads": [
+      {
+        "type": "Rhino",
+        "credits": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe",
+        "files": [{ "filetype": ".3dm", "url": "/temasek-hall/temasek-hall-a-rhino.3dm" }]
+      }
+    ],
+    "images": [
+      {
+        "src": "/src/assets/temasek-hall/temasek-hall-a-1.jpg",
+        "author": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe"
+      },
+      {
+        "src": "/src/assets/temasek-hall/temasek-hall-a-2.jpg",
+        "author": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe"
+      }
+    ],
+    "buildingDataCredits": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe",
+    "energyUse": "temasek-hall-a-eu",
+    "energyUseIntensity": "temasek-hall-a-eui",
+    "idfDownload": "/temasek-hall/temasek-hall-a.idf"
   },
   {
     "elementId": "142221865",
@@ -3243,28 +3264,7 @@
     "address": "12 Kent Ridge Drive",
     "postal": "119243",
     "latitude": 1.29265,
-    "longitude": 103.77221,
-    "downloads": [
-      {
-        "type": "Rhino",
-        "credits": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe",
-        "files": [{ "filetype": ".3dm", "url": "/temasek-hall/temasek-hall-e-rhino.3dm" }]
-      }
-    ],
-    "images": [
-      {
-        "src": "/src/assets/temasek-hall/temasek-hall-e-1.jpg",
-        "author": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe"
-      },
-      {
-        "src": "/src/assets/temasek-hall/temasek-hall-e-2.jpg",
-        "author": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe"
-      }
-    ],
-    "buildingDataCredits": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe",
-    "energyUse": "temasek-hall-e-eu",
-    "energyUseIntensity": "temasek-hall-e-eui",
-    "idfDownload": "/temasek-hall/temasek-hall-e.idf"
+    "longitude": 103.77221
   },
   {
     "elementId": "125774787",

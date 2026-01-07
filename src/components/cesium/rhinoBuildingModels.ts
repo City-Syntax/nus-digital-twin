@@ -170,8 +170,8 @@ export async function load() {
     featureIdLabel: '142079835',
   });
 
-  const rhinoTemasekHallE = getModelFromUrl({
-    url: '/temasek-hall/temasek-hall-e-rhino-ion/tileset.json',
+  const rhinoTemasekHallA = getModelFromUrl({
+    url: '/temasek-hall/temasek-hall-a-rhino-ion/tileset.json',
     featureIdLabel: '142221863',
   });
 
@@ -259,7 +259,7 @@ export async function load() {
     rhinoYNCArtsCenter,
     rhinoAS5,
     rhinoAS7,
-    rhinoTemasekHallE,
+    rhinoTemasekHallA,
     rhinoYongSiewTohConservatoryOfMusic,
     rhinoInnovation4,
     rhinoHSSML,
