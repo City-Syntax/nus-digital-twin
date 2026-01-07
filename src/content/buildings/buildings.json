@@ -1913,7 +1913,43 @@
           }
         ]
       }
-    ]
+    ],
+    "floorToFloorHeight": [
+      { "label": "Basement", "value": 2.5 },
+      { "label": "Level 1 - 3", "value": 4.4 }
+    ],
+    "perimeterZoneDepth": 6,
+    "wallConstruction": 0.5,
+    "roofConstruction": 0.4,
+    "externalWallType": "Brick",
+    "internalWalls": "Plaster",
+    "fenestrationType": "Glass",
+    "fenestrationShading": "Exterior overhangs",
+    "northWindowToWallRatio": 80,
+    "southWindowToWallRatio": 60,
+    "eastWindowToWallRatio": 40,
+    "westWindowToWallRatio": 30,
+    "windowFrameConductance": 1.5,
+    "glazingType": "Double pane",
+    "windowLeakage": 1,
+    "naturalVentilation": "No",
+    "daylightResponse": "Yes",
+    "thermostatSetPoint": 25,
+    "coreOutsideAirFlowrate": 0.6,
+    "perimeterOutsideAirFlowrate": 0.25,
+    "coreOccupantDensity": 0.25,
+    "perimeterOccupantDensity": 0.25,
+    "coreEquipmentPower": 0.18,
+    "perimeterEquipmentPower": 0.18,
+    "coreLightingPower": 12,
+    "perimeterLightingPower": 12,
+    "occupancySchedule": 60,
+    "equipmentUsage": 30,
+    "lightingUsage": 60,
+    "coreOutsideAirSchedule": "Always on",
+    "perimeterOutsideAirSchedule": "Always on",
+    "exhaustAirRecovery": "None",
+    "economizerCycle": "None"
   },
   {
     "elementId": "54619699",
