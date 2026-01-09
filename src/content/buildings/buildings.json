@@ -347,7 +347,39 @@
           }
         ]
       }
-    ]
+    ],
+    "floorToFloorHeight": [
+      { "label": "Level 1", "value": 4.5 },
+      { "label": "Level 2 - 21", "value": 3 }
+    ],
+    "perimeterZoneDepth": 5,
+    "wallConstruction": 1.442,
+    "roofConstruction": 0.8,
+    "externalWallType": "Concrete walls with paint finish",
+    "internalWalls": "Lightweight drywall or gypsum board partitions",
+    "fenestrationType": "Windows and doors",
+    "fenestrationShading": "Projecting slab overhangs and vertical fins",
+    "northWindowToWallRatio": 35,
+    "southWindowToWallRatio": 25,
+    "eastWindowToWallRatio": 15,
+    "westWindowToWallRatio": 20,
+    "glazingType": "Single pane windows",
+    "naturalVentilation": "No",
+    "daylightResponse": "Continuous",
+    "thermostatSetPoint": 25,
+    "coreOutsideAirFlowrate": 10,
+    "perimeterOutsideAirFlowrate": 0.35,
+    "coreOccupantDensity": 0.25,
+    "perimeterOccupantDensity": 0.15,
+    "perimeterEquipmentPower": 10,
+    "coreLightingPower": 12,
+    "perimeterLightingPower": 10,
+    "occupancySchedule": 168,
+    "equipmentUsage": 56,
+    "coreOutsideAirSchedule": "Always on",
+    "perimeterOutsideAirSchedule": "Always on",
+    "exhaustAirRecovery": "None",
+    "economizerCycle": "None"
   },
   {
     "elementId": "124549211",
