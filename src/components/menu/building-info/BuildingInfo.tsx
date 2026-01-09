@@ -230,6 +230,14 @@ const BuildingInfoContent = ({
     case 'wallConstruction':
     case 'roofConstruction':
     case 'windowFrameConductance':
+      if (typeof content === 'string') {
+        return (
+          <>
+            <h3>{TITLE_MAPPINGS[title]}</h3>
+            <p>{content}</p>
+          </>
+        );
+      }
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>

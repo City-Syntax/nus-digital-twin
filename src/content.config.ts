@@ -57,7 +57,7 @@ const buildingSchema = z.object({
   southWindowToWallRatio: z.number().optional(),
   eastWindowToWallRatio: z.number().optional(),
   westWindowToWallRatio: z.number().optional(),
-  windowFrameConductance: z.number().optional(),
+  windowFrameConductance: z.number().or(z.string()).optional(),
   glazingType: z.string().optional(),
   windowLeakage: z.number().optional(),
   naturalVentilation: z.string().optional(),
