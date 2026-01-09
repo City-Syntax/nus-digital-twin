@@ -30,8 +30,6 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
   // TODO: Refactor to all use ACH
   const isCoreOutsideAirFlowRateInACH = ['54619685'].includes($buildingId);
 
-  console.log(isCoreOutsideAirFlowRateInACH);
-
   if (buildingId.get() == '54583930') {
     return (
       <>
@@ -317,6 +315,22 @@ const BuildingInfoContent = ({
     case 'occupancySchedule':
     case 'equipmentUsage':
     case 'lightingUsage':
+      return (
+        <>
+          <h3>{TITLE_MAPPINGS[title]}</h3>
+          <p>{content} h/wk</p>
+        </>
+      );
+    case 'coreOutsideAirSchedule':
+    case 'perimeterOutsideAirSchedule':
+      if (typeof content === 'string') {
+        return (
+          <>
+            <h3>{TITLE_MAPPINGS[title]}</h3>
+            <p>{content}</p>
+          </>
+        );
+      }
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>
