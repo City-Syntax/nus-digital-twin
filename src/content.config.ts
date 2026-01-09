@@ -82,8 +82,8 @@ const buildingSchema = z.object({
   occupancySchedule: z.number().optional(),
   equipmentUsage: z.number().optional(),
   lightingUsage: z.number().optional(),
-  coreOutsideAirSchedule: z.string().optional(),
-  perimeterOutsideAirSchedule: z.string().optional(),
+  coreOutsideAirSchedule: z.string().or(z.number()).optional(),
+  perimeterOutsideAirSchedule: z.string().or(z.number()).optional(),
   exhaustAirRecovery: z.string().optional(),
   economizerCycle: z.string().optional(),
 });

@@ -397,7 +397,7 @@ The window to wall ratio facing for the east orientation, specified in percentag
 
 ## `windowFrameConductance`
 
-Type: `number`
+Type: `number` or `string`
 
 Category: <Badge text="Fenestration" />
 
@@ -410,6 +410,8 @@ The following example defines a window frame conductance of 4.8 W/m<sup>2</sup>K
   "windowFrameConductance": 4.8
 }
 ```
+
+A `string` value can also be used. String values will be displayed as it is.
 
 ## `glazingType`
 
@@ -471,7 +473,7 @@ Specifies the type of daylight response.
 
 ## `thermostatSetPoint`
 
-Type: `number`
+Type: `number` or `Array<{ label: 'Heating' | 'Cooling', value: number }>`
 
 Category: <Badge text="Heating, Ventilation and Air-conditioning" />
 
@@ -482,6 +484,17 @@ The following example defines a building with a thermostat set point of 25&deg;C
 ```json title=Example frame=terminal
 {
   "thermostatSetPoint": 25
+}
+```
+
+Different values can also be defined for heating and cooling as shown in the example below. Each label will be displayed with its corresponding values on a single row.
+
+```json title="Multiple Values Example" frame=terminal
+{
+  "thermostatSetPoint": [
+    { "label": "Heating", "value": 25 },
+    { "label": "Cooling", "value": 23 }
+  ]
 }
 ```
 
@@ -667,7 +680,7 @@ The following example defines the lighting usage of 40 hours per week.
 
 ## `coreOutsideAirSchedule`
 
-Type: `string`
+Type: `string` or `number`
 
 Category: <Badge text="Schedules" />
 
@@ -679,9 +692,17 @@ Specifies the presence of core outside air schedule of the building. Displays as
 }
 ```
 
+A number can be specified. This number represents the number of hours per week. The example below defines a core outside air schedule of 50 hours per week.
+
+```json title=Example frame=terminal
+{
+  "coreOutsideAirSchedule": 50
+}
+```
+
 ## `perimeterOutsideAirSchedule`
 
-Type: `string`
+Type: `string` or `number`
 
 Category: <Badge text="Schedules" />
 
@@ -690,6 +711,14 @@ Specifies the presence of perimeter outside air schedule of the building. Displa
 ```json title=Example frame=terminal
 {
   "perimeterOutsideAirSchedule": "Always on"
+}
+```
+
+A number can be specified. This number represents the number of hours per week. The example below defines a perimeter outside air schedule of 50 hours per week.
+
+```json title=Example frame=terminal
+{
+  "perimeterOutsideAirSchedule": 50
 }
 ```
 
