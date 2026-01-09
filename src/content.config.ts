@@ -57,12 +57,20 @@ const buildingSchema = z.object({
   southWindowToWallRatio: z.number().optional(),
   eastWindowToWallRatio: z.number().optional(),
   westWindowToWallRatio: z.number().optional(),
-  windowFrameConductance: z.number().optional(),
+  windowFrameConductance: z.number().or(z.string()).optional(),
   glazingType: z.string().optional(),
   windowLeakage: z.number().optional(),
   naturalVentilation: z.string().optional(),
   daylightResponse: z.string().optional(),
-  thermostatSetPoint: z.number().optional(),
+  thermostatSetPoint: z
+    .array(
+      z.object({
+        label: z.enum(['Heating', 'Cooling']),
+        value: z.number(),
+      }),
+    )
+    .or(z.number())
+    .optional(),
   coreOutsideAirFlowrate: z.number().optional(),
   perimeterOutsideAirFlowrate: z.number().optional(),
   coreOccupantDensity: z.number().optional(),
@@ -74,8 +82,8 @@ const buildingSchema = z.object({
   occupancySchedule: z.number().optional(),
   equipmentUsage: z.number().optional(),
   lightingUsage: z.number().optional(),
-  coreOutsideAirSchedule: z.string().optional(),
-  perimeterOutsideAirSchedule: z.string().optional(),
+  coreOutsideAirSchedule: z.string().or(z.number()).optional(),
+  perimeterOutsideAirSchedule: z.string().or(z.number()).optional(),
   exhaustAirRecovery: z.string().optional(),
   economizerCycle: z.string().optional(),
 });
