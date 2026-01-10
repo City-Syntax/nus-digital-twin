@@ -22,7 +22,12 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     pointId,
     showPoints,
     isModelsAdded,
+    canEnableModels,
   } from '@store';
+
+  setTimeout(() => {
+    canEnableModels.set(true);
+  }, 10000);
 
   import {
     Cartesian2,
@@ -427,7 +432,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     rhinoBuildingModels = models;
     for (const model of rhinoBuildingModels) {
       viewer.scene.primitives.add(model);
-      model.show = false;
+      model.show = activeModel.get() === 'rhino-building';
     }
     isModelsAdded.setKey('rhino-building', true);
   });

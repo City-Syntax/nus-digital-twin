@@ -1,5 +1,5 @@
 import CloseButton from './CloseButton';
-import { activeModel, isModelsAdded } from '@store';
+import { activeModel, isModelsAdded, canEnableModels, toastMessage } from '@store';
 import { useStore } from '@nanostores/react';
 import Icons from '@components/Icons';
 import { cn } from '@lib/utils';
@@ -7,6 +7,7 @@ import { cn } from '@lib/utils';
 const RhinoBuildings = () => {
   const $activeModel = useStore(activeModel);
   const isLoaded = useStore(isModelsAdded)['rhino-building'];
+  const canEnableModel = useStore(canEnableModels);
 
   return (
     <>
@@ -19,16 +20,24 @@ const RhinoBuildings = () => {
         <div className="relative">
           <div className="btn-group">
             <button
-              onClick={() => activeModel.set('rhino-building')}
+              onClick={() => {
+                if (!isLoaded) {
+                  toastMessage.set({
+                    msg: 'Rhino models are still loading...',
+                    type: 'default',
+                  });
+                }
+                activeModel.set('rhino-building');
+              }}
               className={cn({ active: $activeModel === 'rhino-building' })}
-              disabled={!isLoaded}
+              disabled={!isLoaded && !canEnableModel}
             >
               On
             </button>
             <button
               onClick={() => activeModel.set('')}
               className={cn({ active: $activeModel !== 'rhino-building' })}
-              disabled={!isLoaded}
+              disabled={!isLoaded && !canEnableModel}
             >
               Off
             </button>
@@ -37,11 +46,13 @@ const RhinoBuildings = () => {
             className={cn(
               'mt-1 absolute right-0 flex gap-1.5 items-center text-sm text-muted-foreground transition-opacity',
               {
-                'opacity-0': isLoaded,
+                'opacity-0 select-none pointer-events-none': isLoaded,
               },
             )}
+            aria-hidden={isLoaded}
           >
             <Icons.Spinner className="animate-spin size-3.5" />
+            {canEnableModel && 'Some '}
             Rhino models are loading...
           </div>
         </div>
