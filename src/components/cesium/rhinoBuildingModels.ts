@@ -31,14 +31,14 @@ export async function load() {
     featureIdLabel: '139959760',
   });
 
-  const rhinoE7 = getModelFromGltf({
-    latitude: 1.298697,
-    longitude: 103.77293,
-    height: 30,
-    heading: 153,
-    url: '/e7/e7-rhino.glb',
-    featureIdLabel: '1060426986',
-  });
+  // const rhinoE7 = getModelFromGltf({
+  //   latitude: 1.298697,
+  //   longitude: 103.77293,
+  //   height: 30,
+  //   heading: 153,
+  //   url: '/e7/e7-rhino.glb',
+  //   featureIdLabel: '1060426986',
+  // });
 
   const rhinoE8 = getModelFromUrl({
     url: '/e8/e8-rhino-ion/tileset.json',
@@ -232,7 +232,7 @@ export async function load() {
     rhinoE4,
     rhinoE6,
     rhinoE5,
-    rhinoE7,
+    // rhinoE7,
     rhinoE8,
     rhinoCELC,
     rhinoPioneerHouse2225,
