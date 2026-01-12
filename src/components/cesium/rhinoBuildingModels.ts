@@ -1,10 +1,5 @@
 import type { Cesium3DTileset, Model } from 'cesium';
-import { getModelFromGltf, getModelFromUrl } from './cesiumUtils';
-
-// TODO: Find a better fix
-function isMobileUA() {
-  return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
-}
+import { getModelFromCesiumIon, getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
   const rhinoEA = getModelFromUrl({
@@ -37,12 +32,8 @@ export async function load() {
     featureIdLabel: '139959760',
   });
 
-  const rhinoE7 = getModelFromGltf({
-    latitude: 1.298697,
-    longitude: 103.77293,
-    height: 30,
-    heading: 153,
-    url: '/e7/e7-rhino.glb',
+  const rhinoE7 = getModelFromCesiumIon({
+    assetId: 4342709,
     featureIdLabel: '1060426986',
   });
 
@@ -231,13 +222,14 @@ export async function load() {
     featureIdLabel: '124542228',
   });
 
-  const promises: Array<Promise<Model | Cesium3DTileset>> = [
+  return Promise.all([
     rhinoEA,
     rhinoE1A,
     rhinoE2A,
     rhinoE4,
     rhinoE6,
     rhinoE5,
+    rhinoE7,
     rhinoE8,
     rhinoCELC,
     rhinoPioneerHouse2225,
@@ -275,11 +267,5 @@ export async function load() {
     rhinoHelixHouse,
     rhinoMD1,
     rhinoCinnamonCollege,
-  ];
-
-  if (!isMobileUA()) {
-    promises.push(rhinoE7);
-  }
-
-  return Promise.all(promises);
+  ]);
 }
