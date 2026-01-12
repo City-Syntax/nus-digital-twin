@@ -53,7 +53,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     Cartographic,
   } from 'cesium';
   import { getNearestBuildingId, OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumUtils';
-  import { load as loadRhinoModels } from './rhinoBuildingModels';
+  import { loadModel, getAllFeatureIdLabels } from './rhinoBuildingModels';
   import { load as loadBuildingInformationModels } from './buildingInformationModels';
   import { mapboxSatellite, mapboxDark, mapboxStreet, type MapLayers } from './mapLayers';
   import { loadBuildingFootprints, loadGreenSpaces, loadStreetCenterlines } from './gisLayers';
@@ -64,7 +64,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     isReduced ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
   })();
 
-  let rhinoBuildingModels: Array<Model | Cesium3DTileset> = [];
+  // Map to store loaded rhino building models by featureIdLabel
+  const rhinoBuildingModels: Map<string, Model | Cesium3DTileset> = new Map();
   let buildingInformationModels: Array<Model | Cesium3DTileset> = [];
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
@@ -423,23 +424,42 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   viewer.scene.primitives.add(rhinoUrbanModel);
   isModelsAdded.setKey('rhino-urban', true);
 
-  loadRhinoModels().then((models) => {
-    rhinoBuildingModels = models;
-    for (const model of rhinoBuildingModels) {
+  // Mark rhino-building models as available (but not loaded yet)
+  isModelsAdded.setKey('rhino-building', true);
+
+  /**
+   * Load a rhino building model by featureIdLabel if not already loaded
+   */
+  async function ensureRhinoModelLoaded(featureIdLabel: string): Promise<Model | Cesium3DTileset | null> {
+    if (rhinoBuildingModels.has(featureIdLabel)) {
+      return rhinoBuildingModels.get(featureIdLabel)!;
+    }
+
+    const model = await loadModel(featureIdLabel);
+    if (model) {
+      rhinoBuildingModels.set(featureIdLabel, model);
       viewer.scene.primitives.add(model);
       model.show = false;
     }
-    isModelsAdded.setKey('rhino-building', true);
-  });
+    return model;
+  }
+
+  /**
+   * Load all rhino building models (called when rhino-building layer is activated)
+   */
+  async function loadAllRhinoModels() {
+    const featureIdLabels = getAllFeatureIdLabels();
+    await Promise.all(featureIdLabels.map((label) => ensureRhinoModelLoaded(label)));
+  }
 
   function showRhinoBuildings() {
-    for (const model of rhinoBuildingModels) {
+    for (const model of rhinoBuildingModels.values()) {
       model.show = true;
     }
   }
 
   function hideRhinoBuildings() {
-    for (const model of rhinoBuildingModels) {
+    for (const model of rhinoBuildingModels.values()) {
       model.show = false;
     }
   }
@@ -527,7 +547,8 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
 
   let isFirstCall = true;
-  activeModel.subscribe((model) => {
+  let rhinoModelsLoaded = false;
+  activeModel.subscribe(async (model) => {
     if (!isFirstCall && model) {
       toastMessage.set({
         msg: 'Loading models',
@@ -549,19 +570,40 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     // Allow toast to render first
     setTimeout(
-      () => {
+      async () => {
         if (!isFirstCall && model) {
           viewer.scene.preRender.addEventListener(startRender);
         }
         osmBuildingsTileset.show = model === 'osm';
         rhinoUrbanModel.show = model === 'rhino-urban';
         model === 'bim' ? showAllBIM() : hideAllBIM();
-        model === 'rhino-building' ? showRhinoBuildings() : hideRhinoBuildings();
+
+        if (model === 'rhino-building') {
+          // Load all models when rhino-building layer is first activated
+          if (!rhinoModelsLoaded) {
+            await loadAllRhinoModels();
+            rhinoModelsLoaded = true;
+          }
+          showRhinoBuildings();
+        } else {
+          hideRhinoBuildings();
+        }
 
         isFirstCall = false;
       },
       model ? 100 : 0,
     );
+  });
+
+  // Ensure specific rhino building model is loaded when buildingId changes
+  // (This ensures the model is available even if rhino-building layer isn't active yet)
+  buildingId.subscribe(async (id) => {
+    if (!id) {
+      return;
+    }
+
+    // Ensure the model is loaded (it will be shown when rhino-building layer is active)
+    await ensureRhinoModelLoaded(id);
   });
 
   activeMapLayer.subscribe((selectedMapLayer) => {
