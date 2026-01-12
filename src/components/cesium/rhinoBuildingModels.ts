@@ -1,4 +1,10 @@
+import type { Cesium3DTileset, Model } from 'cesium';
 import { getModelFromGltf, getModelFromUrl } from './cesiumUtils';
+
+// TODO: Find a better fix
+function isMobileUA() {
+  return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
+}
 
 export async function load() {
   const rhinoEA = getModelFromUrl({
@@ -225,14 +231,13 @@ export async function load() {
     featureIdLabel: '124542228',
   });
 
-  return Promise.all([
+  const promises: Array<Promise<Model | Cesium3DTileset>> = [
     rhinoEA,
     rhinoE1A,
     rhinoE2A,
     rhinoE4,
     rhinoE6,
     rhinoE5,
-    rhinoE7,
     rhinoE8,
     rhinoCELC,
     rhinoPioneerHouse2225,
@@ -270,5 +275,11 @@ export async function load() {
     rhinoHelixHouse,
     rhinoMD1,
     rhinoCinnamonCollege,
-  ]);
+  ];
+
+  if (!isMobileUA()) {
+    promises.push(rhinoE7);
+  }
+
+  return Promise.all(promises);
 }
