@@ -1,4 +1,3 @@
-import type { Cesium3DTileset, Model } from 'cesium';
 import { getModelFromCesiumIon, getModelFromUrl } from './cesiumUtils';
 
 export async function load() {
