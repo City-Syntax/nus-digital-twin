@@ -466,7 +466,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   });
   pointsData.forEach(({ longitude, latitude, id }) => {
     pointsOfInterest.add({
-      position: Cartesian3.fromDegrees(longitude, latitude),
+      position: Cartesian3.fromDegrees(longitude, latitude, 8),
       image: '../dot.png',
       sizeInMeters: true,
       height: 16,
