@@ -28,7 +28,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
   buildingId.listen(() => setCategory('general'));
 
   // TODO: Refactor to all use ACH
-  const isCoreOutsideAirFlowRateInACH = ['54619685'].includes($buildingId);
+  const isCoreOutsideAirFlowRateInACH = ['54619685', '142221852'].includes($buildingId);
 
   if (buildingId.get() == '54583930') {
     return (

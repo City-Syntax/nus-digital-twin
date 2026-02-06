@@ -77,8 +77,14 @@
     ],
     "buildingDataCredits": "Ivy Lim Kai Yee, Jolyn Teo Jing Hui, Yeo Min Beverley Benita",
     "floorToFloorHeight": [
-      { "label": "Level 1", "value": 5.4 },
-      { "label": "Level 2", "value": 4.8 }
+      {
+        "label": "Level 1",
+        "value": 5.4
+      },
+      {
+        "label": "Level 2",
+        "value": 4.8
+      }
     ],
     "perimeterZoneDepth": 4.8,
     "wallConstruction": 2,
@@ -280,6 +286,7 @@
     "westWindowToWallRatio": 15,
     "windowFrameConductance": 3,
     "glazingType": "Single clear window",
+    "naturalVentilation": "Hybrid ventilation system",
     "windowLeakage": 1,
     "daylightResponse": "Continuous",
     "thermostatSetPoint": 25,
@@ -349,8 +356,14 @@
       }
     ],
     "floorToFloorHeight": [
-      { "label": "Level 1", "value": 4.5 },
-      { "label": "Level 2 - 21", "value": 3 }
+      {
+        "label": "Level 1",
+        "value": 4.5
+      },
+      {
+        "label": "Level 2 - 21",
+        "value": 3
+      }
     ],
     "perimeterZoneDepth": 5,
     "wallConstruction": 1.442,
@@ -556,11 +569,26 @@
     ],
     "buildingDataCredits": "Samantha Peh, Toh Yu En",
     "floorToFloorHeight": [
-      { "label": "Level 1 to 2", "value": 4.5 },
-      { "label": "Level 2 to 3", "value": 3.6 },
-      { "label": "Level 3 to 4", "value": 3.6 },
-      { "label": "Level 4 to 5", "value": 3.6 },
-      { "label": "Level 5 to 6", "value": 5.35 }
+      {
+        "label": "Level 1 to 2",
+        "value": 4.5
+      },
+      {
+        "label": "Level 2 to 3",
+        "value": 3.6
+      },
+      {
+        "label": "Level 3 to 4",
+        "value": 3.6
+      },
+      {
+        "label": "Level 4 to 5",
+        "value": 3.6
+      },
+      {
+        "label": "Level 5 to 6",
+        "value": 5.35
+      }
     ],
     "perimeterZoneDepth": 5,
     "wallConstruction": 1.442,
@@ -686,7 +714,12 @@
       {
         "type": "Rhino",
         "credits": "Chan Jia Wei, Chye Yi De, Tan Soon Sian Aaron",
-        "files": [{ "filetype": ".3dm", "url": "/rvrc/rvrc-g-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/rvrc/rvrc-g-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Chan Jia Wei, Chye Yi De, Tan Soon Sian Aaron",
@@ -1047,12 +1080,23 @@
       {
         "type": "Rhino",
         "credits": "Soh Jun Wei, Sun Siting",
-        "files": [{ "filetype": ".3dm", "url": "/as7/as7-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/as7/as7-rhino.3dm"
+          }
+        ]
       }
     ],
     "floorToFloorHeight": [
-      { "label": "Level 1", "value": 5 },
-      { "label": "Level 2 - 6", "value": 4 }
+      {
+        "label": "Level 1",
+        "value": 5
+      },
+      {
+        "label": "Level 2 - 6",
+        "value": 4
+      }
     ],
     "perimeterZoneDepth": 5,
     "wallConstruction": 0.5,
@@ -1188,9 +1232,18 @@
       }
     ],
     "floorToFloorHeight": [
-      { "label": "Level 1 (First Half)", "value": 7 },
-      { "label": "Level 1 (Second Half)", "value": 2.8 },
-      { "label": "Level 2 - 5", "value": 2.8 }
+      {
+        "label": "Level 1 (First Half)",
+        "value": 7
+      },
+      {
+        "label": "Level 1 (Second Half)",
+        "value": 2.8
+      },
+      {
+        "label": "Level 2 - 5",
+        "value": 2.8
+      }
     ],
     "perimeterZoneDepth": 3,
     "wallConstruction": 2,
@@ -1249,14 +1302,28 @@
       {
         "type": "Rhino",
         "credits": "Steffi Seah, Tay Hui Xin",
-        "files": [{ "filetype": ".3dm", "url": "/sde2/sde2-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/sde2/sde2-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Steffi Seah, Tay Hui Xin",
     "floorToFloorHeight": [
-      { "label": "Level 1", "value": 7 },
-      { "label": "Level M", "value": 4.45 },
-      { "label": "Level 2 and 3", "value": 3.5 }
+      {
+        "label": "Level 1",
+        "value": 7
+      },
+      {
+        "label": "Level M",
+        "value": 4.45
+      },
+      {
+        "label": "Level 2 and 3",
+        "value": 3.5
+      }
     ],
     "perimeterZoneDepth": 7,
     "wallConstruction": 0.67,
@@ -1302,7 +1369,12 @@
       {
         "type": "Rhino",
         "credits": "Ng Jia Yee, Weng Yingyi",
-        "files": [{ "filetype": ".3dm", "url": "/sde3/sde3-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/sde3/sde3-rhino.3dm"
+          }
+        ]
       }
     ],
     "idfDownload": "/sde3/sde3.idf",
@@ -1352,8 +1424,14 @@
     "energyUse": "sde4-eu",
     "energyUseIntensity": "sde4-eui",
     "images": [
-      { "src": "/src/assets/sde4/sde4.jpg", "author": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi" },
-      { "src": "/src/assets/sde4/sde4-2.jpg", "author": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi" }
+      {
+        "src": "/src/assets/sde4/sde4.jpg",
+        "author": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi"
+      },
+      {
+        "src": "/src/assets/sde4/sde4-2.jpg",
+        "author": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi"
+      }
     ],
     "latitude": 1.29681,
     "longitude": 103.77035,
@@ -1365,7 +1443,12 @@
       {
         "type": "Rhino",
         "credits": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi",
-        "files": [{ "filetype": ".3dm", "url": "/sde4/sde4-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/sde4/sde4-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Faith Loke En Qi, Nicholas Ho Yuan En, Yong Linxi",
@@ -1510,7 +1593,12 @@
       {
         "type": "Rhino",
         "credits": "Chua Shu Hui Jessica, Adishree Archana Sanker, Gordon Sun Zhen Xiong",
-        "files": [{ "filetype": ".3dm", "url": "/e2a/e2a-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/e2a/e2a-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Chua Shu Hui Jessica, Adishree Archana Sanker, Gordon Sun Zhen Xiong",
@@ -1776,7 +1864,12 @@
       {
         "type": "Rhino",
         "credits": "Dhearan Devaraj, Lin Luochen, Tan Yong Han Bryan",
-        "files": [{ "filetype": ".3dm", "url": "/e6/e6-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/e6/e6-rhino.3dm"
+          }
+        ]
       }
     ]
   },
@@ -1818,8 +1911,14 @@
       }
     ],
     "floorToFloorHeight": [
-      { "label": "Level 1-3", "value": 5 },
-      { "label": "Level 4-8", "value": 3.5 }
+      {
+        "label": "Level 1-3",
+        "value": 5
+      },
+      {
+        "label": "Level 4-8",
+        "value": 3.5
+      }
     ],
     "perimeterZoneDepth": 4.5,
     "wallConstruction": 0.6,
@@ -1838,8 +1937,14 @@
     "naturalVentilation": "Mixed concept",
     "daylightResponse": "Continuous",
     "thermostatSetPoint": [
-      { "label": "Heating", "value": 23 },
-      { "label": "Cooling", "value": 24 }
+      {
+        "label": "Heating",
+        "value": 23
+      },
+      {
+        "label": "Cooling",
+        "value": 24
+      }
     ],
     "coreOutsideAirFlowrate": 0.5,
     "perimeterOutsideAirFlowrate": 1.5,
@@ -1961,7 +2066,12 @@
       {
         "type": "Rhino",
         "credits": "Choo Xue Min Charmayne, Ferlin Ng Jing Ru, Jamie Liang Man Ling",
-        "files": [{ "filetype": ".3dm", "url": "/ea/ea-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/ea/ea-rhino.3dm"
+          }
+        ]
       }
     ],
     "floorToFloorHeight": 3.8,
@@ -2085,6 +2195,8 @@
     "perimeterOutsideAirFlowrate": 0.5,
     "coreOccupantDensity": 0.0436,
     "perimeterOccupantDensity": 0.0436,
+    "coreEquipmentPower": 0.58,
+    "perimeterEquipmentPower": 0.58,
     "coreLightingPower": 15,
     "perimeterLightingPower": 15,
     "occupancySchedule": 68,
@@ -2351,8 +2463,14 @@
       }
     ],
     "floorToFloorHeight": [
-      { "label": "Basement", "value": 2.5 },
-      { "label": "Level 1 - 3", "value": 4.4 }
+      {
+        "label": "Basement",
+        "value": 2.5
+      },
+      {
+        "label": "Level 1 - 3",
+        "value": 4.4
+      }
     ],
     "perimeterZoneDepth": 6,
     "wallConstruction": 0.5,
@@ -2411,7 +2529,12 @@
       {
         "type": "Rhino",
         "credits": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus",
-        "files": [{ "filetype": ".3dm", "url": "/com2/com2-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/com2/com2-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Tertius Tay Kee Guan, Lee Jia Hao, Addeenurhakim Bin Mushahfir Fairus",
@@ -2476,15 +2599,29 @@
     "energyUseIntensity": "the-deck-eui",
     "idfDownload": "the-deck.idf",
     "images": [
-      { "src": "/src/assets/the-deck/the-deck-3.png", "author": "Tang Kai Jun, Lim Zhi An Dashiell" },
-      { "src": "/src/assets/the-deck/the-deck-1.png", "author": "Tang Kai Jun, Lim Zhi An Dashiell" },
-      { "src": "/src/assets/the-deck/the-deck-2.png", "author": "Tang Kai Jun, Lim Zhi An Dashiell" }
+      {
+        "src": "/src/assets/the-deck/the-deck-3.png",
+        "author": "Tang Kai Jun, Lim Zhi An Dashiell"
+      },
+      {
+        "src": "/src/assets/the-deck/the-deck-1.png",
+        "author": "Tang Kai Jun, Lim Zhi An Dashiell"
+      },
+      {
+        "src": "/src/assets/the-deck/the-deck-2.png",
+        "author": "Tang Kai Jun, Lim Zhi An Dashiell"
+      }
     ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Tang Kai Jun, Lim Zhi An Dashiell",
-        "files": [{ "filetype": ".3dm", "url": "/the-deck/the-deck-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/the-deck/the-deck-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Tang Kai Jun, Lim Zhi An Dashiell",
@@ -2533,14 +2670,25 @@
     "energyUseIntensity": "ssls-eui",
     "idfDownload": "/ssls/ssls.idf",
     "images": [
-      { "src": "/src/assets/ssls/ssls-1.jpg", "author": "Li Yuhang, Yang Zhengran" },
-      { "src": "/src/assets/ssls/ssls-2.jpg", "author": "Li Yuhang, Yang Zhengran" }
+      {
+        "src": "/src/assets/ssls/ssls-1.jpg",
+        "author": "Li Yuhang, Yang Zhengran"
+      },
+      {
+        "src": "/src/assets/ssls/ssls-2.jpg",
+        "author": "Li Yuhang, Yang Zhengran"
+      }
     ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Li Yuhang, Yang Zhengran",
-        "files": [{ "filetype": ".3dm", "url": "/ssls/ssls-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/ssls/ssls-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Li Yuhang, Yang Zhengran",
@@ -2601,7 +2749,12 @@
       {
         "type": "Rhino",
         "credits": "Elyne Chua Hui Wen, Kris Yap Sim Wei, Ong Jing Yee",
-        "files": [{ "filetype": ".3dm", "url": "/i4/i4-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/i4/i4-rhino.3dm"
+          }
+        ]
       }
     ],
     "images": [
@@ -2619,8 +2772,14 @@
       }
     ],
     "floorToFloorHeight": [
-      { "label": "Level 1", "value": 5 },
-      { "label": "Level 2 - 6", "value": 3.4 }
+      {
+        "label": "Level 1",
+        "value": 5
+      },
+      {
+        "label": "Level 2 - 6",
+        "value": 3.4
+      }
     ],
     "perimeterZoneDepth": 4,
     "wallConstruction": 0.263,
@@ -3170,7 +3329,12 @@
       {
         "type": "Rhino",
         "credits": "Alden Khoo Ding Hong",
-        "files": [{ "filetype": ".3dm", "url": "/sheares-hall/sheares-a-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/sheares-hall/sheares-a-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Alden Khoo Ding Hong and Jesmine Pang Sheau Xuan",
@@ -3250,12 +3414,22 @@
     "idfDownload": "/sheares-hall/sheares-main.idf",
     "energyUse": "sheares-main-eu",
     "energyUseIntensity": "sheares-main-eui",
-    "images": [{ "src": "/src/assets/sheares-hall/sheares-main.jpg", "author": "Lim Xin Hui Sheryl, Lee Yi" }],
+    "images": [
+      {
+        "src": "/src/assets/sheares-hall/sheares-main.jpg",
+        "author": "Lim Xin Hui Sheryl, Lee Yi"
+      }
+    ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Lim Xin Hui Sheryl, Lee Yi",
-        "files": [{ "filetype": ".3dm", "url": "/sheares-hall/sheares-main-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/sheares-hall/sheares-main-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Lim Xin Hui Sheryl, Lee Yi",
@@ -3304,7 +3478,12 @@
       {
         "type": "Rhino",
         "credits": " Lim Xin Hui Sheryl, Lee Yi",
-        "files": [{ "filetype": ".3dm", "url": "/sheares-hall/sheares-main-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/sheares-hall/sheares-main-rhino.3dm"
+          }
+        ]
       }
     ]
   },
@@ -3412,7 +3591,12 @@
       {
         "type": "Rhino",
         "credits": "Angel Zhou An Ting, Vivian Yeo",
-        "files": [{ "filetype": ".3dm", "url": "/nus-museum/nus-museum-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/nus-museum/nus-museum-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Angel Zhou An Ting, Vivian Yeo",
@@ -3480,7 +3664,12 @@
       {
         "type": "Rhino",
         "credits": "Tjoeng Levana, Lor Yong Hui Mabel",
-        "files": [{ "filetype": ".3dm", "url": "/usc/usc-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/usc/usc-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Tjoeng Levana, Lor Yong Hui Mabel",
@@ -3533,7 +3722,12 @@
       {
         "type": "Rhino",
         "credits": "Charmaine Toh Yuwei, Glenda Tay, Noraisyah Binte Mohammad Rais",
-        "files": [{ "filetype": ".3dm", "url": "/ystcm/ystcm-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/ystcm/ystcm-rhino.3dm"
+          }
+        ]
       }
     ],
     "images": [
@@ -3754,7 +3948,12 @@
       {
         "type": "Rhino",
         "credits": "Ng Jia Ying, Chloe Yeo Ziyi, Tan Si Qi Chloe",
-        "files": [{ "filetype": ".3dm", "url": "/temasek-hall/temasek-hall-a-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/temasek-hall/temasek-hall-a-rhino.3dm"
+          }
+        ]
       }
     ],
     "images": [
@@ -3791,6 +3990,8 @@
     "thermostatSetPoint": 25,
     "coreOccupantDensity": 0.133,
     "perimeterOccupantDensity": 0.133,
+    "coreOutsideAirFlowrate": 0.0085,
+    "perimeterOutsideAirFlowrate": 0.0085,
     "coreEquipmentPower": 9,
     "perimeterEquipmentPower": 9,
     "coreLightingPower": 10,
@@ -3902,8 +4103,14 @@
     "naturalVentilation": "No (closed environment)",
     "daylightResponse": "No",
     "thermostatSetPoint": [
-      { "label": "Heating", "value": 22.5 },
-      { "label": "Cooling", "value": 25.5 }
+      {
+        "label": "Heating",
+        "value": 22.5
+      },
+      {
+        "label": "Cooling",
+        "value": 25.5
+      }
     ],
     "coreOutsideAirFlowrate": 0.8,
     "perimeterOutsideAirFlowrate": 2,
@@ -3961,7 +4168,12 @@
       {
         "type": "Rhino",
         "credits": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey",
-        "files": [{ "filetype": ".3dm", "url": "/techno-edge/techno-edge-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/techno-edge/techno-edge-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Hazel Yeo Leng, Lim Fang Zhen, Chong Ming Huey",
@@ -4017,12 +4229,22 @@
     "idfDownload": "/celc/celc.idf",
     "energyUse": "celc-eu",
     "energyUseIntensity": "celc-eui",
-    "images": [{ "src": "/src/assets/celc/celc.jpg", "author": "Chee Hui Zhen, Irene Siew Pui Yan" }],
+    "images": [
+      {
+        "src": "/src/assets/celc/celc.jpg",
+        "author": "Chee Hui Zhen, Irene Siew Pui Yan"
+      }
+    ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Chee Hui Zhen, Irene Siew Pui Yan",
-        "files": [{ "filetype": ".3dm", "url": "/celc/celc-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/celc/celc-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Chee Hui Zhen, Irene Siew Pui Yan",
@@ -4071,15 +4293,29 @@
     "energyUse": "msl-eu",
     "energyUseIntensity": "msl-eui",
     "images": [
-      { "src": "/src/assets/msl/msl-1.jpg", "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En" },
-      { "src": "/src/assets/msl/msl-2.jpg", "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En" },
-      { "src": "/src/assets/msl/msl-3.jpg", "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En" }
+      {
+        "src": "/src/assets/msl/msl-1.jpg",
+        "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En"
+      },
+      {
+        "src": "/src/assets/msl/msl-2.jpg",
+        "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En"
+      },
+      {
+        "src": "/src/assets/msl/msl-3.jpg",
+        "author": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En"
+      }
     ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En",
-        "files": [{ "filetype": ".3dm", "url": "/msl/msl-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/msl/msl-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Joey Koh Lin Li, Lim Zhi Yan Kathleen, Tang Hui En",
@@ -4391,14 +4627,25 @@
     "energyUseIntensity": "pioneer-house-22-25-eui",
     "idfDownload": "/pioneer-house/pioneer-house-22-25.idf",
     "images": [
-      { "src": "/src/assets/pioneer-house/pioneer-house-1.jpg", "author": "Ng Jing Cheng, Mao Jun Chi" },
-      { "src": "/src/assets/pioneer-house/pioneer-house-2.jpg", "author": "Ng Jing Cheng, Mao Jun Chi" }
+      {
+        "src": "/src/assets/pioneer-house/pioneer-house-1.jpg",
+        "author": "Ng Jing Cheng, Mao Jun Chi"
+      },
+      {
+        "src": "/src/assets/pioneer-house/pioneer-house-2.jpg",
+        "author": "Ng Jing Cheng, Mao Jun Chi"
+      }
     ],
     "downloads": [
       {
         "type": "Rhino",
         "credits": "Ng Jing Cheng, Mao Jun Chi",
-        "files": [{ "filetype": ".3dm", "url": "/pioneer-house/pioneer-house-22-25-rhino.3dm" }]
+        "files": [
+          {
+            "filetype": ".3dm",
+            "url": "/pioneer-house/pioneer-house-22-25-rhino.3dm"
+          }
+        ]
       }
     ],
     "buildingDataCredits": "Ng Jing Cheng, Mao Jun Chi",
