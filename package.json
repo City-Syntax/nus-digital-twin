@@ -34,7 +34,7 @@
     "cesium": "^1.135.0",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
-    "exifreader": "^4.32.0",
+    "exifreader": "^4.38.1",
     "fuzzysort": "^3.1.0",
     "nanostores": "^0.9.5",
     "radix-ui": "^1.4.3",
