@@ -35,7 +35,7 @@
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "exifreader": "^4.32.0",
-    "fuzzysort": "^3.0.2",
+    "fuzzysort": "^3.1.0",
     "nanostores": "^0.9.5",
     "radix-ui": "^1.4.3",
     "react": "^18.3.1",
