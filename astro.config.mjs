@@ -30,37 +30,37 @@ export default defineConfig({
         },
         {
           label: 'Basic Features',
-          autogenerate: { directory: 'user-guide/basic-features' },
+          items: [{ autogenerate: { directory: 'user-guide/basic-features' } }],
         },
         {
           label: 'Building Data',
-          autogenerate: { directory: 'user-guide/building-data' },
+          items: [{ autogenerate: { directory: 'user-guide/building-data' } }],
         },
         {
           label: 'Building Models',
-          autogenerate: { directory: 'user-guide/building-models' },
+          items: [{ autogenerate: { directory: 'user-guide/building-models' } }],
         },
         {
           label: 'Points Of Interest',
-          autogenerate: { directory: 'user-guide/points-of-interest' },
+          items: [{ autogenerate: { directory: 'user-guide/points-of-interest' } }],
         },
         {
           label: 'Controls',
-          autogenerate: { directory: 'user-guide/controls' },
+          items: [{ autogenerate: { directory: 'user-guide/controls' } }],
         },
         {
           slug: 'tutorials',
         },
         {
           label: 'Videos',
-          autogenerate: { directory: 'tutorials/videos' },
+          items: [{ autogenerate: { directory: 'tutorials/videos' } }],
         },
         {
           slug: 'api-reference',
         },
         {
           label: 'Endpoints',
-          autogenerate: { directory: 'api-reference/endpoints' },
+          items: [{ autogenerate: { directory: 'api-reference/endpoints' } }],
         },
         {
           slug: 'dev-guide',
@@ -70,43 +70,43 @@ export default defineConfig({
         },
         {
           label: 'Design',
-          autogenerate: { directory: 'dev-guide/design' },
+          items: [{ autogenerate: { directory: 'dev-guide/design' } }],
         },
         {
           label: 'Buildings',
-          autogenerate: { directory: 'dev-guide/buildings' },
+          items: [{ autogenerate: { directory: 'dev-guide/buildings' } }],
         },
         {
           label: 'Points of Interest',
-          autogenerate: { directory: 'dev-guide/points-of-interest' },
+          items: [{ autogenerate: { directory: 'dev-guide/points-of-interest' } }],
         },
         {
           label: 'Controls',
-          autogenerate: { directory: 'dev-guide/controls' },
+          items: [{ autogenerate: { directory: 'dev-guide/controls' } }],
         },
         {
           label: 'Environment Variables',
-          autogenerate: { directory: 'dev-guide/environment-variables' },
+          items: [{ autogenerate: { directory: 'dev-guide/environment-variables' } }],
         },
         {
           label: 'API',
-          autogenerate: { directory: 'dev-guide/api' },
+          items: [{ autogenerate: { directory: 'dev-guide/api' } }],
         },
         {
           label: 'Tutorials',
-          autogenerate: { directory: 'dev-guide/tutorials' },
+          items: [{ autogenerate: { directory: 'dev-guide/tutorials' } }],
         },
         {
           label: 'Documentation',
-          autogenerate: { directory: 'dev-guide/documentation' },
+          items: [{ autogenerate: { directory: 'dev-guide/documentation' } }],
         },
         {
           label: 'Analytics',
-          autogenerate: { directory: 'dev-guide/analytics' },
+          items: [{ autogenerate: { directory: 'dev-guide/analytics' } }],
         },
         {
           label: 'Deployment',
-          autogenerate: { directory: 'dev-guide/deployment' },
+          items: [{ autogenerate: { directory: 'dev-guide/deployment' } }],
         },
       ],
     }),
