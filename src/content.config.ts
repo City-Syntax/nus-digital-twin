@@ -1,4 +1,5 @@
-import { defineCollection, reference, z, type ImageFunction } from 'astro:content';
+import { defineCollection, reference, type ImageFunction } from 'astro:content';
+import { z } from 'astro/zod';
 import type { ImageProps } from './types';
 import { glob } from 'astro/loaders';
 import { docsLoader } from '@astrojs/starlight/loaders';
