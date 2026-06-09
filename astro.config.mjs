@@ -4,6 +4,7 @@ import starlight from '@astrojs/starlight';
 import vercel from '@astrojs/vercel';
 import rehypeExternalLinks from 'rehype-external-links';
 import sitemap from '@astrojs/sitemap';
+import { unified } from '@astrojs/markdown-remark';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -114,17 +115,19 @@ export default defineConfig({
   ],
 
   markdown: {
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        {
-          properties: {
-            class: 'external',
+    processor: unified({
+      rehypePlugins: [
+        [
+          rehypeExternalLinks,
+          {
+            properties: {
+              class: 'external',
+            },
+            target: '_blank',
           },
-          target: '_blank',
-        },
+        ],
       ],
-    ],
+    }),
   },
 
   site: 'https://www.nus-digital-twin.com',
