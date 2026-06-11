@@ -3182,7 +3182,7 @@
   resolved "https://registry.npmjs.org/@vscode/l10n/-/l10n-0.0.18.tgz"
   integrity sha512-KYSIHVmslkaCDyw013pphY+d7x1qV8IZupYfeIfzNA+nsaWHbn5uPuQRvdRFsa9zFzGeudPuoGoZ1Op4jrJXIQ==
 
-"@xmldom/xmldom@^0.9.9":
+"@xmldom/xmldom@^0.9.10":
   version "0.9.10"
   resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.9.10.tgz#a0ad5a26fe8aa996310870726e1704977f769dee"
   integrity sha512-A9gOqLdi6cV4ibazAjcQufGj0B1y/vDqYrcuP6d/6x8P27gRS8643Dj9o1dEKtB6O7fwxb2FgBmJS2mX7gpvdw==
@@ -4528,12 +4528,12 @@ execa@5.1.1:
     signal-exit "^3.0.3"
     strip-final-newline "^2.0.0"
 
-exifreader@^4.38.1:
-  version "4.38.1"
-  resolved "https://registry.yarnpkg.com/exifreader/-/exifreader-4.38.1.tgz#92fcc0bda16e2462644368805bea870a714cab49"
-  integrity sha512-VUQ8pnWJHpnQXPQLgx4XBwjhj+eE0f5t4KhVFn6BnnTYKLf79DfjVRntR5061qE9NZgx2ohvE+JLXe/FWfCaAA==
+exifreader@^4.41.0:
+  version "4.41.0"
+  resolved "https://registry.yarnpkg.com/exifreader/-/exifreader-4.41.0.tgz#a463c0ad484243a20c44e165ee7e3bedf13e7af7"
+  integrity sha512-P3nPeh6GWs5D5RZdRZ6q/LorHPmmeDgKsowduqRabtTFiqMD2bc5eTN+Dhq00O9BCuV2eksu3oOJh4ZaZvkK0A==
   optionalDependencies:
-    "@xmldom/xmldom" "^0.9.9"
+    "@xmldom/xmldom" "^0.9.10"
 
 expressive-code@^0.42.0:
   version "0.42.0"
