@@ -45,7 +45,7 @@
     "react-hot-toast": "^2.6.0",
     "react-transition-group": "^4.4.5",
     "rehype-external-links": "^3.0.0",
-    "tailwind-merge": "^3.4.0",
+    "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.0",
     "typescript": "^5.9.3"
   },
