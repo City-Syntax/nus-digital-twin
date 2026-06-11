@@ -5,6 +5,7 @@ import Icons from '../Icons';
 import buildingsData from '@content/buildings/buildings.json';
 import { activePages, buildingId, flyToPosition } from '@store';
 import { cn } from '@lib/utils';
+import Tooltip from '../primitives/Tooltip';
 
 const BUILDINGS_TO_FILTER = [
   '54583930', // Combined UCC and NUS Museum
@@ -157,20 +158,22 @@ const Searchbar = () => {
           }}
           placeholder="Search buildings"
         ></Command.Input>
-        <button
-          ref={clearBtnRef}
-          className="clear-btn hidden absolute right-0 top-1/2 -translate-y-1/2 btn btn-sm btn-square rounded-4xl bg-transparent [&>svg]:stroke-muted-foreground hover:[&>svg]:opacity-70"
-          type="button"
-          onFocus={() => document.addEventListener('keydown', clearSearchOnEnter)}
-          onBlur={() => document.removeEventListener('keydown', clearSearchOnEnter)}
-          onClick={() => {
-            setSearchQuery('');
-            scrollUpOnChange();
-            focusOnInput();
-          }}
-        >
-          <Icons.Close className="size-4 transition-opacity"></Icons.Close>
-        </button>
+        <Tooltip content="Clear search">
+          <button
+            ref={clearBtnRef}
+            className="clear-btn hidden absolute right-0 top-1/2 -translate-y-1/2 btn btn-sm btn-square rounded-4xl bg-transparent [&>svg]:stroke-muted-foreground hover:[&>svg]:opacity-70"
+            type="button"
+            onFocus={() => document.addEventListener('keydown', clearSearchOnEnter)}
+            onBlur={() => document.removeEventListener('keydown', clearSearchOnEnter)}
+            onClick={() => {
+              setSearchQuery('');
+              scrollUpOnChange();
+              focusOnInput();
+            }}
+          >
+            <Icons.Close className="size-4 transition-opacity"></Icons.Close>
+          </button>
+        </Tooltip>
       </div>
       <Command.List className={cn({ hide: !open })} ref={listRef} tabIndex={-1}>
         <Command.Group heading={`Search results (${buildingsDataToShow.length})`}>

@@ -3,7 +3,7 @@ import Icons from '../Icons';
 import { activePages, isSelectColorByDistance, buildingId } from '../../store';
 import { MENU_PAGES } from './menuUtils';
 import type { MenuPages } from '../../types';
-import Tippy from '@tippyjs/react';
+import Tooltip from '../primitives/Tooltip';
 
 const CloseButton = ({ page }: { page: MenuPages }) => {
   const handleClose = () => {
@@ -46,21 +46,18 @@ const CloseButton = ({ page }: { page: MenuPages }) => {
   }, []);
 
   return (
-    <Tippy
+    <Tooltip
       content={
         <span>
           Close&nbsp;<kbd>Esc</kbd>
         </span>
       }
-      arrow={false}
-      allowHTML
-      touch={false}
     >
       <button type="button" onClick={handleClose}>
         <Icons.Close></Icons.Close>
         <span className="sr-only">Close</span>
       </button>
-    </Tippy>
+    </Tooltip>
   );
 };
 
