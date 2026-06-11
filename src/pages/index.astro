@@ -15,27 +15,80 @@ import AppLayout from '../layouts/AppLayout.astro';
   <BottomBar />
 </AppLayout>
 <script>
-  import tippy from 'tippy.js';
+  import { autoUpdate, computePosition, flip, offset, shift, type Placement } from '@floating-ui/dom';
 
-  tippy('#home-btn', {
-    content: 'Reset view',
-    arrow: false,
-  });
+  const registeredTooltips = new WeakSet<Element>();
 
-  tippy('#screenshot-btn', {
-    content: 'Screenshot current view',
-    arrow: false,
-  });
+  const registerTooltip = (selector: string, content: string, placement: Placement = 'top') => {
+    document.querySelectorAll<HTMLElement>(selector).forEach((reference) => {
+      if (registeredTooltips.has(reference)) return;
+      registeredTooltips.add(reference);
 
-  tippy('#map-picker-btn', {
-    content: 'Map picker',
-    arrow: false,
-    touch: false,
-  });
+      let tooltip: HTMLDivElement | undefined;
+      let cleanup: (() => void) | undefined;
+      let hideTimeout: number | undefined;
 
-  tippy('.clear-btn', {
-    content: 'Clear search',
-    arrow: false,
-    touch: false,
-  });
+      const update = () => {
+        if (!tooltip) return;
+
+        computePosition(reference, tooltip, {
+          placement,
+          strategy: 'fixed',
+          middleware: [offset(8), flip(), shift({ padding: 8 })],
+        }).then(({ x, y }) => {
+          if (!tooltip) return;
+          Object.assign(tooltip.style, {
+            left: `${x}px`,
+            top: `${y}px`,
+          });
+        });
+      };
+
+      const show = () => {
+        window.clearTimeout(hideTimeout);
+        if (tooltip) {
+          tooltip.dataset.state = 'open';
+          return;
+        }
+
+        tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.dataset.state = 'open';
+        tooltip.textContent = content;
+        Object.assign(tooltip.style, {
+          left: '0',
+          position: 'fixed',
+          top: '0',
+        });
+        document.body.appendChild(tooltip);
+        cleanup = autoUpdate(reference, tooltip, update);
+      };
+
+      const hide = () => {
+        if (!tooltip) return;
+
+        cleanup?.();
+        cleanup = undefined;
+        tooltip.dataset.state = 'closed';
+        hideTimeout = window.setTimeout(() => {
+          tooltip?.remove();
+          tooltip = undefined;
+        }, 150);
+      };
+
+      reference.addEventListener('pointerenter', show);
+      reference.addEventListener('pointerleave', hide);
+      reference.addEventListener('focus', show);
+      reference.addEventListener('blur', hide);
+    });
+  };
+
+  const registerAllTooltips = () => {
+    registerTooltip('#home-btn', 'Reset view');
+    registerTooltip('#screenshot-btn', 'Screenshot current view');
+    registerTooltip('#map-picker-btn', 'Map picker');
+  };
+
+  registerAllTooltips();
+  new MutationObserver(registerAllTooltips).observe(document.body, { childList: true, subtree: true });
 </script>

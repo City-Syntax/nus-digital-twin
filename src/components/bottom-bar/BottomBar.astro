@@ -20,9 +20,9 @@ import StatsModal from './StatsModal';
     </svg>
     <span class="hidden sm:block">NUS Digital Twin</span>
     <span class="text-muted-foreground/60 select-none">|</span>
-    <AboutModal client:load />
-    <ShareModal client:load />
-    <StatsModal client:load />
+    <AboutModal client:only="react" />
+    <ShareModal client:only="react" />
+    <StatsModal client:only="react" />
   </div>
   <div class="flex items-center gap-1.5" id="scale-container">
     <div id="scale-label"></div>

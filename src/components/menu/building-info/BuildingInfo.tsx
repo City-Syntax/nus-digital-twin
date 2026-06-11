@@ -9,7 +9,7 @@ import DownloadButton from '../../primitives/DownloadButton';
 import Carousel from '../../primitives/Carousel';
 import Icons from '../../Icons';
 import ScrollContainer from '../../primitives/ScrollContainer';
-import Tippy from '@tippyjs/react';
+import Tooltip from '../../primitives/Tooltip';
 import Select from '../../primitives/Select';
 import { cn } from '@lib/utils';
 
@@ -122,9 +122,8 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
         </a>
         <span className="flex gap-2 justify-start">
           {(buildingProperties.energyUse || buildingProperties.energyUseIntensity) && (
-            <Tippy
+            <Tooltip
               content={`${$activePages.right === 'energy' ? 'Close' : 'View'} energy use data`}
-              arrow={false}
               placement="top-end"
             >
               {/* TODO: Remove the important when migration complete */}
@@ -150,19 +149,18 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
               >
                 <Icons.Energy></Icons.Energy>
               </button>
-            </Tippy>
+            </Tooltip>
           )}
           {buildingProperties.buildingDataCredits && (
-            <Tippy
+            <Tooltip
               content={`Building data by ${buildingProperties.buildingDataCredits}.`}
-              arrow={false}
               placement="top-end"
               maxWidth={'min(calc(100vw - (var(--padding-xs) * 2) - (var(--padding-base)) * 2), 350px)'}
             >
               <button>
                 <Icons.About height="20"></Icons.About>
               </button>
-            </Tippy>
+            </Tooltip>
           )}
         </span>
       </div>

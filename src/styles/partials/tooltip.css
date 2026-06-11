@@ -1,11 +1,23 @@
-div.tippy-box {
-  @apply bg-base;
-  border-radius: var(--radius-lg);
-}
-
 .tooltip {
   @apply bg-base;
-  font-size: var(--text-sm);
+  z-index: 9999;
+  width: max-content;
+  max-width: calc(100vw - 16px);
   border-radius: var(--radius-lg);
-  padding: 4px var(--padding-xs);
+  padding: 6px var(--padding-xs);
+  font-size: var(--text-sm);
+  line-height: 1.4;
+  pointer-events: none;
+
+  &[data-state='open'] {
+    animation: fadeIn 150ms var(--ease-in-out-sine);
+  }
+
+  &[data-state='closed'] {
+    animation: fadeOut 150ms var(--ease-in-out-sine);
+  }
+
+  body.reduce-motion & {
+    animation: none;
+  }
 }
