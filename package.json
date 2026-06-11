@@ -55,7 +55,7 @@
     "@types/react-transition-group": "^4.4.12",
     "@typescript-eslint/parser": "^8.59.1",
     "autoprefixer": "^10.5.0",
-    "cssnano": "^7.1.8",
+    "cssnano": "^8.0.2",
     "eslint": "^10.3.0",
     "eslint-plugin-astro": "^1.7.0",
     "husky": "^9.1.7",
