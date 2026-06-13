@@ -28,12 +28,31 @@ Safe examples:
 - Read files.
 - Search files.
 - Run read-only JSON parsing or validation commands.
+- Run read-only Python inspection/comparison commands, including via `uv` when installed.
 - Run project validation commands if they do not modify files.
 
 Unsafe examples:
 
 - `edit_file`, `write_file`, `delete_path`, `move_path`, or formatting commands that rewrite files.
 - Commands that update lockfiles, generated files, caches, or source files.
+
+## Read-Only Python, `uv`, and Spreadsheet Sources
+
+If source input is provided as a spreadsheet or another format that is difficult to inspect with plain file reads, agents may run read-only Python commands to parse and compare the data.
+
+- If `uv` is installed, it is acceptable to use `uv run --with <package> python -c "..."` for temporary, read-only dependencies such as `openpyxl`.
+- Use this only for inspection, parsing, summarizing, and comparison. Do not write output files, modify source files, update lockfiles, or create project-local virtual environments.
+- Prefer commands that read from the source file and print concise findings to stdout.
+- If `uv` is not installed, fall back to available read-only tools or ask the user for permission before installing anything.
+
+When validating `.xlsx` files:
+
+- Use a spreadsheet parser such as `openpyxl` and inspect both `data_only=True` and merged-cell ranges when needed.
+- Merged cells store their value only in the top-left cell. For row-level validation, treat a merged cell as applying to every row covered by its merged range.
+- If the user says rightmost columns contain corrections or final values, compare against the rightmost meaningful populated value for each row.
+- If the rightmost populated cell is a note, reference, explanation, `-`, `N/A`, or otherwise not the actual parameter value, use the adjacent second-rightmost meaningful value instead.
+- Do not blindly use the original input/value column when a rightmost or second-rightmost correction cell applies to that row.
+- If it is unclear whether a rightmost cell is a value or a note, report the ambiguity instead of asserting a mismatch.
 
 ## Workflow
 
@@ -55,7 +74,7 @@ Unsafe examples:
    - Suspect percentages stored as fractions.
    - ACH `coreOutsideAirFlowrate` consistency with `BuildingInfo.tsx`.
    - Possible source-data fields that have no schema representation.
-7. Run a read-only JSON parse check at minimum. If useful, run a read-only project validation command using `yarn`, but avoid commands that modify files.
+7. Run a read-only JSON parse check at minimum. If useful, run read-only source parsing/comparison commands, including `uv run --with <package> python -c "..."` when `uv` is installed, or a read-only project validation command using `yarn`. Avoid commands that modify files.
 8. Produce a structured report of findings, including severity, field, current value, suspected issue, evidence, and suggested correction.
 
 ## Human-Readable Label to JSON Field Mapping
