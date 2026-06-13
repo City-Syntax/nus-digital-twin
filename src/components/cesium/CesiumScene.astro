@@ -66,6 +66,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   let rhinoBuildingModels: Array<Model | Cesium3DTileset> = [];
   let buildingInformationModels: Array<Model | Cesium3DTileset> = [];
+  let buildingFootprintsData: any;
+  let streetCenterlinesData: any;
+  let greenSpacesData: any;
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
@@ -260,6 +263,84 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   globe.tileLoadProgressEvent.addEventListener(tileLoadProgressListener);
 
+  function getPickedWorldPosition(screenPosition: Cartesian2) {
+    if (viewer.scene.pickPositionSupported) {
+      const pickedPosition = viewer.scene.pickPosition(screenPosition);
+      if (defined(pickedPosition)) {
+        return pickedPosition;
+      }
+    }
+
+    const ray = viewer.camera.getPickRay(screenPosition);
+    return ray ? viewer.scene.globe.pick(ray, viewer.scene) : undefined;
+  }
+
+  function pointInRing(longitude: number, latitude: number, positions: Cartesian3[]) {
+    let isInside = false;
+
+    for (let i = 0, j = positions.length - 1; i < positions.length; j = i++) {
+      const current = Cartographic.fromCartesian(positions[i]);
+      const previous = Cartographic.fromCartesian(positions[j]);
+      const currentLongitude = CesiumMath.toDegrees(current.longitude);
+      const currentLatitude = CesiumMath.toDegrees(current.latitude);
+      const previousLongitude = CesiumMath.toDegrees(previous.longitude);
+      const previousLatitude = CesiumMath.toDegrees(previous.latitude);
+
+      if (
+        currentLatitude > latitude !== previousLatitude > latitude &&
+        longitude <
+          ((previousLongitude - currentLongitude) * (latitude - currentLatitude)) /
+            (previousLatitude - currentLatitude) +
+            currentLongitude
+      ) {
+        isInside = !isInside;
+      }
+    }
+
+    return isInside;
+  }
+
+  function pointInPolygonHierarchy(longitude: number, latitude: number, hierarchy: any) {
+    if (!hierarchy?.positions || !pointInRing(longitude, latitude, hierarchy.positions)) {
+      return false;
+    }
+
+    return !hierarchy.holes?.some((hole: any) => pointInPolygonHierarchy(longitude, latitude, hole));
+  }
+
+  function getBuildingFootprintId(longitude: number, latitude: number) {
+    if (!buildingFootprintsData) {
+      return null;
+    }
+
+    let selectedId: string | null = null;
+    let selectedArea = Number.POSITIVE_INFINITY;
+
+    for (const entity of buildingFootprintsData.entities.values) {
+      const hierarchy = entity.polygon?.hierarchy?.getValue(JulianDate.now());
+      if (!pointInPolygonHierarchy(longitude, latitude, hierarchy)) {
+        continue;
+      }
+
+      const positions = hierarchy.positions as Cartesian3[];
+      const longitudes = positions.map((position) =>
+        CesiumMath.toDegrees(Cartographic.fromCartesian(position).longitude),
+      );
+      const latitudes = positions.map((position) =>
+        CesiumMath.toDegrees(Cartographic.fromCartesian(position).latitude),
+      );
+      const area =
+        (Math.max(...longitudes) - Math.min(...longitudes)) * (Math.max(...latitudes) - Math.min(...latitudes));
+
+      if (area < selectedArea) {
+        selectedArea = area;
+        selectedId = String(Math.trunc(entity.properties?.osm_id?.getValue(JulianDate.now())));
+      }
+    }
+
+    return selectedId;
+  }
+
   handler.setInputAction(function (movement: any) {
     const pickedFeature = viewer.scene.pick(movement.position);
     if (!defined(pickedFeature)) {
@@ -296,19 +377,13 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
     let urbanModelId;
     if (pickedFeature.primitive && pickedFeature.primitive.featureIdLabel === 'rhino-urban-model') {
-      const ray = viewer.camera.getPickRay(movement.position);
+      const pickedPosition = getPickedWorldPosition(movement.position);
 
-      if (!ray) {
-        return;
-      }
-
-      const position = viewer.scene.globe.pick(ray, viewer.scene);
-
-      if (defined(position)) {
-        const cartographic = Cartographic.fromCartesian(position);
+      if (defined(pickedPosition)) {
+        const cartographic = Cartographic.fromCartesian(pickedPosition);
         const longitude = CesiumMath.toDegrees(cartographic.longitude);
         const latitude = CesiumMath.toDegrees(cartographic.latitude);
-        urbanModelId = getNearestBuildingId(longitude, latitude);
+        urbanModelId = getBuildingFootprintId(longitude, latitude) ?? getNearestBuildingId(longitude, latitude);
       }
 
       if (!urbanModelId) {
@@ -481,9 +556,9 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
 
   showPoints.listen((isShow) => (pointsOfInterest.show = isShow));
 
-  const buildingFootprintsData = await loadBuildingFootprints();
-  const streetCenterlinesData = await loadStreetCenterlines();
-  const greenSpacesData = await loadGreenSpaces();
+  buildingFootprintsData = await loadBuildingFootprints();
+  streetCenterlinesData = await loadStreetCenterlines();
+  greenSpacesData = await loadGreenSpaces();
 
   viewer.dataSources.add(buildingFootprintsData);
   viewer.dataSources.add(streetCenterlinesData);
