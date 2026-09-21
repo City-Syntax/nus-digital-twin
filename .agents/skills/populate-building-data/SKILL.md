@@ -15,6 +15,7 @@ The goal is to map human-readable input labels to the correct JSON fields define
 - Schema source of truth: `src/content.config.ts`
 - User-facing guide: `src/content/docs/dev-guide/buildings/update-building-data.mdx`
 - Related display logic: `src/components/menu/building-info/BuildingInfo.tsx`
+- Search exclusions for shared buildings: `src/components/menu/Searchbar.tsx`
 
 Always inspect the current `src/content.config.ts` schema if you are unsure whether a field exists or what type it accepts.
 
@@ -38,6 +39,23 @@ Always inspect the current `src/content.config.ts` schema if you are unsure whet
 8. If `coreOutsideAirFlowrate` is provided in ACH, also update `src/components/menu/building-info/BuildingInfo.tsx` by adding the building's `elementId` string to the `isCoreOutsideAirFlowRateInACH` array, unless it is already present.
 9. Validate JSON syntax after editing. Prefer project commands using `yarn` if broader validation is needed.
 10. End with a manual-verification summary that lists the target building, every input label mapped to a JSON field, every ignored input label/value, any related `BuildingInfo.tsx` update, and the validation performed.
+
+### Worksheet Sources and Checkpoints
+
+- Identify value, correction, and reference columns separately on each worksheet; column letters and headings can vary. When precedence is unclear, confirm it once, then carry the user's source-priority rule forward without assuming fixed column letters. Do not treat explanatory notes as replacement values automatically.
+- Read Excel cell number formats alongside raw values. For example, a numeric `0.4` with a percentage format represents `40%` and must be stored as `40` in a WWR field. If a fraction has no clear percentage context, clarify rather than guessing.
+- Keep user-confirmed cell or row corrections in the current task context; do not generalize a workbook-specific misplaced value into a reusable mapping rule.
+- If the user requests one building at a time, stop after each agreed building or shared-building group and wait for explicit confirmation before proceeding. Clarifications, credit edits, validation questions, and commit requests do not authorize starting the next building.
+
+### Shared Buildings and Wings
+
+When the user requests shared data for multiple mapped wings or blocks using the Helix House pattern:
+
+- Inspect the current `HELIX_HOUSE` entry, its `BuildingInfo.tsx` handling, and `BUILDINGS_TO_FILTER` in `Searchbar.tsx`.
+- Preserve the original wing entries and their metadata. Store the shared parameters and credits in one entry with a unique string ID and the required metadata. Reuse known metadata where appropriate, explain any representative coordinate choice, and ask if required metadata cannot be established safely.
+- Give each mapped wing a button in `BuildingInfo.tsx` that opens the shared entry. Match the existing ID normalization so numeric and string selections work consistently.
+- Add the wing IDs to `BUILDINGS_TO_FILTER`, leaving the shared entry searchable. This is part of the shared-building pattern, not a reason to hide unrelated entries.
+- Apply the core-airflow unit override to the shared data entry's ID if needed. Validate that both wing buttons resolve to it, it remains searchable, and all original entries are preserved.
 
 ## Required JSON Shape
 
@@ -112,9 +130,12 @@ Use these exact JSON field names when the corresponding human-readable label app
   - `2.5W/m2K` -> `2.5`
 - Preserve meaningful descriptive text for string fields.
   - Multiline values should usually become a concise single string unless the field expects a number.
+  - Use sentence case for descriptive values, schedule text, and labels: `Single Pane` -> `Single pane`, `Always On` -> `Always on`, and `White Plaster Walls, Wooden Walls` -> `White plaster walls, wooden walls`. Preserve proper names, student names, acronyms, identifiers, paths, and unit symbols; do not change the meaning or rewrite unrelated existing entries merely to normalize capitalization.
+- For supplied building credits, trim surrounding whitespace, alphabetize by the full names as supplied, and join with `, ` unless the user specifies another order. Preserve spelling; do not infer surnames or missing contributors.
 - For WWR fields, store the percent value as a whole number.
   - `50%` -> `50`
 - For `coreOutsideAirFlowrate`, preserve the numeric value in `buildings.json` regardless of the source unit, but if the source unit is ACH, update the `isCoreOutsideAirFlowRateInACH` array in `src/components/menu/building-info/BuildingInfo.tsx` with the target building's `elementId` string. This lets the UI display the correct unit.
+  - For L/s/person, ensure that ID is absent from the ACH override list, removing a stale override if replacing a previous ACH value. Do not convert ACH to L/s/person without the necessary volume and occupancy data.
 - For blank values, do not add or overwrite the field.
 - If an existing field has a value and the input provides a blank value, keep the existing value unless the user explicitly asks to clear it.
 - If input contains a combined expression, evaluate it only when unambiguous.
@@ -180,6 +201,10 @@ Because the sample gives `Core outside air flow rate` as `0.65 ACH`, also add th
 
 After editing, at minimum verify the JSON parses. For example, use an available JSON parser or project validation command. If running Astro validation, follow the repository rule: avoid including Cesium static files in `public/` where possible.
 
+Cross-check every populated numeric field's source unit against the schema and current `BuildingInfo.tsx` display logic, not just its JSON type: metres for heights/depths, W/(m²·K) for U-values, percentage points for WWR, °C for temperature, people/m² for density, W/m² for power density, and hours/week for numeric schedules. Core airflow uses ACH or L/s/person according to the ID override; perimeter airflow and window leakage currently display ACH. Clarify incompatible source units before storing them. Report this as unit consistency validation, not independent verification of the source measurements.
+
+For related UI changes, run targeted formatting and lint checks with `yarn`. Check preservation of unrelated building entries and uniqueness of any new ID.
+
 Report exactly what was changed and which validation command was run. If validation was not run, state why.
 
 ## Final Response Requirements
@@ -189,7 +214,7 @@ Always finish with a concise manual-verification summary. Include:
 - Target building: `name` and `elementId`.
 - Updated fields: a mapping table with columns for input label, input value, JSON field, and stored value.
 - Ignored fields: a list or table of input labels/values that were not written, with the reason, such as `no schema field`, `blank value`, `ambiguous`, or `not provided`.
-- Related code updates: mention whether `src/components/menu/building-info/BuildingInfo.tsx` was updated for ACH `coreOutsideAirFlowrate`, or state that it was not needed.
+- Related code updates: report airflow unit overrides, shared-building navigation, and search exclusions when applicable, or state that no related update was needed.
 - Validation: the exact command/check run and result.
 
 If no edit was made because the building could not be identified, do not provide a guessed mapping as if it was applied. Instead, summarize what could be parsed and ask the user for the correct `elementId` or other identifying details.

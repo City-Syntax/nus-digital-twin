@@ -72,6 +72,23 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
     );
   }
 
+  if (['140087580', '140087584'].includes($buildingId.toString())) {
+    return (
+      <>
+        <div className="menubar-content-header">
+          <h2>{buildingProperties.name}</h2>
+          <CloseButton page="building-info"></CloseButton>
+        </div>
+        <div className="menubar-content-body">
+          <div>This selection forms part of the University Hall building.</div>
+          <button className="btn btn-secondary btn-sm w-full" onClick={() => buildingId.set('UNIVERSITY_HALL')}>
+            View data for University Hall
+          </button>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <div className="menubar-content-header">

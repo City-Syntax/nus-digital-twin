@@ -11,6 +11,8 @@ const BUILDINGS_TO_FILTER = [
   '54583930', // Combined UCC and NUS Museum
   '238932766', // Helix House Blk 15 - 17
   '238932773', // Helix House Blk 18 and 19
+  '140087580', // University Hall (Lee Kong Chian Wing)
+  '140087584', // University Hall (Tan Chin Tuan Wing)
 ];
 
 const Searchbar = () => {
