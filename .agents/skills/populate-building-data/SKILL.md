@@ -130,6 +130,7 @@ Use these exact JSON field names when the corresponding human-readable label app
   - `2.5W/m2K` -> `2.5`
 - Preserve meaningful descriptive text for string fields.
   - Multiline values should usually become a concise single string unless the field expects a number.
+  - Use sentence case for descriptive values, schedule text, and labels: `Single Pane` -> `Single pane`, `Always On` -> `Always on`, and `White Plaster Walls, Wooden Walls` -> `White plaster walls, wooden walls`. Preserve proper names, student names, acronyms, identifiers, paths, and unit symbols; do not change the meaning or rewrite unrelated existing entries merely to normalize capitalization.
 - For supplied building credits, trim surrounding whitespace, alphabetize by the full names as supplied, and join with `, ` unless the user specifies another order. Preserve spelling; do not infer surnames or missing contributors.
 - For WWR fields, store the percent value as a whole number.
   - `50%` -> `50`
