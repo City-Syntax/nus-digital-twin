@@ -314,7 +314,7 @@ const BuildingInfoContent = ({
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>
-          <p>{content}&deg;C</p>
+          <p>{Number.isInteger(content) ? `${content} &deg;C` : content}</p>
         </>
       );
     case 'coreOccupantDensity':

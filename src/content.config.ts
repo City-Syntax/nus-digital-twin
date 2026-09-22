@@ -79,6 +79,7 @@ const buildingSchema = z.object({
       }),
     )
     .or(z.number())
+    .or(z.string())
     .optional(),
   coreOutsideAirFlowrate: z.number().optional(),
   perimeterOutsideAirFlowrate: z.number().optional(),
