@@ -28,7 +28,7 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
   buildingId.listen(() => setCategory('general'));
 
   // TODO: Refactor to all use ACH
-  const isCoreOutsideAirFlowRateInACH = ['54619685', '142221852'].includes($buildingId);
+  const isCoreOutsideAirFlowRateInACH = ['54619685', '142221852', 'PGP_RESIDENCE_2'].includes($buildingId);
 
   if (buildingId.get() == '54583930') {
     return (
@@ -66,6 +66,23 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           <div>This selection forms part of the Helix House building.</div>
           <button className="btn btn-secondary btn-sm w-full" onClick={() => buildingId.set('HELIX_HOUSE')}>
             View data for Helix House
+          </button>
+        </div>
+      </>
+    );
+  }
+
+  if (['238932778', '238932780', '238932775', '1084099106'].includes($buildingId.toString())) {
+    return (
+      <>
+        <div className="menubar-content-header">
+          <h2>{buildingProperties.name}</h2>
+          <CloseButton page="building-info"></CloseButton>
+        </div>
+        <div className="menubar-content-body">
+          <div>This selection forms part of PGP Residence 2.</div>
+          <button className="btn btn-secondary btn-sm w-full" onClick={() => buildingId.set('PGP_RESIDENCE_2')}>
+            View data for PGP Residence 2
           </button>
         </div>
       </>

@@ -5326,5 +5326,56 @@
     "perimeterOutsideAirSchedule": "Always on",
     "exhaustAirRecovery": "None",
     "economizerCycle": "None"
+  },
+  {
+    "elementId": "PGP_RESIDENCE_2",
+    "name": "PGP Residence 2, Foyer and Canteen",
+    "address": "27 Prince George's Park",
+    "postal": "118425",
+    "latitude": 1.29097,
+    "longitude": 103.78114,
+    "buildingDataCredits": "Aleric Lim Hong Heng, Valsalan Nivish",
+    "floorToFloorHeight": [
+      {
+        "label": "Foyer",
+        "value": 15
+      },
+      {
+        "label": "Residence/rooms",
+        "value": 3
+      }
+    ],
+    "perimeterZoneDepth": 4.5,
+    "wallConstruction": 1.2,
+    "roofConstruction": 0.8,
+    "externalWallType": "Concrete wall with window openings (painted finish)",
+    "internalWalls": "Lightweight gypsum board/brick partition walls",
+    "fenestrationType": "Aluminium-framed operable windows and fixed glass panels",
+    "fenestrationShading": "Residence: blinds and shutters inside the rooms; metal louvres on the external facade outside some rooms",
+    "northWindowToWallRatio": 40,
+    "southWindowToWallRatio": 40,
+    "eastWindowToWallRatio": 40,
+    "westWindowToWallRatio": 40,
+    "windowFrameConductance": 3.521,
+    "glazingType": "Single tinted glass",
+    "windowLeakage": 0.5,
+    "naturalVentilation": "Yes (limited)",
+    "daylightResponse": "Continuous as there are windows in all the rooms",
+    "thermostatSetPoint": 21,
+    "coreOutsideAirFlowrate": 0.5,
+    "perimeterOutsideAirFlowrate": 2.7,
+    "coreOccupantDensity": 0.073,
+    "perimeterOccupantDensity": 0.073,
+    "coreEquipmentPower": 5.38,
+    "perimeterEquipmentPower": 5.38,
+    "coreLightingPower": 5.38,
+    "perimeterLightingPower": 5.38,
+    "occupancySchedule": 98,
+    "equipmentUsage": 98,
+    "lightingUsage": 98,
+    "coreOutsideAirSchedule": "Always on",
+    "perimeterOutsideAirSchedule": "Always on",
+    "exhaustAirRecovery": "None",
+    "economizerCycle": "None"
   }
 ]
