@@ -28,7 +28,9 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
   buildingId.listen(() => setCategory('general'));
 
   // TODO: Refactor to all use ACH
-  const isCoreOutsideAirFlowRateInACH = ['54619685', '142221852'].includes($buildingId);
+  const isCoreOutsideAirFlowRateInACH = ['54619685', '142221852', 'PGP_RESIDENCE_2_CANTEEN_FOYER'].includes(
+    $buildingId,
+  );
 
   if (buildingId.get() == '54583930') {
     return (
@@ -66,6 +68,30 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           <div>This selection forms part of the Helix House building.</div>
           <button className="btn btn-secondary btn-sm w-full" onClick={() => buildingId.set('HELIX_HOUSE')}>
             View data for Helix House
+          </button>
+        </div>
+      </>
+    );
+  }
+
+  if (
+    ['238932778', '238932780', '238932775', '1084099106', 'PGP_RESIDENCE_2', '251677507', '732229815'].includes(
+      $buildingId.toString(),
+    )
+  ) {
+    return (
+      <>
+        <div className="menubar-content-header">
+          <h2>{buildingProperties.name}</h2>
+          <CloseButton page="building-info"></CloseButton>
+        </div>
+        <div className="menubar-content-body">
+          <div>This building shares its analysis with PGP Residence 2, the foyer and the canteen.</div>
+          <button
+            className="btn btn-secondary btn-sm w-full"
+            onClick={() => buildingId.set('PGP_RESIDENCE_2_CANTEEN_FOYER')}
+          >
+            View the shared data
           </button>
         </div>
       </>
@@ -280,6 +306,18 @@ const BuildingInfoContent = ({
       );
     case 'windowLeakage':
     case 'perimeterOutsideAirFlowrate':
+      if (Array.isArray(content)) {
+        return (
+          <>
+            <h3>{TITLE_MAPPINGS[title]}</h3>
+            {content.map((c) => (
+              <p key={c.label}>
+                {c.label}: {Number.isInteger(c.value) ? c.value + '.0' : c.value} ACH
+              </p>
+            ))}
+          </>
+        );
+      }
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>
@@ -302,7 +340,7 @@ const BuildingInfoContent = ({
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>
-          <p>{content}&deg;C</p>
+          <p>{Number.isInteger(content) ? `${content} &deg;C` : content}</p>
         </>
       );
     case 'coreOccupantDensity':

@@ -60,7 +60,15 @@ const buildingSchema = z.object({
   westWindowToWallRatio: z.number().optional(),
   windowFrameConductance: z.number().or(z.string()).optional(),
   glazingType: z.string().optional(),
-  windowLeakage: z.number().optional(),
+  windowLeakage: z
+    .array(
+      z.object({
+        label: z.string(),
+        value: z.number(),
+      }),
+    )
+    .or(z.number())
+    .optional(),
   naturalVentilation: z.string().optional(),
   daylightResponse: z.string().optional(),
   thermostatSetPoint: z
@@ -71,6 +79,7 @@ const buildingSchema = z.object({
       }),
     )
     .or(z.number())
+    .or(z.string())
     .optional(),
   coreOutsideAirFlowrate: z.number().optional(),
   perimeterOutsideAirFlowrate: z.number().optional(),
