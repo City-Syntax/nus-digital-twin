@@ -280,6 +280,18 @@ const BuildingInfoContent = ({
       );
     case 'windowLeakage':
     case 'perimeterOutsideAirFlowrate':
+      if (Array.isArray(content)) {
+        return (
+          <>
+            <h3>{TITLE_MAPPINGS[title]}</h3>
+            {content.map((c) => (
+              <p key={c.label}>
+                {c.label}: {Number.isInteger(c.value) ? c.value + '.0' : c.value} ACH
+              </p>
+            ))}
+          </>
+        );
+      }
       return (
         <>
           <h3>{TITLE_MAPPINGS[title]}</h3>
