@@ -5328,7 +5328,7 @@
     "economizerCycle": "None"
   },
   {
-    "elementId": "PGP_RESIDENCE_2",
+    "elementId": "PGP_RESIDENCE_2_CANTEEN_FOYER",
     "name": "PGP Residence 2, Foyer and Canteen",
     "address": "27 Prince George's Park",
     "postal": "118425",
@@ -5377,5 +5377,13 @@
     "perimeterOutsideAirSchedule": "Always on",
     "exhaustAirRecovery": "None",
     "economizerCycle": "None"
+  },
+  {
+    "elementId": "PGP_RESIDENCE_2",
+    "name": "PGP Residence 2",
+    "address": "27 Prince George's Park",
+    "postal": "118425",
+    "latitude": 1.29097,
+    "longitude": 103.78114
   }
 ]

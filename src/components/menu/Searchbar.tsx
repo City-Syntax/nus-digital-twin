@@ -13,7 +13,11 @@ const BUILDINGS_TO_FILTER = [
   '238932773', // Helix House Blk 18 and 19
   '140087580', // University Hall (Lee Kong Chian Wing)
   '140087584', // University Hall (Tan Chin Tuan Wing)
-  'PGP_RESIDENCE_2', // PGP Residence 2, Foyer and Canteen
+  'PGP_RESIDENCE_2_CANTEEN_FOYER', // PGP Residence 2, Foyer and Canteen
+  '238932778', // PGP Residence 2 Block 5
+  '238932780', // PGP Residence 2 Block 6
+  '238932775', // PGP Residence 2 Block 7
+  '1084099106', // PGP Residence 2 Block 8
 ];
 
 const Searchbar = () => {
