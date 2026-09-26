@@ -4375,6 +4375,7 @@
     "wallConstruction": 2.2,
     "roofConstruction": 1.99,
     "externalWallType": "Brick wall",
+    "internalWalls": "Painted plastered masonry/concrete wall",
     "fenestrationType": "Sliding-window (PV film), jalousie windows, top-hung windows, doors",
     "fenestrationShading": "Exterior overhang",
     "northWindowToWallRatio": 30,
