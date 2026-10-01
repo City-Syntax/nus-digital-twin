@@ -4119,6 +4119,9 @@
   {
     "elementId": "54583491",
     "name": "Yusof Ishak House",
+    "energyUse": "yih-eu",
+    "energyUseIntensity": "yih-eui",
+    "idfDownload": "/yih/yih.idf",
     "buildingDataCredits": "Megan Sng Xinya, Ou Wen Xi Jessica, Wu Shihan",
     "address": "31 Lower Kent Ridge Road",
     "postal": "119078",
