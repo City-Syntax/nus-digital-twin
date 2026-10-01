@@ -671,6 +671,9 @@
   {
     "elementId": "142090371",
     "name": "MPSH 1 - 4",
+    "energyUse": "mpsh-1-4-eu",
+    "energyUseIntensity": "mpsh-1-4-eui",
+    "idfDownload": "/mpsh/mpsh-1-4.idf",
     "buildingDataCredits": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai",
     "address": "Sports Drive 1",
     "postal": "119077",
