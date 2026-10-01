@@ -5373,6 +5373,9 @@
   {
     "elementId": "PGP_RESIDENCE_2_CANTEEN_FOYER",
     "name": "PGP Residence 2, Foyer and Canteen",
+    "energyUse": "pgpr-2-canteen-foyer-eu",
+    "energyUseIntensity": "pgpr-2-canteen-foyer-eui",
+    "idfDownload": "/pgpr/pgpr-2-canteen-foyer.idf",
     "address": "27 Prince George's Park",
     "postal": "118425",
     "latitude": 1.29097,
