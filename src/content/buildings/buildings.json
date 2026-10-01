@@ -772,6 +772,9 @@
   {
     "elementId": "427077084",
     "name": "Ridge View Residential College Block E",
+    "energyUse": "rvrc-e-eu",
+    "energyUseIntensity": "rvrc-e-eui",
+    "idfDownload": "/rvrc/rvrc-e.idf",
     "address": "25 Lower Kent Ridge Road",
     "postal": "119081",
     "buildingDataCredits": "Kesandra Wong Cai Yi, Kwok Pei Ru",
