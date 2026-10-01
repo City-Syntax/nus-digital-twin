@@ -17,7 +17,7 @@ EU headers normally end in `[kWh]`; EUI headers end in `[kWhm2]`, representing k
 
 ## Naming and destinations
 
-Reuse the target's existing slug and asset directory where available. Otherwise select a short, stable lowercase kebab-case building abbreviation or name, retaining block/wing qualifiers. Examples: `uhall`, `shaw-foundation-alumni-house`, `rvrc-e`. Inspect existing paths before adopting an abbreviation; distinguish Shaw Foundation Alumni House from AS7 - Shaw Foundation Building. Do not include team names, spaces, `Export IDF`, run numbers, or dates for the single current simulation. Check for collisions with other buildings and files.
+Reuse the target's existing slug and asset directory where available unless the user requests a rename. For new slugs, use the full building name in lowercase kebab-case for one or two words, and lowercase initials for names with three or more words. Examples: University Hall → `university-hall`, Ventus → `ventus`, Shaw Foundation Alumni House → `sfah`. Retain block/wing qualifiers, for example Ridge View Residential College Block E → `rvrc-e`. Use the canonical building name rather than a source filename's abbreviation. Inspect existing paths for collisions; distinguish Shaw Foundation Alumni House from AS7 - Shaw Foundation Building. Do not include team names, spaces, `Export IDF`, run numbers, or dates for the single current simulation.
 
 | Artifact             | Repository destination               | Value in buildings.json                  |
 | -------------------- | ------------------------------------ | ---------------------------------------- |
@@ -38,8 +38,8 @@ python3 .agents/skills/import-building-energy/scripts/prepare_energy.py \
   --eu "/path/to/Building - Energy Use.csv" \
   --eui "/path/to/Building - Energy Use Intensity.csv" \
   --idf "/path/to/Building - Export IDF.idf" \
-  --slug uhall \
-  --output-dir /tmp/uhall-energy-stage
+  --slug university-hall \
+  --output-dir /tmp/university-hall-energy-stage
 ```
 
 The default cleaner path is `~/Desktop/nus-digital-twin-scripts/clean-energy-use/clean-energy-use.py`; use `--cleaner` for another checkout. Locate it if the default is missing. Do not substitute a different conversion without explaining why. The helper executes trusted local Python from that script's function, so inspect an unfamiliar cleaner first.

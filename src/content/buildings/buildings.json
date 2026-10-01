@@ -3812,6 +3812,9 @@
   {
     "elementId": "UNIVERSITY_HALL",
     "name": "University Hall",
+    "energyUse": "university-hall-eu",
+    "energyUseIntensity": "university-hall-eui",
+    "idfDownload": "/university-hall/university-hall.idf",
     "address": "21 Lower Kent Ridge Road",
     "postal": "119077",
     "latitude": 1.29697,
