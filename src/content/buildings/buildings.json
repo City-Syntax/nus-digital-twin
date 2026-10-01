@@ -4526,6 +4526,9 @@
   {
     "elementId": "125774787",
     "name": "Stephen Riady Centre",
+    "energyUse": "src-eu",
+    "energyUseIntensity": "src-eui",
+    "idfDownload": "/src/src.idf",
     "buildingDataCredits": "Ang Bo Qun Leroy, Nur Syahirah Binti Muhammad Fauzi, Nur Zabirah Binte Shariffudin",
     "address": "2 College Avenue West",
     "postal": "138607",
