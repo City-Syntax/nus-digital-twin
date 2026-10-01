@@ -4290,6 +4290,9 @@
   {
     "elementId": "858981035",
     "name": "Kent Ridge Guild House",
+    "energyUse": "krgh-eu",
+    "energyUseIntensity": "krgh-eui",
+    "idfDownload": "/krgh/krgh.idf",
     "address": "9 Kent Ridge Drive",
     "postal": "119241",
     "latitude": 1.2938,
