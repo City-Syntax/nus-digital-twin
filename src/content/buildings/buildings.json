@@ -3956,6 +3956,9 @@
   {
     "elementId": "54583487",
     "name": "University Health Centre",
+    "energyUse": "uhc-eu",
+    "energyUseIntensity": "uhc-eui",
+    "idfDownload": "/uhc/uhc.idf",
     "address": "20 Lower Kent Ridge Road",
     "postal": "119080",
     "buildingDataCredits": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An",
