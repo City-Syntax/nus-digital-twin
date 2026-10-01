@@ -1,17 +1,19 @@
 ---
 name: import-building-energy
-description: Import separate ClimateStudio energy use and energy use intensity CSVs with the nus-digital-twin-scripts cleaner, copy and rename an IDF into public, and update the matching buildings.json references.
+description: Import separate ClimateStudio energy use and energy use intensity CSVs from user-provided paths using the bundled converter or a supplied nus-digital-twin-scripts cleaner, copy and rename an IDF into public, and update the matching buildings.json references.
 ---
 
 # Import Building Energy
 
-Update `src/content/buildings/buildings.json` fields `energyUse`, `energyUseIntensity`, and `idfDownload` from two separate CSV files and one IDF. Use the upstream `nus-digital-twin-scripts/clean-energy-use/clean-energy-use.py` conversion function. Upload here means copying the renamed IDF into this site's `public/` assets; deployment is separate unless requested.
+Update `src/content/buildings/buildings.json` fields `energyUse`, `energyUseIntensity`, and `idfDownload` from two separate CSV files and one IDF. Use the bundled converter, based on the upstream `nus-digital-twin-scripts/clean-energy-use/clean-energy-use.py` column mapping and rounding, or that upstream function when the user supplies its path. The separate scripts repository is optional. Upload here means copying the renamed IDF into this site's `public/` assets; deployment is separate unless requested.
 
 ## Identify inputs and target
 
+Before reading simulation inputs, ask the user to provide the correct paths to the Energy Use CSV, Energy Use Intensity CSV, and IDF, or the source directory to search. If the user already supplied those paths for this import, use them without asking again. Never assume a Downloads folder, a dataset name, a Desktop checkout, or a directory from a previous import. Resolve relative paths against the current working directory and expand `~`; if a supplied path is missing or ambiguous, ask for the corrected path instead of searching unrelated locations. Repository-relative schema and destination paths below still apply.
+
 Read the current `src/content.config.ts`, target building in `src/content/buildings/buildings.json`, and relevant existing files in `src/content/energy` and `public`. Identify the entry by name and `elementId`, using existing shared-building handling and user-confirmed mappings from the current task. Folder labels can differ from canonical names or refer to only one block, wing, or shared entry. Existing building parameters and credits can help identify a candidate but do not establish simulation scope on their own. Clarify only mappings that remain uncertain; do not ask again for a mapping already confirmed. Do not create building entries or apply whole-building data to every wing automatically.
 
-Locate the user-specified Energy Use CSV, Energy Use Intensity CSV, and matching Export IDF. Example source root: `~/Downloads/2026sims`. Search recursively within the selected building/group folder instead of requiring an exact `Thermal Simulation` directory name: valid exports also occur under `Thermal Simualtion` and `Thermal Simulaiton`. Filenames vary in spacing, hyphens, spelling, capitalization, and numbered suffixes. Match by folder, CSV headers, simulation scope, and the user's selection rather than filename alone. `Export Data.csv` and `Export Reports.csv` are not the monthly energy inputs; solar and daylight outputs cannot substitute for energy CSVs.
+Locate the inputs only within the user-provided paths. When the user provides a source directory, search recursively within it instead of requiring an exact `Thermal Simulation` directory name: valid exports also occur under `Thermal Simualtion` and `Thermal Simulaiton`. Filenames vary in spacing, hyphens, spelling, capitalization, and numbered suffixes. Match by folder, CSV headers, simulation scope, and the user's selection rather than filename alone. `Export Data.csv` and `Export Reports.csv` are not the monthly energy inputs; solar and daylight outputs cannot substitute for energy CSVs.
 
 If multiple candidate exports exist, compare their contents before asking which to use. Compare EU candidates with EU candidates and EUI candidates with EUI candidates. Byte-identical copies are interchangeable; prefer the unnumbered pair when available and report which files were selected. If bytes differ only in formatting, compare parsed CSV headers, units, ordered months, and every numeric value at full source precision, ignoring BOM, line endings, surrounding whitespace, and entirely blank lines. Do not compare only rounded JSON or annual totals, which can hide differences. If the monthly data and units are identical and the simulation scope is the same, select one equivalent pair without clarification. Compare duplicate IDFs byte-for-byte separately; identical CSVs do not establish that different IDFs are equivalent. For genuinely different candidate runs without a clear user selection or pairing, clarify rather than choosing the largest numbered suffix.
 
@@ -33,7 +35,7 @@ For a new standalone building, `<directory>` normally equals `<slug>`. Establish
 
 ## Convert and apply
 
-Use [scripts/prepare_energy.py](scripts/prepare_energy.py) to stage the artifacts. It extracts the upstream conversion function without executing its hard-coded `helix-house` conversions or changing its repository. The cleaner detects EUI from the input path containing `eui`; the helper normalizes temporary filenames to `input-eu.csv` and `input-eui.csv`, trims whitespace/BOM and blank lines, validates source values, and preserves the cleaner's two-decimal rounding and column mapping.
+Use [scripts/prepare_energy.py](scripts/prepare_energy.py) to stage the artifacts. By default it uses its bundled converter and needs no external checkout. It trims whitespace/BOM and blank lines, validates source values, and applies the upstream cleaner's column mapping and two-decimal rounding. If given `--cleaner`, it extracts the upstream conversion function without executing the module's hard-coded conversions or changing its repository. The upstream cleaner detects EUI from the input path containing `eui`; the helper normalizes temporary filenames to `input-eu.csv` and `input-eui.csv` for either mode.
 
 From the project root, with a new staging directory:
 
@@ -46,7 +48,7 @@ python3 .agents/skills/import-building-energy/scripts/prepare_energy.py \
   --output-dir /tmp/university-hall-energy-stage
 ```
 
-The default cleaner path is `~/Desktop/nus-digital-twin-scripts/clean-energy-use/clean-energy-use.py`; use `--cleaner` for another checkout. Locate it if the default is missing. Do not substitute a different conversion without explaining why. The helper executes trusted local Python from that script's function, so inspect an unfamiliar cleaner first.
+To use a separate `nus-digital-twin-scripts` cleaner, ask the user for its correct file path unless already supplied, then pass `--cleaner "/path/to/clean-energy-use.py"`. Do not guess its location or require the repository to be installed. An explicitly supplied missing cleaner path is an error: obtain the corrected path or explain that the bundled converter can be used instead. Report which converter was used. The external-cleaner mode executes local Python from that function, so inspect an unfamiliar cleaner first.
 
 Compare staged JSON with the current energy schema before copying. Required row fields currently are `month`, `equipment`, `lighting`, `heating`, `cooling`; optional numeric fields are `fans`, `pumps`, `humid`, `heatReject`, `hotWater`. Preserve all supplied supported end uses and zero values; leave absent optional end uses absent rather than adding fabricated zeros. Unknown or duplicate mapped columns require investigation; the upstream cleaner can silently collapse duplicate columns. Inspect the raw headers for one-to-one mapping as well as the resulting JSON. Adjust the helper if the schema or upstream script has changed.
 

@@ -15,6 +15,34 @@ REQUIRED = {'equipment', 'lighting', 'heating', 'cooling'}
 OPTIONAL = {'fans', 'pumps', 'humid', 'heatReject', 'hotWater'}
 
 
+def bundled_converter(csv_file_path, json_file_path):
+    """Preserve the upstream clean-energy-use.py field mapping and rounding."""
+    data = []
+    is_intensity = 'eui' in csv_file_path
+    with open(csv_file_path, newline='') as stream:
+        reader = csv.reader(stream)
+        headers = next(reader)
+        for row in reader:
+            renamed = {'month': row[0]}
+            for index, value in enumerate(row[1:], start=1):
+                header = headers[index][:-7 if is_intensity else -5]
+                header = header[0].lower() + header[1:]
+                if 'equip' in header:
+                    header = 'equipment'
+                elif 'cool' in header:
+                    header = 'cooling'
+                elif 'hReject' in header:
+                    header = 'heatReject'
+                elif 'light' in header:
+                    header = 'lighting'
+                elif 'heat' in header:
+                    header = 'heating'
+                renamed[header] = round(float(value), 2)
+            data.append(renamed)
+    with open(json_file_path, 'w') as stream:
+        json.dump(data, stream, indent=2)
+
+
 def convert(source, output, mode, converter):
     with source.open(newline='', encoding='utf-8-sig') as stream:
         rows = [row for row in csv.reader(stream) if any(cell.strip() for cell in row)]
@@ -52,31 +80,38 @@ def convert(source, output, mode, converter):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--eu', type=Path, required=True)
-    parser.add_argument('--eui', type=Path, required=True)
-    parser.add_argument('--idf', type=Path, required=True)
+    path_type = lambda value: Path(value).expanduser()
+    parser.add_argument('--eu', type=path_type, required=True)
+    parser.add_argument('--eui', type=path_type, required=True)
+    parser.add_argument('--idf', type=path_type, required=True)
     parser.add_argument('--slug', required=True)
-    parser.add_argument('--output-dir', type=Path, required=True, help='New staging directory')
-    parser.add_argument('--cleaner', type=Path, default=Path.home() / 'Desktop/nus-digital-twin-scripts/clean-energy-use/clean-energy-use.py')
+    parser.add_argument('--output-dir', type=path_type, required=True, help='New staging directory')
+    parser.add_argument('--cleaner', type=path_type, help='Optional user-provided upstream cleaner path; defaults to bundled converter')
     args = parser.parse_args()
     if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', args.slug):
         parser.error('slug must use lowercase letters, digits, and single hyphens')
     if args.eu.resolve() == args.eui.resolve():
         parser.error('EU and EUI must be separate CSV files')
-    for source in (args.eu, args.eui, args.idf, args.cleaner):
+    sources = [args.eu, args.eui, args.idf]
+    if args.cleaner is not None:
+        sources.append(args.cleaner)
+    for source in sources:
         if not source.is_file():
             parser.error(f'missing input: {source}')
     if args.idf.suffix.lower() != '.idf' or args.idf.stat().st_size == 0:
         parser.error('IDF must be a nonempty .idf file')
-    # Extract only the function; importing the module would chdir and process helix-house.
-    tree = ast.parse(args.cleaner.read_text())
-    functions = [node for node in tree.body if isinstance(node, ast.FunctionDef)
-                 and node.name == 'csv_to_json_with_column_number_rename']
-    if len(functions) != 1:
-        parser.error('upstream conversion function missing or ambiguous')
-    namespace = {'csv': csv, 'json': json}
-    exec(compile(ast.Module(body=functions, type_ignores=[]), str(args.cleaner), 'exec'), namespace)
-    converter = namespace['csv_to_json_with_column_number_rename']
+    converter = bundled_converter
+    if args.cleaner is not None:
+        # Extract only the function; importing the module would run hard-coded conversions.
+        tree = ast.parse(args.cleaner.read_text())
+        functions = [node for node in tree.body if isinstance(node, ast.FunctionDef)
+                     and node.name == 'csv_to_json_with_column_number_rename']
+        if len(functions) != 1:
+            parser.error('upstream conversion function missing or ambiguous')
+        namespace = {'csv': csv, 'json': json}
+        exec(compile(ast.Module(body=functions, type_ignores=[]), str(args.cleaner), 'exec'), namespace)
+        converter = namespace['csv_to_json_with_column_number_rename']
+    print(f'Converter: {args.cleaner if args.cleaner is not None else "bundled"}')
     args.output_dir.mkdir(parents=True, exist_ok=False)
     try:
         eu = convert(args.eu, args.output_dir / f'{args.slug}-eu.json', 'eu', converter)
