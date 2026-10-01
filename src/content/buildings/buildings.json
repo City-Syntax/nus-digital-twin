@@ -4398,6 +4398,9 @@
   {
     "elementId": "142219213",
     "name": "Eusoff Hall Block E",
+    "energyUse": "eusoff-hall-e-eu",
+    "energyUseIntensity": "eusoff-hall-e-eui",
+    "idfDownload": "/eusoff-hall/eusoff-hall-e.idf",
     "address": "10 Kent Ridge Drive",
     "buildingDataCredits": "Jechaele Soo Ming Le, Melanie Nga Shu Hui",
     "postal": "119242",
