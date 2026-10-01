@@ -5310,6 +5310,9 @@
   {
     "elementId": "4548824",
     "name": "Institute of Systems Science",
+    "energyUse": "iss-eu",
+    "energyUseIntensity": "iss-eui",
+    "idfDownload": "/iss/iss.idf",
     "buildingDataCredits": "Ng Jia Wei, Teng Joon Xu",
     "address": "25 Heng Mui Keng Ter",
     "postal": "119615",
