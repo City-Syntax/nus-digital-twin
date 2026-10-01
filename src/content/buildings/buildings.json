@@ -4667,6 +4667,9 @@
   {
     "elementId": "142080252",
     "name": "Shaw Foundation Alumni House",
+    "energyUse": "sfah-eu",
+    "energyUseIntensity": "sfah-eui",
+    "idfDownload": "/sfah/sfah.idf",
     "buildingDataCredits": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne",
     "address": "11 Kent Ridge Drive",
     "postal": "119244",
