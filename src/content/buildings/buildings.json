@@ -2577,6 +2577,9 @@
   {
     "elementId": "141907258",
     "name": "Lim Seng Tjoe Lecture Theatre (LT 27)",
+    "energyUse": "lt27-eu",
+    "energyUseIntensity": "lt27-eui",
+    "idfDownload": "/lt27/lt27.idf",
     "buildingDataCredits": "Cassandra Lee Zi Ning, Choong K-Ron, Chua Jun Chen John",
     "address": "27 Science Drive 1",
     "postal": "117541",
