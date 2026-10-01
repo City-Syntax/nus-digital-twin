@@ -1092,6 +1092,9 @@
   {
     "elementId": "142078389",
     "name": "AS4",
+    "energyUse": "as4-eu",
+    "energyUseIntensity": "as4-eui",
+    "idfDownload": "/as4/as4.idf",
     "address": "9 Arts Link",
     "buildingDataCredits": "Tan Aik Lin, Teo Min Jue Symphonie",
     "postal": "117572",
