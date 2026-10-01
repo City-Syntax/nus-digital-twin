@@ -671,6 +671,9 @@
   {
     "elementId": "142090371",
     "name": "MPSH 1 - 4",
+    "energyUse": "mpsh-1-4-eu",
+    "energyUseIntensity": "mpsh-1-4-eui",
+    "idfDownload": "/mpsh/mpsh-1-4.idf",
     "buildingDataCredits": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai",
     "address": "Sports Drive 1",
     "postal": "119077",
@@ -769,6 +772,9 @@
   {
     "elementId": "427077084",
     "name": "Ridge View Residential College Block E",
+    "energyUse": "rvrc-e-eu",
+    "energyUseIntensity": "rvrc-e-eui",
+    "idfDownload": "/rvrc/rvrc-e.idf",
     "address": "25 Lower Kent Ridge Road",
     "postal": "119081",
     "buildingDataCredits": "Kesandra Wong Cai Yi, Kwok Pei Ru",
@@ -1089,6 +1095,9 @@
   {
     "elementId": "142078389",
     "name": "AS4",
+    "energyUse": "as4-eu",
+    "energyUseIntensity": "as4-eui",
+    "idfDownload": "/as4/as4.idf",
     "address": "9 Arts Link",
     "buildingDataCredits": "Tan Aik Lin, Teo Min Jue Symphonie",
     "postal": "117572",
@@ -1781,6 +1790,9 @@
   {
     "elementId": "139971771",
     "name": "E3",
+    "energyUse": "e3-eu",
+    "energyUseIntensity": "e3-eui",
+    "idfDownload": "/e3/e3.idf",
     "buildingDataCredits": "Clement Chan Kai Siang, Javier Matthias Tan Ing Yong",
     "address": "1 Engineering Drive 2",
     "postal": "117576",
@@ -2565,6 +2577,9 @@
   {
     "elementId": "141907258",
     "name": "Lim Seng Tjoe Lecture Theatre (LT 27)",
+    "energyUse": "lt27-eu",
+    "energyUseIntensity": "lt27-eui",
+    "idfDownload": "/lt27/lt27.idf",
     "buildingDataCredits": "Cassandra Lee Zi Ning, Choong K-Ron, Chua Jun Chen John",
     "address": "27 Science Drive 1",
     "postal": "117541",
@@ -3350,6 +3365,9 @@
   {
     "elementId": "142074912",
     "name": "S17",
+    "energyUse": "s17-eu",
+    "energyUseIntensity": "s17-eui",
+    "idfDownload": "/s17/s17.idf",
     "buildingDataCredits": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan",
     "address": "Science Drive 2",
     "postal": "117543",
@@ -3809,6 +3827,9 @@
   {
     "elementId": "UNIVERSITY_HALL",
     "name": "University Hall",
+    "energyUse": "university-hall-eu",
+    "energyUseIntensity": "university-hall-eui",
+    "idfDownload": "/university-hall/university-hall.idf",
     "address": "21 Lower Kent Ridge Road",
     "postal": "119077",
     "latitude": 1.29697,
@@ -3938,6 +3959,9 @@
   {
     "elementId": "54583487",
     "name": "University Health Centre",
+    "energyUse": "uhc-eu",
+    "energyUseIntensity": "uhc-eui",
+    "idfDownload": "/uhc/uhc.idf",
     "address": "20 Lower Kent Ridge Road",
     "postal": "119080",
     "buildingDataCredits": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An",
@@ -4113,6 +4137,9 @@
   {
     "elementId": "54583491",
     "name": "Yusof Ishak House",
+    "energyUse": "yih-eu",
+    "energyUseIntensity": "yih-eui",
+    "idfDownload": "/yih/yih.idf",
     "buildingDataCredits": "Megan Sng Xinya, Ou Wen Xi Jessica, Wu Shihan",
     "address": "31 Lower Kent Ridge Road",
     "postal": "119078",
@@ -4242,6 +4269,9 @@
   {
     "elementId": "503403831",
     "name": "Ventus",
+    "energyUse": "ventus-eu",
+    "energyUseIntensity": "ventus-eui",
+    "idfDownload": "/ventus/ventus.idf",
     "buildingDataCredits": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun",
     "address": "8 Kent Ridge Drive",
     "postal": "119246",
@@ -4284,6 +4314,9 @@
   {
     "elementId": "858981035",
     "name": "Kent Ridge Guild House",
+    "energyUse": "krgh-eu",
+    "energyUseIntensity": "krgh-eui",
+    "idfDownload": "/krgh/krgh.idf",
     "address": "9 Kent Ridge Drive",
     "postal": "119241",
     "latitude": 1.2938,
@@ -4365,6 +4398,9 @@
   {
     "elementId": "142219213",
     "name": "Eusoff Hall Block E",
+    "energyUse": "eusoff-hall-e-eu",
+    "energyUseIntensity": "eusoff-hall-e-eui",
+    "idfDownload": "/eusoff-hall/eusoff-hall-e.idf",
     "address": "10 Kent Ridge Drive",
     "buildingDataCredits": "Jechaele Soo Ming Le, Melanie Nga Shu Hui",
     "postal": "119242",
@@ -4514,6 +4550,9 @@
   {
     "elementId": "125774787",
     "name": "Stephen Riady Centre",
+    "energyUse": "src-eu",
+    "energyUseIntensity": "src-eui",
+    "idfDownload": "/src/src.idf",
     "buildingDataCredits": "Ang Bo Qun Leroy, Nur Syahirah Binti Muhammad Fauzi, Nur Zabirah Binte Shariffudin",
     "address": "2 College Avenue West",
     "postal": "138607",
@@ -4652,6 +4691,9 @@
   {
     "elementId": "142080252",
     "name": "Shaw Foundation Alumni House",
+    "energyUse": "shaw-foundation-alumni-house-eu",
+    "energyUseIntensity": "shaw-foundation-alumni-house-eui",
+    "idfDownload": "/shaw-foundation-alumni-house/shaw-foundation-alumni-house.idf",
     "buildingDataCredits": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne",
     "address": "11 Kent Ridge Drive",
     "postal": "119244",
@@ -5289,6 +5331,9 @@
   {
     "elementId": "4548824",
     "name": "Institute of Systems Science",
+    "energyUse": "iss-eu",
+    "energyUseIntensity": "iss-eui",
+    "idfDownload": "/iss/iss.idf",
     "buildingDataCredits": "Ng Jia Wei, Teng Joon Xu",
     "address": "25 Heng Mui Keng Ter",
     "postal": "119615",
@@ -5331,6 +5376,9 @@
   {
     "elementId": "PGP_RESIDENCE_2_CANTEEN_FOYER",
     "name": "PGP Residence 2, Foyer and Canteen",
+    "energyUse": "pgpr-2-canteen-foyer-eu",
+    "energyUseIntensity": "pgpr-2-canteen-foyer-eui",
+    "idfDownload": "/pgpr/pgpr-2-canteen-foyer.idf",
     "address": "27 Prince George's Park",
     "postal": "118425",
     "latitude": 1.29097,
