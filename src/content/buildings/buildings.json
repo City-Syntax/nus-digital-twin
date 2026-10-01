@@ -3362,6 +3362,9 @@
   {
     "elementId": "142074912",
     "name": "S17",
+    "energyUse": "s17-eu",
+    "energyUseIntensity": "s17-eui",
+    "idfDownload": "/s17/s17.idf",
     "buildingDataCredits": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan",
     "address": "Science Drive 2",
     "postal": "117543",
