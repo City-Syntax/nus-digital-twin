@@ -154,6 +154,9 @@
   {
     "elementId": "732229047",
     "name": "C J Koh Law Library (Elm Wing)",
+    "energyUse": "cj-koh-law-library-eu",
+    "energyUseIntensity": "cj-koh-law-library-eui",
+    "idfDownload": "/cj-koh-law-library/cj-koh-law-library.idf",
     "address": "16 College Ave West",
     "postal": "138627",
     "latitude": 1.30616,
