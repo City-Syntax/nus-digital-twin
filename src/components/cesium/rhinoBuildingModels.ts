@@ -221,6 +221,11 @@ export async function load() {
     featureIdLabel: '124542228',
   });
 
+  const rhinoMPSH1_4 = getModelFromUrl({
+    url: '/mpsh/mpsh-1-4-rhino-ion/tileset.json',
+    featureIdLabel: '142090371',
+  });
+
   return Promise.all([
     rhinoEA,
     rhinoE1A,
@@ -266,5 +271,6 @@ export async function load() {
     rhinoHelixHouse,
     rhinoMD1,
     rhinoCinnamonCollege,
+    rhinoMPSH1_4,
   ]);
 }
