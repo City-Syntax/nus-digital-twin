@@ -226,6 +226,11 @@ export async function load() {
     featureIdLabel: '142090371',
   });
 
+  const rhinoUHC = getModelFromUrl({
+    url: '/uhc/uhc-rhino-ion/tileset.json',
+    featureIdLabel: '54583487',
+  });
+
   return Promise.all([
     rhinoEA,
     rhinoE1A,
@@ -272,5 +277,6 @@ export async function load() {
     rhinoMD1,
     rhinoCinnamonCollege,
     rhinoMPSH1_4,
+    rhinoUHC,
   ]);
 }
