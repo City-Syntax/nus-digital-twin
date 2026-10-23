@@ -231,6 +231,11 @@ export async function load() {
     featureIdLabel: '54583487',
   });
 
+  const rhinoUniversityHall = getModelFromUrl({
+    url: '/university-hall/university-hall-rhino-ion/tileset.json',
+    featureIdLabel: 'UNIVERSITY_HALL',
+  });
+
   return Promise.all([
     rhinoEA,
     rhinoE1A,
@@ -278,5 +283,6 @@ export async function load() {
     rhinoCinnamonCollege,
     rhinoMPSH1_4,
     rhinoUHC,
+    rhinoUniversityHall,
   ]);
 }
