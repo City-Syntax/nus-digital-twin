@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useStore } from '@nanostores/react';
 import { pointId } from '../../../store';
 import CloseButton from '../CloseButton';
@@ -13,11 +13,11 @@ const PointInfo = () => {
   const $pointId = useStore(pointId);
   const menubodyRef = useRef<HTMLDivElement>(null);
   const properties = Object.entries(pointsData.filter((d) => d.id == $pointId)[0]);
-  pointId.listen(() => {
-    if (menubodyRef && menubodyRef.current) {
-      menubodyRef.current.scrollTo(0, 0);
-    }
-  });
+  useEffect(() => {
+    return pointId.listen(() => {
+      menubodyRef.current?.scrollTo(0, 0);
+    });
+  }, []);
 
   const rows = properties.reduce(
     (acc, [first, second]) => {

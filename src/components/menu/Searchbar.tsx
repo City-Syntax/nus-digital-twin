@@ -68,14 +68,16 @@ const Searchbar = () => {
     }
   }, []);
 
-  buildingId.listen((newId) => {
-    if (newId === '') {
-      scrollUpOnChange();
-      setSearchQuery('');
-      return;
-    }
-    setSearchQuery(buildingsData.filter((d) => d.elementId == newId)[0].name);
-  });
+  useEffect(() => {
+    return buildingId.listen((newId) => {
+      if (newId === '') {
+        scrollUpOnChange();
+        setSearchQuery('');
+        return;
+      }
+      setSearchQuery(buildingsData.filter((d) => d.elementId == newId)[0].name);
+    });
+  }, [scrollUpOnChange]);
 
   // Overrides how cmdk handles the enter key on nested buttons
   const clearSearchOnEnter = (e: KeyboardEvent) => {

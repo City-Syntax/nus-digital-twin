@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
@@ -44,13 +44,15 @@ const Menu = () => {
   const menuRightRef = useRef<HTMLDivElement>(null);
   const menuBottomRef = useRef<HTMLDivElement>(null);
 
-  // Retain the height of menu bottom before its closes
-  activePages.listen((val) => {
-    if (val.bottom === '') {
-      const menuBottom = menuBottomRef.current as HTMLDivElement;
-      menuBottom.style.height = menuBottom.clientHeight + 'px';
-    }
-  });
+  // Retain the height of menu bottom before it closes.
+  useEffect(() => {
+    return activePages.listen((val) => {
+      const menuBottom = menuBottomRef.current;
+      if (val.bottom === '' && menuBottom) {
+        menuBottom.style.height = menuBottom.clientHeight + 'px';
+      }
+    });
+  }, []);
 
   return (
     <div>
