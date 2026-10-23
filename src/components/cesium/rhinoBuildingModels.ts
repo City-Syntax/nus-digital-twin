@@ -236,6 +236,11 @@ export async function load() {
     featureIdLabel: 'UNIVERSITY_HALL',
   });
 
+  const rhinoKentRidgeGuildHouse = getModelFromUrl({
+    url: '/krgh/krgh-rhino-ion/tileset.json',
+    featureIdLabel: '858981035',
+  });
+
   return Promise.all([
     rhinoEA,
     rhinoE1A,
@@ -284,5 +289,6 @@ export async function load() {
     rhinoMPSH1_4,
     rhinoUHC,
     rhinoUniversityHall,
+    rhinoKentRidgeGuildHouse,
   ]);
 }
