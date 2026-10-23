@@ -221,7 +221,33 @@ export async function load() {
     featureIdLabel: '124542228',
   });
 
+  const rhinoMPSH1_4 = getModelFromUrl({
+    url: '/mpsh/mpsh-1-4-rhino-ion/tileset.json',
+    featureIdLabel: '142090371',
+  });
+
+  const rhinoUHC = getModelFromUrl({
+    url: '/uhc/uhc-rhino-ion/tileset.json',
+    featureIdLabel: '54583487',
+  });
+
+  const rhinoUniversityHall = getModelFromUrl({
+    url: '/university-hall/university-hall-rhino-ion/tileset.json',
+    featureIdLabel: 'UNIVERSITY_HALL',
+  });
+
+  const rhinoKentRidgeGuildHouse = getModelFromUrl({
+    url: '/krgh/krgh-rhino-ion/tileset.json',
+    featureIdLabel: '858981035',
+  });
+
+  const rhinoYusofIshakHouse = getModelFromUrl({
+    url: '/yih/yih-rhino-ion/tileset.json',
+    featureIdLabel: '54583491',
+  });
+
   return Promise.all([
+    rhinoYusofIshakHouse,
     rhinoEA,
     rhinoE1A,
     rhinoE2A,
@@ -266,5 +292,9 @@ export async function load() {
     rhinoHelixHouse,
     rhinoMD1,
     rhinoCinnamonCollege,
+    rhinoMPSH1_4,
+    rhinoUHC,
+    rhinoUniversityHall,
+    rhinoKentRidgeGuildHouse,
   ]);
 }
