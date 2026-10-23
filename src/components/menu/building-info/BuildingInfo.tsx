@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { activePages, buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
 import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS, SORT_ORDER } from './buildingInfoUtils';
@@ -25,7 +26,9 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
   const propertiesToDisplay = Object.entries(buildingProperties).filter((data) =>
     SECTIONS_TO_DISPLAY[category].includes(data[0] as keyof BuildingPropertiesProps),
   );
-  buildingId.listen(() => setCategory('general'));
+  useEffect(() => {
+    return buildingId.listen(() => setCategory('general'));
+  }, [setCategory]);
 
   // TODO: Refactor to all use ACH
   const isCoreOutsideAirFlowRateInACH = ['54619685', '142221852', 'PGP_RESIDENCE_2_CANTEEN_FOYER'].includes(
