@@ -2,6 +2,12 @@
 import ScreenshotButton from './ScreenshotButton.astro';
 import HomeButton from './HomeButton.astro';
 import MapPickerButton from './MapPickerButton';
+import { getImagePreviews } from '../../lib/imagePreviews';
+
+const imagePreviews = await getImagePreviews(
+  ['/src/assets/mapbox-street.png', '/src/assets/mapbox-dark.png', '/src/assets/mapbox-satellite.png'],
+  192,
+);
 ---
 
 <div class="toolbar">
@@ -9,7 +15,7 @@ import MapPickerButton from './MapPickerButton';
     <ScreenshotButton />
   </div>
   <div class="toolbar__section">
-    <MapPickerButton client:only="react" />
+    <MapPickerButton client:only="react" imagePreviews={imagePreviews} />
     <HomeButton />
   </div>
 </div>

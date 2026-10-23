@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { ImagePreviewsContext, type ImagePreviews } from '../primitives/ImagePreviews';
 import MenuLeft from './MenuLeft';
 import MenuRight from './MenuRight';
 import { useStore } from '@nanostores/react';
@@ -156,4 +157,10 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+const MenuWithImagePreviews = ({ imagePreviews }: { imagePreviews: ImagePreviews }) => (
+  <ImagePreviewsContext.Provider value={imagePreviews}>
+    <Menu />
+  </ImagePreviewsContext.Provider>
+);
+
+export default MenuWithImagePreviews;

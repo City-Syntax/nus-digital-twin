@@ -6,6 +6,7 @@ import type { ImageProps } from '../../types';
 import type { MapLayers } from '@components/cesium/mapLayers';
 import LazyImage from '../primitives/LazyImage';
 import { cn } from '@lib/utils';
+import { ImagePreviewsContext, type ImagePreviews } from '../primitives/ImagePreviews';
 
 const MapPickerButton = () => {
   const $activeMapLayer = useStore(activeMapLayer);
@@ -53,4 +54,10 @@ const MapPickerButton = () => {
   );
 };
 
-export default MapPickerButton;
+const MapPickerWithImagePreviews = ({ imagePreviews }: { imagePreviews: ImagePreviews }) => (
+  <ImagePreviewsContext.Provider value={imagePreviews}>
+    <MapPickerButton />
+  </ImagePreviewsContext.Provider>
+);
+
+export default MapPickerWithImagePreviews;
