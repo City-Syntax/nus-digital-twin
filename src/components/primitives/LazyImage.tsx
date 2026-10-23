@@ -1,49 +1,53 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Icons from '../Icons';
 import type { ImageProps } from '../../types';
 import DownloadButton from './DownloadButton';
 import { cn, parseDateToLocaleString } from '@lib/utils';
 import ExifReader from 'exifreader';
 import Tooltip from './Tooltip';
+import { ImagePreviewsContext } from './ImagePreviews';
 
-const astroImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
-
-const LazyImage = ({
-  img,
-  ratio = '16/9',
-  alt,
-  caption,
-  canDownload,
-  showDateTime,
-}: {
+type LazyImageProps = {
   img?: ImageProps;
   ratio?: string;
   alt?: string;
   caption?: string;
   canDownload?: boolean;
   showDateTime?: boolean;
-}) => {
+};
+
+const LazyImageContent = ({ img, ratio = '16/9', alt, caption, canDownload, showDateTime }: LazyImageProps) => {
+  const previews = useContext(ImagePreviewsContext);
+  const image = img ? previews[img.src] : undefined;
+  const src = image?.src;
+  const originalSrc = image?.originalSrc;
   const [hasLoaded, setHasLoaded] = useState(!img);
-  const [src, setSrc] = useState('');
+  const [hasError, setHasError] = useState(false);
   const [dateTime, setDateTime] = useState('');
 
   useEffect(() => {
-    const fetchAstroImages = async () => {
-      if (!img) {
-        return;
+    setDateTime('');
+    if (!showDateTime || !originalSrc) return;
+
+    const controller = new AbortController();
+    const readDateTime = async () => {
+      try {
+        const response = await fetch(originalSrc, { signal: controller.signal });
+        if (!response.ok) return;
+        const buffer = await response.arrayBuffer();
+        const exifData = ExifReader.load(buffer);
+        if (!controller.signal.aborted) {
+          setDateTime(exifData['DateTimeOriginal']?.description || '');
+        }
+      } catch {
+        // Optional metadata must not prevent the preview from displaying.
       }
-
-      const data = (await astroImages[img.src]()).default.src;
-      const response = await fetch(data);
-      const buffer = await response.arrayBuffer();
-      const exifData = ExifReader.load(buffer);
-      setDateTime(exifData['DateTimeOriginal']?.description || '');
-      setSrc(data);
     };
-    fetchAstroImages();
-  }, [img]);
+    void readDateTime();
+    return () => controller.abort();
+  }, [originalSrc, showDateTime]);
 
-  const srcArr = src.split('/');
+  const srcArr = (originalSrc || '').split('/');
   const filetype = '.' + srcArr[srcArr.length - 1].split('?')[0].split('.').pop();
   const tooltipContent = showDateTime && dateTime ? [caption, parseDateToLocaleString(dateTime)] : [caption];
 
@@ -58,17 +62,29 @@ const LazyImage = ({
             '[&_img]:opacity-100 [&_.img-info]:opacity-100': hasLoaded,
           })}
         >
-          {!hasLoaded && (
+          {!hasLoaded && !hasError && src && (
             <div className="text-foreground w-full absolute flex justify-center top-1/2 -translate-y-1/2">
               <Icons.Spinner className="size-8 animate-spin" />
             </div>
           )}
-          <img
-            className="transition-opacity"
-            onLoad={() => src && setHasLoaded(true)}
-            src={src ? src : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D'}
-            alt={alt || ''}
-          />
+          {src && !hasError && (
+            <img
+              className="transition-opacity"
+              decoding="async"
+              onLoad={() => setHasLoaded(true)}
+              onError={() => setHasError(true)}
+              src={src}
+              alt={alt || ''}
+            />
+          )}
+          {img && (!src || hasError) && (
+            <div
+              className="absolute inset-0 flex items-center justify-center text-sm text-muted-foreground"
+              role="status"
+            >
+              Image unavailable
+            </div>
+          )}
           {hasLoaded && (caption || (showDateTime && dateTime)) && (
             <Tooltip
               offset={[0, 4]}
@@ -82,9 +98,12 @@ const LazyImage = ({
           )}
         </div>
       </div>
-      {canDownload && src && <DownloadButton type="image" files={[{ filetype: filetype, url: src }]} />}
+      {canDownload && originalSrc && <DownloadButton type="image" files={[{ filetype, url: originalSrc }]} />}
     </>
   );
 };
+
+// Reset loading and metadata state whenever the selected image changes.
+const LazyImage = (props: LazyImageProps) => <LazyImageContent key={props.img?.src} {...props} />;
 
 export default LazyImage;

@@ -5,10 +5,13 @@ import Toolbar from '../components/toolbar/Toolbar.astro';
 import BottomBar from '../components/bottom-bar/BottomBar.astro';
 import NotificationsBox from '../components/notifications/NotificationsBox';
 import AppLayout from '../layouts/AppLayout.astro';
+import { getImagePreviews } from '../lib/imagePreviews';
+
+const imagePreviews = await getImagePreviews();
 ---
 
 <AppLayout>
-  <Menu client:only="react" />
+  <Menu client:only="react" imagePreviews={imagePreviews} />
   <CesiumScene />
   <Toolbar />
   <NotificationsBox client:only="react" />
