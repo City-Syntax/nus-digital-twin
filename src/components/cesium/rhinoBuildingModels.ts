@@ -241,7 +241,13 @@ export async function load() {
     featureIdLabel: '858981035',
   });
 
+  const rhinoYusofIshakHouse = getModelFromUrl({
+    url: '/yih/yih-rhino-ion/tileset.json',
+    featureIdLabel: '54583491',
+  });
+
   return Promise.all([
+    rhinoYusofIshakHouse,
     rhinoEA,
     rhinoE1A,
     rhinoE2A,
