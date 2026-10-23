@@ -246,6 +246,11 @@ export async function load() {
     featureIdLabel: '54583491',
   });
 
+  const rhinoLimSengTjoe = getModelFromUrl({
+    url: '/lim-seng-tjoe/lim-seng-tjoe-rhino-ion/tileset.json',
+    featureIdLabel: 'LT27_LT28_LT29',
+  });
+
   return Promise.all([
     rhinoYusofIshakHouse,
     rhinoEA,
@@ -296,5 +301,6 @@ export async function load() {
     rhinoUHC,
     rhinoUniversityHall,
     rhinoKentRidgeGuildHouse,
+    rhinoLimSengTjoe,
   ]);
 }

@@ -118,6 +118,23 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
     );
   }
 
+  if (['141907258', '141907104', '141907010'].includes($buildingId.toString())) {
+    return (
+      <>
+        <div className="menubar-content-header">
+          <h2>{buildingProperties.name}</h2>
+          <CloseButton page="building-info"></CloseButton>
+        </div>
+        <div className="menubar-content-body">
+          <div>This selection forms part of the Lim Seng Tjoe Lecture Theatres building.</div>
+          <button className="btn btn-secondary btn-sm w-full" onClick={() => buildingId.set('LT27_LT28_LT29')}>
+            View the shared data
+          </button>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <div className="menubar-content-header">
