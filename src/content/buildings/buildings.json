@@ -679,6 +679,24 @@
     "idfDownload": "/mpsh/mpsh-1-4.idf",
     "buildingDataCredits": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai",
     "address": "Sports Drive 1",
+    "images": [
+      {
+        "src": "/src/assets/mpsh/mpsh-1-4-1.jpg",
+        "author": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai"
+      },
+      {
+        "src": "/src/assets/mpsh/mpsh-1-4-2.jpg",
+        "author": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai"
+      },
+      {
+        "src": "/src/assets/mpsh/mpsh-1-4-3.jpg",
+        "author": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai"
+      },
+      {
+        "src": "/src/assets/mpsh/mpsh-1-4-4.jpg",
+        "author": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai"
+      }
+    ],
     "postal": "119077",
     "latitude": 1.30076,
     "longitude": 103.77603,
