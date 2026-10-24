@@ -141,6 +141,11 @@ export async function load() {
     featureIdLabel: '455250294',
   });
 
+  const rhinoRvrcE = getModelFromUrl({
+    url: '/rvrc/rvrc-e-rhino-ion/tileset.json',
+    featureIdLabel: '427077084',
+  });
+
   const rhinoRvrcG = getModelFromUrl({
     url: '/rvrc/rvrc-g-rhino-ion/tileset.json',
     featureIdLabel: '546382548',
@@ -322,6 +327,7 @@ export async function load() {
     rhinoMedicineScienceLibrary,
     rhinoShearesMain,
     rhinoShearesA,
+    rhinoRvrcE,
     rhinoRvrcG,
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
