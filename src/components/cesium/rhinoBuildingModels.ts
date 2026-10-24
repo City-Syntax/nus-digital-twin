@@ -71,11 +71,6 @@ export async function load() {
     featureIdLabel: '238932786',
   });
 
-  const rhinoAS8 = getModelFromUrl({
-    url: '/as8/as8-rhino-ion/tileset.json',
-    featureIdLabel: '54583485',
-  });
-
   const rhinoNUSMuseum = getModelFromUrl({
     url: '/nus-museum/nus-museum-rhino-ion/tileset.json',
     featureIdLabel: 'NUS_MUSEUM',
@@ -161,6 +156,11 @@ export async function load() {
     featureIdLabel: '732229049',
   });
 
+  const rhinoAS4 = getModelFromUrl({
+    url: '/as4/as4-rhino-ion/tileset.json',
+    featureIdLabel: '142078389',
+  });
+
   const rhinoAS5 = getModelFromUrl({
     url: '/as5/as5-rhino-ion/tileset.json',
     featureIdLabel: '142080062',
@@ -169,6 +169,11 @@ export async function load() {
   const rhinoAS7 = getModelFromUrl({
     url: '/as7/as7-rhino-ion/tileset.json',
     featureIdLabel: '142079835',
+  });
+
+  const rhinoAS8 = getModelFromUrl({
+    url: '/as8/as8-rhino-ion/tileset.json',
+    featureIdLabel: '54583485',
   });
 
   const rhinoTemasekHallA = getModelFromUrl({
@@ -299,7 +304,6 @@ export async function load() {
     rhinoCOM2,
     rhinoPgprBlock1,
     rhinoPgprBlock2,
-    rhinoAS8,
     rhinoSDE1,
     rhinoSDE2,
     rhinoSDE3,
@@ -316,8 +320,10 @@ export async function load() {
     rhinoRvrcG,
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
+    rhinoAS4,
     rhinoAS5,
     rhinoAS7,
+    rhinoAS8,
     rhinoTemasekHallA,
     rhinoYongSiewTohConservatoryOfMusic,
     rhinoInnovation4,
