@@ -156,6 +156,11 @@ export async function load() {
     featureIdLabel: '732229049',
   });
 
+  const rhinoS17 = getModelFromUrl({
+    url: '/s17/s17-rhino-ion/tileset.json',
+    featureIdLabel: '142074912',
+  });
+
   const rhinoAS4 = getModelFromUrl({
     url: '/as4/as4-rhino-ion/tileset.json',
     featureIdLabel: '142078389',
@@ -320,6 +325,7 @@ export async function load() {
     rhinoRvrcG,
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
+    rhinoS17,
     rhinoAS4,
     rhinoAS5,
     rhinoAS7,
