@@ -261,6 +261,11 @@ export async function load() {
     featureIdLabel: '503403831',
   });
 
+  const rhinoStephenRiadyCentre = getModelFromUrl({
+    url: '/src/src-rhino-ion/tileset.json',
+    featureIdLabel: '125774787',
+  });
+
   return Promise.all([
     rhinoYusofIshakHouse,
     rhinoEA,
@@ -314,5 +319,6 @@ export async function load() {
     rhinoLimSengTjoe,
     rhinoShawFoundationAlumniHouse,
     rhinoVentus,
+    rhinoStephenRiadyCentre,
   ]);
 }
