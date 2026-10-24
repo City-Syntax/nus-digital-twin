@@ -2578,11 +2578,11 @@
     "longitude": 103.78113
   },
   {
-    "elementId": "141907258",
-    "name": "Lim Seng Tjoe Lecture Theatre (LT 27)",
-    "energyUse": "lt27-eu",
-    "energyUseIntensity": "lt27-eui",
-    "idfDownload": "/lt27/lt27.idf",
+    "elementId": "LT27_LT28_LT29",
+    "name": "Lim Seng Tjoe Lecture Theatres (LT 27, 28, 29)",
+    "energyUse": "lim-seng-tjoe-eu",
+    "energyUseIntensity": "lim-seng-tjoe-eui",
+    "idfDownload": "/lim-seng-tjoe/lim-seng-tjoe.idf",
     "buildingDataCredits": "Cassandra Lee Zi Ning, Choong K-Ron, Chua Jun Chen John",
     "address": "27 Science Drive 1",
     "postal": "117541",
@@ -2621,6 +2621,14 @@
     "perimeterOutsideAirSchedule": "Always on",
     "exhaustAirRecovery": "Yes",
     "economizerCycle": "None"
+  },
+  {
+    "elementId": "141907258",
+    "name": "LT 27",
+    "address": "27 Science Drive 1",
+    "postal": "117541",
+    "latitude": 1.297,
+    "longitude": 103.78086
   },
   {
     "elementId": "141907104",

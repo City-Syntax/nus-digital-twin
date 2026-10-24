@@ -1,0 +1,13 @@
+{
+  "id": "empty",
+  "classes": {
+    "empty": {},
+    "name": {
+      "properties": {
+        "name": {
+          "type": "STRING"
+        }
+      }
+    }
+  }
+}

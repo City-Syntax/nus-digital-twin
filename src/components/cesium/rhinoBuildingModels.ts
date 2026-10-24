@@ -16,6 +16,11 @@ export async function load() {
     featureIdLabel: '628777635',
   });
 
+  const rhinoE3 = getModelFromUrl({
+    url: '/e3/e3-rhino-ion/tileset.json',
+    featureIdLabel: '140079084',
+  });
+
   const rhinoE4 = getModelFromUrl({
     url: '/e4/e4-rhino-ion/tileset.json',
     featureIdLabel: '139970613',
@@ -64,11 +69,6 @@ export async function load() {
   const rhinoPgprBlock1 = getModelFromUrl({
     url: '/pgpr/pgpr-block1-rhino-ion/tileset.json',
     featureIdLabel: '238932786',
-  });
-
-  const rhinoAS8 = getModelFromUrl({
-    url: '/as8/as8-rhino-ion/tileset.json',
-    featureIdLabel: '54583485',
   });
 
   const rhinoNUSMuseum = getModelFromUrl({
@@ -141,6 +141,11 @@ export async function load() {
     featureIdLabel: '455250294',
   });
 
+  const rhinoRvrcE = getModelFromUrl({
+    url: '/rvrc/rvrc-e-rhino-ion/tileset.json',
+    featureIdLabel: '427077084',
+  });
+
   const rhinoRvrcG = getModelFromUrl({
     url: '/rvrc/rvrc-g-rhino-ion/tileset.json',
     featureIdLabel: '546382548',
@@ -156,6 +161,16 @@ export async function load() {
     featureIdLabel: '732229049',
   });
 
+  const rhinoS17 = getModelFromUrl({
+    url: '/s17/s17-rhino-ion/tileset.json',
+    featureIdLabel: '142074912',
+  });
+
+  const rhinoAS4 = getModelFromUrl({
+    url: '/as4/as4-rhino-ion/tileset.json',
+    featureIdLabel: '142078389',
+  });
+
   const rhinoAS5 = getModelFromUrl({
     url: '/as5/as5-rhino-ion/tileset.json',
     featureIdLabel: '142080062',
@@ -164,6 +179,11 @@ export async function load() {
   const rhinoAS7 = getModelFromUrl({
     url: '/as7/as7-rhino-ion/tileset.json',
     featureIdLabel: '142079835',
+  });
+
+  const rhinoAS8 = getModelFromUrl({
+    url: '/as8/as8-rhino-ion/tileset.json',
+    featureIdLabel: '54583485',
   });
 
   const rhinoTemasekHallA = getModelFromUrl({
@@ -246,11 +266,42 @@ export async function load() {
     featureIdLabel: '54583491',
   });
 
+  const rhinoLimSengTjoe = getModelFromUrl({
+    url: '/lim-seng-tjoe/lim-seng-tjoe-rhino-ion/tileset.json',
+    featureIdLabel: 'LT27_LT28_LT29',
+  });
+
+  const rhinoShawFoundationAlumniHouse = getModelFromUrl({
+    url: '/shaw-foundation-alumni-house/shaw-foundation-alumni-house-rhino-ion/tileset.json',
+    featureIdLabel: '142080252',
+  });
+
+  const rhinoVentus = getModelFromUrl({
+    url: '/ventus/ventus-rhino-ion/tileset.json',
+    featureIdLabel: '503403831',
+  });
+
+  const rhinoStephenRiadyCentre = getModelFromUrl({
+    url: '/src/src-rhino-ion/tileset.json',
+    featureIdLabel: '125774787',
+  });
+
+  const rhinoPgprBlock2 = getModelFromUrl({
+    url: '/pgpr/pgpr-block2-rhino-ion/tileset.json',
+    featureIdLabel: 'PGP_RESIDENCE_2_CANTEEN_FOYER',
+  });
+
+  const rhinoISS = getModelFromUrl({
+    url: '/iss/iss-rhino-ion/tileset.json',
+    featureIdLabel: '4548824',
+  });
+
   return Promise.all([
     rhinoYusofIshakHouse,
     rhinoEA,
     rhinoE1A,
     rhinoE2A,
+    rhinoE3,
     rhinoE4,
     rhinoE6,
     rhinoE5,
@@ -262,7 +313,7 @@ export async function load() {
     rhinoCOM1,
     rhinoCOM2,
     rhinoPgprBlock1,
-    rhinoAS8,
+    rhinoPgprBlock2,
     rhinoSDE1,
     rhinoSDE2,
     rhinoSDE3,
@@ -276,11 +327,15 @@ export async function load() {
     rhinoMedicineScienceLibrary,
     rhinoShearesMain,
     rhinoShearesA,
+    rhinoRvrcE,
     rhinoRvrcG,
     rhinoLKCMuseum,
     rhinoYNCArtsCenter,
+    rhinoS17,
+    rhinoAS4,
     rhinoAS5,
     rhinoAS7,
+    rhinoAS8,
     rhinoTemasekHallA,
     rhinoYongSiewTohConservatoryOfMusic,
     rhinoInnovation4,
@@ -296,5 +351,10 @@ export async function load() {
     rhinoUHC,
     rhinoUniversityHall,
     rhinoKentRidgeGuildHouse,
+    rhinoLimSengTjoe,
+    rhinoShawFoundationAlumniHouse,
+    rhinoVentus,
+    rhinoStephenRiadyCentre,
+    rhinoISS,
   ]);
 }
