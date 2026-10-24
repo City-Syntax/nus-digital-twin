@@ -4365,6 +4365,13 @@
     "latitude": 1.2938,
     "longitude": 103.77262,
     "buildingDataCredits": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni",
+    "images": [
+      { "src": "/src/assets/krgh/krgh-1.jpg", "author": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni" },
+      { "src": "/src/assets/krgh/krgh-2.jpg", "author": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni" },
+      { "src": "/src/assets/krgh/krgh-3.jpg", "author": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni" },
+      { "src": "/src/assets/krgh/krgh-4.jpg", "author": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni" },
+      { "src": "/src/assets/krgh/krgh-5.jpg", "author": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni" }
+    ],
     "floorToFloorHeight": [
       { "label": "Level 1 to 2", "value": 3 },
       { "label": "Atrium (Levels 1 and 2)", "value": 8.04 },
