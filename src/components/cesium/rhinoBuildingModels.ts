@@ -251,6 +251,11 @@ export async function load() {
     featureIdLabel: 'LT27_LT28_LT29',
   });
 
+  const rhinoShawFoundationAlumniHouse = getModelFromUrl({
+    url: '/shaw-foundation-alumni-house/shaw-foundation-alumni-house-rhino-ion/tileset.json',
+    featureIdLabel: '142080252',
+  });
+
   return Promise.all([
     rhinoYusofIshakHouse,
     rhinoEA,
@@ -302,5 +307,6 @@ export async function load() {
     rhinoUniversityHall,
     rhinoKentRidgeGuildHouse,
     rhinoLimSengTjoe,
+    rhinoShawFoundationAlumniHouse,
   ]);
 }
