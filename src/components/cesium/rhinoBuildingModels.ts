@@ -271,6 +271,11 @@ export async function load() {
     featureIdLabel: 'PGP_RESIDENCE_2_CANTEEN_FOYER',
   });
 
+  const rhinoISS = getModelFromUrl({
+    url: '/iss/iss-rhino-ion/tileset.json',
+    featureIdLabel: '4548824',
+  });
+
   return Promise.all([
     rhinoYusofIshakHouse,
     rhinoEA,
@@ -326,5 +331,6 @@ export async function load() {
     rhinoShawFoundationAlumniHouse,
     rhinoVentus,
     rhinoStephenRiadyCentre,
+    rhinoISS,
   ]);
 }
