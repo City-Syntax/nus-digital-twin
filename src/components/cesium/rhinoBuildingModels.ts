@@ -266,6 +266,11 @@ export async function load() {
     featureIdLabel: '125774787',
   });
 
+  const rhinoPgprBlock2 = getModelFromUrl({
+    url: '/pgpr/pgpr-block2-rhino-ion/tileset.json',
+    featureIdLabel: 'PGP_RESIDENCE_2_CANTEEN_FOYER',
+  });
+
   return Promise.all([
     rhinoYusofIshakHouse,
     rhinoEA,
@@ -282,6 +287,7 @@ export async function load() {
     rhinoCOM1,
     rhinoCOM2,
     rhinoPgprBlock1,
+    rhinoPgprBlock2,
     rhinoAS8,
     rhinoSDE1,
     rhinoSDE2,
