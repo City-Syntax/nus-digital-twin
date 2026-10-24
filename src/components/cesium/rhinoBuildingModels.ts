@@ -18,7 +18,7 @@ export async function load() {
 
   const rhinoE3 = getModelFromUrl({
     url: '/e3/e3-rhino-ion/tileset.json',
-    featureIdLabel: '140079084',
+    featureIdLabel: '139971771',
   });
 
   const rhinoE4 = getModelFromUrl({
@@ -296,6 +296,11 @@ export async function load() {
     featureIdLabel: '4548824',
   });
 
+  const rhinoEusoffHallE = getModelFromUrl({
+    url: '/eusoff-hall/eusoff-hall-e-rhino-ion/tileset.json',
+    featureIdLabel: '142219213',
+  });
+
   return Promise.all([
     rhinoYusofIshakHouse,
     rhinoEA,
@@ -356,5 +361,6 @@ export async function load() {
     rhinoVentus,
     rhinoStephenRiadyCentre,
     rhinoISS,
+    rhinoEusoffHallE,
   ]);
 }
