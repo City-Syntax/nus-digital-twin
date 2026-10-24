@@ -3864,6 +3864,20 @@
     "latitude": 1.29697,
     "longitude": 103.77787,
     "buildingDataCredits": "Cheong Yi Kai Breanna, Lau Shu Ting Felicia, Mikiko Gioginna Seah Jia Yu",
+    "images": [
+      {
+        "src": "/src/assets/university-hall/university-hall-1.jpg",
+        "author": "Cheong Yi Kai Breanna, Lau Shu Ting Felicia, Mikiko Gioginna Seah Jia Yu"
+      },
+      {
+        "src": "/src/assets/university-hall/university-hall-2.jpg",
+        "author": "Cheong Yi Kai Breanna, Lau Shu Ting Felicia, Mikiko Gioginna Seah Jia Yu"
+      },
+      {
+        "src": "/src/assets/university-hall/university-hall-3.jpg",
+        "author": "Cheong Yi Kai Breanna, Lau Shu Ting Felicia, Mikiko Gioginna Seah Jia Yu"
+      }
+    ],
     "floorToFloorHeight": [
       { "label": "Level 1 - 4", "value": 4.5 },
       { "label": "Level 5", "value": 7 },
