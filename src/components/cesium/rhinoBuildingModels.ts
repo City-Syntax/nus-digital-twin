@@ -256,6 +256,11 @@ export async function load() {
     featureIdLabel: '142080252',
   });
 
+  const rhinoVentus = getModelFromUrl({
+    url: '/ventus/ventus-rhino-ion/tileset.json',
+    featureIdLabel: '503403831',
+  });
+
   return Promise.all([
     rhinoYusofIshakHouse,
     rhinoEA,
@@ -308,5 +313,6 @@ export async function load() {
     rhinoKentRidgeGuildHouse,
     rhinoLimSengTjoe,
     rhinoShawFoundationAlumniHouse,
+    rhinoVentus,
   ]);
 }
