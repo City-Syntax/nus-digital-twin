@@ -16,6 +16,11 @@ export async function load() {
     featureIdLabel: '628777635',
   });
 
+  const rhinoE3 = getModelFromUrl({
+    url: '/e3/e3-rhino-ion/tileset.json',
+    featureIdLabel: '140079084',
+  });
+
   const rhinoE4 = getModelFromUrl({
     url: '/e4/e4-rhino-ion/tileset.json',
     featureIdLabel: '139970613',
@@ -281,6 +286,7 @@ export async function load() {
     rhinoEA,
     rhinoE1A,
     rhinoE2A,
+    rhinoE3,
     rhinoE4,
     rhinoE6,
     rhinoE5,
