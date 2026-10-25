@@ -4184,6 +4184,11 @@
     "energyUseIntensity": "yih-eui",
     "idfDownload": "/yih/yih.idf",
     "buildingDataCredits": "Megan Sng Xinya, Ou Wen Xi Jessica, Wu Shihan",
+    "images": [
+      { "src": "/src/assets/yih/yih-1.jpg", "author": "Megan Sng Xinya, Ou Wen Xi Jessica, Wu Shihan" },
+      { "src": "/src/assets/yih/yih-2.jpg", "author": "Megan Sng Xinya, Ou Wen Xi Jessica, Wu Shihan" },
+      { "src": "/src/assets/yih/yih-3.jpg", "author": "Megan Sng Xinya, Ou Wen Xi Jessica, Wu Shihan" }
+    ],
     "address": "31 Lower Kent Ridge Road",
     "postal": "119078",
     "latitude": 1.2985,
