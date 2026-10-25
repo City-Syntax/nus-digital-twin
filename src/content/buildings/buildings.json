@@ -3449,6 +3449,13 @@
     "energyUseIntensity": "s17-eui",
     "idfDownload": "/s17/s17.idf",
     "buildingDataCredits": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan",
+    "images": [
+      { "src": "/src/assets/s17/s17-1.jpg", "author": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan" },
+      { "src": "/src/assets/s17/s17-2.jpg", "author": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan" },
+      { "src": "/src/assets/s17/s17-3.jpg", "author": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan" },
+      { "src": "/src/assets/s17/s17-4.jpg", "author": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan" },
+      { "src": "/src/assets/s17/s17-5.jpg", "author": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan" }
+    ],
     "address": "Science Drive 2",
     "postal": "117543",
     "latitude": 1.29772,
