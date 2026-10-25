@@ -5465,6 +5465,13 @@
     "energyUseIntensity": "iss-eui",
     "idfDownload": "/iss/iss.idf",
     "buildingDataCredits": "Ng Jia Wei, Teng Joon Xu",
+    "images": [
+      { "src": "/src/assets/iss/iss-1.jpg", "author": "Ng Jia Wei, Teng Joon Xu" },
+      { "src": "/src/assets/iss/iss-2.jpg", "author": "Ng Jia Wei, Teng Joon Xu" },
+      { "src": "/src/assets/iss/iss-3.jpg", "author": "Ng Jia Wei, Teng Joon Xu" },
+      { "src": "/src/assets/iss/iss-4.jpg", "author": "Ng Jia Wei, Teng Joon Xu" },
+      { "src": "/src/assets/iss/iss-5.jpg", "author": "Ng Jia Wei, Teng Joon Xu" }
+    ],
     "address": "25 Heng Mui Keng Ter",
     "postal": "119615",
     "latitude": 1.292046,
