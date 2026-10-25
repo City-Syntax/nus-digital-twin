@@ -162,6 +162,24 @@
     "latitude": 1.30616,
     "longitude": 103.77237,
     "buildingDataCredits": "Hoong Shun Jin, James Edward Tan Zhenting, Shawn Timothy Pang Yong Pin",
+    "images": [
+      {
+        "src": "/src/assets/cj-koh-law-library/cj-koh-law-library-1.jpg",
+        "author": "Hoong Shun Jin, James Edward Tan Zhenting, Shawn Timothy Pang Yong Pin"
+      },
+      {
+        "src": "/src/assets/cj-koh-law-library/cj-koh-law-library-2.jpg",
+        "author": "Hoong Shun Jin, James Edward Tan Zhenting, Shawn Timothy Pang Yong Pin"
+      },
+      {
+        "src": "/src/assets/cj-koh-law-library/cj-koh-law-library-3.jpg",
+        "author": "Hoong Shun Jin, James Edward Tan Zhenting, Shawn Timothy Pang Yong Pin"
+      },
+      {
+        "src": "/src/assets/cj-koh-law-library/cj-koh-law-library-4.jpg",
+        "author": "Hoong Shun Jin, James Edward Tan Zhenting, Shawn Timothy Pang Yong Pin"
+      }
+    ],
     "floorToFloorHeight": [
       { "label": "Library", "value": 4.5 },
       { "label": "MPSH", "value": 11.5 }
@@ -679,6 +697,24 @@
     "idfDownload": "/mpsh/mpsh-1-4.idf",
     "buildingDataCredits": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai",
     "address": "Sports Drive 1",
+    "images": [
+      {
+        "src": "/src/assets/mpsh/mpsh-1-4-1.jpg",
+        "author": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai"
+      },
+      {
+        "src": "/src/assets/mpsh/mpsh-1-4-2.jpg",
+        "author": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai"
+      },
+      {
+        "src": "/src/assets/mpsh/mpsh-1-4-3.jpg",
+        "author": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai"
+      },
+      {
+        "src": "/src/assets/mpsh/mpsh-1-4-4.jpg",
+        "author": "Char Yoke Long Perry, Chezhian Gnanalakshmi Mithran, Daryl Poh Chang Kai"
+      }
+    ],
     "postal": "119077",
     "latitude": 1.30076,
     "longitude": 103.77603,
@@ -781,6 +817,13 @@
     "address": "25 Lower Kent Ridge Road",
     "postal": "119081",
     "buildingDataCredits": "Kesandra Wong Cai Yi, Kwok Pei Ru",
+    "images": [
+      { "src": "/src/assets/rvrc/rvrc-e-1.jpg", "author": "Kesandra Wong Cai Yi, Kwok Pei Ru" },
+      { "src": "/src/assets/rvrc/rvrc-e-2.jpg", "author": "Kesandra Wong Cai Yi, Kwok Pei Ru" },
+      { "src": "/src/assets/rvrc/rvrc-e-3.jpg", "author": "Kesandra Wong Cai Yi, Kwok Pei Ru" },
+      { "src": "/src/assets/rvrc/rvrc-e-4.jpg", "author": "Kesandra Wong Cai Yi, Kwok Pei Ru" },
+      { "src": "/src/assets/rvrc/rvrc-e-5.jpg", "author": "Kesandra Wong Cai Yi, Kwok Pei Ru" }
+    ],
     "latitude": 1.29856,
     "longitude": 103.77617,
     "floorToFloorHeight": [
@@ -1103,6 +1146,12 @@
     "idfDownload": "/as4/as4.idf",
     "address": "9 Arts Link",
     "buildingDataCredits": "Tan Aik Lin, Teo Min Jue Symphonie",
+    "images": [
+      { "src": "/src/assets/as4/as4-1.jpg", "author": "Tan Aik Lin, Teo Min Jue Symphonie" },
+      { "src": "/src/assets/as4/as4-2.jpg", "author": "Tan Aik Lin, Teo Min Jue Symphonie" },
+      { "src": "/src/assets/as4/as4-3.jpg", "author": "Tan Aik Lin, Teo Min Jue Symphonie" },
+      { "src": "/src/assets/as4/as4-4.jpg", "author": "Tan Aik Lin, Teo Min Jue Symphonie" }
+    ],
     "postal": "117572",
     "latitude": 1.29455,
     "longitude": 103.77178,
@@ -1797,6 +1846,12 @@
     "energyUseIntensity": "e3-eui",
     "idfDownload": "/e3/e3.idf",
     "buildingDataCredits": "Clement Chan Kai Siang, Javier Matthias Tan Ing Yong",
+    "images": [
+      { "src": "/src/assets/e3/e3-1.jpg", "author": "Clement Chan Kai Siang, Javier Matthias Tan Ing Yong" },
+      { "src": "/src/assets/e3/e3-2.jpg", "author": "Clement Chan Kai Siang, Javier Matthias Tan Ing Yong" },
+      { "src": "/src/assets/e3/e3-3.jpg", "author": "Clement Chan Kai Siang, Javier Matthias Tan Ing Yong" },
+      { "src": "/src/assets/e3/e3-4.jpg", "author": "Clement Chan Kai Siang, Javier Matthias Tan Ing Yong" }
+    ],
     "address": "1 Engineering Drive 2",
     "postal": "117576",
     "latitude": 1.29945,
@@ -2584,6 +2639,20 @@
     "energyUseIntensity": "lim-seng-tjoe-eui",
     "idfDownload": "/lim-seng-tjoe/lim-seng-tjoe.idf",
     "buildingDataCredits": "Cassandra Lee Zi Ning, Choong K-Ron, Chua Jun Chen John",
+    "images": [
+      {
+        "src": "/src/assets/lim-seng-tjoe/lim-seng-tjoe-1.jpg",
+        "author": "Cassandra Lee Zi Ning, Choong K-Ron, Chua Jun Chen John"
+      },
+      {
+        "src": "/src/assets/lim-seng-tjoe/lim-seng-tjoe-2.jpg",
+        "author": "Cassandra Lee Zi Ning, Choong K-Ron, Chua Jun Chen John"
+      },
+      {
+        "src": "/src/assets/lim-seng-tjoe/lim-seng-tjoe-3.jpg",
+        "author": "Cassandra Lee Zi Ning, Choong K-Ron, Chua Jun Chen John"
+      }
+    ],
     "address": "27 Science Drive 1",
     "postal": "117541",
     "latitude": 1.297,
@@ -3380,6 +3449,13 @@
     "energyUseIntensity": "s17-eui",
     "idfDownload": "/s17/s17.idf",
     "buildingDataCredits": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan",
+    "images": [
+      { "src": "/src/assets/s17/s17-1.jpg", "author": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan" },
+      { "src": "/src/assets/s17/s17-2.jpg", "author": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan" },
+      { "src": "/src/assets/s17/s17-3.jpg", "author": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan" },
+      { "src": "/src/assets/s17/s17-4.jpg", "author": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan" },
+      { "src": "/src/assets/s17/s17-5.jpg", "author": "Brian Ong Ren Yi, Lim Zi Qing Erika, Su Jing Xuan" }
+    ],
     "address": "Science Drive 2",
     "postal": "117543",
     "latitude": 1.29772,
@@ -3846,6 +3922,20 @@
     "latitude": 1.29697,
     "longitude": 103.77787,
     "buildingDataCredits": "Cheong Yi Kai Breanna, Lau Shu Ting Felicia, Mikiko Gioginna Seah Jia Yu",
+    "images": [
+      {
+        "src": "/src/assets/university-hall/university-hall-1.jpg",
+        "author": "Cheong Yi Kai Breanna, Lau Shu Ting Felicia, Mikiko Gioginna Seah Jia Yu"
+      },
+      {
+        "src": "/src/assets/university-hall/university-hall-2.jpg",
+        "author": "Cheong Yi Kai Breanna, Lau Shu Ting Felicia, Mikiko Gioginna Seah Jia Yu"
+      },
+      {
+        "src": "/src/assets/university-hall/university-hall-3.jpg",
+        "author": "Cheong Yi Kai Breanna, Lau Shu Ting Felicia, Mikiko Gioginna Seah Jia Yu"
+      }
+    ],
     "floorToFloorHeight": [
       { "label": "Level 1 - 4", "value": 4.5 },
       { "label": "Level 5", "value": 7 },
@@ -3976,6 +4066,12 @@
     "address": "20 Lower Kent Ridge Road",
     "postal": "119080",
     "buildingDataCredits": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An",
+    "images": [
+      { "src": "/src/assets/uhc/uhc-1.jpg", "author": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An" },
+      { "src": "/src/assets/uhc/uhc-2.jpg", "author": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An" },
+      { "src": "/src/assets/uhc/uhc-3.jpg", "author": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An" },
+      { "src": "/src/assets/uhc/uhc-4.jpg", "author": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An" }
+    ],
     "latitude": 1.29905,
     "longitude": 103.77643,
     "floorToFloorHeight": [
@@ -4152,6 +4248,11 @@
     "energyUseIntensity": "yih-eui",
     "idfDownload": "/yih/yih.idf",
     "buildingDataCredits": "Megan Sng Xinya, Ou Wen Xi Jessica, Wu Shihan",
+    "images": [
+      { "src": "/src/assets/yih/yih-1.jpg", "author": "Megan Sng Xinya, Ou Wen Xi Jessica, Wu Shihan" },
+      { "src": "/src/assets/yih/yih-2.jpg", "author": "Megan Sng Xinya, Ou Wen Xi Jessica, Wu Shihan" },
+      { "src": "/src/assets/yih/yih-3.jpg", "author": "Megan Sng Xinya, Ou Wen Xi Jessica, Wu Shihan" }
+    ],
     "address": "31 Lower Kent Ridge Road",
     "postal": "119078",
     "latitude": 1.2985,
@@ -4284,6 +4385,13 @@
     "energyUseIntensity": "ventus-eui",
     "idfDownload": "/ventus/ventus.idf",
     "buildingDataCredits": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun",
+    "images": [
+      { "src": "/src/assets/ventus/ventus-1.jpg", "author": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun" },
+      { "src": "/src/assets/ventus/ventus-2.jpg", "author": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun" },
+      { "src": "/src/assets/ventus/ventus-3.jpg", "author": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun" },
+      { "src": "/src/assets/ventus/ventus-4.jpg", "author": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun" },
+      { "src": "/src/assets/ventus/ventus-5.jpg", "author": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun" }
+    ],
     "address": "8 Kent Ridge Drive",
     "postal": "119246",
     "latitude": 1.29529,
@@ -4333,6 +4441,13 @@
     "latitude": 1.2938,
     "longitude": 103.77262,
     "buildingDataCredits": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni",
+    "images": [
+      { "src": "/src/assets/krgh/krgh-1.jpg", "author": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni" },
+      { "src": "/src/assets/krgh/krgh-2.jpg", "author": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni" },
+      { "src": "/src/assets/krgh/krgh-3.jpg", "author": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni" },
+      { "src": "/src/assets/krgh/krgh-4.jpg", "author": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni" },
+      { "src": "/src/assets/krgh/krgh-5.jpg", "author": "Gavin Tan Ho Kuan, Justin Lim Zheng Qin, Vivian Lim Xin Ni" }
+    ],
     "floorToFloorHeight": [
       { "label": "Level 1 to 2", "value": 3 },
       { "label": "Atrium (Levels 1 and 2)", "value": 8.04 },
@@ -4414,6 +4529,12 @@
     "idfDownload": "/eusoff-hall/eusoff-hall-e.idf",
     "address": "10 Kent Ridge Drive",
     "buildingDataCredits": "Jechaele Soo Ming Le, Melanie Nga Shu Hui",
+    "images": [
+      { "src": "/src/assets/eusoff-hall/eusoff-hall-e-1.jpg", "author": "Jechaele Soo Ming Le, Melanie Nga Shu Hui" },
+      { "src": "/src/assets/eusoff-hall/eusoff-hall-e-2.jpg", "author": "Jechaele Soo Ming Le, Melanie Nga Shu Hui" },
+      { "src": "/src/assets/eusoff-hall/eusoff-hall-e-3.jpg", "author": "Jechaele Soo Ming Le, Melanie Nga Shu Hui" },
+      { "src": "/src/assets/eusoff-hall/eusoff-hall-e-4.jpg", "author": "Jechaele Soo Ming Le, Melanie Nga Shu Hui" }
+    ],
     "postal": "119242",
     "latitude": 1.29352,
     "longitude": 103.77027,
@@ -4565,6 +4686,24 @@
     "energyUseIntensity": "src-eui",
     "idfDownload": "/src/src.idf",
     "buildingDataCredits": "Ang Bo Qun Leroy, Nur Syahirah Binti Muhammad Fauzi, Nur Zabirah Binte Shariffudin",
+    "images": [
+      {
+        "src": "/src/assets/src/src-1.jpg",
+        "author": "Ang Bo Qun Leroy, Nur Syahirah Binti Muhammad Fauzi, Nur Zabirah Binte Shariffudin"
+      },
+      {
+        "src": "/src/assets/src/src-2.jpg",
+        "author": "Ang Bo Qun Leroy, Nur Syahirah Binti Muhammad Fauzi, Nur Zabirah Binte Shariffudin"
+      },
+      {
+        "src": "/src/assets/src/src-3.jpg",
+        "author": "Ang Bo Qun Leroy, Nur Syahirah Binti Muhammad Fauzi, Nur Zabirah Binte Shariffudin"
+      },
+      {
+        "src": "/src/assets/src/src-4.jpg",
+        "author": "Ang Bo Qun Leroy, Nur Syahirah Binti Muhammad Fauzi, Nur Zabirah Binte Shariffudin"
+      }
+    ],
     "address": "2 College Avenue West",
     "postal": "138607",
     "latitude": 1.30462,
@@ -4706,6 +4845,24 @@
     "energyUseIntensity": "shaw-foundation-alumni-house-eui",
     "idfDownload": "/shaw-foundation-alumni-house/shaw-foundation-alumni-house.idf",
     "buildingDataCredits": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne",
+    "images": [
+      {
+        "src": "/src/assets/shaw-foundation-alumni-house/shaw-foundation-alumni-house-1.jpg",
+        "author": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne"
+      },
+      {
+        "src": "/src/assets/shaw-foundation-alumni-house/shaw-foundation-alumni-house-2.jpg",
+        "author": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne"
+      },
+      {
+        "src": "/src/assets/shaw-foundation-alumni-house/shaw-foundation-alumni-house-3.jpg",
+        "author": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne"
+      },
+      {
+        "src": "/src/assets/shaw-foundation-alumni-house/shaw-foundation-alumni-house-4.jpg",
+        "author": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne"
+      }
+    ],
     "address": "11 Kent Ridge Drive",
     "postal": "119244",
     "latitude": 1.29325,
@@ -5346,6 +5503,13 @@
     "energyUseIntensity": "iss-eui",
     "idfDownload": "/iss/iss.idf",
     "buildingDataCredits": "Ng Jia Wei, Teng Joon Xu",
+    "images": [
+      { "src": "/src/assets/iss/iss-1.jpg", "author": "Ng Jia Wei, Teng Joon Xu" },
+      { "src": "/src/assets/iss/iss-2.jpg", "author": "Ng Jia Wei, Teng Joon Xu" },
+      { "src": "/src/assets/iss/iss-3.jpg", "author": "Ng Jia Wei, Teng Joon Xu" },
+      { "src": "/src/assets/iss/iss-4.jpg", "author": "Ng Jia Wei, Teng Joon Xu" },
+      { "src": "/src/assets/iss/iss-5.jpg", "author": "Ng Jia Wei, Teng Joon Xu" }
+    ],
     "address": "25 Heng Mui Keng Ter",
     "postal": "119615",
     "latitude": 1.292046,
@@ -5395,6 +5559,12 @@
     "latitude": 1.29097,
     "longitude": 103.78114,
     "buildingDataCredits": "Aleric Lim Hong Heng, Valsalan Nivish",
+    "images": [
+      { "src": "/src/assets/pgpr/pgpr-2-1.png", "author": "Aleric Lim Hong Heng, Valsalan Nivish" },
+      { "src": "/src/assets/pgpr/pgpr-2-2.png", "author": "Aleric Lim Hong Heng, Valsalan Nivish" },
+      { "src": "/src/assets/pgpr/pgpr-2-3.png", "author": "Aleric Lim Hong Heng, Valsalan Nivish" },
+      { "src": "/src/assets/pgpr/pgpr-2-4.png", "author": "Aleric Lim Hong Heng, Valsalan Nivish" }
+    ],
     "floorToFloorHeight": [
       {
         "label": "Foyer",
