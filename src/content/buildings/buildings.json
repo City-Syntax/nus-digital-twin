@@ -4066,6 +4066,12 @@
     "address": "20 Lower Kent Ridge Road",
     "postal": "119080",
     "buildingDataCredits": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An",
+    "images": [
+      { "src": "/src/assets/uhc/uhc-1.jpg", "author": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An" },
+      { "src": "/src/assets/uhc/uhc-2.jpg", "author": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An" },
+      { "src": "/src/assets/uhc/uhc-3.jpg", "author": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An" },
+      { "src": "/src/assets/uhc/uhc-4.jpg", "author": "Ang Ding Yi, Loh Wei Zhi Kenneth, Liew Ting An" }
+    ],
     "latitude": 1.29905,
     "longitude": 103.77643,
     "floorToFloorHeight": [
