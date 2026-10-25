@@ -5514,6 +5514,12 @@
     "latitude": 1.29097,
     "longitude": 103.78114,
     "buildingDataCredits": "Aleric Lim Hong Heng, Valsalan Nivish",
+    "images": [
+      { "src": "/src/assets/pgpr/pgpr-2-1.png", "author": "Aleric Lim Hong Heng, Valsalan Nivish" },
+      { "src": "/src/assets/pgpr/pgpr-2-2.png", "author": "Aleric Lim Hong Heng, Valsalan Nivish" },
+      { "src": "/src/assets/pgpr/pgpr-2-3.png", "author": "Aleric Lim Hong Heng, Valsalan Nivish" },
+      { "src": "/src/assets/pgpr/pgpr-2-4.png", "author": "Aleric Lim Hong Heng, Valsalan Nivish" }
+    ],
     "floorToFloorHeight": [
       {
         "label": "Foyer",
