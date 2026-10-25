@@ -4523,6 +4523,12 @@
     "idfDownload": "/eusoff-hall/eusoff-hall-e.idf",
     "address": "10 Kent Ridge Drive",
     "buildingDataCredits": "Jechaele Soo Ming Le, Melanie Nga Shu Hui",
+    "images": [
+      { "src": "/src/assets/eusoff-hall/eusoff-hall-e-1.jpg", "author": "Jechaele Soo Ming Le, Melanie Nga Shu Hui" },
+      { "src": "/src/assets/eusoff-hall/eusoff-hall-e-2.jpg", "author": "Jechaele Soo Ming Le, Melanie Nga Shu Hui" },
+      { "src": "/src/assets/eusoff-hall/eusoff-hall-e-3.jpg", "author": "Jechaele Soo Ming Le, Melanie Nga Shu Hui" },
+      { "src": "/src/assets/eusoff-hall/eusoff-hall-e-4.jpg", "author": "Jechaele Soo Ming Le, Melanie Nga Shu Hui" }
+    ],
     "postal": "119242",
     "latitude": 1.29352,
     "longitude": 103.77027,
