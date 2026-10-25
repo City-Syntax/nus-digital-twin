@@ -162,6 +162,24 @@
     "latitude": 1.30616,
     "longitude": 103.77237,
     "buildingDataCredits": "Hoong Shun Jin, James Edward Tan Zhenting, Shawn Timothy Pang Yong Pin",
+    "images": [
+      {
+        "src": "/src/assets/cj-koh-law-library/cj-koh-law-library-1.jpg",
+        "author": "Hoong Shun Jin, James Edward Tan Zhenting, Shawn Timothy Pang Yong Pin"
+      },
+      {
+        "src": "/src/assets/cj-koh-law-library/cj-koh-law-library-2.jpg",
+        "author": "Hoong Shun Jin, James Edward Tan Zhenting, Shawn Timothy Pang Yong Pin"
+      },
+      {
+        "src": "/src/assets/cj-koh-law-library/cj-koh-law-library-3.jpg",
+        "author": "Hoong Shun Jin, James Edward Tan Zhenting, Shawn Timothy Pang Yong Pin"
+      },
+      {
+        "src": "/src/assets/cj-koh-law-library/cj-koh-law-library-4.jpg",
+        "author": "Hoong Shun Jin, James Edward Tan Zhenting, Shawn Timothy Pang Yong Pin"
+      }
+    ],
     "floorToFloorHeight": [
       { "label": "Library", "value": 4.5 },
       { "label": "MPSH", "value": 11.5 }
