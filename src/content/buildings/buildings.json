@@ -4800,6 +4800,24 @@
     "energyUseIntensity": "shaw-foundation-alumni-house-eui",
     "idfDownload": "/shaw-foundation-alumni-house/shaw-foundation-alumni-house.idf",
     "buildingDataCredits": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne",
+    "images": [
+      {
+        "src": "/src/assets/shaw-foundation-alumni-house/shaw-foundation-alumni-house-1.jpg",
+        "author": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne"
+      },
+      {
+        "src": "/src/assets/shaw-foundation-alumni-house/shaw-foundation-alumni-house-2.jpg",
+        "author": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne"
+      },
+      {
+        "src": "/src/assets/shaw-foundation-alumni-house/shaw-foundation-alumni-house-3.jpg",
+        "author": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne"
+      },
+      {
+        "src": "/src/assets/shaw-foundation-alumni-house/shaw-foundation-alumni-house-4.jpg",
+        "author": "Andrea Peh En Xi, Lim Zhi Hong, Lim Zhi Qi Cheyenne"
+      }
+    ],
     "address": "11 Kent Ridge Drive",
     "postal": "119244",
     "latitude": 1.29325,
