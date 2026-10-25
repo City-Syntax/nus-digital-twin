@@ -2620,6 +2620,20 @@
     "energyUseIntensity": "lim-seng-tjoe-eui",
     "idfDownload": "/lim-seng-tjoe/lim-seng-tjoe.idf",
     "buildingDataCredits": "Cassandra Lee Zi Ning, Choong K-Ron, Chua Jun Chen John",
+    "images": [
+      {
+        "src": "/src/assets/lim-seng-tjoe/lim-seng-tjoe-1.jpg",
+        "author": "Cassandra Lee Zi Ning, Choong K-Ron, Chua Jun Chen John"
+      },
+      {
+        "src": "/src/assets/lim-seng-tjoe/lim-seng-tjoe-2.jpg",
+        "author": "Cassandra Lee Zi Ning, Choong K-Ron, Chua Jun Chen John"
+      },
+      {
+        "src": "/src/assets/lim-seng-tjoe/lim-seng-tjoe-3.jpg",
+        "author": "Cassandra Lee Zi Ning, Choong K-Ron, Chua Jun Chen John"
+      }
+    ],
     "address": "27 Science Drive 1",
     "postal": "117541",
     "latitude": 1.297,
