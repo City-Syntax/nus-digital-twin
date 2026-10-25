@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { activePages, buildingId } from '../../../store';
 import { useStore } from '@nanostores/react';
 import { SECTIONS_TO_DISPLAY, TITLE_MAPPINGS, CATEGORY_MAPPINGS, SORT_ORDER } from './buildingInfoUtils';
@@ -25,7 +26,9 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
   const propertiesToDisplay = Object.entries(buildingProperties).filter((data) =>
     SECTIONS_TO_DISPLAY[category].includes(data[0] as keyof BuildingPropertiesProps),
   );
-  buildingId.listen(() => setCategory('general'));
+  useEffect(() => {
+    return buildingId.listen(() => setCategory('general'));
+  }, [setCategory]);
 
   // TODO: Refactor to all use ACH
   const isCoreOutsideAirFlowRateInACH = ['54619685', '142221852', 'PGP_RESIDENCE_2_CANTEEN_FOYER'].includes(
@@ -109,6 +112,23 @@ const BuildingInfo = ({ category, setCategory }: BuildingInfoProps) => {
           <div>This selection forms part of the University Hall building.</div>
           <button className="btn btn-secondary btn-sm w-full" onClick={() => buildingId.set('UNIVERSITY_HALL')}>
             View data for University Hall
+          </button>
+        </div>
+      </>
+    );
+  }
+
+  if (['141907258', '141907104', '141907010'].includes($buildingId.toString())) {
+    return (
+      <>
+        <div className="menubar-content-header">
+          <h2>{buildingProperties.name}</h2>
+          <CloseButton page="building-info"></CloseButton>
+        </div>
+        <div className="menubar-content-body">
+          <div>This selection forms part of the Lim Seng Tjoe Lecture Theatres building.</div>
+          <button className="btn btn-secondary btn-sm w-full" onClick={() => buildingId.set('LT27_LT28_LT29')}>
+            View the shared data
           </button>
         </div>
       </>

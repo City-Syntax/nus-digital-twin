@@ -18,6 +18,7 @@ const BUILDINGS_TO_FILTER = [
   '238932780', // PGP Residence 2 Block 6
   '238932775', // PGP Residence 2 Block 7
   '1084099106', // PGP Residence 2 Block 8
+  'LT27_LT28_LT29', // Lim Seng Tjoe LT27, 28, 29
 ];
 
 const Searchbar = () => {
@@ -68,14 +69,16 @@ const Searchbar = () => {
     }
   }, []);
 
-  buildingId.listen((newId) => {
-    if (newId === '') {
-      scrollUpOnChange();
-      setSearchQuery('');
-      return;
-    }
-    setSearchQuery(buildingsData.filter((d) => d.elementId == newId)[0].name);
-  });
+  useEffect(() => {
+    return buildingId.listen((newId) => {
+      if (newId === '') {
+        scrollUpOnChange();
+        setSearchQuery('');
+        return;
+      }
+      setSearchQuery(buildingsData.filter((d) => d.elementId == newId)[0].name);
+    });
+  }, [scrollUpOnChange]);
 
   // Overrides how cmdk handles the enter key on nested buttons
   const clearSearchOnEnter = (e: KeyboardEvent) => {
