@@ -1833,6 +1833,12 @@
     "energyUseIntensity": "e3-eui",
     "idfDownload": "/e3/e3.idf",
     "buildingDataCredits": "Clement Chan Kai Siang, Javier Matthias Tan Ing Yong",
+    "images": [
+      { "src": "/src/assets/e3/e3-1.jpg", "author": "Clement Chan Kai Siang, Javier Matthias Tan Ing Yong" },
+      { "src": "/src/assets/e3/e3-2.jpg", "author": "Clement Chan Kai Siang, Javier Matthias Tan Ing Yong" },
+      { "src": "/src/assets/e3/e3-3.jpg", "author": "Clement Chan Kai Siang, Javier Matthias Tan Ing Yong" },
+      { "src": "/src/assets/e3/e3-4.jpg", "author": "Clement Chan Kai Siang, Javier Matthias Tan Ing Yong" }
+    ],
     "address": "1 Engineering Drive 2",
     "postal": "117576",
     "latitude": 1.29945,
