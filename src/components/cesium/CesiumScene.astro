@@ -43,7 +43,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     IonImageryProvider,
     ImageryLayer,
     EllipsoidGeodesic,
-    Model,
     HeightReference,
     Camera,
     BillboardCollection,
@@ -53,6 +52,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     Cartographic,
   } from 'cesium';
   import { getNearestBuildingId, OSM_DISTANCE_COLORS, OSM_SHOW_CONDITIONS } from './cesiumUtils';
+  import { createModelCache } from './modelCache';
   import { load as loadRhinoModels } from './rhinoBuildingModels';
   import { load as loadBuildingInformationModels } from './buildingInformationModels';
   import { mapboxSatellite, mapboxDark, mapboxStreet, type MapLayers } from './mapLayers';
@@ -63,9 +63,6 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     userSettings.setKey('reducedMotion', isReduced);
     isReduced ? document.body.classList.add('reduce-motion') : document.body.classList.remove('reduce-motion');
   })();
-
-  let rhinoBuildingModels: Array<Model | Cesium3DTileset> = [];
-  let buildingInformationModels: Array<Model | Cesium3DTileset> = [];
 
   // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
   const viewer = new Viewer('cesiumContainer', {
@@ -80,6 +77,23 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     infoBox: false,
     baseLayer: ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3954), {}), // Default to Sentinel-2 base layer
   });
+
+  const cacheParams = new URLSearchParams(window.location.search);
+  let deviceMemory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
+  if (import.meta.env.DEV && cacheParams.has('modelCacheMemory')) {
+    const hint = Number(cacheParams.get('modelCacheMemory'));
+    deviceMemory = hint > 0 && Number.isFinite(hint) ? hint : undefined;
+  }
+  const modelCache = createModelCache({
+    deviceMemory,
+    enabled: !(import.meta.env.DEV && cacheParams.get('modelCache') === 'off'),
+    requestRender: () => viewer.scene.requestRender(),
+  });
+  modelCache.select(activeModel.get());
+  viewer.scene.preRender.addEventListener(() => modelCache.update());
+  if (import.meta.env.DEV) {
+    Object.assign(window, { modelCacheDebug: { snapshot: () => modelCache.snapshot() } });
+  }
 
   const globe = viewer.scene.globe;
   const canvas = viewer.scene.canvas;
@@ -216,6 +230,7 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     show: { conditions: OSM_SHOW_CONDITIONS },
   });
   viewer.scene.primitives.add(osmBuildingsTileset);
+  modelCache.register('osm', [osmBuildingsTileset]);
   isModelsAdded.setKey('osm', true);
 
   let totalTiles = 0;
@@ -394,53 +409,24 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
   }
 
   loadBuildingInformationModels().then((models) => {
-    buildingInformationModels = models;
-    for (const model of buildingInformationModels) {
-      viewer.scene.primitives.add(model);
-      model.show = false;
-    }
+    for (const model of models) viewer.scene.primitives.add(model);
+    modelCache.register('bim', models);
     isModelsAdded.setKey('bim', true);
   });
-
-  function showAllBIM() {
-    for (let i = 0; i < buildingInformationModels.length; i++) {
-      buildingInformationModels[i].show = true;
-    }
-  }
-
-  function hideAllBIM() {
-    for (let i = 0; i < buildingInformationModels.length; i++) {
-      buildingInformationModels[i].show = false;
-    }
-  }
 
   const rhinoUrbanModel = await Cesium3DTileset.fromUrl('/urban/data/tileset.json', {
     show: false,
     featureIdLabel: 'rhino-urban-model',
   });
   viewer.scene.primitives.add(rhinoUrbanModel);
+  modelCache.register('rhino-urban', [rhinoUrbanModel]);
   isModelsAdded.setKey('rhino-urban', true);
 
   loadRhinoModels().then((models) => {
-    rhinoBuildingModels = models;
-    for (const model of rhinoBuildingModels) {
-      viewer.scene.primitives.add(model);
-      model.show = false;
-    }
+    for (const model of models) viewer.scene.primitives.add(model);
+    modelCache.register('rhino-building', models);
     isModelsAdded.setKey('rhino-building', true);
   });
-
-  function showRhinoBuildings() {
-    for (const model of rhinoBuildingModels) {
-      model.show = true;
-    }
-  }
-
-  function hideRhinoBuildings() {
-    for (const model of rhinoBuildingModels) {
-      model.show = false;
-    }
-  }
 
   function colorByDistance(selectedLatitude: number, selectedLongitude: number) {
     colorByDistancePosition.set({
@@ -548,13 +534,11 @@ import 'cesium/Build/Cesium/Widgets/widgets.css';
     // Allow toast to render first
     setTimeout(
       () => {
+        if (model !== activeModel.get()) return;
         if (!isFirstCall && model) {
           viewer.scene.preRender.addEventListener(startRender);
         }
-        osmBuildingsTileset.show = model === 'osm';
-        rhinoUrbanModel.show = model === 'rhino-urban';
-        model === 'bim' ? showAllBIM() : hideAllBIM();
-        model === 'rhino-building' ? showRhinoBuildings() : hideRhinoBuildings();
+        modelCache.select(model);
 
         isFirstCall = false;
       },
