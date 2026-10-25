@@ -817,6 +817,13 @@
     "address": "25 Lower Kent Ridge Road",
     "postal": "119081",
     "buildingDataCredits": "Kesandra Wong Cai Yi, Kwok Pei Ru",
+    "images": [
+      { "src": "/src/assets/rvrc/rvrc-e-1.jpg", "author": "Kesandra Wong Cai Yi, Kwok Pei Ru" },
+      { "src": "/src/assets/rvrc/rvrc-e-2.jpg", "author": "Kesandra Wong Cai Yi, Kwok Pei Ru" },
+      { "src": "/src/assets/rvrc/rvrc-e-3.jpg", "author": "Kesandra Wong Cai Yi, Kwok Pei Ru" },
+      { "src": "/src/assets/rvrc/rvrc-e-4.jpg", "author": "Kesandra Wong Cai Yi, Kwok Pei Ru" },
+      { "src": "/src/assets/rvrc/rvrc-e-5.jpg", "author": "Kesandra Wong Cai Yi, Kwok Pei Ru" }
+    ],
     "latitude": 1.29856,
     "longitude": 103.77617,
     "floorToFloorHeight": [
