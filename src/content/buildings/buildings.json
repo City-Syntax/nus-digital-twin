@@ -1139,6 +1139,12 @@
     "idfDownload": "/as4/as4.idf",
     "address": "9 Arts Link",
     "buildingDataCredits": "Tan Aik Lin, Teo Min Jue Symphonie",
+    "images": [
+      { "src": "/src/assets/as4/as4-1.jpg", "author": "Tan Aik Lin, Teo Min Jue Symphonie" },
+      { "src": "/src/assets/as4/as4-2.jpg", "author": "Tan Aik Lin, Teo Min Jue Symphonie" },
+      { "src": "/src/assets/as4/as4-3.jpg", "author": "Tan Aik Lin, Teo Min Jue Symphonie" },
+      { "src": "/src/assets/as4/as4-4.jpg", "author": "Tan Aik Lin, Teo Min Jue Symphonie" }
+    ],
     "postal": "117572",
     "latitude": 1.29455,
     "longitude": 103.77178,
