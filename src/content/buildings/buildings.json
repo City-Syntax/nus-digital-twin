@@ -4353,6 +4353,13 @@
     "energyUseIntensity": "ventus-eui",
     "idfDownload": "/ventus/ventus.idf",
     "buildingDataCredits": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun",
+    "images": [
+      { "src": "/src/assets/ventus/ventus-1.jpg", "author": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun" },
+      { "src": "/src/assets/ventus/ventus-2.jpg", "author": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun" },
+      { "src": "/src/assets/ventus/ventus-3.jpg", "author": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun" },
+      { "src": "/src/assets/ventus/ventus-4.jpg", "author": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun" },
+      { "src": "/src/assets/ventus/ventus-5.jpg", "author": "Lam Junkang, Loh Jia Em Joan, Trista Tan Xuan Yun" }
+    ],
     "address": "8 Kent Ridge Drive",
     "postal": "119246",
     "latitude": 1.29529,
